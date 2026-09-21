@@ -60,3 +60,18 @@
 "No releases have been published yet." = "Nu a fost publicată încă nicio versiune.";
 "Could not check for updates. Please try again." = "Nu s-au putut căuta actualizări. Încearcă din nou.";
 "Open Release Page…" = "Deschide pagina versiunii…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "Setează parola…";
+"Change Password…" = "Schimbă parola…";
+"Turn Off Password…" = "Dezactivează parola…";
+"Forgot Password…" = "Ai uitat parola…";
+"Set Password" = "Setează parola";
+"Change Password" = "Schimbă parola";
+"Turn Off Password" = "Dezactivează parola";
+"Current password" = "Parola actuală";
+"Authenticate with macOS to reset your Blackout password." = "Autentifică-te cu macOS pentru a reseta parola Blackout.";
+"Password reset was not completed. Your password is unchanged." = "Resetarea parolei nu s-a finalizat. Parola nu a fost modificată.";
+"Password reset. Password protection is off." = "Parola a fost resetată. Protecția prin parolă este dezactivată.";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "Configurările salvate ale parolei nu au putut fi citite. Folosește Ai uitat parola din configurări pentru recuperare.";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Ieșire de urgență: ține apăsat Escape timp de 3 secunde. Astfel ocolești parola aplicației.";

@@ -60,3 +60,18 @@
 "No releases have been published yet." = "Inga versioner har publicerats ännu.";
 "Could not check for updates. Please try again." = "Kunde inte söka efter uppdateringar. Försök igen.";
 "Open Release Page…" = "Öppna versionssidan…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "Ställ in lösenord…";
+"Change Password…" = "Ändra lösenord…";
+"Turn Off Password…" = "Stäng av lösenord…";
+"Forgot Password…" = "Glömt lösenord…";
+"Set Password" = "Ställ in lösenord";
+"Change Password" = "Ändra lösenord";
+"Turn Off Password" = "Stäng av lösenord";
+"Current password" = "Nuvarande lösenord";
+"Authenticate with macOS to reset your Blackout password." = "Verifiera din identitet med macOS för att återställa ditt Blackout-lösenord.";
+"Password reset was not completed. Your password is unchanged." = "Återställningen slutfördes inte. Ditt lösenord är oförändrat.";
+"Password reset. Password protection is off." = "Lösenordet har återställts. Lösenordsskyddet är avstängt.";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "De sparade lösenordsinställningarna kunde inte läsas. Använd Glömt lösenord i inställningarna för att återställa.";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Nödutgång: håll Escape nedtryckt i 3 sekunder. Detta kringgår appens lösenord.";

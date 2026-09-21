@@ -60,3 +60,18 @@
 "No releases have been published yet." = "No releases have been published yet.";
 "Could not check for updates. Please try again." = "Could not check for updates. Please try again.";
 "Open Release Page…" = "Open Release Page…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "Set Password…";
+"Change Password…" = "Change Password…";
+"Turn Off Password…" = "Turn Off Password…";
+"Forgot Password…" = "Forgot Password…";
+"Set Password" = "Set Password";
+"Change Password" = "Change Password";
+"Turn Off Password" = "Turn Off Password";
+"Current password" = "Current password";
+"Authenticate with macOS to reset your Blackout password." = "Authenticate with macOS to reset your Blackout password.";
+"Password reset was not completed. Your password is unchanged." = "Password reset was not completed. Your password is unchanged.";
+"Password reset. Password protection is off." = "Password reset. Password protection is off.";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "The saved password settings could not be read. Use Forgot Password in Settings to recover.";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Emergency exit: hold Escape for 3 seconds. This bypasses the app password.";

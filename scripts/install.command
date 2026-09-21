@@ -4,8 +4,21 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 APP_DIR="$HOME/Applications/Blackout.app"
-BUILD_DIR="$(mktemp -d)"
-trap 'rm -rf "$BUILD_DIR"' EXIT
+mkdir -p "$(dirname "$APP_DIR")"
+# Keep both renames on the installation filesystem.
+BUILD_DIR="$(mktemp -d "$(dirname "$APP_DIR")/.Blackout-install.XXXXXX")"
+INSTALL_COMPLETE=false
+cleanup() {
+  if [[ "$INSTALL_COMPLETE" == false && ( -e "$BUILD_DIR/Previous.app" || -L "$BUILD_DIR/Previous.app" ) ]]; then
+    if [[ -e "$APP_DIR" || -L "$APP_DIR" ]] || ! mv "$BUILD_DIR/Previous.app" "$APP_DIR"; then
+      echo "Could not restore the previous app. It is preserved at: $BUILD_DIR/Previous.app" >&2
+      return
+    fi
+  fi
+  rm -rf "$BUILD_DIR"
+}
+trap cleanup EXIT
+trap 'exit 1' HUP INT TERM
 if ! xcrun --find swiftc >/dev/null 2>&1; then
   echo "Apple Command Line Tools are required once to build Blackout.app."
   echo "Opening Apple's installer..."
@@ -22,9 +35,11 @@ echo "Stopping the previous Blackout, if it is running..."
 pkill -x Blackout >/dev/null 2>&1 || true
 sleep 0.3
 echo "Replacing the previous local build..."
-mkdir -p "$(dirname "$APP_DIR")"
-rm -rf "$APP_DIR"
+if [[ -e "$APP_DIR" || -L "$APP_DIR" ]]; then
+  mv "$APP_DIR" "$BUILD_DIR/Previous.app"
+fi
 mv "$BUILD_DIR/Blackout.app" "$APP_DIR"
+INSTALL_COMPLETE=true
 
 echo
 echo "Installed: $APP_DIR"

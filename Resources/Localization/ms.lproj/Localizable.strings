@@ -60,3 +60,18 @@
 "No releases have been published yet." = "Belum ada versi yang diterbitkan.";
 "Could not check for updates. Please try again." = "Tidak dapat menyemak kemas kini. Sila cuba lagi.";
 "Open Release Page…" = "Buka Halaman Keluaran…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "Tetapkan Kata Laluan…";
+"Change Password…" = "Tukar Kata Laluan…";
+"Turn Off Password…" = "Matikan Kata Laluan…";
+"Forgot Password…" = "Terlupa Kata Laluan…";
+"Set Password" = "Tetapkan Kata Laluan";
+"Change Password" = "Tukar Kata Laluan";
+"Turn Off Password" = "Matikan Kata Laluan";
+"Current password" = "Kata laluan semasa";
+"Authenticate with macOS to reset your Blackout password." = "Sahkan identiti dengan macOS untuk menetapkan semula kata laluan Blackout.";
+"Password reset was not completed. Your password is unchanged." = "Tetapan semula kata laluan tidak selesai. Kata laluan anda tidak berubah.";
+"Password reset. Password protection is off." = "Kata laluan telah ditetapkan semula. Perlindungan kata laluan dimatikan.";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "Seting kata laluan yang disimpan tidak dapat dibaca. Gunakan Terlupa Kata Laluan dalam seting untuk memulihkan akses.";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Keluar kecemasan: tekan dan tahan Escape selama 3 saat. Ini memintas kata laluan app.";

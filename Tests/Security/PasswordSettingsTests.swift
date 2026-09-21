@@ -51,6 +51,8 @@ struct PasswordSettingsTests {
         try check(try settings.load()!.matches("비밀 🔑"))
         try settings.update(enabled: true, current: "비밀 🔑", new: "changed", confirmation: "changed")
         try check(try settings.load()!.matches("changed"))
+        rejected { try settings.update(enabled: true, current: "changed", new: "", confirmation: "") }
+        try check(try settings.load()!.matches("changed"))
         try check(try !settings.load()!.matches("비밀 🔑"))
         // An active blackout retains its original credential until unlocked.
         assert(original.matches("비밀 🔑"))
@@ -63,6 +65,29 @@ struct PasswordSettingsTests {
         rejected { _ = try settings.load() }
         defaults.set(try JSONEncoder().encode(UnlockPassword(salt: Data(), digest: Data())), forKey: PasswordSettings.key)
         rejected { _ = try settings.load() }
+
+        // Owner-authenticated recovery clears even corrupt credentials, leaving other preferences intact.
+        defaults.set("ko", forKey: "appLanguage")
+        defaults.set(true, forKey: "unrelatedPreference")
+        for damaged: Any in [Data("broken".utf8), "wrong type"] {
+            defaults.set(damaged, forKey: PasswordSettings.key)
+            assert(settings.resetAfterOwnerAuthentication(ifUnchanged: settings.revision))
+            assert(!settings.isEnabled)
+            try check(try settings.load() == nil)
+            assert(defaults.string(forKey: "appLanguage") == "ko")
+            assert(defaults.bool(forKey: "unrelatedPreference"))
+        }
+        try settings.update(enabled: true, current: "", new: "forgotten", confirmation: "forgotten")
+        let pendingResetRevision = settings.revision
+        try settings.update(enabled: true, current: "forgotten", new: "newer", confirmation: "newer")
+        assert(!settings.resetAfterOwnerAuthentication(ifUnchanged: pendingResetRevision))
+        try check(try settings.load()!.matches("newer"))
+        assert(settings.resetAfterOwnerAuthentication(ifUnchanged: settings.revision))
+        assert(!settings.isEnabled)
+        assert(defaults.string(forKey: "appLanguage") == "ko")
+        assert(defaults.bool(forKey: "unrelatedPreference"))
+        try settings.update(enabled: true, current: "", new: "fresh", confirmation: "fresh")
+        try check(try settings.load()!.matches("fresh"))
         print("Password settings checks passed")
     }
 }

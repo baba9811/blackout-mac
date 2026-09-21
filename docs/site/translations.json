@@ -16,7 +16,7 @@
     "sections": [
       [
         "Install in a moment",
-        "Download the universal DMG from GitHub Releases. Open it and drag Blackout.app to the Applications shortcut, then launch it. If macOS blocks the first launch, check the source, then choose “Open Anyway” in macOS security settings if shown. To update, choose Blackout → “Quit Blackout”, replace the existing Blackout.app in the same folder with the new DMG copy, and reopen it. Password and language preferences are stored separately and retained. This preview uses ad-hoc signing, not a Developer ID signature. After replacement, a permission can still appear on while approving the previous app; use the remove-and-add steps in the FAQ below. Settings shows the installed version. “Check for Updates…” checks official GitHub releases only when clicked. If a newer release is available, “Open Release Page…” opens its download page. Nothing is installed automatically."
+        "Download the universal DMG from GitHub Releases. Open it and drag Blackout.app to the Applications shortcut, then launch it. If macOS blocks the first launch, check the source, then choose “Open Anyway” in macOS security settings if shown. To update, choose Blackout → “Quit Blackout”, replace the existing Blackout.app in the same folder with the new DMG copy, and reopen it. Password and language preferences are stored separately and retained. Version 0.1.0 uses ad-hoc signing; starting with 0.1.1, previews use a fixed self-signed certificate, without Developer ID signing or Apple notarization. If input blocking fails despite enabled permission, follow the FAQ below. Settings shows the installed version. “Check for Updates…” checks official GitHub releases only when clicked. If a newer release is available, “Open Release Page…” opens its download page. Nothing is installed automatically."
       ],
       [
         "Allow input blocking",
@@ -28,7 +28,7 @@
       ],
       [
         "Choose a password, or don’t",
-        "Password protection is off by default. Open Settings from the Blackout menu to enable it and enter the new password twice. Changing or disabling an existing password requires the current password. When enabled, use your password to dismiss the black screen. Choose “Save Password Settings” to apply your password changes. A small lock badge on the moon menu icon indicates that password protection is enabled."
+        "Password protection is off by default. In Blackout Settings, turn on “Require a password to restore the screen” to open a setup dialog and enter the new password twice. Turning the switch off opens a confirmation dialog requiring the current password. The switch shows the saved state; canceling or an error leaves it unchanged. While enabled, the “Change Password…” button opens a dialog requiring the current password and the new password twice. Use the “Forgot Password…” link for recovery with macOS authentication. A small lock badge on the moon menu icon indicates that password protection is enabled. The password only gates dismissing Blackout; it does not secure your macOS session. Choosing “Cancel” in the unlock prompt leaves the screens black. Keyboard and mouse wake input is ignored for 2 seconds to prevent immediate reopening, then normal wake behavior resumes."
       ],
       [
         "Ready when you log in",
@@ -44,17 +44,17 @@
       ],
       [
         "If something gets stuck",
-        "If input blocking stops, the black covers are removed. Reopen “Open Input Permission Settings…” from Blackout Settings, check permission, and restart the app. If you forget your password or the app stops responding, use macOS Force Quit or restart. This can end the cover without the app password."
+        "Hold Escape for 3 seconds to end blackout, bypassing the app password. If the app is unresponsive, it quits about 1 second later; reopen Blackout if needed. If input blocking stops, the black covers are removed. Reopen “Open Input Permission Settings…” from Blackout Settings, check permission, and restart the app. If you forgot the password, choose “Forgot Password…” in Settings and authenticate with Touch ID or your Mac login password. This removes only the Blackout password and preserves other preferences. macOS Force Quit or restart remains a fallback."
       ]
     ],
     "faqs": [
       [
         "Is this a macOS security lock?",
-        "No. BlackoutMac covers displays and intercepts ordinary keyboard and mouse input. Force Quit, macOS security screens, and other system behavior are outside its guarantee. Use the macOS Lock Screen when you need to secure your session."
+        "No. BlackoutMac covers displays and blocks ordinary keyboard and mouse input. Accessibility automation that already has permission, such as tools using AX APIs, may still read or control other apps while the screens are covered. The password only gates dismissing Blackout; it does not secure your macOS session. Force Quit, macOS security screens, and other system behavior are outside its guarantee. Use the macOS Lock Screen when you need to secure your session."
       ],
       [
         "Input permission is on. Why won’t blackout start?",
-        "An update to this ad-hoc-signed preview can leave macOS approving the previous app instead of the installed copy. Choose Blackout → “Quit Blackout”. In the macOS input permission list (macOS 27: “Device Control and Data Access”; macOS 13–26: “Accessibility”), remove Blackout, add the currently installed Blackout.app again, and enable it. Then relaunch Blackout."
+        "When the signing identity changes, including an upgrade from 0.1.0, macOS may still approve the previous app; in this case, renew permission once. Choose Blackout → “Quit Blackout”. In the macOS input permission list (macOS 27: “Device Control and Data Access”; macOS 13–26: “Accessibility”), remove Blackout, add the currently installed Blackout.app again, and enable it. Then relaunch Blackout."
       ]
     ],
     "status": "Preview release"
@@ -76,7 +76,7 @@
     "sections": [
       [
         "간단하게 설치하기",
-        "GitHub Releases에서 유니버설 DMG를 다운로드합니다. DMG를 열고 Blackout.app을 Applications 바로가기로 옮긴 뒤 실행하세요. 첫 실행을 macOS가 막으면 출처를 확인하고 macOS 보안 설정에서 “그래도 열기”가 표시될 때 선택하세요. 업데이트할 때는 Blackout → “Blackout 종료”로 종료한 뒤, 같은 폴더의 기존 Blackout.app을 새 DMG의 앱으로 교체하고 다시 실행하세요. 비밀번호와 언어 설정은 별도로 저장되어 유지됩니다. 이 미리 보기 버전은 Developer ID 서명 대신 임시 서명을 사용합니다. 앱 교체 후 권한이 켜져 보여도 이전 앱에 대한 승인만 남을 수 있으니 아래 FAQ의 제거 후 다시 추가하는 절차를 따르세요. 설정에서 현재 설치 버전을 볼 수 있습니다. “업데이트 확인…”을 눌렀을 때만 공식 GitHub 릴리스를 조회하고, 더 새로운 릴리스가 있으면 “릴리스 페이지 열기…”로 다운로드 페이지를 엽니다. 자동 설치하지 않습니다."
+        "GitHub Releases에서 유니버설 DMG를 다운로드합니다. DMG를 열고 Blackout.app을 Applications 바로가기로 옮긴 뒤 실행하세요. 첫 실행을 macOS가 막으면 출처를 확인하고 macOS 보안 설정에서 “그래도 열기”가 표시될 때 선택하세요. 업데이트할 때는 Blackout → “Blackout 종료”로 종료한 뒤, 같은 폴더의 기존 Blackout.app을 새 DMG의 앱으로 교체하고 다시 실행하세요. 비밀번호와 언어 설정은 별도로 저장되어 유지됩니다. 0.1.0 버전은 임시 서명을 사용하며, 0.1.1부터는 미리 보기 버전에 고정된 자체 서명 인증서를 사용합니다. Developer ID 서명과 Apple 공증은 없습니다. 권한을 켰는데도 입력 차단이 작동하지 않으면 아래 FAQ를 확인하세요. 설정에서 현재 설치 버전을 볼 수 있습니다. “업데이트 확인…”을 눌렀을 때만 공식 GitHub 릴리스를 조회하고, 더 새로운 릴리스가 있으면 “릴리스 페이지 열기…”로 다운로드 페이지를 엽니다. 자동 설치하지 않습니다."
       ],
       [
         "입력 차단 권한 허용",
@@ -88,7 +88,7 @@
       ],
       [
         "비밀번호는 선택 사항",
-        "기본값은 비밀번호 없음입니다. Blackout 메뉴의 설정에서 비밀번호를 켜고 새 비밀번호를 두 번 입력하세요. 기존 비밀번호를 바꾸거나 끄려면 현재 비밀번호가 필요합니다. 설정한 경우 비밀번호를 입력해야 화면 가림이 해제됩니다. “비밀번호 설정 저장”을 눌러 변경 사항을 적용하세요. 메뉴 막대의 달 아이콘에 작은 자물쇠가 붙으면 비밀번호 보호가 켜진 상태입니다."
+        "기본값은 비밀번호 없음입니다. Blackout 설정에서 “화면 해제 시 비밀번호 요구” 스위치를 켜면 입력 창이 열립니다. 새 비밀번호를 두 번 입력하세요. 스위치를 끄면 현재 비밀번호를 입력하는 확인 창이 열립니다. 스위치는 저장된 상태를 표시하며, 취소하거나 오류가 나면 기존 설정이 유지됩니다. 켜져 있을 때 “비밀번호 변경…” 버튼을 누르면 현재 비밀번호와 새 비밀번호 두 번을 입력하는 창이 열립니다. “비밀번호를 잊으셨나요…” 링크에서는 macOS 인증으로 복구할 수 있습니다. 메뉴 막대의 달 아이콘에 작은 자물쇠가 붙으면 비밀번호 보호가 켜진 상태입니다. 비밀번호는 Blackout의 화면 가림 해제만 제한하며 macOS 세션을 보호하지 않습니다. 화면 해제 창에서 “취소”를 누르면 검은 화면으로 돌아갑니다. 창이 즉시 다시 뜨지 않도록 2초 동안 키보드·마우스의 화면 깨우기 입력을 무시하며, 그 뒤에는 평소처럼 입력에 반응합니다."
       ],
       [
         "로그인할 때 자동 실행",
@@ -104,17 +104,17 @@
       ],
       [
         "문제가 생겼을 때",
-        "입력 차단이 중단되면 화면 가림을 해제합니다. Blackout 설정의 “입력 권한 설정 열기…”를 다시 열어 권한을 확인하고 앱을 재실행하세요. 비밀번호를 잊었거나 앱이 응답하지 않으면 macOS 강제 종료 또는 재시동을 사용할 수 있습니다. 이 경우 앱 비밀번호 없이도 화면 가림이 종료될 수 있습니다."
+        "Escape 키를 3초 동안 누르면 앱 비밀번호를 건너뛰고 화면 가림을 해제합니다. 앱이 응답하지 않으면 약 1초 뒤 앱이 종료되므로, 필요하면 Blackout을 다시 여세요. 입력 차단이 중단되면 화면 가림을 해제합니다. Blackout 설정의 “입력 권한 설정 열기…”를 다시 열어 권한을 확인하고 앱을 재실행하세요. 비밀번호를 잊었다면 설정의 “비밀번호를 잊으셨나요…”에서 Touch ID 또는 Mac 로그인 비밀번호로 인증하세요. Blackout 비밀번호만 삭제되며 다른 설정은 유지됩니다. 마지막 수단으로 macOS 강제 종료나 재시동도 사용할 수 있습니다."
       ]
     ],
     "faqs": [
       [
         "macOS의 보안 잠금인가요?",
-        "아닙니다. 화면을 가리고 일반 키보드·마우스 입력을 가로채는 앱입니다. 강제 종료, macOS 보안 화면 등 시스템 동작까지 막지는 못합니다. 세션을 안전하게 잠그려면 macOS의 화면 잠금을 사용하세요."
+        "아닙니다. BlackoutMac은 화면을 가리고 일반 키보드·마우스 입력을 차단하는 앱입니다. 이미 접근성 권한을 받은 자동화 도구는 AX API 등을 통해 화면이 가려진 동안에도 다른 앱을 읽거나 제어할 수 있습니다. 비밀번호는 Blackout의 화면 가림 해제만 제한하며 macOS 세션을 보호하지 않습니다. 강제 종료, macOS 보안 화면 등 시스템 동작까지 막지는 못합니다. 세션을 안전하게 잠그려면 macOS의 화면 잠금을 사용하세요."
       ],
       [
         "입력 권한이 켜져 있는데도 화면 가리기가 안 되나요?",
-        "임시 서명된 미리 보기 앱을 업데이트하면 현재 앱 대신 이전 앱의 승인 기록이 남을 수 있습니다. Blackout → “Blackout 종료”로 종료하세요. macOS 입력 권한 목록(macOS 27: “기기 제어 및 데이터 접근”, macOS 13–26: “손쉬운 사용”)에서 Blackout을 제거한 뒤, 현재 설치된 Blackout.app을 다시 추가하고 허용하세요. 마지막으로 Blackout을 다시 실행하세요."
+        "0.1.0에서 업데이트하는 경우처럼 서명 식별 정보가 바뀌면 macOS에 이전 앱의 승인만 남을 수 있습니다. 이 경우 권한을 한 번 다시 승인하세요. Blackout → “Blackout 종료”로 종료하세요. macOS 입력 권한 목록(macOS 27: “기기 제어 및 데이터 접근”, macOS 13–26: “손쉬운 사용”)에서 Blackout을 제거한 뒤, 현재 설치된 Blackout.app을 다시 추가하고 허용하세요. 마지막으로 Blackout을 다시 실행하세요."
       ]
     ],
     "status": "미리 보기 버전"
@@ -136,7 +136,7 @@
     "sections": [
       [
         "かんたんインストール",
-        "GitHub ReleasesからユニバーサルDMGをダウンロードし、Blackout.appをApplicationsのショートカットへドラッグして起動します。初回起動がブロックされたら入手元を確認し、macOSのセキュリティ設定に「このまま開く」が表示される場合に選択してください。更新時はBlackout →「Blackoutを終了」で終了し、同じフォルダのBlackout.appを新しいDMG内のアプリで置き換えて再起動します。パスワードと言語設定は別に保存され、維持されます。 このプレビュー版はDeveloper ID署名ではなくアドホック署名を使用します。置き換え後、権限がオンでも以前のアプリへの許可が残る場合があります。下のFAQの削除・再追加手順に従ってください。設定には現在のバージョンが表示されます。「アップデートを確認…」を押したときだけ公式GitHubリリースを確認し、新しいバージョンがあれば「リリースページを開く…」でダウンロードページを開きます。 自動インストールは行いません。"
+        "GitHub ReleasesからユニバーサルDMGをダウンロードし、Blackout.appをApplicationsのショートカットへドラッグして起動します。初回起動がブロックされたら入手元を確認し、macOSのセキュリティ設定に「このまま開く」が表示される場合に選択してください。更新時はBlackout →「Blackoutを終了」で終了し、同じフォルダのBlackout.appを新しいDMG内のアプリで置き換えて再起動します。パスワードと言語設定は別に保存され、維持されます。 0.1.0はアドホック署名を使用し、0.1.1からはプレビュー版に固定の自己署名証明書を使用します。Developer ID署名とAppleの公証はありません。権限が有効でも入力遮断が動作しない場合は、下のFAQをご確認ください。設定には現在のバージョンが表示されます。「アップデートを確認…」を押したときだけ公式GitHubリリースを確認し、新しいバージョンがあれば「リリースページを開く…」でダウンロードページを開きます。 自動インストールは行いません。"
       ],
       [
         "入力を遮断する権限を許可",
@@ -148,7 +148,7 @@
       ],
       [
         "パスワードはお好みで",
-        "初期状態ではパスワードは無効です。Blackoutメニューの設定で有効にし、新しいパスワードを2回入力します。変更や無効化には現在のパスワードが必要です。有効な場合はパスワードを入力して画面を元に戻します。 「パスワード設定を保存」で変更を適用してください。メニューバーの月アイコンに小さな鍵が付くと、パスワード保護が有効です。"
+        "初期状態ではパスワードは無効です。Blackoutの設定で「画面を戻すときにパスワードを要求」スイッチをオンにすると設定用ダイアログが開くので、新しいパスワードを2回入力します。オフにすると、現在のパスワードを求める確認用ダイアログが開きます。スイッチは保存済みの状態を示し、キャンセルやエラーでは変更されません。有効な場合は「パスワードを変更…」ボタンから現在のパスワードと新しいパスワード2回の入力を求めるダイアログを開けます。「パスワードをお忘れですか…」リンクではmacOSの認証で復旧できます。メニューバーの月アイコンに小さな鍵が付くと、パスワード保護が有効です。パスワードはBlackoutの画面の覆いを解除する操作のみを制限し、macOSのセッションを保護するものではありません。解除用の入力画面で「キャンセル」を選ぶと黒い画面に戻ります。すぐに再表示されないよう、2秒間はキーボードやマウスによる呼び出し入力を無視し、その後は通常どおり反応します。"
       ],
       [
         "ログイン時に自動起動",
@@ -164,17 +164,17 @@
       ],
       [
         "うまく動かないときは",
-        "入力の遮断が停止すると画面の覆いを解除します。Blackoutの設定から「入力権限の設定を開く…」を開き直して権限を確認し、アプリを再起動してください。パスワードを忘れた場合や応答しない場合は、macOSの強制終了や再起動を使用できます。アプリのパスワードなしで覆いが解除される場合があります。"
+        "Escapeキーを3秒間押し続けると、アプリのパスワードを入力せずに画面の覆いを解除できます。アプリが応答しない場合は約1秒後に終了するので、必要に応じてBlackoutを開き直してください。入力の遮断が停止すると画面の覆いを解除します。Blackoutの設定から「入力権限の設定を開く…」を開き直して権限を確認し、アプリを再起動してください。パスワードを忘れた場合は、設定の「パスワードをお忘れですか…」でTouch IDまたはMacのログインパスワードを使って認証してください。Blackoutのパスワードだけが削除され、ほかの設定は保持されます。最後の手段としてmacOSの強制終了や再起動も使用できます。"
       ]
     ],
     "faqs": [
       [
         "macOSのセキュリティロックですか？",
-        "いいえ。画面を覆い、通常のキーボード・マウス入力を制御するアプリです。強制終了やmacOSのセキュリティ画面などのシステム動作は保証の対象外です。セッションを保護するにはmacOSの画面ロックを使用してください。"
+        "いいえ。BlackoutMacは画面を覆い、通常のキーボード・マウス入力を遮断するアプリです。すでにアクセシビリティ権限を持つ自動化ツールは、AX APIなどを通じて、画面が覆われている間も他のアプリの情報を読み取ったり操作したりできる場合があります。パスワードはBlackoutの画面の覆いを解除する操作のみを制限し、macOSのセッションを保護するものではありません。強制終了やmacOSのセキュリティ画面などのシステム動作は保証の対象外です。セッションを保護するにはmacOSの画面ロックを使用してください。"
       ],
       [
         "入力権限がオンなのに画面を覆えないのはなぜですか？",
-        "アドホック署名のプレビュー版を更新すると、以前のアプリへの許可が残る場合があります。Blackout →「Blackoutを終了」で終了してください。macOSの入力権限一覧（macOS 27：「デバイスの制御とデータへのアクセス」、macOS 13–26：「アクセシビリティ」）からBlackoutを削除し、現在インストールされているBlackout.appを再追加して許可します。その後Blackoutを再起動してください。"
+        "0.1.0からの更新などで署名の識別情報が変わると、macOSに以前のアプリへの許可が残る場合があります。その場合は権限を一度許可し直してください。Blackout →「Blackoutを終了」で終了してください。macOSの入力権限一覧（macOS 27：「デバイスの制御とデータへのアクセス」、macOS 13–26：「アクセシビリティ」）からBlackoutを削除し、現在インストールされているBlackout.appを再追加して許可します。その後Blackoutを再起動してください。"
       ]
     ],
     "status": "プレビュー版"
@@ -196,7 +196,7 @@
     "sections": [
       [
         "轻松安装",
-        "从 GitHub Releases 下载通用 DMG，将 Blackout.app 拖到 Applications 快捷方式后启动。若 macOS 阻止首次打开，请确认来源，并在 macOS 安全设置中选择出现的“仍要打开”。更新时，先选择 Blackout →“退出 Blackout”，用新 DMG 中的应用替换同一文件夹内的 Blackout.app，再重新打开。密码和语言偏好单独保存，会予以保留。 此预览版使用临时签名，而非 Developer ID 签名。替换后，权限可能仍显示开启，但批准的是旧应用；请按下方常见问题中的步骤移除后重新添加。设置中显示当前安装版本。只有点击“检查更新…”才会查询官方 GitHub 发布版本；若有更新版本，可用“打开发布页面…”打开下载页面。 不会自动安装。"
+        "从 GitHub Releases 下载通用 DMG，将 Blackout.app 拖到 Applications 快捷方式后启动。若 macOS 阻止首次打开，请确认来源，并在 macOS 安全设置中选择出现的“仍要打开”。更新时，先选择 Blackout →“退出 Blackout”，用新 DMG 中的应用替换同一文件夹内的 Blackout.app，再重新打开。密码和语言偏好单独保存，会予以保留。 0.1.0 版本使用临时签名；从 0.1.1 起，预览版使用固定的自签名证书，没有 Developer ID 签名，也未经 Apple 公证。如果权限已开启但输入拦截仍无法工作，请参阅下方常见问题。设置中显示当前安装版本。只有点击“检查更新…”才会查询官方 GitHub 发布版本；若有更新版本，可用“打开发布页面…”打开下载页面。 不会自动安装。"
       ],
       [
         "允许输入阻止权限",
@@ -208,7 +208,7 @@
       ],
       [
         "密码，由你决定",
-        "默认不启用密码。在 Blackout 菜单的设置中启用，并输入两次新密码。更改或关闭现有密码需要当前密码。启用后，输入密码即可解除屏幕遮盖。 选择“保存密码设置”以应用更改。菜单栏月亮图标上的小锁标记表示密码保护已启用。"
+        "默认不启用密码。在 Blackout 设置中打开“恢复屏幕时需要密码”开关，即可在设置对话框中输入两次新密码。关闭开关时，会打开要求输入当前密码的确认对话框。开关显示已保存的状态；取消操作或出现错误时，原有设置保持不变。启用后，“更改密码…”按钮会打开对话框，要求输入当前密码和两次新密码。使用“忘记密码…”链接可通过 macOS 身份验证进行恢复。菜单栏月亮图标上的小锁标记表示密码保护已启用。密码只限制解除 Blackout 的屏幕遮盖，并不能保护 macOS 会话。在解锁提示框中选择“取消”会返回黑屏。为防止提示框立即重新打开，接下来的 2 秒内会忽略键盘和鼠标的唤醒输入，之后恢复正常响应。"
       ],
       [
         "登录时自动启动",
@@ -224,17 +224,17 @@
       ],
       [
         "遇到问题时",
-        "输入阻止功能失效时，黑色遮盖会被移除。从 Blackout 设置重新打开“打开输入权限设置…”，检查权限后重新启动应用。忘记密码或应用无响应时，可使用 macOS 强制退出或重新启动；这可能无需应用密码就结束遮盖。"
+        "按住 Escape 键 3 秒即可绕过应用密码，解除屏幕遮盖。如果应用无响应，它会在约 1 秒后退出；必要时重新打开 Blackout。输入阻止功能失效时，黑色遮盖会被移除。从 Blackout 设置重新打开“打开输入权限设置…”，检查权限后重新启动应用。如果忘记密码，请在设置中选择“忘记密码…”，然后使用 Touch ID 或 Mac 登录密码进行身份验证。这只会删除 Blackout 密码，其他偏好设置会保留。还可将 macOS 强制退出或重新启动作为最后的恢复手段。"
       ]
     ],
     "faqs": [
       [
         "这是 macOS 安全锁吗？",
-        "不是。BlackoutMac 只遮盖屏幕并拦截普通键盘和鼠标输入。强制退出、macOS 安全界面等系统行为不在保证范围内。需要保护会话时，请使用 macOS 锁定屏幕。"
+        "不是。BlackoutMac 遮盖屏幕并阻止普通键盘和鼠标输入。已获得辅助功能权限的自动化工具，例如使用 AX API 的工具，在屏幕被遮盖时仍可能读取或控制其他应用。密码只限制解除 Blackout 的屏幕遮盖，并不能保护 macOS 会话。强制退出、macOS 安全界面等系统行为不在保证范围内。需要保护会话时，请使用 macOS 锁定屏幕。"
       ],
       [
         "输入权限已开启，为什么仍无法遮盖屏幕？",
-        "更新临时签名的预览版后，macOS 可能仍保留旧应用的批准记录。选择 Blackout →“退出 Blackout”退出。在 macOS 输入权限列表中（macOS 27：“设备控制和数据访问”；macOS 13–26：“辅助功能”），移除 Blackout，重新添加当前安装的 Blackout.app 并允许访问。然后重新启动 Blackout。"
+        "签名身份发生变化时（包括从 0.1.0 升级），macOS 可能仍保留旧应用的批准记录；这种情况下，需要重新授权一次。选择 Blackout →“退出 Blackout”退出。在 macOS 输入权限列表中（macOS 27：“设备控制和数据访问”；macOS 13–26：“辅助功能”），移除 Blackout，重新添加当前安装的 Blackout.app 并允许访问。然后重新启动 Blackout。"
       ]
     ],
     "status": "预览版"
@@ -256,7 +256,7 @@
     "sections": [
       [
         "輕鬆安裝",
-        "從 GitHub Releases 下載通用 DMG，將 Blackout.app 拖到 Applications 捷徑後啟動。若 macOS 阻擋首次開啟，請確認來源，並在 macOS 安全性設定中選擇出現的「強制打開」。更新時，先選擇 Blackout →「結束 Blackout」，以新 DMG 中的 App 取代同一檔案夾內的 Blackout.app，再重新開啟。密碼與語言偏好設定分開儲存，會予以保留。 此預覽版使用臨時簽章，而非 Developer ID 簽章。取代後，權限可能仍顯示開啟，但核准的是舊 App；請依下方常見問題中的步驟移除後重新加入。設定中顯示目前安裝版本。只有按下「檢查更新…」才會查詢官方 GitHub 發布版本；若有較新版本，可用「打開發佈頁面…」開啟下載頁面。 不會自動安裝。"
+        "從 GitHub Releases 下載通用 DMG，將 Blackout.app 拖到 Applications 捷徑後啟動。若 macOS 阻擋首次開啟，請確認來源，並在 macOS 安全性設定中選擇出現的「強制打開」。更新時，先選擇 Blackout →「結束 Blackout」，以新 DMG 中的 App 取代同一檔案夾內的 Blackout.app，再重新開啟。密碼與語言偏好設定分開儲存，會予以保留。 0.1.0 版本使用臨時簽章；從 0.1.1 起，預覽版使用固定的自簽憑證，沒有 Developer ID 簽章，也未經 Apple 公證。如果已開啟權限但輸入攔截仍無法運作，請參閱下方常見問題。設定中顯示目前安裝版本。只有按下「檢查更新…」才會查詢官方 GitHub 發布版本；若有較新版本，可用「打開發佈頁面…」開啟下載頁面。 不會自動安裝。"
       ],
       [
         "允許輸入阻擋權限",
@@ -268,7 +268,7 @@
       ],
       [
         "密碼，由你決定",
-        "預設不啟用密碼。在 Blackout 選單的設定中啟用，並輸入兩次新密碼。更改或關閉現有密碼需要目前密碼。啟用後，輸入密碼即可解除螢幕遮蓋。 選擇「儲存密碼設定」以套用更改。選單列月亮圖像上的小鎖標記表示密碼保護已啟用。"
+        "預設不啟用密碼。在 Blackout 設定中開啟「恢復螢幕時需要密碼」開關，即可在設定對話框中輸入兩次新密碼。關閉開關時，會開啟要求輸入目前密碼的確認對話框。開關顯示已儲存的狀態；取消操作或發生錯誤時，原有設定保持不變。啟用後，「更改密碼…」按鈕會開啟對話框，要求輸入目前密碼和兩次新密碼。使用「忘記密碼…」連結可透過 macOS 驗證進行復原。選單列月亮圖像上的小鎖標記表示密碼保護已啟用。密碼只限制解除 Blackout 的螢幕遮蓋，並不能保護 macOS 工作階段。在解鎖提示框中選擇「取消」會返回黑畫面。為防止提示框立即重新開啟，接下來的 2 秒內會忽略鍵盤和滑鼠的喚醒輸入，之後恢復正常回應。"
       ],
       [
         "登入時自動啟動",
@@ -284,17 +284,17 @@
       ],
       [
         "遇到問題時",
-        "輸入阻擋功能失效時，黑色遮蓋會被移除。從 Blackout 設定重新開啟「打開輸入權限設定…」，檢查權限後重新啟動 App。忘記密碼或 App 沒有回應時，可使用 macOS 強制結束或重新啟動；這可能無需 App 密碼就結束遮蓋。"
+        "按住 Escape 鍵 3 秒即可略過 App 密碼，解除螢幕遮蓋。如果 App 沒有回應，它會在約 1 秒後結束；必要時重新開啟 Blackout。輸入阻擋功能失效時，黑色遮蓋會被移除。從 Blackout 設定重新開啟「打開輸入權限設定…」，檢查權限後重新啟動 App。如果忘記密碼，請在設定中選擇「忘記密碼…」，然後使用 Touch ID 或 Mac 登入密碼進行驗證。這只會刪除 Blackout 密碼，其他偏好設定會保留。也可將 macOS 強制結束或重新啟動作為最後的復原方式。"
       ]
     ],
     "faqs": [
       [
         "這是 macOS 安全鎖嗎？",
-        "不是。BlackoutMac 只遮蓋螢幕並攔截一般鍵盤和滑鼠輸入。強制結束、macOS 安全畫面等系統行為不在保證範圍內。需要保護工作階段時，請使用 macOS 鎖定螢幕。"
+        "不是。BlackoutMac 遮蓋螢幕並阻擋一般鍵盤和滑鼠輸入。已取得輔助使用權限的自動化工具，例如使用 AX API 的工具，在螢幕被遮蓋時仍可能讀取或控制其他 App。密碼只限制解除 Blackout 的螢幕遮蓋，並不能保護 macOS 工作階段。強制結束、macOS 安全畫面等系統行為不在保證範圍內。需要保護工作階段時，請使用 macOS 鎖定螢幕。"
       ],
       [
         "輸入權限已開啟，為什麼仍無法遮蓋螢幕？",
-        "更新臨時簽章的預覽版後，macOS 可能仍保留舊 App 的核准記錄。選擇 Blackout →「結束 Blackout」結束。在 macOS 輸入權限列表中（macOS 27：「裝置控制和資料取用」；macOS 13–26：「輔助使用」），移除 Blackout，重新加入目前安裝的 Blackout.app 並允許取用。然後重新啟動 Blackout。"
+        "簽署身分變更時（包括從 0.1.0 升級），macOS 可能仍保留舊 App 的核准記錄；這種情況下，需要重新授權一次。選擇 Blackout →「結束 Blackout」結束。在 macOS 輸入權限列表中（macOS 27：「裝置控制和資料取用」；macOS 13–26：「輔助使用」），移除 Blackout，重新加入目前安裝的 Blackout.app 並允許取用。然後重新啟動 Blackout。"
       ]
     ],
     "status": "預覽版"
@@ -316,7 +316,7 @@
     "sections": [
       [
         "Instalación sencilla",
-        "Descarga el DMG universal de GitHub Releases y arrastra Blackout.app al acceso directo Applications. Abre la app. Si macOS bloquea el primer inicio, verifica la procedencia y elige «Abrir igualmente» en los ajustes de seguridad de macOS, si aparece. Para actualizar, elige Blackout → «Salir de Blackout», sustituye Blackout.app en la misma carpeta por la copia del nuevo DMG y ábrela. La contraseña y el idioma se guardan aparte y se conservan. Esta versión preliminar usa firma ad hoc, sin Developer ID. Tras sustituirla, el permiso puede seguir activado para la app anterior; sigue los pasos de eliminación y nueva incorporación de las preguntas frecuentes. Ajustes muestra la versión instalada. «Buscar actualizaciones…» consulta los lanzamientos oficiales de GitHub solo al pulsarlo. Si hay una versión más reciente, «Abrir página de la versión…» abre su página de descarga. No se instala automáticamente."
+        "Descarga el DMG universal de GitHub Releases y arrastra Blackout.app al acceso directo Applications. Abre la app. Si macOS bloquea el primer inicio, verifica la procedencia y elige «Abrir igualmente» en los ajustes de seguridad de macOS, si aparece. Para actualizar, elige Blackout → «Salir de Blackout», sustituye Blackout.app en la misma carpeta por la copia del nuevo DMG y ábrela. La contraseña y el idioma se guardan aparte y se conservan. La versión 0.1.0 usa firma ad hoc; a partir de la 0.1.1, las versiones preliminares usan un certificado autofirmado fijo, sin firma Developer ID ni certificación de Apple. Si el bloqueo de entrada falla aunque el permiso esté activado, consulta las preguntas frecuentes de abajo. Ajustes muestra la versión instalada. «Buscar actualizaciones…» consulta los lanzamientos oficiales de GitHub solo al pulsarlo. Si hay una versión más reciente, «Abrir página de la versión…» abre su página de descarga. No se instala automáticamente."
       ],
       [
         "Permitir el bloqueo de entradas",
@@ -328,7 +328,7 @@
       ],
       [
         "Contraseña opcional",
-        "Está desactivada por defecto. Actívala en Ajustes del menú Blackout e introduce la nueva contraseña dos veces. Para cambiarla o desactivarla necesitas la actual. Cuando está activa, introduce la contraseña para quitar la cubierta. Pulsa «Guardar ajustes de contraseña» para aplicar los cambios. Una pequeña insignia de candado en el icono de luna indica que la protección con contraseña está activa."
+        "La protección con contraseña está desactivada por defecto. En los ajustes de Blackout, activa el interruptor «Exigir una contraseña para restaurar la pantalla» para abrir un diálogo de configuración e introducir la nueva contraseña dos veces. Al desactivarlo se abre un diálogo de confirmación que requiere la contraseña actual. El interruptor muestra el estado guardado; cancelar o un error no lo cambia. Cuando está activo, el botón «Cambiar contraseña…» abre un diálogo que pide la contraseña actual y la nueva dos veces. Usa el enlace «Olvidé la contraseña…» para recuperar el acceso mediante autenticación de macOS. Una pequeña insignia de candado en el icono de luna indica que la protección con contraseña está activa. La contraseña solo limita la retirada de la cubierta de Blackout; no protege tu sesión de macOS. Elegir «Cancelar» en el diálogo de desbloqueo deja las pantallas negras. Durante 2 segundos se ignoran las entradas de teclado y ratón que lo abrirían de nuevo para evitar su reapertura inmediata; después se recupera el comportamiento normal."
       ],
       [
         "Inicio automático",
@@ -344,17 +344,17 @@
       ],
       [
         "Si algo falla",
-        "Si falla el bloqueo de entradas, se retiran las cubiertas. Vuelve a abrir «Abrir ajustes de permisos de entrada…» desde los ajustes de Blackout, revisa el permiso y reinicia la app. Si olvidas la contraseña o la app no responde, fuerza su salida o reinicia macOS. Esto puede quitar la cubierta sin la contraseña de la app."
+        "Mantén pulsada la tecla Escape durante 3 segundos para quitar la cubierta sin introducir la contraseña de la app. Si la app no responde, se cierra aproximadamente 1 segundo después; vuelve a abrir Blackout si es necesario. Si falla el bloqueo de entradas, se retiran las cubiertas. Vuelve a abrir «Abrir ajustes de permisos de entrada…» desde los ajustes de Blackout, revisa el permiso y reinicia la app. Si olvidaste la contraseña, elige «Olvidé la contraseña…» en Ajustes y autentícate con Touch ID o la contraseña de inicio de sesión del Mac. Esto elimina solo la contraseña de Blackout y conserva las demás preferencias. Como último recurso, puedes forzar la salida o reiniciar macOS."
       ]
     ],
     "faqs": [
       [
         "¿Es un bloqueo de seguridad de macOS?",
-        "No. Cubre las pantallas e intercepta entradas habituales. Forzar salida, las pantallas de seguridad y otras funciones del sistema quedan fuera de su garantía. Para proteger tu sesión usa Bloquear pantalla de macOS."
+        "No. BlackoutMac cubre las pantallas y bloquea las entradas habituales del teclado y el ratón. Las herramientas de automatización con permisos de accesibilidad ya concedidos, como las que usan las API AX, pueden seguir leyendo o controlando otras apps mientras las pantallas están cubiertas. La contraseña solo limita la retirada de la cubierta de Blackout; no protege tu sesión de macOS. Forzar salida, las pantallas de seguridad y otras funciones del sistema quedan fuera de su garantía. Para proteger tu sesión usa Bloquear pantalla de macOS."
       ],
       [
         "El permiso de entrada está activado. ¿Por qué no se cubren las pantallas?",
-        "Actualizar esta versión con firma ad hoc puede dejar en macOS la autorización de la app anterior. Elige Blackout → «Salir de Blackout». En la lista de permisos de entrada de macOS (macOS 27: «Control de dispositivos y acceso a datos»; macOS 13–26: «Accesibilidad»), elimina Blackout, añade de nuevo el Blackout.app instalado actualmente y actívalo. Después vuelve a abrir Blackout."
+        "Cuando cambia la identidad de firma, incluso al actualizar desde la 0.1.0, macOS puede conservar la autorización de la app anterior; en ese caso, renueva el permiso una vez. Elige Blackout → «Salir de Blackout». En la lista de permisos de entrada de macOS (macOS 27: «Control de dispositivos y acceso a datos»; macOS 13–26: «Accesibilidad»), elimina Blackout, añade de nuevo el Blackout.app instalado actualmente y actívalo. Después vuelve a abrir Blackout."
       ]
     ],
     "status": "Versión preliminar"
@@ -376,7 +376,7 @@
     "sections": [
       [
         "Installation rapide",
-        "Téléchargez le DMG universel depuis GitHub Releases et glissez Blackout.app sur le raccourci Applications. Lancez l’app. Si macOS bloque le premier lancement, vérifiez sa provenance puis choisissez « Ouvrir quand même » dans les réglages de sécurité macOS, si proposé. Pour mettre à jour, choisissez Blackout → « Quitter Blackout », remplacez Blackout.app dans le même dossier par la copie du nouveau DMG, puis relancez-la. Le mot de passe et la langue sont conservés séparément. Cette version préliminaire utilise une signature ad hoc, sans Developer ID. Après remplacement, l’autorisation peut rester activée pour l’ancienne app ; suivez la suppression et le nouvel ajout décrits dans la FAQ. Les réglages affichent la version installée. « Rechercher des mises à jour… » consulte les versions officielles GitHub uniquement au clic. Si une version plus récente est disponible, « Ouvrir la page de la version… » ouvre sa page de téléchargement. Aucune installation automatique n’a lieu."
+        "Téléchargez le DMG universel depuis GitHub Releases et glissez Blackout.app sur le raccourci Applications. Lancez l’app. Si macOS bloque le premier lancement, vérifiez sa provenance puis choisissez « Ouvrir quand même » dans les réglages de sécurité macOS, si proposé. Pour mettre à jour, choisissez Blackout → « Quitter Blackout », remplacez Blackout.app dans le même dossier par la copie du nouveau DMG, puis relancez-la. Le mot de passe et la langue sont conservés séparément. La version 0.1.0 utilise une signature ad hoc ; à partir de la 0.1.1, les versions préliminaires utilisent un certificat autosigné fixe, sans signature Developer ID ni notarisation Apple. Si le blocage des entrées échoue malgré une autorisation active, consultez la FAQ ci-dessous. Les réglages affichent la version installée. « Rechercher des mises à jour… » consulte les versions officielles GitHub uniquement au clic. Si une version plus récente est disponible, « Ouvrir la page de la version… » ouvre sa page de téléchargement. Aucune installation automatique n’a lieu."
       ],
       [
         "Autoriser le blocage des entrées",
@@ -388,7 +388,7 @@
       ],
       [
         "Un mot de passe, si vous voulez",
-        "Désactivé par défaut. Activez-le dans les réglages du menu Blackout et saisissez le nouveau mot de passe deux fois. Sa modification ou sa désactivation nécessite le mot de passe actuel. Une fois activé, saisissez-le pour rétablir l’affichage. Choisissez « Enregistrer les réglages du mot de passe » pour appliquer les modifications. Un petit cadenas sur l’icône de lune indique que la protection par mot de passe est activée."
+        "La protection par mot de passe est désactivée par défaut. Dans les réglages Blackout, activez l’interrupteur « Exiger un mot de passe pour rétablir l’écran » pour ouvrir une boîte de dialogue et saisir le nouveau mot de passe deux fois. Sa désactivation ouvre une boîte de confirmation qui exige le mot de passe actuel. L’interrupteur indique l’état enregistré ; une annulation ou une erreur ne le modifie pas. Une fois activé, le bouton « Modifier le mot de passe… » ouvre une boîte de dialogue demandant le mot de passe actuel et le nouveau deux fois. Le lien « Mot de passe oublié… » permet une récupération avec l’authentification macOS. Un petit cadenas sur l’icône de lune indique que la protection par mot de passe est activée. Le mot de passe limite uniquement la levée du masquage de Blackout ; il ne sécurise pas votre session macOS. Choisir « Annuler » dans la boîte de déverrouillage laisse les écrans noirs. Pendant 2 secondes, les entrées du clavier et de la souris qui la rouvriraient sont ignorées pour éviter sa réouverture immédiate ; le fonctionnement normal reprend ensuite."
       ],
       [
         "Lancer à l’ouverture de session",
@@ -404,17 +404,17 @@
       ],
       [
         "En cas de problème",
-        "Si le blocage des entrées cesse, le masquage est retiré. Rouvrez « Ouvrir les réglages d’autorisation des entrées… » depuis les réglages Blackout, vérifiez l’autorisation, puis relancez l’app. En cas d’oubli du mot de passe ou d’absence de réponse, forcez à quitter ou redémarrez macOS. Cela peut retirer le masquage sans le mot de passe de l’app."
+        "Maintenez la touche Escape pendant 3 secondes pour retirer le masquage sans saisir le mot de passe de l’app. Si l’app ne répond pas, elle se ferme environ 1 seconde plus tard ; rouvrez Blackout si nécessaire. Si le blocage des entrées cesse, le masquage est retiré. Rouvrez « Ouvrir les réglages d’autorisation des entrées… » depuis les réglages Blackout, vérifiez l’autorisation, puis relancez l’app. En cas d’oubli du mot de passe, choisissez « Mot de passe oublié… » dans les réglages et authentifiez-vous avec Touch ID ou le mot de passe de connexion du Mac. Seul le mot de passe Blackout est supprimé ; les autres préférences sont conservées. En dernier recours, forcez à quitter ou redémarrez macOS."
       ]
     ],
     "faqs": [
       [
         "Est-ce un verrouillage de sécurité macOS ?",
-        "Non. L’app masque les écrans et intercepte les entrées ordinaires. Forcer à quitter, les écrans de sécurité et d’autres fonctions système restent hors de sa garantie. Utilisez le verrouillage de l’écran macOS pour protéger votre session."
+        "Non. BlackoutMac masque les écrans et bloque les entrées ordinaires du clavier et de la souris. Les outils d’automatisation disposant déjà d’une autorisation d’accessibilité, comme ceux qui utilisent les API AX, peuvent encore lire ou contrôler d’autres apps pendant le masquage. Le mot de passe limite uniquement la levée du masquage de Blackout ; il ne sécurise pas votre session macOS. Forcer à quitter, les écrans de sécurité et d’autres fonctions système restent hors de sa garantie. Utilisez le verrouillage de l’écran macOS pour protéger votre session."
       ],
       [
         "L’autorisation d’entrée est activée. Pourquoi le masquage ne démarre-t-il pas ?",
-        "La mise à jour de cette version signée ad hoc peut laisser macOS autoriser l’ancienne app. Choisissez Blackout → « Quitter Blackout ». Dans la liste des autorisations d’entrée macOS (macOS 27 : « Contrôle de l’appareil et accès aux données » ; macOS 13–26 : « Accessibilité »), supprimez Blackout, ajoutez de nouveau le Blackout.app actuellement installé et autorisez-le. Relancez ensuite Blackout."
+        "Lorsque l’identité de signature change, notamment lors d’une mise à jour depuis la 0.1.0, macOS peut conserver l’autorisation de l’ancienne app ; dans ce cas, accordez à nouveau l’autorisation une fois. Choisissez Blackout → « Quitter Blackout ». Dans la liste des autorisations d’entrée macOS (macOS 27 : « Contrôle de l’appareil et accès aux données » ; macOS 13–26 : « Accessibilité »), supprimez Blackout, ajoutez de nouveau le Blackout.app actuellement installé et autorisez-le. Relancez ensuite Blackout."
       ]
     ],
     "status": "Version préliminaire"
@@ -436,7 +436,7 @@
     "sections": [
       [
         "Schnell installiert",
-        "Lade die universelle DMG von GitHub Releases und ziehe Blackout.app auf den Kurzbefehl Applications. Starte die App. Blockiert macOS den ersten Start, prüfe die Herkunft und wähle gegebenenfalls „Dennoch öffnen“ in den macOS-Sicherheitseinstellungen. Zum Aktualisieren wähle Blackout → „Blackout beenden“, ersetze Blackout.app im selben Ordner durch die Kopie aus der neuen DMG und öffne sie erneut. Passwort und Sprache werden separat gespeichert und bleiben erhalten. Diese Vorabversion ist ad hoc signiert, ohne Developer ID. Nach dem Ersetzen kann die Berechtigung weiterhin für die alte App eingeschaltet sein; folge den Schritten zum Entfernen und erneuten Hinzufügen in den Fragen unten. Die Einstellungen zeigen die installierte Version. „Nach Updates suchen…“ fragt nur beim Anklicken offizielle GitHub-Releases ab. Ist eine neuere Version verfügbar, öffnet „Versionsseite öffnen…“ deren Downloadseite. Es wird nichts automatisch installiert."
+        "Lade die universelle DMG von GitHub Releases und ziehe Blackout.app auf den Kurzbefehl Applications. Starte die App. Blockiert macOS den ersten Start, prüfe die Herkunft und wähle gegebenenfalls „Dennoch öffnen“ in den macOS-Sicherheitseinstellungen. Zum Aktualisieren wähle Blackout → „Blackout beenden“, ersetze Blackout.app im selben Ordner durch die Kopie aus der neuen DMG und öffne sie erneut. Passwort und Sprache werden separat gespeichert und bleiben erhalten. Version 0.1.0 ist ad hoc signiert; ab 0.1.1 verwenden Vorabversionen ein festes selbstsigniertes Zertifikat, ohne Developer-ID-Signatur oder Apple-Notarisierung. Falls die Eingabesperre trotz aktivierter Berechtigung nicht funktioniert, folge den Fragen unten. Die Einstellungen zeigen die installierte Version. „Nach Updates suchen…“ fragt nur beim Anklicken offizielle GitHub-Releases ab. Ist eine neuere Version verfügbar, öffnet „Versionsseite öffnen…“ deren Downloadseite. Es wird nichts automatisch installiert."
       ],
       [
         "Eingabesperre erlauben",
@@ -448,7 +448,7 @@
       ],
       [
         "Passwort nach Wunsch",
-        "Standardmäßig ist kein Passwort aktiv. Aktiviere es in den Einstellungen im Blackout-Menü und gib das neue Passwort zweimal ein. Ändern oder Deaktivieren erfordert das aktuelle Passwort. Mit aktiviertem Schutz hebt dein Passwort die Abdeckung auf. Wähle „Passworteinstellungen sichern“, um Änderungen zu übernehmen. Ein kleines Schloss am Mondsymbol in der Menüleiste zeigt aktiven Passwortschutz an."
+        "Der Passwortschutz ist standardmäßig ausgeschaltet. Schalte in den Blackout-Einstellungen „Passwort zum Wiederherstellen des Bildschirms verlangen“ ein, um im Einrichtungsdialog das neue Passwort zweimal einzugeben. Beim Ausschalten öffnet sich ein Bestätigungsdialog, der das aktuelle Passwort verlangt. Der Schalter zeigt den gespeicherten Zustand; Abbrechen oder ein Fehler lässt ihn unverändert. Bei aktivem Schutz öffnet „Passwort ändern…“ einen Dialog für das aktuelle Passwort und die zweimalige Eingabe des neuen Passworts. Über den Link „Passwort vergessen…“ kannst du den Zugang mit macOS-Authentifizierung wiederherstellen. Ein kleines Schloss am Mondsymbol in der Menüleiste zeigt aktiven Passwortschutz an. Das Passwort beschränkt nur das Aufheben der Blackout-Abdeckung; es sichert deine macOS-Sitzung nicht ab. „Abbrechen“ im Entsperrdialog lässt die Bildschirme schwarz. Tastatur- und Mauseingaben zum erneuten Öffnen werden 2 Sekunden lang ignoriert, damit der Dialog nicht sofort wieder erscheint; danach gilt wieder das normale Verhalten."
       ],
       [
         "Bei Anmeldung starten",
@@ -464,17 +464,17 @@
       ],
       [
         "Wenn etwas nicht klappt",
-        "Fällt die Eingabesperre aus, wird die Abdeckung entfernt. Öffne „Einstellungen für Eingabeberechtigungen öffnen…“ erneut in den Blackout-Einstellungen, prüfe die Berechtigung und starte die App neu. Bei vergessenem Passwort oder fehlender Reaktion kannst du die App sofort beenden oder macOS neu starten. Das kann die Abdeckung ohne App-Passwort beenden."
+        "Halte Escape 3 Sekunden lang gedrückt, um die Abdeckung ohne Eingabe des App-Passworts aufzuheben. Reagiert die App nicht, wird sie etwa 1 Sekunde später beendet; öffne Blackout bei Bedarf erneut. Fällt die Eingabesperre aus, wird die Abdeckung entfernt. Öffne „Einstellungen für Eingabeberechtigungen öffnen…“ erneut in den Blackout-Einstellungen, prüfe die Berechtigung und starte die App neu. Wähle bei einem vergessenen Passwort in den Einstellungen „Passwort vergessen…“ und bestätige deine Identität mit Touch ID oder deinem Mac-Anmeldepasswort. Nur das Blackout-Passwort wird entfernt; andere Einstellungen bleiben erhalten. Als letzte Möglichkeit kannst du die App sofort beenden oder macOS neu starten."
       ]
     ],
     "faqs": [
       [
         "Ist das eine macOS-Sicherheitssperre?",
-        "Nein. Die App deckt Bildschirme ab und fängt gewöhnliche Eingaben ab. Sofort beenden, macOS-Sicherheitsdialoge und andere Systemfunktionen sind nicht abgedeckt. Nutze zum Schutz deiner Sitzung den macOS-Sperrbildschirm."
+        "Nein. BlackoutMac deckt Bildschirme ab und blockiert gewöhnliche Tastatur- und Mauseingaben. Automatisierungstools mit bereits erteilter Bedienungshilfen-Berechtigung, etwa über AX-APIs, können möglicherweise auch bei abgedeckten Bildschirmen andere Apps auslesen oder steuern. Das Passwort beschränkt nur das Aufheben der Blackout-Abdeckung; es sichert deine macOS-Sitzung nicht ab. Sofort beenden, macOS-Sicherheitsdialoge und andere Systemfunktionen sind nicht abgedeckt. Nutze zum Schutz deiner Sitzung den macOS-Sperrbildschirm."
       ],
       [
         "Die Eingabeberechtigung ist an. Warum startet die Abdeckung nicht?",
-        "Ein Update dieser ad hoc signierten Vorabversion kann die macOS-Freigabe für die vorherige App bestehen lassen. Wähle Blackout → „Blackout beenden“. Entferne Blackout aus der macOS-Eingabeberechtigungsliste (macOS 27: „Gerätesteuerung und Datenzugriff“; macOS 13–26: „Bedienungshilfen“), füge die aktuell installierte Blackout.app erneut hinzu und aktiviere sie. Öffne anschließend Blackout erneut."
+        "Wenn sich die Signieridentität ändert, auch beim Update von 0.1.0, kann macOS weiterhin die vorherige App freigeben; erteile die Berechtigung in diesem Fall einmal erneut. Wähle Blackout → „Blackout beenden“. Entferne Blackout aus der macOS-Eingabeberechtigungsliste (macOS 27: „Gerätesteuerung und Datenzugriff“; macOS 13–26: „Bedienungshilfen“), füge die aktuell installierte Blackout.app erneut hinzu und aktiviere sie. Öffne anschließend Blackout erneut."
       ]
     ],
     "status": "Vorabversion"
@@ -496,7 +496,7 @@
     "sections": [
       [
         "Installazione rapida",
-        "Scarica il DMG universale da GitHub Releases e trascina Blackout.app sul collegamento Applications. Avvia l’app. Se macOS blocca il primo avvio, verifica la provenienza e scegli «Apri comunque» nelle impostazioni di sicurezza macOS, se disponibile. Per aggiornare, scegli Blackout → «Esci da Blackout», sostituisci Blackout.app nella stessa cartella con la copia del nuovo DMG e riaprila. Password e lingua sono conservate separatamente. Questa anteprima usa una firma ad hoc, senza Developer ID. Dopo la sostituzione, il permesso può restare attivo per la vecchia app; segui i passaggi di rimozione e nuovo inserimento nelle domande frequenti. Le impostazioni mostrano la versione installata. «Verifica aggiornamenti…» consulta le versioni ufficiali GitHub solo quando premuto. Se è disponibile una versione più recente, «Apri pagina della versione…» apre la pagina di download. Nulla viene installato automaticamente."
+        "Scarica il DMG universale da GitHub Releases e trascina Blackout.app sul collegamento Applications. Avvia l’app. Se macOS blocca il primo avvio, verifica la provenienza e scegli «Apri comunque» nelle impostazioni di sicurezza macOS, se disponibile. Per aggiornare, scegli Blackout → «Esci da Blackout», sostituisci Blackout.app nella stessa cartella con la copia del nuovo DMG e riaprila. Password e lingua sono conservate separatamente. La versione 0.1.0 usa una firma ad hoc; dalla 0.1.1, le anteprime usano un certificato autofirmato fisso, senza firma Developer ID né autenticazione notarile Apple. Se il blocco degli input non funziona nonostante il permesso sia attivo, consulta le domande frequenti qui sotto. Le impostazioni mostrano la versione installata. «Verifica aggiornamenti…» consulta le versioni ufficiali GitHub solo quando premuto. Se è disponibile una versione più recente, «Apri pagina della versione…» apre la pagina di download. Nulla viene installato automaticamente."
       ],
       [
         "Consenti il blocco degli input",
@@ -508,7 +508,7 @@
       ],
       [
         "Password facoltativa",
-        "È disattivata per impostazione predefinita. Attivala nelle impostazioni del menu Blackout e inserisci la nuova password due volte. Per modificarla o disattivarla serve quella attuale. Quando è attiva, inseriscila per togliere la copertura. Scegli «Salva impostazioni password» per applicare le modifiche. Un piccolo lucchetto sull’icona della luna indica che la protezione con password è attiva."
+        "La protezione con password è disattivata per impostazione predefinita. Nelle impostazioni Blackout, attiva l’interruttore «Richiedi una password per ripristinare lo schermo» per aprire una finestra di configurazione e inserire la nuova password due volte. Disattivandolo si apre una finestra di conferma che richiede la password attuale. L’interruttore mostra lo stato salvato; annullare o un errore lo lascia invariato. Quando è attivo, il pulsante «Cambia password…» apre una finestra che richiede la password attuale e la nuova due volte. Usa il link «Password dimenticata…» per il recupero tramite autenticazione macOS. Un piccolo lucchetto sull’icona della luna indica che la protezione con password è attiva. La password limita soltanto la rimozione della copertura di Blackout; non protegge la sessione macOS. Scegliendo «Annulla» nella finestra di sblocco, gli schermi tornano neri. Per 2 secondi vengono ignorati gli input da tastiera e mouse che la riaprirebbero, evitando una riapertura immediata; poi riprende il comportamento normale."
       ],
       [
         "Avvio al login",
@@ -524,17 +524,17 @@
       ],
       [
         "Se qualcosa non funziona",
-        "Se il blocco degli input si interrompe, la copertura viene rimossa. Riapri «Apri impostazioni dei permessi di input…» dalle impostazioni Blackout, controlla il permesso e riavvia l’app. Se dimentichi la password o l’app non risponde, forza l’uscita o riavvia macOS. Ciò può rimuovere la copertura senza la password dell’app."
+        "Tieni premuto Escape per 3 secondi per rimuovere la copertura senza inserire la password dell’app. Se l’app non risponde, viene chiusa circa 1 secondo dopo; riapri Blackout se necessario. Se il blocco degli input si interrompe, la copertura viene rimossa. Riapri «Apri impostazioni dei permessi di input…» dalle impostazioni Blackout, controlla il permesso e riavvia l’app. Se hai dimenticato la password, scegli «Password dimenticata…» nelle impostazioni e autenticati con Touch ID o la password di accesso al Mac. Viene rimossa solo la password di Blackout; le altre preferenze restano invariate. Come ultima risorsa, forza l’uscita o riavvia macOS."
       ]
     ],
     "faqs": [
       [
         "È un blocco di sicurezza di macOS?",
-        "No. Copre gli schermi e intercetta gli input ordinari. Uscita forzata, schermate di sicurezza e altre funzioni di sistema non rientrano nelle sue garanzie. Per proteggere la sessione usa Blocca schermo di macOS."
+        "No. BlackoutMac copre gli schermi e blocca i normali input da tastiera e mouse. Gli strumenti di automazione con permessi di accessibilità già concessi, come quelli che usano le API AX, possono ancora leggere o controllare altre app mentre gli schermi sono coperti. La password limita soltanto la rimozione della copertura di Blackout; non protegge la sessione macOS. Uscita forzata, schermate di sicurezza e altre funzioni di sistema non rientrano nelle sue garanzie. Per proteggere la sessione usa Blocca schermo di macOS."
       ],
       [
         "Il permesso per gli input è attivo. Perché la copertura non parte?",
-        "Aggiornare questa anteprima con firma ad hoc può lasciare su macOS l’autorizzazione della vecchia app. Scegli Blackout → «Esci da Blackout». Nell’elenco dei permessi di input macOS (macOS 27: «Controllo del dispositivo e accesso ai dati»; macOS 13–26: «Accessibilità»), rimuovi Blackout, aggiungi di nuovo il Blackout.app attualmente installato e abilitalo. Poi riapri Blackout."
+        "Quando cambia l’identità di firma, anche aggiornando dalla 0.1.0, macOS può conservare l’autorizzazione della vecchia app; in questo caso, concedi nuovamente il permesso una volta. Scegli Blackout → «Esci da Blackout». Nell’elenco dei permessi di input macOS (macOS 27: «Controllo del dispositivo e accesso ai dati»; macOS 13–26: «Accessibilità»), rimuovi Blackout, aggiungi di nuovo il Blackout.app attualmente installato e abilitalo. Poi riapri Blackout."
       ]
     ],
     "status": "Versione di anteprima"
@@ -556,7 +556,7 @@
     "sections": [
       [
         "Instalação rápida",
-        "Baixe o DMG universal no GitHub Releases e arraste Blackout.app para o atalho Applications. Inicie o app. Se o macOS bloquear a primeira abertura, confira a origem e escolha «Abrir Mesmo Assim» nos ajustes de segurança do macOS, se disponível. Para atualizar, escolha Blackout → «Encerrar Blackout», substitua Blackout.app na mesma pasta pela cópia do novo DMG e abra novamente. Senha e idioma são guardados separadamente e mantidos. Esta prévia usa assinatura ad hoc, sem Developer ID. Após a substituição, a permissão pode continuar ativa para o app antigo; siga os passos de remover e adicionar novamente nas perguntas frequentes. As configurações mostram a versão instalada. «Buscar atualizações…» consulta as versões oficiais do GitHub só quando clicado. Se houver uma versão mais recente, «Abrir página da versão…» abre a página de download. Nada é instalado automaticamente."
+        "Baixe o DMG universal no GitHub Releases e arraste Blackout.app para o atalho Applications. Inicie o app. Se o macOS bloquear a primeira abertura, confira a origem e escolha «Abrir Mesmo Assim» nos ajustes de segurança do macOS, se disponível. Para atualizar, escolha Blackout → «Encerrar Blackout», substitua Blackout.app na mesma pasta pela cópia do novo DMG e abra novamente. Senha e idioma são guardados separadamente e mantidos. A versão 0.1.0 usa assinatura ad hoc; a partir da 0.1.1, as prévias usam um certificado autoassinado fixo, sem assinatura Developer ID nem notarização da Apple. Se o bloqueio de entrada falhar mesmo com a permissão ativada, consulte as perguntas frequentes abaixo. As configurações mostram a versão instalada. «Buscar atualizações…» consulta as versões oficiais do GitHub só quando clicado. Se houver uma versão mais recente, «Abrir página da versão…» abre a página de download. Nada é instalado automaticamente."
       ],
       [
         "Permitir o bloqueio de entrada",
@@ -568,7 +568,7 @@
       ],
       [
         "Senha, se você quiser",
-        "Desativada por padrão. Ative nas configurações do menu Blackout e digite a nova senha duas vezes. Alterar ou desativar exige a senha atual. Com a proteção ativa, digite a senha para remover a cobertura. Escolha «Salvar ajustes de senha» para aplicar as mudanças. Um pequeno cadeado no ícone de lua indica que a proteção por senha está ativa."
+        "A proteção por senha vem desativada. Nas configurações do Blackout, ative o interruptor «Exigir senha para restaurar a tela» para abrir o diálogo de configuração e digitar a nova senha duas vezes. Ao desativá-lo, abre-se um diálogo de confirmação que exige a senha atual. O interruptor mostra o estado salvo; cancelar ou ocorrer um erro não o altera. Com a proteção ativa, o botão «Alterar senha…» abre um diálogo que pede a senha atual e a nova senha duas vezes. Use o link «Esqueci a senha…» para recuperar o acesso com autenticação do macOS. Um pequeno cadeado no ícone de lua indica que a proteção por senha está ativa. A senha limita apenas a remoção da cobertura do Blackout; ela não protege sua sessão do macOS. Escolher «Cancelar» no diálogo de desbloqueio mantém as telas pretas. As entradas do teclado e do mouse que reabririam o diálogo são ignoradas por 2 segundos para evitar a reabertura imediata; depois o comportamento normal é retomado."
       ],
       [
         "Iniciar ao entrar",
@@ -584,17 +584,17 @@
       ],
       [
         "Se algo travar",
-        "Se o bloqueio de entrada falhar, a cobertura é removida. Reabra «Abrir ajustes de permissão de entrada…» nas configurações do Blackout, confira a permissão e reinicie o app. Se esquecer a senha ou o app não responder, force o encerramento ou reinicie o macOS. Isso pode remover a cobertura sem a senha do app."
+        "Mantenha Escape pressionado por 3 segundos para remover a cobertura sem digitar a senha do app. Se o app não responder, ele será encerrado cerca de 1 segundo depois; reabra o Blackout se necessário. Se o bloqueio de entrada falhar, a cobertura é removida. Reabra «Abrir ajustes de permissão de entrada…» nas configurações do Blackout, confira a permissão e reinicie o app. Se esqueceu a senha, escolha «Esqueci a senha…» nas configurações e autentique-se com Touch ID ou a senha de login do Mac. Isso remove apenas a senha do Blackout e mantém as outras preferências. Como último recurso, force o encerramento ou reinicie o macOS."
       ]
     ],
     "faqs": [
       [
         "É um bloqueio de segurança do macOS?",
-        "Não. Cobre as telas e intercepta entradas comuns. Forçar Encerrar, telas de segurança e outras funções do sistema ficam fora da garantia. Use Bloquear Tela do macOS para proteger sua sessão."
+        "Não. O BlackoutMac cobre as telas e bloqueia entradas comuns do teclado e do mouse. Ferramentas de automação com permissão de acessibilidade já concedida, como as que usam APIs AX, ainda podem ler ou controlar outros apps enquanto as telas estão cobertas. A senha limita apenas a remoção da cobertura do Blackout; ela não protege sua sessão do macOS. Forçar Encerrar, telas de segurança e outras funções do sistema ficam fora da garantia. Use Bloquear Tela do macOS para proteger sua sessão."
       ],
       [
         "A permissão de entrada está ativa. Por que as telas não são cobertas?",
-        "Atualizar esta prévia com assinatura ad hoc pode deixar no macOS a aprovação do app anterior. Escolha Blackout → «Encerrar Blackout». Na lista de permissões de entrada do macOS (macOS 27: «Controle do Dispositivo e Acesso a Dados»; macOS 13–26: «Acessibilidade»), remova Blackout, adicione novamente o Blackout.app atualmente instalado e permita o acesso. Depois reabra Blackout."
+        "Quando a identidade de assinatura muda, inclusive ao atualizar da 0.1.0, o macOS pode manter a aprovação do app anterior; nesse caso, conceda a permissão novamente uma vez. Escolha Blackout → «Encerrar Blackout». Na lista de permissões de entrada do macOS (macOS 27: «Controle do Dispositivo e Acesso a Dados»; macOS 13–26: «Acessibilidade»), remova Blackout, adicione novamente o Blackout.app atualmente instalado e permita o acesso. Depois reabra Blackout."
       ]
     ],
     "status": "Versão de prévia"
@@ -616,7 +616,7 @@
     "sections": [
       [
         "Instalação rápida",
-        "Descarregue o DMG universal do GitHub Releases e arraste Blackout.app para o atalho Applications. Inicie a aplicação. Se o macOS bloquear a primeira abertura, confirme a origem e escolha «Abrir» nas definições de segurança do macOS, se disponível. Para atualizar, escolha Blackout → «Sair do Blackout», substitua Blackout.app na mesma pasta pela cópia do novo DMG e volte a abrir. A palavra-passe e o idioma são guardados separadamente e mantidos. Esta pré-visualização usa uma assinatura ad hoc, sem Developer ID. Após a substituição, a permissão pode continuar ativa para a aplicação antiga; siga os passos de remover e voltar a adicionar nas perguntas frequentes. As definições mostram a versão instalada. «Procurar atualizações…» consulta as versões oficiais do GitHub apenas quando clicado. Se houver uma versão mais recente, «Abrir página da versão…» abre a página de descarga. Nada é instalado automaticamente."
+        "Descarregue o DMG universal do GitHub Releases e arraste Blackout.app para o atalho Applications. Inicie a aplicação. Se o macOS bloquear a primeira abertura, confirme a origem e escolha «Abrir» nas definições de segurança do macOS, se disponível. Para atualizar, escolha Blackout → «Sair do Blackout», substitua Blackout.app na mesma pasta pela cópia do novo DMG e volte a abrir. A palavra-passe e o idioma são guardados separadamente e mantidos. A versão 0.1.0 usa uma assinatura ad hoc; a partir da 0.1.1, as pré-visualizações usam um certificado autoassinado fixo, sem assinatura Developer ID nem notarização da Apple. Se o bloqueio de entrada falhar apesar da permissão ativa, consulte as perguntas frequentes abaixo. As definições mostram a versão instalada. «Procurar atualizações…» consulta as versões oficiais do GitHub apenas quando clicado. Se houver uma versão mais recente, «Abrir página da versão…» abre a página de descarga. Nada é instalado automaticamente."
       ],
       [
         "Permitir o bloqueio de entrada",
@@ -628,7 +628,7 @@
       ],
       [
         "Palavra-passe opcional",
-        "Está desativada por predefinição. Ative-a nas definições do menu Blackout e introduza a nova palavra-passe duas vezes. Alterar ou desativar exige a palavra-passe atual. Com a proteção ativa, introduza-a para retirar a cobertura. Escolha «Guardar definições de palavra-passe» para aplicar as alterações. Um pequeno cadeado no ícone da lua indica que a proteção por palavra-passe está ativa."
+        "A proteção por palavra-passe está desativada por predefinição. Nas definições do Blackout, ative o interruptor «Exigir palavra-passe para restaurar o ecrã» para abrir o diálogo de configuração e introduzir a nova palavra-passe duas vezes. Ao desativá-lo, abre-se um diálogo de confirmação que exige a palavra-passe atual. O interruptor mostra o estado guardado; cancelar ou ocorrer um erro não o altera. Com a proteção ativa, o botão «Alterar palavra-passe…» abre um diálogo que pede a palavra-passe atual e a nova duas vezes. Use a ligação «Esqueci-me da palavra-passe…» para recuperar o acesso com autenticação do macOS. Um pequeno cadeado no ícone da lua indica que a proteção por palavra-passe está ativa. A palavra-passe limita apenas a remoção da cobertura do Blackout; não protege a sessão do macOS. Escolher «Cancelar» no diálogo de desbloqueio mantém os ecrãs pretos. As entradas do teclado e do rato que reabririam o diálogo são ignoradas durante 2 segundos para evitar a reabertura imediata; depois o comportamento normal é retomado."
       ],
       [
         "Iniciar ao iniciar sessão",
@@ -644,17 +644,17 @@
       ],
       [
         "Se algo deixar de responder",
-        "Se o bloqueio de entrada falhar, a cobertura é retirada. Volte a abrir «Abrir definições de permissão de entrada…» nas definições do Blackout, confirme a permissão e reinicie a aplicação. Se esquecer a palavra-passe ou a aplicação não responder, force a saída ou reinicie o macOS. Isso pode retirar a cobertura sem a palavra-passe da aplicação."
+        "Mantenha Escape premido durante 3 segundos para retirar a cobertura sem introduzir a palavra-passe da aplicação. Se a aplicação não responder, é encerrada cerca de 1 segundo depois; reabra o Blackout se necessário. Se o bloqueio de entrada falhar, a cobertura é retirada. Volte a abrir «Abrir definições de permissão de entrada…» nas definições do Blackout, confirme a permissão e reinicie a aplicação. Se esqueceu a palavra-passe, escolha «Esqueci-me da palavra-passe…» nas definições e autentique-se com Touch ID ou a palavra-passe de início de sessão do Mac. Isto remove apenas a palavra-passe do Blackout e preserva as outras preferências. Como último recurso, force a saída ou reinicie o macOS."
       ]
     ],
     "faqs": [
       [
         "É um bloqueio de segurança do macOS?",
-        "Não. Cobre os ecrãs e interceta entradas habituais. Forçar saída, ecrãs de segurança e outras funções do sistema ficam fora da garantia. Use Bloquear ecrã do macOS para proteger a sessão."
+        "Não. O BlackoutMac cobre os ecrãs e bloqueia entradas habituais do teclado e do rato. As ferramentas de automatização com permissão de acessibilidade já concedida, como as que usam APIs AX, podem continuar a ler ou controlar outras aplicações enquanto os ecrãs estão cobertos. A palavra-passe limita apenas a remoção da cobertura do Blackout; não protege a sessão do macOS. Forçar saída, ecrãs de segurança e outras funções do sistema ficam fora da garantia. Use Bloquear ecrã do macOS para proteger a sessão."
       ],
       [
         "A permissão de entrada está ativa. Porque não são cobertos os ecrãs?",
-        "Atualizar esta pré-visualização com assinatura ad hoc pode deixar no macOS a aprovação da aplicação anterior. Escolha Blackout → «Sair do Blackout». Na lista de permissões de entrada do macOS (macOS 27: «Controlo do dispositivo e acesso a dados»; macOS 13–26: «Acessibilidade»), remova Blackout, volte a adicionar o Blackout.app atualmente instalado e permita o acesso. Depois volte a abrir Blackout."
+        "Quando a identidade de assinatura muda, incluindo ao atualizar da 0.1.0, o macOS pode manter a aprovação da aplicação anterior; nesse caso, conceda novamente a permissão uma vez. Escolha Blackout → «Sair do Blackout». Na lista de permissões de entrada do macOS (macOS 27: «Controlo do dispositivo e acesso a dados»; macOS 13–26: «Acessibilidade»), remova Blackout, volte a adicionar o Blackout.app atualmente instalado e permita o acesso. Depois volte a abrir Blackout."
       ]
     ],
     "status": "Versão de pré-visualização"
@@ -676,7 +676,7 @@
     "sections": [
       [
         "Быстрая установка",
-        "Скачайте универсальный DMG из GitHub Releases и перенесите Blackout.app на ярлык Applications. Запустите приложение. Если macOS блокирует первый запуск, проверьте источник и выберите «Все равно открыть» в настройках безопасности macOS, если кнопка доступна. Для обновления выберите Blackout → «Завершить Blackout», замените Blackout.app в той же папке копией из нового DMG и откройте снова. Пароль и язык сохраняются отдельно и остаются. Эта предварительная версия подписана ad hoc, без Developer ID. После замены разрешение может оставаться включённым для старого приложения; выполните удаление и повторное добавление из FAQ ниже. В настройках показана установленная версия. «Проверить обновления…» проверяет официальные выпуски GitHub только по нажатию. Если доступна более новая версия, «Открыть страницу релиза…» открывает страницу загрузки. Автоматической установки нет."
+        "Скачайте универсальный DMG из GitHub Releases и перенесите Blackout.app на ярлык Applications. Запустите приложение. Если macOS блокирует первый запуск, проверьте источник и выберите «Все равно открыть» в настройках безопасности macOS, если кнопка доступна. Для обновления выберите Blackout → «Завершить Blackout», замените Blackout.app в той же папке копией из нового DMG и откройте снова. Пароль и язык сохраняются отдельно и остаются. Версия 0.1.0 подписана ad hoc; начиная с 0.1.1 предварительные версии используют постоянный самоподписанный сертификат, без подписи Developer ID и нотариального заверения Apple. Если блокировка ввода не работает при включённом разрешении, см. FAQ ниже. В настройках показана установленная версия. «Проверить обновления…» проверяет официальные выпуски GitHub только по нажатию. Если доступна более новая версия, «Открыть страницу релиза…» открывает страницу загрузки. Автоматической установки нет."
       ],
       [
         "Разрешите блокировку ввода",
@@ -688,7 +688,7 @@
       ],
       [
         "Пароль по желанию",
-        "По умолчанию отключён. Включите его в настройках меню Blackout и введите новый пароль дважды. Для изменения или отключения нужен текущий пароль. Если защита включена, введите пароль, чтобы убрать чёрное покрытие. Нажмите «Сохранить настройки пароля», чтобы применить изменения. Маленький замок на значке луны означает, что защита паролем включена."
+        "По умолчанию защита паролем отключена. В настройках Blackout включите переключатель «Требовать пароль для восстановления экрана», чтобы открыть диалог настройки и дважды ввести новый пароль. При выключении откроется диалог подтверждения, требующий текущий пароль. Переключатель показывает сохранённое состояние; отмена или ошибка оставляет его без изменений. При включённой защите кнопка «Изменить пароль…» открывает диалог для ввода текущего пароля и нового пароля дважды. Ссылка «Забыли пароль…» позволяет восстановить доступ после подтверждения личности в macOS. Маленький замок на значке луны означает, что защита паролем включена. Пароль ограничивает только снятие покрытия Blackout и не защищает сеанс macOS. Кнопка «Отмена» в диалоге разблокировки возвращает чёрный экран. В течение 2 секунд ввод с клавиатуры и мыши для повторного открытия диалога игнорируется, чтобы он не появился сразу; затем обычная реакция на ввод восстанавливается."
       ],
       [
         "Запуск при входе",
@@ -704,17 +704,17 @@
       ],
       [
         "Если возникла проблема",
-        "При потере блокировки ввода покрытие снимается. Снова откройте «Открыть настройки разрешений ввода…» в настройках Blackout, проверьте разрешение и перезапустите приложение. Если пароль забыт или приложение зависло, принудительно завершите его либо перезапустите macOS. Это может снять покрытие без пароля приложения."
+        "Удерживайте Escape 3 секунды, чтобы снять покрытие без ввода пароля приложения. Если приложение не отвечает, оно будет завершено примерно через 1 секунду после этого; при необходимости снова откройте Blackout. При потере блокировки ввода покрытие снимается. Снова откройте «Открыть настройки разрешений ввода…» в настройках Blackout, проверьте разрешение и перезапустите приложение. Если пароль забыт, выберите «Забыли пароль…» в настройках и подтвердите личность с помощью Touch ID или пароля входа на Mac. Будет удалён только пароль Blackout; остальные настройки сохранятся. В крайнем случае можно принудительно завершить приложение или перезапустить macOS."
       ]
     ],
     "faqs": [
       [
         "Это защитная блокировка macOS?",
-        "Нет. Приложение закрывает экраны и перехватывает обычный ввод. Принудительное завершение, системные экраны безопасности и другие функции macOS не входят в его гарантии. Для защиты сеанса используйте блокировку экрана macOS."
+        "Нет. BlackoutMac закрывает экраны и блокирует обычный ввод с клавиатуры и мыши. Средства автоматизации, уже получившие разрешение универсального доступа, например использующие API AX, могут по-прежнему читать данные других приложений или управлять ими, пока экраны закрыты. Пароль ограничивает только снятие покрытия Blackout и не защищает сеанс macOS. Принудительное завершение, системные экраны безопасности и другие функции macOS не входят в его гарантии. Для защиты сеанса используйте блокировку экрана macOS."
       ],
       [
         "Разрешение ввода включено. Почему экраны не закрываются?",
-        "Обновление этой версии с подписью ad hoc может оставить в macOS разрешение для предыдущего приложения. Выберите Blackout → «Завершить Blackout». В списке разрешений ввода macOS (macOS 27: «Управление устройством и доступ к данным»; macOS 13–26: «Универсальный доступ») удалите Blackout, снова добавьте установленный сейчас Blackout.app и разрешите доступ. Затем снова запустите Blackout."
+        "При смене идентификатора подписи, в том числе при обновлении с 0.1.0, macOS может сохранить разрешение для предыдущего приложения; в этом случае выдайте разрешение повторно один раз. Выберите Blackout → «Завершить Blackout». В списке разрешений ввода macOS (macOS 27: «Управление устройством и доступ к данным»; macOS 13–26: «Универсальный доступ») удалите Blackout, снова добавьте установленный сейчас Blackout.app и разрешите доступ. Затем снова запустите Blackout."
       ]
     ],
     "status": "Предварительная версия"
@@ -736,7 +736,7 @@
     "sections": [
       [
         "Швидке встановлення",
-        "Завантажте універсальний DMG із GitHub Releases і перетягніть Blackout.app на ярлик Applications. Запустіть програму. Якщо macOS блокує перший запуск, перевірте джерело й виберіть «Все одно відкрити» у параметрах безпеки macOS, якщо кнопка доступна. Для оновлення виберіть Blackout → «Завершити Blackout», замініть Blackout.app у тій самій папці копією з нового DMG та відкрийте знову. Пароль і мова зберігаються окремо та залишаються. Ця попередня версія має підпис ad hoc, без Developer ID. Після заміни дозвіл може залишатися ввімкненим для старої програми; виконайте видалення й повторне додавання з FAQ нижче. У параметрах показано встановлену версію. «Перевірити оновлення…» перевіряє офіційні випуски GitHub лише після натискання. Якщо доступна новіша версія, «Відкрити сторінку випуску…» відкриває сторінку завантаження. Автоматичного встановлення немає."
+        "Завантажте універсальний DMG із GitHub Releases і перетягніть Blackout.app на ярлик Applications. Запустіть програму. Якщо macOS блокує перший запуск, перевірте джерело й виберіть «Все одно відкрити» у параметрах безпеки macOS, якщо кнопка доступна. Для оновлення виберіть Blackout → «Завершити Blackout», замініть Blackout.app у тій самій папці копією з нового DMG та відкрийте знову. Пароль і мова зберігаються окремо та залишаються. Версія 0.1.0 має підпис ad hoc; починаючи з 0.1.1 попередні версії використовують постійний самопідписаний сертифікат, без підпису Developer ID і нотаріального засвідчення Apple. Якщо блокування введення не працює за ввімкненого дозволу, див. FAQ нижче. У параметрах показано встановлену версію. «Перевірити оновлення…» перевіряє офіційні випуски GitHub лише після натискання. Якщо доступна новіша версія, «Відкрити сторінку випуску…» відкриває сторінку завантаження. Автоматичного встановлення немає."
       ],
       [
         "Дозвольте блокування введення",
@@ -748,7 +748,7 @@
       ],
       [
         "Пароль за бажанням",
-        "Типово вимкнений. Увімкніть у параметрах меню Blackout та введіть новий пароль двічі. Для зміни чи вимкнення потрібен поточний пароль. Коли захист увімкнено, введіть пароль, щоб прибрати накриття. Натисніть «Зберегти параметри пароля», щоб застосувати зміни. Маленький замок на значку місяця означає, що захист паролем увімкнено."
+        "Типово захист паролем вимкнено. У параметрах Blackout увімкніть перемикач «Вимагати пароль для відновлення екрана», щоб відкрити діалог налаштування й двічі ввести новий пароль. Вимкнення відкриває діалог підтвердження, який потребує поточного пароля. Перемикач показує збережений стан; скасування або помилка не змінює його. Коли захист увімкнено, кнопка «Змінити пароль…» відкриває діалог для введення поточного пароля й нового пароля двічі. Посилання «Забули пароль…» дає змогу відновити доступ після підтвердження особи в macOS. Маленький замок на значку місяця означає, що захист паролем увімкнено. Пароль обмежує лише зняття накриття Blackout і не захищає сеанс macOS. Кнопка «Скасувати» у діалозі розблокування повертає чорний екран. Протягом 2 секунд введення з клавіатури та миші для повторного відкриття діалогу ігнорується, щоб він не з’явився одразу; потім звичайна реакція на введення відновлюється."
       ],
       [
         "Запуск під час входу",
@@ -764,17 +764,17 @@
       ],
       [
         "Якщо виникла проблема",
-        "Якщо блокування введення припиняється, накриття прибирається. Знову відкрийте «Відкрити параметри дозволів введення…» у параметрах Blackout, перевірте дозвіл і перезапустіть програму. Якщо пароль забуто або програма не відповідає, примусово завершіть її чи перезапустіть macOS. Це може зняти накриття без пароля програми."
+        "Утримуйте Escape 3 секунди, щоб зняти накриття без введення пароля програми. Якщо програма не відповідає, її буде завершено приблизно через 1 секунду після цього; за потреби відкрийте Blackout знову. Якщо блокування введення припиняється, накриття прибирається. Знову відкрийте «Відкрити параметри дозволів введення…» у параметрах Blackout, перевірте дозвіл і перезапустіть програму. Якщо забули пароль, виберіть «Забули пароль…» у параметрах і підтвердьте особу за допомогою Touch ID або пароля входу на Mac. Буде видалено лише пароль Blackout; інші параметри збережуться. Як крайній захід можна примусово завершити програму або перезапустити macOS."
       ]
     ],
     "faqs": [
       [
         "Це захисне блокування macOS?",
-        "Ні. Програма накриває екрани й перехоплює звичайне введення. Примусове завершення, екрани безпеки та інші системні функції поза її гарантіями. Для захисту сеансу використовуйте блокування екрана macOS."
+        "Ні. BlackoutMac накриває екрани й блокує звичайне введення з клавіатури та миші. Засоби автоматизації, які вже отримали дозвіл доступності, наприклад ті, що використовують API AX, можуть і далі читати дані інших програм або керувати ними, поки екрани накриті. Пароль обмежує лише зняття накриття Blackout і не захищає сеанс macOS. Примусове завершення, екрани безпеки та інші системні функції поза її гарантіями. Для захисту сеансу використовуйте блокування екрана macOS."
       ],
       [
         "Дозвіл введення ввімкнено. Чому екрани не закриваються?",
-        "Оновлення цієї версії з підписом ad hoc може залишити в macOS дозвіл для попередньої програми. Виберіть Blackout → «Завершити Blackout». У списку дозволів введення macOS (macOS 27: «Керування пристроями й доступ до даних»; macOS 13–26: «Доступність») видаліть Blackout, знову додайте встановлений зараз Blackout.app і дозвольте доступ. Потім знову запустіть Blackout."
+        "Коли змінюється ідентифікатор підпису, зокрема під час оновлення з 0.1.0, macOS може зберегти дозвіл для попередньої програми; у такому разі надайте дозвіл повторно один раз. Виберіть Blackout → «Завершити Blackout». У списку дозволів введення macOS (macOS 27: «Керування пристроями й доступ до даних»; macOS 13–26: «Доступність») видаліть Blackout, знову додайте встановлений зараз Blackout.app і дозвольте доступ. Потім знову запустіть Blackout."
       ]
     ],
     "status": "Попередня версія"
@@ -796,7 +796,7 @@
     "sections": [
       [
         "Szybka instalacja",
-        "Pobierz uniwersalny DMG z GitHub Releases i przeciągnij Blackout.app na skrót Applications. Uruchom aplikację. Jeśli macOS blokuje pierwszy start, sprawdź źródło i wybierz „Otwórz mimo to” w ustawieniach bezpieczeństwa macOS, jeśli opcja jest dostępna. Aby zaktualizować, wybierz Blackout → „Zakończ Blackout”, zastąp Blackout.app w tym samym folderze kopią z nowego DMG i otwórz ponownie. Hasło i język są zapisane osobno i zostają zachowane. Ta wersja testowa ma podpis ad hoc, bez Developer ID. Po zastąpieniu uprawnienie może pozostać włączone dla starej aplikacji; wykonaj usunięcie i ponowne dodanie opisane w pytaniach poniżej. Ustawienia pokazują zainstalowaną wersję. „Sprawdź uaktualnienia…” sprawdza oficjalne wydania GitHub tylko po kliknięciu. Jeśli dostępne jest nowsze wydanie, „Otwórz stronę wydania…” otwiera stronę pobierania. Nic nie instaluje się automatycznie."
+        "Pobierz uniwersalny DMG z GitHub Releases i przeciągnij Blackout.app na skrót Applications. Uruchom aplikację. Jeśli macOS blokuje pierwszy start, sprawdź źródło i wybierz „Otwórz mimo to” w ustawieniach bezpieczeństwa macOS, jeśli opcja jest dostępna. Aby zaktualizować, wybierz Blackout → „Zakończ Blackout”, zastąp Blackout.app w tym samym folderze kopią z nowego DMG i otwórz ponownie. Hasło i język są zapisane osobno i zostają zachowane. Wersja 0.1.0 ma podpis ad hoc; od wersji 0.1.1 wydania testowe używają stałego certyfikatu z podpisem własnym, bez podpisu Developer ID ani notaryzacji Apple. Jeśli blokowanie wejścia nie działa mimo włączonego uprawnienia, sprawdź pytania poniżej. Ustawienia pokazują zainstalowaną wersję. „Sprawdź uaktualnienia…” sprawdza oficjalne wydania GitHub tylko po kliknięciu. Jeśli dostępne jest nowsze wydanie, „Otwórz stronę wydania…” otwiera stronę pobierania. Nic nie instaluje się automatycznie."
       ],
       [
         "Zezwól na blokowanie wejścia",
@@ -808,7 +808,7 @@
       ],
       [
         "Hasło według uznania",
-        "Domyślnie wyłączone. Włącz je w ustawieniach menu Blackout i wpisz nowe hasło dwukrotnie. Zmiana lub wyłączenie wymaga bieżącego hasła. Gdy ochrona jest aktywna, wpisz hasło, aby odsłonić ekrany. Wybierz „Zachowaj ustawienia hasła”, aby zastosować zmiany. Mała kłódka przy ikonie księżyca oznacza włączoną ochronę hasłem."
+        "Ochrona hasłem jest domyślnie wyłączona. W ustawieniach Blackout włącz przełącznik „Wymagaj hasła, aby przywrócić ekran”, aby otworzyć okno konfiguracji i wpisać nowe hasło dwukrotnie. Wyłączenie przełącznika otwiera okno potwierdzenia wymagające bieżącego hasła. Przełącznik pokazuje zapisany stan; anulowanie lub błąd pozostawia go bez zmian. Gdy ochrona jest włączona, przycisk „Zmień hasło…” otwiera okno wymagające bieżącego hasła i dwukrotnego wpisania nowego. Użyj odnośnika „Nie pamiętam hasła…”, aby odzyskać dostęp po uwierzytelnieniu w macOS. Mała kłódka przy ikonie księżyca oznacza włączoną ochronę hasłem. Hasło ogranicza tylko usuwanie zasłony Blackout; nie zabezpiecza sesji macOS. Wybranie „Anuluj” w oknie odblokowania pozostawia ekrany czarne. Przez 2 sekundy wejście z klawiatury i myszy, które ponownie otworzyłoby okno, jest ignorowane, aby zapobiec jego natychmiastowemu powrotowi; potem wraca zwykłe działanie."
       ],
       [
         "Uruchamianie przy logowaniu",
@@ -824,17 +824,17 @@
       ],
       [
         "W razie problemów",
-        "Gdy blokada wejścia zawiedzie, zasłona znika. Ponownie otwórz „Otwórz ustawienia uprawnień wejścia…” w ustawieniach Blackout, sprawdź uprawnienie i uruchom aplikację ponownie. Jeśli zapomnisz hasła lub aplikacja nie odpowiada, wymuś zakończenie albo uruchom macOS ponownie. Może to usunąć zasłonę bez hasła aplikacji."
+        "Przytrzymaj Escape przez 3 sekundy, aby usunąć zasłonę bez podawania hasła aplikacji. Jeśli aplikacja nie odpowiada, zostanie zakończona około 1 sekundę później; w razie potrzeby otwórz Blackout ponownie. Gdy blokada wejścia zawiedzie, zasłona znika. Ponownie otwórz „Otwórz ustawienia uprawnień wejścia…” w ustawieniach Blackout, sprawdź uprawnienie i uruchom aplikację ponownie. Jeśli nie pamiętasz hasła, wybierz „Nie pamiętam hasła…” w ustawieniach i uwierzytelnij się przez Touch ID lub hasłem logowania do Maca. Usunięte zostanie tylko hasło Blackout; pozostałe preferencje zostaną zachowane. W ostateczności wymuś zakończenie aplikacji lub uruchom macOS ponownie."
       ]
     ],
     "faqs": [
       [
         "Czy to blokada bezpieczeństwa macOS?",
-        "Nie. Aplikacja zasłania ekrany i przechwytuje zwykłe wejście. Wymuszanie zakończenia, ekrany bezpieczeństwa i inne funkcje systemu nie są objęte gwarancją. Do ochrony sesji używaj blokady ekranu macOS."
+        "Nie. BlackoutMac zasłania ekrany i blokuje zwykłe wejście z klawiatury i myszy. Narzędzia automatyzacji, którym wcześniej przyznano uprawnienia dostępności, na przykład korzystające z API AX, mogą nadal odczytywać dane innych aplikacji lub nimi sterować, gdy ekrany są zasłonięte. Hasło ogranicza tylko usuwanie zasłony Blackout; nie zabezpiecza sesji macOS. Wymuszanie zakończenia, ekrany bezpieczeństwa i inne funkcje systemu nie są objęte gwarancją. Do ochrony sesji używaj blokady ekranu macOS."
       ],
       [
         "Uprawnienie wejścia jest włączone. Dlaczego ekrany nie są zasłaniane?",
-        "Aktualizacja tej wersji z podpisem ad hoc może pozostawić w macOS zgodę dla poprzedniej aplikacji. Wybierz Blackout → „Zakończ Blackout”. Na liście uprawnień wejścia macOS (macOS 27: „Sterowanie urządzeniami i dostęp do danych”; macOS 13–26: „Dostępność”) usuń Blackout, dodaj ponownie aktualnie zainstalowany Blackout.app i włącz uprawnienie. Następnie ponownie uruchom Blackout."
+        "Po zmianie tożsamości podpisu, także przy aktualizacji z 0.1.0, macOS może zachować zgodę dla poprzedniej aplikacji; w takim przypadku nadaj uprawnienie ponownie jeden raz. Wybierz Blackout → „Zakończ Blackout”. Na liście uprawnień wejścia macOS (macOS 27: „Sterowanie urządzeniami i dostęp do danych”; macOS 13–26: „Dostępność”) usuń Blackout, dodaj ponownie aktualnie zainstalowany Blackout.app i włącz uprawnienie. Następnie ponownie uruchom Blackout."
       ]
     ],
     "status": "Wersja testowa"
@@ -856,7 +856,7 @@
     "sections": [
       [
         "Snel geïnstalleerd",
-        "Download de universele DMG via GitHub Releases en sleep Blackout.app naar de snelkoppeling Applications. Start de app. Blokkeert macOS de eerste start, controleer dan de herkomst en kies indien beschikbaar ‘Open toch’ in de macOS-beveiligingsinstellingen. Voor een update kies je Blackout → ‘Stop Blackout’, vervang je Blackout.app in dezelfde map door de kopie uit de nieuwe DMG en open je de app opnieuw. Wachtwoord en taal worden apart bewaard en blijven behouden. Deze voorlopige versie is ad hoc ondertekend, zonder Developer ID. Na vervanging kan toestemming nog voor de oude app aanstaan; volg het verwijderen en opnieuw toevoegen in de vragen hieronder. Instellingen toont de geïnstalleerde versie. ‘Zoek naar updates…’ controleert officiële GitHub-releases alleen na een klik. Bij een nieuwere release opent ‘Open versiepagina…’ de downloadpagina. Niets wordt automatisch geïnstalleerd."
+        "Download de universele DMG via GitHub Releases en sleep Blackout.app naar de snelkoppeling Applications. Start de app. Blokkeert macOS de eerste start, controleer dan de herkomst en kies indien beschikbaar ‘Open toch’ in de macOS-beveiligingsinstellingen. Voor een update kies je Blackout → ‘Stop Blackout’, vervang je Blackout.app in dezelfde map door de kopie uit de nieuwe DMG en open je de app opnieuw. Wachtwoord en taal worden apart bewaard en blijven behouden. Versie 0.1.0 is ad hoc ondertekend; vanaf 0.1.1 gebruiken voorlopige versies een vast zelfondertekend certificaat, zonder Developer ID-handtekening of notarisatie door Apple. Werkt invoerblokkering niet ondanks ingeschakelde toestemming, raadpleeg dan de vragen hieronder. Instellingen toont de geïnstalleerde versie. ‘Zoek naar updates…’ controleert officiële GitHub-releases alleen na een klik. Bij een nieuwere release opent ‘Open versiepagina…’ de downloadpagina. Niets wordt automatisch geïnstalleerd."
       ],
       [
         "Invoerblokkering toestaan",
@@ -868,7 +868,7 @@
       ],
       [
         "Een wachtwoord naar keuze",
-        "Standaard uitgeschakeld. Schakel het in via de instellingen in het Blackout-menu en voer het nieuwe wachtwoord tweemaal in. Wijzigen of uitschakelen vereist het huidige wachtwoord. Voer bij ingeschakelde bescherming je wachtwoord in om de afdekking te verwijderen. Kies ‘Bewaar wachtwoordinstellingen’ om wijzigingen toe te passen. Een klein slot op het maansymbool geeft aan dat wachtwoordbeveiliging actief is."
+        "Wachtwoordbeveiliging staat standaard uit. Zet in de Blackout-instellingen de schakelaar ‘Vereis een wachtwoord om het scherm te herstellen’ aan om een insteldialoog te openen en het nieuwe wachtwoord twee keer in te voeren. Uitzetten opent een bevestigingsdialoog die het huidige wachtwoord vereist. De schakelaar toont de opgeslagen stand; annuleren of een fout verandert deze niet. Als de beveiliging aanstaat, opent de knop ‘Wachtwoord wijzigen…’ een dialoog voor het huidige wachtwoord en tweemaal het nieuwe. Gebruik de link ‘Wachtwoord vergeten…’ om de toegang te herstellen met macOS-authenticatie. Een klein slot op het maansymbool geeft aan dat wachtwoordbeveiliging actief is. Het wachtwoord beperkt alleen het verwijderen van de Blackout-afdekking; het beveiligt je macOS-sessie niet. Met ‘Annuleer’ in het ontgrendelingsvenster blijven de schermen zwart. Toetsenbord- en muisinvoer die het venster zou heropenen, wordt 2 seconden genegeerd om direct heropenen te voorkomen; daarna werkt het weer zoals normaal."
       ],
       [
         "Starten bij inloggen",
@@ -884,17 +884,17 @@
       ],
       [
         "Als iets vastloopt",
-        "Valt de invoerblokkering weg, dan verdwijnt de afdekking. Open ‘Open instellingen voor invoertoestemming…’ opnieuw in de Blackout-instellingen, controleer de toestemming en herstart de app. Bij een vergeten wachtwoord of vastgelopen app kun je geforceerd stoppen of macOS herstarten. Dit kan de afdekking zonder app-wachtwoord beëindigen."
+        "Houd Escape 3 seconden ingedrukt om de afdekking zonder het appwachtwoord te verwijderen. Als de app niet reageert, wordt deze ongeveer 1 seconde later afgesloten; open Blackout indien nodig opnieuw. Valt de invoerblokkering weg, dan verdwijnt de afdekking. Open ‘Open instellingen voor invoertoestemming…’ opnieuw in de Blackout-instellingen, controleer de toestemming en herstart de app. Kies bij een vergeten wachtwoord ‘Wachtwoord vergeten…’ in Instellingen en bevestig je identiteit met Touch ID of het inlogwachtwoord van je Mac. Alleen het Blackout-wachtwoord wordt verwijderd; andere voorkeuren blijven behouden. Als laatste mogelijkheid kun je de app geforceerd stoppen of macOS herstarten."
       ]
     ],
     "faqs": [
       [
         "Is dit een macOS-beveiligingsslot?",
-        "Nee. De app dekt schermen af en onderschept gewone invoer. Geforceerd stoppen, beveiligingsschermen en andere systeemfuncties vallen buiten de garantie. Gebruik het macOS-toegangsscherm om je sessie te beveiligen."
+        "Nee. BlackoutMac dekt schermen af en blokkeert gewone toetsenbord- en muisinvoer. Automatiseringstools die al toestemming voor toegankelijkheid hebben, zoals tools die AX-API’s gebruiken, kunnen mogelijk nog steeds andere apps uitlezen of bedienen terwijl de schermen zijn afgedekt. Het wachtwoord beperkt alleen het verwijderen van de Blackout-afdekking; het beveiligt je macOS-sessie niet. Geforceerd stoppen, beveiligingsschermen en andere systeemfuncties vallen buiten de garantie. Gebruik het macOS-toegangsscherm om je sessie te beveiligen."
       ],
       [
         "Invoertoestemming staat aan. Waarom worden de schermen niet afgedekt?",
-        "Een update van deze ad hoc ondertekende versie kan de macOS-toestemming voor de vorige app laten staan. Kies Blackout → ‘Stop Blackout’. Verwijder Blackout uit de macOS-lijst met invoertoestemmingen (macOS 27: ‘Apparaatbeheer en gegevenstoegang’; macOS 13–26: ‘Toegankelijkheid’), voeg de momenteel geïnstalleerde Blackout.app opnieuw toe en schakel toestemming in. Open daarna Blackout opnieuw."
+        "Als de ondertekeningsidentiteit verandert, ook bij een update vanaf 0.1.0, kan macOS de toestemming voor de vorige app behouden; geef in dat geval eenmalig opnieuw toestemming. Kies Blackout → ‘Stop Blackout’. Verwijder Blackout uit de macOS-lijst met invoertoestemmingen (macOS 27: ‘Apparaatbeheer en gegevenstoegang’; macOS 13–26: ‘Toegankelijkheid’), voeg de momenteel geïnstalleerde Blackout.app opnieuw toe en schakel toestemming in. Open daarna Blackout opnieuw."
       ]
     ],
     "status": "Voorlopige versie"
@@ -916,7 +916,7 @@
     "sections": [
       [
         "Snabb installation",
-        "Hämta den universella DMG-filen från GitHub Releases och dra Blackout.app till genvägen Applications. Starta appen. Om macOS blockerar första starten, kontrollera källan och välj ‘Öppna ändå’ i macOS säkerhetsinställningar om det visas. Vid uppdatering väljer du Blackout → ‘Avsluta Blackout’, ersätter Blackout.app i samma mapp med kopian från den nya DMG-filen och öppnar igen. Lösenord och språk sparas separat och behålls. Förhandsversionen är ad hoc-signerad utan Developer ID. Efter byte kan tillståndet fortfarande vara på för den gamla appen; följ stegen för borttagning och tillägg i frågorna nedan. Inställningar visar installerad version. ‘Sök efter uppdateringar…’ kontrollerar officiella GitHub-versioner endast när du klickar. Om en nyare version finns öppnar ‘Öppna versionssidan…’ nedladdningssidan. Inget installeras automatiskt."
+        "Hämta den universella DMG-filen från GitHub Releases och dra Blackout.app till genvägen Applications. Starta appen. Om macOS blockerar första starten, kontrollera källan och välj ‘Öppna ändå’ i macOS säkerhetsinställningar om det visas. Vid uppdatering väljer du Blackout → ‘Avsluta Blackout’, ersätter Blackout.app i samma mapp med kopian från den nya DMG-filen och öppnar igen. Lösenord och språk sparas separat och behålls. Version 0.1.0 är ad hoc-signerad; från 0.1.1 använder förhandsversioner ett fast självsignerat certifikat, utan Developer ID-signatur eller notarisering av Apple. Om inmatningsblockeringen inte fungerar trots aktiverat tillstånd, se frågorna nedan. Inställningar visar installerad version. ‘Sök efter uppdateringar…’ kontrollerar officiella GitHub-versioner endast när du klickar. Om en nyare version finns öppnar ‘Öppna versionssidan…’ nedladdningssidan. Inget installeras automatiskt."
       ],
       [
         "Tillåt inmatningsblockering",
@@ -928,7 +928,7 @@
       ],
       [
         "Lösenord om du vill",
-        "Avstängt som standard. Aktivera det i inställningarna i Blackout-menyn och skriv det nya lösenordet två gånger. Ändring eller avstängning kräver det aktuella lösenordet. Med skyddet på återställer du skärmarna med lösenordet. Välj ‘Spara lösenordsinställningar’ för att tillämpa ändringarna. Ett litet lås på månsymbolen visar att lösenordsskyddet är aktivt."
+        "Lösenordsskydd är avstängt som standard. Slå på reglaget ”Kräv lösenord för att återställa skärmen” i Blackouts inställningar för att öppna en inställningsdialog och ange det nya lösenordet två gånger. När du stänger av reglaget öppnas en bekräftelsedialog som kräver det nuvarande lösenordet. Reglaget visar det sparade läget; avbrytande eller fel lämnar det oförändrat. När skyddet är på öppnar knappen ”Ändra lösenord…” en dialog för det nuvarande lösenordet och det nya två gånger. Använd länken ”Glömt lösenord…” för återställning med macOS-autentisering. Ett litet lås på månsymbolen visar att lösenordsskyddet är aktivt. Lösenordet begränsar bara borttagningen av Blackouts täckning; det skyddar inte din macOS-session. Om du väljer ”Avbryt” i upplåsningsdialogen förblir skärmarna svarta. Inmatning från tangentbord och mus som skulle öppna dialogen igen ignoreras i 2 sekunder för att förhindra omedelbar återöppning; därefter återgår det normala beteendet."
       ],
       [
         "Starta vid inloggning",
@@ -944,17 +944,17 @@
       ],
       [
         "Om något fastnar",
-        "Om inmatningsblockeringen slutar fungera tas täckningen bort. Öppna ‘Öppna behörighetsinställningar för inmatning…’ igen i Blackouts inställningar, kontrollera behörigheten och starta om appen. Vid glömt lösenord eller låst app kan du tvångsavsluta eller starta om macOS. Täckningen kan då försvinna utan appens lösenord."
+        "Håll Escape nedtryckt i 3 sekunder för att ta bort täckningen utan appens lösenord. Om appen inte svarar avslutas den cirka 1 sekund senare; öppna Blackout igen vid behov. Om inmatningsblockeringen slutar fungera tas täckningen bort. Öppna ‘Öppna behörighetsinställningar för inmatning…’ igen i Blackouts inställningar, kontrollera behörigheten och starta om appen. Om du har glömt lösenordet väljer du ”Glömt lösenord…” i inställningarna och verifierar dig med Touch ID eller Macens inloggningslösenord. Endast Blackouts lösenord tas bort; övriga inställningar behålls. Som sista utväg kan du tvångsavsluta appen eller starta om macOS."
       ]
     ],
     "faqs": [
       [
         "Är detta ett säkerhetslås för macOS?",
-        "Nej. Appen täcker skärmar och fångar vanlig inmatning. Tvångsavslutning, säkerhetsskärmar och andra systemfunktioner omfattas inte av garantin. Använd macOS låsskärm för att skydda sessionen."
+        "Nej. BlackoutMac täcker skärmar och blockerar vanlig inmatning från tangentbord och mus. Automatiseringsverktyg som redan har behörighet för hjälpmedel, till exempel verktyg som använder AX-API:er, kan fortfarande läsa eller styra andra appar medan skärmarna är täckta. Lösenordet begränsar bara borttagningen av Blackouts täckning; det skyddar inte din macOS-session. Tvångsavslutning, säkerhetsskärmar och andra systemfunktioner omfattas inte av garantin. Använd macOS låsskärm för att skydda sessionen."
       ],
       [
         "Inmatningstillståndet är på. Varför täcks inte skärmarna?",
-        "En uppdatering av denna ad hoc-signerade version kan lämna macOS-tillståndet för den förra appen. Välj Blackout → ‘Avsluta Blackout’. Ta bort Blackout ur macOS lista med inmatningstillstånd (macOS 27: ‘Enhetskontroll och dataåtkomst’; macOS 13–26: ‘Hjälpmedel’), lägg till den nu installerade Blackout.app igen och tillåt den. Starta sedan Blackout igen."
+        "När signeringsidentiteten ändras, även vid uppdatering från 0.1.0, kan macOS behålla tillståndet för den förra appen; ge i så fall tillstånd på nytt en gång. Välj Blackout → ‘Avsluta Blackout’. Ta bort Blackout ur macOS lista med inmatningstillstånd (macOS 27: ‘Enhetskontroll och dataåtkomst’; macOS 13–26: ‘Hjälpmedel’), lägg till den nu installerade Blackout.app igen och tillåt den. Starta sedan Blackout igen."
       ]
     ],
     "status": "Förhandsversion"
@@ -976,7 +976,7 @@
     "sections": [
       [
         "Hurtig installation",
-        "Hent den universelle DMG fra GitHub Releases, og træk Blackout.app til genvejen Applications. Start appen. Hvis macOS blokerer første start, kontrollér kilden, og vælg ‘Åbn alligevel’ i macOS-sikkerhedsindstillingerne, hvis muligheden vises. Ved opdatering skal du vælge Blackout → ‘Slut Blackout’, erstatte Blackout.app i samme mappe med kopien fra den nye DMG og åbne igen. Adgangskode og sprog gemmes separat og bevares. Denne forhåndsversion er ad hoc-signeret uden Developer ID. Efter udskiftning kan tilladelsen stadig være slået til for den gamle app; følg fjernelse og tilføjelse i spørgsmålene nedenfor. Indstillinger viser den installerede version. ‘Søg efter opdateringer…’ tjekker kun officielle GitHub-udgivelser, når du klikker. Hvis en nyere udgivelse findes, åbner ‘Åbn versionssiden…’ downloadsiden. Intet installeres automatisk."
+        "Hent den universelle DMG fra GitHub Releases, og træk Blackout.app til genvejen Applications. Start appen. Hvis macOS blokerer første start, kontrollér kilden, og vælg ‘Åbn alligevel’ i macOS-sikkerhedsindstillingerne, hvis muligheden vises. Ved opdatering skal du vælge Blackout → ‘Slut Blackout’, erstatte Blackout.app i samme mappe med kopien fra den nye DMG og åbne igen. Adgangskode og sprog gemmes separat og bevares. Version 0.1.0 er ad hoc-signeret; fra 0.1.1 bruger forhåndsversioner et fast selvsigneret certifikat uden Developer ID-signatur eller notarisering fra Apple. Hvis blokering af input ikke virker trods aktiveret tilladelse, se spørgsmålene nedenfor. Indstillinger viser den installerede version. ‘Søg efter opdateringer…’ tjekker kun officielle GitHub-udgivelser, når du klikker. Hvis en nyere udgivelse findes, åbner ‘Åbn versionssiden…’ downloadsiden. Intet installeres automatisk."
       ],
       [
         "Tillad blokering af input",
@@ -988,7 +988,7 @@
       ],
       [
         "Adgangskode efter ønske",
-        "Slået fra som standard. Aktivér den i indstillingerne i Blackout-menuen, og indtast den nye kode to gange. Ændring eller deaktivering kræver den nuværende kode. Når beskyttelsen er aktiv, fjernes dækningen med adgangskoden. Vælg ‘Gem adgangskodeindstillinger’ for at anvende ændringerne. En lille lås på måneikonet viser, at adgangskodebeskyttelsen er aktiv."
+        "Adgangskodebeskyttelse er slået fra som standard. Slå kontakten ”Kræv adgangskode for at gendanne skærmen” til i Blackouts indstillinger for at åbne en opsætningsdialog og indtaste den nye adgangskode to gange. Slår du den fra, åbnes en bekræftelsesdialog, der kræver den nuværende adgangskode. Kontakten viser den gemte tilstand; annullering eller fejl ændrer den ikke. Når beskyttelsen er slået til, åbner knappen ”Skift adgangskode…” en dialog til den nuværende adgangskode og den nye to gange. Brug linket ”Glemt adgangskode…” til gendannelse med macOS-godkendelse. En lille lås på måneikonet viser, at adgangskodebeskyttelsen er aktiv. Adgangskoden begrænser kun fjernelsen af Blackouts dækning; den sikrer ikke din macOS-session. Hvis du vælger ”Annuller” i oplåsningsdialogen, forbliver skærmene sorte. Input fra tastatur og mus, som ville åbne dialogen igen, ignoreres i 2 sekunder for at undgå øjeblikkelig genåbning; derefter genoptages den normale funktion."
       ],
       [
         "Start ved login",
@@ -1004,17 +1004,17 @@
       ],
       [
         "Hvis noget går i stå",
-        "Hvis inputblokeringen svigter, fjernes dækningen. Åbn ‘Åbn indstillinger for inputtilladelse…’ igen i Blackouts indstillinger, kontrollér tilladelsen, og genstart appen. Hvis du glemmer koden, eller appen ikke svarer, kan du afbryde den eller genstarte macOS. Det kan fjerne dækningen uden appens adgangskode."
+        "Hold Escape nede i 3 sekunder for at fjerne dækningen uden appens adgangskode. Hvis appen ikke svarer, afsluttes den cirka 1 sekund senere; åbn Blackout igen efter behov. Hvis inputblokeringen svigter, fjernes dækningen. Åbn ‘Åbn indstillinger for inputtilladelse…’ igen i Blackouts indstillinger, kontrollér tilladelsen, og genstart appen. Har du glemt adgangskoden, vælg ”Glemt adgangskode…” i indstillingerne, og bekræft din identitet med Touch ID eller adgangskoden til din Mac. Kun Blackouts adgangskode fjernes; andre indstillinger bevares. Som sidste udvej kan du tvinge appen til at afslutte eller genstarte macOS."
       ]
     ],
     "faqs": [
       [
         "Er dette en sikkerhedslås i macOS?",
-        "Nej. Appen dækker skærme og opfanger almindeligt input. Tvungen afslutning, sikkerhedsskærme og andre systemfunktioner er ikke omfattet af garantien. Brug macOS' låseskærm til at beskytte sessionen."
+        "Nej. BlackoutMac dækker skærme og blokerer almindeligt input fra tastatur og mus. Automatiseringsværktøjer, der allerede har tilladelse til tilgængelighed, for eksempel værktøjer med AX-API’er, kan muligvis stadig læse eller styre andre apps, mens skærmene er dækket. Adgangskoden begrænser kun fjernelsen af Blackouts dækning; den sikrer ikke din macOS-session. Tvungen afslutning, sikkerhedsskærme og andre systemfunktioner er ikke omfattet af garantien. Brug macOS' låseskærm til at beskytte sessionen."
       ],
       [
         "Inputtilladelsen er slået til. Hvorfor dækkes skærmene ikke?",
-        "En opdatering af denne ad hoc-signerede version kan efterlade macOS-tilladelsen til den tidligere app. Vælg Blackout → ‘Slut Blackout’. Fjern Blackout fra macOS-listen med inputtilladelser (macOS 27: ‘Styring af enhed og adgang til data’; macOS 13–26: ‘Tilgængelighed’), tilføj den aktuelt installerede Blackout.app igen, og tillad den. Start derefter Blackout igen."
+        "Når signeringsidentiteten ændres, også ved opdatering fra 0.1.0, kan macOS bevare tilladelsen til den tidligere app; giv i så fald tilladelsen igen én gang. Vælg Blackout → ‘Slut Blackout’. Fjern Blackout fra macOS-listen med inputtilladelser (macOS 27: ‘Styring af enhed og adgang til data’; macOS 13–26: ‘Tilgængelighed’), tilføj den aktuelt installerede Blackout.app igen, og tillad den. Start derefter Blackout igen."
       ]
     ],
     "status": "Forhåndsversion"
@@ -1036,7 +1036,7 @@
     "sections": [
       [
         "Rask installasjon",
-        "Last ned den universelle DMG-filen fra GitHub Releases og dra Blackout.app til snarveien Applications. Start appen. Hvis macOS blokkerer første start, kontroller kilden og velg ‘Åpne likevel’ i macOS-sikkerhetsinnstillingene hvis valget vises. Ved oppdatering velger du Blackout → ‘Avslutt Blackout’, erstatter Blackout.app i samme mappe med kopien fra den nye DMG-filen og åpner igjen. Passord og språk lagres separat og beholdes. Denne forhåndsversjonen er ad hoc-signert uten Developer ID. Etter utskifting kan tillatelsen fortsatt være på for den gamle appen; følg fjerning og ny tillegging i spørsmålene nedenfor. Innstillinger viser installert versjon. ‘Se etter oppdateringer…’ sjekker offisielle GitHub-utgivelser bare når du klikker. Hvis en nyere utgivelse finnes, åpner ‘Åpne versjonssiden…’ nedlastingssiden. Ingenting installeres automatisk."
+        "Last ned den universelle DMG-filen fra GitHub Releases og dra Blackout.app til snarveien Applications. Start appen. Hvis macOS blokkerer første start, kontroller kilden og velg ‘Åpne likevel’ i macOS-sikkerhetsinnstillingene hvis valget vises. Ved oppdatering velger du Blackout → ‘Avslutt Blackout’, erstatter Blackout.app i samme mappe med kopien fra den nye DMG-filen og åpner igjen. Passord og språk lagres separat og beholdes. Versjon 0.1.0 er ad hoc-signert; fra 0.1.1 bruker forhåndsversjoner et fast selvsignert sertifikat uten Developer ID-signatur eller notarisering fra Apple. Hvis blokkering av inndata ikke virker til tross for aktivert tillatelse, se spørsmålene nedenfor. Innstillinger viser installert versjon. ‘Se etter oppdateringer…’ sjekker offisielle GitHub-utgivelser bare når du klikker. Hvis en nyere utgivelse finnes, åpner ‘Åpne versjonssiden…’ nedlastingssiden. Ingenting installeres automatisk."
       ],
       [
         "Tillat blokkering av inndata",
@@ -1048,7 +1048,7 @@
       ],
       [
         "Passord hvis du vil",
-        "Av som standard. Aktiver det i innstillingene i Blackout-menyen, og skriv det nye passordet to ganger. Endring eller deaktivering krever gjeldende passord. Når beskyttelsen er på, bruker du passordet for å fjerne dekningen. Velg ‘Lagre passordinnstillinger’ for å bruke endringene. En liten lås på månesymbolet viser at passordbeskyttelsen er på."
+        "Passordbeskyttelse er av som standard. Slå på bryteren «Krev passord for å gjenopprette skjermen» i Blackout-innstillingene for å åpne en oppsettsdialog og skrive det nye passordet to ganger. Når du slår den av, åpnes en bekreftelsesdialog som krever det gjeldende passordet. Bryteren viser den lagrede tilstanden; avbrytelse eller feil lar den være uendret. Når beskyttelsen er på, åpner knappen «Endre passord…» en dialog for det gjeldende passordet og det nye to ganger. Bruk lenken «Glemt passord…» for gjenoppretting med macOS-autentisering. En liten lås på månesymbolet viser at passordbeskyttelsen er på. Passordet begrenser bare fjerningen av Blackout-dekningen; det sikrer ikke macOS-økten din. Hvis du velger «Avbryt» i opplåsingsdialogen, forblir skjermene svarte. Inndata fra tastatur og mus som ville åpnet dialogen igjen, ignoreres i 2 sekunder for å hindre umiddelbar gjenåpning; deretter gjenopptas vanlig oppførsel."
       ],
       [
         "Start ved pålogging",
@@ -1064,17 +1064,17 @@
       ],
       [
         "Hvis noe låser seg",
-        "Hvis inndatablokkeringen svikter, fjernes dekningen. Åpne ‘Åpne innstillinger for inndatatillatelse…’ på nytt i Blackout-innstillingene, kontroller tillatelsen og start appen på nytt. Ved glemt passord eller låst app kan du tvangsavslutte eller starte macOS på nytt. Det kan fjerne dekningen uten appens passord."
+        "Hold Escape inne i 3 sekunder for å fjerne dekningen uten appens passord. Hvis appen ikke svarer, avsluttes den omtrent 1 sekund senere; åpne Blackout igjen ved behov. Hvis inndatablokkeringen svikter, fjernes dekningen. Åpne ‘Åpne innstillinger for inndatatillatelse…’ på nytt i Blackout-innstillingene, kontroller tillatelsen og start appen på nytt. Har du glemt passordet, velger du «Glemt passord…» i innstillingene og bekrefter identiteten med Touch ID eller påloggingspassordet til Macen. Bare Blackout-passordet fjernes; andre innstillinger beholdes. Som siste utvei kan du tvangsavslutte appen eller starte macOS på nytt."
       ]
     ],
     "faqs": [
       [
         "Er dette en sikkerhetslås i macOS?",
-        "Nei. Appen dekker skjermer og fanger vanlig inndata. Tvangsavslutning, sikkerhetsskjermer og andre systemfunksjoner omfattes ikke av garantien. Bruk låseskjermen i macOS for å beskytte økten."
+        "Nei. BlackoutMac dekker skjermer og blokkerer vanlig inndata fra tastatur og mus. Automatiseringsverktøy som allerede har tilgang til tilgjengelighetsfunksjoner, for eksempel verktøy som bruker AX-API-er, kan fortsatt lese eller styre andre apper mens skjermene er dekket. Passordet begrenser bare fjerningen av Blackout-dekningen; det sikrer ikke macOS-økten din. Tvangsavslutning, sikkerhetsskjermer og andre systemfunksjoner omfattes ikke av garantien. Bruk låseskjermen i macOS for å beskytte økten."
       ],
       [
         "Inndatatillatelsen er på. Hvorfor dekkes ikke skjermene?",
-        "En oppdatering av denne ad hoc-signerte versjonen kan etterlate macOS-tillatelsen for den tidligere appen. Velg Blackout → ‘Avslutt Blackout’. Fjern Blackout fra macOS-listen med inndatatillatelser (macOS 27: ‘Enhetskontroll og datatilgang’; macOS 13–26: ‘Tilgjengelighet’), legg til den nå installerte Blackout.app igjen, og tillat den. Start deretter Blackout på nytt."
+        "Når signeringsidentiteten endres, også ved oppdatering fra 0.1.0, kan macOS beholde tillatelsen for den tidligere appen; gi i så fall tillatelsen på nytt én gang. Velg Blackout → ‘Avslutt Blackout’. Fjern Blackout fra macOS-listen med inndatatillatelser (macOS 27: ‘Enhetskontroll og datatilgang’; macOS 13–26: ‘Tilgjengelighet’), legg til den nå installerte Blackout.app igjen, og tillat den. Start deretter Blackout på nytt."
       ]
     ],
     "status": "Forhåndsversjon"
@@ -1096,7 +1096,7 @@
     "sections": [
       [
         "Nopea asennus",
-        "Lataa universaali DMG GitHub Releasesista ja vedä Blackout.app Applications-pikakuvakkeeseen. Käynnistä sovellus. Jos macOS estää ensimmäisen käynnistyksen, tarkista lähde ja valitse macOS:n suojausasetuksista ‘Avaa kuitenkin’, jos se näkyy. Päivitä valitsemalla Blackout → ‘Lopeta Blackout’, korvaamalla samassa kansiossa oleva Blackout.app uuden DMG:n kopiolla ja avaamalla uudelleen. Salasana ja kieli tallennetaan erikseen ja säilyvät. Tämä esiversio on allekirjoitettu ad hoc ilman Developer ID:tä. Korvaamisen jälkeen lupa voi yhä olla päällä vanhalle sovellukselle; noudata alla olevan kysymyksen poisto- ja lisäysohjeita. Asetuksissa näkyy asennettu versio. ‘Etsi päivityksiä…’ tarkistaa viralliset GitHub-julkaisut vain napsautettaessa. Jos uudempi julkaisu on saatavilla, ‘Avaa julkaisusivu…’ avaa lataussivun. Mitään ei asenneta automaattisesti."
+        "Lataa universaali DMG GitHub Releasesista ja vedä Blackout.app Applications-pikakuvakkeeseen. Käynnistä sovellus. Jos macOS estää ensimmäisen käynnistyksen, tarkista lähde ja valitse macOS:n suojausasetuksista ‘Avaa kuitenkin’, jos se näkyy. Päivitä valitsemalla Blackout → ‘Lopeta Blackout’, korvaamalla samassa kansiossa oleva Blackout.app uuden DMG:n kopiolla ja avaamalla uudelleen. Salasana ja kieli tallennetaan erikseen ja säilyvät. Versio 0.1.0 on allekirjoitettu ad hoc; versiosta 0.1.1 alkaen esiversiot käyttävät pysyvää itse allekirjoitettua varmennetta ilman Developer ID -allekirjoitusta tai Applen notarisointia. Jos syötteen esto ei toimi käytössä olevasta luvasta huolimatta, katso alla olevat kysymykset. Asetuksissa näkyy asennettu versio. ‘Etsi päivityksiä…’ tarkistaa viralliset GitHub-julkaisut vain napsautettaessa. Jos uudempi julkaisu on saatavilla, ‘Avaa julkaisusivu…’ avaa lataussivun. Mitään ei asenneta automaattisesti."
       ],
       [
         "Salli syötteiden estäminen",
@@ -1108,7 +1108,7 @@
       ],
       [
         "Salasana oman valinnan mukaan",
-        "Oletuksena pois käytöstä. Ota käyttöön Blackout-valikon asetuksista ja kirjoita uusi salasana kahdesti. Vaihtaminen tai poistaminen vaatii nykyisen salasanan. Kun suojaus on käytössä, poista peitto salasanalla. Ota muutokset käyttöön valitsemalla ‘Tallenna salasana-asetukset’. Pieni lukko kuukuvakkeessa kertoo salasanasuojauksen olevan käytössä."
+        "Salasanasuojaus on oletuksena pois käytöstä. Kytke Blackoutin asetuksissa ”Vaadi salasana näytön palauttamiseen” päälle, niin asetusikkuna avautuu uuden salasanan syöttämiseksi kahdesti. Kytkeminen pois päältä avaa vahvistusikkunan, joka edellyttää nykyistä salasanaa. Kytkin näyttää tallennetun tilan; peruutus tai virhe ei muuta sitä. Kun suojaus on käytössä, ”Vaihda salasana…”-painike avaa ikkunan, jossa kysytään nykyinen salasana ja uusi salasana kahdesti. ”Unohditko salasanan…”-linkistä voit palauttaa pääsyn tunnistautumalla macOS:ssä. Pieni lukko kuukuvakkeessa kertoo salasanasuojauksen olevan käytössä. Salasana rajoittaa vain Blackoutin peitteen poistamista; se ei suojaa macOS-istuntoasi. Lukituksen avausikkunan ”Kumoa” palauttaa näytöt mustiksi. Ikkunan uudelleen avaava näppäimistö- ja hiirisyöte ohitetaan 2 sekunnin ajan välittömän uudelleenavautumisen estämiseksi; tämän jälkeen normaali toiminta jatkuu."
       ],
       [
         "Käynnistä kirjautuessa",
@@ -1124,17 +1124,17 @@
       ],
       [
         "Jos jokin jumittuu",
-        "Jos syötteiden esto lakkaa toimimasta, peitto poistetaan. Avaa ‘Avaa syöttöoikeuksien asetukset…’ uudelleen Blackoutin asetuksista, tarkista lupa ja käynnistä sovellus uudelleen. Jos unohdat salasanan tai sovellus ei vastaa, pakota se lopettamaan tai käynnistä macOS uudelleen. Peitto voi poistua ilman sovelluksen salasanaa."
+        "Pidä Escape-näppäintä painettuna 3 sekuntia, niin peite poistuu ilman sovelluksen salasanaa. Jos sovellus ei vastaa, se suljetaan noin 1 sekunnin kuluttua; avaa Blackout tarvittaessa uudelleen. Jos syötteiden esto lakkaa toimimasta, peitto poistetaan. Avaa ‘Avaa syöttöoikeuksien asetukset…’ uudelleen Blackoutin asetuksista, tarkista lupa ja käynnistä sovellus uudelleen. Jos unohdit salasanan, valitse asetuksista ”Unohditko salasanan…” ja tunnistaudu Touch ID:llä tai Macin kirjautumissalasanalla. Vain Blackoutin salasana poistetaan; muut asetukset säilyvät. Viimeisenä keinona voit pakottaa sovelluksen lopettamaan tai käynnistää macOS:n uudelleen."
       ]
     ],
     "faqs": [
       [
         "Onko tämä macOS:n turvalukitus?",
-        "Ei. Sovellus peittää näytöt ja sieppaa tavalliset syötteet. Pakotettu lopetus, turvanäkymät ja muut järjestelmätoiminnot eivät kuulu sen takuun piiriin. Suojaa istuntosi macOS:n lukitusnäytöllä."
+        "Ei. BlackoutMac peittää näytöt ja estää tavallisen näppäimistö- ja hiirisyötteen. Automaatiotyökalut, joille on jo myönnetty käyttöapuoikeudet, kuten AX-rajapintoja käyttävät työkalut, voivat edelleen lukea tai ohjata muita sovelluksia näyttöjen ollessa peitettyinä. Salasana rajoittaa vain Blackoutin peitteen poistamista; se ei suojaa macOS-istuntoasi. Pakotettu lopetus, turvanäkymät ja muut järjestelmätoiminnot eivät kuulu sen takuun piiriin. Suojaa istuntosi macOS:n lukitusnäytöllä."
       ],
       [
         "Syötelupa on päällä. Miksi näytöt eivät peity?",
-        "Tämän ad hoc -allekirjoitetun version päivitys voi jättää macOS:ään edellisen sovelluksen luvan. Valitse Blackout → ‘Lopeta Blackout’. Poista Blackout macOS:n syötelupaluettelosta (macOS 27: ‘Laitehallinta ja tietojen käyttö’; macOS 13–26: ‘Käyttöapu’), lisää nyt asennettu Blackout.app uudelleen ja salli se. Käynnistä sen jälkeen Blackout uudelleen."
+        "Kun allekirjoitusidentiteetti vaihtuu, myös päivitettäessä versiosta 0.1.0, macOS voi säilyttää edellisen sovelluksen luvan; anna tällöin lupa kerran uudelleen. Valitse Blackout → ‘Lopeta Blackout’. Poista Blackout macOS:n syötelupaluettelosta (macOS 27: ‘Laitehallinta ja tietojen käyttö’; macOS 13–26: ‘Käyttöapu’), lisää nyt asennettu Blackout.app uudelleen ja salli se. Käynnistä sen jälkeen Blackout uudelleen."
       ]
     ],
     "status": "Esiversio"
@@ -1156,7 +1156,7 @@
     "sections": [
       [
         "Rychlá instalace",
-        "Stáhněte univerzální DMG z GitHub Releases a přetáhněte Blackout.app na zástupce Applications. Spusťte aplikaci. Pokud macOS blokuje první spuštění, ověřte zdroj a zvolte v nastavení zabezpečení macOS „Přesto otevřít“, je-li dostupné. Pro aktualizaci zvolte Blackout → „Ukončit Blackout“, nahraďte Blackout.app ve stejné složce kopií z nového DMG a znovu otevřete. Heslo a jazyk jsou uloženy odděleně a zachovají se. Tato předběžná verze má podpis ad hoc, bez Developer ID. Po nahrazení může oprávnění zůstat zapnuté pro starou aplikaci; postupujte podle odstranění a nového přidání v dotazech níže. Nastavení ukazuje nainstalovanou verzi. „Vyhledat aktualizace…“ kontroluje oficiální vydání GitHub pouze po kliknutí. Pokud je dostupné novější vydání, „Otevřít stránku vydání…“ otevře stránku ke stažení. Nic se neinstaluje automaticky."
+        "Stáhněte univerzální DMG z GitHub Releases a přetáhněte Blackout.app na zástupce Applications. Spusťte aplikaci. Pokud macOS blokuje první spuštění, ověřte zdroj a zvolte v nastavení zabezpečení macOS „Přesto otevřít“, je-li dostupné. Pro aktualizaci zvolte Blackout → „Ukončit Blackout“, nahraďte Blackout.app ve stejné složce kopií z nového DMG a znovu otevřete. Heslo a jazyk jsou uloženy odděleně a zachovají se. Verze 0.1.0 má podpis ad hoc; od 0.1.1 používají předběžné verze stálý certifikát s vlastním podpisem, bez podpisu Developer ID a notarizace Apple. Pokud blokování vstupu nefunguje ani se zapnutým oprávněním, viz dotazy níže. Nastavení ukazuje nainstalovanou verzi. „Vyhledat aktualizace…“ kontroluje oficiální vydání GitHub pouze po kliknutí. Pokud je dostupné novější vydání, „Otevřít stránku vydání…“ otevře stránku ke stažení. Nic se neinstaluje automaticky."
       ],
       [
         "Povolte blokování vstupu",
@@ -1168,7 +1168,7 @@
       ],
       [
         "Heslo podle potřeby",
-        "Ve výchozím stavu je vypnuté. Zapněte je v nastavení nabídky Blackout a nové heslo zadejte dvakrát. Změna či vypnutí vyžaduje aktuální heslo. Při zapnuté ochraně zadejte heslo pro odstranění zakrytí. Zvolte „Uložit nastavení hesla“ pro použití změn. Malý zámek na ikoně měsíce značí aktivní ochranu heslem."
+        "Ochrana heslem je ve výchozím nastavení vypnutá. V nastavení Blackout zapněte přepínač „Vyžadovat heslo pro obnovení obrazovky“, čímž otevřete dialog nastavení pro dvojí zadání nového hesla. Vypnutí přepínače otevře potvrzovací dialog vyžadující aktuální heslo. Přepínač ukazuje uložený stav; zrušení nebo chyba jej nezmění. Při zapnuté ochraně tlačítko „Změnit heslo…“ otevře dialog pro aktuální heslo a dvojí zadání nového. Odkaz „Zapomenuté heslo…“ slouží k obnovení přístupu po ověření totožnosti v macOS. Malý zámek na ikoně měsíce značí aktivní ochranu heslem. Heslo omezuje pouze odstranění zakrytí Blackout; nezabezpečuje relaci macOS. Volba „Zrušit“ v dialogu odemknutí ponechá obrazovky černé. Vstup z klávesnice a myši, který by dialog znovu otevřel, se po dobu 2 sekund ignoruje, aby se neobjevil ihned; poté se obnoví běžné chování."
       ],
       [
         "Spuštění při přihlášení",
@@ -1184,17 +1184,17 @@
       ],
       [
         "Když něco nefunguje",
-        "Při výpadku blokování vstupu se zakrytí odstraní. Znovu otevřete „Otevřít nastavení oprávnění vstupu…“ v nastavení Blackout, ověřte oprávnění a aplikaci znovu spusťte. Pokud zapomenete heslo nebo aplikace nereaguje, vynuťte ukončení či restartujte macOS. Zakrytí tak může skončit bez hesla aplikace."
+        "Podržte Escape po dobu 3 sekund a odstraňte zakrytí bez hesla aplikace. Pokud aplikace nereaguje, ukončí se přibližně o 1 sekundu později; v případě potřeby Blackout znovu otevřete. Při výpadku blokování vstupu se zakrytí odstraní. Znovu otevřete „Otevřít nastavení oprávnění vstupu…“ v nastavení Blackout, ověřte oprávnění a aplikaci znovu spusťte. Pokud jste zapomněli heslo, zvolte v nastavení „Zapomenuté heslo…“ a ověřte se pomocí Touch ID nebo přihlašovacího hesla k Macu. Odstraní se pouze heslo Blackout; ostatní předvolby zůstanou zachovány. Jako poslední možnost můžete vynutit ukončení aplikace nebo restartovat macOS."
       ]
     ],
     "faqs": [
       [
         "Je to bezpečnostní zámek macOS?",
-        "Ne. Aplikace zakrývá obrazovky a zachytává běžný vstup. Vynucené ukončení, bezpečnostní obrazovky a další systémové funkce nejsou zaručeně blokovány. Pro zabezpečení relace použijte zamknutí obrazovky macOS."
+        "Ne. BlackoutMac zakrývá obrazovky a blokuje běžný vstup z klávesnice a myši. Automatizační nástroje, které již mají oprávnění ke zpřístupnění, například nástroje využívající API AX, mohou i při zakrytých obrazovkách číst data jiných aplikací nebo je ovládat. Heslo omezuje pouze odstranění zakrytí Blackout; nezabezpečuje relaci macOS. Vynucené ukončení, bezpečnostní obrazovky a další systémové funkce nejsou zaručeně blokovány. Pro zabezpečení relace použijte zamknutí obrazovky macOS."
       ],
       [
         "Oprávnění vstupu je zapnuté. Proč se obrazovky nezakryjí?",
-        "Aktualizace této verze s podpisem ad hoc může v macOS ponechat oprávnění předchozí aplikace. Zvolte Blackout → „Ukončit Blackout“. V seznamu oprávnění vstupu macOS (macOS 27: „Ovládání zařízení a přístup k datům“; macOS 13–26: „Zpřístupnění“) odeberte Blackout, znovu přidejte právě nainstalovaný Blackout.app a povolte jej. Poté Blackout znovu spusťte."
+        "Při změně podpisové identity, včetně aktualizace z 0.1.0, může macOS ponechat oprávnění předchozí aplikace; v takovém případě oprávnění jednou znovu udělte. Zvolte Blackout → „Ukončit Blackout“. V seznamu oprávnění vstupu macOS (macOS 27: „Ovládání zařízení a přístup k datům“; macOS 13–26: „Zpřístupnění“) odeberte Blackout, znovu přidejte právě nainstalovaný Blackout.app a povolte jej. Poté Blackout znovu spusťte."
       ]
     ],
     "status": "Předběžná verze"
@@ -1216,7 +1216,7 @@
     "sections": [
       [
         "Rýchla inštalácia",
-        "Stiahnite univerzálny DMG z GitHub Releases a presuňte Blackout.app na odkaz Applications. Spustite aplikáciu. Ak macOS blokuje prvé spustenie, overte zdroj a zvoľte v nastaveniach bezpečnosti macOS „Otvoriť aj tak“, ak je dostupné. Pri aktualizácii zvoľte Blackout → „Ukončiť Blackout“, nahraďte Blackout.app v rovnakom priečinku kópiou z nového DMG a znovu otvorte. Heslo a jazyk sa ukladajú oddelene a zostanú zachované. Táto predbežná verzia má podpis ad hoc, bez Developer ID. Po nahradení môže povolenie zostať zapnuté pre starú aplikáciu; postupujte podľa odstránenia a opätovného pridania v otázkach nižšie. Nastavenia zobrazujú nainštalovanú verziu. „Vyhľadať aktualizácie…“ kontroluje oficiálne vydania GitHub iba po kliknutí. Ak je dostupné novšie vydanie, „Otvoriť stránku vydania…“ otvorí stránku na stiahnutie. Nič sa neinštaluje automaticky."
+        "Stiahnite univerzálny DMG z GitHub Releases a presuňte Blackout.app na odkaz Applications. Spustite aplikáciu. Ak macOS blokuje prvé spustenie, overte zdroj a zvoľte v nastaveniach bezpečnosti macOS „Otvoriť aj tak“, ak je dostupné. Pri aktualizácii zvoľte Blackout → „Ukončiť Blackout“, nahraďte Blackout.app v rovnakom priečinku kópiou z nového DMG a znovu otvorte. Heslo a jazyk sa ukladajú oddelene a zostanú zachované. Verzia 0.1.0 má podpis ad hoc; od 0.1.1 používajú predbežné verzie stály certifikát s vlastným podpisom, bez podpisu Developer ID a notarizácie Apple. Ak blokovanie vstupu nefunguje ani so zapnutým povolením, pozrite si otázky nižšie. Nastavenia zobrazujú nainštalovanú verziu. „Vyhľadať aktualizácie…“ kontroluje oficiálne vydania GitHub iba po kliknutí. Ak je dostupné novšie vydanie, „Otvoriť stránku vydania…“ otvorí stránku na stiahnutie. Nič sa neinštaluje automaticky."
       ],
       [
         "Povoľte blokovanie vstupu",
@@ -1228,7 +1228,7 @@
       ],
       [
         "Heslo podľa potreby",
-        "Predvolene vypnuté. Zapnite ho v nastaveniach menu Blackout a nové heslo zadajte dvakrát. Zmena či vypnutie vyžaduje aktuálne heslo. Pri aktívnej ochrane zadajte heslo na odstránenie prekrytia. Zvoľte „Uložiť nastavenia hesla“ na použitie zmien. Malý zámok na ikone mesiaca označuje aktívnu ochranu heslom."
+        "Ochrana heslom je predvolene vypnutá. V nastaveniach Blackout zapnite prepínač „Vyžadovať heslo na obnovenie obrazovky“, čím otvoríte dialóg nastavenia na dvojité zadanie nového hesla. Vypnutie prepínača otvorí potvrdzovací dialóg vyžadujúci aktuálne heslo. Prepínač ukazuje uložený stav; zrušenie alebo chyba ho nezmení. Pri zapnutej ochrane tlačidlo „Zmeniť heslo…“ otvorí dialóg pre aktuálne heslo a dvojité zadanie nového. Odkaz „Zabudnuté heslo…“ slúži na obnovenie prístupu po overení totožnosti v macOS. Malý zámok na ikone mesiaca označuje aktívnu ochranu heslom. Heslo obmedzuje iba odstránenie prekrytia Blackout; nezabezpečuje reláciu macOS. Voľba „Zrušiť“ v dialógu odomknutia ponechá obrazovky čierne. Vstup z klávesnice a myši, ktorý by dialóg znovu otvoril, sa na 2 sekundy ignoruje, aby sa neobjavil ihneď; potom sa obnoví bežné správanie."
       ],
       [
         "Spustiť pri prihlásení",
@@ -1244,17 +1244,17 @@
       ],
       [
         "Keď niečo nefunguje",
-        "Pri výpadku blokovania vstupu sa prekrytie odstráni. Znovu otvorte „Otvoriť nastavenia povolení vstupu…“ v nastaveniach Blackout, overte povolenie a aplikáciu reštartujte. Ak zabudnete heslo alebo aplikácia nereaguje, vynúťte ukončenie či reštartujte macOS. Prekrytie tak môže skončiť bez hesla aplikácie."
+        "Podržte Escape na 3 sekundy a odstráňte prekrytie bez hesla aplikácie. Ak aplikácia nereaguje, ukončí sa približne o 1 sekundu neskôr; v prípade potreby Blackout znovu otvorte. Pri výpadku blokovania vstupu sa prekrytie odstráni. Znovu otvorte „Otvoriť nastavenia povolení vstupu…“ v nastaveniach Blackout, overte povolenie a aplikáciu reštartujte. Ak ste zabudli heslo, zvoľte v nastaveniach „Zabudnuté heslo…“ a overte sa pomocou Touch ID alebo prihlasovacieho hesla k Macu. Odstráni sa iba heslo Blackout; ostatné nastavenia sa zachovajú. Ako poslednú možnosť môžete vynútiť ukončenie aplikácie alebo reštartovať macOS."
       ]
     ],
     "faqs": [
       [
         "Je to bezpečnostný zámok macOS?",
-        "Nie. Aplikácia prekrýva obrazovky a zachytáva bežný vstup. Vynútené ukončenie, bezpečnostné obrazovky a ďalšie systémové funkcie nie sú zaručene blokované. Na zabezpečenie relácie použite zamknutie obrazovky macOS."
+        "Nie. BlackoutMac prekrýva obrazovky a blokuje bežný vstup z klávesnice a myši. Automatizačné nástroje, ktoré už majú povolenie na prístupnosť, napríklad nástroje používajúce API AX, môžu aj pri prekrytých obrazovkách čítať údaje iných aplikácií alebo ich ovládať. Heslo obmedzuje iba odstránenie prekrytia Blackout; nezabezpečuje reláciu macOS. Vynútené ukončenie, bezpečnostné obrazovky a ďalšie systémové funkcie nie sú zaručene blokované. Na zabezpečenie relácie použite zamknutie obrazovky macOS."
       ],
       [
         "Povolenie vstupu je zapnuté. Prečo sa obrazovky neprekryjú?",
-        "Aktualizácia tejto verzie s podpisom ad hoc môže v macOS ponechať povolenie predchádzajúcej aplikácie. Zvoľte Blackout → „Ukončiť Blackout“. V zozname povolení vstupu macOS (macOS 27: „Ovládanie zariadenia a prístup k dátam“; macOS 13–26: „Prístupnosť“) odstráňte Blackout, znovu pridajte aktuálne nainštalovaný Blackout.app a povoľte ho. Potom Blackout znovu spustite."
+        "Pri zmene podpisovej identity, aj pri aktualizácii z 0.1.0, môže macOS ponechať povolenie predchádzajúcej aplikácie; v takom prípade povolenie raz znovu udeľte. Zvoľte Blackout → „Ukončiť Blackout“. V zozname povolení vstupu macOS (macOS 27: „Ovládanie zariadenia a prístup k dátam“; macOS 13–26: „Prístupnosť“) odstráňte Blackout, znovu pridajte aktuálne nainštalovaný Blackout.app a povoľte ho. Potom Blackout znovu spustite."
       ]
     ],
     "status": "Predbežná verzia"
@@ -1276,7 +1276,7 @@
     "sections": [
       [
         "Gyors telepítés",
-        "Töltse le az univerzális DMG-t a GitHub Releases oldaláról, és húzza a Blackout.app fájlt az Applications parancsikonra. Indítsa el. Ha a macOS tiltja az első indítást, ellenőrizze a forrást, majd válassza a macOS biztonsági beállításaiban a „Megnyitás mindenképp” lehetőséget, ha megjelenik. Frissítéskor válassza a Blackout → „Kilépés a Blackoutból” menüpontot, cserélje le a Blackout.app fájlt ugyanabban a mappában az új DMG másolatával, majd nyissa meg újra. A külön tárolt jelszó és nyelv megmarad. Ez az előzetes verzió ad hoc aláírást használ, Developer ID nélkül. Csere után az engedély bekapcsolva maradhat a régi apphoz; kövesse az alábbi kérdés eltávolítási és újbóli hozzáadási lépéseit. A beállítások mutatják a telepített verziót. A „Frissítések keresése…” csak kattintásra ellenőrzi a hivatalos GitHub-kiadásokat. Ha van újabb kiadás, a „Kiadási oldal megnyitása…” megnyitja a letöltési oldalt. Semmi nem települ automatikusan."
+        "Töltse le az univerzális DMG-t a GitHub Releases oldaláról, és húzza a Blackout.app fájlt az Applications parancsikonra. Indítsa el. Ha a macOS tiltja az első indítást, ellenőrizze a forrást, majd válassza a macOS biztonsági beállításaiban a „Megnyitás mindenképp” lehetőséget, ha megjelenik. Frissítéskor válassza a Blackout → „Kilépés a Blackoutból” menüpontot, cserélje le a Blackout.app fájlt ugyanabban a mappában az új DMG másolatával, majd nyissa meg újra. A külön tárolt jelszó és nyelv megmarad. A 0.1.0 verzió ad hoc aláírást használ; a 0.1.1 verziótól az előzetes kiadások állandó, önaláírt tanúsítványt használnak, Developer ID-aláírás és Apple-hitelesítés nélkül. Ha a bevitel blokkolása bekapcsolt engedély mellett sem működik, lásd az alábbi kérdéseket. A beállítások mutatják a telepített verziót. A „Frissítések keresése…” csak kattintásra ellenőrzi a hivatalos GitHub-kiadásokat. Ha van újabb kiadás, a „Kiadási oldal megnyitása…” megnyitja a letöltési oldalt. Semmi nem települ automatikusan."
       ],
       [
         "A bevitel blokkolásának engedélyezése",
@@ -1288,7 +1288,7 @@
       ],
       [
         "Jelszó, ha szeretné",
-        "Alapértelmezetten kikapcsolva. Kapcsolja be a Blackout menü beállításaiban, és adja meg kétszer az új jelszót. Módosításhoz vagy kikapcsoláshoz az aktuális jelszó szükséges. Bekapcsolt védelemnél a jelszóval szüntetheti meg a takarást. A módosításokhoz válassza a „Jelszóbeállítások mentése” lehetőséget. A holdikonon látható kis lakat bekapcsolt jelszóvédelmet jelez."
+        "A jelszóvédelem alapértelmezetten ki van kapcsolva. A Blackout beállításaiban kapcsolja be a „Jelszó kérése a képernyő visszaállításához” kapcsolót; ekkor megnyílik az ablak az új jelszó kétszeri megadásához. Kikapcsoláskor az aktuális jelszót kérő megerősítő ablak nyílik meg. A kapcsoló a mentett állapotot mutatja; megszakítás vagy hiba esetén ez nem változik. Bekapcsolt védelemnél a „Jelszó módosítása…” gomb az aktuális jelszót és az új jelszó kétszeri megadását kérő ablakot nyitja meg. Az „Elfelejtett jelszó…” hivatkozással macOS-hitelesítés után állítható helyre a hozzáférés. A holdikonon látható kis lakat bekapcsolt jelszóvédelmet jelez. A jelszó csak a Blackout takarásának eltávolítását korlátozza; nem védi a macOS-munkamenetet. A feloldási ablakban a „Mégse” visszaállítja a fekete képernyőt. Az ablakot újranyitó billentyűzet- és egérbevitelt az app 2 másodpercig figyelmen kívül hagyja az azonnali újranyitás elkerülésére; ezután visszatér a szokásos működés."
       ],
       [
         "Indítás bejelentkezéskor",
@@ -1304,17 +1304,17 @@
       ],
       [
         "Ha valami elakad",
-        "Ha a bevitel blokkolása megszűnik, a takarás lekerül. Nyissa meg újra a „Beviteli engedélyek beállításainak megnyitása…” lehetőséget a Blackout beállításaiban, ellenőrizze az engedélyt, és indítsa újra az appot. Elfelejtett jelszó vagy lefagyás esetén kényszerítse a kilépést, vagy indítsa újra a macOS-t. Így az app jelszava nélkül is megszűnhet a takarás."
+        "Tartsa lenyomva az Escape billentyűt 3 másodpercig a takarás eltávolításához az app jelszavának megadása nélkül. Ha az app nem válaszol, körülbelül 1 másodperccel később bezárul; szükség esetén nyissa meg újra a Blackoutot. Ha a bevitel blokkolása megszűnik, a takarás lekerül. Nyissa meg újra a „Beviteli engedélyek beállításainak megnyitása…” lehetőséget a Blackout beállításaiban, ellenőrizze az engedélyt, és indítsa újra az appot. Elfelejtett jelszó esetén válassza a beállításokban az „Elfelejtett jelszó…” lehetőséget, majd igazolja magát Touch ID-val vagy a Mac bejelentkezési jelszavával. Csak a Blackout jelszava törlődik; a többi beállítás megmarad. Végső esetben kényszerítheti az app kilépését, vagy újraindíthatja a macOS-t."
       ]
     ],
     "faqs": [
       [
         "Ez a macOS biztonsági zárolása?",
-        "Nem. Az app eltakarja a kijelzőket és elfogja a szokásos bevitelt. A kényszerített kilépés, biztonsági képernyők és más rendszerfunkciók kívül esnek a garanciáján. A munkamenet védelmére használja a macOS képernyőzárát."
+        "Nem. A BlackoutMac eltakarja a kijelzőket, és blokkolja a szokásos billentyűzet- és egérbevitelt. Azok az automatizálási eszközök, amelyek már rendelkeznek kisegítő lehetőségekhez adott engedéllyel, például az AX API-kat használó eszközök, továbbra is olvashatják más appok adatait, illetve vezérelhetik az appokat, amíg a kijelzők el vannak takarva. A jelszó csak a Blackout takarásának eltávolítását korlátozza; nem védi a macOS-munkamenetet. A kényszerített kilépés, biztonsági képernyők és más rendszerfunkciók kívül esnek a garanciáján. A munkamenet védelmére használja a macOS képernyőzárát."
       ],
       [
         "A beviteli engedély be van kapcsolva. Miért nem indul a takarás?",
-        "Az ad hoc aláírású előzetes verzió frissítése után a macOS a régi app engedélyét őrizheti meg. Válassza a Blackout → „Kilépés a Blackoutból” menüpontot. A macOS beviteli engedélylistáján (macOS 27: „Eszközvezérlés és adathozzáférés”; macOS 13–26: „Kisegítő lehetőségek”) távolítsa el a Blackoutot, adja hozzá újra a jelenleg telepített Blackout.app fájlt, és engedélyezze. Ezután indítsa újra a Blackoutot."
+        "Ha az aláírói identitás megváltozik, például a 0.1.0 verzióról frissítve, a macOS megőrizheti a korábbi app engedélyét; ilyenkor egyszer adja meg újra az engedélyt. Válassza a Blackout → „Kilépés a Blackoutból” menüpontot. A macOS beviteli engedélylistáján (macOS 27: „Eszközvezérlés és adathozzáférés”; macOS 13–26: „Kisegítő lehetőségek”) távolítsa el a Blackoutot, adja hozzá újra a jelenleg telepített Blackout.app fájlt, és engedélyezze. Ezután indítsa újra a Blackoutot."
       ]
     ],
     "status": "Előzetes verzió"
@@ -1336,7 +1336,7 @@
     "sections": [
       [
         "Instalare rapidă",
-        "Descarcă DMG-ul universal din GitHub Releases și trage Blackout.app pe scurtătura Applications. Pornește aplicația. Dacă macOS blochează prima pornire, verifică sursa și alege „Deschideți oricum” în configurările de securitate macOS, dacă apare. Pentru actualizare, alege Blackout → „Închide Blackout”, înlocuiește Blackout.app în același dosar cu copia din noul DMG și redeschide. Parola și limba sunt păstrate separat și rămân. Această versiune preliminară folosește semnare ad hoc, fără Developer ID. După înlocuire, permisiunea poate rămâne activă pentru aplicația veche; urmează eliminarea și readăugarea din întrebările de mai jos. Configurările arată versiunea instalată. „Caută actualizări…” verifică versiunile oficiale GitHub doar la clic. Dacă există o versiune mai nouă, „Deschide pagina versiunii…” deschide pagina de descărcare. Nimic nu se instalează automat."
+        "Descarcă DMG-ul universal din GitHub Releases și trage Blackout.app pe scurtătura Applications. Pornește aplicația. Dacă macOS blochează prima pornire, verifică sursa și alege „Deschideți oricum” în configurările de securitate macOS, dacă apare. Pentru actualizare, alege Blackout → „Închide Blackout”, înlocuiește Blackout.app în același dosar cu copia din noul DMG și redeschide. Parola și limba sunt păstrate separat și rămân. Versiunea 0.1.0 folosește semnare ad hoc; de la 0.1.1, versiunile preliminare folosesc un certificat autosemnat fix, fără semnătură Developer ID sau notarizare Apple. Dacă blocarea intrărilor nu funcționează deși permisiunea este activă, consultă întrebările de mai jos. Configurările arată versiunea instalată. „Caută actualizări…” verifică versiunile oficiale GitHub doar la clic. Dacă există o versiune mai nouă, „Deschide pagina versiunii…” deschide pagina de descărcare. Nimic nu se instalează automat."
       ],
       [
         "Permite blocarea intrărilor",
@@ -1348,7 +1348,7 @@
       ],
       [
         "Parolă, dacă dorești",
-        "Dezactivată implicit. Activeaz-o în configurările meniului Blackout și introdu noua parolă de două ori. Modificarea sau dezactivarea necesită parola actuală. Când protecția este activă, introdu parola pentru a elimina acoperirea. Alege „Salvează configurările parolei” pentru aplicarea modificărilor. Un lacăt mic pe pictograma lunii indică protecția activă prin parolă."
+        "Protecția prin parolă este dezactivată implicit. În configurările Blackout, activează comutatorul „Solicită parolă pentru restabilirea ecranului” pentru a deschide dialogul de configurare și a introduce parola nouă de două ori. Dezactivarea lui deschide un dialog de confirmare care cere parola actuală. Comutatorul afișează starea salvată; anularea sau o eroare nu o modifică. Când protecția este activă, butonul „Schimbă parola…” deschide un dialog pentru parola actuală și introducerea celei noi de două ori. Folosește linkul „Ai uitat parola…” pentru recuperare cu autentificare macOS. Un lacăt mic pe pictograma lunii indică protecția activă prin parolă. Parola limitează doar eliminarea acoperirii Blackout; nu securizează sesiunea macOS. Alegerea opțiunii „Anulează” în dialogul de deblocare lasă ecranele negre. Timp de 2 secunde sunt ignorate intrările de la tastatură și mouse care ar redeschide dialogul, pentru a evita reapariția imediată; apoi revine comportamentul normal."
       ],
       [
         "Pornire la autentificare",
@@ -1364,17 +1364,17 @@
       ],
       [
         "Dacă ceva se blochează",
-        "Dacă blocarea intrărilor se oprește, acoperirea este eliminată. Redeschide „Deschide configurările permisiunilor de introducere…” din configurările Blackout, verifică permisiunea și repornește aplicația. Dacă uiți parola sau aplicația nu răspunde, forțează închiderea sau repornește macOS. Acoperirea poate fi eliminată fără parola aplicației."
+        "Ține apăsată tasta Escape timp de 3 secunde pentru a elimina acoperirea fără parola aplicației. Dacă aplicația nu răspunde, se închide aproximativ 1 secundă mai târziu; redeschide Blackout dacă este necesar. Dacă blocarea intrărilor se oprește, acoperirea este eliminată. Redeschide „Deschide configurările permisiunilor de introducere…” din configurările Blackout, verifică permisiunea și repornește aplicația. Dacă ai uitat parola, alege „Ai uitat parola…” în configurări și autentifică-te cu Touch ID sau parola de conectare la Mac. Se elimină doar parola Blackout; celelalte preferințe sunt păstrate. Ca ultimă soluție, forțează închiderea aplicației sau repornește macOS."
       ]
     ],
     "faqs": [
       [
         "Este o blocare de securitate macOS?",
-        "Nu. Acoperă ecranele și interceptează intrările obișnuite. Închiderea forțată, ecranele de securitate și alte funcții de sistem nu sunt garantat blocate. Folosește blocarea ecranului macOS pentru protejarea sesiunii."
+        "Nu. BlackoutMac acoperă ecranele și blochează intrările obișnuite de la tastatură și mouse. Instrumentele de automatizare care au deja permisiuni de accesibilitate, precum cele care folosesc API-urile AX, pot în continuare să citească sau să controleze alte aplicații cât timp ecranele sunt acoperite. Parola limitează doar eliminarea acoperirii Blackout; nu securizează sesiunea macOS. Închiderea forțată, ecranele de securitate și alte funcții de sistem nu sunt garantat blocate. Folosește blocarea ecranului macOS pentru protejarea sesiunii."
       ],
       [
         "Permisiunea de intrare este activă. De ce nu sunt acoperite ecranele?",
-        "Actualizarea acestei versiuni semnate ad hoc poate lăsa în macOS aprobarea aplicației vechi. Alege Blackout → „Închide Blackout”. În lista permisiunilor de intrare macOS (macOS 27: „Control al dispozitivului și acces la date”; macOS 13–26: „Accesibilitate”), elimină Blackout, adaugă din nou Blackout.app instalat în prezent și permite accesul. Apoi repornește Blackout."
+        "Când identitatea de semnare se schimbă, inclusiv la actualizarea de la 0.1.0, macOS poate păstra aprobarea aplicației vechi; în acest caz, acordă din nou permisiunea o singură dată. Alege Blackout → „Închide Blackout”. În lista permisiunilor de intrare macOS (macOS 27: „Control al dispozitivului și acces la date”; macOS 13–26: „Accesibilitate”), elimină Blackout, adaugă din nou Blackout.app instalat în prezent și permite accesul. Apoi repornește Blackout."
       ]
     ],
     "status": "Versiune preliminară"
@@ -1396,7 +1396,7 @@
     "sections": [
       [
         "Hızlı kurulum",
-        "GitHub Releases üzerinden evrensel DMG’yi indirin ve Blackout.app’i Applications kısayoluna sürükleyip başlatın. macOS ilk açılışı engellerse kaynağı doğrulayın ve macOS güvenlik ayarlarında görünüyorsa ‘Yine de Aç’ seçeneğini kullanın. Güncellemek için Blackout → ‘Blackout’tan Çık’ seçeneğini kullanın, aynı klasördeki Blackout.app’i yeni DMG’deki kopyayla değiştirip yeniden açın. Parola ve dil ayrı saklanır ve korunur. Bu önizleme Developer ID yerine ad hoc imza kullanır. Değiştirme sonrasında izin açık görünse de eski uygulamaya ait olabilir; aşağıdaki sorudaki kaldırıp yeniden ekleme adımlarını izleyin. Ayarlar yüklü sürümü gösterir. ‘Güncellemeleri Denetle…’ yalnızca tıklandığında resmi GitHub sürümlerini sorgular. Daha yeni bir sürüm varsa ‘Sürüm Sayfasını Aç…’ indirme sayfasını açar. Hiçbir şey otomatik kurulmaz."
+        "GitHub Releases üzerinden evrensel DMG’yi indirin ve Blackout.app’i Applications kısayoluna sürükleyip başlatın. macOS ilk açılışı engellerse kaynağı doğrulayın ve macOS güvenlik ayarlarında görünüyorsa ‘Yine de Aç’ seçeneğini kullanın. Güncellemek için Blackout → ‘Blackout’tan Çık’ seçeneğini kullanın, aynı klasördeki Blackout.app’i yeni DMG’deki kopyayla değiştirip yeniden açın. Parola ve dil ayrı saklanır ve korunur. 0.1.0 sürümü ad hoc imza kullanır; 0.1.1’den itibaren önizlemeler sabit, kendinden imzalı bir sertifika kullanır. Developer ID imzası veya Apple noter onayı yoktur. İzin açık olduğu hâlde girdi engelleme çalışmıyorsa aşağıdaki sorulara bakın. Ayarlar yüklü sürümü gösterir. ‘Güncellemeleri Denetle…’ yalnızca tıklandığında resmi GitHub sürümlerini sorgular. Daha yeni bir sürüm varsa ‘Sürüm Sayfasını Aç…’ indirme sayfasını açar. Hiçbir şey otomatik kurulmaz."
       ],
       [
         "Girdi engellemeye izin verin",
@@ -1408,7 +1408,7 @@
       ],
       [
         "Parola sizin tercihiniz",
-        "Varsayılan olarak kapalıdır. Blackout menüsündeki ayarlarda açın ve yeni parolayı iki kez girin. Değiştirme veya kapatma için mevcut parola gerekir. Koruma açıkken kaplamayı kaldırmak için parolanızı girin. Değişiklikleri uygulamak için ‘Parola Ayarlarını Kaydet’ seçeneğini kullanın. Ay simgesindeki küçük kilit, parola korumasının açık olduğunu gösterir."
+        "Parola koruması varsayılan olarak kapalıdır. Blackout ayarlarında “Ekranı geri getirmek için parola iste” anahtarını açarak kurulum iletişim kutusunda yeni parolayı iki kez girin. Anahtarı kapatmak, mevcut parolayı isteyen bir onay iletişim kutusu açar. Anahtar kaydedilmiş durumu gösterir; iptal veya hata durumunda bu durum değişmez. Koruma açıkken “Parolayı Değiştir…” düğmesi mevcut parolayı ve yeni parolayı iki kez isteyen bir iletişim kutusu açar. macOS kimlik doğrulamasıyla kurtarmak için “Parolamı Unuttum…” bağlantısını kullanın. Ay simgesindeki küçük kilit, parola korumasının açık olduğunu gösterir. Parola yalnızca Blackout kaplamasının kaldırılmasını sınırlar; macOS oturumunuzu güvence altına almaz. Kilit açma iletişim kutusunda “Vazgeç” seçildiğinde ekranlar siyah kalır. Kutunun hemen yeniden açılmasını önlemek için onu açacak klavye ve fare girdileri 2 saniye yok sayılır; ardından normal davranış sürdürülür."
       ],
       [
         "Oturum açarken başlat",
@@ -1424,17 +1424,17 @@
       ],
       [
         "Bir sorun olursa",
-        "Girdi engelleme durursa kaplama kaldırılır. Blackout ayarlarından ‘Giriş İzni Ayarlarını Aç…’ seçeneğini yeniden açıp izni kontrol edin ve uygulamayı yeniden başlatın. Parolayı unutursanız veya uygulama yanıt vermezse çıkmaya zorlayın ya da macOS’u yeniden başlatın. Bu, uygulama parolası olmadan kaplamayı kaldırabilir."
+        "Escape tuşunu 3 saniye basılı tutarak uygulama parolasını girmeden kaplamayı kaldırabilirsiniz. Uygulama yanıt vermiyorsa yaklaşık 1 saniye sonra kapanır; gerekirse Blackout’u yeniden açın. Girdi engelleme durursa kaplama kaldırılır. Blackout ayarlarından ‘Giriş İzni Ayarlarını Aç…’ seçeneğini yeniden açıp izni kontrol edin ve uygulamayı yeniden başlatın. Parolayı unuttuysanız ayarlarda “Parolamı Unuttum…” seçeneğini kullanıp Touch ID veya Mac oturum açma parolanızla kimliğinizi doğrulayın. Yalnızca Blackout parolası silinir; diğer tercihler korunur. Son çare olarak uygulamayı çıkmaya zorlayabilir veya macOS’u yeniden başlatabilirsiniz."
       ]
     ],
     "faqs": [
       [
         "Bu bir macOS güvenlik kilidi mi?",
-        "Hayır. Ekranları kaplar ve sıradan girdileri yakalar. Zorla kapatma, güvenlik ekranları ve diğer sistem işlevleri garantisinin dışındadır. Oturumunuzu korumak için macOS Ekranı Kilitle özelliğini kullanın."
+        "Hayır. BlackoutMac ekranları kaplar ve sıradan klavye ve fare girdilerini engeller. AX API’lerini kullanan araçlar gibi erişilebilirlik izni önceden verilmiş otomasyon araçları, ekranlar kaplıyken bile diğer uygulamaları okuyabilir veya kontrol edebilir. Parola yalnızca Blackout kaplamasının kaldırılmasını sınırlar; macOS oturumunuzu güvence altına almaz. Zorla kapatma, güvenlik ekranları ve diğer sistem işlevleri garantisinin dışındadır. Oturumunuzu korumak için macOS Ekranı Kilitle özelliğini kullanın."
       ],
       [
         "Girdi izni açık. Ekran kaplaması neden başlamıyor?",
-        "Ad hoc imzalı önizlemeyi güncellemek macOS’ta eski uygulamanın onayını bırakabilir. Blackout → ‘Blackout’tan Çık’ seçeneğini kullanın. macOS girdi izinleri listesinde (macOS 27: ‘Aygıt Denetimi ve Veri Erişimi’; macOS 13–26: ‘Erişilebilirlik’) Blackout’u kaldırın, şu anda yüklü Blackout.app’i yeniden ekleyip izin verin. Ardından Blackout’u yeniden başlatın."
+        "0.1.0’dan yükseltme dâhil, imzalama kimliği değiştiğinde macOS eski uygulamanın onayını koruyabilir; bu durumda izni bir kez yeniden verin. Blackout → ‘Blackout’tan Çık’ seçeneğini kullanın. macOS girdi izinleri listesinde (macOS 27: ‘Aygıt Denetimi ve Veri Erişimi’; macOS 13–26: ‘Erişilebilirlik’) Blackout’u kaldırın, şu anda yüklü Blackout.app’i yeniden ekleyip izin verin. Ardından Blackout’u yeniden başlatın."
       ]
     ],
     "status": "Önizleme sürümü"
@@ -1456,7 +1456,7 @@
     "sections": [
       [
         "تثبيت سريع",
-        "نزّل ملف DMG الشامل من GitHub Releases واسحب Blackout.app إلى اختصار Applications، ثم شغّله. إذا منع macOS التشغيل الأول، تحقّق من المصدر واختر «فتح على أية حال» في إعدادات أمان macOS إن ظهر. للتحديث، اختر Blackout ← «إنهاء Blackout»، واستبدل Blackout.app في المجلد نفسه بنسخة ملف DMG الجديد، ثم افتحه مجددًا. تُحفظ كلمة المرور واللغة بشكل منفصل وتبقيان محفوظتين. يستخدم هذا الإصدار التجريبي توقيعًا محليًا ad hoc، دون Developer ID. بعد الاستبدال قد يظل الإذن مفعّلًا للتطبيق السابق؛ اتبع خطوات الإزالة والإضافة مجددًا في الأسئلة أدناه. تعرض الإعدادات الإصدار المثبّت. يتحقق «التحقق من وجود تحديثات…» من إصدارات GitHub الرسمية عند الضغط فقط. إذا وُجد إصدار أحدث، يفتح «فتح صفحة الإصدار…» صفحة تنزيله. لا يتم تثبيت أي شيء تلقائيًا."
+        "نزّل ملف DMG الشامل من GitHub Releases واسحب Blackout.app إلى اختصار Applications، ثم شغّله. إذا منع macOS التشغيل الأول، تحقّق من المصدر واختر «فتح على أية حال» في إعدادات أمان macOS إن ظهر. للتحديث، اختر Blackout ← «إنهاء Blackout»، واستبدل Blackout.app في المجلد نفسه بنسخة ملف DMG الجديد، ثم افتحه مجددًا. تُحفظ كلمة المرور واللغة بشكل منفصل وتبقيان محفوظتين. يستخدم الإصدار 0.1.0 توقيع ad hoc؛ وبدءًا من 0.1.1 تستخدم الإصدارات التجريبية شهادة ثابتة ذاتية التوقيع، دون توقيع Developer ID أو توثيق من Apple. إذا لم يعمل حظر الإدخال رغم تفعيل الإذن، فراجع الأسئلة أدناه. تعرض الإعدادات الإصدار المثبّت. يتحقق «التحقق من وجود تحديثات…» من إصدارات GitHub الرسمية عند الضغط فقط. إذا وُجد إصدار أحدث، يفتح «فتح صفحة الإصدار…» صفحة تنزيله. لا يتم تثبيت أي شيء تلقائيًا."
       ],
       [
         "السماح بحظر الإدخال",
@@ -1468,7 +1468,7 @@
       ],
       [
         "كلمة مرور حسب رغبتك",
-        "معطّلة افتراضيًا. فعّلها في إعدادات قائمة Blackout وأدخل كلمة المرور الجديدة مرتين. يتطلب تغييرها أو تعطيلها كلمة المرور الحالية. عند تفعيلها، أدخلها لإزالة الغطاء. اختر «حفظ إعدادات كلمة السر» لتطبيق التغييرات. تشير علامة قفل صغيرة على رمز القمر إلى تفعيل الحماية بكلمة المرور."
+        "الحماية بكلمة المرور معطّلة افتراضيًا. فعّل المفتاح «طلب كلمة سر لاستعادة الشاشة» في إعدادات Blackout لفتح مربع الإعداد وإدخال كلمة المرور الجديدة مرتين. يؤدي إيقاف المفتاح إلى فتح مربع تأكيد يتطلب كلمة المرور الحالية. يعرض المفتاح الحالة المحفوظة؛ ولا يغيّرها الإلغاء أو حدوث خطأ. عند تفعيل الحماية، يفتح زر «تغيير كلمة المرور…» مربعًا يطلب كلمة المرور الحالية والجديدة مرتين. استخدم رابط «نسيت كلمة المرور…» للاسترداد بعد التحقق من الهوية باستخدام macOS. تشير علامة قفل صغيرة على رمز القمر إلى تفعيل الحماية بكلمة المرور. تقيّد كلمة المرور إزالة غطاء Blackout فقط، ولا تؤمّن جلسة macOS. اختيار «إلغاء» في نافذة فك القفل يُبقي الشاشات سوداء. يُتجاهل إدخال لوحة المفاتيح والفأرة الذي يعيد فتح النافذة لمدة ثانيتين لمنع ظهورها فورًا، ثم تعود الاستجابة المعتادة."
       ],
       [
         "التشغيل عند تسجيل الدخول",
@@ -1484,17 +1484,17 @@
       ],
       [
         "إذا حدثت مشكلة",
-        "إذا توقف حظر الإدخال، تُزال الأغطية. أعد فتح «فتح إعدادات إذن الإدخال…» من إعدادات Blackout، وتحقق من الإذن ثم أعد تشغيل التطبيق. إذا نسيت كلمة المرور أو توقف التطبيق عن الاستجابة، افرض إنهاءه أو أعد تشغيل macOS. قد يزيل ذلك الغطاء دون كلمة مرور التطبيق."
+        "اضغط مطولًا على Escape لمدة 3 ثوانٍ لإزالة الغطاء دون إدخال كلمة مرور التطبيق. إذا كان التطبيق لا يستجيب، يُنهى بعد نحو ثانية واحدة؛ أعد فتح Blackout عند الحاجة. إذا توقف حظر الإدخال، تُزال الأغطية. أعد فتح «فتح إعدادات إذن الإدخال…» من إعدادات Blackout، وتحقق من الإذن ثم أعد تشغيل التطبيق. إذا نسيت كلمة المرور، اختر «نسيت كلمة المرور…» في الإعدادات وتحقق من هويتك باستخدام Touch ID أو كلمة مرور تسجيل الدخول إلى Mac. تُحذف كلمة مرور Blackout فقط، وتبقى التفضيلات الأخرى محفوظة. كحل أخير، يمكنك فرض إنهاء التطبيق أو إعادة تشغيل macOS."
       ]
     ],
     "faqs": [
       [
         "هل هذا قفل أمان لنظام macOS؟",
-        "لا. يغطي التطبيق الشاشات ويعترض الإدخال المعتاد. فرض الإنهاء وشاشات الأمان ووظائف النظام الأخرى خارج نطاق ضمانه. استخدم قفل شاشة macOS لحماية جلستك."
+        "لا. يغطي BlackoutMac الشاشات ويحظر الإدخال المعتاد من لوحة المفاتيح والفأرة. قد تظل أدوات الأتمتة التي مُنحت إذن تسهيلات الاستخدام مسبقًا، مثل الأدوات التي تستخدم واجهات AX، قادرة على قراءة التطبيقات الأخرى أو التحكم فيها أثناء تغطية الشاشات. تقيّد كلمة المرور إزالة غطاء Blackout فقط، ولا تؤمّن جلسة macOS. فرض الإنهاء وشاشات الأمان ووظائف النظام الأخرى خارج نطاق ضمانه. استخدم قفل شاشة macOS لحماية جلستك."
       ],
       [
         "إذن الإدخال مفعّل. لماذا لا تبدأ تغطية الشاشات؟",
-        "قد يترك تحديث هذا الإصدار الموقّع محليًا موافقة macOS على التطبيق السابق. اختر Blackout ← «إنهاء Blackout». في قائمة أذونات الإدخال في macOS (macOS 27: «التحكم في الأجهزة والوصول إلى البيانات»؛ macOS 13–26: «تسهيلات الاستخدام»)، أزل Blackout، ثم أضف Blackout.app المثبّت حاليًا من جديد واسمح له. بعد ذلك أعد تشغيل Blackout."
+        "عند تغيّر هوية التوقيع، بما في ذلك الترقية من 0.1.0، قد يحتفظ macOS بالموافقة على التطبيق السابق؛ في هذه الحالة، امنح الإذن مجددًا مرة واحدة. اختر Blackout ← «إنهاء Blackout». في قائمة أذونات الإدخال في macOS (macOS 27: «التحكم في الأجهزة والوصول إلى البيانات»؛ macOS 13–26: «تسهيلات الاستخدام»)، أزل Blackout، ثم أضف Blackout.app المثبّت حاليًا من جديد واسمح له. بعد ذلك أعد تشغيل Blackout."
       ]
     ],
     "status": "إصدار تجريبي"
@@ -1516,7 +1516,7 @@
     "sections": [
       [
         "התקנה מהירה",
-        "יש להוריד DMG אוניברסלי מ-GitHub Releases, לגרור את Blackout.app לקיצור Applications ולהפעיל. אם macOS חוסמת את ההפעלה הראשונה, יש לבדוק את המקור ולבחור ״פתיחה בכל זאת״ בהגדרות האבטחה של macOS, אם האפשרות מופיעה. לעדכון, יש לבחור Blackout ← ״סיום Blackout״, להחליף את Blackout.app באותה תיקייה בעותק מה-DMG החדש ולפתוח שוב. הסיסמה והשפה נשמרות בנפרד ונשארות. גרסת התצוגה המקדימה משתמשת בחתימת ad hoc, ללא Developer ID. אחרי החלפה, ההרשאה עשויה להישאר פעילה עבור היישום הקודם; יש לפעול לפי ההסרה וההוספה מחדש בשאלות שבהמשך. ההגדרות מציגות את הגרסה המותקנת. ״בדיקת עדכונים…״ בודק גרסאות רשמיות ב-GitHub רק בלחיצה. אם יש גרסה חדשה יותר, ״פתיחת דף הגרסה…״ פותח את דף ההורדה. אין התקנה אוטומטית."
+        "יש להוריד DMG אוניברסלי מ-GitHub Releases, לגרור את Blackout.app לקיצור Applications ולהפעיל. אם macOS חוסמת את ההפעלה הראשונה, יש לבדוק את המקור ולבחור ״פתיחה בכל זאת״ בהגדרות האבטחה של macOS, אם האפשרות מופיעה. לעדכון, יש לבחור Blackout ← ״סיום Blackout״, להחליף את Blackout.app באותה תיקייה בעותק מה-DMG החדש ולפתוח שוב. הסיסמה והשפה נשמרות בנפרד ונשארות. גרסה 0.1.0 משתמשת בחתימת ad hoc; החל מ-0.1.1, גרסאות התצוגה המקדימה משתמשות בתעודה קבועה בחתימה עצמית, ללא חתימת Developer ID או אישור נוטריון של Apple. אם חסימת הקלט אינה פועלת למרות הרשאה פעילה, יש לעיין בשאלות שבהמשך. ההגדרות מציגות את הגרסה המותקנת. ״בדיקת עדכונים…״ בודק גרסאות רשמיות ב-GitHub רק בלחיצה. אם יש גרסה חדשה יותר, ״פתיחת דף הגרסה…״ פותח את דף ההורדה. אין התקנה אוטומטית."
       ],
       [
         "מתן הרשאה לחסימת קלט",
@@ -1528,7 +1528,7 @@
       ],
       [
         "סיסמה לפי בחירה",
-        "כבויה כברירת מחדל. אפשר להפעיל בהגדרות שבתפריט Blackout ולהזין את הסיסמה החדשה פעמיים. שינוי או ביטול מחייבים את הסיסמה הנוכחית. כשההגנה פעילה, יש להזין את הסיסמה להסרת הכיסוי. יש לבחור ״שמירת הגדרות הסיסמה״ להחלת השינויים. סימן מנעול קטן על סמל הירח מציין שהגנת הסיסמה פעילה."
+        "הגנת הסיסמה כבויה כברירת מחדל. בהגדרות Blackout יש להפעיל את המתג ״דרישת סיסמה לשחזור המסך״ כדי לפתוח תיבת הגדרה ולהזין את הסיסמה החדשה פעמיים. כיבוי המתג פותח תיבת אישור הדורשת את הסיסמה הנוכחית. המתג מציג את המצב השמור; ביטול או שגיאה אינם משנים אותו. כשההגנה פעילה, הכפתור ״שינוי סיסמה…״ פותח תיבה להזנת הסיסמה הנוכחית והסיסמה החדשה פעמיים. הקישור ״שכחתי סיסמה…״ מאפשר שחזור לאחר אימות זהות באמצעות macOS. סימן מנעול קטן על סמל הירח מציין שהגנת הסיסמה פעילה. הסיסמה מגבילה רק את הסרת הכיסוי של Blackout; היא אינה מאבטחת את ההפעלה ב-macOS. בחירה ב״ביטול״ בתיבת שחרור הנעילה משאירה את המסכים שחורים. במשך 2 שניות מתעלמים מקלט מקלדת ועכבר שיפתח אותה מחדש, כדי למנוע פתיחה מיידית; לאחר מכן חוזרת ההתנהגות הרגילה."
       ],
       [
         "הפעלה בעת ההתחברות",
@@ -1544,17 +1544,17 @@
       ],
       [
         "אם משהו נתקע",
-        "אם חסימת הקלט מפסיקה, הכיסוי מוסר. יש לפתוח שוב ״פתיחת הגדרות הרשאות קלט…״ מהגדרות Blackout, לבדוק את ההרשאה ולהפעיל מחדש את היישום. אם הסיסמה נשכחה או שהיישום אינו מגיב, אפשר לכפות סיום או להפעיל מחדש את macOS. כך ניתן להסיר את הכיסוי ללא סיסמת היישום."
+        "יש להחזיק את Escape לחוץ למשך 3 שניות כדי להסיר את הכיסוי בלי להזין את סיסמת היישום. אם היישום אינו מגיב, הוא ייסגר כעבור כשנייה נוספת; יש לפתוח שוב את Blackout לפי הצורך. אם חסימת הקלט מפסיקה, הכיסוי מוסר. יש לפתוח שוב ״פתיחת הגדרות הרשאות קלט…״ מהגדרות Blackout, לבדוק את ההרשאה ולהפעיל מחדש את היישום. אם שכחת את הסיסמה, יש לבחור ״שכחתי סיסמה…״ בהגדרות ולאמת את הזהות באמצעות Touch ID או סיסמת הכניסה ל-Mac. רק סיסמת Blackout נמחקת; ההעדפות האחרות נשמרות. כמוצא אחרון, אפשר לכפות סיום של היישום או להפעיל מחדש את macOS."
       ]
     ],
     "faqs": [
       [
         "האם זו נעילת אבטחה של macOS?",
-        "לא. היישום מכסה מסכים ומיירט קלט רגיל. סיום כפוי, מסכי אבטחה ופעולות מערכת אחרות אינם מובטחים כחסומים. להגנה על ההפעלה יש להשתמש בנעילת המסך של macOS."
+        "לא. BlackoutMac מכסה מסכים וחוסם קלט רגיל מהמקלדת ומהעכבר. כלי אוטומציה שכבר קיבלו הרשאת נגישות, כגון כלים המשתמשים בממשקי AX, עשויים עדיין לקרוא מידע מיישומים אחרים או לשלוט בהם כשהמסכים מכוסים. הסיסמה מגבילה רק את הסרת הכיסוי של Blackout; היא אינה מאבטחת את ההפעלה ב-macOS. סיום כפוי, מסכי אבטחה ופעולות מערכת אחרות אינם מובטחים כחסומים. להגנה על ההפעלה יש להשתמש בנעילת המסך של macOS."
       ],
       [
         "הרשאת הקלט פעילה. למה כיסוי המסכים לא מתחיל?",
-        "עדכון גרסת התצוגה המקדימה עם חתימת ad hoc עשוי להשאיר ב-macOS אישור ליישום הקודם. יש לבחור Blackout ← ״סיום Blackout״. ברשימת הרשאות הקלט של macOS (macOS 27: ״שליטה במכשיר וגישה לנתונים״; macOS 13–26: ״נגישות״), יש להסיר את Blackout, להוסיף מחדש את Blackout.app המותקן כעת ולאשר אותו. לאחר מכן יש לפתוח שוב את Blackout."
+        "כשזהות החתימה משתנה, לרבות בשדרוג מ-0.1.0, macOS עשויה לשמור את האישור ליישום הקודם; במקרה כזה, יש להעניק את ההרשאה מחדש פעם אחת. יש לבחור Blackout ← ״סיום Blackout״. ברשימת הרשאות הקלט של macOS (macOS 27: ״שליטה במכשיר וגישה לנתונים״; macOS 13–26: ״נגישות״), יש להסיר את Blackout, להוסיף מחדש את Blackout.app המותקן כעת ולאשר אותו. לאחר מכן יש לפתוח שוב את Blackout."
       ]
     ],
     "status": "גרסת תצוגה מקדימה"
@@ -1576,7 +1576,7 @@
     "sections": [
       [
         "आसान स्थापना",
-        "GitHub Releases से यूनिवर्सल DMG डाउनलोड करके Blackout.app को Applications शॉर्टकट पर खींचें और चलाएँ। macOS पहली बार खोलने से रोके तो स्रोत जाँचें और macOS की सुरक्षा सेटिंग में “फिर भी खोलें” दिखे तो चुनें। अपडेट के लिए Blackout → “Blackout बंद करें” चुनें, उसी फ़ोल्डर में मौजूद Blackout.app को नए DMG की प्रति से बदलें और फिर खोलें। पासवर्ड और भाषा अलग सहेजे जाते हैं और बने रहते हैं। यह पूर्वावलोकन Developer ID के बजाय ad hoc हस्ताक्षर इस्तेमाल करता है। ऐप बदलने के बाद अनुमति चालू दिख सकती है, लेकिन पुराने ऐप के लिए; नीचे दिए सवाल में हटाकर दोबारा जोड़ने के चरण अपनाएँ। सेटिंग में स्थापित संस्करण दिखता है। “अपडेट की जाँच करें…” दबाने पर ही आधिकारिक GitHub रिलीज़ जाँची जाती हैं। नया संस्करण उपलब्ध हो तो “रिलीज़ पेज खोलें…” उसका डाउनलोड पेज खोलता है। कुछ भी अपने-आप स्थापित नहीं होता।"
+        "GitHub Releases से यूनिवर्सल DMG डाउनलोड करके Blackout.app को Applications शॉर्टकट पर खींचें और चलाएँ। macOS पहली बार खोलने से रोके तो स्रोत जाँचें और macOS की सुरक्षा सेटिंग में “फिर भी खोलें” दिखे तो चुनें। अपडेट के लिए Blackout → “Blackout बंद करें” चुनें, उसी फ़ोल्डर में मौजूद Blackout.app को नए DMG की प्रति से बदलें और फिर खोलें। पासवर्ड और भाषा अलग सहेजे जाते हैं और बने रहते हैं। संस्करण 0.1.0 में ad hoc हस्ताक्षर हैं; 0.1.1 से पूर्वावलोकन संस्करण एक स्थिर स्व-हस्ताक्षरित प्रमाणपत्र इस्तेमाल करते हैं। इनमें Developer ID हस्ताक्षर या Apple नोटराइज़ेशन नहीं है। अनुमति चालू होने पर भी इनपुट ब्लॉकिंग काम न करे, तो नीचे दिए सवाल देखें। सेटिंग में स्थापित संस्करण दिखता है। “अपडेट की जाँच करें…” दबाने पर ही आधिकारिक GitHub रिलीज़ जाँची जाती हैं। नया संस्करण उपलब्ध हो तो “रिलीज़ पेज खोलें…” उसका डाउनलोड पेज खोलता है। कुछ भी अपने-आप स्थापित नहीं होता।"
       ],
       [
         "इनपुट रोकने की अनुमति दें",
@@ -1588,7 +1588,7 @@
       ],
       [
         "पासवर्ड आपकी पसंद",
-        "डिफ़ॉल्ट रूप से बंद है। Blackout मेनू की सेटिंग में चालू करें और नया पासवर्ड दो बार भरें। बदलने या बंद करने के लिए मौजूदा पासवर्ड चाहिए। सुरक्षा चालू हो तो पर्दा हटाने के लिए पासवर्ड भरें। बदलाव लागू करने के लिए “पासवर्ड सेटिंग्स सहेजें” चुनें। चाँद के चिह्न पर छोटा ताला दिखना पासवर्ड सुरक्षा चालू होने का संकेत है।"
+        "पासवर्ड सुरक्षा डिफ़ॉल्ट रूप से बंद रहती है। Blackout की सेटिंग में “स्क्रीन वापस लाने के लिए पासवर्ड माँगें” स्विच चालू करें। खुलने वाले सेटअप डायलॉग में नया पासवर्ड दो बार भरें। स्विच बंद करने पर पुष्टि का डायलॉग खुलता है, जिसमें मौजूदा पासवर्ड चाहिए। स्विच सहेजी गई स्थिति दिखाता है; रद्द करने या त्रुटि आने पर वह नहीं बदलती। सुरक्षा चालू होने पर “पासवर्ड बदलें…” बटन से मौजूदा पासवर्ड और दो बार नया पासवर्ड भरने का डायलॉग खुलता है। macOS पहचान सत्यापन के साथ पुनर्प्राप्ति के लिए “पासवर्ड भूल गए…” लिंक इस्तेमाल करें। चाँद के चिह्न पर छोटा ताला दिखना पासवर्ड सुरक्षा चालू होने का संकेत है। पासवर्ड केवल Blackout का पर्दा हटाने पर रोक लगाता है; यह आपके macOS सत्र को सुरक्षित नहीं करता। अनलॉक डायलॉग में “रद्द करें” चुनने पर स्क्रीन काली हो जाती हैं। डायलॉग तुरंत फिर न खुले, इसलिए उसे खोलने वाले कीबोर्ड और माउस इनपुट 2 सेकंड तक अनदेखे किए जाते हैं; उसके बाद सामान्य व्यवहार फिर शुरू होता है।"
       ],
       [
         "लॉगिन पर शुरू करें",
@@ -1604,17 +1604,17 @@
       ],
       [
         "समस्या आने पर",
-        "इनपुट अवरोध बंद हो जाए तो पर्दा हट जाता है। Blackout की सेटिंग से “इनपुट अनुमति की सेटिंग्स खोलें…” दोबारा खोलकर अनुमति जाँचें और ऐप फिर शुरू करें। पासवर्ड भूलने या ऐप के जवाब न देने पर जबरन बंद करें या macOS फिर शुरू करें। इससे ऐप का पासवर्ड दिए बिना पर्दा हट सकता है।"
+        "ऐप का पासवर्ड दिए बिना पर्दा हटाने के लिए Escape को 3 सेकंड तक दबाए रखें। यदि ऐप जवाब नहीं देता है, तो वह लगभग 1 सेकंड बाद बंद हो जाएगा; ज़रूरत होने पर Blackout फिर खोलें। इनपुट अवरोध बंद हो जाए तो पर्दा हट जाता है। Blackout की सेटिंग से “इनपुट अनुमति की सेटिंग्स खोलें…” दोबारा खोलकर अनुमति जाँचें और ऐप फिर शुरू करें। पासवर्ड भूलने पर सेटिंग में “पासवर्ड भूल गए…” चुनें और Touch ID या Mac के लॉगिन पासवर्ड से अपनी पहचान सत्यापित करें। इससे केवल Blackout का पासवर्ड हटता है; बाकी प्राथमिकताएँ बनी रहती हैं। अंतिम उपाय के रूप में ऐप को जबरन बंद करें या macOS फिर शुरू करें।"
       ]
     ],
     "faqs": [
       [
         "क्या यह macOS का सुरक्षा लॉक है?",
-        "नहीं। ऐप स्क्रीन ढकता और सामान्य इनपुट रोकता है। Force Quit, सुरक्षा स्क्रीन और अन्य सिस्टम कार्य इसकी गारंटी में नहीं हैं। अपने सत्र को सुरक्षित करने के लिए macOS का Lock Screen इस्तेमाल करें।"
+        "नहीं। BlackoutMac स्क्रीन ढकता है और सामान्य कीबोर्ड व माउस इनपुट रोकता है। पहले से ऐक्सेसिबिलिटी अनुमति प्राप्त ऑटोमेशन टूल, जैसे AX API का उपयोग करने वाले टूल, स्क्रीन ढकी होने पर भी अन्य ऐप्स को पढ़ या नियंत्रित कर सकते हैं। पासवर्ड केवल Blackout का पर्दा हटाने पर रोक लगाता है; यह आपके macOS सत्र को सुरक्षित नहीं करता। Force Quit, सुरक्षा स्क्रीन और अन्य सिस्टम कार्य इसकी गारंटी में नहीं हैं। अपने सत्र को सुरक्षित करने के लिए macOS का Lock Screen इस्तेमाल करें।"
       ],
       [
         "इनपुट अनुमति चालू है। फिर भी स्क्रीन क्यों नहीं ढकती?",
-        "ad hoc हस्ताक्षर वाले पूर्वावलोकन को अपडेट करने पर macOS में पुराने ऐप की मंज़ूरी रह सकती है। Blackout → “Blackout बंद करें” चुनें। macOS की इनपुट अनुमति सूची में (macOS 27: “डिवाइस नियंत्रण और डेटा ऐक्सेस”; macOS 13–26: “ऐक्सेसिबिलिटी”) Blackout हटाएँ, अभी स्थापित Blackout.app फिर जोड़ें और अनुमति चालू करें। फिर Blackout दोबारा शुरू करें।"
+        "0.1.0 से अपग्रेड करने सहित, हस्ताक्षर पहचान बदलने पर macOS में पुराने ऐप की मंज़ूरी रह सकती है; ऐसे में अनुमति एक बार फिर दें। Blackout → “Blackout बंद करें” चुनें। macOS की इनपुट अनुमति सूची में (macOS 27: “डिवाइस नियंत्रण और डेटा ऐक्सेस”; macOS 13–26: “ऐक्सेसिबिलिटी”) Blackout हटाएँ, अभी स्थापित Blackout.app फिर जोड़ें और अनुमति चालू करें। फिर Blackout दोबारा शुरू करें।"
       ]
     ],
     "status": "पूर्वावलोकन संस्करण"
@@ -1636,7 +1636,7 @@
     "sections": [
       [
         "ติดตั้งง่าย",
-        "ดาวน์โหลด DMG แบบยูนิเวอร์แซลจาก GitHub Releases แล้วลาก Blackout.app ไปยังทางลัด Applications จากนั้นเปิดแอป หาก macOS บล็อกการเปิดครั้งแรก ให้ตรวจสอบแหล่งที่มาและเลือก “ยืนยันจะเปิด” ในการตั้งค่าความปลอดภัยของ macOS หากมีตัวเลือกนี้ เมื่อต้องการอัปเดต ให้เลือก Blackout → “ออกจาก Blackout” แทนที่ Blackout.app ในโฟลเดอร์เดิมด้วยแอปจาก DMG ใหม่ แล้วเปิดอีกครั้ง รหัสผ่านและภาษาถูกเก็บแยกไว้และยังคงอยู่ รุ่นตัวอย่างนี้ใช้ลายเซ็น ad hoc โดยไม่มี Developer ID หลังแทนที่แอป สิทธิ์อาจยังเปิดอยู่แต่เป็นของแอปเดิม ให้ทำตามขั้นตอนลบและเพิ่มใหม่ในคำถามด้านล่าง การตั้งค่าแสดงเวอร์ชันที่ติดตั้ง “ตรวจสอบรายการอัปเดต…” จะตรวจสอบรุ่นอย่างเป็นทางการบน GitHub เมื่อกดเท่านั้น หากมีรุ่นใหม่กว่า “เปิดหน้าเวอร์ชั่น…” จะเปิดหน้าดาวน์โหลด ไม่มีการติดตั้งอัตโนมัติ"
+        "ดาวน์โหลด DMG แบบยูนิเวอร์แซลจาก GitHub Releases แล้วลาก Blackout.app ไปยังทางลัด Applications จากนั้นเปิดแอป หาก macOS บล็อกการเปิดครั้งแรก ให้ตรวจสอบแหล่งที่มาและเลือก “ยืนยันจะเปิด” ในการตั้งค่าความปลอดภัยของ macOS หากมีตัวเลือกนี้ เมื่อต้องการอัปเดต ให้เลือก Blackout → “ออกจาก Blackout” แทนที่ Blackout.app ในโฟลเดอร์เดิมด้วยแอปจาก DMG ใหม่ แล้วเปิดอีกครั้ง รหัสผ่านและภาษาถูกเก็บแยกไว้และยังคงอยู่ เวอร์ชัน 0.1.0 ใช้ลายเซ็น ad hoc ตั้งแต่ 0.1.1 รุ่นตัวอย่างใช้ใบรับรองที่ลงนามด้วยตนเองฉบับเดิม โดยไม่มีลายเซ็น Developer ID หรือการรับรองจาก Apple หากการบล็อกอินพุตไม่ทำงานแม้เปิดสิทธิ์แล้ว โปรดดูคำถามด้านล่าง การตั้งค่าแสดงเวอร์ชันที่ติดตั้ง “ตรวจสอบรายการอัปเดต…” จะตรวจสอบรุ่นอย่างเป็นทางการบน GitHub เมื่อกดเท่านั้น หากมีรุ่นใหม่กว่า “เปิดหน้าเวอร์ชั่น…” จะเปิดหน้าดาวน์โหลด ไม่มีการติดตั้งอัตโนมัติ"
       ],
       [
         "อนุญาตการบล็อกอินพุต",
@@ -1648,7 +1648,7 @@
       ],
       [
         "รหัสผ่านตามต้องการ",
-        "ปิดไว้เป็นค่าเริ่มต้น เปิดได้ในหน้าตั้งค่าของเมนู Blackout และป้อนรหัสผ่านใหม่สองครั้ง การเปลี่ยนหรือปิดต้องใช้รหัสผ่านปัจจุบัน เมื่อเปิดการป้องกัน ให้ป้อนรหัสผ่านเพื่อเอาสิ่งปกคลุมออก เลือก “บันทึกการตั้งค่ารหัสผ่าน” เพื่อใช้การเปลี่ยนแปลง รูปแม่กุญแจเล็กบนไอคอนดวงจันทร์หมายถึงเปิดการป้องกันด้วยรหัสผ่านอยู่"
+        "การป้องกันด้วยรหัสผ่านปิดไว้เป็นค่าเริ่มต้น ในการตั้งค่า Blackout ให้เปิดสวิตช์ “ต้องใช้รหัสผ่านเพื่อคืนค่าหน้าจอ” เพื่อเปิดกล่องตั้งค่าและป้อนรหัสผ่านใหม่สองครั้ง เมื่อปิดสวิตช์ จะมีกล่องยืนยันที่ต้องใช้รหัสผ่านปัจจุบัน สวิตช์แสดงสถานะที่บันทึกไว้ การยกเลิกหรือข้อผิดพลาดจะไม่เปลี่ยนสถานะนั้น เมื่อเปิดการป้องกัน ปุ่ม “เปลี่ยนรหัสผ่าน…” จะเปิดกล่องที่ให้ป้อนรหัสผ่านปัจจุบันและรหัสผ่านใหม่สองครั้ง ใช้ลิงก์ “ลืมรหัสผ่าน…” เพื่อกู้คืนด้วยการยืนยันตัวตนผ่าน macOS รูปแม่กุญแจเล็กบนไอคอนดวงจันทร์หมายถึงเปิดการป้องกันด้วยรหัสผ่านอยู่ รหัสผ่านจำกัดเฉพาะการเอาสิ่งปกคลุมของ Blackout ออก ไม่ได้รักษาความปลอดภัยให้เซสชัน macOS เมื่อเลือก “ยกเลิก” ในกล่องปลดล็อก หน้าจอจะกลับเป็นสีดำ แอปจะละเว้นอินพุตจากแป้นพิมพ์และเมาส์ที่เปิดกล่องขึ้นมาใหม่เป็นเวลา 2 วินาที เพื่อไม่ให้เปิดซ้ำทันที จากนั้นจะกลับมาทำงานตามปกติ"
       ],
       [
         "เริ่มเมื่อเข้าสู่ระบบ",
@@ -1664,17 +1664,17 @@
       ],
       [
         "เมื่อเกิดปัญหา",
-        "หากการบล็อกอินพุตหยุดทำงาน สิ่งปกคลุมจะถูกเอาออก เปิด “เปิดการตั้งค่าสิทธิ์การป้อนข้อมูล…” อีกครั้งจากการตั้งค่า Blackout ตรวจสอบสิทธิ์แล้วเปิดแอปใหม่ หากลืมรหัสผ่านหรือแอปไม่ตอบสนอง ให้บังคับออกหรือรีสตาร์ท macOS ซึ่งอาจเอาสิ่งปกคลุมออกได้โดยไม่ต้องใช้รหัสผ่านของแอป"
+        "กด Escape ค้างไว้ 3 วินาทีเพื่อเอาสิ่งปกคลุมออกโดยไม่ต้องป้อนรหัสผ่านของแอป หากแอปไม่ตอบสนอง แอปจะปิดหลังจากนั้นประมาณ 1 วินาที แล้วเปิด Blackout ใหม่หากจำเป็น หากการบล็อกอินพุตหยุดทำงาน สิ่งปกคลุมจะถูกเอาออก เปิด “เปิดการตั้งค่าสิทธิ์การป้อนข้อมูล…” อีกครั้งจากการตั้งค่า Blackout ตรวจสอบสิทธิ์แล้วเปิดแอปใหม่ หากลืมรหัสผ่าน ให้เลือก “ลืมรหัสผ่าน…” ในการตั้งค่า แล้วยืนยันตัวตนด้วย Touch ID หรือรหัสผ่านเข้าสู่ระบบ Mac การทำเช่นนี้จะลบเฉพาะรหัสผ่าน Blackout โดยยังเก็บการตั้งค่าอื่นไว้ หากวิธีอื่นไม่ได้ผล สามารถบังคับออกจากแอปหรือรีสตาร์ท macOS ได้"
       ]
     ],
     "faqs": [
       [
         "นี่คือการล็อกเพื่อความปลอดภัยของ macOS หรือไม่",
-        "ไม่ใช่ แอปคลุมหน้าจอและดักรับอินพุตทั่วไป การบังคับออก หน้าจอความปลอดภัย และการทำงานอื่นของระบบอยู่นอกการรับประกัน หากต้องการปกป้องเซสชัน ให้ใช้การล็อกหน้าจอของ macOS"
+        "ไม่ใช่ BlackoutMac คลุมหน้าจอและบล็อกอินพุตทั่วไปจากแป้นพิมพ์และเมาส์ เครื่องมืออัตโนมัติที่ได้รับสิทธิ์การช่วยการเข้าถึงแล้ว เช่น เครื่องมือที่ใช้ AX API อาจยังอ่านหรือควบคุมแอปอื่นได้ขณะหน้าจอถูกคลุมอยู่ รหัสผ่านจำกัดเฉพาะการเอาสิ่งปกคลุมของ Blackout ออก ไม่ได้รักษาความปลอดภัยให้เซสชัน macOS การบังคับออก หน้าจอความปลอดภัย และการทำงานอื่นของระบบอยู่นอกการรับประกัน หากต้องการปกป้องเซสชัน ให้ใช้การล็อกหน้าจอของ macOS"
       ],
       [
         "เปิดสิทธิ์อินพุตแล้ว ทำไมยังคลุมหน้าจอไม่ได้",
-        "การอัปเดตรุ่นตัวอย่างที่ใช้ลายเซ็น ad hoc อาจทำให้ macOS เก็บการอนุมัติของแอปเดิมไว้ เลือก Blackout → “ออกจาก Blackout” ในรายการสิทธิ์อินพุตของ macOS (macOS 27: “การควบคุมอุปกรณ์และการเข้าถึงข้อมูล”; macOS 13–26: “การช่วยการเข้าถึง”) ให้ลบ Blackout แล้วเพิ่ม Blackout.app ที่ติดตั้งอยู่ในขณะนี้อีกครั้งและอนุญาต จากนั้นเปิด Blackout ใหม่"
+        "เมื่อข้อมูลระบุตัวผู้ลงนามเปลี่ยนไป รวมถึงการอัปเกรดจาก 0.1.0 macOS อาจเก็บการอนุมัติของแอปเดิมไว้ ในกรณีนี้ ให้สิทธิ์ใหม่อีกครั้งหนึ่ง เลือก Blackout → “ออกจาก Blackout” ในรายการสิทธิ์อินพุตของ macOS (macOS 27: “การควบคุมอุปกรณ์และการเข้าถึงข้อมูล”; macOS 13–26: “การช่วยการเข้าถึง”) ให้ลบ Blackout แล้วเพิ่ม Blackout.app ที่ติดตั้งอยู่ในขณะนี้อีกครั้งและอนุญาต จากนั้นเปิด Blackout ใหม่"
       ]
     ],
     "status": "รุ่นตัวอย่าง"
@@ -1696,7 +1696,7 @@
     "sections": [
       [
         "Cài đặt nhanh",
-        "Tải DMG dùng chung từ GitHub Releases, kéo Blackout.app vào lối tắt Applications rồi mở ứng dụng. Nếu macOS chặn lần mở đầu, kiểm tra nguồn và chọn “Vẫn mở” trong cài đặt bảo mật macOS nếu xuất hiện. Để cập nhật, chọn Blackout → “Thoát Blackout”, thay Blackout.app trong cùng thư mục bằng bản từ DMG mới rồi mở lại. Mật khẩu và ngôn ngữ được lưu riêng nên vẫn giữ nguyên. Bản xem trước dùng chữ ký ad hoc, không có Developer ID. Sau khi thay ứng dụng, quyền có thể vẫn bật nhưng dành cho bản cũ; hãy làm bước xóa rồi thêm lại trong câu hỏi bên dưới. Cài đặt hiển thị phiên bản đang dùng. “Kiểm tra bản cập nhật…” chỉ truy vấn các bản phát hành GitHub chính thức khi được nhấn. Nếu có bản phát hành mới hơn, “Mở trang bản phát hành…” mở trang tải xuống. Không tự động cài đặt."
+        "Tải DMG dùng chung từ GitHub Releases, kéo Blackout.app vào lối tắt Applications rồi mở ứng dụng. Nếu macOS chặn lần mở đầu, kiểm tra nguồn và chọn “Vẫn mở” trong cài đặt bảo mật macOS nếu xuất hiện. Để cập nhật, chọn Blackout → “Thoát Blackout”, thay Blackout.app trong cùng thư mục bằng bản từ DMG mới rồi mở lại. Mật khẩu và ngôn ngữ được lưu riêng nên vẫn giữ nguyên. Phiên bản 0.1.0 dùng chữ ký ad hoc; từ 0.1.1, các bản xem trước dùng chứng chỉ tự ký cố định, không có chữ ký Developer ID hay công chứng của Apple. Nếu chặn đầu vào không hoạt động dù quyền đã bật, hãy xem câu hỏi bên dưới. Cài đặt hiển thị phiên bản đang dùng. “Kiểm tra bản cập nhật…” chỉ truy vấn các bản phát hành GitHub chính thức khi được nhấn. Nếu có bản phát hành mới hơn, “Mở trang bản phát hành…” mở trang tải xuống. Không tự động cài đặt."
       ],
       [
         "Cho phép chặn đầu vào",
@@ -1708,7 +1708,7 @@
       ],
       [
         "Mật khẩu tùy ý",
-        "Mặc định tắt. Bật trong phần cài đặt của menu Blackout và nhập mật khẩu mới hai lần. Đổi hoặc tắt cần mật khẩu hiện tại. Khi bảo vệ được bật, nhập mật khẩu để bỏ lớp che. Chọn “Lưu cài đặt mật khẩu” để áp dụng thay đổi. Huy hiệu ổ khóa nhỏ trên biểu tượng mặt trăng cho biết bảo vệ bằng mật khẩu đang bật."
+        "Bảo vệ bằng mật khẩu mặc định tắt. Trong cài đặt Blackout, bật công tắc “Yêu cầu mật khẩu để khôi phục màn hình” để mở hộp thoại thiết lập và nhập mật khẩu mới hai lần. Tắt công tắc sẽ mở hộp thoại xác nhận yêu cầu mật khẩu hiện tại. Công tắc hiển thị trạng thái đã lưu; hủy hoặc lỗi không làm thay đổi trạng thái đó. Khi bảo vệ được bật, nút “Đổi mật khẩu…” mở hộp thoại yêu cầu mật khẩu hiện tại và mật khẩu mới hai lần. Dùng liên kết “Quên mật khẩu…” để khôi phục sau khi xác thực bằng macOS. Huy hiệu ổ khóa nhỏ trên biểu tượng mặt trăng cho biết bảo vệ bằng mật khẩu đang bật. Mật khẩu chỉ giới hạn việc gỡ lớp che của Blackout; không bảo vệ phiên làm việc macOS. Chọn “Hủy” trong hộp thoại mở khóa sẽ đưa màn hình về màu đen. Đầu vào từ bàn phím và chuột có thể mở lại hộp thoại sẽ bị bỏ qua trong 2 giây để tránh mở lại ngay lập tức; sau đó ứng dụng phản hồi như bình thường."
       ],
       [
         "Khởi chạy khi đăng nhập",
@@ -1724,17 +1724,17 @@
       ],
       [
         "Khi gặp sự cố",
-        "Nếu chặn đầu vào dừng hoạt động, lớp che được gỡ bỏ. Mở lại “Mở cài đặt quyền đầu vào…” từ cài đặt Blackout, kiểm tra quyền rồi khởi động lại ứng dụng. Nếu quên mật khẩu hoặc ứng dụng không phản hồi, buộc thoát hoặc khởi động lại macOS. Việc này có thể bỏ lớp che mà không cần mật khẩu ứng dụng."
+        "Giữ phím Escape trong 3 giây để gỡ lớp che mà không cần nhập mật khẩu ứng dụng. Nếu ứng dụng không phản hồi, ứng dụng sẽ đóng sau khoảng 1 giây nữa; mở lại Blackout nếu cần. Nếu chặn đầu vào dừng hoạt động, lớp che được gỡ bỏ. Mở lại “Mở cài đặt quyền đầu vào…” từ cài đặt Blackout, kiểm tra quyền rồi khởi động lại ứng dụng. Nếu quên mật khẩu, chọn “Quên mật khẩu…” trong cài đặt và xác thực bằng Touch ID hoặc mật khẩu đăng nhập Mac. Chỉ mật khẩu Blackout bị xóa; các tùy chọn khác được giữ nguyên. Nếu các cách khác không hiệu quả, bạn có thể buộc thoát ứng dụng hoặc khởi động lại macOS."
       ]
     ],
     "faqs": [
       [
         "Đây có phải khóa bảo mật macOS không?",
-        "Không. Ứng dụng che màn hình và chặn đầu vào thông thường. Buộc thoát, màn hình bảo mật và các chức năng hệ thống khác nằm ngoài phạm vi đảm bảo. Dùng Khóa màn hình của macOS để bảo vệ phiên làm việc."
+        "Không. BlackoutMac che màn hình và chặn đầu vào thông thường từ bàn phím và chuột. Các công cụ tự động hóa đã được cấp quyền trợ năng, chẳng hạn công cụ dùng API AX, vẫn có thể đọc hoặc điều khiển ứng dụng khác khi màn hình đang được che. Mật khẩu chỉ giới hạn việc gỡ lớp che của Blackout; không bảo vệ phiên làm việc macOS. Buộc thoát, màn hình bảo mật và các chức năng hệ thống khác nằm ngoài phạm vi đảm bảo. Dùng Khóa màn hình của macOS để bảo vệ phiên làm việc."
       ],
       [
         "Quyền đầu vào đã bật. Vì sao không thể che màn hình?",
-        "Cập nhật bản xem trước có chữ ký ad hoc có thể để lại quyền macOS dành cho ứng dụng cũ. Chọn Blackout → “Thoát Blackout”. Trong danh sách quyền đầu vào macOS (macOS 27: “Điều khiển thiết bị và truy cập dữ liệu”; macOS 13–26: “Trợ năng”), xóa Blackout, thêm lại Blackout.app hiện đang cài đặt rồi cho phép. Sau đó mở lại Blackout."
+        "Khi danh tính ký thay đổi, kể cả khi nâng cấp từ 0.1.0, macOS có thể vẫn giữ quyền dành cho ứng dụng cũ; trong trường hợp này, hãy cấp lại quyền một lần. Chọn Blackout → “Thoát Blackout”. Trong danh sách quyền đầu vào macOS (macOS 27: “Điều khiển thiết bị và truy cập dữ liệu”; macOS 13–26: “Trợ năng”), xóa Blackout, thêm lại Blackout.app hiện đang cài đặt rồi cho phép. Sau đó mở lại Blackout."
       ]
     ],
     "status": "Bản xem trước"
@@ -1756,7 +1756,7 @@
     "sections": [
       [
         "Pemasangan mudah",
-        "Unduh DMG universal dari GitHub Releases, seret Blackout.app ke pintasan Applications, lalu jalankan. Jika macOS memblokir pembukaan pertama, periksa sumber dan pilih “Tetap Buka” di pengaturan keamanan macOS jika muncul. Untuk memperbarui, pilih Blackout → “Keluar dari Blackout”, ganti Blackout.app di folder yang sama dengan salinan dari DMG baru, lalu buka kembali. Kata sandi dan bahasa disimpan terpisah dan tetap tersimpan. Pratinjau ini memakai tanda tangan ad hoc, tanpa Developer ID. Setelah penggantian, izin mungkin tetap aktif untuk app lama; ikuti langkah hapus dan tambahkan ulang pada pertanyaan di bawah. Pengaturan menampilkan versi terpasang. “Periksa Pembaruan…” hanya memeriksa rilis resmi GitHub saat diklik. Jika ada rilis yang lebih baru, “Buka Halaman Rilis…” membuka halaman unduhannya. Tidak ada pemasangan otomatis."
+        "Unduh DMG universal dari GitHub Releases, seret Blackout.app ke pintasan Applications, lalu jalankan. Jika macOS memblokir pembukaan pertama, periksa sumber dan pilih “Tetap Buka” di pengaturan keamanan macOS jika muncul. Untuk memperbarui, pilih Blackout → “Keluar dari Blackout”, ganti Blackout.app di folder yang sama dengan salinan dari DMG baru, lalu buka kembali. Kata sandi dan bahasa disimpan terpisah dan tetap tersimpan. Versi 0.1.0 memakai tanda tangan ad hoc; mulai 0.1.1, pratinjau memakai sertifikat yang ditandatangani sendiri dan tetap sama, tanpa tanda tangan Developer ID atau notarisasi Apple. Jika pemblokiran input gagal meskipun izin aktif, lihat pertanyaan di bawah. Pengaturan menampilkan versi terpasang. “Periksa Pembaruan…” hanya memeriksa rilis resmi GitHub saat diklik. Jika ada rilis yang lebih baru, “Buka Halaman Rilis…” membuka halaman unduhannya. Tidak ada pemasangan otomatis."
       ],
       [
         "Izinkan pemblokiran input",
@@ -1768,7 +1768,7 @@
       ],
       [
         "Kata sandi sesuai pilihan",
-        "Nonaktif secara bawaan. Aktifkan di pengaturan menu Blackout dan masukkan kata sandi baru dua kali. Mengubah atau menonaktifkan memerlukan kata sandi saat ini. Saat perlindungan aktif, masukkan kata sandi untuk menghapus penutup. Pilih “Simpan Pengaturan Kata Sandi” untuk menerapkan perubahan. Lencana gembok kecil pada ikon bulan menandakan perlindungan kata sandi aktif."
+        "Perlindungan kata sandi nonaktif secara bawaan. Di pengaturan Blackout, aktifkan sakelar “Wajibkan kata sandi untuk memulihkan layar” untuk membuka dialog pengaturan dan memasukkan kata sandi baru dua kali. Menonaktifkan sakelar membuka dialog konfirmasi yang memerlukan kata sandi saat ini. Sakelar menampilkan status yang tersimpan; pembatalan atau kesalahan tidak mengubahnya. Saat perlindungan aktif, tombol “Ubah Kata Sandi…” membuka dialog untuk kata sandi saat ini dan kata sandi baru dua kali. Gunakan tautan “Lupa Kata Sandi…” untuk pemulihan dengan autentikasi macOS. Lencana gembok kecil pada ikon bulan menandakan perlindungan kata sandi aktif. Kata sandi hanya membatasi penghapusan penutup Blackout; tidak mengamankan sesi macOS Anda. Memilih “Batal” pada dialog pembuka kunci membuat layar tetap hitam. Input papan ketik dan tetikus yang akan membuka dialog lagi diabaikan selama 2 detik agar tidak langsung terbuka kembali; setelah itu perilaku normal dilanjutkan."
       ],
       [
         "Mulai saat masuk",
@@ -1784,17 +1784,17 @@
       ],
       [
         "Jika terjadi masalah",
-        "Jika pemblokiran input berhenti, penutup dihapus. Buka kembali “Buka Pengaturan Izin Input…” dari pengaturan Blackout, periksa izin, lalu mulai ulang app. Jika lupa kata sandi atau app tidak merespons, tutup paksa atau mulai ulang macOS. Ini dapat menghapus penutup tanpa kata sandi app."
+        "Tahan Escape selama 3 detik untuk menghapus penutup tanpa memasukkan kata sandi app. Jika app tidak merespons, app akan ditutup sekitar 1 detik kemudian; buka kembali Blackout jika perlu. Jika pemblokiran input berhenti, penutup dihapus. Buka kembali “Buka Pengaturan Izin Input…” dari pengaturan Blackout, periksa izin, lalu mulai ulang app. Jika lupa kata sandi, pilih “Lupa Kata Sandi…” di pengaturan dan autentikasi dengan Touch ID atau kata sandi masuk Mac. Hanya kata sandi Blackout yang dihapus; preferensi lain tetap tersimpan. Sebagai langkah terakhir, tutup paksa app atau mulai ulang macOS."
       ]
     ],
     "faqs": [
       [
         "Apakah ini kunci keamanan macOS?",
-        "Tidak. App menutupi layar dan mencegat input biasa. Tutup Paksa, layar keamanan, dan fungsi sistem lain berada di luar jaminannya. Gunakan Kunci Layar macOS untuk mengamankan sesi."
+        "Tidak. BlackoutMac menutupi layar dan memblokir input biasa dari papan ketik dan tetikus. Alat otomatisasi yang sudah diberi izin aksesibilitas, seperti alat yang menggunakan API AX, mungkin masih dapat membaca atau mengendalikan app lain saat layar tertutup. Kata sandi hanya membatasi penghapusan penutup Blackout; tidak mengamankan sesi macOS Anda. Tutup Paksa, layar keamanan, dan fungsi sistem lain berada di luar jaminannya. Gunakan Kunci Layar macOS untuk mengamankan sesi."
       ],
       [
         "Izin input aktif. Mengapa layar tidak dapat ditutupi?",
-        "Pembaruan pratinjau bertanda tangan ad hoc ini dapat meninggalkan persetujuan macOS untuk app sebelumnya. Pilih Blackout → “Keluar dari Blackout”. Pada daftar izin input macOS (macOS 27: “Kontrol Perangkat dan Akses Data”; macOS 13–26: “Aksesibilitas”), hapus Blackout, tambahkan kembali Blackout.app yang saat ini terpasang, lalu izinkan. Setelah itu, jalankan Blackout kembali."
+        "Ketika identitas penandatangan berubah, termasuk saat meningkatkan dari 0.1.0, macOS dapat menyimpan persetujuan untuk app sebelumnya; dalam hal ini, berikan izin kembali satu kali. Pilih Blackout → “Keluar dari Blackout”. Pada daftar izin input macOS (macOS 27: “Kontrol Perangkat dan Akses Data”; macOS 13–26: “Aksesibilitas”), hapus Blackout, tambahkan kembali Blackout.app yang saat ini terpasang, lalu izinkan. Setelah itu, jalankan Blackout kembali."
       ]
     ],
     "status": "Versi pratinjau"
@@ -1816,7 +1816,7 @@
     "sections": [
       [
         "Pemasangan mudah",
-        "Muat turun DMG universal daripada GitHub Releases, seret Blackout.app ke pintasan Applications, kemudian lancarkan. Jika macOS menyekat pembukaan pertama, semak sumber dan pilih “Buka Juga” dalam seting keselamatan macOS jika dipaparkan. Untuk mengemas kini, pilih Blackout → “Keluar daripada Blackout”, gantikan Blackout.app dalam folder yang sama dengan salinan daripada DMG baharu, kemudian buka semula. Kata laluan dan bahasa disimpan berasingan serta dikekalkan. Pratonton ini menggunakan tandatangan ad hoc, tanpa Developer ID. Selepas penggantian, kebenaran mungkin masih aktif untuk app lama; ikuti langkah buang dan tambah semula dalam soalan di bawah. Seting memaparkan versi dipasang. “Semak Kemas Kini…” hanya menyemak keluaran rasmi GitHub apabila diklik. Jika ada keluaran lebih baharu, “Buka Halaman Keluaran…” membuka halaman muat turunnya. Tiada pemasangan automatik."
+        "Muat turun DMG universal daripada GitHub Releases, seret Blackout.app ke pintasan Applications, kemudian lancarkan. Jika macOS menyekat pembukaan pertama, semak sumber dan pilih “Buka Juga” dalam seting keselamatan macOS jika dipaparkan. Untuk mengemas kini, pilih Blackout → “Keluar daripada Blackout”, gantikan Blackout.app dalam folder yang sama dengan salinan daripada DMG baharu, kemudian buka semula. Kata laluan dan bahasa disimpan berasingan serta dikekalkan. Versi 0.1.0 menggunakan tandatangan ad hoc; mulai 0.1.1, pratonton menggunakan sijil yang ditandatangani sendiri dan kekal sama, tanpa tandatangan Developer ID atau penotarian Apple. Jika penyekatan input gagal walaupun kebenaran aktif, lihat soalan di bawah. Seting memaparkan versi dipasang. “Semak Kemas Kini…” hanya menyemak keluaran rasmi GitHub apabila diklik. Jika ada keluaran lebih baharu, “Buka Halaman Keluaran…” membuka halaman muat turunnya. Tiada pemasangan automatik."
       ],
       [
         "Benarkan sekatan input",
@@ -1828,7 +1828,7 @@
       ],
       [
         "Kata laluan mengikut pilihan",
-        "Dimatikan secara lalai. Aktifkan dalam seting menu Blackout dan masukkan kata laluan baharu dua kali. Mengubah atau mematikan memerlukan kata laluan semasa. Apabila perlindungan aktif, masukkan kata laluan untuk membuang penutup. Pilih “Simpan Seting Kata Laluan” untuk menggunakan perubahan. Lencana mangga kecil pada ikon bulan menunjukkan perlindungan kata laluan aktif."
+        "Perlindungan kata laluan dimatikan secara lalai. Dalam seting Blackout, hidupkan suis “Perlukan kata laluan untuk memulihkan skrin” untuk membuka dialog persediaan dan memasukkan kata laluan baharu dua kali. Mematikan suis membuka dialog pengesahan yang memerlukan kata laluan semasa. Suis menunjukkan keadaan yang disimpan; pembatalan atau ralat tidak mengubahnya. Apabila perlindungan aktif, butang “Tukar Kata Laluan…” membuka dialog untuk kata laluan semasa dan kata laluan baharu dua kali. Gunakan pautan “Terlupa Kata Laluan…” untuk pemulihan dengan pengesahan identiti macOS. Lencana mangga kecil pada ikon bulan menunjukkan perlindungan kata laluan aktif. Kata laluan hanya mengehadkan pembuangan penutup Blackout; ia tidak melindungi sesi macOS anda. Memilih “Batal” dalam dialog buka kunci membiarkan skrin kekal hitam. Input papan kekunci dan tetikus yang akan membuka dialog semula diabaikan selama 2 saat untuk mengelakkan pembukaan serta-merta; selepas itu tingkah laku biasa disambung semula."
       ],
       [
         "Lancar semasa log masuk",
@@ -1844,17 +1844,17 @@
       ],
       [
         "Jika berlaku masalah",
-        "Jika sekatan input terhenti, penutup dibuang. Buka semula “Buka Seting Kebenaran Input…” daripada seting Blackout, semak kebenaran, kemudian mulakan semula app. Jika terlupa kata laluan atau app tidak bertindak balas, paksa keluar atau mulakan semula macOS. Ini boleh membuang penutup tanpa kata laluan app."
+        "Tekan dan tahan Escape selama 3 saat untuk membuang penutup tanpa memasukkan kata laluan app. Jika app tidak bertindak balas, app akan ditutup kira-kira 1 saat kemudian; buka semula Blackout jika perlu. Jika sekatan input terhenti, penutup dibuang. Buka semula “Buka Seting Kebenaran Input…” daripada seting Blackout, semak kebenaran, kemudian mulakan semula app. Jika terlupa kata laluan, pilih “Terlupa Kata Laluan…” dalam seting dan sahkan identiti dengan Touch ID atau kata laluan log masuk Mac. Hanya kata laluan Blackout dipadamkan; pilihan lain dikekalkan. Sebagai langkah terakhir, paksa app keluar atau mulakan semula macOS."
       ]
     ],
     "faqs": [
       [
         "Adakah ini kunci keselamatan macOS?",
-        "Tidak. App menutup skrin dan memintas input biasa. Paksa Keluar, skrin keselamatan dan fungsi sistem lain di luar jaminannya. Gunakan Kunci Skrin macOS untuk melindungi sesi anda."
+        "Tidak. BlackoutMac menutup skrin dan menyekat input biasa daripada papan kekunci dan tetikus. Alat automasi yang sudah diberi kebenaran kebolehcapaian, seperti alat yang menggunakan API AX, mungkin masih boleh membaca atau mengawal app lain semasa skrin ditutup. Kata laluan hanya mengehadkan pembuangan penutup Blackout; ia tidak melindungi sesi macOS anda. Paksa Keluar, skrin keselamatan dan fungsi sistem lain di luar jaminannya. Gunakan Kunci Skrin macOS untuk melindungi sesi anda."
       ],
       [
         "Kebenaran input aktif. Mengapa skrin tidak dapat ditutup?",
-        "Kemas kini pratonton bertandatangan ad hoc ini mungkin meninggalkan kelulusan macOS untuk app sebelumnya. Pilih Blackout → “Keluar daripada Blackout”. Dalam senarai kebenaran input macOS (macOS 27: “Kawalan Peranti dan Akses Data”; macOS 13–26: “Kebolehcapaian”), buang Blackout, tambah semula Blackout.app yang kini dipasang dan benarkannya. Kemudian lancarkan Blackout semula."
+        "Apabila identiti penandatangan berubah, termasuk semasa menaik taraf daripada 0.1.0, macOS mungkin mengekalkan kelulusan untuk app sebelumnya; dalam keadaan ini, berikan kebenaran semula sekali. Pilih Blackout → “Keluar daripada Blackout”. Dalam senarai kebenaran input macOS (macOS 27: “Kawalan Peranti dan Akses Data”; macOS 13–26: “Kebolehcapaian”), buang Blackout, tambah semula Blackout.app yang kini dipasang dan benarkannya. Kemudian lancarkan Blackout semula."
       ]
     ],
     "status": "Versi pratonton"
@@ -1876,7 +1876,7 @@
     "sections": [
       [
         "Γρήγορη εγκατάσταση",
-        "Κατεβάστε το καθολικό DMG από το GitHub Releases και σύρετε το Blackout.app στη συντόμευση Applications. Εκκινήστε το. Αν το macOS αποκλείσει την πρώτη εκκίνηση, ελέγξτε την προέλευση και επιλέξτε «Άνοιγμα οπωσδήποτε» στις ρυθμίσεις ασφαλείας του macOS, αν εμφανίζεται. Για ενημέρωση, επιλέξτε Blackout → «Τερματισμός Blackout», αντικαταστήστε το Blackout.app στον ίδιο φάκελο με το αντίγραφο από το νέο DMG και ανοίξτε ξανά. Κωδικός και γλώσσα αποθηκεύονται χωριστά και διατηρούνται. Αυτή η δοκιμαστική έκδοση έχει υπογραφή ad hoc, χωρίς Developer ID. Μετά την αντικατάσταση, η άδεια μπορεί να παραμένει ενεργή για την παλιά εφαρμογή· ακολουθήστε την αφαίρεση και νέα προσθήκη στις ερωτήσεις παρακάτω. Οι ρυθμίσεις δείχνουν την εγκατεστημένη έκδοση. Το «Έλεγχος για ενημερώσεις…» ελέγχει τις επίσημες εκδόσεις GitHub μόνο όταν πατηθεί. Αν υπάρχει νεότερη έκδοση, το «Άνοιγμα σελίδας έκδοσης…» ανοίγει τη σελίδα λήψης. Δεν γίνεται αυτόματη εγκατάσταση."
+        "Κατεβάστε το καθολικό DMG από το GitHub Releases και σύρετε το Blackout.app στη συντόμευση Applications. Εκκινήστε το. Αν το macOS αποκλείσει την πρώτη εκκίνηση, ελέγξτε την προέλευση και επιλέξτε «Άνοιγμα οπωσδήποτε» στις ρυθμίσεις ασφαλείας του macOS, αν εμφανίζεται. Για ενημέρωση, επιλέξτε Blackout → «Τερματισμός Blackout», αντικαταστήστε το Blackout.app στον ίδιο φάκελο με το αντίγραφο από το νέο DMG και ανοίξτε ξανά. Κωδικός και γλώσσα αποθηκεύονται χωριστά και διατηρούνται. Η έκδοση 0.1.0 έχει υπογραφή ad hoc· από την 0.1.1, οι δοκιμαστικές εκδόσεις χρησιμοποιούν σταθερό αυτοϋπογεγραμμένο πιστοποιητικό, χωρίς υπογραφή Developer ID ή επικύρωση από την Apple. Αν ο αποκλεισμός εισόδου δεν λειτουργεί παρότι η άδεια είναι ενεργή, δείτε τις ερωτήσεις παρακάτω. Οι ρυθμίσεις δείχνουν την εγκατεστημένη έκδοση. Το «Έλεγχος για ενημερώσεις…» ελέγχει τις επίσημες εκδόσεις GitHub μόνο όταν πατηθεί. Αν υπάρχει νεότερη έκδοση, το «Άνοιγμα σελίδας έκδοσης…» ανοίγει τη σελίδα λήψης. Δεν γίνεται αυτόματη εγκατάσταση."
       ],
       [
         "Επιτρέψτε τον αποκλεισμό εισόδου",
@@ -1888,7 +1888,7 @@
       ],
       [
         "Κωδικός αν το θέλετε",
-        "Απενεργοποιημένος αρχικά. Ενεργοποιήστε τον στις ρυθμίσεις του μενού Blackout και εισαγάγετε τον νέο κωδικό δύο φορές. Αλλαγή ή απενεργοποίηση απαιτεί τον τρέχοντα κωδικό. Όταν η προστασία είναι ενεργή, εισαγάγετε τον κωδικό για αφαίρεση της κάλυψης. Επιλέξτε «Αποθήκευση ρυθμίσεων συνθηματικού» για εφαρμογή των αλλαγών. Ένα μικρό λουκέτο στο εικονίδιο του φεγγαριού δείχνει ενεργή προστασία με κωδικό."
+        "Η προστασία με κωδικό είναι αρχικά απενεργοποιημένη. Στις ρυθμίσεις Blackout, ενεργοποιήστε τον διακόπτη «Απαίτηση συνθηματικού για επαναφορά της οθόνης» για να ανοίξετε το παράθυρο ρύθμισης και να εισαγάγετε τον νέο κωδικό δύο φορές. Η απενεργοποίηση ανοίγει παράθυρο επιβεβαίωσης που απαιτεί τον τρέχοντα κωδικό. Ο διακόπτης δείχνει την αποθηκευμένη κατάσταση· η ακύρωση ή ένα σφάλμα δεν την αλλάζει. Όταν η προστασία είναι ενεργή, το κουμπί «Αλλαγή κωδικού…» ανοίγει παράθυρο για τον τρέχοντα κωδικό και τη διπλή εισαγωγή του νέου. Χρησιμοποιήστε τον σύνδεσμο «Ξεχάσατε τον κωδικό…» για ανάκτηση με επαλήθευση ταυτότητας μέσω macOS. Ένα μικρό λουκέτο στο εικονίδιο του φεγγαριού δείχνει ενεργή προστασία με κωδικό. Ο κωδικός περιορίζει μόνο την αφαίρεση της κάλυψης του Blackout· δεν ασφαλίζει τη συνεδρία macOS. Η επιλογή «Ακύρωση» στο παράθυρο ξεκλειδώματος αφήνει τις οθόνες μαύρες. Για 2 δευτερόλεπτα αγνοείται η είσοδος από πληκτρολόγιο και ποντίκι που θα το άνοιγε ξανά, ώστε να μην εμφανιστεί αμέσως· μετά επανέρχεται η κανονική συμπεριφορά."
       ],
       [
         "Εκκίνηση κατά τη σύνδεση",
@@ -1904,17 +1904,17 @@
       ],
       [
         "Αν κάτι κολλήσει",
-        "Αν σταματήσει ο αποκλεισμός εισόδου, η κάλυψη αφαιρείται. Ανοίξτε ξανά το «Άνοιγμα ρυθμίσεων αδειών εισόδου…» από τις ρυθμίσεις Blackout, ελέγξτε την άδεια και επανεκκινήστε την εφαρμογή. Αν ξεχάσετε τον κωδικό ή η εφαρμογή δεν αποκρίνεται, κάντε αναγκαστικό τερματισμό ή επανεκκίνηση του macOS. Έτσι μπορεί να αφαιρεθεί η κάλυψη χωρίς τον κωδικό της εφαρμογής."
+        "Κρατήστε πατημένο το Escape για 3 δευτερόλεπτα για να αφαιρέσετε την κάλυψη χωρίς τον κωδικό της εφαρμογής. Αν η εφαρμογή δεν αποκρίνεται, τερματίζεται περίπου 1 δευτερόλεπτο αργότερα· ανοίξτε ξανά το Blackout αν χρειάζεται. Αν σταματήσει ο αποκλεισμός εισόδου, η κάλυψη αφαιρείται. Ανοίξτε ξανά το «Άνοιγμα ρυθμίσεων αδειών εισόδου…» από τις ρυθμίσεις Blackout, ελέγξτε την άδεια και επανεκκινήστε την εφαρμογή. Αν ξεχάσατε τον κωδικό, επιλέξτε «Ξεχάσατε τον κωδικό…» στις ρυθμίσεις και επαληθεύστε την ταυτότητά σας με Touch ID ή τον κωδικό σύνδεσης του Mac. Διαγράφεται μόνο ο κωδικός του Blackout· οι άλλες προτιμήσεις διατηρούνται. Ως έσχατη λύση, κάντε αναγκαστικό τερματισμό της εφαρμογής ή επανεκκίνηση του macOS."
       ]
     ],
     "faqs": [
       [
         "Είναι κλείδωμα ασφαλείας του macOS;",
-        "Όχι. Καλύπτει οθόνες και αναχαιτίζει συνήθη είσοδο. Ο αναγκαστικός τερματισμός, οι οθόνες ασφαλείας και άλλες λειτουργίες συστήματος είναι εκτός εγγύησης. Χρησιμοποιήστε το κλείδωμα οθόνης του macOS για προστασία της συνεδρίας."
+        "Όχι. Το BlackoutMac καλύπτει οθόνες και αποκλείει τη συνήθη είσοδο από πληκτρολόγιο και ποντίκι. Εργαλεία αυτοματισμού που έχουν ήδη άδεια προσβασιμότητας, όπως όσα χρησιμοποιούν API AX, ενδέχεται να εξακολουθούν να διαβάζουν ή να ελέγχουν άλλες εφαρμογές ενώ οι οθόνες είναι καλυμμένες. Ο κωδικός περιορίζει μόνο την αφαίρεση της κάλυψης του Blackout· δεν ασφαλίζει τη συνεδρία macOS. Ο αναγκαστικός τερματισμός, οι οθόνες ασφαλείας και άλλες λειτουργίες συστήματος είναι εκτός εγγύησης. Χρησιμοποιήστε το κλείδωμα οθόνης του macOS για προστασία της συνεδρίας."
       ],
       [
         "Η άδεια εισόδου είναι ενεργή. Γιατί δεν ξεκινά η κάλυψη;",
-        "Η ενημέρωση αυτής της έκδοσης με υπογραφή ad hoc μπορεί να αφήσει στο macOS την έγκριση της προηγούμενης εφαρμογής. Επιλέξτε Blackout → «Τερματισμός Blackout». Στη λίστα αδειών εισόδου macOS (macOS 27: «Έλεγχος συσκευής και πρόσβαση σε δεδομένα»· macOS 13–26: «Προσβασιμότητα»), αφαιρέστε το Blackout, προσθέστε ξανά το Blackout.app που είναι τώρα εγκατεστημένο και επιτρέψτε το. Έπειτα ανοίξτε ξανά το Blackout."
+        "Όταν αλλάζει η ταυτότητα υπογραφής, ακόμη και κατά την αναβάθμιση από την 0.1.0, το macOS μπορεί να κρατήσει την έγκριση της προηγούμενης εφαρμογής· σε αυτή την περίπτωση, δώστε ξανά την άδεια μία φορά. Επιλέξτε Blackout → «Τερματισμός Blackout». Στη λίστα αδειών εισόδου macOS (macOS 27: «Έλεγχος συσκευής και πρόσβαση σε δεδομένα»· macOS 13–26: «Προσβασιμότητα»), αφαιρέστε το Blackout, προσθέστε ξανά το Blackout.app που είναι τώρα εγκατεστημένο και επιτρέψτε το. Έπειτα ανοίξτε ξανά το Blackout."
       ]
     ],
     "status": "Δοκιμαστική έκδοση"

@@ -60,3 +60,18 @@
 "No releases have been published yet." = "Henüz bir sürüm yayımlanmadı.";
 "Could not check for updates. Please try again." = "Güncellemeler denetlenemedi. Lütfen tekrar deneyin.";
 "Open Release Page…" = "Sürüm Sayfasını Aç…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "Parola Ayarla…";
+"Change Password…" = "Parolayı Değiştir…";
+"Turn Off Password…" = "Parolayı Kapat…";
+"Forgot Password…" = "Parolamı Unuttum…";
+"Set Password" = "Parola Ayarla";
+"Change Password" = "Parolayı Değiştir";
+"Turn Off Password" = "Parolayı Kapat";
+"Current password" = "Mevcut parola";
+"Authenticate with macOS to reset your Blackout password." = "Blackout parolanızı sıfırlamak için macOS ile kimliğinizi doğrulayın.";
+"Password reset was not completed. Your password is unchanged." = "Parola sıfırlama tamamlanmadı. Parolanız değişmedi.";
+"Password reset. Password protection is off." = "Parola sıfırlandı. Parola koruması kapalı.";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "Kaydedilmiş parola ayarları okunamadı. Kurtarmak için ayarlardaki Parolamı Unuttum seçeneğini kullanın.";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Acil çıkış: Escape tuşunu 3 saniye basılı tutun. Bu, uygulama parolasını atlar.";

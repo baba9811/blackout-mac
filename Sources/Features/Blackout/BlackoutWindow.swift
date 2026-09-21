@@ -1,6 +1,7 @@
 import AppKit
 
 final class BlackoutWindow: NSWindow {
-    override var canBecomeKey: Bool { true }
-    override var canBecomeMain: Bool { true }
+    var acceptsKeyboardInput = false
+    override var canBecomeKey: Bool { acceptsKeyboardInput }
+    override var canBecomeMain: Bool { acceptsKeyboardInput }
 }

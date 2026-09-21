@@ -5,3 +5,8 @@ docs/superpowers/
 /core
 __pycache__/
 *.pyc
+*.p12
+*.pfx
+*.key
+*.pem
+*.keychain-db

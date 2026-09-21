@@ -60,3 +60,18 @@
 "No releases have been published yet." = "リリースはまだ公開されていません。";
 "Could not check for updates. Please try again." = "アップデートを確認できませんでした。もう一度お試しください。";
 "Open Release Page…" = "リリースページを開く…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "パスワードを設定…";
+"Change Password…" = "パスワードを変更…";
+"Turn Off Password…" = "パスワードを無効にする…";
+"Forgot Password…" = "パスワードをお忘れですか…";
+"Set Password" = "パスワードを設定";
+"Change Password" = "パスワードを変更";
+"Turn Off Password" = "パスワードを無効にする";
+"Current password" = "現在のパスワード";
+"Authenticate with macOS to reset your Blackout password." = "Blackoutのパスワードをリセットするには、macOSで認証してください。";
+"Password reset was not completed. Your password is unchanged." = "パスワードのリセットは完了しませんでした。パスワードは変更されていません。";
+"Password reset. Password protection is off." = "パスワードをリセットしました。パスワード保護は無効です。";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "保存されたパスワード設定を読み取れませんでした。設定の「パスワードをお忘れですか」から復旧してください。";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "緊急解除：Escapeキーを3秒間押し続けてください。アプリのパスワードなしで解除できます。";

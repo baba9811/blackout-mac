@@ -60,3 +60,18 @@
 "No releases have been published yet." = "ยังไม่มีการเผยแพร่เวอร์ชั่นใด";
 "Could not check for updates. Please try again." = "ไม่สามารถตรวจสอบรายการอัปเดตได้ โปรดลองอีกครั้ง";
 "Open Release Page…" = "เปิดหน้าเวอร์ชั่น…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "ตั้งรหัสผ่าน…";
+"Change Password…" = "เปลี่ยนรหัสผ่าน…";
+"Turn Off Password…" = "ปิดรหัสผ่าน…";
+"Forgot Password…" = "ลืมรหัสผ่าน…";
+"Set Password" = "ตั้งรหัสผ่าน";
+"Change Password" = "เปลี่ยนรหัสผ่าน";
+"Turn Off Password" = "ปิดรหัสผ่าน";
+"Current password" = "รหัสผ่านปัจจุบัน";
+"Authenticate with macOS to reset your Blackout password." = "ยืนยันตัวตนด้วย macOS เพื่อรีเซ็ตรหัสผ่าน Blackout";
+"Password reset was not completed. Your password is unchanged." = "รีเซ็ตรหัสผ่านไม่สำเร็จ รหัสผ่านของคุณยังไม่เปลี่ยนแปลง";
+"Password reset. Password protection is off." = "รีเซ็ตรหัสผ่านแล้ว การป้องกันด้วยรหัสผ่านปิดอยู่";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "ไม่สามารถอ่านการตั้งค่ารหัสผ่านที่บันทึกไว้ ใช้ลืมรหัสผ่านในการตั้งค่าเพื่อกู้คืน";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "ออกฉุกเฉิน: กด Escape ค้างไว้ 3 วินาที ซึ่งจะข้ามรหัสผ่านของแอป";

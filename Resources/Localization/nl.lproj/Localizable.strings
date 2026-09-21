@@ -60,3 +60,18 @@
 "No releases have been published yet." = "Er zijn nog geen versies gepubliceerd.";
 "Could not check for updates. Please try again." = "Kan niet naar updates zoeken. Probeer het opnieuw.";
 "Open Release Page…" = "Open versiepagina…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "Wachtwoord instellen…";
+"Change Password…" = "Wachtwoord wijzigen…";
+"Turn Off Password…" = "Wachtwoord uitschakelen…";
+"Forgot Password…" = "Wachtwoord vergeten…";
+"Set Password" = "Wachtwoord instellen";
+"Change Password" = "Wachtwoord wijzigen";
+"Turn Off Password" = "Wachtwoord uitschakelen";
+"Current password" = "Huidig wachtwoord";
+"Authenticate with macOS to reset your Blackout password." = "Bevestig je identiteit met macOS om je Blackout-wachtwoord opnieuw in te stellen.";
+"Password reset was not completed. Your password is unchanged." = "Het opnieuw instellen is niet voltooid. Je wachtwoord is ongewijzigd.";
+"Password reset. Password protection is off." = "Wachtwoord opnieuw ingesteld. Wachtwoordbeveiliging staat uit.";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "De opgeslagen wachtwoordinstellingen konden niet worden gelezen. Gebruik Wachtwoord vergeten in Instellingen om te herstellen.";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Nooduitgang: houd Escape 3 seconden ingedrukt. Hiermee omzeil je het appwachtwoord.";

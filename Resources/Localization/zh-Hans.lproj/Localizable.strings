@@ -60,3 +60,18 @@
 "No releases have been published yet." = "尚未发布任何版本。";
 "Could not check for updates. Please try again." = "无法检查更新。请重试。";
 "Open Release Page…" = "打开发布页面…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "设置密码…";
+"Change Password…" = "更改密码…";
+"Turn Off Password…" = "关闭密码…";
+"Forgot Password…" = "忘记密码…";
+"Set Password" = "设置密码";
+"Change Password" = "更改密码";
+"Turn Off Password" = "关闭密码";
+"Current password" = "当前密码";
+"Authenticate with macOS to reset your Blackout password." = "请通过 macOS 身份验证来重置 Blackout 密码。";
+"Password reset was not completed. Your password is unchanged." = "密码重置未完成。密码未更改。";
+"Password reset. Password protection is off." = "密码已重置。密码保护已关闭。";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "无法读取已保存的密码设置。请在设置中使用“忘记密码”进行恢复。";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "紧急解除：按住 Escape 键 3 秒。这将绕过应用密码。";

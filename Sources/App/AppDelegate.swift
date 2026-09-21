@@ -3,14 +3,14 @@ import CoreGraphics
 import Carbon.HIToolbox
 import ApplicationServices
 
-final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
+final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWindowDelegate {
     private var statusItem: NSStatusItem!
     private var panels: [BlackoutWindow] = []
     private var inputTimer: Timer?
     private var hotKeyRef: EventHotKeyRef?
     private var hotKeyHandlerRef: EventHandlerRef?
     private var isBlack = false
-    private var blackoutStartedAt = Date.distantPast
+    private var unlockPromptAvailableAt: TimeInterval = 0
     private var cursorHidden = false
     private let passwords = PasswordSettings()
     private lazy var settings: SettingsWindowController = {
@@ -23,17 +23,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private var unlockView: NSView?
     private var unlockField: NSSecureTextField?
     private var unlockError: NSTextField?
-    private var nextUnlockAttempt = Date.distantPast
+    private var nextUnlockAttempt: TimeInterval = 0
     private var sessionSuspended = false
     private var previousPresentation: NSApplication.PresentationOptions = []
     private lazy var inputBlocker: InputBlocker = {
         let blocker = InputBlocker()
-        blocker.onWake = { [weak self] in
-            guard let self, self.isBlack, self.gracePeriodEnded else { return }
-            self.requestUnlock()
-        }
+        blocker.onWake = { [weak self] in self?.requestUnlock() }
         blocker.onFailure = { [weak self] in self?.inputBlockingFailed() }
         blocker.onInputSourceChange = { [weak self] in self?.switchInputSource() }
+        blocker.onEmergencyExit = { [weak self] in self?.endBlackout(terminate: false) }
         return blocker
     }()
 
@@ -158,7 +156,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     func menuWillOpen(_ menu: NSMenu) { updateStatusIcon() }
 
-    func applicationDidBecomeActive(_ notification: Notification) { updateStatusIcon() }
+    func applicationDidBecomeActive(_ notification: Notification) {
+        updateStatusIcon()
+        guard isBlack, !sessionSuspended else { return }
+        if let field = unlockField { panels.first?.makeFirstResponder(field) }
+        refreshInputFocus()
+    }
 
     private func installGlobalHotKey() {
         let hotKeyIDStruct = EventHotKeyID(signature: hotKeySignature, id: hotKeyID)
@@ -235,6 +238,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     private func beginBlackout() {
         guard !isBlack else { return }
+        settings.cancelPendingPasswordChanges()
         do {
             requiredPassword = try passwords.load()
         } catch {
@@ -246,12 +250,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         previousPresentation = NSApp.presentationOptions
         NSApp.presentationOptions = [.hideDock, .hideMenuBar, .disableProcessSwitching, .disableHideApplication]
         isBlack = true
-        blackoutStartedAt = Date()
+        unlockPromptAvailableAt = ProcessInfo.processInfo.systemUptime + 0.35
 
         // Activate first so every per-display window is attached to the
         // currently visible Spaces before it is ordered to the front.
         NSApp.activate(ignoringOtherApps: true)
         createPanels()
+        guard !panels.isEmpty else { endBlackout(terminate: false); return }
         installInputDetection()
 
         panels.first?.makeKeyAndOrderFront(nil)
@@ -288,6 +293,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             // secondary display is to the left/above the main display and has
             // a negative global coordinate.
             panel.setFrame(frame, display: true)
+            // Only the display hosting the unlock form may take keyboard focus.
+            panel.acceptsKeyboardInput = panels.isEmpty
+            panel.delegate = self
             panel.backgroundColor = .black
             panel.isOpaque = true
             panel.hasShadow = false
@@ -329,14 +337,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         inputTimer?.invalidate()
         inputTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
             guard let self, self.isBlack, !self.sessionSuspended else { return }
-            guard self.inputBlocker.isRunning else { self.inputBlockingFailed(); return }
+            guard self.inputBlocker.isRunning, self.panels.first?.contentView != nil else {
+                self.inputBlockingFailed()
+                return
+            }
+            self.refreshInputFocus()
             self.panels.forEach { $0.orderFrontRegardless() }
         }
         RunLoop.main.add(inputTimer!, forMode: .common)
     }
 
     private var gracePeriodEnded: Bool {
-        Date().timeIntervalSince(blackoutStartedAt) > 0.35
+        ProcessInfo.processInfo.systemUptime >= unlockPromptAvailableAt
     }
 
     private func removeInputDetection() {
@@ -372,61 +384,59 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     func applicationDidResignActive(_ notification: Notification) {
         guard isBlack, !sessionSuspended else { return }
-        // The event tap still swallows input while focus is being restored.
-        NSApp.activate(ignoringOtherApps: true)
-        panels.first?.makeKeyAndOrderFront(nil)
+        inputBlocker.setPrompting(unlockView != nil, acceptingInput: false)
+        // Reactivate after AppKit finishes deactivation. Until then, input is consumed.
+        DispatchQueue.main.async { [weak self] in
+            guard let self, self.isBlack, !self.sessionSuspended else { return }
+            NSApp.activate(ignoringOtherApps: true)
+            self.panels.first?.makeKeyAndOrderFront(nil)
+        }
+    }
+
+    func windowDidBecomeKey(_ notification: Notification) { refreshInputFocus() }
+    func windowDidResignKey(_ notification: Notification) { refreshInputFocus() }
+
+    private func refreshInputFocus() {
+        guard isBlack, !sessionSuspended else { return }
+        let mouseTarget = panels.first.map {
+            InputBlocker.MouseTarget(windowNumber: $0.windowNumber, frame: $0.frame,
+                                     desktopTop: NSScreen.screens.first?.frame.maxY ?? 0)
+        }
+        inputBlocker.setPrompting(unlockView != nil,
+                                  acceptingInput: NSApp.isActive && panels.first?.isKeyWindow == true,
+                                  mouseTarget: mouseTarget)
     }
 
     private func requestUnlock() {
-        guard isBlack, !sessionSuspended else { return }
+        guard isBlack, !sessionSuspended, gracePeriodEnded else { return }
         guard requiredPassword != nil else { endBlackout(terminate: false); return }
-        guard let panel = panels.first, let content = panel.contentView else { return }
+        guard let panel = panels.first, let content = panel.contentView else {
+            endBlackout(terminate: false)
+            return
+        }
         NSApp.activate(ignoringOtherApps: true)
         panel.makeKeyAndOrderFront(nil)
-        if unlockView != nil { return }
-
-        let title = NSTextField(labelWithString: L("Unlock Blackout"))
-        title.font = .boldSystemFont(ofSize: 22)
-        title.textColor = .white
-        let field = NSSecureTextField()
-        field.placeholderString = L("Password")
-        field.setAccessibilityLabel(L("Unlock password"))
-        field.target = self
-        field.action = #selector(submitUnlock)
-        let error = NSTextField(wrappingLabelWithString: L("Enter your password to restore the screen."))
-        error.textColor = .white
-        error.font = .systemFont(ofSize: NSFont.smallSystemFontSize)
-        let unlock = NSButton(title: L("Unlock"), target: self, action: #selector(submitUnlock))
-        unlock.bezelStyle = .rounded
-        unlock.keyEquivalent = "\r"
-        let cancel = NSButton(title: L("Cancel"), target: self, action: #selector(cancelUnlock))
-        cancel.bezelStyle = .rounded
-        cancel.keyEquivalent = "\u{1b}"
-        let buttons = NSStackView(views: [cancel, unlock])
-        buttons.spacing = 12
-        let stack = NSStackView(views: [title, field, error, buttons])
-        let direction: NSUserInterfaceLayoutDirection = ["ar", "he"].contains(AppLanguage.currentCode) ? .rightToLeft : .leftToRight
-        for view in [stack, title, field, error, buttons, cancel, unlock] {
-            view.userInterfaceLayoutDirection = direction
+        if let field = unlockField {
+            panel.makeFirstResponder(field)
+            refreshInputFocus()
+            return
         }
-        stack.orientation = .vertical
-        stack.spacing = 16
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.appearance = NSAppearance(named: .darkAqua)
-        content.addSubview(stack)
+
+        let form = UnlockView(target: self, unlockAction: #selector(submitUnlock),
+                              cancelAction: #selector(cancelUnlock))
+        form.translatesAutoresizingMaskIntoConstraints = false
+        content.addSubview(form)
         NSLayoutConstraint.activate([
-            stack.centerXAnchor.constraint(equalTo: content.centerXAnchor),
-            stack.centerYAnchor.constraint(equalTo: content.centerYAnchor),
-            stack.widthAnchor.constraint(equalToConstant: 320),
-            field.widthAnchor.constraint(equalTo: stack.widthAnchor),
-            error.widthAnchor.constraint(equalTo: stack.widthAnchor)
+            form.centerXAnchor.constraint(equalTo: content.centerXAnchor),
+            form.centerYAnchor.constraint(equalTo: content.centerYAnchor)
         ])
-        unlockView = stack
+        let field = form.passwordField
+        unlockView = form
         unlockField = field
-        unlockError = error
+        unlockError = form.messageLabel
         if cursorHidden { NSCursor.unhide(); cursorHidden = false }
         panel.makeFirstResponder(field)
-        inputBlocker.setPrompting(true)
+        refreshInputFocus()
     }
 
     private func switchInputSource() {
@@ -443,13 +453,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     @objc private func submitUnlock() {
         guard isBlack, let password = requiredPassword, let field = unlockField else { return }
-        guard Date() >= nextUnlockAttempt else { return }
+        guard ProcessInfo.processInfo.systemUptime >= nextUnlockAttempt else { return }
         if password.matches(field.stringValue) {
             endBlackout(terminate: false)
         } else {
-            nextUnlockAttempt = Date().addingTimeInterval(1)
+            nextUnlockAttempt = ProcessInfo.processInfo.systemUptime + 1
             field.stringValue = ""
             unlockError?.stringValue = L("Incorrect password. Please wait a moment and try again.")
+            unlockError?.textColor = .systemRed
             panels.first?.makeFirstResponder(field)
         }
     }
@@ -461,7 +472,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         unlockField = nil
         unlockError = nil
         inputBlocker.setPrompting(false)
-        blackoutStartedAt = Date()
+        unlockPromptAvailableAt = ProcessInfo.processInfo.systemUptime + 2
         if !cursorHidden { NSCursor.hide(); cursorHidden = true }
     }
 
@@ -475,7 +486,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         NSApp.presentationOptions = previousPresentation
         requiredPassword = nil
         sessionSuspended = false
-        nextUnlockAttempt = .distantPast
+        nextUnlockAttempt = 0
         removeInputDetection()
         destroyPanels()
         if cursorHidden {
@@ -500,8 +511,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         guard startInputBlocking() else { endBlackout(terminate: false); return }
         sessionSuspended = false
         NSApp.presentationOptions = [.hideDock, .hideMenuBar, .disableProcessSwitching, .disableHideApplication]
-        blackoutStartedAt = Date()
+        unlockPromptAvailableAt = ProcessInfo.processInfo.systemUptime + 0.35
         createPanels()
+        guard !panels.isEmpty else { endBlackout(terminate: false); return }
         installInputDetection()
         panels.first?.makeKeyAndOrderFront(nil)
         if !cursorHidden { NSCursor.hide(); cursorHidden = true }
@@ -511,6 +523,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         guard isBlack, !sessionSuspended else { return }
         let wasPrompting = unlockView != nil
         createPanels()
+        guard !panels.isEmpty else { endBlackout(terminate: false); return }
         panels.first?.makeKeyAndOrderFront(nil)
         panels.forEach { $0.orderFrontRegardless() }
         if wasPrompting { requestUnlock() }

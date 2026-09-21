@@ -60,3 +60,18 @@
 "No releases have been published yet." = "Yhtään versiota ei ole vielä julkaistu.";
 "Could not check for updates. Please try again." = "Päivityksiä ei voitu tarkistaa. Yritä uudelleen.";
 "Open Release Page…" = "Avaa julkaisusivu…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "Aseta salasana…";
+"Change Password…" = "Vaihda salasana…";
+"Turn Off Password…" = "Poista salasana käytöstä…";
+"Forgot Password…" = "Unohditko salasanan…";
+"Set Password" = "Aseta salasana";
+"Change Password" = "Vaihda salasana";
+"Turn Off Password" = "Poista salasana käytöstä";
+"Current password" = "Nykyinen salasana";
+"Authenticate with macOS to reset your Blackout password." = "Tunnistaudu macOS:ssä, jotta voit nollata Blackoutin salasanan.";
+"Password reset was not completed. Your password is unchanged." = "Salasanan nollausta ei suoritettu. Salasanasi on ennallaan.";
+"Password reset. Password protection is off." = "Salasana nollattu. Salasanasuojaus on pois käytöstä.";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "Tallennettuja salasana-asetuksia ei voitu lukea. Käytä asetusten Unohditko salasanan -toimintoa palautukseen.";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Hätäpoistuminen: pidä Escape painettuna 3 sekuntia. Tämä ohittaa sovelluksen salasanan.";

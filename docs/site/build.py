@@ -195,10 +195,12 @@ def main():
 - Control + Option + B or the Blackout menu activates the cover.
 - Without a password, keyboard or mouse input restores the screens.
 - macOS input-control permission is required. Use Blackout Settings to open the permission panel: Device Control and Data Access on macOS 27, or Accessibility on macOS 13–26. The app refuses to cover screens without working input interception and removes covers if interception fails.
-- Optional password changes and removal require the current password. A salted password verifier is stored locally.
+- The password switch in Settings opens a setup or removal dialog and changes only after a successful save. A separate button opens the change dialog. Normal changes/removal require the current password. Forgot Password uses macOS device-owner authentication to reset only the app password. A salted password verifier is stored locally.
+- Cancel returns the unlock prompt to the black screen and ignores keyboard/mouse wake requests for two seconds before normal wake behavior resumes.
+- Hold Escape for 3 seconds to exit blackout, deliberately bypassing the app password. If the main thread cannot respond, a background watchdog quits the app. Reopen it afterward; emergency exit does not delete the saved password.
 - Native launch at login; 32 languages; follows the system language unless overridden.
 - No backend or telemetry. GitHub hosts this website and downloads.
-- This is not a macOS security lock. Force Quit and macOS security screens are outside its guarantee. Use macOS Lock Screen to secure a session.
+- This is an overlay, not a macOS security lock. The optional password only gates normal dismissal through Blackout. Automation already authorized through macOS accessibility permissions may still read or control other apps beneath the overlay. Force Quit and macOS security screens are outside its guarantee. Use macOS Lock Screen (Control + Command + Q) to secure a session.
 - The distributed app is ad-hoc signed, not Developer ID signed, and not notarized by Apple. Review installation instructions before opening.
 
 ## Primary links
