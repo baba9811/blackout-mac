@@ -57,9 +57,11 @@ extendedKeyUsage = codeSigning
                 self.assertEqual(result.returncode, 0, result.stderr)
                 run("codesign", "--verify", "--strict", str(probe))
             finally:
-                if keychain.exists():
-                    run("security", "delete-keychain", str(keychain))
-                run("security", "list-keychains", "-d", "user", "-s", *original)
+                try:
+                    if keychain.exists():
+                        run("security", "delete-keychain", str(keychain))
+                finally:
+                    run("security", "list-keychains", "-d", "user", "-s", *original)
         self.assertEqual(shlex.split(run("security", "list-keychains", "-d", "user")), original)
 
 

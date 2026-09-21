@@ -20,5 +20,11 @@ security set-keychain-settings -lut 3600 "$KEYCHAIN_PATH"
 security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
 security import "$CERT_PATH" -k "$KEYCHAIN_PATH" -P "$BLACKOUT_SIGN_CERT_PASSWORD" -T /usr/bin/codesign
 security set-key-partition-list -S apple-tool:,apple: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH" >/dev/null
+# macOS 26 also requires the keychain in the search list, even with codesign --keychain.
+python3 - "$KEYCHAIN_PATH" <<'PY'
+import shlex, subprocess, sys
+keychains = shlex.split(subprocess.check_output(["security", "list-keychains", "-d", "user"], text=True))
+subprocess.run(["security", "list-keychains", "-d", "user", "-s", *keychains, sys.argv[1]], check=True)
+PY
 print -r -- "BLACKOUT_SIGN_IDENTITY=$BLACKOUT_SIGN_IDENTITY" >> "$GITHUB_ENV"
 print -r -- "BLACKOUT_SIGN_KEYCHAIN=$KEYCHAIN_PATH" >> "$GITHUB_ENV"
