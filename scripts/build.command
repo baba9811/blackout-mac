@@ -13,6 +13,24 @@ if [[ "$APP_DIR" != *.app || -e "$APP_DIR" || $# -gt 2 || ( $# -eq 2 && "$2" != 
   echo "Choose a new .app output path; optional second argument: --universal." >&2
   exit 1
 fi
+SIGNING_IDENTITY="${BLACKOUT_SIGN_IDENTITY:-}"
+if [[ -z "$SIGNING_IDENTITY" && -e "$ROOT/.git" ]]; then
+  if SIGNING_IDENTITY="$(git -C "$ROOT" config --local --get blackout.signingIdentity)"; then
+    :
+  else
+    config_result=$?
+    (( config_result == 1 )) || exit "$config_result"
+  fi
+fi
+SIGNING_IDENTITY="${SIGNING_IDENTITY:--}"
+if [[ "$SIGNING_IDENTITY" != - && ! "$SIGNING_IDENTITY" =~ '^[[:xdigit:]]{40}$' ]]; then
+  echo "Use a full signing-certificate SHA-1 fingerprint, or '-' for an explicit ad-hoc build." >&2
+  exit 1
+fi
+if [[ "${BLACKOUT_REQUIRE_SIGNING:-0}" == 1 && "$SIGNING_IDENTITY" == - ]]; then
+  echo "Release packaging requires a persistent signing certificate; refusing an ad-hoc release." >&2
+  exit 1
+fi
 SDK_PATH="$(xcrun --sdk macosx --show-sdk-path)"
 SDK_VERSION="$(xcrun --sdk macosx --show-sdk-version)"
 if (( ${SDK_VERSION%%.*} < 26 )); then
@@ -61,5 +79,7 @@ cp -R "$ROOT"/Resources/Localization/. "$CONTENTS/Resources/"
 cp "$ROOT/LICENSE" "$CONTENTS/Resources/LICENSE"
 xcrun swift "$SCRIPT_DIR/make-icon.swift" "$BUILD_DIR/Blackout.iconset"
 iconutil -c icns "$BUILD_DIR/Blackout.iconset" -o "$CONTENTS/Resources/Blackout.icns"
-codesign --force --deep --sign - "$APP_DIR"
+SIGNING_ARGS=(--force --deep --sign "$SIGNING_IDENTITY")
+if [[ -n "${BLACKOUT_SIGN_KEYCHAIN:-}" ]]; then SIGNING_ARGS+=(--keychain "$BLACKOUT_SIGN_KEYCHAIN"); fi
+codesign "${SIGNING_ARGS[@]}" "$APP_DIR"
 codesign --verify --deep --strict "$APP_DIR"

@@ -45,3 +45,4 @@ xcrun swiftc "$ROOT/Sources/Core/Updates/ReleaseVersion.swift" \
   "$ROOT/Tests/Updates/ReleaseCheckerTests.swift" -o "$TEST_DIR/updates"
 "$TEST_DIR/updates"
 python3 -B -m unittest discover -s "$ROOT/Tests/Installation" -v
+python3 -B -m unittest discover -s "$ROOT/Tests/Signing" -v

@@ -20,7 +20,7 @@ BlackoutMac covers every connected display and filters keyboard and mouse input 
 
 The permission panel is named **Device Control and Data Access** on macOS 27, and **Accessibility** on macOS 13–26. The app's button opens the appropriate panel directly. The separate Accessibility section for assistive features is not the permission list.
 
-Current builds are locally ad-hoc signed, **not Apple-notarized**. macOS may require you to review and explicitly allow the app in **System Settings → Privacy & Security**. Do not disable Gatekeeper. A Developer ID signed and notarized release remains future distribution work.
+The v0.1.0 preview uses ad-hoc signing. Starting with v0.1.1, previews use a fixed self-signed certificate to keep the signing identity stable across builds. These previews are **not Developer ID signed or Apple-notarized**; the certificate does not provide Apple approval. macOS may require you to review and explicitly allow the app in **System Settings → Privacy & Security**. Do not disable Gatekeeper. A Developer ID signed and notarized release remains future distribution work.
 
 ## Use
 
@@ -52,7 +52,7 @@ Settings stay on this Mac. Passwords are stored as salted PBKDF2-HMAC-SHA256 ver
 2. Choose **Quit Blackout** from the menu bar, after restoring the screen if needed.
 3. Replace the existing **Blackout.app in the same folder** with the new copy, then open it. Do not keep a second copy in another folder.
 
-Your password and language preferences are stored separately from the app and remain in place. Check launch-at-login status after replacement. Ad-hoc signing changes can require macOS to approve input-control permission again. Updates currently use this manual replacement process.
+Your password and language preferences are stored separately from the app and remain in place. Check launch-at-login status after replacement. A signing identity change, including upgrading from v0.1.0's ad-hoc signature to the fixed certificate, can require one renewed approval of input-control permission. This is not a step required for every update. Updates currently use this manual replacement process.
 
 If Blackout still asks for permission when its switch is already on, quit Blackout, remove its entry from the input-control permission list, then add the currently installed **Blackout.app** again and enable it. Reopen Blackout. An old permission entry can refer to the previous build even though the switch remains on.
 

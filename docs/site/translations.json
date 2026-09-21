@@ -16,7 +16,7 @@
     "sections": [
       [
         "Install in a moment",
-        "Download the universal DMG from GitHub Releases. Open it and drag Blackout.app to the Applications shortcut, then launch it. If macOS blocks the first launch, check the source, then choose “Open Anyway” in macOS security settings if shown. To update, choose Blackout → “Quit Blackout”, replace the existing Blackout.app in the same folder with the new DMG copy, and reopen it. Password and language preferences are stored separately and retained. This preview uses ad-hoc signing, not a Developer ID signature. After replacement, a permission can still appear on while approving the previous app; use the remove-and-add steps in the FAQ below. Settings shows the installed version. “Check for Updates…” checks official GitHub releases only when clicked. If a newer release is available, “Open Release Page…” opens its download page. Nothing is installed automatically."
+        "Download the universal DMG from GitHub Releases. Open it and drag Blackout.app to the Applications shortcut, then launch it. If macOS blocks the first launch, check the source, then choose “Open Anyway” in macOS security settings if shown. To update, choose Blackout → “Quit Blackout”, replace the existing Blackout.app in the same folder with the new DMG copy, and reopen it. Password and language preferences are stored separately and retained. Version 0.1.0 uses ad-hoc signing; starting with 0.1.1, previews use a fixed self-signed certificate, without Developer ID signing or Apple notarization. If input blocking fails despite enabled permission, follow the FAQ below. Settings shows the installed version. “Check for Updates…” checks official GitHub releases only when clicked. If a newer release is available, “Open Release Page…” opens its download page. Nothing is installed automatically."
       ],
       [
         "Allow input blocking",
@@ -54,7 +54,7 @@
       ],
       [
         "Input permission is on. Why won’t blackout start?",
-        "An update to this ad-hoc-signed preview can leave macOS approving the previous app instead of the installed copy. Choose Blackout → “Quit Blackout”. In the macOS input permission list (macOS 27: “Device Control and Data Access”; macOS 13–26: “Accessibility”), remove Blackout, add the currently installed Blackout.app again, and enable it. Then relaunch Blackout."
+        "When the signing identity changes, including an upgrade from 0.1.0, macOS may still approve the previous app; in this case, renew permission once. Choose Blackout → “Quit Blackout”. In the macOS input permission list (macOS 27: “Device Control and Data Access”; macOS 13–26: “Accessibility”), remove Blackout, add the currently installed Blackout.app again, and enable it. Then relaunch Blackout."
       ]
     ],
     "status": "Preview release"
@@ -76,7 +76,7 @@
     "sections": [
       [
         "간단하게 설치하기",
-        "GitHub Releases에서 유니버설 DMG를 다운로드합니다. DMG를 열고 Blackout.app을 Applications 바로가기로 옮긴 뒤 실행하세요. 첫 실행을 macOS가 막으면 출처를 확인하고 macOS 보안 설정에서 “그래도 열기”가 표시될 때 선택하세요. 업데이트할 때는 Blackout → “Blackout 종료”로 종료한 뒤, 같은 폴더의 기존 Blackout.app을 새 DMG의 앱으로 교체하고 다시 실행하세요. 비밀번호와 언어 설정은 별도로 저장되어 유지됩니다. 이 미리 보기 버전은 Developer ID 서명 대신 임시 서명을 사용합니다. 앱 교체 후 권한이 켜져 보여도 이전 앱에 대한 승인만 남을 수 있으니 아래 FAQ의 제거 후 다시 추가하는 절차를 따르세요. 설정에서 현재 설치 버전을 볼 수 있습니다. “업데이트 확인…”을 눌렀을 때만 공식 GitHub 릴리스를 조회하고, 더 새로운 릴리스가 있으면 “릴리스 페이지 열기…”로 다운로드 페이지를 엽니다. 자동 설치하지 않습니다."
+        "GitHub Releases에서 유니버설 DMG를 다운로드합니다. DMG를 열고 Blackout.app을 Applications 바로가기로 옮긴 뒤 실행하세요. 첫 실행을 macOS가 막으면 출처를 확인하고 macOS 보안 설정에서 “그래도 열기”가 표시될 때 선택하세요. 업데이트할 때는 Blackout → “Blackout 종료”로 종료한 뒤, 같은 폴더의 기존 Blackout.app을 새 DMG의 앱으로 교체하고 다시 실행하세요. 비밀번호와 언어 설정은 별도로 저장되어 유지됩니다. 0.1.0 버전은 임시 서명을 사용하며, 0.1.1부터는 미리 보기 버전에 고정된 자체 서명 인증서를 사용합니다. Developer ID 서명과 Apple 공증은 없습니다. 권한을 켰는데도 입력 차단이 작동하지 않으면 아래 FAQ를 확인하세요. 설정에서 현재 설치 버전을 볼 수 있습니다. “업데이트 확인…”을 눌렀을 때만 공식 GitHub 릴리스를 조회하고, 더 새로운 릴리스가 있으면 “릴리스 페이지 열기…”로 다운로드 페이지를 엽니다. 자동 설치하지 않습니다."
       ],
       [
         "입력 차단 권한 허용",
@@ -114,7 +114,7 @@
       ],
       [
         "입력 권한이 켜져 있는데도 화면 가리기가 안 되나요?",
-        "임시 서명된 미리 보기 앱을 업데이트하면 현재 앱 대신 이전 앱의 승인 기록이 남을 수 있습니다. Blackout → “Blackout 종료”로 종료하세요. macOS 입력 권한 목록(macOS 27: “기기 제어 및 데이터 접근”, macOS 13–26: “손쉬운 사용”)에서 Blackout을 제거한 뒤, 현재 설치된 Blackout.app을 다시 추가하고 허용하세요. 마지막으로 Blackout을 다시 실행하세요."
+        "0.1.0에서 업데이트하는 경우처럼 서명 식별 정보가 바뀌면 macOS에 이전 앱의 승인만 남을 수 있습니다. 이 경우 권한을 한 번 다시 승인하세요. Blackout → “Blackout 종료”로 종료하세요. macOS 입력 권한 목록(macOS 27: “기기 제어 및 데이터 접근”, macOS 13–26: “손쉬운 사용”)에서 Blackout을 제거한 뒤, 현재 설치된 Blackout.app을 다시 추가하고 허용하세요. 마지막으로 Blackout을 다시 실행하세요."
       ]
     ],
     "status": "미리 보기 버전"
@@ -136,7 +136,7 @@
     "sections": [
       [
         "かんたんインストール",
-        "GitHub ReleasesからユニバーサルDMGをダウンロードし、Blackout.appをApplicationsのショートカットへドラッグして起動します。初回起動がブロックされたら入手元を確認し、macOSのセキュリティ設定に「このまま開く」が表示される場合に選択してください。更新時はBlackout →「Blackoutを終了」で終了し、同じフォルダのBlackout.appを新しいDMG内のアプリで置き換えて再起動します。パスワードと言語設定は別に保存され、維持されます。 このプレビュー版はDeveloper ID署名ではなくアドホック署名を使用します。置き換え後、権限がオンでも以前のアプリへの許可が残る場合があります。下のFAQの削除・再追加手順に従ってください。設定には現在のバージョンが表示されます。「アップデートを確認…」を押したときだけ公式GitHubリリースを確認し、新しいバージョンがあれば「リリースページを開く…」でダウンロードページを開きます。 自動インストールは行いません。"
+        "GitHub ReleasesからユニバーサルDMGをダウンロードし、Blackout.appをApplicationsのショートカットへドラッグして起動します。初回起動がブロックされたら入手元を確認し、macOSのセキュリティ設定に「このまま開く」が表示される場合に選択してください。更新時はBlackout →「Blackoutを終了」で終了し、同じフォルダのBlackout.appを新しいDMG内のアプリで置き換えて再起動します。パスワードと言語設定は別に保存され、維持されます。 0.1.0はアドホック署名を使用し、0.1.1からはプレビュー版に固定の自己署名証明書を使用します。Developer ID署名とAppleの公証はありません。権限が有効でも入力遮断が動作しない場合は、下のFAQをご確認ください。設定には現在のバージョンが表示されます。「アップデートを確認…」を押したときだけ公式GitHubリリースを確認し、新しいバージョンがあれば「リリースページを開く…」でダウンロードページを開きます。 自動インストールは行いません。"
       ],
       [
         "入力を遮断する権限を許可",
@@ -174,7 +174,7 @@
       ],
       [
         "入力権限がオンなのに画面を覆えないのはなぜですか？",
-        "アドホック署名のプレビュー版を更新すると、以前のアプリへの許可が残る場合があります。Blackout →「Blackoutを終了」で終了してください。macOSの入力権限一覧（macOS 27：「デバイスの制御とデータへのアクセス」、macOS 13–26：「アクセシビリティ」）からBlackoutを削除し、現在インストールされているBlackout.appを再追加して許可します。その後Blackoutを再起動してください。"
+        "0.1.0からの更新などで署名の識別情報が変わると、macOSに以前のアプリへの許可が残る場合があります。その場合は権限を一度許可し直してください。Blackout →「Blackoutを終了」で終了してください。macOSの入力権限一覧（macOS 27：「デバイスの制御とデータへのアクセス」、macOS 13–26：「アクセシビリティ」）からBlackoutを削除し、現在インストールされているBlackout.appを再追加して許可します。その後Blackoutを再起動してください。"
       ]
     ],
     "status": "プレビュー版"
@@ -196,7 +196,7 @@
     "sections": [
       [
         "轻松安装",
-        "从 GitHub Releases 下载通用 DMG，将 Blackout.app 拖到 Applications 快捷方式后启动。若 macOS 阻止首次打开，请确认来源，并在 macOS 安全设置中选择出现的“仍要打开”。更新时，先选择 Blackout →“退出 Blackout”，用新 DMG 中的应用替换同一文件夹内的 Blackout.app，再重新打开。密码和语言偏好单独保存，会予以保留。 此预览版使用临时签名，而非 Developer ID 签名。替换后，权限可能仍显示开启，但批准的是旧应用；请按下方常见问题中的步骤移除后重新添加。设置中显示当前安装版本。只有点击“检查更新…”才会查询官方 GitHub 发布版本；若有更新版本，可用“打开发布页面…”打开下载页面。 不会自动安装。"
+        "从 GitHub Releases 下载通用 DMG，将 Blackout.app 拖到 Applications 快捷方式后启动。若 macOS 阻止首次打开，请确认来源，并在 macOS 安全设置中选择出现的“仍要打开”。更新时，先选择 Blackout →“退出 Blackout”，用新 DMG 中的应用替换同一文件夹内的 Blackout.app，再重新打开。密码和语言偏好单独保存，会予以保留。 0.1.0 版本使用临时签名；从 0.1.1 起，预览版使用固定的自签名证书，没有 Developer ID 签名，也未经 Apple 公证。如果权限已开启但输入拦截仍无法工作，请参阅下方常见问题。设置中显示当前安装版本。只有点击“检查更新…”才会查询官方 GitHub 发布版本；若有更新版本，可用“打开发布页面…”打开下载页面。 不会自动安装。"
       ],
       [
         "允许输入阻止权限",
@@ -234,7 +234,7 @@
       ],
       [
         "输入权限已开启，为什么仍无法遮盖屏幕？",
-        "更新临时签名的预览版后，macOS 可能仍保留旧应用的批准记录。选择 Blackout →“退出 Blackout”退出。在 macOS 输入权限列表中（macOS 27：“设备控制和数据访问”；macOS 13–26：“辅助功能”），移除 Blackout，重新添加当前安装的 Blackout.app 并允许访问。然后重新启动 Blackout。"
+        "签名身份发生变化时（包括从 0.1.0 升级），macOS 可能仍保留旧应用的批准记录；这种情况下，需要重新授权一次。选择 Blackout →“退出 Blackout”退出。在 macOS 输入权限列表中（macOS 27：“设备控制和数据访问”；macOS 13–26：“辅助功能”），移除 Blackout，重新添加当前安装的 Blackout.app 并允许访问。然后重新启动 Blackout。"
       ]
     ],
     "status": "预览版"
@@ -256,7 +256,7 @@
     "sections": [
       [
         "輕鬆安裝",
-        "從 GitHub Releases 下載通用 DMG，將 Blackout.app 拖到 Applications 捷徑後啟動。若 macOS 阻擋首次開啟，請確認來源，並在 macOS 安全性設定中選擇出現的「強制打開」。更新時，先選擇 Blackout →「結束 Blackout」，以新 DMG 中的 App 取代同一檔案夾內的 Blackout.app，再重新開啟。密碼與語言偏好設定分開儲存，會予以保留。 此預覽版使用臨時簽章，而非 Developer ID 簽章。取代後，權限可能仍顯示開啟，但核准的是舊 App；請依下方常見問題中的步驟移除後重新加入。設定中顯示目前安裝版本。只有按下「檢查更新…」才會查詢官方 GitHub 發布版本；若有較新版本，可用「打開發佈頁面…」開啟下載頁面。 不會自動安裝。"
+        "從 GitHub Releases 下載通用 DMG，將 Blackout.app 拖到 Applications 捷徑後啟動。若 macOS 阻擋首次開啟，請確認來源，並在 macOS 安全性設定中選擇出現的「強制打開」。更新時，先選擇 Blackout →「結束 Blackout」，以新 DMG 中的 App 取代同一檔案夾內的 Blackout.app，再重新開啟。密碼與語言偏好設定分開儲存，會予以保留。 0.1.0 版本使用臨時簽章；從 0.1.1 起，預覽版使用固定的自簽憑證，沒有 Developer ID 簽章，也未經 Apple 公證。如果已開啟權限但輸入攔截仍無法運作，請參閱下方常見問題。設定中顯示目前安裝版本。只有按下「檢查更新…」才會查詢官方 GitHub 發布版本；若有較新版本，可用「打開發佈頁面…」開啟下載頁面。 不會自動安裝。"
       ],
       [
         "允許輸入阻擋權限",
@@ -294,7 +294,7 @@
       ],
       [
         "輸入權限已開啟，為什麼仍無法遮蓋螢幕？",
-        "更新臨時簽章的預覽版後，macOS 可能仍保留舊 App 的核准記錄。選擇 Blackout →「結束 Blackout」結束。在 macOS 輸入權限列表中（macOS 27：「裝置控制和資料取用」；macOS 13–26：「輔助使用」），移除 Blackout，重新加入目前安裝的 Blackout.app 並允許取用。然後重新啟動 Blackout。"
+        "簽署身分變更時（包括從 0.1.0 升級），macOS 可能仍保留舊 App 的核准記錄；這種情況下，需要重新授權一次。選擇 Blackout →「結束 Blackout」結束。在 macOS 輸入權限列表中（macOS 27：「裝置控制和資料取用」；macOS 13–26：「輔助使用」），移除 Blackout，重新加入目前安裝的 Blackout.app 並允許取用。然後重新啟動 Blackout。"
       ]
     ],
     "status": "預覽版"
@@ -316,7 +316,7 @@
     "sections": [
       [
         "Instalación sencilla",
-        "Descarga el DMG universal de GitHub Releases y arrastra Blackout.app al acceso directo Applications. Abre la app. Si macOS bloquea el primer inicio, verifica la procedencia y elige «Abrir igualmente» en los ajustes de seguridad de macOS, si aparece. Para actualizar, elige Blackout → «Salir de Blackout», sustituye Blackout.app en la misma carpeta por la copia del nuevo DMG y ábrela. La contraseña y el idioma se guardan aparte y se conservan. Esta versión preliminar usa firma ad hoc, sin Developer ID. Tras sustituirla, el permiso puede seguir activado para la app anterior; sigue los pasos de eliminación y nueva incorporación de las preguntas frecuentes. Ajustes muestra la versión instalada. «Buscar actualizaciones…» consulta los lanzamientos oficiales de GitHub solo al pulsarlo. Si hay una versión más reciente, «Abrir página de la versión…» abre su página de descarga. No se instala automáticamente."
+        "Descarga el DMG universal de GitHub Releases y arrastra Blackout.app al acceso directo Applications. Abre la app. Si macOS bloquea el primer inicio, verifica la procedencia y elige «Abrir igualmente» en los ajustes de seguridad de macOS, si aparece. Para actualizar, elige Blackout → «Salir de Blackout», sustituye Blackout.app en la misma carpeta por la copia del nuevo DMG y ábrela. La contraseña y el idioma se guardan aparte y se conservan. La versión 0.1.0 usa firma ad hoc; a partir de la 0.1.1, las versiones preliminares usan un certificado autofirmado fijo, sin firma Developer ID ni certificación de Apple. Si el bloqueo de entrada falla aunque el permiso esté activado, consulta las preguntas frecuentes de abajo. Ajustes muestra la versión instalada. «Buscar actualizaciones…» consulta los lanzamientos oficiales de GitHub solo al pulsarlo. Si hay una versión más reciente, «Abrir página de la versión…» abre su página de descarga. No se instala automáticamente."
       ],
       [
         "Permitir el bloqueo de entradas",
@@ -354,7 +354,7 @@
       ],
       [
         "El permiso de entrada está activado. ¿Por qué no se cubren las pantallas?",
-        "Actualizar esta versión con firma ad hoc puede dejar en macOS la autorización de la app anterior. Elige Blackout → «Salir de Blackout». En la lista de permisos de entrada de macOS (macOS 27: «Control de dispositivos y acceso a datos»; macOS 13–26: «Accesibilidad»), elimina Blackout, añade de nuevo el Blackout.app instalado actualmente y actívalo. Después vuelve a abrir Blackout."
+        "Cuando cambia la identidad de firma, incluso al actualizar desde la 0.1.0, macOS puede conservar la autorización de la app anterior; en ese caso, renueva el permiso una vez. Elige Blackout → «Salir de Blackout». En la lista de permisos de entrada de macOS (macOS 27: «Control de dispositivos y acceso a datos»; macOS 13–26: «Accesibilidad»), elimina Blackout, añade de nuevo el Blackout.app instalado actualmente y actívalo. Después vuelve a abrir Blackout."
       ]
     ],
     "status": "Versión preliminar"
@@ -376,7 +376,7 @@
     "sections": [
       [
         "Installation rapide",
-        "Téléchargez le DMG universel depuis GitHub Releases et glissez Blackout.app sur le raccourci Applications. Lancez l’app. Si macOS bloque le premier lancement, vérifiez sa provenance puis choisissez « Ouvrir quand même » dans les réglages de sécurité macOS, si proposé. Pour mettre à jour, choisissez Blackout → « Quitter Blackout », remplacez Blackout.app dans le même dossier par la copie du nouveau DMG, puis relancez-la. Le mot de passe et la langue sont conservés séparément. Cette version préliminaire utilise une signature ad hoc, sans Developer ID. Après remplacement, l’autorisation peut rester activée pour l’ancienne app ; suivez la suppression et le nouvel ajout décrits dans la FAQ. Les réglages affichent la version installée. « Rechercher des mises à jour… » consulte les versions officielles GitHub uniquement au clic. Si une version plus récente est disponible, « Ouvrir la page de la version… » ouvre sa page de téléchargement. Aucune installation automatique n’a lieu."
+        "Téléchargez le DMG universel depuis GitHub Releases et glissez Blackout.app sur le raccourci Applications. Lancez l’app. Si macOS bloque le premier lancement, vérifiez sa provenance puis choisissez « Ouvrir quand même » dans les réglages de sécurité macOS, si proposé. Pour mettre à jour, choisissez Blackout → « Quitter Blackout », remplacez Blackout.app dans le même dossier par la copie du nouveau DMG, puis relancez-la. Le mot de passe et la langue sont conservés séparément. La version 0.1.0 utilise une signature ad hoc ; à partir de la 0.1.1, les versions préliminaires utilisent un certificat autosigné fixe, sans signature Developer ID ni notarisation Apple. Si le blocage des entrées échoue malgré une autorisation active, consultez la FAQ ci-dessous. Les réglages affichent la version installée. « Rechercher des mises à jour… » consulte les versions officielles GitHub uniquement au clic. Si une version plus récente est disponible, « Ouvrir la page de la version… » ouvre sa page de téléchargement. Aucune installation automatique n’a lieu."
       ],
       [
         "Autoriser le blocage des entrées",
@@ -414,7 +414,7 @@
       ],
       [
         "L’autorisation d’entrée est activée. Pourquoi le masquage ne démarre-t-il pas ?",
-        "La mise à jour de cette version signée ad hoc peut laisser macOS autoriser l’ancienne app. Choisissez Blackout → « Quitter Blackout ». Dans la liste des autorisations d’entrée macOS (macOS 27 : « Contrôle de l’appareil et accès aux données » ; macOS 13–26 : « Accessibilité »), supprimez Blackout, ajoutez de nouveau le Blackout.app actuellement installé et autorisez-le. Relancez ensuite Blackout."
+        "Lorsque l’identité de signature change, notamment lors d’une mise à jour depuis la 0.1.0, macOS peut conserver l’autorisation de l’ancienne app ; dans ce cas, accordez à nouveau l’autorisation une fois. Choisissez Blackout → « Quitter Blackout ». Dans la liste des autorisations d’entrée macOS (macOS 27 : « Contrôle de l’appareil et accès aux données » ; macOS 13–26 : « Accessibilité »), supprimez Blackout, ajoutez de nouveau le Blackout.app actuellement installé et autorisez-le. Relancez ensuite Blackout."
       ]
     ],
     "status": "Version préliminaire"
@@ -436,7 +436,7 @@
     "sections": [
       [
         "Schnell installiert",
-        "Lade die universelle DMG von GitHub Releases und ziehe Blackout.app auf den Kurzbefehl Applications. Starte die App. Blockiert macOS den ersten Start, prüfe die Herkunft und wähle gegebenenfalls „Dennoch öffnen“ in den macOS-Sicherheitseinstellungen. Zum Aktualisieren wähle Blackout → „Blackout beenden“, ersetze Blackout.app im selben Ordner durch die Kopie aus der neuen DMG und öffne sie erneut. Passwort und Sprache werden separat gespeichert und bleiben erhalten. Diese Vorabversion ist ad hoc signiert, ohne Developer ID. Nach dem Ersetzen kann die Berechtigung weiterhin für die alte App eingeschaltet sein; folge den Schritten zum Entfernen und erneuten Hinzufügen in den Fragen unten. Die Einstellungen zeigen die installierte Version. „Nach Updates suchen…“ fragt nur beim Anklicken offizielle GitHub-Releases ab. Ist eine neuere Version verfügbar, öffnet „Versionsseite öffnen…“ deren Downloadseite. Es wird nichts automatisch installiert."
+        "Lade die universelle DMG von GitHub Releases und ziehe Blackout.app auf den Kurzbefehl Applications. Starte die App. Blockiert macOS den ersten Start, prüfe die Herkunft und wähle gegebenenfalls „Dennoch öffnen“ in den macOS-Sicherheitseinstellungen. Zum Aktualisieren wähle Blackout → „Blackout beenden“, ersetze Blackout.app im selben Ordner durch die Kopie aus der neuen DMG und öffne sie erneut. Passwort und Sprache werden separat gespeichert und bleiben erhalten. Version 0.1.0 ist ad hoc signiert; ab 0.1.1 verwenden Vorabversionen ein festes selbstsigniertes Zertifikat, ohne Developer-ID-Signatur oder Apple-Notarisierung. Falls die Eingabesperre trotz aktivierter Berechtigung nicht funktioniert, folge den Fragen unten. Die Einstellungen zeigen die installierte Version. „Nach Updates suchen…“ fragt nur beim Anklicken offizielle GitHub-Releases ab. Ist eine neuere Version verfügbar, öffnet „Versionsseite öffnen…“ deren Downloadseite. Es wird nichts automatisch installiert."
       ],
       [
         "Eingabesperre erlauben",
@@ -474,7 +474,7 @@
       ],
       [
         "Die Eingabeberechtigung ist an. Warum startet die Abdeckung nicht?",
-        "Ein Update dieser ad hoc signierten Vorabversion kann die macOS-Freigabe für die vorherige App bestehen lassen. Wähle Blackout → „Blackout beenden“. Entferne Blackout aus der macOS-Eingabeberechtigungsliste (macOS 27: „Gerätesteuerung und Datenzugriff“; macOS 13–26: „Bedienungshilfen“), füge die aktuell installierte Blackout.app erneut hinzu und aktiviere sie. Öffne anschließend Blackout erneut."
+        "Wenn sich die Signieridentität ändert, auch beim Update von 0.1.0, kann macOS weiterhin die vorherige App freigeben; erteile die Berechtigung in diesem Fall einmal erneut. Wähle Blackout → „Blackout beenden“. Entferne Blackout aus der macOS-Eingabeberechtigungsliste (macOS 27: „Gerätesteuerung und Datenzugriff“; macOS 13–26: „Bedienungshilfen“), füge die aktuell installierte Blackout.app erneut hinzu und aktiviere sie. Öffne anschließend Blackout erneut."
       ]
     ],
     "status": "Vorabversion"
@@ -496,7 +496,7 @@
     "sections": [
       [
         "Installazione rapida",
-        "Scarica il DMG universale da GitHub Releases e trascina Blackout.app sul collegamento Applications. Avvia l’app. Se macOS blocca il primo avvio, verifica la provenienza e scegli «Apri comunque» nelle impostazioni di sicurezza macOS, se disponibile. Per aggiornare, scegli Blackout → «Esci da Blackout», sostituisci Blackout.app nella stessa cartella con la copia del nuovo DMG e riaprila. Password e lingua sono conservate separatamente. Questa anteprima usa una firma ad hoc, senza Developer ID. Dopo la sostituzione, il permesso può restare attivo per la vecchia app; segui i passaggi di rimozione e nuovo inserimento nelle domande frequenti. Le impostazioni mostrano la versione installata. «Verifica aggiornamenti…» consulta le versioni ufficiali GitHub solo quando premuto. Se è disponibile una versione più recente, «Apri pagina della versione…» apre la pagina di download. Nulla viene installato automaticamente."
+        "Scarica il DMG universale da GitHub Releases e trascina Blackout.app sul collegamento Applications. Avvia l’app. Se macOS blocca il primo avvio, verifica la provenienza e scegli «Apri comunque» nelle impostazioni di sicurezza macOS, se disponibile. Per aggiornare, scegli Blackout → «Esci da Blackout», sostituisci Blackout.app nella stessa cartella con la copia del nuovo DMG e riaprila. Password e lingua sono conservate separatamente. La versione 0.1.0 usa una firma ad hoc; dalla 0.1.1, le anteprime usano un certificato autofirmato fisso, senza firma Developer ID né autenticazione notarile Apple. Se il blocco degli input non funziona nonostante il permesso sia attivo, consulta le domande frequenti qui sotto. Le impostazioni mostrano la versione installata. «Verifica aggiornamenti…» consulta le versioni ufficiali GitHub solo quando premuto. Se è disponibile una versione più recente, «Apri pagina della versione…» apre la pagina di download. Nulla viene installato automaticamente."
       ],
       [
         "Consenti il blocco degli input",
@@ -534,7 +534,7 @@
       ],
       [
         "Il permesso per gli input è attivo. Perché la copertura non parte?",
-        "Aggiornare questa anteprima con firma ad hoc può lasciare su macOS l’autorizzazione della vecchia app. Scegli Blackout → «Esci da Blackout». Nell’elenco dei permessi di input macOS (macOS 27: «Controllo del dispositivo e accesso ai dati»; macOS 13–26: «Accessibilità»), rimuovi Blackout, aggiungi di nuovo il Blackout.app attualmente installato e abilitalo. Poi riapri Blackout."
+        "Quando cambia l’identità di firma, anche aggiornando dalla 0.1.0, macOS può conservare l’autorizzazione della vecchia app; in questo caso, concedi nuovamente il permesso una volta. Scegli Blackout → «Esci da Blackout». Nell’elenco dei permessi di input macOS (macOS 27: «Controllo del dispositivo e accesso ai dati»; macOS 13–26: «Accessibilità»), rimuovi Blackout, aggiungi di nuovo il Blackout.app attualmente installato e abilitalo. Poi riapri Blackout."
       ]
     ],
     "status": "Versione di anteprima"
@@ -556,7 +556,7 @@
     "sections": [
       [
         "Instalação rápida",
-        "Baixe o DMG universal no GitHub Releases e arraste Blackout.app para o atalho Applications. Inicie o app. Se o macOS bloquear a primeira abertura, confira a origem e escolha «Abrir Mesmo Assim» nos ajustes de segurança do macOS, se disponível. Para atualizar, escolha Blackout → «Encerrar Blackout», substitua Blackout.app na mesma pasta pela cópia do novo DMG e abra novamente. Senha e idioma são guardados separadamente e mantidos. Esta prévia usa assinatura ad hoc, sem Developer ID. Após a substituição, a permissão pode continuar ativa para o app antigo; siga os passos de remover e adicionar novamente nas perguntas frequentes. As configurações mostram a versão instalada. «Buscar atualizações…» consulta as versões oficiais do GitHub só quando clicado. Se houver uma versão mais recente, «Abrir página da versão…» abre a página de download. Nada é instalado automaticamente."
+        "Baixe o DMG universal no GitHub Releases e arraste Blackout.app para o atalho Applications. Inicie o app. Se o macOS bloquear a primeira abertura, confira a origem e escolha «Abrir Mesmo Assim» nos ajustes de segurança do macOS, se disponível. Para atualizar, escolha Blackout → «Encerrar Blackout», substitua Blackout.app na mesma pasta pela cópia do novo DMG e abra novamente. Senha e idioma são guardados separadamente e mantidos. A versão 0.1.0 usa assinatura ad hoc; a partir da 0.1.1, as prévias usam um certificado autoassinado fixo, sem assinatura Developer ID nem notarização da Apple. Se o bloqueio de entrada falhar mesmo com a permissão ativada, consulte as perguntas frequentes abaixo. As configurações mostram a versão instalada. «Buscar atualizações…» consulta as versões oficiais do GitHub só quando clicado. Se houver uma versão mais recente, «Abrir página da versão…» abre a página de download. Nada é instalado automaticamente."
       ],
       [
         "Permitir o bloqueio de entrada",
@@ -594,7 +594,7 @@
       ],
       [
         "A permissão de entrada está ativa. Por que as telas não são cobertas?",
-        "Atualizar esta prévia com assinatura ad hoc pode deixar no macOS a aprovação do app anterior. Escolha Blackout → «Encerrar Blackout». Na lista de permissões de entrada do macOS (macOS 27: «Controle do Dispositivo e Acesso a Dados»; macOS 13–26: «Acessibilidade»), remova Blackout, adicione novamente o Blackout.app atualmente instalado e permita o acesso. Depois reabra Blackout."
+        "Quando a identidade de assinatura muda, inclusive ao atualizar da 0.1.0, o macOS pode manter a aprovação do app anterior; nesse caso, conceda a permissão novamente uma vez. Escolha Blackout → «Encerrar Blackout». Na lista de permissões de entrada do macOS (macOS 27: «Controle do Dispositivo e Acesso a Dados»; macOS 13–26: «Acessibilidade»), remova Blackout, adicione novamente o Blackout.app atualmente instalado e permita o acesso. Depois reabra Blackout."
       ]
     ],
     "status": "Versão de prévia"
@@ -616,7 +616,7 @@
     "sections": [
       [
         "Instalação rápida",
-        "Descarregue o DMG universal do GitHub Releases e arraste Blackout.app para o atalho Applications. Inicie a aplicação. Se o macOS bloquear a primeira abertura, confirme a origem e escolha «Abrir» nas definições de segurança do macOS, se disponível. Para atualizar, escolha Blackout → «Sair do Blackout», substitua Blackout.app na mesma pasta pela cópia do novo DMG e volte a abrir. A palavra-passe e o idioma são guardados separadamente e mantidos. Esta pré-visualização usa uma assinatura ad hoc, sem Developer ID. Após a substituição, a permissão pode continuar ativa para a aplicação antiga; siga os passos de remover e voltar a adicionar nas perguntas frequentes. As definições mostram a versão instalada. «Procurar atualizações…» consulta as versões oficiais do GitHub apenas quando clicado. Se houver uma versão mais recente, «Abrir página da versão…» abre a página de descarga. Nada é instalado automaticamente."
+        "Descarregue o DMG universal do GitHub Releases e arraste Blackout.app para o atalho Applications. Inicie a aplicação. Se o macOS bloquear a primeira abertura, confirme a origem e escolha «Abrir» nas definições de segurança do macOS, se disponível. Para atualizar, escolha Blackout → «Sair do Blackout», substitua Blackout.app na mesma pasta pela cópia do novo DMG e volte a abrir. A palavra-passe e o idioma são guardados separadamente e mantidos. A versão 0.1.0 usa uma assinatura ad hoc; a partir da 0.1.1, as pré-visualizações usam um certificado autoassinado fixo, sem assinatura Developer ID nem notarização da Apple. Se o bloqueio de entrada falhar apesar da permissão ativa, consulte as perguntas frequentes abaixo. As definições mostram a versão instalada. «Procurar atualizações…» consulta as versões oficiais do GitHub apenas quando clicado. Se houver uma versão mais recente, «Abrir página da versão…» abre a página de descarga. Nada é instalado automaticamente."
       ],
       [
         "Permitir o bloqueio de entrada",
@@ -654,7 +654,7 @@
       ],
       [
         "A permissão de entrada está ativa. Porque não são cobertos os ecrãs?",
-        "Atualizar esta pré-visualização com assinatura ad hoc pode deixar no macOS a aprovação da aplicação anterior. Escolha Blackout → «Sair do Blackout». Na lista de permissões de entrada do macOS (macOS 27: «Controlo do dispositivo e acesso a dados»; macOS 13–26: «Acessibilidade»), remova Blackout, volte a adicionar o Blackout.app atualmente instalado e permita o acesso. Depois volte a abrir Blackout."
+        "Quando a identidade de assinatura muda, incluindo ao atualizar da 0.1.0, o macOS pode manter a aprovação da aplicação anterior; nesse caso, conceda novamente a permissão uma vez. Escolha Blackout → «Sair do Blackout». Na lista de permissões de entrada do macOS (macOS 27: «Controlo do dispositivo e acesso a dados»; macOS 13–26: «Acessibilidade»), remova Blackout, volte a adicionar o Blackout.app atualmente instalado e permita o acesso. Depois volte a abrir Blackout."
       ]
     ],
     "status": "Versão de pré-visualização"
@@ -676,7 +676,7 @@
     "sections": [
       [
         "Быстрая установка",
-        "Скачайте универсальный DMG из GitHub Releases и перенесите Blackout.app на ярлык Applications. Запустите приложение. Если macOS блокирует первый запуск, проверьте источник и выберите «Все равно открыть» в настройках безопасности macOS, если кнопка доступна. Для обновления выберите Blackout → «Завершить Blackout», замените Blackout.app в той же папке копией из нового DMG и откройте снова. Пароль и язык сохраняются отдельно и остаются. Эта предварительная версия подписана ad hoc, без Developer ID. После замены разрешение может оставаться включённым для старого приложения; выполните удаление и повторное добавление из FAQ ниже. В настройках показана установленная версия. «Проверить обновления…» проверяет официальные выпуски GitHub только по нажатию. Если доступна более новая версия, «Открыть страницу релиза…» открывает страницу загрузки. Автоматической установки нет."
+        "Скачайте универсальный DMG из GitHub Releases и перенесите Blackout.app на ярлык Applications. Запустите приложение. Если macOS блокирует первый запуск, проверьте источник и выберите «Все равно открыть» в настройках безопасности macOS, если кнопка доступна. Для обновления выберите Blackout → «Завершить Blackout», замените Blackout.app в той же папке копией из нового DMG и откройте снова. Пароль и язык сохраняются отдельно и остаются. Версия 0.1.0 подписана ad hoc; начиная с 0.1.1 предварительные версии используют постоянный самоподписанный сертификат, без подписи Developer ID и нотариального заверения Apple. Если блокировка ввода не работает при включённом разрешении, см. FAQ ниже. В настройках показана установленная версия. «Проверить обновления…» проверяет официальные выпуски GitHub только по нажатию. Если доступна более новая версия, «Открыть страницу релиза…» открывает страницу загрузки. Автоматической установки нет."
       ],
       [
         "Разрешите блокировку ввода",
@@ -714,7 +714,7 @@
       ],
       [
         "Разрешение ввода включено. Почему экраны не закрываются?",
-        "Обновление этой версии с подписью ad hoc может оставить в macOS разрешение для предыдущего приложения. Выберите Blackout → «Завершить Blackout». В списке разрешений ввода macOS (macOS 27: «Управление устройством и доступ к данным»; macOS 13–26: «Универсальный доступ») удалите Blackout, снова добавьте установленный сейчас Blackout.app и разрешите доступ. Затем снова запустите Blackout."
+        "При смене идентификатора подписи, в том числе при обновлении с 0.1.0, macOS может сохранить разрешение для предыдущего приложения; в этом случае выдайте разрешение повторно один раз. Выберите Blackout → «Завершить Blackout». В списке разрешений ввода macOS (macOS 27: «Управление устройством и доступ к данным»; macOS 13–26: «Универсальный доступ») удалите Blackout, снова добавьте установленный сейчас Blackout.app и разрешите доступ. Затем снова запустите Blackout."
       ]
     ],
     "status": "Предварительная версия"
@@ -736,7 +736,7 @@
     "sections": [
       [
         "Швидке встановлення",
-        "Завантажте універсальний DMG із GitHub Releases і перетягніть Blackout.app на ярлик Applications. Запустіть програму. Якщо macOS блокує перший запуск, перевірте джерело й виберіть «Все одно відкрити» у параметрах безпеки macOS, якщо кнопка доступна. Для оновлення виберіть Blackout → «Завершити Blackout», замініть Blackout.app у тій самій папці копією з нового DMG та відкрийте знову. Пароль і мова зберігаються окремо та залишаються. Ця попередня версія має підпис ad hoc, без Developer ID. Після заміни дозвіл може залишатися ввімкненим для старої програми; виконайте видалення й повторне додавання з FAQ нижче. У параметрах показано встановлену версію. «Перевірити оновлення…» перевіряє офіційні випуски GitHub лише після натискання. Якщо доступна новіша версія, «Відкрити сторінку випуску…» відкриває сторінку завантаження. Автоматичного встановлення немає."
+        "Завантажте універсальний DMG із GitHub Releases і перетягніть Blackout.app на ярлик Applications. Запустіть програму. Якщо macOS блокує перший запуск, перевірте джерело й виберіть «Все одно відкрити» у параметрах безпеки macOS, якщо кнопка доступна. Для оновлення виберіть Blackout → «Завершити Blackout», замініть Blackout.app у тій самій папці копією з нового DMG та відкрийте знову. Пароль і мова зберігаються окремо та залишаються. Версія 0.1.0 має підпис ad hoc; починаючи з 0.1.1 попередні версії використовують постійний самопідписаний сертифікат, без підпису Developer ID і нотаріального засвідчення Apple. Якщо блокування введення не працює за ввімкненого дозволу, див. FAQ нижче. У параметрах показано встановлену версію. «Перевірити оновлення…» перевіряє офіційні випуски GitHub лише після натискання. Якщо доступна новіша версія, «Відкрити сторінку випуску…» відкриває сторінку завантаження. Автоматичного встановлення немає."
       ],
       [
         "Дозвольте блокування введення",
@@ -774,7 +774,7 @@
       ],
       [
         "Дозвіл введення ввімкнено. Чому екрани не закриваються?",
-        "Оновлення цієї версії з підписом ad hoc може залишити в macOS дозвіл для попередньої програми. Виберіть Blackout → «Завершити Blackout». У списку дозволів введення macOS (macOS 27: «Керування пристроями й доступ до даних»; macOS 13–26: «Доступність») видаліть Blackout, знову додайте встановлений зараз Blackout.app і дозвольте доступ. Потім знову запустіть Blackout."
+        "Коли змінюється ідентифікатор підпису, зокрема під час оновлення з 0.1.0, macOS може зберегти дозвіл для попередньої програми; у такому разі надайте дозвіл повторно один раз. Виберіть Blackout → «Завершити Blackout». У списку дозволів введення macOS (macOS 27: «Керування пристроями й доступ до даних»; macOS 13–26: «Доступність») видаліть Blackout, знову додайте встановлений зараз Blackout.app і дозвольте доступ. Потім знову запустіть Blackout."
       ]
     ],
     "status": "Попередня версія"
@@ -796,7 +796,7 @@
     "sections": [
       [
         "Szybka instalacja",
-        "Pobierz uniwersalny DMG z GitHub Releases i przeciągnij Blackout.app na skrót Applications. Uruchom aplikację. Jeśli macOS blokuje pierwszy start, sprawdź źródło i wybierz „Otwórz mimo to” w ustawieniach bezpieczeństwa macOS, jeśli opcja jest dostępna. Aby zaktualizować, wybierz Blackout → „Zakończ Blackout”, zastąp Blackout.app w tym samym folderze kopią z nowego DMG i otwórz ponownie. Hasło i język są zapisane osobno i zostają zachowane. Ta wersja testowa ma podpis ad hoc, bez Developer ID. Po zastąpieniu uprawnienie może pozostać włączone dla starej aplikacji; wykonaj usunięcie i ponowne dodanie opisane w pytaniach poniżej. Ustawienia pokazują zainstalowaną wersję. „Sprawdź uaktualnienia…” sprawdza oficjalne wydania GitHub tylko po kliknięciu. Jeśli dostępne jest nowsze wydanie, „Otwórz stronę wydania…” otwiera stronę pobierania. Nic nie instaluje się automatycznie."
+        "Pobierz uniwersalny DMG z GitHub Releases i przeciągnij Blackout.app na skrót Applications. Uruchom aplikację. Jeśli macOS blokuje pierwszy start, sprawdź źródło i wybierz „Otwórz mimo to” w ustawieniach bezpieczeństwa macOS, jeśli opcja jest dostępna. Aby zaktualizować, wybierz Blackout → „Zakończ Blackout”, zastąp Blackout.app w tym samym folderze kopią z nowego DMG i otwórz ponownie. Hasło i język są zapisane osobno i zostają zachowane. Wersja 0.1.0 ma podpis ad hoc; od wersji 0.1.1 wydania testowe używają stałego certyfikatu z podpisem własnym, bez podpisu Developer ID ani notaryzacji Apple. Jeśli blokowanie wejścia nie działa mimo włączonego uprawnienia, sprawdź pytania poniżej. Ustawienia pokazują zainstalowaną wersję. „Sprawdź uaktualnienia…” sprawdza oficjalne wydania GitHub tylko po kliknięciu. Jeśli dostępne jest nowsze wydanie, „Otwórz stronę wydania…” otwiera stronę pobierania. Nic nie instaluje się automatycznie."
       ],
       [
         "Zezwól na blokowanie wejścia",
@@ -834,7 +834,7 @@
       ],
       [
         "Uprawnienie wejścia jest włączone. Dlaczego ekrany nie są zasłaniane?",
-        "Aktualizacja tej wersji z podpisem ad hoc może pozostawić w macOS zgodę dla poprzedniej aplikacji. Wybierz Blackout → „Zakończ Blackout”. Na liście uprawnień wejścia macOS (macOS 27: „Sterowanie urządzeniami i dostęp do danych”; macOS 13–26: „Dostępność”) usuń Blackout, dodaj ponownie aktualnie zainstalowany Blackout.app i włącz uprawnienie. Następnie ponownie uruchom Blackout."
+        "Po zmianie tożsamości podpisu, także przy aktualizacji z 0.1.0, macOS może zachować zgodę dla poprzedniej aplikacji; w takim przypadku nadaj uprawnienie ponownie jeden raz. Wybierz Blackout → „Zakończ Blackout”. Na liście uprawnień wejścia macOS (macOS 27: „Sterowanie urządzeniami i dostęp do danych”; macOS 13–26: „Dostępność”) usuń Blackout, dodaj ponownie aktualnie zainstalowany Blackout.app i włącz uprawnienie. Następnie ponownie uruchom Blackout."
       ]
     ],
     "status": "Wersja testowa"
@@ -856,7 +856,7 @@
     "sections": [
       [
         "Snel geïnstalleerd",
-        "Download de universele DMG via GitHub Releases en sleep Blackout.app naar de snelkoppeling Applications. Start de app. Blokkeert macOS de eerste start, controleer dan de herkomst en kies indien beschikbaar ‘Open toch’ in de macOS-beveiligingsinstellingen. Voor een update kies je Blackout → ‘Stop Blackout’, vervang je Blackout.app in dezelfde map door de kopie uit de nieuwe DMG en open je de app opnieuw. Wachtwoord en taal worden apart bewaard en blijven behouden. Deze voorlopige versie is ad hoc ondertekend, zonder Developer ID. Na vervanging kan toestemming nog voor de oude app aanstaan; volg het verwijderen en opnieuw toevoegen in de vragen hieronder. Instellingen toont de geïnstalleerde versie. ‘Zoek naar updates…’ controleert officiële GitHub-releases alleen na een klik. Bij een nieuwere release opent ‘Open versiepagina…’ de downloadpagina. Niets wordt automatisch geïnstalleerd."
+        "Download de universele DMG via GitHub Releases en sleep Blackout.app naar de snelkoppeling Applications. Start de app. Blokkeert macOS de eerste start, controleer dan de herkomst en kies indien beschikbaar ‘Open toch’ in de macOS-beveiligingsinstellingen. Voor een update kies je Blackout → ‘Stop Blackout’, vervang je Blackout.app in dezelfde map door de kopie uit de nieuwe DMG en open je de app opnieuw. Wachtwoord en taal worden apart bewaard en blijven behouden. Versie 0.1.0 is ad hoc ondertekend; vanaf 0.1.1 gebruiken voorlopige versies een vast zelfondertekend certificaat, zonder Developer ID-handtekening of notarisatie door Apple. Werkt invoerblokkering niet ondanks ingeschakelde toestemming, raadpleeg dan de vragen hieronder. Instellingen toont de geïnstalleerde versie. ‘Zoek naar updates…’ controleert officiële GitHub-releases alleen na een klik. Bij een nieuwere release opent ‘Open versiepagina…’ de downloadpagina. Niets wordt automatisch geïnstalleerd."
       ],
       [
         "Invoerblokkering toestaan",
@@ -894,7 +894,7 @@
       ],
       [
         "Invoertoestemming staat aan. Waarom worden de schermen niet afgedekt?",
-        "Een update van deze ad hoc ondertekende versie kan de macOS-toestemming voor de vorige app laten staan. Kies Blackout → ‘Stop Blackout’. Verwijder Blackout uit de macOS-lijst met invoertoestemmingen (macOS 27: ‘Apparaatbeheer en gegevenstoegang’; macOS 13–26: ‘Toegankelijkheid’), voeg de momenteel geïnstalleerde Blackout.app opnieuw toe en schakel toestemming in. Open daarna Blackout opnieuw."
+        "Als de ondertekeningsidentiteit verandert, ook bij een update vanaf 0.1.0, kan macOS de toestemming voor de vorige app behouden; geef in dat geval eenmalig opnieuw toestemming. Kies Blackout → ‘Stop Blackout’. Verwijder Blackout uit de macOS-lijst met invoertoestemmingen (macOS 27: ‘Apparaatbeheer en gegevenstoegang’; macOS 13–26: ‘Toegankelijkheid’), voeg de momenteel geïnstalleerde Blackout.app opnieuw toe en schakel toestemming in. Open daarna Blackout opnieuw."
       ]
     ],
     "status": "Voorlopige versie"
@@ -916,7 +916,7 @@
     "sections": [
       [
         "Snabb installation",
-        "Hämta den universella DMG-filen från GitHub Releases och dra Blackout.app till genvägen Applications. Starta appen. Om macOS blockerar första starten, kontrollera källan och välj ‘Öppna ändå’ i macOS säkerhetsinställningar om det visas. Vid uppdatering väljer du Blackout → ‘Avsluta Blackout’, ersätter Blackout.app i samma mapp med kopian från den nya DMG-filen och öppnar igen. Lösenord och språk sparas separat och behålls. Förhandsversionen är ad hoc-signerad utan Developer ID. Efter byte kan tillståndet fortfarande vara på för den gamla appen; följ stegen för borttagning och tillägg i frågorna nedan. Inställningar visar installerad version. ‘Sök efter uppdateringar…’ kontrollerar officiella GitHub-versioner endast när du klickar. Om en nyare version finns öppnar ‘Öppna versionssidan…’ nedladdningssidan. Inget installeras automatiskt."
+        "Hämta den universella DMG-filen från GitHub Releases och dra Blackout.app till genvägen Applications. Starta appen. Om macOS blockerar första starten, kontrollera källan och välj ‘Öppna ändå’ i macOS säkerhetsinställningar om det visas. Vid uppdatering väljer du Blackout → ‘Avsluta Blackout’, ersätter Blackout.app i samma mapp med kopian från den nya DMG-filen och öppnar igen. Lösenord och språk sparas separat och behålls. Version 0.1.0 är ad hoc-signerad; från 0.1.1 använder förhandsversioner ett fast självsignerat certifikat, utan Developer ID-signatur eller notarisering av Apple. Om inmatningsblockeringen inte fungerar trots aktiverat tillstånd, se frågorna nedan. Inställningar visar installerad version. ‘Sök efter uppdateringar…’ kontrollerar officiella GitHub-versioner endast när du klickar. Om en nyare version finns öppnar ‘Öppna versionssidan…’ nedladdningssidan. Inget installeras automatiskt."
       ],
       [
         "Tillåt inmatningsblockering",
@@ -954,7 +954,7 @@
       ],
       [
         "Inmatningstillståndet är på. Varför täcks inte skärmarna?",
-        "En uppdatering av denna ad hoc-signerade version kan lämna macOS-tillståndet för den förra appen. Välj Blackout → ‘Avsluta Blackout’. Ta bort Blackout ur macOS lista med inmatningstillstånd (macOS 27: ‘Enhetskontroll och dataåtkomst’; macOS 13–26: ‘Hjälpmedel’), lägg till den nu installerade Blackout.app igen och tillåt den. Starta sedan Blackout igen."
+        "När signeringsidentiteten ändras, även vid uppdatering från 0.1.0, kan macOS behålla tillståndet för den förra appen; ge i så fall tillstånd på nytt en gång. Välj Blackout → ‘Avsluta Blackout’. Ta bort Blackout ur macOS lista med inmatningstillstånd (macOS 27: ‘Enhetskontroll och dataåtkomst’; macOS 13–26: ‘Hjälpmedel’), lägg till den nu installerade Blackout.app igen och tillåt den. Starta sedan Blackout igen."
       ]
     ],
     "status": "Förhandsversion"
@@ -976,7 +976,7 @@
     "sections": [
       [
         "Hurtig installation",
-        "Hent den universelle DMG fra GitHub Releases, og træk Blackout.app til genvejen Applications. Start appen. Hvis macOS blokerer første start, kontrollér kilden, og vælg ‘Åbn alligevel’ i macOS-sikkerhedsindstillingerne, hvis muligheden vises. Ved opdatering skal du vælge Blackout → ‘Slut Blackout’, erstatte Blackout.app i samme mappe med kopien fra den nye DMG og åbne igen. Adgangskode og sprog gemmes separat og bevares. Denne forhåndsversion er ad hoc-signeret uden Developer ID. Efter udskiftning kan tilladelsen stadig være slået til for den gamle app; følg fjernelse og tilføjelse i spørgsmålene nedenfor. Indstillinger viser den installerede version. ‘Søg efter opdateringer…’ tjekker kun officielle GitHub-udgivelser, når du klikker. Hvis en nyere udgivelse findes, åbner ‘Åbn versionssiden…’ downloadsiden. Intet installeres automatisk."
+        "Hent den universelle DMG fra GitHub Releases, og træk Blackout.app til genvejen Applications. Start appen. Hvis macOS blokerer første start, kontrollér kilden, og vælg ‘Åbn alligevel’ i macOS-sikkerhedsindstillingerne, hvis muligheden vises. Ved opdatering skal du vælge Blackout → ‘Slut Blackout’, erstatte Blackout.app i samme mappe med kopien fra den nye DMG og åbne igen. Adgangskode og sprog gemmes separat og bevares. Version 0.1.0 er ad hoc-signeret; fra 0.1.1 bruger forhåndsversioner et fast selvsigneret certifikat uden Developer ID-signatur eller notarisering fra Apple. Hvis blokering af input ikke virker trods aktiveret tilladelse, se spørgsmålene nedenfor. Indstillinger viser den installerede version. ‘Søg efter opdateringer…’ tjekker kun officielle GitHub-udgivelser, når du klikker. Hvis en nyere udgivelse findes, åbner ‘Åbn versionssiden…’ downloadsiden. Intet installeres automatisk."
       ],
       [
         "Tillad blokering af input",
@@ -1014,7 +1014,7 @@
       ],
       [
         "Inputtilladelsen er slået til. Hvorfor dækkes skærmene ikke?",
-        "En opdatering af denne ad hoc-signerede version kan efterlade macOS-tilladelsen til den tidligere app. Vælg Blackout → ‘Slut Blackout’. Fjern Blackout fra macOS-listen med inputtilladelser (macOS 27: ‘Styring af enhed og adgang til data’; macOS 13–26: ‘Tilgængelighed’), tilføj den aktuelt installerede Blackout.app igen, og tillad den. Start derefter Blackout igen."
+        "Når signeringsidentiteten ændres, også ved opdatering fra 0.1.0, kan macOS bevare tilladelsen til den tidligere app; giv i så fald tilladelsen igen én gang. Vælg Blackout → ‘Slut Blackout’. Fjern Blackout fra macOS-listen med inputtilladelser (macOS 27: ‘Styring af enhed og adgang til data’; macOS 13–26: ‘Tilgængelighed’), tilføj den aktuelt installerede Blackout.app igen, og tillad den. Start derefter Blackout igen."
       ]
     ],
     "status": "Forhåndsversion"
@@ -1036,7 +1036,7 @@
     "sections": [
       [
         "Rask installasjon",
-        "Last ned den universelle DMG-filen fra GitHub Releases og dra Blackout.app til snarveien Applications. Start appen. Hvis macOS blokkerer første start, kontroller kilden og velg ‘Åpne likevel’ i macOS-sikkerhetsinnstillingene hvis valget vises. Ved oppdatering velger du Blackout → ‘Avslutt Blackout’, erstatter Blackout.app i samme mappe med kopien fra den nye DMG-filen og åpner igjen. Passord og språk lagres separat og beholdes. Denne forhåndsversjonen er ad hoc-signert uten Developer ID. Etter utskifting kan tillatelsen fortsatt være på for den gamle appen; følg fjerning og ny tillegging i spørsmålene nedenfor. Innstillinger viser installert versjon. ‘Se etter oppdateringer…’ sjekker offisielle GitHub-utgivelser bare når du klikker. Hvis en nyere utgivelse finnes, åpner ‘Åpne versjonssiden…’ nedlastingssiden. Ingenting installeres automatisk."
+        "Last ned den universelle DMG-filen fra GitHub Releases og dra Blackout.app til snarveien Applications. Start appen. Hvis macOS blokkerer første start, kontroller kilden og velg ‘Åpne likevel’ i macOS-sikkerhetsinnstillingene hvis valget vises. Ved oppdatering velger du Blackout → ‘Avslutt Blackout’, erstatter Blackout.app i samme mappe med kopien fra den nye DMG-filen og åpner igjen. Passord og språk lagres separat og beholdes. Versjon 0.1.0 er ad hoc-signert; fra 0.1.1 bruker forhåndsversjoner et fast selvsignert sertifikat uten Developer ID-signatur eller notarisering fra Apple. Hvis blokkering av inndata ikke virker til tross for aktivert tillatelse, se spørsmålene nedenfor. Innstillinger viser installert versjon. ‘Se etter oppdateringer…’ sjekker offisielle GitHub-utgivelser bare når du klikker. Hvis en nyere utgivelse finnes, åpner ‘Åpne versjonssiden…’ nedlastingssiden. Ingenting installeres automatisk."
       ],
       [
         "Tillat blokkering av inndata",
@@ -1074,7 +1074,7 @@
       ],
       [
         "Inndatatillatelsen er på. Hvorfor dekkes ikke skjermene?",
-        "En oppdatering av denne ad hoc-signerte versjonen kan etterlate macOS-tillatelsen for den tidligere appen. Velg Blackout → ‘Avslutt Blackout’. Fjern Blackout fra macOS-listen med inndatatillatelser (macOS 27: ‘Enhetskontroll og datatilgang’; macOS 13–26: ‘Tilgjengelighet’), legg til den nå installerte Blackout.app igjen, og tillat den. Start deretter Blackout på nytt."
+        "Når signeringsidentiteten endres, også ved oppdatering fra 0.1.0, kan macOS beholde tillatelsen for den tidligere appen; gi i så fall tillatelsen på nytt én gang. Velg Blackout → ‘Avslutt Blackout’. Fjern Blackout fra macOS-listen med inndatatillatelser (macOS 27: ‘Enhetskontroll og datatilgang’; macOS 13–26: ‘Tilgjengelighet’), legg til den nå installerte Blackout.app igjen, og tillat den. Start deretter Blackout på nytt."
       ]
     ],
     "status": "Forhåndsversjon"
@@ -1096,7 +1096,7 @@
     "sections": [
       [
         "Nopea asennus",
-        "Lataa universaali DMG GitHub Releasesista ja vedä Blackout.app Applications-pikakuvakkeeseen. Käynnistä sovellus. Jos macOS estää ensimmäisen käynnistyksen, tarkista lähde ja valitse macOS:n suojausasetuksista ‘Avaa kuitenkin’, jos se näkyy. Päivitä valitsemalla Blackout → ‘Lopeta Blackout’, korvaamalla samassa kansiossa oleva Blackout.app uuden DMG:n kopiolla ja avaamalla uudelleen. Salasana ja kieli tallennetaan erikseen ja säilyvät. Tämä esiversio on allekirjoitettu ad hoc ilman Developer ID:tä. Korvaamisen jälkeen lupa voi yhä olla päällä vanhalle sovellukselle; noudata alla olevan kysymyksen poisto- ja lisäysohjeita. Asetuksissa näkyy asennettu versio. ‘Etsi päivityksiä…’ tarkistaa viralliset GitHub-julkaisut vain napsautettaessa. Jos uudempi julkaisu on saatavilla, ‘Avaa julkaisusivu…’ avaa lataussivun. Mitään ei asenneta automaattisesti."
+        "Lataa universaali DMG GitHub Releasesista ja vedä Blackout.app Applications-pikakuvakkeeseen. Käynnistä sovellus. Jos macOS estää ensimmäisen käynnistyksen, tarkista lähde ja valitse macOS:n suojausasetuksista ‘Avaa kuitenkin’, jos se näkyy. Päivitä valitsemalla Blackout → ‘Lopeta Blackout’, korvaamalla samassa kansiossa oleva Blackout.app uuden DMG:n kopiolla ja avaamalla uudelleen. Salasana ja kieli tallennetaan erikseen ja säilyvät. Versio 0.1.0 on allekirjoitettu ad hoc; versiosta 0.1.1 alkaen esiversiot käyttävät pysyvää itse allekirjoitettua varmennetta ilman Developer ID -allekirjoitusta tai Applen notarisointia. Jos syötteen esto ei toimi käytössä olevasta luvasta huolimatta, katso alla olevat kysymykset. Asetuksissa näkyy asennettu versio. ‘Etsi päivityksiä…’ tarkistaa viralliset GitHub-julkaisut vain napsautettaessa. Jos uudempi julkaisu on saatavilla, ‘Avaa julkaisusivu…’ avaa lataussivun. Mitään ei asenneta automaattisesti."
       ],
       [
         "Salli syötteiden estäminen",
@@ -1134,7 +1134,7 @@
       ],
       [
         "Syötelupa on päällä. Miksi näytöt eivät peity?",
-        "Tämän ad hoc -allekirjoitetun version päivitys voi jättää macOS:ään edellisen sovelluksen luvan. Valitse Blackout → ‘Lopeta Blackout’. Poista Blackout macOS:n syötelupaluettelosta (macOS 27: ‘Laitehallinta ja tietojen käyttö’; macOS 13–26: ‘Käyttöapu’), lisää nyt asennettu Blackout.app uudelleen ja salli se. Käynnistä sen jälkeen Blackout uudelleen."
+        "Kun allekirjoitusidentiteetti vaihtuu, myös päivitettäessä versiosta 0.1.0, macOS voi säilyttää edellisen sovelluksen luvan; anna tällöin lupa kerran uudelleen. Valitse Blackout → ‘Lopeta Blackout’. Poista Blackout macOS:n syötelupaluettelosta (macOS 27: ‘Laitehallinta ja tietojen käyttö’; macOS 13–26: ‘Käyttöapu’), lisää nyt asennettu Blackout.app uudelleen ja salli se. Käynnistä sen jälkeen Blackout uudelleen."
       ]
     ],
     "status": "Esiversio"
@@ -1156,7 +1156,7 @@
     "sections": [
       [
         "Rychlá instalace",
-        "Stáhněte univerzální DMG z GitHub Releases a přetáhněte Blackout.app na zástupce Applications. Spusťte aplikaci. Pokud macOS blokuje první spuštění, ověřte zdroj a zvolte v nastavení zabezpečení macOS „Přesto otevřít“, je-li dostupné. Pro aktualizaci zvolte Blackout → „Ukončit Blackout“, nahraďte Blackout.app ve stejné složce kopií z nového DMG a znovu otevřete. Heslo a jazyk jsou uloženy odděleně a zachovají se. Tato předběžná verze má podpis ad hoc, bez Developer ID. Po nahrazení může oprávnění zůstat zapnuté pro starou aplikaci; postupujte podle odstranění a nového přidání v dotazech níže. Nastavení ukazuje nainstalovanou verzi. „Vyhledat aktualizace…“ kontroluje oficiální vydání GitHub pouze po kliknutí. Pokud je dostupné novější vydání, „Otevřít stránku vydání…“ otevře stránku ke stažení. Nic se neinstaluje automaticky."
+        "Stáhněte univerzální DMG z GitHub Releases a přetáhněte Blackout.app na zástupce Applications. Spusťte aplikaci. Pokud macOS blokuje první spuštění, ověřte zdroj a zvolte v nastavení zabezpečení macOS „Přesto otevřít“, je-li dostupné. Pro aktualizaci zvolte Blackout → „Ukončit Blackout“, nahraďte Blackout.app ve stejné složce kopií z nového DMG a znovu otevřete. Heslo a jazyk jsou uloženy odděleně a zachovají se. Verze 0.1.0 má podpis ad hoc; od 0.1.1 používají předběžné verze stálý certifikát s vlastním podpisem, bez podpisu Developer ID a notarizace Apple. Pokud blokování vstupu nefunguje ani se zapnutým oprávněním, viz dotazy níže. Nastavení ukazuje nainstalovanou verzi. „Vyhledat aktualizace…“ kontroluje oficiální vydání GitHub pouze po kliknutí. Pokud je dostupné novější vydání, „Otevřít stránku vydání…“ otevře stránku ke stažení. Nic se neinstaluje automaticky."
       ],
       [
         "Povolte blokování vstupu",
@@ -1194,7 +1194,7 @@
       ],
       [
         "Oprávnění vstupu je zapnuté. Proč se obrazovky nezakryjí?",
-        "Aktualizace této verze s podpisem ad hoc může v macOS ponechat oprávnění předchozí aplikace. Zvolte Blackout → „Ukončit Blackout“. V seznamu oprávnění vstupu macOS (macOS 27: „Ovládání zařízení a přístup k datům“; macOS 13–26: „Zpřístupnění“) odeberte Blackout, znovu přidejte právě nainstalovaný Blackout.app a povolte jej. Poté Blackout znovu spusťte."
+        "Při změně podpisové identity, včetně aktualizace z 0.1.0, může macOS ponechat oprávnění předchozí aplikace; v takovém případě oprávnění jednou znovu udělte. Zvolte Blackout → „Ukončit Blackout“. V seznamu oprávnění vstupu macOS (macOS 27: „Ovládání zařízení a přístup k datům“; macOS 13–26: „Zpřístupnění“) odeberte Blackout, znovu přidejte právě nainstalovaný Blackout.app a povolte jej. Poté Blackout znovu spusťte."
       ]
     ],
     "status": "Předběžná verze"
@@ -1216,7 +1216,7 @@
     "sections": [
       [
         "Rýchla inštalácia",
-        "Stiahnite univerzálny DMG z GitHub Releases a presuňte Blackout.app na odkaz Applications. Spustite aplikáciu. Ak macOS blokuje prvé spustenie, overte zdroj a zvoľte v nastaveniach bezpečnosti macOS „Otvoriť aj tak“, ak je dostupné. Pri aktualizácii zvoľte Blackout → „Ukončiť Blackout“, nahraďte Blackout.app v rovnakom priečinku kópiou z nového DMG a znovu otvorte. Heslo a jazyk sa ukladajú oddelene a zostanú zachované. Táto predbežná verzia má podpis ad hoc, bez Developer ID. Po nahradení môže povolenie zostať zapnuté pre starú aplikáciu; postupujte podľa odstránenia a opätovného pridania v otázkach nižšie. Nastavenia zobrazujú nainštalovanú verziu. „Vyhľadať aktualizácie…“ kontroluje oficiálne vydania GitHub iba po kliknutí. Ak je dostupné novšie vydanie, „Otvoriť stránku vydania…“ otvorí stránku na stiahnutie. Nič sa neinštaluje automaticky."
+        "Stiahnite univerzálny DMG z GitHub Releases a presuňte Blackout.app na odkaz Applications. Spustite aplikáciu. Ak macOS blokuje prvé spustenie, overte zdroj a zvoľte v nastaveniach bezpečnosti macOS „Otvoriť aj tak“, ak je dostupné. Pri aktualizácii zvoľte Blackout → „Ukončiť Blackout“, nahraďte Blackout.app v rovnakom priečinku kópiou z nového DMG a znovu otvorte. Heslo a jazyk sa ukladajú oddelene a zostanú zachované. Verzia 0.1.0 má podpis ad hoc; od 0.1.1 používajú predbežné verzie stály certifikát s vlastným podpisom, bez podpisu Developer ID a notarizácie Apple. Ak blokovanie vstupu nefunguje ani so zapnutým povolením, pozrite si otázky nižšie. Nastavenia zobrazujú nainštalovanú verziu. „Vyhľadať aktualizácie…“ kontroluje oficiálne vydania GitHub iba po kliknutí. Ak je dostupné novšie vydanie, „Otvoriť stránku vydania…“ otvorí stránku na stiahnutie. Nič sa neinštaluje automaticky."
       ],
       [
         "Povoľte blokovanie vstupu",
@@ -1254,7 +1254,7 @@
       ],
       [
         "Povolenie vstupu je zapnuté. Prečo sa obrazovky neprekryjú?",
-        "Aktualizácia tejto verzie s podpisom ad hoc môže v macOS ponechať povolenie predchádzajúcej aplikácie. Zvoľte Blackout → „Ukončiť Blackout“. V zozname povolení vstupu macOS (macOS 27: „Ovládanie zariadenia a prístup k dátam“; macOS 13–26: „Prístupnosť“) odstráňte Blackout, znovu pridajte aktuálne nainštalovaný Blackout.app a povoľte ho. Potom Blackout znovu spustite."
+        "Pri zmene podpisovej identity, aj pri aktualizácii z 0.1.0, môže macOS ponechať povolenie predchádzajúcej aplikácie; v takom prípade povolenie raz znovu udeľte. Zvoľte Blackout → „Ukončiť Blackout“. V zozname povolení vstupu macOS (macOS 27: „Ovládanie zariadenia a prístup k dátam“; macOS 13–26: „Prístupnosť“) odstráňte Blackout, znovu pridajte aktuálne nainštalovaný Blackout.app a povoľte ho. Potom Blackout znovu spustite."
       ]
     ],
     "status": "Predbežná verzia"
@@ -1276,7 +1276,7 @@
     "sections": [
       [
         "Gyors telepítés",
-        "Töltse le az univerzális DMG-t a GitHub Releases oldaláról, és húzza a Blackout.app fájlt az Applications parancsikonra. Indítsa el. Ha a macOS tiltja az első indítást, ellenőrizze a forrást, majd válassza a macOS biztonsági beállításaiban a „Megnyitás mindenképp” lehetőséget, ha megjelenik. Frissítéskor válassza a Blackout → „Kilépés a Blackoutból” menüpontot, cserélje le a Blackout.app fájlt ugyanabban a mappában az új DMG másolatával, majd nyissa meg újra. A külön tárolt jelszó és nyelv megmarad. Ez az előzetes verzió ad hoc aláírást használ, Developer ID nélkül. Csere után az engedély bekapcsolva maradhat a régi apphoz; kövesse az alábbi kérdés eltávolítási és újbóli hozzáadási lépéseit. A beállítások mutatják a telepített verziót. A „Frissítések keresése…” csak kattintásra ellenőrzi a hivatalos GitHub-kiadásokat. Ha van újabb kiadás, a „Kiadási oldal megnyitása…” megnyitja a letöltési oldalt. Semmi nem települ automatikusan."
+        "Töltse le az univerzális DMG-t a GitHub Releases oldaláról, és húzza a Blackout.app fájlt az Applications parancsikonra. Indítsa el. Ha a macOS tiltja az első indítást, ellenőrizze a forrást, majd válassza a macOS biztonsági beállításaiban a „Megnyitás mindenképp” lehetőséget, ha megjelenik. Frissítéskor válassza a Blackout → „Kilépés a Blackoutból” menüpontot, cserélje le a Blackout.app fájlt ugyanabban a mappában az új DMG másolatával, majd nyissa meg újra. A külön tárolt jelszó és nyelv megmarad. A 0.1.0 verzió ad hoc aláírást használ; a 0.1.1 verziótól az előzetes kiadások állandó, önaláírt tanúsítványt használnak, Developer ID-aláírás és Apple-hitelesítés nélkül. Ha a bevitel blokkolása bekapcsolt engedély mellett sem működik, lásd az alábbi kérdéseket. A beállítások mutatják a telepített verziót. A „Frissítések keresése…” csak kattintásra ellenőrzi a hivatalos GitHub-kiadásokat. Ha van újabb kiadás, a „Kiadási oldal megnyitása…” megnyitja a letöltési oldalt. Semmi nem települ automatikusan."
       ],
       [
         "A bevitel blokkolásának engedélyezése",
@@ -1314,7 +1314,7 @@
       ],
       [
         "A beviteli engedély be van kapcsolva. Miért nem indul a takarás?",
-        "Az ad hoc aláírású előzetes verzió frissítése után a macOS a régi app engedélyét őrizheti meg. Válassza a Blackout → „Kilépés a Blackoutból” menüpontot. A macOS beviteli engedélylistáján (macOS 27: „Eszközvezérlés és adathozzáférés”; macOS 13–26: „Kisegítő lehetőségek”) távolítsa el a Blackoutot, adja hozzá újra a jelenleg telepített Blackout.app fájlt, és engedélyezze. Ezután indítsa újra a Blackoutot."
+        "Ha az aláírói identitás megváltozik, például a 0.1.0 verzióról frissítve, a macOS megőrizheti a korábbi app engedélyét; ilyenkor egyszer adja meg újra az engedélyt. Válassza a Blackout → „Kilépés a Blackoutból” menüpontot. A macOS beviteli engedélylistáján (macOS 27: „Eszközvezérlés és adathozzáférés”; macOS 13–26: „Kisegítő lehetőségek”) távolítsa el a Blackoutot, adja hozzá újra a jelenleg telepített Blackout.app fájlt, és engedélyezze. Ezután indítsa újra a Blackoutot."
       ]
     ],
     "status": "Előzetes verzió"
@@ -1336,7 +1336,7 @@
     "sections": [
       [
         "Instalare rapidă",
-        "Descarcă DMG-ul universal din GitHub Releases și trage Blackout.app pe scurtătura Applications. Pornește aplicația. Dacă macOS blochează prima pornire, verifică sursa și alege „Deschideți oricum” în configurările de securitate macOS, dacă apare. Pentru actualizare, alege Blackout → „Închide Blackout”, înlocuiește Blackout.app în același dosar cu copia din noul DMG și redeschide. Parola și limba sunt păstrate separat și rămân. Această versiune preliminară folosește semnare ad hoc, fără Developer ID. După înlocuire, permisiunea poate rămâne activă pentru aplicația veche; urmează eliminarea și readăugarea din întrebările de mai jos. Configurările arată versiunea instalată. „Caută actualizări…” verifică versiunile oficiale GitHub doar la clic. Dacă există o versiune mai nouă, „Deschide pagina versiunii…” deschide pagina de descărcare. Nimic nu se instalează automat."
+        "Descarcă DMG-ul universal din GitHub Releases și trage Blackout.app pe scurtătura Applications. Pornește aplicația. Dacă macOS blochează prima pornire, verifică sursa și alege „Deschideți oricum” în configurările de securitate macOS, dacă apare. Pentru actualizare, alege Blackout → „Închide Blackout”, înlocuiește Blackout.app în același dosar cu copia din noul DMG și redeschide. Parola și limba sunt păstrate separat și rămân. Versiunea 0.1.0 folosește semnare ad hoc; de la 0.1.1, versiunile preliminare folosesc un certificat autosemnat fix, fără semnătură Developer ID sau notarizare Apple. Dacă blocarea intrărilor nu funcționează deși permisiunea este activă, consultă întrebările de mai jos. Configurările arată versiunea instalată. „Caută actualizări…” verifică versiunile oficiale GitHub doar la clic. Dacă există o versiune mai nouă, „Deschide pagina versiunii…” deschide pagina de descărcare. Nimic nu se instalează automat."
       ],
       [
         "Permite blocarea intrărilor",
@@ -1374,7 +1374,7 @@
       ],
       [
         "Permisiunea de intrare este activă. De ce nu sunt acoperite ecranele?",
-        "Actualizarea acestei versiuni semnate ad hoc poate lăsa în macOS aprobarea aplicației vechi. Alege Blackout → „Închide Blackout”. În lista permisiunilor de intrare macOS (macOS 27: „Control al dispozitivului și acces la date”; macOS 13–26: „Accesibilitate”), elimină Blackout, adaugă din nou Blackout.app instalat în prezent și permite accesul. Apoi repornește Blackout."
+        "Când identitatea de semnare se schimbă, inclusiv la actualizarea de la 0.1.0, macOS poate păstra aprobarea aplicației vechi; în acest caz, acordă din nou permisiunea o singură dată. Alege Blackout → „Închide Blackout”. În lista permisiunilor de intrare macOS (macOS 27: „Control al dispozitivului și acces la date”; macOS 13–26: „Accesibilitate”), elimină Blackout, adaugă din nou Blackout.app instalat în prezent și permite accesul. Apoi repornește Blackout."
       ]
     ],
     "status": "Versiune preliminară"
@@ -1396,7 +1396,7 @@
     "sections": [
       [
         "Hızlı kurulum",
-        "GitHub Releases üzerinden evrensel DMG’yi indirin ve Blackout.app’i Applications kısayoluna sürükleyip başlatın. macOS ilk açılışı engellerse kaynağı doğrulayın ve macOS güvenlik ayarlarında görünüyorsa ‘Yine de Aç’ seçeneğini kullanın. Güncellemek için Blackout → ‘Blackout’tan Çık’ seçeneğini kullanın, aynı klasördeki Blackout.app’i yeni DMG’deki kopyayla değiştirip yeniden açın. Parola ve dil ayrı saklanır ve korunur. Bu önizleme Developer ID yerine ad hoc imza kullanır. Değiştirme sonrasında izin açık görünse de eski uygulamaya ait olabilir; aşağıdaki sorudaki kaldırıp yeniden ekleme adımlarını izleyin. Ayarlar yüklü sürümü gösterir. ‘Güncellemeleri Denetle…’ yalnızca tıklandığında resmi GitHub sürümlerini sorgular. Daha yeni bir sürüm varsa ‘Sürüm Sayfasını Aç…’ indirme sayfasını açar. Hiçbir şey otomatik kurulmaz."
+        "GitHub Releases üzerinden evrensel DMG’yi indirin ve Blackout.app’i Applications kısayoluna sürükleyip başlatın. macOS ilk açılışı engellerse kaynağı doğrulayın ve macOS güvenlik ayarlarında görünüyorsa ‘Yine de Aç’ seçeneğini kullanın. Güncellemek için Blackout → ‘Blackout’tan Çık’ seçeneğini kullanın, aynı klasördeki Blackout.app’i yeni DMG’deki kopyayla değiştirip yeniden açın. Parola ve dil ayrı saklanır ve korunur. 0.1.0 sürümü ad hoc imza kullanır; 0.1.1’den itibaren önizlemeler sabit, kendinden imzalı bir sertifika kullanır. Developer ID imzası veya Apple noter onayı yoktur. İzin açık olduğu hâlde girdi engelleme çalışmıyorsa aşağıdaki sorulara bakın. Ayarlar yüklü sürümü gösterir. ‘Güncellemeleri Denetle…’ yalnızca tıklandığında resmi GitHub sürümlerini sorgular. Daha yeni bir sürüm varsa ‘Sürüm Sayfasını Aç…’ indirme sayfasını açar. Hiçbir şey otomatik kurulmaz."
       ],
       [
         "Girdi engellemeye izin verin",
@@ -1434,7 +1434,7 @@
       ],
       [
         "Girdi izni açık. Ekran kaplaması neden başlamıyor?",
-        "Ad hoc imzalı önizlemeyi güncellemek macOS’ta eski uygulamanın onayını bırakabilir. Blackout → ‘Blackout’tan Çık’ seçeneğini kullanın. macOS girdi izinleri listesinde (macOS 27: ‘Aygıt Denetimi ve Veri Erişimi’; macOS 13–26: ‘Erişilebilirlik’) Blackout’u kaldırın, şu anda yüklü Blackout.app’i yeniden ekleyip izin verin. Ardından Blackout’u yeniden başlatın."
+        "0.1.0’dan yükseltme dâhil, imzalama kimliği değiştiğinde macOS eski uygulamanın onayını koruyabilir; bu durumda izni bir kez yeniden verin. Blackout → ‘Blackout’tan Çık’ seçeneğini kullanın. macOS girdi izinleri listesinde (macOS 27: ‘Aygıt Denetimi ve Veri Erişimi’; macOS 13–26: ‘Erişilebilirlik’) Blackout’u kaldırın, şu anda yüklü Blackout.app’i yeniden ekleyip izin verin. Ardından Blackout’u yeniden başlatın."
       ]
     ],
     "status": "Önizleme sürümü"
@@ -1456,7 +1456,7 @@
     "sections": [
       [
         "تثبيت سريع",
-        "نزّل ملف DMG الشامل من GitHub Releases واسحب Blackout.app إلى اختصار Applications، ثم شغّله. إذا منع macOS التشغيل الأول، تحقّق من المصدر واختر «فتح على أية حال» في إعدادات أمان macOS إن ظهر. للتحديث، اختر Blackout ← «إنهاء Blackout»، واستبدل Blackout.app في المجلد نفسه بنسخة ملف DMG الجديد، ثم افتحه مجددًا. تُحفظ كلمة المرور واللغة بشكل منفصل وتبقيان محفوظتين. يستخدم هذا الإصدار التجريبي توقيعًا محليًا ad hoc، دون Developer ID. بعد الاستبدال قد يظل الإذن مفعّلًا للتطبيق السابق؛ اتبع خطوات الإزالة والإضافة مجددًا في الأسئلة أدناه. تعرض الإعدادات الإصدار المثبّت. يتحقق «التحقق من وجود تحديثات…» من إصدارات GitHub الرسمية عند الضغط فقط. إذا وُجد إصدار أحدث، يفتح «فتح صفحة الإصدار…» صفحة تنزيله. لا يتم تثبيت أي شيء تلقائيًا."
+        "نزّل ملف DMG الشامل من GitHub Releases واسحب Blackout.app إلى اختصار Applications، ثم شغّله. إذا منع macOS التشغيل الأول، تحقّق من المصدر واختر «فتح على أية حال» في إعدادات أمان macOS إن ظهر. للتحديث، اختر Blackout ← «إنهاء Blackout»، واستبدل Blackout.app في المجلد نفسه بنسخة ملف DMG الجديد، ثم افتحه مجددًا. تُحفظ كلمة المرور واللغة بشكل منفصل وتبقيان محفوظتين. يستخدم الإصدار 0.1.0 توقيع ad hoc؛ وبدءًا من 0.1.1 تستخدم الإصدارات التجريبية شهادة ثابتة ذاتية التوقيع، دون توقيع Developer ID أو توثيق من Apple. إذا لم يعمل حظر الإدخال رغم تفعيل الإذن، فراجع الأسئلة أدناه. تعرض الإعدادات الإصدار المثبّت. يتحقق «التحقق من وجود تحديثات…» من إصدارات GitHub الرسمية عند الضغط فقط. إذا وُجد إصدار أحدث، يفتح «فتح صفحة الإصدار…» صفحة تنزيله. لا يتم تثبيت أي شيء تلقائيًا."
       ],
       [
         "السماح بحظر الإدخال",
@@ -1494,7 +1494,7 @@
       ],
       [
         "إذن الإدخال مفعّل. لماذا لا تبدأ تغطية الشاشات؟",
-        "قد يترك تحديث هذا الإصدار الموقّع محليًا موافقة macOS على التطبيق السابق. اختر Blackout ← «إنهاء Blackout». في قائمة أذونات الإدخال في macOS (macOS 27: «التحكم في الأجهزة والوصول إلى البيانات»؛ macOS 13–26: «تسهيلات الاستخدام»)، أزل Blackout، ثم أضف Blackout.app المثبّت حاليًا من جديد واسمح له. بعد ذلك أعد تشغيل Blackout."
+        "عند تغيّر هوية التوقيع، بما في ذلك الترقية من 0.1.0، قد يحتفظ macOS بالموافقة على التطبيق السابق؛ في هذه الحالة، امنح الإذن مجددًا مرة واحدة. اختر Blackout ← «إنهاء Blackout». في قائمة أذونات الإدخال في macOS (macOS 27: «التحكم في الأجهزة والوصول إلى البيانات»؛ macOS 13–26: «تسهيلات الاستخدام»)، أزل Blackout، ثم أضف Blackout.app المثبّت حاليًا من جديد واسمح له. بعد ذلك أعد تشغيل Blackout."
       ]
     ],
     "status": "إصدار تجريبي"
@@ -1516,7 +1516,7 @@
     "sections": [
       [
         "התקנה מהירה",
-        "יש להוריד DMG אוניברסלי מ-GitHub Releases, לגרור את Blackout.app לקיצור Applications ולהפעיל. אם macOS חוסמת את ההפעלה הראשונה, יש לבדוק את המקור ולבחור ״פתיחה בכל זאת״ בהגדרות האבטחה של macOS, אם האפשרות מופיעה. לעדכון, יש לבחור Blackout ← ״סיום Blackout״, להחליף את Blackout.app באותה תיקייה בעותק מה-DMG החדש ולפתוח שוב. הסיסמה והשפה נשמרות בנפרד ונשארות. גרסת התצוגה המקדימה משתמשת בחתימת ad hoc, ללא Developer ID. אחרי החלפה, ההרשאה עשויה להישאר פעילה עבור היישום הקודם; יש לפעול לפי ההסרה וההוספה מחדש בשאלות שבהמשך. ההגדרות מציגות את הגרסה המותקנת. ״בדיקת עדכונים…״ בודק גרסאות רשמיות ב-GitHub רק בלחיצה. אם יש גרסה חדשה יותר, ״פתיחת דף הגרסה…״ פותח את דף ההורדה. אין התקנה אוטומטית."
+        "יש להוריד DMG אוניברסלי מ-GitHub Releases, לגרור את Blackout.app לקיצור Applications ולהפעיל. אם macOS חוסמת את ההפעלה הראשונה, יש לבדוק את המקור ולבחור ״פתיחה בכל זאת״ בהגדרות האבטחה של macOS, אם האפשרות מופיעה. לעדכון, יש לבחור Blackout ← ״סיום Blackout״, להחליף את Blackout.app באותה תיקייה בעותק מה-DMG החדש ולפתוח שוב. הסיסמה והשפה נשמרות בנפרד ונשארות. גרסה 0.1.0 משתמשת בחתימת ad hoc; החל מ-0.1.1, גרסאות התצוגה המקדימה משתמשות בתעודה קבועה בחתימה עצמית, ללא חתימת Developer ID או אישור נוטריון של Apple. אם חסימת הקלט אינה פועלת למרות הרשאה פעילה, יש לעיין בשאלות שבהמשך. ההגדרות מציגות את הגרסה המותקנת. ״בדיקת עדכונים…״ בודק גרסאות רשמיות ב-GitHub רק בלחיצה. אם יש גרסה חדשה יותר, ״פתיחת דף הגרסה…״ פותח את דף ההורדה. אין התקנה אוטומטית."
       ],
       [
         "מתן הרשאה לחסימת קלט",
@@ -1554,7 +1554,7 @@
       ],
       [
         "הרשאת הקלט פעילה. למה כיסוי המסכים לא מתחיל?",
-        "עדכון גרסת התצוגה המקדימה עם חתימת ad hoc עשוי להשאיר ב-macOS אישור ליישום הקודם. יש לבחור Blackout ← ״סיום Blackout״. ברשימת הרשאות הקלט של macOS (macOS 27: ״שליטה במכשיר וגישה לנתונים״; macOS 13–26: ״נגישות״), יש להסיר את Blackout, להוסיף מחדש את Blackout.app המותקן כעת ולאשר אותו. לאחר מכן יש לפתוח שוב את Blackout."
+        "כשזהות החתימה משתנה, לרבות בשדרוג מ-0.1.0, macOS עשויה לשמור את האישור ליישום הקודם; במקרה כזה, יש להעניק את ההרשאה מחדש פעם אחת. יש לבחור Blackout ← ״סיום Blackout״. ברשימת הרשאות הקלט של macOS (macOS 27: ״שליטה במכשיר וגישה לנתונים״; macOS 13–26: ״נגישות״), יש להסיר את Blackout, להוסיף מחדש את Blackout.app המותקן כעת ולאשר אותו. לאחר מכן יש לפתוח שוב את Blackout."
       ]
     ],
     "status": "גרסת תצוגה מקדימה"
@@ -1576,7 +1576,7 @@
     "sections": [
       [
         "आसान स्थापना",
-        "GitHub Releases से यूनिवर्सल DMG डाउनलोड करके Blackout.app को Applications शॉर्टकट पर खींचें और चलाएँ। macOS पहली बार खोलने से रोके तो स्रोत जाँचें और macOS की सुरक्षा सेटिंग में “फिर भी खोलें” दिखे तो चुनें। अपडेट के लिए Blackout → “Blackout बंद करें” चुनें, उसी फ़ोल्डर में मौजूद Blackout.app को नए DMG की प्रति से बदलें और फिर खोलें। पासवर्ड और भाषा अलग सहेजे जाते हैं और बने रहते हैं। यह पूर्वावलोकन Developer ID के बजाय ad hoc हस्ताक्षर इस्तेमाल करता है। ऐप बदलने के बाद अनुमति चालू दिख सकती है, लेकिन पुराने ऐप के लिए; नीचे दिए सवाल में हटाकर दोबारा जोड़ने के चरण अपनाएँ। सेटिंग में स्थापित संस्करण दिखता है। “अपडेट की जाँच करें…” दबाने पर ही आधिकारिक GitHub रिलीज़ जाँची जाती हैं। नया संस्करण उपलब्ध हो तो “रिलीज़ पेज खोलें…” उसका डाउनलोड पेज खोलता है। कुछ भी अपने-आप स्थापित नहीं होता।"
+        "GitHub Releases से यूनिवर्सल DMG डाउनलोड करके Blackout.app को Applications शॉर्टकट पर खींचें और चलाएँ। macOS पहली बार खोलने से रोके तो स्रोत जाँचें और macOS की सुरक्षा सेटिंग में “फिर भी खोलें” दिखे तो चुनें। अपडेट के लिए Blackout → “Blackout बंद करें” चुनें, उसी फ़ोल्डर में मौजूद Blackout.app को नए DMG की प्रति से बदलें और फिर खोलें। पासवर्ड और भाषा अलग सहेजे जाते हैं और बने रहते हैं। संस्करण 0.1.0 में ad hoc हस्ताक्षर हैं; 0.1.1 से पूर्वावलोकन संस्करण एक स्थिर स्व-हस्ताक्षरित प्रमाणपत्र इस्तेमाल करते हैं। इनमें Developer ID हस्ताक्षर या Apple नोटराइज़ेशन नहीं है। अनुमति चालू होने पर भी इनपुट ब्लॉकिंग काम न करे, तो नीचे दिए सवाल देखें। सेटिंग में स्थापित संस्करण दिखता है। “अपडेट की जाँच करें…” दबाने पर ही आधिकारिक GitHub रिलीज़ जाँची जाती हैं। नया संस्करण उपलब्ध हो तो “रिलीज़ पेज खोलें…” उसका डाउनलोड पेज खोलता है। कुछ भी अपने-आप स्थापित नहीं होता।"
       ],
       [
         "इनपुट रोकने की अनुमति दें",
@@ -1614,7 +1614,7 @@
       ],
       [
         "इनपुट अनुमति चालू है। फिर भी स्क्रीन क्यों नहीं ढकती?",
-        "ad hoc हस्ताक्षर वाले पूर्वावलोकन को अपडेट करने पर macOS में पुराने ऐप की मंज़ूरी रह सकती है। Blackout → “Blackout बंद करें” चुनें। macOS की इनपुट अनुमति सूची में (macOS 27: “डिवाइस नियंत्रण और डेटा ऐक्सेस”; macOS 13–26: “ऐक्सेसिबिलिटी”) Blackout हटाएँ, अभी स्थापित Blackout.app फिर जोड़ें और अनुमति चालू करें। फिर Blackout दोबारा शुरू करें।"
+        "0.1.0 से अपग्रेड करने सहित, हस्ताक्षर पहचान बदलने पर macOS में पुराने ऐप की मंज़ूरी रह सकती है; ऐसे में अनुमति एक बार फिर दें। Blackout → “Blackout बंद करें” चुनें। macOS की इनपुट अनुमति सूची में (macOS 27: “डिवाइस नियंत्रण और डेटा ऐक्सेस”; macOS 13–26: “ऐक्सेसिबिलिटी”) Blackout हटाएँ, अभी स्थापित Blackout.app फिर जोड़ें और अनुमति चालू करें। फिर Blackout दोबारा शुरू करें।"
       ]
     ],
     "status": "पूर्वावलोकन संस्करण"
@@ -1636,7 +1636,7 @@
     "sections": [
       [
         "ติดตั้งง่าย",
-        "ดาวน์โหลด DMG แบบยูนิเวอร์แซลจาก GitHub Releases แล้วลาก Blackout.app ไปยังทางลัด Applications จากนั้นเปิดแอป หาก macOS บล็อกการเปิดครั้งแรก ให้ตรวจสอบแหล่งที่มาและเลือก “ยืนยันจะเปิด” ในการตั้งค่าความปลอดภัยของ macOS หากมีตัวเลือกนี้ เมื่อต้องการอัปเดต ให้เลือก Blackout → “ออกจาก Blackout” แทนที่ Blackout.app ในโฟลเดอร์เดิมด้วยแอปจาก DMG ใหม่ แล้วเปิดอีกครั้ง รหัสผ่านและภาษาถูกเก็บแยกไว้และยังคงอยู่ รุ่นตัวอย่างนี้ใช้ลายเซ็น ad hoc โดยไม่มี Developer ID หลังแทนที่แอป สิทธิ์อาจยังเปิดอยู่แต่เป็นของแอปเดิม ให้ทำตามขั้นตอนลบและเพิ่มใหม่ในคำถามด้านล่าง การตั้งค่าแสดงเวอร์ชันที่ติดตั้ง “ตรวจสอบรายการอัปเดต…” จะตรวจสอบรุ่นอย่างเป็นทางการบน GitHub เมื่อกดเท่านั้น หากมีรุ่นใหม่กว่า “เปิดหน้าเวอร์ชั่น…” จะเปิดหน้าดาวน์โหลด ไม่มีการติดตั้งอัตโนมัติ"
+        "ดาวน์โหลด DMG แบบยูนิเวอร์แซลจาก GitHub Releases แล้วลาก Blackout.app ไปยังทางลัด Applications จากนั้นเปิดแอป หาก macOS บล็อกการเปิดครั้งแรก ให้ตรวจสอบแหล่งที่มาและเลือก “ยืนยันจะเปิด” ในการตั้งค่าความปลอดภัยของ macOS หากมีตัวเลือกนี้ เมื่อต้องการอัปเดต ให้เลือก Blackout → “ออกจาก Blackout” แทนที่ Blackout.app ในโฟลเดอร์เดิมด้วยแอปจาก DMG ใหม่ แล้วเปิดอีกครั้ง รหัสผ่านและภาษาถูกเก็บแยกไว้และยังคงอยู่ เวอร์ชัน 0.1.0 ใช้ลายเซ็น ad hoc ตั้งแต่ 0.1.1 รุ่นตัวอย่างใช้ใบรับรองที่ลงนามด้วยตนเองฉบับเดิม โดยไม่มีลายเซ็น Developer ID หรือการรับรองจาก Apple หากการบล็อกอินพุตไม่ทำงานแม้เปิดสิทธิ์แล้ว โปรดดูคำถามด้านล่าง การตั้งค่าแสดงเวอร์ชันที่ติดตั้ง “ตรวจสอบรายการอัปเดต…” จะตรวจสอบรุ่นอย่างเป็นทางการบน GitHub เมื่อกดเท่านั้น หากมีรุ่นใหม่กว่า “เปิดหน้าเวอร์ชั่น…” จะเปิดหน้าดาวน์โหลด ไม่มีการติดตั้งอัตโนมัติ"
       ],
       [
         "อนุญาตการบล็อกอินพุต",
@@ -1674,7 +1674,7 @@
       ],
       [
         "เปิดสิทธิ์อินพุตแล้ว ทำไมยังคลุมหน้าจอไม่ได้",
-        "การอัปเดตรุ่นตัวอย่างที่ใช้ลายเซ็น ad hoc อาจทำให้ macOS เก็บการอนุมัติของแอปเดิมไว้ เลือก Blackout → “ออกจาก Blackout” ในรายการสิทธิ์อินพุตของ macOS (macOS 27: “การควบคุมอุปกรณ์และการเข้าถึงข้อมูล”; macOS 13–26: “การช่วยการเข้าถึง”) ให้ลบ Blackout แล้วเพิ่ม Blackout.app ที่ติดตั้งอยู่ในขณะนี้อีกครั้งและอนุญาต จากนั้นเปิด Blackout ใหม่"
+        "เมื่อข้อมูลระบุตัวผู้ลงนามเปลี่ยนไป รวมถึงการอัปเกรดจาก 0.1.0 macOS อาจเก็บการอนุมัติของแอปเดิมไว้ ในกรณีนี้ ให้สิทธิ์ใหม่อีกครั้งหนึ่ง เลือก Blackout → “ออกจาก Blackout” ในรายการสิทธิ์อินพุตของ macOS (macOS 27: “การควบคุมอุปกรณ์และการเข้าถึงข้อมูล”; macOS 13–26: “การช่วยการเข้าถึง”) ให้ลบ Blackout แล้วเพิ่ม Blackout.app ที่ติดตั้งอยู่ในขณะนี้อีกครั้งและอนุญาต จากนั้นเปิด Blackout ใหม่"
       ]
     ],
     "status": "รุ่นตัวอย่าง"
@@ -1696,7 +1696,7 @@
     "sections": [
       [
         "Cài đặt nhanh",
-        "Tải DMG dùng chung từ GitHub Releases, kéo Blackout.app vào lối tắt Applications rồi mở ứng dụng. Nếu macOS chặn lần mở đầu, kiểm tra nguồn và chọn “Vẫn mở” trong cài đặt bảo mật macOS nếu xuất hiện. Để cập nhật, chọn Blackout → “Thoát Blackout”, thay Blackout.app trong cùng thư mục bằng bản từ DMG mới rồi mở lại. Mật khẩu và ngôn ngữ được lưu riêng nên vẫn giữ nguyên. Bản xem trước dùng chữ ký ad hoc, không có Developer ID. Sau khi thay ứng dụng, quyền có thể vẫn bật nhưng dành cho bản cũ; hãy làm bước xóa rồi thêm lại trong câu hỏi bên dưới. Cài đặt hiển thị phiên bản đang dùng. “Kiểm tra bản cập nhật…” chỉ truy vấn các bản phát hành GitHub chính thức khi được nhấn. Nếu có bản phát hành mới hơn, “Mở trang bản phát hành…” mở trang tải xuống. Không tự động cài đặt."
+        "Tải DMG dùng chung từ GitHub Releases, kéo Blackout.app vào lối tắt Applications rồi mở ứng dụng. Nếu macOS chặn lần mở đầu, kiểm tra nguồn và chọn “Vẫn mở” trong cài đặt bảo mật macOS nếu xuất hiện. Để cập nhật, chọn Blackout → “Thoát Blackout”, thay Blackout.app trong cùng thư mục bằng bản từ DMG mới rồi mở lại. Mật khẩu và ngôn ngữ được lưu riêng nên vẫn giữ nguyên. Phiên bản 0.1.0 dùng chữ ký ad hoc; từ 0.1.1, các bản xem trước dùng chứng chỉ tự ký cố định, không có chữ ký Developer ID hay công chứng của Apple. Nếu chặn đầu vào không hoạt động dù quyền đã bật, hãy xem câu hỏi bên dưới. Cài đặt hiển thị phiên bản đang dùng. “Kiểm tra bản cập nhật…” chỉ truy vấn các bản phát hành GitHub chính thức khi được nhấn. Nếu có bản phát hành mới hơn, “Mở trang bản phát hành…” mở trang tải xuống. Không tự động cài đặt."
       ],
       [
         "Cho phép chặn đầu vào",
@@ -1734,7 +1734,7 @@
       ],
       [
         "Quyền đầu vào đã bật. Vì sao không thể che màn hình?",
-        "Cập nhật bản xem trước có chữ ký ad hoc có thể để lại quyền macOS dành cho ứng dụng cũ. Chọn Blackout → “Thoát Blackout”. Trong danh sách quyền đầu vào macOS (macOS 27: “Điều khiển thiết bị và truy cập dữ liệu”; macOS 13–26: “Trợ năng”), xóa Blackout, thêm lại Blackout.app hiện đang cài đặt rồi cho phép. Sau đó mở lại Blackout."
+        "Khi danh tính ký thay đổi, kể cả khi nâng cấp từ 0.1.0, macOS có thể vẫn giữ quyền dành cho ứng dụng cũ; trong trường hợp này, hãy cấp lại quyền một lần. Chọn Blackout → “Thoát Blackout”. Trong danh sách quyền đầu vào macOS (macOS 27: “Điều khiển thiết bị và truy cập dữ liệu”; macOS 13–26: “Trợ năng”), xóa Blackout, thêm lại Blackout.app hiện đang cài đặt rồi cho phép. Sau đó mở lại Blackout."
       ]
     ],
     "status": "Bản xem trước"
@@ -1756,7 +1756,7 @@
     "sections": [
       [
         "Pemasangan mudah",
-        "Unduh DMG universal dari GitHub Releases, seret Blackout.app ke pintasan Applications, lalu jalankan. Jika macOS memblokir pembukaan pertama, periksa sumber dan pilih “Tetap Buka” di pengaturan keamanan macOS jika muncul. Untuk memperbarui, pilih Blackout → “Keluar dari Blackout”, ganti Blackout.app di folder yang sama dengan salinan dari DMG baru, lalu buka kembali. Kata sandi dan bahasa disimpan terpisah dan tetap tersimpan. Pratinjau ini memakai tanda tangan ad hoc, tanpa Developer ID. Setelah penggantian, izin mungkin tetap aktif untuk app lama; ikuti langkah hapus dan tambahkan ulang pada pertanyaan di bawah. Pengaturan menampilkan versi terpasang. “Periksa Pembaruan…” hanya memeriksa rilis resmi GitHub saat diklik. Jika ada rilis yang lebih baru, “Buka Halaman Rilis…” membuka halaman unduhannya. Tidak ada pemasangan otomatis."
+        "Unduh DMG universal dari GitHub Releases, seret Blackout.app ke pintasan Applications, lalu jalankan. Jika macOS memblokir pembukaan pertama, periksa sumber dan pilih “Tetap Buka” di pengaturan keamanan macOS jika muncul. Untuk memperbarui, pilih Blackout → “Keluar dari Blackout”, ganti Blackout.app di folder yang sama dengan salinan dari DMG baru, lalu buka kembali. Kata sandi dan bahasa disimpan terpisah dan tetap tersimpan. Versi 0.1.0 memakai tanda tangan ad hoc; mulai 0.1.1, pratinjau memakai sertifikat yang ditandatangani sendiri dan tetap sama, tanpa tanda tangan Developer ID atau notarisasi Apple. Jika pemblokiran input gagal meskipun izin aktif, lihat pertanyaan di bawah. Pengaturan menampilkan versi terpasang. “Periksa Pembaruan…” hanya memeriksa rilis resmi GitHub saat diklik. Jika ada rilis yang lebih baru, “Buka Halaman Rilis…” membuka halaman unduhannya. Tidak ada pemasangan otomatis."
       ],
       [
         "Izinkan pemblokiran input",
@@ -1794,7 +1794,7 @@
       ],
       [
         "Izin input aktif. Mengapa layar tidak dapat ditutupi?",
-        "Pembaruan pratinjau bertanda tangan ad hoc ini dapat meninggalkan persetujuan macOS untuk app sebelumnya. Pilih Blackout → “Keluar dari Blackout”. Pada daftar izin input macOS (macOS 27: “Kontrol Perangkat dan Akses Data”; macOS 13–26: “Aksesibilitas”), hapus Blackout, tambahkan kembali Blackout.app yang saat ini terpasang, lalu izinkan. Setelah itu, jalankan Blackout kembali."
+        "Ketika identitas penandatangan berubah, termasuk saat meningkatkan dari 0.1.0, macOS dapat menyimpan persetujuan untuk app sebelumnya; dalam hal ini, berikan izin kembali satu kali. Pilih Blackout → “Keluar dari Blackout”. Pada daftar izin input macOS (macOS 27: “Kontrol Perangkat dan Akses Data”; macOS 13–26: “Aksesibilitas”), hapus Blackout, tambahkan kembali Blackout.app yang saat ini terpasang, lalu izinkan. Setelah itu, jalankan Blackout kembali."
       ]
     ],
     "status": "Versi pratinjau"
@@ -1816,7 +1816,7 @@
     "sections": [
       [
         "Pemasangan mudah",
-        "Muat turun DMG universal daripada GitHub Releases, seret Blackout.app ke pintasan Applications, kemudian lancarkan. Jika macOS menyekat pembukaan pertama, semak sumber dan pilih “Buka Juga” dalam seting keselamatan macOS jika dipaparkan. Untuk mengemas kini, pilih Blackout → “Keluar daripada Blackout”, gantikan Blackout.app dalam folder yang sama dengan salinan daripada DMG baharu, kemudian buka semula. Kata laluan dan bahasa disimpan berasingan serta dikekalkan. Pratonton ini menggunakan tandatangan ad hoc, tanpa Developer ID. Selepas penggantian, kebenaran mungkin masih aktif untuk app lama; ikuti langkah buang dan tambah semula dalam soalan di bawah. Seting memaparkan versi dipasang. “Semak Kemas Kini…” hanya menyemak keluaran rasmi GitHub apabila diklik. Jika ada keluaran lebih baharu, “Buka Halaman Keluaran…” membuka halaman muat turunnya. Tiada pemasangan automatik."
+        "Muat turun DMG universal daripada GitHub Releases, seret Blackout.app ke pintasan Applications, kemudian lancarkan. Jika macOS menyekat pembukaan pertama, semak sumber dan pilih “Buka Juga” dalam seting keselamatan macOS jika dipaparkan. Untuk mengemas kini, pilih Blackout → “Keluar daripada Blackout”, gantikan Blackout.app dalam folder yang sama dengan salinan daripada DMG baharu, kemudian buka semula. Kata laluan dan bahasa disimpan berasingan serta dikekalkan. Versi 0.1.0 menggunakan tandatangan ad hoc; mulai 0.1.1, pratonton menggunakan sijil yang ditandatangani sendiri dan kekal sama, tanpa tandatangan Developer ID atau penotarian Apple. Jika penyekatan input gagal walaupun kebenaran aktif, lihat soalan di bawah. Seting memaparkan versi dipasang. “Semak Kemas Kini…” hanya menyemak keluaran rasmi GitHub apabila diklik. Jika ada keluaran lebih baharu, “Buka Halaman Keluaran…” membuka halaman muat turunnya. Tiada pemasangan automatik."
       ],
       [
         "Benarkan sekatan input",
@@ -1854,7 +1854,7 @@
       ],
       [
         "Kebenaran input aktif. Mengapa skrin tidak dapat ditutup?",
-        "Kemas kini pratonton bertandatangan ad hoc ini mungkin meninggalkan kelulusan macOS untuk app sebelumnya. Pilih Blackout → “Keluar daripada Blackout”. Dalam senarai kebenaran input macOS (macOS 27: “Kawalan Peranti dan Akses Data”; macOS 13–26: “Kebolehcapaian”), buang Blackout, tambah semula Blackout.app yang kini dipasang dan benarkannya. Kemudian lancarkan Blackout semula."
+        "Apabila identiti penandatangan berubah, termasuk semasa menaik taraf daripada 0.1.0, macOS mungkin mengekalkan kelulusan untuk app sebelumnya; dalam keadaan ini, berikan kebenaran semula sekali. Pilih Blackout → “Keluar daripada Blackout”. Dalam senarai kebenaran input macOS (macOS 27: “Kawalan Peranti dan Akses Data”; macOS 13–26: “Kebolehcapaian”), buang Blackout, tambah semula Blackout.app yang kini dipasang dan benarkannya. Kemudian lancarkan Blackout semula."
       ]
     ],
     "status": "Versi pratonton"
@@ -1876,7 +1876,7 @@
     "sections": [
       [
         "Γρήγορη εγκατάσταση",
-        "Κατεβάστε το καθολικό DMG από το GitHub Releases και σύρετε το Blackout.app στη συντόμευση Applications. Εκκινήστε το. Αν το macOS αποκλείσει την πρώτη εκκίνηση, ελέγξτε την προέλευση και επιλέξτε «Άνοιγμα οπωσδήποτε» στις ρυθμίσεις ασφαλείας του macOS, αν εμφανίζεται. Για ενημέρωση, επιλέξτε Blackout → «Τερματισμός Blackout», αντικαταστήστε το Blackout.app στον ίδιο φάκελο με το αντίγραφο από το νέο DMG και ανοίξτε ξανά. Κωδικός και γλώσσα αποθηκεύονται χωριστά και διατηρούνται. Αυτή η δοκιμαστική έκδοση έχει υπογραφή ad hoc, χωρίς Developer ID. Μετά την αντικατάσταση, η άδεια μπορεί να παραμένει ενεργή για την παλιά εφαρμογή· ακολουθήστε την αφαίρεση και νέα προσθήκη στις ερωτήσεις παρακάτω. Οι ρυθμίσεις δείχνουν την εγκατεστημένη έκδοση. Το «Έλεγχος για ενημερώσεις…» ελέγχει τις επίσημες εκδόσεις GitHub μόνο όταν πατηθεί. Αν υπάρχει νεότερη έκδοση, το «Άνοιγμα σελίδας έκδοσης…» ανοίγει τη σελίδα λήψης. Δεν γίνεται αυτόματη εγκατάσταση."
+        "Κατεβάστε το καθολικό DMG από το GitHub Releases και σύρετε το Blackout.app στη συντόμευση Applications. Εκκινήστε το. Αν το macOS αποκλείσει την πρώτη εκκίνηση, ελέγξτε την προέλευση και επιλέξτε «Άνοιγμα οπωσδήποτε» στις ρυθμίσεις ασφαλείας του macOS, αν εμφανίζεται. Για ενημέρωση, επιλέξτε Blackout → «Τερματισμός Blackout», αντικαταστήστε το Blackout.app στον ίδιο φάκελο με το αντίγραφο από το νέο DMG και ανοίξτε ξανά. Κωδικός και γλώσσα αποθηκεύονται χωριστά και διατηρούνται. Η έκδοση 0.1.0 έχει υπογραφή ad hoc· από την 0.1.1, οι δοκιμαστικές εκδόσεις χρησιμοποιούν σταθερό αυτοϋπογεγραμμένο πιστοποιητικό, χωρίς υπογραφή Developer ID ή επικύρωση από την Apple. Αν ο αποκλεισμός εισόδου δεν λειτουργεί παρότι η άδεια είναι ενεργή, δείτε τις ερωτήσεις παρακάτω. Οι ρυθμίσεις δείχνουν την εγκατεστημένη έκδοση. Το «Έλεγχος για ενημερώσεις…» ελέγχει τις επίσημες εκδόσεις GitHub μόνο όταν πατηθεί. Αν υπάρχει νεότερη έκδοση, το «Άνοιγμα σελίδας έκδοσης…» ανοίγει τη σελίδα λήψης. Δεν γίνεται αυτόματη εγκατάσταση."
       ],
       [
         "Επιτρέψτε τον αποκλεισμό εισόδου",
@@ -1914,7 +1914,7 @@
       ],
       [
         "Η άδεια εισόδου είναι ενεργή. Γιατί δεν ξεκινά η κάλυψη;",
-        "Η ενημέρωση αυτής της έκδοσης με υπογραφή ad hoc μπορεί να αφήσει στο macOS την έγκριση της προηγούμενης εφαρμογής. Επιλέξτε Blackout → «Τερματισμός Blackout». Στη λίστα αδειών εισόδου macOS (macOS 27: «Έλεγχος συσκευής και πρόσβαση σε δεδομένα»· macOS 13–26: «Προσβασιμότητα»), αφαιρέστε το Blackout, προσθέστε ξανά το Blackout.app που είναι τώρα εγκατεστημένο και επιτρέψτε το. Έπειτα ανοίξτε ξανά το Blackout."
+        "Όταν αλλάζει η ταυτότητα υπογραφής, ακόμη και κατά την αναβάθμιση από την 0.1.0, το macOS μπορεί να κρατήσει την έγκριση της προηγούμενης εφαρμογής· σε αυτή την περίπτωση, δώστε ξανά την άδεια μία φορά. Επιλέξτε Blackout → «Τερματισμός Blackout». Στη λίστα αδειών εισόδου macOS (macOS 27: «Έλεγχος συσκευής και πρόσβαση σε δεδομένα»· macOS 13–26: «Προσβασιμότητα»), αφαιρέστε το Blackout, προσθέστε ξανά το Blackout.app που είναι τώρα εγκατεστημένο και επιτρέψτε το. Έπειτα ανοίξτε ξανά το Blackout."
       ]
     ],
     "status": "Δοκιμαστική έκδοση"
