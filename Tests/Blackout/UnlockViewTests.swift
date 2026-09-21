@@ -37,6 +37,8 @@ struct UnlockViewTests {
         assert(buttons.count == 2)
         let cancel = buttons.first { $0.keyEquivalent == "\u{1b}" }!
         let unlock = buttons.first { $0.keyEquivalent == "\r" }!
+        assert(abs(view.passwordField.frame.height - view.passwordField.intrinsicContentSize.height) < 0.5,
+               "Keep the secure field at native height so its text and caret stay vertically aligned")
         for control in [view.passwordField, cancel, unlock] as [NSView] {
             let frame = view.convert(control.bounds, from: control)
             assert(frame.width > 20 && frame.height >= 24 && view.bounds.contains(frame))

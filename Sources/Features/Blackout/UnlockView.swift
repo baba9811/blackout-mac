@@ -91,7 +91,6 @@ final class UnlockView: NSView {
             stack.bottomAnchor.constraint(equalTo: body.bottomAnchor, constant: -28),
             moon.widthAnchor.constraint(equalToConstant: 32),
             moon.heightAnchor.constraint(equalToConstant: 32),
-            passwordField.heightAnchor.constraint(equalToConstant: 38),
             cancel.heightAnchor.constraint(greaterThanOrEqualToConstant: 32),
             unlock.heightAnchor.constraint(greaterThanOrEqualToConstant: 32)
         ])
