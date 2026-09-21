@@ -11,13 +11,13 @@ macOS 13 이상 · Apple Silicon 및 Intel · 32개 언어
 ## 빠른 시작
 
 1. [Releases](https://github.com/baba9811/blackout-mac/releases)에서 DMG를 받아 열고 **Blackout.app**을 **Applications**로 드래그합니다.
-2. 앱을 열고 메뉴 막대의 **Blackout 아이콘 → 설정… → 입력 차단 → 입력 권한 설정 열기…**를 누른 뒤, 열린 패널에서 Blackout을 허용합니다.
+2. 앱을 열고 메뉴 막대의 <strong>Blackout 아이콘 → 설정… → 입력 차단 → 입력 권한 설정 열기…</strong>를 누른 뒤, 열린 패널에서 Blackout을 허용합니다.
 3. **Control + Option + B**를 누르거나 메뉴 막대에서 **지금 화면 가리기**를 선택합니다.
 4. 마우스 이동·스크롤·클릭·키 입력으로 돌아옵니다. 비밀번호를 설정했다면 해제창에 입력합니다.
 
 **비상 탈출:** 비밀번호 사용 여부와 관계없이 **Escape를 3초간 누르면** 해제됩니다. [복구 도움말 →](../usage/ko.md#비밀번호와-복구)
 
-Blackout은 화면을 가리는 앱이며, 비밀번호는 일반적인 해제에만 적용됩니다. Mac 세션을 보호하려면 **macOS 화면 잠금(Control + Command + Q)**을 사용하세요. [기능의 한계 →](../usage/ko.md#입력-차단과-보안)
+Blackout은 화면을 가리는 앱이며, 비밀번호는 일반적인 해제에만 적용됩니다. Mac 세션을 보호하려면 <strong>macOS 화면 잠금(Control + Command + Q)</strong>을 사용하세요. [기능의 한계 →](../usage/ko.md#입력-차단과-보안)
 
 ## 미리보기
 
