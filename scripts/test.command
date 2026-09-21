@@ -15,6 +15,10 @@ xcrun swiftc "$ROOT/Sources/Platform/Input/InputBlocker.swift" \
 xcrun swiftc "$ROOT/Sources/Platform/Input/InputBlocker.swift" \
   "$ROOT/Tests/Input/PointerDeliveryTests.swift" -o "$TEST_DIR/pointer"
 "$TEST_DIR/pointer"
+xcrun swiftc "$ROOT/Sources/Core/Localization/AppLanguage.swift" \
+  "$ROOT/Sources/Features/Blackout/UnlockView.swift" \
+  "$ROOT/Tests/Blackout/UnlockViewTests.swift" -o "$TEST_DIR/unlock-view"
+"$TEST_DIR/unlock-view"
 xcrun swiftc "$ROOT/Sources/Platform/Input/InputBlocker.swift" \
   "$ROOT/Tests/Input/EmergencyExitProcessTests.swift" -o "$TEST_DIR/emergency-exit"
 "$TEST_DIR/emergency-exit"

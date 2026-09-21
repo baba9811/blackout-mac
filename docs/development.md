@@ -1,6 +1,6 @@
 # Development
 
-Run commands from the repository root. Source builds require Apple Command Line Tools (`xcode-select --install`). Regular users should use the [DMG download](https://github.com/baba9811/blackout-mac/releases), which needs no compiler or terminal.
+Run commands from the repository root. Source builds require Apple Command Line Tools or Xcode with the macOS 26 SDK or later (`xcode-select --install` installs the tools available for your OS). The downloaded app still supports macOS 13 and later. Regular users should use the [DMG download](https://github.com/baba9811/blackout-mac/releases), which needs no compiler or terminal.
 
 ## Local build and install
 
@@ -30,6 +30,8 @@ Current packaging performs ad-hoc signing only. A valid Developer ID certificate
 See [distribution and repository maintenance](distribution.md) for the release checks, Homebrew status, and official references.
 
 Input routing unit tests check consumption, restricted forwarding, blocked shortcuts, and safe input-source switching. Actual event delivery also needs interactive testing on a Mac with Blackout's input-control permission enabled; tests do not grant permissions.
+
+The unlock panel uses native Liquid Glass on macOS 26 and later and an opaque dark card on earlier versions. Its backing and full-screen cover remain black and opaque. UI checks verify that the surface leaves password-field and button hit testing intact; native material appearance and system accessibility preferences also need visual checks. CI and release packaging use a macOS 26 runner for the required SDK.
 
 Emergency-exit tests use isolated child processes and a simulated key-state reader to verify normal dismissal, an unresponsive main thread, cancellation, and stale-session rejection. They never capture desktop input. Physical Escape detection, including while a secure password field is focused, still requires testing on a real Mac. Installation tests use temporary bundles and injected failures; they never replace the installed app.
 

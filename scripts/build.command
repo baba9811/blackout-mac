@@ -14,6 +14,11 @@ if [[ "$APP_DIR" != *.app || -e "$APP_DIR" || $# -gt 2 || ( $# -eq 2 && "$2" != 
   exit 1
 fi
 SDK_PATH="$(xcrun --sdk macosx --show-sdk-path)"
+SDK_VERSION="$(xcrun --sdk macosx --show-sdk-version)"
+if (( ${SDK_VERSION%%.*} < 26 )); then
+  echo "Building Blackout requires the macOS 26 SDK or later. Update Apple Command Line Tools or Xcode." >&2
+  exit 1
+fi
 BUILD_DIR="$(mktemp -d)"
 trap 'rm -rf "$BUILD_DIR"' EXIT
 CONTENTS="$APP_DIR/Contents"

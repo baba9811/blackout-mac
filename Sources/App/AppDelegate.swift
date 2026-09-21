@@ -422,45 +422,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
             return
         }
 
-        let title = NSTextField(labelWithString: L("Unlock Blackout"))
-        title.font = .boldSystemFont(ofSize: 22)
-        title.textColor = .white
-        let field = NSSecureTextField()
-        field.placeholderString = L("Password")
-        field.setAccessibilityLabel(L("Unlock password"))
-        field.target = self
-        field.action = #selector(submitUnlock)
-        let error = NSTextField(wrappingLabelWithString: L("Enter your password to restore the screen."))
-        error.textColor = .white
-        error.font = .systemFont(ofSize: NSFont.smallSystemFontSize)
-        let unlock = NSButton(title: L("Unlock"), target: self, action: #selector(submitUnlock))
-        unlock.bezelStyle = .rounded
-        unlock.keyEquivalent = "\r"
-        let cancel = NSButton(title: L("Cancel"), target: self, action: #selector(cancelUnlock))
-        cancel.bezelStyle = .rounded
-        cancel.keyEquivalent = "\u{1b}"
-        let buttons = NSStackView(views: [cancel, unlock])
-        buttons.spacing = 12
-        let stack = NSStackView(views: [title, field, error, buttons])
-        let direction: NSUserInterfaceLayoutDirection = ["ar", "he"].contains(AppLanguage.currentCode) ? .rightToLeft : .leftToRight
-        for view in [stack, title, field, error, buttons, cancel, unlock] {
-            view.userInterfaceLayoutDirection = direction
-        }
-        stack.orientation = .vertical
-        stack.spacing = 16
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.appearance = NSAppearance(named: .darkAqua)
-        content.addSubview(stack)
+        let form = UnlockView(target: self, unlockAction: #selector(submitUnlock),
+                              cancelAction: #selector(cancelUnlock))
+        form.translatesAutoresizingMaskIntoConstraints = false
+        content.addSubview(form)
         NSLayoutConstraint.activate([
-            stack.centerXAnchor.constraint(equalTo: content.centerXAnchor),
-            stack.centerYAnchor.constraint(equalTo: content.centerYAnchor),
-            stack.widthAnchor.constraint(equalToConstant: 320),
-            field.widthAnchor.constraint(equalTo: stack.widthAnchor),
-            error.widthAnchor.constraint(equalTo: stack.widthAnchor)
+            form.centerXAnchor.constraint(equalTo: content.centerXAnchor),
+            form.centerYAnchor.constraint(equalTo: content.centerYAnchor)
         ])
-        unlockView = stack
+        let field = form.passwordField
+        unlockView = form
         unlockField = field
-        unlockError = error
+        unlockError = form.messageLabel
         if cursorHidden { NSCursor.unhide(); cursorHidden = false }
         panel.makeFirstResponder(field)
         refreshInputFocus()
@@ -487,6 +460,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
             nextUnlockAttempt = ProcessInfo.processInfo.systemUptime + 1
             field.stringValue = ""
             unlockError?.stringValue = L("Incorrect password. Please wait a moment and try again.")
+            unlockError?.textColor = .systemRed
             panels.first?.makeFirstResponder(field)
         }
     }
