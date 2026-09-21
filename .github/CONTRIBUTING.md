@@ -4,6 +4,8 @@ Bug reports, focused fixes, accessibility feedback, and translation corrections 
 
 For installation and use, start with the [multilingual guide](https://baba9811.github.io/blackout-mac/). For development, follow [build and test instructions](../docs/development.md) and the [dependency boundaries](../docs/architecture.md).
 
+Fork the repository, create a branch in your fork, and open a pull request against `main`. People with repository write access may use a branch in this repository. Only maintainers with write access can merge; public access does not grant push or merge permission. `main` requires a pull request and the `validate` check, including for administrators.
+
 Before submitting a change:
 
 1. Explain the problem and expected behavior. Discuss substantial new behavior in an issue first.

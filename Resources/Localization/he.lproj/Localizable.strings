@@ -22,7 +22,7 @@
 "The current password is incorrect." = "הסיסמה הנוכחית שגויה.";
 "The saved password settings could not be read. See the recovery instructions in the README." = "לא ניתן לקרוא את הגדרות הסיסמה השמורות. יש לעיין בהוראות השחזור בקובץ README.";
 "The password could not be processed. Please try again." = "לא ניתן לעבד את הסיסמה. יש לנסות שוב.";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "חסימת קלט דורשת הרשאת נגישות עבור Blackout. יש להפעיל אותה בהגדרות המערכת ולנסות שוב.";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "חסימת קלט דורשת הרשאה לשליטה בקלט מהמקלדת ומהעכבר. יש לפתוח את הגדרות המערכת, לאפשר את Blackout ולנסות שוב. אם Blackout כבר מורשה, יש להסיר אותו מהרשימה, להוסיף שוב את היישום המותקן כעת ולהפעיל מחדש את Blackout.";
 "Input blocking could not start. The screen has not been covered." = "לא ניתן להתחיל בחסימת הקלט. המסך לא כוסה.";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "חסימת הקלט הופסקה. ההחשכה הסתיימה כדי למנוע הסתרת יישום אחר כאשר הקלט אינו מוגן.";
 "Open System Settings" = "פתיחת הגדרות המערכת";
@@ -30,7 +30,7 @@
 "Language" = "שפה";
 "System Default" = "ברירת המחדל של המערכת";
 "Launch at login" = "פתיחה בעת ההתחברות";
-"Open Login Items…" = "פתיחת פריטי התחברות…";
+"Open Login Settings…" = "פתיחת הגדרות התחברות…";
 "Require a password to restore the screen" = "דרישת סיסמה לשחזור המסך";
 "Current password (required to change or disable)" = "סיסמה נוכחית (לשינוי או להשבתה)";
 "New password" = "סיסמה חדשה";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "נשמר. תידרש סיסמה בהחשכת המסך הבאה.";
 "Saved. Password protection is off." = "נשמר. הגנה בסיסמה מושבתת.";
 "Blackout will run in the menu bar when you log in." = "Blackout יפעל בשורת התפריטים בעת ההתחברות.";
-"Allow Blackout in macOS Login Items settings." = "יש לאפשר את Blackout בהגדרות פריטי ההתחברות של macOS.";
+"Allow Blackout in the macOS login settings." = "יש לאפשר את Blackout בהגדרות ההתחברות של macOS.";
 "Launch at login is off." = "פתיחה בעת ההתחברות מושבתת.";
 "Blackout is not registered as a login item. Enable the option to register it." = "Blackout אינו רשום כפריט התחברות. יש להפעיל את האפשרות כדי לרשום אותו.";
-"Check the status in macOS Login Items settings." = "יש לבדוק את המצב בהגדרות פריטי ההתחברות של macOS.";
+"Check the status in the macOS login settings." = "יש לבדוק את המצב בהגדרות ההתחברות של macOS.";
 "Could not change launch at login: %@" = "לא ניתן לשנות את הפתיחה בעת ההתחברות: %@";
 "Input Blocking" = "חסימת קלט";
-"Open Accessibility Settings…" = "פתיחת הגדרות נגישות…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "הרשאת נגישות מופעלת. ניתן לחסום קלט מהמקלדת ומהעכבר בזמן החשכה.";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "נדרשת הרשאת נגישות לפני ההחשכה. יש לאפשר את Blackout בהגדרות המערכת כדי למנוע העברת קלט מהמקלדת ומהעכבר ליישומים אחרים.";
+"Open Input Permission Settings…" = "פתיחת הגדרות הרשאות קלט…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "הרשאה לשליטה בקלט מופעלת. ניתן לחסום קלט מהמקלדת ומהעכבר בזמן החשכה.";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "נדרשת הרשאה לשליטה בקלט לפני ההחשכה. יש לפתוח את הגדרות ההרשאות שלהלן ולאפשר את Blackout. אם Blackout כבר מורשה, יש להסיר אותו מהרשימה, להוסיף שוב את היישום המותקן כעת ולהפעיל מחדש את Blackout.";
+
+"Version %@" = "גרסה %@";
+"Check for Updates…" = "בדיקת עדכונים…";
+"Checking for updates…" = "מתבצעת בדיקת עדכונים…";
+"You’re up to date." = "הגרסה שברשותך מעודכנת.";
+"Version %@ is available." = "גרסה %@ זמינה.";
+"No releases have been published yet." = "עדיין לא פורסמו גרסאות.";
+"Could not check for updates. Please try again." = "לא ניתן לבדוק עדכונים. יש לנסות שוב.";
+"Open Release Page…" = "פתיחת דף הגרסה…";

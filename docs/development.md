@@ -8,7 +8,7 @@ Run commands from the repository root. Source builds require Apple Command Line 
 zsh scripts/install.command
 ```
 
-The installer builds a staged, ad-hoc-signed app before replacing `~/Applications/Blackout.app`. It preserves preferences, stops the old process, and launches the new app. System Accessibility approval can require renewal after an ad-hoc rebuild.
+The installer builds a staged, ad-hoc-signed app before replacing `~/Applications/Blackout.app`. It preserves preferences, stops the old process, and launches the new app. Input-control permission can require renewal after an ad-hoc rebuild. The system panel is Device Control and Data Access on macOS 27, or Accessibility on macOS 13–26.
 
 To build without installing, choose a new output path:
 
@@ -29,7 +29,7 @@ Current packaging performs ad-hoc signing only. A valid Developer ID certificate
 
 See [distribution and repository maintenance](distribution.md) for the release checks, Homebrew status, and official references.
 
-Input routing unit tests check consumption, restricted forwarding, blocked shortcuts, and safe input-source switching. Actual event delivery also needs interactive testing on a Mac with Blackout's Accessibility permission enabled; tests do not grant permissions.
+Input routing unit tests check consumption, restricted forwarding, blocked shortcuts, and safe input-source switching. Actual event delivery also needs interactive testing on a Mac with Blackout's input-control permission enabled; tests do not grant permissions.
 
 ## Website and translations
 
@@ -41,6 +41,8 @@ python3 docs/site/validate.py
 App strings are in `Resources/Localization/<language>.lproj/Localizable.strings`; language resolution is in `Sources/Core/Localization`. Website content and its generator are separate in `docs/site`. The website's deployment workflow uploads only the generated site, not the source tree or app binaries.
 
 ## Recovery and removal
+
+If the system permission switch is on but `AXIsProcessTrusted()` remains false after replacing the app, quit Blackout, remove its old entry from the input-control permission list, add the installed app again, enable it, and relaunch. Ad-hoc signatures identify a particular build; macOS can retain an entry whose code requirement no longer matches. Do not remove the permission check or weaken code-signing requirements to work around this. Consistent Developer ID signing is the distribution solution; it is not configured in this preview.
 
 If you forget the app password, run these commands from your own account:
 

@@ -22,7 +22,7 @@
 "The current password is incorrect." = "Parola actuală este incorectă.";
 "The saved password settings could not be read. See the recovery instructions in the README." = "Configurările salvate ale parolei nu au putut fi citite. Consultă instrucțiunile de recuperare din README.";
 "The password could not be processed. Please try again." = "Parola nu a putut fi procesată. Încearcă din nou.";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "Blocarea introducerii necesită permisiunea Accesibilitate pentru Blackout. Activeaz-o în Configurări sistem, apoi încearcă din nou.";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "Blocarea introducerii necesită permisiunea de a controla tastatura și mausul. Deschide Configurări sistem, permite Blackout și încearcă din nou. Dacă Blackout este deja permis, elimină-l din listă, adaugă din nou aplicația instalată în prezent și repornește Blackout.";
 "Input blocking could not start. The screen has not been covered." = "Blocarea introducerii nu a putut porni. Ecranul nu a fost acoperit.";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "Blocarea introducerii s-a oprit. Întunecarea s-a încheiat pentru a evita ascunderea altei aplicații când introducerea nu este protejată.";
 "Open System Settings" = "Deschide Configurări sistem";
@@ -30,7 +30,7 @@
 "Language" = "Limbă";
 "System Default" = "Implicită a sistemului";
 "Launch at login" = "Deschide la autentificare";
-"Open Login Items…" = "Deschide Articole de autentificare…";
+"Open Login Settings…" = "Deschide configurările de autentificare…";
 "Require a password to restore the screen" = "Solicită parolă pentru restabilirea ecranului";
 "Current password (required to change or disable)" = "Parola actuală (pentru modificare sau dezactivare)";
 "New password" = "Parolă nouă";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "Salvat. Va fi necesară o parolă la următoarea întunecare a ecranului.";
 "Saved. Password protection is off." = "Salvat. Protecția prin parolă este dezactivată.";
 "Blackout will run in the menu bar when you log in." = "Blackout va rula în bara de meniu la autentificare.";
-"Allow Blackout in macOS Login Items settings." = "Permite Blackout în configurările Articole de autentificare din macOS.";
+"Allow Blackout in the macOS login settings." = "Permite Blackout în configurările de autentificare din macOS.";
 "Launch at login is off." = "Deschiderea la autentificare este dezactivată.";
 "Blackout is not registered as a login item. Enable the option to register it." = "Blackout nu este înregistrat ca articol de autentificare. Activează opțiunea pentru a-l înregistra.";
-"Check the status in macOS Login Items settings." = "Verifică starea în configurările Articole de autentificare din macOS.";
+"Check the status in the macOS login settings." = "Verifică starea în configurările de autentificare din macOS.";
 "Could not change launch at login: %@" = "Deschiderea la autentificare nu a putut fi modificată: %@";
 "Input Blocking" = "Blocarea introducerii";
-"Open Accessibility Settings…" = "Deschide configurările Accesibilitate…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Permisiunea Accesibilitate este activată. Introducerea de la tastatură și maus poate fi blocată în timpul întunecării.";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "Permisiunea Accesibilitate este necesară înainte de întunecare. Permite Blackout în Configurări sistem pentru a împiedica introducerea de la tastatură și maus să ajungă la alte aplicații.";
+"Open Input Permission Settings…" = "Deschide configurările permisiunilor de introducere…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Permisiunea de a controla introducerea este activată. Introducerea de la tastatură și maus poate fi blocată în timpul întunecării.";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "Înainte de întunecare este necesară permisiunea de a controla introducerea. Deschide configurările permisiunilor de mai jos și permite Blackout. Dacă Blackout este deja permis, elimină-l din listă, adaugă din nou aplicația instalată în prezent și repornește Blackout.";
+
+"Version %@" = "Versiunea %@";
+"Check for Updates…" = "Caută actualizări…";
+"Checking for updates…" = "Se caută actualizări…";
+"You’re up to date." = "Ai cea mai recentă versiune.";
+"Version %@ is available." = "Versiunea %@ este disponibilă.";
+"No releases have been published yet." = "Nu a fost publicată încă nicio versiune.";
+"Could not check for updates. Please try again." = "Nu s-au putut căuta actualizări. Încearcă din nou.";
+"Open Release Page…" = "Deschide pagina versiunii…";

@@ -69,13 +69,6 @@ def page(code, data):
                 "license": REPO + "/blob/main/LICENSE",
                 "softwareHelp": {"@type": "WebPage", "url": url(code) + "#guide"},
             },
-            {
-                "@type": "FAQPage", "@id": url(code) + "#faq", "inLanguage": code,
-                "mainEntity": [
-                    {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
-                    for q, a in t["faqs"]
-                ],
-            },
         ],
     }
     schema_json = json.dumps(schema, ensure_ascii=False).replace("<", "\\u003c")
@@ -167,6 +160,18 @@ def main():
         destination = OUT if code == "en" else OUT / code
         destination.mkdir(exist_ok=True)
         (destination / "index.html").write_text(page(code, data))
+    languages = "".join(
+        f'<li><a lang="{lang}" href="{url(lang)}">{html.escape(data[lang]["name"])}</a></li>'
+        for lang in LOCALES
+    )
+    (OUT / "404.html").write_text(f'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex"><title>BlackoutMac — 404</title>
+<link rel="stylesheet" href="{BASE}assets/site.css"></head>
+<body><main class="wrap"><header><a class="brand" href="{BASE}">BlackoutMac</a></header>
+<h1>404</h1><p>Page not found. Choose your language to return to the guide.</p>
+<nav aria-label="User guides by language"><ul class="recovery-languages">{languages}</ul></nav>
+</main></body></html>''')
     (OUT / ".nojekyll").touch()
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {BASE}sitemap.xml\n")
     ns = "http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -189,7 +194,7 @@ def main():
 - macOS 13 or later; universal Apple Silicon and Intel build; version {VERSION} preview. Real-device input validation is ongoing.
 - Control + Option + B or the Blackout menu activates the cover.
 - Without a password, keyboard or mouse input restores the screens.
-- Accessibility permission is required. The app refuses to cover screens without working input interception and removes covers if interception fails.
+- macOS input-control permission is required. Use Blackout Settings to open the permission panel: Device Control and Data Access on macOS 27, or Accessibility on macOS 13–26. The app refuses to cover screens without working input interception and removes covers if interception fails.
 - Optional password changes and removal require the current password. A salted password verifier is stored locally.
 - Native launch at login; 32 languages; follows the system language unless overridden.
 - No backend or telemetry. GitHub hosts this website and downloads.

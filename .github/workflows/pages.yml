@@ -6,8 +6,13 @@ on:
     paths:
       - 'VERSION'
       - 'docs/site/**'
+      - 'scripts/verify-release.py'
+      - 'Tests/Release/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
+  workflow_run:
+    workflows: [Release]
+    types: [completed]
 
 permissions:
   contents: read
@@ -18,23 +23,47 @@ concurrency:
 
 jobs:
   build:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+    outputs:
+      released: ${{ steps.release.outputs.published }}
     permissions:
       contents: read
       pages: read
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+      - name: Test release validation
+        run: python3 -B -m unittest discover -s Tests/Release -v
+      - name: Require a published release for the documented version
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          published=false
+          app_version="$(cat VERSION)"
+          if release_json="$(gh release view "v$app_version" --repo "$GITHUB_REPOSITORY" --json isDraft,assets 2>/dev/null)" \
+             && python3 scripts/verify-release.py "$app_version" <<< "$release_json"; then
+            published=true
+          fi
+          echo "published=$published" >> "$GITHUB_OUTPUT"
+          if [ "$published" = false ]; then echo 'Waiting for Release to publish this version before updating Pages.'; fi
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+        if: steps.release.outputs.published == 'true'
       - name: Build and validate website
+        if: steps.release.outputs.published == 'true'
         run: |
           python3 docs/site/build.py
           python3 docs/site/validate.py
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        if: steps.release.outputs.published == 'true'
         with:
           path: docs/site/dist
 
   deploy:
     needs: build
+    if: needs.build.outputs.released == 'true'
     runs-on: ubuntu-latest
     permissions:
       pages: write

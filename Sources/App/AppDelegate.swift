@@ -16,6 +16,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private lazy var settings: SettingsWindowController = {
         let controller = SettingsWindowController(passwords: passwords)
         controller.onPasswordSettingsChanged = { [weak self] in self?.updateStatusIcon() }
+        controller.onClose = { NSApp.setActivationPolicy(.accessory) }
         return controller
     }()
     private var requiredPassword: UnlockPassword?
@@ -148,12 +149,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private func updateStatusIcon() {
         guard let button = statusItem?.button else { return }
         let protected = passwords.isEnabled
-        let symbol = protected ? "lock.fill" : "lock.open"
         let state = protected ? L("Password protection is on.") : L("Password protection is off.")
-        let image = NSImage(systemSymbolName: symbol, accessibilityDescription: state)
-        image?.isTemplate = true
-        button.image = image
-        button.title = image == nil ? (protected ? "●" : "○") : ""
+        button.image = makeStatusIcon(passwordProtected: protected, description: state)
+        button.title = ""
         button.toolTip = "Blackout — \(state)"
         button.setAccessibilityLabel("Blackout — \(state)")
     }
@@ -222,6 +220,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     @objc private func showSettings() {
         guard !isBlack else { requestUnlock(); return }
+        NSApp.setActivationPolicy(.regular)
+        if settings.window?.isVisible == true {
+            NSApp.activate(ignoringOtherApps: true)
+            settings.window?.makeKeyAndOrderFront(nil)
+            return
+        }
         settings.show()
     }
 
@@ -351,7 +355,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         guard AXIsProcessTrusted() else {
             let alert = NSAlert()
             alert.messageText = "Blackout"
-            alert.informativeText = L("Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again.")
+            alert.informativeText = L("Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again.")
             alert.addButton(withTitle: L("Open System Settings"))
             alert.addButton(withTitle: L("Cancel"))
             if alert.runModal() == .alertFirstButtonReturn {

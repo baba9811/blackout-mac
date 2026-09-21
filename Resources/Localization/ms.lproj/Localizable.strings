@@ -22,7 +22,7 @@
 "The current password is incorrect." = "Kata laluan semasa salah.";
 "The saved password settings could not be read. See the recovery instructions in the README." = "Seting kata laluan yang disimpan tidak dapat dibaca. Lihat arahan pemulihan dalam README.";
 "The password could not be processed. Please try again." = "Kata laluan tidak dapat diproses. Sila cuba lagi.";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "Penyekatan input memerlukan kebenaran Kebolehcapaian untuk Blackout. Aktifkannya dalam Seting Sistem, kemudian cuba lagi.";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "Penyekatan input memerlukan kebenaran untuk mengawal input papan kekunci dan tetikus. Buka Seting Sistem, benarkan Blackout, kemudian cuba lagi. Jika Blackout sudah dibenarkan, alih keluarnya daripada senarai, tambah semula app yang dipasang pada masa ini, kemudian mulakan semula Blackout.";
 "Input blocking could not start. The screen has not been covered." = "Penyekatan input tidak dapat dimulakan. Skrin belum ditutup.";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "Penyekatan input terhenti. Penggelapan ditamatkan untuk mengelakkan app lain disembunyikan semasa input tidak dilindungi.";
 "Open System Settings" = "Buka Seting Sistem";
@@ -30,7 +30,7 @@
 "Language" = "Bahasa";
 "System Default" = "Lalai Sistem";
 "Launch at login" = "Buka semasa log masuk";
-"Open Login Items…" = "Buka Item Log Masuk…";
+"Open Login Settings…" = "Buka Seting Log Masuk…";
 "Require a password to restore the screen" = "Perlukan kata laluan untuk memulihkan skrin";
 "Current password (required to change or disable)" = "Kata laluan semasa (untuk menukar atau menyahaktifkan)";
 "New password" = "Kata laluan baharu";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "Disimpan. Kata laluan akan diperlukan apabila anda menggelapkan skrin pada kali seterusnya.";
 "Saved. Password protection is off." = "Disimpan. Perlindungan kata laluan tidak aktif.";
 "Blackout will run in the menu bar when you log in." = "Blackout akan berjalan dalam bar menu apabila anda log masuk.";
-"Allow Blackout in macOS Login Items settings." = "Benarkan Blackout dalam seting Item Log Masuk macOS.";
+"Allow Blackout in the macOS login settings." = "Benarkan Blackout dalam seting log masuk macOS.";
 "Launch at login is off." = "Buka semasa log masuk tidak aktif.";
 "Blackout is not registered as a login item. Enable the option to register it." = "Blackout belum didaftarkan sebagai item log masuk. Aktifkan pilihan untuk mendaftarkannya.";
-"Check the status in macOS Login Items settings." = "Semak status dalam seting Item Log Masuk macOS.";
+"Check the status in the macOS login settings." = "Semak status dalam seting log masuk macOS.";
 "Could not change launch at login: %@" = "Tidak dapat menukar buka semasa log masuk: %@";
 "Input Blocking" = "Penyekatan Input";
-"Open Accessibility Settings…" = "Buka Seting Kebolehcapaian…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Kebenaran Kebolehcapaian aktif. Input papan kekunci dan tetikus boleh disekat semasa penggelapan.";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "Kebenaran Kebolehcapaian diperlukan sebelum penggelapan. Benarkan Blackout dalam Seting Sistem untuk menghalang input papan kekunci dan tetikus daripada sampai ke app lain.";
+"Open Input Permission Settings…" = "Buka Seting Kebenaran Input…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Kebenaran untuk mengawal input aktif. Input papan kekunci dan tetikus boleh disekat semasa penggelapan.";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "Kebenaran untuk mengawal input diperlukan sebelum penggelapan. Buka seting kebenaran di bawah dan benarkan Blackout. Jika Blackout sudah dibenarkan, alih keluarnya daripada senarai, tambah semula app yang dipasang pada masa ini, kemudian mulakan semula Blackout.";
+
+"Version %@" = "Versi %@";
+"Check for Updates…" = "Semak Kemas Kini…";
+"Checking for updates…" = "Menyemak kemas kini…";
+"You’re up to date." = "Anda menggunakan versi terkini.";
+"Version %@ is available." = "Versi %@ tersedia.";
+"No releases have been published yet." = "Belum ada versi yang diterbitkan.";
+"Could not check for updates. Please try again." = "Tidak dapat menyemak kemas kini. Sila cuba lagi.";
+"Open Release Page…" = "Buka Halaman Keluaran…";

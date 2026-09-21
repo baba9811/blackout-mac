@@ -22,7 +22,7 @@
 "The current password is incorrect." = "A jelenlegi jelszó hibás.";
 "The saved password settings could not be read. See the recovery instructions in the README." = "A mentett jelszóbeállítások nem olvashatók. Lásd a README helyreállítási útmutatóját.";
 "The password could not be processed. Please try again." = "A jelszó nem dolgozható fel. Próbálja újra.";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "A bevitel blokkolásához a Blackoutnak Kisegítő lehetőségek engedélyre van szüksége. Engedélyezze a Rendszerbeállításokban, majd próbálja újra.";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "A bevitel blokkolásához engedély szükséges a billentyűzet és az egér bevitelének vezérlésére. Nyissa meg a Rendszerbeállításokat, engedélyezze a Blackoutot, majd próbálja újra. Ha a Blackout már engedélyezve van, távolítsa el a listáról, adja hozzá újra a jelenleg telepített appot, majd indítsa újra a Blackoutot.";
 "Input blocking could not start. The screen has not been covered." = "A bevitel blokkolása nem indítható el. A képernyő nincs eltakarva.";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "A bevitel blokkolása leállt. Az elsötétítés megszűnt, hogy ne takarjon el másik appot, amíg a bevitel nincs védve.";
 "Open System Settings" = "Rendszerbeállítások megnyitása";
@@ -30,7 +30,7 @@
 "Language" = "Nyelv";
 "System Default" = "Rendszer alapértelmezése";
 "Launch at login" = "Megnyitás bejelentkezéskor";
-"Open Login Items…" = "Bejelentkezési elemek megnyitása…";
+"Open Login Settings…" = "Bejelentkezési beállítások megnyitása…";
 "Require a password to restore the screen" = "Jelszó kérése a képernyő visszaállításához";
 "Current password (required to change or disable)" = "Jelenlegi jelszó (módosításhoz vagy kikapcsoláshoz)";
 "New password" = "Új jelszó";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "Mentve. A képernyő következő elsötétítésekor jelszóra lesz szükség.";
 "Saved. Password protection is off." = "Mentve. A jelszavas védelem ki van kapcsolva.";
 "Blackout will run in the menu bar when you log in." = "A Blackout bejelentkezéskor elindul a menüsoron.";
-"Allow Blackout in macOS Login Items settings." = "Engedélyezze a Blackoutot a macOS Bejelentkezési elemek beállításaiban.";
+"Allow Blackout in the macOS login settings." = "Engedélyezze a Blackoutot a macOS bejelentkezési beállításaiban.";
 "Launch at login is off." = "A bejelentkezéskori megnyitás ki van kapcsolva.";
 "Blackout is not registered as a login item. Enable the option to register it." = "A Blackout nincs bejelentkezési elemként regisztrálva. A regisztráláshoz kapcsolja be a lehetőséget.";
-"Check the status in macOS Login Items settings." = "Ellenőrizze az állapotot a macOS Bejelentkezési elemek beállításaiban.";
+"Check the status in the macOS login settings." = "Ellenőrizze az állapotot a macOS bejelentkezési beállításaiban.";
 "Could not change launch at login: %@" = "A bejelentkezéskori megnyitás nem módosítható: %@";
 "Input Blocking" = "Bevitel blokkolása";
-"Open Accessibility Settings…" = "Kisegítő lehetőségek megnyitása…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "A Kisegítő lehetőségek engedély meg van adva. Elsötétítés közben a billentyűzet és az egér bevitele blokkolható.";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "Elsötétítés előtt Kisegítő lehetőségek engedély szükséges. Engedélyezze a Blackoutot a Rendszerbeállításokban, hogy a billentyűzet és az egér bevitele ne jusson el más appokhoz.";
+"Open Input Permission Settings…" = "Beviteli engedélyek beállításainak megnyitása…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "A bevitel vezérlésére vonatkozó engedély meg van adva. Elsötétítés közben a billentyűzet és az egér bevitele blokkolható.";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "Elsötétítés előtt engedély szükséges a bevitel vezérléséhez. Nyissa meg alább az engedélybeállításokat, és engedélyezze a Blackoutot. Ha a Blackout már engedélyezve van, távolítsa el a listáról, adja hozzá újra a jelenleg telepített appot, majd indítsa újra a Blackoutot.";
+
+"Version %@" = "Verzió: %@";
+"Check for Updates…" = "Frissítések keresése…";
+"Checking for updates…" = "Frissítések keresése folyamatban…";
+"You’re up to date." = "A legújabb verziót használja.";
+"Version %@ is available." = "A(z) %@ verzió elérhető.";
+"No releases have been published yet." = "Még nem jelent meg kiadás.";
+"Could not check for updates. Please try again." = "Nem sikerült frissítéseket keresni. Próbálja újra.";
+"Open Release Page…" = "Kiadási oldal megnyitása…";

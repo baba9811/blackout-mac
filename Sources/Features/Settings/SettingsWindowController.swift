@@ -8,9 +8,18 @@ private final class SettingsDocumentView: NSView {
 
 final class SettingsWindowController: NSWindowController, NSWindowDelegate {
     var onPasswordSettingsChanged: (() -> Void)?
+    var onClose: (() -> Void)?
     private let passwords: PasswordSettings
     private let languageLabel = NSTextField(labelWithString: "")
     private let languageSelector = NSPopUpButton(frame: .zero, pullsDown: false)
+    private let currentVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "—"
+    private let versionLabel = NSTextField(labelWithString: "")
+    private let checkUpdates = NSButton()
+    private let openRelease = NSButton()
+    private let updateStatus = NSTextField(wrappingLabelWithString: "")
+    private var updateTask: Task<Void, Never>?
+    private var availableRelease: AppRelease?
+    private var updateMessageKey: String?
     private let loginToggle = NSButton(checkboxWithTitle: "", target: nil, action: nil)
     private let loginStatus = NSTextField(wrappingLabelWithString: "")
     private let loginSettings = NSButton()
@@ -47,6 +56,8 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         for (button, action) in [
             (loginSettings, #selector(openLoginSettings)),
             (accessibilitySettings, #selector(openAccessibilitySettings)),
+            (checkUpdates, #selector(checkForUpdates)),
+            (openRelease, #selector(openReleasePage)),
             (save, #selector(savePassword))
         ] {
             button.target = self
@@ -59,16 +70,17 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         }
         note.textColor = .secondaryLabelColor
         note.font = .systemFont(ofSize: NSFont.smallSystemFontSize)
-        for label in [loginStatus, accessibilityStatus, passwordStatus] {
+        for label in [loginStatus, accessibilityStatus, passwordStatus, updateStatus] {
             label.textColor = .secondaryLabelColor
         }
-        let separators = (0..<3).map { _ -> NSBox in
+        let separators = (0..<4).map { _ -> NSBox in
             let separator = NSBox()
             separator.boxType = .separator
             return separator
         }
         let stack = NSStackView(views: [
             languageLabel, languageSelector, separators[0],
+            versionLabel, checkUpdates, updateStatus, openRelease, separators[3],
             loginToggle, loginStatus, loginSettings, separators[1],
             accessibilityLabel, accessibilityStatus, accessibilitySettings, separators[2],
             passwordToggle, currentPassword, newPassword, confirmation, save, passwordStatus, note
@@ -99,7 +111,7 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
             stack.bottomAnchor.constraint(equalTo: document.bottomAnchor, constant: -24)
         ])
         for view in [loginToggle, loginStatus, accessibilityStatus, passwordToggle,
-                     currentPassword, newPassword, confirmation, passwordStatus, note] + separators {
+                     currentPassword, newPassword, confirmation, passwordStatus, note, updateStatus] + separators {
             view.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
         }
         languageSelector.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
@@ -133,7 +145,10 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         refreshLoginStatus()
         refreshAccessibilityStatus()
     }
-    func windowWillClose(_ notification: Notification) { clearPasswordFields() }
+    func windowWillClose(_ notification: Notification) {
+        clearPasswordFields()
+        onClose?()
+    }
 
     @objc private func refreshLanguage() {
         let direction: NSUserInterfaceLayoutDirection = ["ar", "he"].contains(AppLanguage.currentCode) ? .rightToLeft : .leftToRight
@@ -152,9 +167,9 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         }) { languageSelector.select(item) }
         languageSelector.setAccessibilityLabel(L("Language"))
         loginToggle.title = L("Launch at login")
-        loginSettings.title = L("Open Login Items…")
+        loginSettings.title = L("Open Login Settings…")
         accessibilityLabel.stringValue = L("Input Blocking")
-        accessibilitySettings.title = L("Open Accessibility Settings…")
+        accessibilitySettings.title = L("Open Input Permission Settings…")
         passwordToggle.title = L("Require a password to restore the screen")
         save.title = L("Save Password Settings")
         for (field, key) in [
@@ -170,6 +185,7 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         passwordStatus.textColor = passwordError == nil ? .secondaryLabelColor : .systemRed
         refreshLoginStatus()
         refreshAccessibilityStatus()
+        refreshUpdateStatus()
     }
 
     private func updateLayoutDirection(_ view: NSView, _ direction: NSUserInterfaceLayoutDirection) {
@@ -182,6 +198,51 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
 
     @objc private func changeLanguage() {
         AppLanguage.selection = languageSelector.selectedItem?.representedObject as? String ?? "system"
+    }
+
+    private func refreshUpdateStatus() {
+        versionLabel.stringValue = String(format: L("Version %@"), currentVersion)
+        checkUpdates.title = L("Check for Updates…")
+        checkUpdates.isEnabled = updateTask == nil
+        openRelease.title = L("Open Release Page…")
+        openRelease.isHidden = availableRelease == nil
+        if updateTask != nil {
+            updateStatus.stringValue = L("Checking for updates…")
+        } else if let release = availableRelease {
+            updateStatus.stringValue = String(format: L("Version %@ is available."), release.version.string)
+        } else {
+            updateStatus.stringValue = updateMessageKey.map(L) ?? ""
+        }
+        updateStatus.isHidden = updateStatus.stringValue.isEmpty
+    }
+
+    @objc private func checkForUpdates() {
+        guard updateTask == nil else { return }
+        availableRelease = nil
+        updateMessageKey = nil
+        updateTask = Task { @MainActor [weak self] in
+            guard let self else { return }
+            do {
+                guard let current = ReleaseVersion(self.currentVersion) else {
+                    throw ReleaseChecker.CheckError.invalidResponse
+                }
+                if let release = try await ReleaseChecker.latestRelease() {
+                    if release.version > current { self.availableRelease = release }
+                    else { self.updateMessageKey = "You’re up to date." }
+                } else {
+                    self.updateMessageKey = "No releases have been published yet."
+                }
+            } catch {
+                self.updateMessageKey = "Could not check for updates. Please try again."
+            }
+            self.updateTask = nil
+            self.refreshUpdateStatus()
+        }
+        refreshUpdateStatus()
+    }
+
+    @objc private func openReleasePage() {
+        if let release = availableRelease { NSWorkspace.shared.open(release.url) }
     }
 
     private func clearPasswordFields() {
@@ -222,17 +283,17 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         loginToggle.state = status == .enabled || status == .requiresApproval ? .on : .off
         switch status {
         case .enabled: loginStatus.stringValue = L("Blackout will run in the menu bar when you log in.")
-        case .requiresApproval: loginStatus.stringValue = L("Allow Blackout in macOS Login Items settings.")
+        case .requiresApproval: loginStatus.stringValue = L("Allow Blackout in the macOS login settings.")
         case .notRegistered: loginStatus.stringValue = L("Launch at login is off.")
         case .notFound: loginStatus.stringValue = L("Blackout is not registered as a login item. Enable the option to register it.")
-        @unknown default: loginStatus.stringValue = L("Check the status in macOS Login Items settings.")
+        @unknown default: loginStatus.stringValue = L("Check the status in the macOS login settings.")
         }
     }
 
     private func refreshAccessibilityStatus() {
         accessibilityStatus.stringValue = AXIsProcessTrusted()
-            ? L("Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout.")
-            : L("Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps.")
+            ? L("Input control permission is enabled. Keyboard and mouse input can be blocked during blackout.")
+            : L("Input control permission is required before blackout. Open the permission settings below and enable Blackout.")
     }
 
     @objc private func changeLoginItem() {

@@ -22,7 +22,7 @@
 "The current password is incorrect." = "Det nuvarande lösenordet är felaktigt.";
 "The saved password settings could not be read. See the recovery instructions in the README." = "De sparade lösenordsinställningarna kunde inte läsas. Se återställningsanvisningarna i README.";
 "The password could not be processed. Please try again." = "Lösenordet kunde inte behandlas. Försök igen.";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "För att blockera inmatning behöver Blackout behörighet för Hjälpmedel. Aktivera den i Systeminställningar och försök igen.";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "För att blockera inmatning krävs behörighet att styra tangentbord och mus. Öppna Systeminställningar, tillåt Blackout och försök igen. Om Blackout redan är tillåtet, ta bort det från listan, lägg till den app som är installerad nu igen och starta om Blackout.";
 "Input blocking could not start. The screen has not been covered." = "Inmatningsblockering kunde inte startas. Skärmen har inte täckts.";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "Inmatningsblockeringen stoppades. Mörkläggningen avslutades för att inte dölja en annan app när inmatningen är oskyddad.";
 "Open System Settings" = "Öppna Systeminställningar";
@@ -30,7 +30,7 @@
 "Language" = "Språk";
 "System Default" = "Systemets förval";
 "Launch at login" = "Öppna vid inloggning";
-"Open Login Items…" = "Öppna Inloggningsobjekt…";
+"Open Login Settings…" = "Öppna inloggningsinställningar…";
 "Require a password to restore the screen" = "Kräv lösenord för att återställa skärmen";
 "Current password (required to change or disable)" = "Nuvarande lösenord (för ändring eller avstängning)";
 "New password" = "Nytt lösenord";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "Sparat. Ett lösenord krävs nästa gång du mörklägger skärmen.";
 "Saved. Password protection is off." = "Sparat. Lösenordsskydd är av.";
 "Blackout will run in the menu bar when you log in." = "Blackout körs i menyraden när du loggar in.";
-"Allow Blackout in macOS Login Items settings." = "Tillåt Blackout i inställningarna för Inloggningsobjekt i macOS.";
+"Allow Blackout in the macOS login settings." = "Tillåt Blackout i inloggningsinställningarna i macOS.";
 "Launch at login is off." = "Öppna vid inloggning är av.";
 "Blackout is not registered as a login item. Enable the option to register it." = "Blackout är inte registrerat som ett inloggningsobjekt. Aktivera alternativet för att registrera det.";
-"Check the status in macOS Login Items settings." = "Kontrollera status i inställningarna för Inloggningsobjekt i macOS.";
+"Check the status in the macOS login settings." = "Kontrollera status i inloggningsinställningarna i macOS.";
 "Could not change launch at login: %@" = "Kunde inte ändra öppning vid inloggning: %@";
 "Input Blocking" = "Inmatningsblockering";
-"Open Accessibility Settings…" = "Öppna inställningar för Hjälpmedel…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Behörighet för Hjälpmedel är aktiverad. Inmatning från tangentbord och mus kan blockeras under mörkläggning.";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "Behörighet för Hjälpmedel krävs före mörkläggning. Tillåt Blackout i Systeminställningar så att inmatning från tangentbord och mus inte når andra appar.";
+"Open Input Permission Settings…" = "Öppna behörighetsinställningar för inmatning…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Behörighet att styra inmatning är aktiverad. Inmatning från tangentbord och mus kan blockeras under mörkläggning.";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "Behörighet att styra inmatning krävs före mörkläggning. Öppna behörighetsinställningarna nedan och tillåt Blackout. Om Blackout redan är tillåtet, ta bort det från listan, lägg till den app som är installerad nu igen och starta om Blackout.";
+
+"Version %@" = "Version %@";
+"Check for Updates…" = "Sök efter uppdateringar…";
+"Checking for updates…" = "Söker efter uppdateringar…";
+"You’re up to date." = "Du har den senaste versionen.";
+"Version %@ is available." = "Version %@ är tillgänglig.";
+"No releases have been published yet." = "Inga versioner har publicerats ännu.";
+"Could not check for updates. Please try again." = "Kunde inte söka efter uppdateringar. Försök igen.";
+"Open Release Page…" = "Öppna versionssidan…";

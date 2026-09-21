@@ -22,7 +22,7 @@
 "The current password is incorrect." = "รหัสผ่านปัจจุบันไม่ถูกต้อง";
 "The saved password settings could not be read. See the recovery instructions in the README." = "ไม่สามารถอ่านการตั้งค่ารหัสผ่านที่บันทึกไว้ได้ ดูคำแนะนำการกู้คืนใน README";
 "The password could not be processed. Please try again." = "ไม่สามารถประมวลผลรหัสผ่านได้ โปรดลองอีกครั้ง";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "การบล็อกอินพุตต้องให้สิทธิ์การช่วยการเข้าถึงแก่ Blackout เปิดสิทธิ์นี้ในการตั้งค่าระบบแล้วลองอีกครั้ง";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "การบล็อกอินพุตต้องมีสิทธิ์ควบคุมอินพุตจากแป้นพิมพ์และเมาส์ เปิดการตั้งค่าระบบแล้วอนุญาต Blackout จากนั้นลองอีกครั้ง หากอนุญาต Blackout อยู่แล้ว ให้เอาออกจากรายการ เพิ่มแอปที่ติดตั้งอยู่ในปัจจุบันอีกครั้ง แล้วเปิด Blackout ใหม่";
 "Input blocking could not start. The screen has not been covered." = "ไม่สามารถเริ่มบล็อกอินพุตได้ หน้าจอยังไม่ถูกปิดทับ";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "การบล็อกอินพุตหยุดทำงาน การทำให้หน้าจอมืดสิ้นสุดลงเพื่อหลีกเลี่ยงการซ่อนแอปอื่นขณะที่อินพุตไม่ได้รับการป้องกัน";
 "Open System Settings" = "เปิดการตั้งค่าระบบ";
@@ -30,7 +30,7 @@
 "Language" = "ภาษา";
 "System Default" = "ค่าเริ่มต้นของระบบ";
 "Launch at login" = "เปิดเมื่อเข้าสู่ระบบ";
-"Open Login Items…" = "เปิดรายการเข้าสู่ระบบ…";
+"Open Login Settings…" = "เปิดการตั้งค่าการเข้าสู่ระบบ…";
 "Require a password to restore the screen" = "ต้องใช้รหัสผ่านเพื่อคืนค่าหน้าจอ";
 "Current password (required to change or disable)" = "รหัสผ่านปัจจุบัน (สำหรับเปลี่ยนหรือปิดใช้)";
 "New password" = "รหัสผ่านใหม่";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "บันทึกแล้ว จะต้องใช้รหัสผ่านเมื่อทำให้หน้าจอมืดครั้งถัดไป";
 "Saved. Password protection is off." = "บันทึกแล้ว ปิดการป้องกันด้วยรหัสผ่านแล้ว";
 "Blackout will run in the menu bar when you log in." = "Blackout จะทำงานในแถบเมนูเมื่อคุณเข้าสู่ระบบ";
-"Allow Blackout in macOS Login Items settings." = "อนุญาต Blackout ในการตั้งค่ารายการเข้าสู่ระบบของ macOS";
+"Allow Blackout in the macOS login settings." = "อนุญาต Blackout ในการตั้งค่าการเข้าสู่ระบบของ macOS";
 "Launch at login is off." = "ปิดการเปิดเมื่อเข้าสู่ระบบแล้ว";
 "Blackout is not registered as a login item. Enable the option to register it." = "Blackout ยังไม่ได้ลงทะเบียนเป็นรายการเข้าสู่ระบบ เปิดตัวเลือกนี้เพื่อลงทะเบียน";
-"Check the status in macOS Login Items settings." = "ตรวจสอบสถานะในการตั้งค่ารายการเข้าสู่ระบบของ macOS";
+"Check the status in the macOS login settings." = "ตรวจสอบสถานะในการตั้งค่าการเข้าสู่ระบบของ macOS";
 "Could not change launch at login: %@" = "ไม่สามารถเปลี่ยนการเปิดเมื่อเข้าสู่ระบบได้: %@";
 "Input Blocking" = "การบล็อกอินพุต";
-"Open Accessibility Settings…" = "เปิดการตั้งค่าการช่วยการเข้าถึง…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "เปิดสิทธิ์การช่วยการเข้าถึงแล้ว สามารถบล็อกอินพุตจากแป้นพิมพ์และเมาส์ขณะหน้าจอมืดได้";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "ต้องให้สิทธิ์การช่วยการเข้าถึงก่อนทำให้หน้าจอมืด อนุญาต Blackout ในการตั้งค่าระบบเพื่อป้องกันไม่ให้อินพุตจากแป้นพิมพ์และเมาส์ส่งไปยังแอปอื่น";
+"Open Input Permission Settings…" = "เปิดการตั้งค่าสิทธิ์การป้อนข้อมูล…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "เปิดสิทธิ์ควบคุมการป้อนข้อมูลแล้ว สามารถบล็อกอินพุตจากแป้นพิมพ์และเมาส์ขณะหน้าจอมืดได้";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "ต้องให้สิทธิ์ควบคุมการป้อนข้อมูลก่อนทำให้หน้าจอมืด เปิดการตั้งค่าสิทธิ์ด้านล่างแล้วอนุญาต Blackout หากอนุญาต Blackout อยู่แล้ว ให้เอาออกจากรายการ เพิ่มแอปที่ติดตั้งอยู่ในปัจจุบันอีกครั้ง แล้วเปิด Blackout ใหม่";
+
+"Version %@" = "เวอร์ชั่น %@";
+"Check for Updates…" = "ตรวจสอบรายการอัปเดต…";
+"Checking for updates…" = "กำลังตรวจสอบรายการอัปเดต…";
+"You’re up to date." = "คุณใช้เวอร์ชั่นล่าสุดอยู่แล้ว";
+"Version %@ is available." = "มีเวอร์ชั่น %@ ให้ใช้งาน";
+"No releases have been published yet." = "ยังไม่มีการเผยแพร่เวอร์ชั่นใด";
+"Could not check for updates. Please try again." = "ไม่สามารถตรวจสอบรายการอัปเดตได้ โปรดลองอีกครั้ง";
+"Open Release Page…" = "เปิดหน้าเวอร์ชั่น…";

@@ -15,3 +15,7 @@ xcrun swiftc "$ROOT/Sources/Platform/Input/InputBlocker.swift" \
 xcrun swiftc "$ROOT/Sources/Core/Localization/AppLanguage.swift" \
   "$ROOT/Tests/Localization/LocalizationTests.swift" -o "$TEST_DIR/localization"
 "$TEST_DIR/localization" "$ROOT/Resources/Localization"
+xcrun swiftc "$ROOT/Sources/Core/Updates/ReleaseVersion.swift" \
+  "$ROOT/Sources/Platform/Updates/ReleaseChecker.swift" \
+  "$ROOT/Tests/Updates/ReleaseCheckerTests.swift" -o "$TEST_DIR/updates"
+"$TEST_DIR/updates"

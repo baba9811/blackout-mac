@@ -22,7 +22,7 @@
 "The current password is incorrect." = "كلمة السر الحالية غير صحيحة.";
 "The saved password settings could not be read. See the recovery instructions in the README." = "تعذّرت قراءة إعدادات كلمة السر المحفوظة. راجع إرشادات الاسترداد في README.";
 "The password could not be processed. Please try again." = "تعذّرت معالجة كلمة السر. حاول مجددًا.";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "يتطلب حظر الإدخال منح Blackout إذن تسهيلات الاستخدام. فعّله في إعدادات النظام، ثم حاول مجددًا.";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "يتطلب حظر الإدخال إذنًا للتحكم في إدخال لوحة المفاتيح والماوس. افتح إعدادات النظام واسمح لـ Blackout، ثم حاول مجددًا. إذا كان Blackout مسموحًا بالفعل، فأزله من القائمة، وأضف التطبيق المثبّت حاليًا مرة أخرى، ثم أعد تشغيل Blackout.";
 "Input blocking could not start. The screen has not been covered." = "تعذّر بدء حظر الإدخال. لم تتم تغطية الشاشة.";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "توقف حظر الإدخال. انتهى التعتيم لتجنب إخفاء تطبيق آخر أثناء عدم حماية الإدخال.";
 "Open System Settings" = "فتح إعدادات النظام";
@@ -30,7 +30,7 @@
 "Language" = "اللغة";
 "System Default" = "اللغة الافتراضية للنظام";
 "Launch at login" = "فتح عند تسجيل الدخول";
-"Open Login Items…" = "فتح عناصر الدخول…";
+"Open Login Settings…" = "فتح إعدادات تسجيل الدخول…";
 "Require a password to restore the screen" = "طلب كلمة سر لاستعادة الشاشة";
 "Current password (required to change or disable)" = "كلمة السر الحالية (للتغيير أو التعطيل)";
 "New password" = "كلمة سر جديدة";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "تم الحفظ. ستُطلب كلمة سر عند تعتيم الشاشة في المرة القادمة.";
 "Saved. Password protection is off." = "تم الحفظ. الحماية بكلمة سر معطّلة.";
 "Blackout will run in the menu bar when you log in." = "سيعمل Blackout في شريط القوائم عند تسجيل الدخول.";
-"Allow Blackout in macOS Login Items settings." = "اسمح لـ Blackout في إعدادات عناصر الدخول في macOS.";
+"Allow Blackout in the macOS login settings." = "اسمح لـ Blackout في إعدادات تسجيل الدخول في macOS.";
 "Launch at login is off." = "الفتح عند تسجيل الدخول معطّل.";
 "Blackout is not registered as a login item. Enable the option to register it." = "لم يُسجّل Blackout كعنصر دخول. فعّل الخيار لتسجيله.";
-"Check the status in macOS Login Items settings." = "تحقق من الحالة في إعدادات عناصر الدخول في macOS.";
+"Check the status in the macOS login settings." = "تحقق من الحالة في إعدادات تسجيل الدخول في macOS.";
 "Could not change launch at login: %@" = "تعذّر تغيير الفتح عند تسجيل الدخول: %@";
 "Input Blocking" = "حظر الإدخال";
-"Open Accessibility Settings…" = "فتح إعدادات تسهيلات الاستخدام…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "إذن تسهيلات الاستخدام مفعّل. يمكن حظر إدخال لوحة المفاتيح والماوس أثناء التعتيم.";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "يلزم إذن تسهيلات الاستخدام قبل التعتيم. اسمح لـ Blackout في إعدادات النظام لمنع وصول إدخال لوحة المفاتيح والماوس إلى التطبيقات الأخرى.";
+"Open Input Permission Settings…" = "فتح إعدادات إذن الإدخال…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "إذن التحكم في الإدخال مفعّل. يمكن حظر إدخال لوحة المفاتيح والماوس أثناء التعتيم.";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "يلزم إذن التحكم في الإدخال قبل التعتيم. افتح إعدادات الأذونات أدناه واسمح لـ Blackout. إذا كان Blackout مسموحًا بالفعل، فأزله من القائمة، وأضف التطبيق المثبّت حاليًا مرة أخرى، ثم أعد تشغيل Blackout.";
+
+"Version %@" = "الإصدار %@";
+"Check for Updates…" = "التحقق من وجود تحديثات…";
+"Checking for updates…" = "جارٍ التحقق من وجود تحديثات…";
+"You’re up to date." = "لديك أحدث إصدار.";
+"Version %@ is available." = "الإصدار %@ متاح.";
+"No releases have been published yet." = "لم تُنشر أي إصدارات بعد.";
+"Could not check for updates. Please try again." = "تعذّر التحقق من وجود تحديثات. حاول مجددًا.";
+"Open Release Page…" = "فتح صفحة الإصدار…";

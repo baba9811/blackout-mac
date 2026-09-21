@@ -69,12 +69,10 @@ def main():
             assert all(pair[1] != english[1] for pair, english in zip(t["sections"], data["en"]["sections"]))
         schema = json.loads(page.schema)
         assert schema["@context"] == "https://schema.org"
-        app, faq = schema["@graph"]
+        app = schema["@graph"][0]
         assert app["@type"] == "SoftwareApplication" and app["downloadUrl"] == DOWNLOAD
         assert app["inLanguage"] == code and app["description"] == t["description"]
         assert app["softwareVersion"] == VERSION and f"v{VERSION}" in visible
-        assert faq["@type"] == "FAQPage" and faq["inLanguage"] == code
-        assert [(q["name"], q["acceptedAnswer"]["text"]) for q in faq["mainEntity"]] == [tuple(pair) for pair in t["faqs"]]
         assert "offers" not in app and "aggregateRating" not in app
         for tag, attrs in page.tags:
             for attr in ("href", "src"):
@@ -98,6 +96,9 @@ def main():
     assert f"Sitemap: {BASE}sitemap.xml" in (OUT / "robots.txt").read_text()
     llms = (OUT / "llms.txt").read_text()
     assert all(url(lang) in llms for lang in LOCALES)
+    error_page = Page((OUT / "404.html").read_text())
+    assert any(tag == "meta" and attrs.get("name") == "robots" and attrs.get("content") == "noindex" for tag, attrs in error_page.tags)
+    assert {attrs["href"] for tag, attrs in error_page.tags if tag == "a"} >= {url(lang) for lang in LOCALES}
     print(f"PASS: {len(pages)} translated pages; internal links, anchors, metadata, hreflang, JSON-LD, sitemap, robots, and llms.txt")
 
 

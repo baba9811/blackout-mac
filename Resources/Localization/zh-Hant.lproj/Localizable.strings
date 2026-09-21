@@ -22,7 +22,7 @@
 "The current password is incorrect." = "目前的密碼不正確。";
 "The saved password settings could not be read. See the recovery instructions in the README." = "無法讀取已儲存的密碼設定。請參閱 README 中的復原說明。";
 "The password could not be processed. Please try again." = "無法處理密碼。請再試一次。";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "阻擋輸入需要授予 Blackout 輔助使用權限。請在系統設定中啟用後再試。";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "阻擋輸入需要控制鍵盤與滑鼠輸入的權限。請打開系統設定，允許 Blackout 後再試。 如果已允許 Blackout，請將它從列表中移除，重新加入目前安裝的 App，然後重新啟動 Blackout。";
 "Input blocking could not start. The screen has not been covered." = "無法開始阻擋輸入。螢幕尚未被遮蓋。";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "輸入阻擋已停止。為避免在輸入未受保護時遮住其他 App，黑屏已結束。";
 "Open System Settings" = "打開系統設定";
@@ -30,7 +30,7 @@
 "Language" = "語言";
 "System Default" = "系統預設";
 "Launch at login" = "登入時啟動";
-"Open Login Items…" = "打開登入項目…";
+"Open Login Settings…" = "打開登入設定…";
 "Require a password to restore the screen" = "恢復螢幕時需要密碼";
 "Current password (required to change or disable)" = "目前的密碼（更改或停用時必填）";
 "New password" = "新密碼";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "已儲存。下次黑屏時將需要密碼。";
 "Saved. Password protection is off." = "已儲存。密碼保護已關閉。";
 "Blackout will run in the menu bar when you log in." = "登入後，Blackout 將在選單列中執行。";
-"Allow Blackout in macOS Login Items settings." = "請在 macOS 登入項目設定中允許 Blackout。";
+"Allow Blackout in the macOS login settings." = "請在 macOS 登入設定中允許 Blackout。";
 "Launch at login is off." = "登入時啟動已關閉。";
 "Blackout is not registered as a login item. Enable the option to register it." = "Blackout 尚未註冊為登入項目。啟用此選項即可註冊。";
-"Check the status in macOS Login Items settings." = "請在 macOS 登入項目設定中查看狀態。";
+"Check the status in the macOS login settings." = "請在 macOS 登入設定中查看狀態。";
 "Could not change launch at login: %@" = "無法更改登入時啟動設定：%@";
 "Input Blocking" = "阻擋輸入";
-"Open Accessibility Settings…" = "打開輔助使用設定…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "輔助使用權限已啟用。黑屏期間可以阻擋鍵盤與滑鼠輸入。";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "黑屏前需要輔助使用權限。請在系統設定中允許 Blackout，以防止鍵盤與滑鼠輸入傳送至其他 App。";
+"Open Input Permission Settings…" = "打開輸入權限設定…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "輸入控制權限已啟用。黑屏期間可以阻擋鍵盤與滑鼠輸入。";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "黑屏前需要輸入控制權限。請打開下方的權限設定並允許 Blackout。 如果已允許 Blackout，請將它從列表中移除，重新加入目前安裝的 App，然後重新啟動 Blackout。";
+
+"Version %@" = "版本 %@";
+"Check for Updates…" = "檢查更新…";
+"Checking for updates…" = "正在檢查更新…";
+"You’re up to date." = "已是最新版本。";
+"Version %@ is available." = "版本 %@ 現已可用。";
+"No releases have been published yet." = "尚未發佈任何版本。";
+"Could not check for updates. Please try again." = "無法檢查更新。請再試一次。";
+"Open Release Page…" = "打開發佈頁面…";

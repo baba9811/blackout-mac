@@ -16,12 +16,15 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Test app domains
         run: zsh scripts/test.command
+      - name: Test release validation
+        run: python3 -B -m unittest discover -s Tests/Release -v
       - name: Build and verify universal app
         run: |
           zsh scripts/build.command "$RUNNER_TEMP/Blackout.app" --universal
           archs="$(xcrun lipo -archs "$RUNNER_TEMP/Blackout.app/Contents/MacOS/Blackout")"
           [[ " $archs " == *" arm64 "* && " $archs " == *" x86_64 "* ]]
           codesign --verify --deep --strict "$RUNNER_TEMP/Blackout.app"
+          test -s "$RUNNER_TEMP/Blackout.app/Contents/Resources/Blackout.icns"
           plutil -lint "$RUNNER_TEMP/Blackout.app/Contents/Info.plist"
           test "$(plutil -extract CFBundleShortVersionString raw "$RUNNER_TEMP/Blackout.app/Contents/Info.plist")" = "$(cat VERSION)"
           test "$(plutil -extract CFBundleVersion raw "$RUNNER_TEMP/Blackout.app/Contents/Info.plist")" = "$(cat VERSION)"

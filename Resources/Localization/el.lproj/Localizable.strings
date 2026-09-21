@@ -22,7 +22,7 @@
 "The current password is incorrect." = "Το τρέχον συνθηματικό είναι λανθασμένο.";
 "The saved password settings could not be read. See the recovery instructions in the README." = "Δεν ήταν δυνατή η ανάγνωση των αποθηκευμένων ρυθμίσεων συνθηματικού. Δείτε τις οδηγίες ανάκτησης στο README.";
 "The password could not be processed. Please try again." = "Δεν ήταν δυνατή η επεξεργασία του συνθηματικού. Δοκιμάστε ξανά.";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "Ο αποκλεισμός εισόδου απαιτεί άδεια Προσβασιμότητας για το Blackout. Ενεργοποιήστε τη στις Ρυθμίσεις συστήματος και δοκιμάστε ξανά.";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "Ο αποκλεισμός εισόδου απαιτεί άδεια ελέγχου του πληκτρολογίου και του ποντικιού. Ανοίξτε τις Ρυθμίσεις συστήματος, επιτρέψτε το Blackout και δοκιμάστε ξανά. Αν το Blackout έχει ήδη άδεια, αφαιρέστε το από τη λίστα, προσθέστε ξανά την εφαρμογή που είναι εγκατεστημένη τώρα και επανεκκινήστε το Blackout.";
 "Input blocking could not start. The screen has not been covered." = "Δεν ήταν δυνατή η έναρξη αποκλεισμού εισόδου. Η οθόνη δεν καλύφθηκε.";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "Ο αποκλεισμός εισόδου σταμάτησε. Η συσκότιση τερματίστηκε για να μην κρύβεται άλλη εφαρμογή όσο η είσοδος δεν προστατεύεται.";
 "Open System Settings" = "Άνοιγμα Ρυθμίσεων συστήματος";
@@ -30,7 +30,7 @@
 "Language" = "Γλώσσα";
 "System Default" = "Προεπιλογή συστήματος";
 "Launch at login" = "Άνοιγμα κατά τη σύνδεση";
-"Open Login Items…" = "Άνοιγμα Στοιχείων σύνδεσης…";
+"Open Login Settings…" = "Άνοιγμα ρυθμίσεων σύνδεσης…";
 "Require a password to restore the screen" = "Απαίτηση συνθηματικού για επαναφορά της οθόνης";
 "Current password (required to change or disable)" = "Τρέχον συνθηματικό (για αλλαγή ή απενεργοποίηση)";
 "New password" = "Νέο συνθηματικό";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "Αποθηκεύτηκε. Θα απαιτείται συνθηματικό στην επόμενη συσκότιση της οθόνης.";
 "Saved. Password protection is off." = "Αποθηκεύτηκε. Η προστασία με συνθηματικό είναι ανενεργή.";
 "Blackout will run in the menu bar when you log in." = "Το Blackout θα εκτελείται στη γραμμή μενού όταν συνδέεστε.";
-"Allow Blackout in macOS Login Items settings." = "Επιτρέψτε το Blackout στις ρυθμίσεις Στοιχείων σύνδεσης του macOS.";
+"Allow Blackout in the macOS login settings." = "Επιτρέψτε το Blackout στις ρυθμίσεις σύνδεσης του macOS.";
 "Launch at login is off." = "Το άνοιγμα κατά τη σύνδεση είναι ανενεργό.";
 "Blackout is not registered as a login item. Enable the option to register it." = "Το Blackout δεν έχει καταχωριστεί ως στοιχείο σύνδεσης. Ενεργοποιήστε την επιλογή για να το καταχωρίσετε.";
-"Check the status in macOS Login Items settings." = "Ελέγξτε την κατάσταση στις ρυθμίσεις Στοιχείων σύνδεσης του macOS.";
+"Check the status in the macOS login settings." = "Ελέγξτε την κατάσταση στις ρυθμίσεις σύνδεσης του macOS.";
 "Could not change launch at login: %@" = "Δεν ήταν δυνατή η αλλαγή του ανοίγματος κατά τη σύνδεση: %@";
 "Input Blocking" = "Αποκλεισμός εισόδου";
-"Open Accessibility Settings…" = "Άνοιγμα ρυθμίσεων Προσβασιμότητας…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Η άδεια Προσβασιμότητας είναι ενεργή. Η είσοδος από πληκτρολόγιο και ποντίκι μπορεί να αποκλειστεί κατά τη συσκότιση.";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "Απαιτείται άδεια Προσβασιμότητας πριν από τη συσκότιση. Επιτρέψτε το Blackout στις Ρυθμίσεις συστήματος ώστε η είσοδος από πληκτρολόγιο και ποντίκι να μη φτάνει σε άλλες εφαρμογές.";
+"Open Input Permission Settings…" = "Άνοιγμα ρυθμίσεων αδειών εισόδου…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Η άδεια ελέγχου εισόδου είναι ενεργή. Η είσοδος από πληκτρολόγιο και ποντίκι μπορεί να αποκλειστεί κατά τη συσκότιση.";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "Απαιτείται άδεια ελέγχου εισόδου πριν από τη συσκότιση. Ανοίξτε τις ρυθμίσεις αδειών παρακάτω και επιτρέψτε το Blackout. Αν το Blackout έχει ήδη άδεια, αφαιρέστε το από τη λίστα, προσθέστε ξανά την εφαρμογή που είναι εγκατεστημένη τώρα και επανεκκινήστε το Blackout.";
+
+"Version %@" = "Έκδοση %@";
+"Check for Updates…" = "Έλεγχος για ενημερώσεις…";
+"Checking for updates…" = "Έλεγχος για ενημερώσεις σε εξέλιξη…";
+"You’re up to date." = "Έχετε την πιο πρόσφατη έκδοση.";
+"Version %@ is available." = "Η έκδοση %@ είναι διαθέσιμη.";
+"No releases have been published yet." = "Δεν έχουν δημοσιευτεί ακόμη εκδόσεις.";
+"Could not check for updates. Please try again." = "Δεν ήταν δυνατός ο έλεγχος ενημερώσεων. Δοκιμάστε ξανά.";
+"Open Release Page…" = "Άνοιγμα σελίδας έκδοσης…";

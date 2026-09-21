@@ -29,6 +29,7 @@ cat > "$CONTENTS/Info.plist" <<PLIST
   <key>CFBundleVersion</key><string>$APP_VERSION</string>
   <key>CFBundleShortVersionString</key><string>$APP_VERSION</string>
   <key>CFBundleExecutable</key><string>Blackout</string>
+  <key>CFBundleIconFile</key><string>Blackout</string>
   <key>CFBundlePackageType</key><string>APPL</string>
   <key>CFBundleDevelopmentRegion</key><string>en</string>
   <key>LSUIElement</key><true/>
@@ -53,5 +54,7 @@ done
 xcrun lipo -create "${BINARIES[@]}" -output "$CONTENTS/MacOS/Blackout"
 cp -R "$ROOT"/Resources/Localization/. "$CONTENTS/Resources/"
 cp "$ROOT/LICENSE" "$CONTENTS/Resources/LICENSE"
+xcrun swift "$SCRIPT_DIR/make-icon.swift" "$BUILD_DIR/Blackout.iconset"
+iconutil -c icns "$BUILD_DIR/Blackout.iconset" -o "$CONTENTS/Resources/Blackout.icns"
 codesign --force --deep --sign - "$APP_DIR"
 codesign --verify --deep --strict "$APP_DIR"

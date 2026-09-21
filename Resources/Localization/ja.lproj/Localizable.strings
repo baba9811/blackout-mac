@@ -22,7 +22,7 @@
 "The current password is incorrect." = "現在のパスワードが違います。";
 "The saved password settings could not be read. See the recovery instructions in the README." = "保存されたパスワード設定を読み込めませんでした。READMEの復旧手順をご確認ください。";
 "The password could not be processed. Please try again." = "パスワードを処理できませんでした。もう一度お試しください。";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "入力をブロックするには、Blackoutにアクセシビリティの許可が必要です。システム設定で許可してから再度お試しください。";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "入力をブロックするには、キーボードとマウスの入力を制御する権限が必要です。システム設定でBlackoutを許可してから再度お試しください。 Blackoutがすでに許可されている場合は、リストから削除し、現在インストールされているアプリを再度追加してから、Blackoutを再起動してください。";
 "Input blocking could not start. The screen has not been covered." = "入力のブロックを開始できませんでした。画面は覆われていません。";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "入力のブロックが停止しました。入力が保護されていない状態でほかのアプリを隠さないよう、画面の遮蔽を終了しました。";
 "Open System Settings" = "システム設定を開く";
@@ -30,7 +30,7 @@
 "Language" = "言語";
 "System Default" = "システムのデフォルト";
 "Launch at login" = "ログイン時に起動";
-"Open Login Items…" = "ログイン項目を開く…";
+"Open Login Settings…" = "ログイン設定を開く…";
 "Require a password to restore the screen" = "画面を戻すときにパスワードを要求";
 "Current password (required to change or disable)" = "現在のパスワード（変更・無効化に必要）";
 "New password" = "新しいパスワード";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "保存しました。次回画面を暗くしたときからパスワードが必要です。";
 "Saved. Password protection is off." = "保存しました。パスワード保護は無効です。";
 "Blackout will run in the menu bar when you log in." = "ログインするとメニューバーで起動します。";
-"Allow Blackout in macOS Login Items settings." = "macOSのログイン項目設定でBlackoutを許可してください。";
+"Allow Blackout in the macOS login settings." = "macOSのログイン設定でBlackoutを許可してください。";
 "Launch at login is off." = "ログイン時の起動は無効です。";
 "Blackout is not registered as a login item. Enable the option to register it." = "Blackoutはログイン項目に登録されていません。オプションを有効にすると登録されます。";
-"Check the status in macOS Login Items settings." = "macOSのログイン項目設定で状態をご確認ください。";
+"Check the status in the macOS login settings." = "macOSのログイン設定で状態をご確認ください。";
 "Could not change launch at login: %@" = "ログイン時の起動を変更できませんでした: %@";
 "Input Blocking" = "入力のブロック";
-"Open Accessibility Settings…" = "アクセシビリティ設定を開く…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "アクセシビリティは許可されています。画面を暗くしている間、キーボードとマウスの入力をブロックできます。";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "画面を暗くする前にアクセシビリティの許可が必要です。キーボードとマウスの入力がほかのアプリに届かないよう、システム設定でBlackoutを許可してください。";
+"Open Input Permission Settings…" = "入力権限の設定を開く…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "入力を制御する権限が許可されています。画面を暗くしている間、キーボードとマウスの入力をブロックできます。";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "画面を暗くする前に、入力を制御する権限が必要です。下のボタンから権限の設定を開き、Blackoutを許可してください。 Blackoutがすでに許可されている場合は、リストから削除し、現在インストールされているアプリを再度追加してから、Blackoutを再起動してください。";
+
+"Version %@" = "バージョン %@";
+"Check for Updates…" = "アップデートを確認…";
+"Checking for updates…" = "アップデートを確認中…";
+"You’re up to date." = "最新バージョンです。";
+"Version %@ is available." = "バージョン %@ を利用できます。";
+"No releases have been published yet." = "リリースはまだ公開されていません。";
+"Could not check for updates. Please try again." = "アップデートを確認できませんでした。もう一度お試しください。";
+"Open Release Page…" = "リリースページを開く…";
