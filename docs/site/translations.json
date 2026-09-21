@@ -1,8 +1,8 @@
 {
   "en": {
     "name": "English",
-    "headline": "A little less screen.",
-    "description": "Turn every detected display black with one shortcut. BlackoutMac is a small macOS menu bar app with optional password protection.",
+    "headline": "AI keeps working. Screens stay covered.",
+    "description": "Keep background AI tasks running while your Mac is awake. Cover every display, with an optional password to return.",
     "labels": [
       "Download for Mac",
       "User guide",
@@ -61,8 +61,8 @@
   },
   "ko": {
     "name": "한국어",
-    "headline": "화면도 잠시 쉬어가세요.",
-    "description": "단축키 하나로 연결된 모든 화면을 검게 가립니다. BlackoutMac은 비밀번호를 선택해서 설정할 수 있는 작은 macOS 메뉴 막대 앱입니다.",
+    "headline": "AI는 계속, 화면은 검게.",
+    "description": "Mac이 깨어 있는 동안 백그라운드 AI 작업을 계속하며 모든 화면을 가립니다. 해제 비밀번호는 선택 사항입니다.",
     "labels": [
       "Mac용 다운로드",
       "사용 안내",
@@ -121,8 +121,8 @@
   },
   "ja": {
     "name": "日本語",
-    "headline": "画面にも、ひと休みを。",
-    "description": "ショートカットひとつで、検出されたすべての画面を黒く覆います。BlackoutMacは、任意でパスワードを設定できる小さなmacOSメニューバーアプリです。",
+    "headline": "AIの作業はそのまま、画面を黒く。",
+    "description": "Macがスリープしていない間、バックグラウンドのAI作業を続けながら、すべての画面を覆います。解除用のパスワードは任意です。",
     "labels": [
       "Mac版をダウンロード",
       "使い方",
@@ -181,8 +181,8 @@
   },
   "zh-Hans": {
     "name": "简体中文",
-    "headline": "让屏幕，也歇一会儿。",
-    "description": "一个快捷键，让所有检测到的屏幕变黑。BlackoutMac 是一款轻巧的 macOS 菜单栏应用，可选择启用密码保护。",
+    "headline": "AI 继续工作，屏幕保持遮盖。",
+    "description": "Mac 保持唤醒时，后台 AI 任务可继续运行，所有屏幕均被遮盖。可选设密码以恢复显示。",
     "labels": [
       "下载 Mac 版",
       "使用指南",
@@ -241,8 +241,8 @@
   },
   "zh-Hant": {
     "name": "繁體中文",
-    "headline": "讓螢幕，也休息一下。",
-    "description": "一個快捷鍵，讓所有偵測到的螢幕變黑。BlackoutMac 是輕巧的 macOS 選單列 App，可自行選擇啟用密碼保護。",
+    "headline": "AI 繼續工作，螢幕保持遮蓋。",
+    "description": "Mac 保持喚醒時，背景 AI 工作可繼續執行，所有螢幕均被遮蓋。可選設密碼以恢復顯示。",
     "labels": [
       "下載 Mac 版",
       "使用指南",
@@ -301,8 +301,8 @@
   },
   "es": {
     "name": "Español",
-    "headline": "Un descanso para tu pantalla.",
-    "description": "Un atajo pone en negro todas las pantallas detectadas. BlackoutMac vive en la barra de menús de macOS, con contraseña opcional.",
+    "headline": "La IA sigue. Las pantallas se cubren.",
+    "description": "Cubre todas las pantallas mientras la IA trabaja en segundo plano y tu Mac sigue despierto. Contraseña opcional para volver.",
     "labels": [
       "Descargar para Mac",
       "Guía de uso",
@@ -361,8 +361,8 @@
   },
   "fr": {
     "name": "Français",
-    "headline": "Une pause pour vos écrans.",
-    "description": "Un raccourci recouvre de noir tous les écrans détectés. BlackoutMac se loge dans la barre des menus de macOS, avec un mot de passe facultatif.",
+    "headline": "L’IA continue. Les écrans sont masqués.",
+    "description": "Masquez tous les écrans pendant que l’IA travaille en arrière-plan, tant que votre Mac reste éveillé. Mot de passe facultatif pour revenir.",
     "labels": [
       "Télécharger pour Mac",
       "Guide d’utilisation",
@@ -421,8 +421,8 @@
   },
   "de": {
     "name": "Deutsch",
-    "headline": "Eine Pause für deine Bildschirme.",
-    "description": "Ein Tastenkürzel blendet alle erkannten Bildschirme schwarz ab. BlackoutMac sitzt in der macOS-Menüleiste. Ein Passwort ist optional.",
+    "headline": "Die KI arbeitet. Die Bildschirme bleiben verdeckt.",
+    "description": "Verdecke alle Bildschirme, während KI-Aufgaben im Hintergrund weiterlaufen und dein Mac wach bleibt. Zum Zurückkehren ist ein Passwort optional.",
     "labels": [
       "Für Mac laden",
       "Anleitung",
@@ -481,8 +481,8 @@
   },
   "it": {
     "name": "Italiano",
-    "headline": "Una pausa per i tuoi schermi.",
-    "description": "Una scorciatoia oscura tutti gli schermi rilevati. BlackoutMac è una piccola app nella barra dei menu di macOS, con password facoltativa.",
+    "headline": "L’IA lavora. Gli schermi restano coperti.",
+    "description": "Copri tutti gli schermi mentre l’IA lavora in background e il Mac resta attivo. Password facoltativa per tornare.",
     "labels": [
       "Scarica per Mac",
       "Guida all’uso",
@@ -541,8 +541,8 @@
   },
   "pt-BR": {
     "name": "Português (Brasil)",
-    "headline": "Uma pausa para suas telas.",
-    "description": "Um atalho deixa todas as telas detectadas pretas. BlackoutMac é um pequeno app na barra de menus do macOS, com senha opcional.",
+    "headline": "A IA continua. As telas ficam cobertas.",
+    "description": "Cubra todas as telas enquanto a IA trabalha em segundo plano e o Mac permanece acordado. Senha opcional para voltar.",
     "labels": [
       "Baixar para Mac",
       "Guia de uso",
@@ -601,8 +601,8 @@
   },
   "pt-PT": {
     "name": "Português (Portugal)",
-    "headline": "Uma pausa para os seus ecrãs.",
-    "description": "Um atalho torna negros todos os ecrãs detetados. BlackoutMac é uma pequena aplicação na barra de menus do macOS, com palavra-passe opcional.",
+    "headline": "A IA continua. Os ecrãs ficam cobertos.",
+    "description": "Cubra todos os ecrãs enquanto a IA trabalha em segundo plano e o Mac se mantém ativo. Palavra-passe opcional para voltar.",
     "labels": [
       "Descarregar para Mac",
       "Guia de utilização",
@@ -661,8 +661,8 @@
   },
   "ru": {
     "name": "Русский",
-    "headline": "Пусть экраны отдохнут.",
-    "description": "Одно сочетание клавиш закрывает чёрным все обнаруженные экраны. BlackoutMac работает в строке меню macOS. Пароль — по желанию.",
+    "headline": "ИИ работает. Экраны скрыты.",
+    "description": "Закройте все экраны, пока ИИ работает в фоне, а Mac не спит. Для возврата можно задать пароль.",
     "labels": [
       "Скачать для Mac",
       "Руководство",
@@ -721,8 +721,8 @@
   },
   "uk": {
     "name": "Українська",
-    "headline": "Нехай екрани перепочинуть.",
-    "description": "Одне сполучення клавіш закриває чорним усі виявлені екрани. BlackoutMac працює в смузі меню macOS. Пароль — за бажанням.",
+    "headline": "ШІ працює. Екрани приховані.",
+    "description": "Закрийте всі екрани, поки ШІ працює у фоні, а Mac не спить. Для повернення можна задати пароль.",
     "labels": [
       "Завантажити для Mac",
       "Посібник",
@@ -781,8 +781,8 @@
   },
   "pl": {
     "name": "Polski",
-    "headline": "Chwila przerwy dla ekranów.",
-    "description": "Jeden skrót zasłania na czarno wszystkie wykryte ekrany. BlackoutMac działa na pasku menu macOS. Hasło jest opcjonalne.",
+    "headline": "AI pracuje. Ekrany są zasłonięte.",
+    "description": "Zasłoń wszystkie ekrany, gdy AI pracuje w tle, a Mac nie jest uśpiony. Powrót może wymagać opcjonalnego hasła.",
     "labels": [
       "Pobierz na Maca",
       "Instrukcja",
@@ -841,8 +841,8 @@
   },
   "nl": {
     "name": "Nederlands",
-    "headline": "Even rust voor je schermen.",
-    "description": "Eén sneltoets maakt alle gedetecteerde schermen zwart. BlackoutMac staat in de macOS-menubalk. Een wachtwoord is optioneel.",
+    "headline": "AI werkt door. Je schermen zijn bedekt.",
+    "description": "Bedek alle schermen terwijl AI op de achtergrond werkt en je Mac wakker blijft. Een wachtwoord om terug te keren is optioneel.",
     "labels": [
       "Download voor Mac",
       "Handleiding",
@@ -901,8 +901,8 @@
   },
   "sv": {
     "name": "Svenska",
-    "headline": "En paus för dina skärmar.",
-    "description": "Ett kortkommando täcker alla upptäckta skärmar med svart. BlackoutMac finns i macOS menyrad, med valfritt lösenord.",
+    "headline": "AI jobbar vidare. Skärmarna är täckta.",
+    "description": "Täck alla skärmar medan AI arbetar i bakgrunden och din Mac är vaken. Lösenord för att återgå är valfritt.",
     "labels": [
       "Hämta för Mac",
       "Användarguide",
@@ -961,8 +961,8 @@
   },
   "da": {
     "name": "Dansk",
-    "headline": "En pause til dine skærme.",
-    "description": "Én genvej dækker alle registrerede skærme med sort. BlackoutMac ligger i macOS-menulinjen med valgfri adgangskode.",
+    "headline": "AI arbejder videre. Skærmene er dækket.",
+    "description": "Dæk alle skærme, mens AI arbejder i baggrunden, og din Mac er vågen. Adgangskode for at vende tilbage er valgfri.",
     "labels": [
       "Hent til Mac",
       "Brugervejledning",
@@ -1021,8 +1021,8 @@
   },
   "nb": {
     "name": "Norsk bokmål",
-    "headline": "En pause for skjermene dine.",
-    "description": "Én snarvei dekker alle oppdagede skjermer med svart. BlackoutMac ligger i menylinjen i macOS, med valgfritt passord.",
+    "headline": "AI jobber videre. Skjermene er dekket.",
+    "description": "Dekk alle skjermer mens AI arbeider i bakgrunnen og Macen er våken. Passord for å gå tilbake er valgfritt.",
     "labels": [
       "Last ned for Mac",
       "Brukerveiledning",
@@ -1081,8 +1081,8 @@
   },
   "fi": {
     "name": "Suomi",
-    "headline": "Pieni tauko näytöille.",
-    "description": "Yksi pikanäppäin peittää kaikki havaitut näytöt mustiksi. BlackoutMac toimii macOS:n valikkorivillä. Salasana on valinnainen.",
+    "headline": "Tekoäly jatkaa. Näytöt pysyvät peitettyinä.",
+    "description": "Peitä kaikki näytöt tekoälyn jatkaessa taustalla, kun Mac on hereillä. Voit halutessasi vaatia salasanan näyttöjen palauttamiseen.",
     "labels": [
       "Lataa Macille",
       "Käyttöopas",
@@ -1141,8 +1141,8 @@
   },
   "cs": {
     "name": "Čeština",
-    "headline": "Chvilka klidu pro obrazovky.",
-    "description": "Jedna klávesová zkratka zakryje všechny zjištěné obrazovky černou. BlackoutMac sídlí v řádku nabídek macOS. Heslo je volitelné.",
+    "headline": "AI pracuje dál. Obrazovky jsou zakryté.",
+    "description": "Zakryjte všechny obrazovky, zatímco AI pracuje na pozadí a Mac není uspaný. Heslo pro návrat je volitelné.",
     "labels": [
       "Stáhnout pro Mac",
       "Návod",
@@ -1201,8 +1201,8 @@
   },
   "sk": {
     "name": "Slovenčina",
-    "headline": "Chvíľa pokoja pre obrazovky.",
-    "description": "Jedna klávesová skratka prekryje všetky zistené obrazovky čiernou. BlackoutMac je v lište menu macOS. Heslo je voliteľné.",
+    "headline": "AI pracuje ďalej. Obrazovky sú zakryté.",
+    "description": "Zakryte všetky obrazovky, kým AI pracuje na pozadí a Mac nie je uspatý. Heslo na návrat je voliteľné.",
     "labels": [
       "Stiahnuť pre Mac",
       "Návod",
@@ -1261,8 +1261,8 @@
   },
   "hu": {
     "name": "Magyar",
-    "headline": "Egy kis szünet a képernyőknek.",
-    "description": "Egy billentyűparancs feketére takarja az összes észlelt kijelzőt. A BlackoutMac a macOS menüsorában él, választható jelszóval.",
+    "headline": "Az AI dolgozik. A kijelzők takarva maradnak.",
+    "description": "Takard el az összes kijelzőt, miközben az AI a háttérben dolgozik, és a Mac ébren van. A visszatéréshez kérhetsz jelszót.",
     "labels": [
       "Letöltés Macre",
       "Használati útmutató",
@@ -1321,8 +1321,8 @@
   },
   "ro": {
     "name": "Română",
-    "headline": "O pauză pentru ecranele tale.",
-    "description": "O scurtătură acoperă cu negru toate ecranele detectate. BlackoutMac stă în bara de meniu macOS, cu parolă opțională.",
+    "headline": "AI continuă. Ecranele rămân acoperite.",
+    "description": "Acoperă toate ecranele în timp ce AI lucrează în fundal, cât timp Mac-ul nu este în repaus. Parola pentru revenire este opțională.",
     "labels": [
       "Descarcă pentru Mac",
       "Ghid de utilizare",
@@ -1381,8 +1381,8 @@
   },
   "tr": {
     "name": "Türkçe",
-    "headline": "Ekranlarınıza küçük bir mola.",
-    "description": "Tek kısayol, algılanan tüm ekranları siyahla kaplar. BlackoutMac, isteğe bağlı parolayla macOS menü çubuğunda çalışır.",
+    "headline": "Yapay zekâ çalışır. Ekranlar örtülür.",
+    "description": "Mac’iniz uyanıkken yapay zekâ görevleri arka planda sürsün, tüm ekranlar örtülsün. Ekranları açmak için parola isteğe bağlıdır.",
     "labels": [
       "Mac için indir",
       "Kullanım kılavuzu",
@@ -1441,8 +1441,8 @@
   },
   "ar": {
     "name": "العربية",
-    "headline": "استراحة صغيرة لشاشاتك.",
-    "description": "اختصار واحد يغطي كل الشاشات المكتشفة باللون الأسود. يعمل BlackoutMac في شريط قوائم macOS، مع كلمة مرور اختيارية.",
+    "headline": "الذكاء الاصطناعي يعمل، والشاشات مغطاة.",
+    "description": "غطِّ جميع الشاشات بينما تواصل مهام الذكاء الاصطناعي العمل في الخلفية ما دام Mac مستيقظًا. كلمة المرور للعودة اختيارية.",
     "labels": [
       "تنزيل لنظام Mac",
       "دليل الاستخدام",
@@ -1501,8 +1501,8 @@
   },
   "he": {
     "name": "עברית",
-    "headline": "הפסקה קטנה למסכים.",
-    "description": "קיצור אחד מכסה בשחור את כל המסכים שזוהו. BlackoutMac פועלת בשורת התפריטים של macOS, עם סיסמה לבחירתך.",
+    "headline": "הבינה המלאכותית ממשיכה. המסכים מכוסים.",
+    "description": "כסו את כל המסכים בזמן שמשימות הבינה המלאכותית פועלות ברקע וה-Mac ער. אפשר לבחור סיסמה לחזרה למסך.",
     "labels": [
       "הורדה ל-Mac",
       "מדריך שימוש",
@@ -1561,8 +1561,8 @@
   },
   "hi": {
     "name": "हिन्दी",
-    "headline": "स्क्रीन को भी थोड़ा विराम।",
-    "description": "एक शॉर्टकट से सभी पहचानी गई स्क्रीन काली हो जाती हैं। BlackoutMac, macOS मेनू बार का छोटा ऐप है, जिसमें पासवर्ड वैकल्पिक है।",
+    "headline": "AI काम करता रहे। स्क्रीन ढकी रहें।",
+    "description": "Mac के जागते रहने पर AI के काम बैकग्राउंड में चलते रहें और सभी स्क्रीन ढकी रहें। वापस आने के लिए पासवर्ड वैकल्पिक है।",
     "labels": [
       "Mac के लिए डाउनलोड",
       "उपयोग गाइड",
@@ -1621,8 +1621,8 @@
   },
   "th": {
     "name": "ไทย",
-    "headline": "ให้หน้าจอได้พักสักครู่",
-    "description": "ใช้ปุ่มลัดเดียวคลุมทุกหน้าจอที่ตรวจพบให้เป็นสีดำ BlackoutMac เป็นแอปเล็ก ๆ บนแถบเมนู macOS พร้อมรหัสผ่านที่เลือกเปิดได้",
+    "headline": "AI ทำงานต่อ หน้าจอยังคงถูกปิดทับ",
+    "description": "ปิดทับทุกหน้าจอขณะที่ AI ทำงานอยู่เบื้องหลังและ Mac ยังไม่พักเครื่อง เลือกตั้งรหัสผ่านเพื่อกลับไปใช้งานได้",
     "labels": [
       "ดาวน์โหลดสำหรับ Mac",
       "คู่มือการใช้งาน",
@@ -1681,8 +1681,8 @@
   },
   "vi": {
     "name": "Tiếng Việt",
-    "headline": "Cho màn hình nghỉ một chút.",
-    "description": "Một phím tắt phủ đen mọi màn hình được phát hiện. BlackoutMac nằm trên thanh menu macOS, với mật khẩu tùy chọn.",
+    "headline": "AI tiếp tục. Màn hình được che.",
+    "description": "Che mọi màn hình trong khi AI làm việc nền và Mac vẫn thức. Có thể đặt mật khẩu để trở lại.",
     "labels": [
       "Tải về cho Mac",
       "Hướng dẫn sử dụng",
@@ -1741,8 +1741,8 @@
   },
   "id": {
     "name": "Bahasa Indonesia",
-    "headline": "Istirahat sejenak untuk layar.",
-    "description": "Satu pintasan menutupi semua layar yang terdeteksi dengan warna hitam. BlackoutMac hadir di bar menu macOS, dengan kata sandi opsional.",
+    "headline": "AI terus bekerja. Layar tetap tertutup.",
+    "description": "Tutupi semua layar sementara AI bekerja di latar belakang dan Mac tetap terjaga. Kata sandi untuk kembali bersifat opsional.",
     "labels": [
       "Unduh untuk Mac",
       "Panduan pengguna",
@@ -1801,8 +1801,8 @@
   },
   "ms": {
     "name": "Bahasa Melayu",
-    "headline": "Rehat sebentar untuk skrin.",
-    "description": "Satu pintasan menutup semua skrin yang dikesan dengan warna hitam. BlackoutMac berada dalam bar menu macOS, dengan kata laluan pilihan.",
+    "headline": "AI terus bekerja. Skrin kekal ditutup.",
+    "description": "Tutup semua skrin semasa AI bekerja di latar belakang dan Mac masih berjaga. Kata laluan untuk kembali adalah pilihan.",
     "labels": [
       "Muat turun untuk Mac",
       "Panduan pengguna",
@@ -1861,8 +1861,8 @@
   },
   "el": {
     "name": "Ελληνικά",
-    "headline": "Ένα διάλειμμα για τις οθόνες.",
-    "description": "Μία συντόμευση καλύπτει με μαύρο όλες τις οθόνες που εντοπίζονται. Το BlackoutMac βρίσκεται στη γραμμή μενού του macOS, με προαιρετικό κωδικό.",
+    "headline": "Η AI συνεχίζει. Οι οθόνες μένουν καλυμμένες.",
+    "description": "Καλύψτε όλες τις οθόνες ενώ η AI εργάζεται στο παρασκήνιο και το Mac παραμένει ξύπνιο. Ο κωδικός για επιστροφή είναι προαιρετικός.",
     "labels": [
       "Λήψη για Mac",
       "Οδηγός χρήσης",

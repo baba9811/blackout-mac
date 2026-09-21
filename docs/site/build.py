@@ -113,7 +113,7 @@ def page(code, data):
   <nav class="nav" aria-label="BlackoutMac">
     <a class="nav-guide" href="#guide">{esc(guide)}</a>
     <a href="{REPO}">GitHub ↗</a>
-    <details class="languages"><summary><span aria-hidden="true">◎</span> {esc(t["name"])}</summary><nav class="language-menu" aria-label="{esc(language)}">{language_links}</nav></details>
+    <details class="languages"><summary><svg class="language-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8"/><ellipse cx="10" cy="10" rx="3.5" ry="8"/><path d="M2 10h16"/></svg><span dir="auto">{esc(t["name"])}</span><svg class="language-chevron" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m4 6 4 4 4-4"/></svg></summary><nav class="language-menu" aria-label="{esc(language)}">{language_links}</nav></details>
   </nav>
 </header>
 <main id="main">
@@ -188,7 +188,7 @@ def main():
     links = "\n".join(f'- [{data[lang]["name"]}]({url(lang)}): Installation, permissions, usage, privacy, recovery, and FAQ.' for lang in LOCALES)
     (OUT / "llms.txt").write_text(f'''# BlackoutMac
 
-> A macOS menu bar app that covers detected displays in black. Password protection is optional and disabled by default.
+> A macOS menu bar app that covers your screens while AI and other background tasks continue. Password protection is optional and disabled by default.
 
 ## App facts
 - macOS 13 or later; universal Apple Silicon and Intel build; version {VERSION} preview. Real-device input validation is ongoing.
@@ -200,8 +200,9 @@ def main():
 - Hold Escape for 3 seconds to exit blackout, deliberately bypassing the app password. If the main thread cannot respond, a background watchdog quits the app. Reopen it afterward; emergency exit does not delete the saved password.
 - Native launch at login; 32 languages; follows the system language unless overridden.
 - No backend or telemetry. GitHub hosts this website and downloads.
+- Background tasks can continue while the Mac is awake; Blackout does not prevent sleep. Desktop computer-use tools may be affected by the cover or input blocking.
 - This is an overlay, not a macOS security lock. The optional password only gates normal dismissal through Blackout. Automation already authorized through macOS accessibility permissions may still read or control other apps beneath the overlay. Force Quit and macOS security screens are outside its guarantee. Use macOS Lock Screen (Control + Command + Q) to secure a session.
-- The distributed app is ad-hoc signed, not Developer ID signed, and not notarized by Apple. Review installation instructions before opening.
+- Preview releases from 0.1.1 use a fixed self-signed certificate, without Developer ID signing or Apple notarization. Review installation instructions before opening.
 
 ## Primary links
 - [Releases]({DOWNLOAD}): Download the universal DMG preview and read release notes.

@@ -22,6 +22,10 @@ Preview releases are **not Developer ID signed or Apple-notarized**. Release not
 - **Language:** defaults to your OS preference. Choose a language in Settings to override it immediately.
 - **Launch at login:** enable it in Settings. This starts the menu bar app after login; it does not automatically black out the screen.
 
+## AI work
+
+CLI, file, and MCP tasks can continue while your Mac stays awake. Blackout does not pause apps or prevent sleep. Codex shell work and in-app browser actions were checked under the cover. Screenshot or desktop-input automation may see black or have input blocked; other native-app paths and Claude workflows have not been tested. See [Computer Use](https://learn.chatgpt.com/docs/computer-use) and [Claude Code tools](https://code.claude.com/docs/en/how-claude-code-works) for their capabilities.
+
 ## Password and recovery
 
 - **Password:** optional and off by default. Use **Require a password to restore the screen** in Settings. Turning it on opens a new-password dialog; turning it off asks for the current password. The switch changes only after saving succeeds; Cancel leaves it unchanged. When enabled, **Change Password…** opens a separate change dialog and **Forgot Password…** offers recovery.
