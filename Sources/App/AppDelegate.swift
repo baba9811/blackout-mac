@@ -10,7 +10,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
     private var hotKeyRef: EventHotKeyRef?
     private var hotKeyHandlerRef: EventHandlerRef?
     private var isBlack = false
-    private var blackoutStartedAt: TimeInterval = 0
+    private var unlockPromptAvailableAt: TimeInterval = 0
     private var cursorHidden = false
     private let passwords = PasswordSettings()
     private lazy var settings: SettingsWindowController = {
@@ -28,10 +28,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
     private var previousPresentation: NSApplication.PresentationOptions = []
     private lazy var inputBlocker: InputBlocker = {
         let blocker = InputBlocker()
-        blocker.onWake = { [weak self] in
-            guard let self, self.isBlack, self.gracePeriodEnded else { return }
-            self.requestUnlock()
-        }
+        blocker.onWake = { [weak self] in self?.requestUnlock() }
         blocker.onFailure = { [weak self] in self?.inputBlockingFailed() }
         blocker.onInputSourceChange = { [weak self] in self?.switchInputSource() }
         blocker.onEmergencyExit = { [weak self] in self?.endBlackout(terminate: false) }
@@ -253,7 +250,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
         previousPresentation = NSApp.presentationOptions
         NSApp.presentationOptions = [.hideDock, .hideMenuBar, .disableProcessSwitching, .disableHideApplication]
         isBlack = true
-        blackoutStartedAt = ProcessInfo.processInfo.systemUptime
+        unlockPromptAvailableAt = ProcessInfo.processInfo.systemUptime + 0.35
 
         // Activate first so every per-display window is attached to the
         // currently visible Spaces before it is ordered to the front.
@@ -351,7 +348,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
     }
 
     private var gracePeriodEnded: Bool {
-        ProcessInfo.processInfo.systemUptime - blackoutStartedAt > 0.35
+        ProcessInfo.processInfo.systemUptime >= unlockPromptAvailableAt
     }
 
     private func removeInputDetection() {
@@ -401,12 +398,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
 
     private func refreshInputFocus() {
         guard isBlack, !sessionSuspended else { return }
+        let mouseTarget = panels.first.map {
+            InputBlocker.MouseTarget(windowNumber: $0.windowNumber, frame: $0.frame,
+                                     desktopTop: NSScreen.screens.first?.frame.maxY ?? 0)
+        }
         inputBlocker.setPrompting(unlockView != nil,
-                                  acceptingInput: NSApp.isActive && panels.first?.isKeyWindow == true)
+                                  acceptingInput: NSApp.isActive && panels.first?.isKeyWindow == true,
+                                  mouseTarget: mouseTarget)
     }
 
     private func requestUnlock() {
-        guard isBlack, !sessionSuspended else { return }
+        guard isBlack, !sessionSuspended, gracePeriodEnded else { return }
         guard requiredPassword != nil else { endBlackout(terminate: false); return }
         guard let panel = panels.first, let content = panel.contentView else {
             endBlackout(terminate: false)
@@ -439,12 +441,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
         cancel.keyEquivalent = "\u{1b}"
         let buttons = NSStackView(views: [cancel, unlock])
         buttons.spacing = 12
-        let recovery = NSTextField(wrappingLabelWithString: L("Emergency exit: hold Escape for 3 seconds. This bypasses the app password."))
-        recovery.font = .systemFont(ofSize: NSFont.smallSystemFontSize)
-        recovery.textColor = .lightGray
-        let stack = NSStackView(views: [title, field, error, buttons, recovery])
+        let stack = NSStackView(views: [title, field, error, buttons])
         let direction: NSUserInterfaceLayoutDirection = ["ar", "he"].contains(AppLanguage.currentCode) ? .rightToLeft : .leftToRight
-        for view in [stack, title, field, error, buttons, cancel, unlock, recovery] {
+        for view in [stack, title, field, error, buttons, cancel, unlock] {
             view.userInterfaceLayoutDirection = direction
         }
         stack.orientation = .vertical
@@ -457,8 +456,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
             stack.centerYAnchor.constraint(equalTo: content.centerYAnchor),
             stack.widthAnchor.constraint(equalToConstant: 320),
             field.widthAnchor.constraint(equalTo: stack.widthAnchor),
-            error.widthAnchor.constraint(equalTo: stack.widthAnchor),
-            recovery.widthAnchor.constraint(equalTo: stack.widthAnchor)
+            error.widthAnchor.constraint(equalTo: stack.widthAnchor)
         ])
         unlockView = stack
         unlockField = field
@@ -500,7 +498,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
         unlockField = nil
         unlockError = nil
         inputBlocker.setPrompting(false)
-        blackoutStartedAt = ProcessInfo.processInfo.systemUptime
+        unlockPromptAvailableAt = ProcessInfo.processInfo.systemUptime + 2
         if !cursorHidden { NSCursor.hide(); cursorHidden = true }
     }
 
@@ -539,7 +537,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
         guard startInputBlocking() else { endBlackout(terminate: false); return }
         sessionSuspended = false
         NSApp.presentationOptions = [.hideDock, .hideMenuBar, .disableProcessSwitching, .disableHideApplication]
-        blackoutStartedAt = ProcessInfo.processInfo.systemUptime
+        unlockPromptAvailableAt = ProcessInfo.processInfo.systemUptime + 0.35
         createPanels()
         guard !panels.isEmpty else { endBlackout(terminate: false); return }
         installInputDetection()

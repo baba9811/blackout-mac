@@ -28,7 +28,7 @@
       ],
       [
         "Choose a password, or don’t",
-        "Password protection is off by default. In Blackout Settings, choose “Set Password…” and enter the new password twice. When protection is on, use “Change Password…” or “Turn Off Password…”. Each opens its own dialog and requires the current password; changing it also requires the new password twice. If you forgot it, choose “Forgot Password…” and follow the recovery steps below. A small lock badge on the moon menu icon indicates that password protection is enabled. The password only gates dismissing Blackout; it does not secure your macOS session."
+        "Password protection is off by default. In Blackout Settings, turn on “Require a password to restore the screen” to open a setup dialog and enter the new password twice. Turning the switch off opens a confirmation dialog requiring the current password. The switch shows the saved state; canceling or an error leaves it unchanged. While enabled, the “Change Password…” button opens a dialog requiring the current password and the new password twice. Use the “Forgot Password…” link for recovery with macOS authentication. A small lock badge on the moon menu icon indicates that password protection is enabled. The password only gates dismissing Blackout; it does not secure your macOS session. Choosing “Cancel” in the unlock prompt leaves the screens black. Keyboard and mouse wake input is ignored for 2 seconds to prevent immediate reopening, then normal wake behavior resumes."
       ],
       [
         "Ready when you log in",
@@ -88,7 +88,7 @@
       ],
       [
         "비밀번호는 선택 사항",
-        "기본값은 비밀번호 없음입니다. Blackout 설정에서 “비밀번호 설정…”을 선택하고 새 비밀번호를 두 번 입력하세요. 비밀번호가 켜져 있으면 “비밀번호 변경…” 또는 “비밀번호 끄기…”를 사용하세요. 각 버튼은 별도의 대화상자를 열며 현재 비밀번호가 필요합니다. 변경할 때는 새 비밀번호도 두 번 입력합니다. 비밀번호를 잊었다면 “비밀번호를 잊으셨나요…”를 선택하고 아래 복구 안내를 따르세요. 메뉴 막대의 달 아이콘에 작은 자물쇠가 붙으면 비밀번호 보호가 켜진 상태입니다. 비밀번호는 Blackout의 화면 가림 해제만 제한하며 macOS 세션을 보호하지 않습니다."
+        "기본값은 비밀번호 없음입니다. Blackout 설정에서 “화면 해제 시 비밀번호 요구” 스위치를 켜면 입력 창이 열립니다. 새 비밀번호를 두 번 입력하세요. 스위치를 끄면 현재 비밀번호를 입력하는 확인 창이 열립니다. 스위치는 저장된 상태를 표시하며, 취소하거나 오류가 나면 기존 설정이 유지됩니다. 켜져 있을 때 “비밀번호 변경…” 버튼을 누르면 현재 비밀번호와 새 비밀번호 두 번을 입력하는 창이 열립니다. “비밀번호를 잊으셨나요…” 링크에서는 macOS 인증으로 복구할 수 있습니다. 메뉴 막대의 달 아이콘에 작은 자물쇠가 붙으면 비밀번호 보호가 켜진 상태입니다. 비밀번호는 Blackout의 화면 가림 해제만 제한하며 macOS 세션을 보호하지 않습니다. 화면 해제 창에서 “취소”를 누르면 검은 화면으로 돌아갑니다. 창이 즉시 다시 뜨지 않도록 2초 동안 키보드·마우스의 화면 깨우기 입력을 무시하며, 그 뒤에는 평소처럼 입력에 반응합니다."
       ],
       [
         "로그인할 때 자동 실행",
@@ -148,7 +148,7 @@
       ],
       [
         "パスワードはお好みで",
-        "初期状態ではパスワードは無効です。Blackoutの設定で「パスワードを設定…」を選び、新しいパスワードを2回入力します。有効な場合は「パスワードを変更…」または「パスワードを無効にする…」を使用します。それぞれ専用のダイアログが開き、現在のパスワードが必要です。変更時は新しいパスワードも2回入力します。忘れた場合は「パスワードをお忘れですか…」を選び、下の復旧手順に従ってください。メニューバーの月アイコンに小さな鍵が付くと、パスワード保護が有効です。パスワードはBlackoutの画面の覆いを解除する操作のみを制限し、macOSのセッションを保護するものではありません。"
+        "初期状態ではパスワードは無効です。Blackoutの設定で「画面を戻すときにパスワードを要求」スイッチをオンにすると設定用ダイアログが開くので、新しいパスワードを2回入力します。オフにすると、現在のパスワードを求める確認用ダイアログが開きます。スイッチは保存済みの状態を示し、キャンセルやエラーでは変更されません。有効な場合は「パスワードを変更…」ボタンから現在のパスワードと新しいパスワード2回の入力を求めるダイアログを開けます。「パスワードをお忘れですか…」リンクではmacOSの認証で復旧できます。メニューバーの月アイコンに小さな鍵が付くと、パスワード保護が有効です。パスワードはBlackoutの画面の覆いを解除する操作のみを制限し、macOSのセッションを保護するものではありません。解除用の入力画面で「キャンセル」を選ぶと黒い画面に戻ります。すぐに再表示されないよう、2秒間はキーボードやマウスによる呼び出し入力を無視し、その後は通常どおり反応します。"
       ],
       [
         "ログイン時に自動起動",
@@ -208,7 +208,7 @@
       ],
       [
         "密码，由你决定",
-        "默认不启用密码。在 Blackout 设置中选择“设置密码…”，并输入两次新密码。启用后，可使用“更改密码…”或“关闭密码…”。每个按钮都会打开独立对话框，并要求输入当前密码；更改密码时还需输入两次新密码。如果忘记密码，请选择“忘记密码…”，并按照下方恢复说明操作。菜单栏月亮图标上的小锁标记表示密码保护已启用。密码只限制解除 Blackout 的屏幕遮盖，并不能保护 macOS 会话。"
+        "默认不启用密码。在 Blackout 设置中打开“恢复屏幕时需要密码”开关，即可在设置对话框中输入两次新密码。关闭开关时，会打开要求输入当前密码的确认对话框。开关显示已保存的状态；取消操作或出现错误时，原有设置保持不变。启用后，“更改密码…”按钮会打开对话框，要求输入当前密码和两次新密码。使用“忘记密码…”链接可通过 macOS 身份验证进行恢复。菜单栏月亮图标上的小锁标记表示密码保护已启用。密码只限制解除 Blackout 的屏幕遮盖，并不能保护 macOS 会话。在解锁提示框中选择“取消”会返回黑屏。为防止提示框立即重新打开，接下来的 2 秒内会忽略键盘和鼠标的唤醒输入，之后恢复正常响应。"
       ],
       [
         "登录时自动启动",
@@ -268,7 +268,7 @@
       ],
       [
         "密碼，由你決定",
-        "預設不啟用密碼。在 Blackout 設定中選擇「設定密碼…」，並輸入兩次新密碼。啟用後，可使用「更改密碼…」或「關閉密碼…」。每個按鈕都會開啟獨立對話框，並要求輸入目前密碼；更改密碼時還需輸入兩次新密碼。如果忘記密碼，請選擇「忘記密碼…」，並依照下方復原說明操作。選單列月亮圖像上的小鎖標記表示密碼保護已啟用。密碼只限制解除 Blackout 的螢幕遮蓋，並不能保護 macOS 工作階段。"
+        "預設不啟用密碼。在 Blackout 設定中開啟「恢復螢幕時需要密碼」開關，即可在設定對話框中輸入兩次新密碼。關閉開關時，會開啟要求輸入目前密碼的確認對話框。開關顯示已儲存的狀態；取消操作或發生錯誤時，原有設定保持不變。啟用後，「更改密碼…」按鈕會開啟對話框，要求輸入目前密碼和兩次新密碼。使用「忘記密碼…」連結可透過 macOS 驗證進行復原。選單列月亮圖像上的小鎖標記表示密碼保護已啟用。密碼只限制解除 Blackout 的螢幕遮蓋，並不能保護 macOS 工作階段。在解鎖提示框中選擇「取消」會返回黑畫面。為防止提示框立即重新開啟，接下來的 2 秒內會忽略鍵盤和滑鼠的喚醒輸入，之後恢復正常回應。"
       ],
       [
         "登入時自動啟動",
@@ -328,7 +328,7 @@
       ],
       [
         "Contraseña opcional",
-        "La protección con contraseña está desactivada por defecto. En los ajustes de Blackout, elige «Establecer contraseña…» e introduce la nueva contraseña dos veces. Cuando está activa, usa «Cambiar contraseña…» o «Desactivar contraseña…». Cada opción abre su propio diálogo y requiere la contraseña actual; para cambiarla, también debes introducir la nueva dos veces. Si la olvidaste, elige «Olvidé la contraseña…» y sigue los pasos de recuperación de abajo. Una pequeña insignia de candado en el icono de luna indica que la protección con contraseña está activa. La contraseña solo limita la retirada de la cubierta de Blackout; no protege tu sesión de macOS."
+        "La protección con contraseña está desactivada por defecto. En los ajustes de Blackout, activa el interruptor «Exigir una contraseña para restaurar la pantalla» para abrir un diálogo de configuración e introducir la nueva contraseña dos veces. Al desactivarlo se abre un diálogo de confirmación que requiere la contraseña actual. El interruptor muestra el estado guardado; cancelar o un error no lo cambia. Cuando está activo, el botón «Cambiar contraseña…» abre un diálogo que pide la contraseña actual y la nueva dos veces. Usa el enlace «Olvidé la contraseña…» para recuperar el acceso mediante autenticación de macOS. Una pequeña insignia de candado en el icono de luna indica que la protección con contraseña está activa. La contraseña solo limita la retirada de la cubierta de Blackout; no protege tu sesión de macOS. Elegir «Cancelar» en el diálogo de desbloqueo deja las pantallas negras. Durante 2 segundos se ignoran las entradas de teclado y ratón que lo abrirían de nuevo para evitar su reapertura inmediata; después se recupera el comportamiento normal."
       ],
       [
         "Inicio automático",
@@ -388,7 +388,7 @@
       ],
       [
         "Un mot de passe, si vous voulez",
-        "La protection par mot de passe est désactivée par défaut. Dans les réglages Blackout, choisissez « Définir un mot de passe… » et saisissez le nouveau mot de passe deux fois. Une fois la protection activée, utilisez « Modifier le mot de passe… » ou « Désactiver le mot de passe… ». Chaque option ouvre sa propre boîte de dialogue et exige le mot de passe actuel ; pour le modifier, saisissez aussi le nouveau deux fois. En cas d’oubli, choisissez « Mot de passe oublié… » et suivez les étapes de récupération ci-dessous. Un petit cadenas sur l’icône de lune indique que la protection par mot de passe est activée. Le mot de passe limite uniquement la levée du masquage de Blackout ; il ne sécurise pas votre session macOS."
+        "La protection par mot de passe est désactivée par défaut. Dans les réglages Blackout, activez l’interrupteur « Exiger un mot de passe pour rétablir l’écran » pour ouvrir une boîte de dialogue et saisir le nouveau mot de passe deux fois. Sa désactivation ouvre une boîte de confirmation qui exige le mot de passe actuel. L’interrupteur indique l’état enregistré ; une annulation ou une erreur ne le modifie pas. Une fois activé, le bouton « Modifier le mot de passe… » ouvre une boîte de dialogue demandant le mot de passe actuel et le nouveau deux fois. Le lien « Mot de passe oublié… » permet une récupération avec l’authentification macOS. Un petit cadenas sur l’icône de lune indique que la protection par mot de passe est activée. Le mot de passe limite uniquement la levée du masquage de Blackout ; il ne sécurise pas votre session macOS. Choisir « Annuler » dans la boîte de déverrouillage laisse les écrans noirs. Pendant 2 secondes, les entrées du clavier et de la souris qui la rouvriraient sont ignorées pour éviter sa réouverture immédiate ; le fonctionnement normal reprend ensuite."
       ],
       [
         "Lancer à l’ouverture de session",
@@ -448,7 +448,7 @@
       ],
       [
         "Passwort nach Wunsch",
-        "Der Passwortschutz ist standardmäßig ausgeschaltet. Wähle in den Blackout-Einstellungen „Passwort festlegen…“ und gib das neue Passwort zweimal ein. Bei aktivem Schutz stehen „Passwort ändern…“ und „Passwort ausschalten…“ zur Verfügung. Beide öffnen einen eigenen Dialog und erfordern das aktuelle Passwort; zum Ändern gibst du auch das neue Passwort zweimal ein. Wähle bei einem vergessenen Passwort „Passwort vergessen…“ und folge der Anleitung zur Wiederherstellung unten. Ein kleines Schloss am Mondsymbol in der Menüleiste zeigt aktiven Passwortschutz an. Das Passwort beschränkt nur das Aufheben der Blackout-Abdeckung; es sichert deine macOS-Sitzung nicht ab."
+        "Der Passwortschutz ist standardmäßig ausgeschaltet. Schalte in den Blackout-Einstellungen „Passwort zum Wiederherstellen des Bildschirms verlangen“ ein, um im Einrichtungsdialog das neue Passwort zweimal einzugeben. Beim Ausschalten öffnet sich ein Bestätigungsdialog, der das aktuelle Passwort verlangt. Der Schalter zeigt den gespeicherten Zustand; Abbrechen oder ein Fehler lässt ihn unverändert. Bei aktivem Schutz öffnet „Passwort ändern…“ einen Dialog für das aktuelle Passwort und die zweimalige Eingabe des neuen Passworts. Über den Link „Passwort vergessen…“ kannst du den Zugang mit macOS-Authentifizierung wiederherstellen. Ein kleines Schloss am Mondsymbol in der Menüleiste zeigt aktiven Passwortschutz an. Das Passwort beschränkt nur das Aufheben der Blackout-Abdeckung; es sichert deine macOS-Sitzung nicht ab. „Abbrechen“ im Entsperrdialog lässt die Bildschirme schwarz. Tastatur- und Mauseingaben zum erneuten Öffnen werden 2 Sekunden lang ignoriert, damit der Dialog nicht sofort wieder erscheint; danach gilt wieder das normale Verhalten."
       ],
       [
         "Bei Anmeldung starten",
@@ -508,7 +508,7 @@
       ],
       [
         "Password facoltativa",
-        "La protezione con password è disattivata per impostazione predefinita. Nelle impostazioni Blackout, scegli «Imposta password…» e inserisci la nuova password due volte. Quando è attiva, usa «Cambia password…» o «Disattiva password…». Ogni opzione apre una finestra di dialogo dedicata e richiede la password attuale; per cambiarla devi anche inserire quella nuova due volte. Se l’hai dimenticata, scegli «Password dimenticata…» e segui le istruzioni di recupero qui sotto. Un piccolo lucchetto sull’icona della luna indica che la protezione con password è attiva. La password limita soltanto la rimozione della copertura di Blackout; non protegge la sessione macOS."
+        "La protezione con password è disattivata per impostazione predefinita. Nelle impostazioni Blackout, attiva l’interruttore «Richiedi una password per ripristinare lo schermo» per aprire una finestra di configurazione e inserire la nuova password due volte. Disattivandolo si apre una finestra di conferma che richiede la password attuale. L’interruttore mostra lo stato salvato; annullare o un errore lo lascia invariato. Quando è attivo, il pulsante «Cambia password…» apre una finestra che richiede la password attuale e la nuova due volte. Usa il link «Password dimenticata…» per il recupero tramite autenticazione macOS. Un piccolo lucchetto sull’icona della luna indica che la protezione con password è attiva. La password limita soltanto la rimozione della copertura di Blackout; non protegge la sessione macOS. Scegliendo «Annulla» nella finestra di sblocco, gli schermi tornano neri. Per 2 secondi vengono ignorati gli input da tastiera e mouse che la riaprirebbero, evitando una riapertura immediata; poi riprende il comportamento normale."
       ],
       [
         "Avvio al login",
@@ -568,7 +568,7 @@
       ],
       [
         "Senha, se você quiser",
-        "A proteção por senha vem desativada. Nas configurações do Blackout, escolha «Definir senha…» e digite a nova senha duas vezes. Quando a proteção estiver ativa, use «Alterar senha…» ou «Desativar senha…». Cada opção abre seu próprio diálogo e exige a senha atual; para alterá-la, também é preciso digitar a nova senha duas vezes. Se a esqueceu, escolha «Esqueci a senha…» e siga as instruções de recuperação abaixo. Um pequeno cadeado no ícone de lua indica que a proteção por senha está ativa. A senha limita apenas a remoção da cobertura do Blackout; ela não protege sua sessão do macOS."
+        "A proteção por senha vem desativada. Nas configurações do Blackout, ative o interruptor «Exigir senha para restaurar a tela» para abrir o diálogo de configuração e digitar a nova senha duas vezes. Ao desativá-lo, abre-se um diálogo de confirmação que exige a senha atual. O interruptor mostra o estado salvo; cancelar ou ocorrer um erro não o altera. Com a proteção ativa, o botão «Alterar senha…» abre um diálogo que pede a senha atual e a nova senha duas vezes. Use o link «Esqueci a senha…» para recuperar o acesso com autenticação do macOS. Um pequeno cadeado no ícone de lua indica que a proteção por senha está ativa. A senha limita apenas a remoção da cobertura do Blackout; ela não protege sua sessão do macOS. Escolher «Cancelar» no diálogo de desbloqueio mantém as telas pretas. As entradas do teclado e do mouse que reabririam o diálogo são ignoradas por 2 segundos para evitar a reabertura imediata; depois o comportamento normal é retomado."
       ],
       [
         "Iniciar ao entrar",
@@ -628,7 +628,7 @@
       ],
       [
         "Palavra-passe opcional",
-        "A proteção por palavra-passe está desativada por predefinição. Nas definições do Blackout, escolha «Definir palavra-passe…» e introduza a nova palavra-passe duas vezes. Quando a proteção estiver ativa, use «Alterar palavra-passe…» ou «Desativar palavra-passe…». Cada opção abre o seu próprio diálogo e exige a palavra-passe atual; para a alterar, também é necessário introduzir a nova duas vezes. Se a esqueceu, escolha «Esqueci-me da palavra-passe…» e siga os passos de recuperação abaixo. Um pequeno cadeado no ícone da lua indica que a proteção por palavra-passe está ativa. A palavra-passe limita apenas a remoção da cobertura do Blackout; não protege a sessão do macOS."
+        "A proteção por palavra-passe está desativada por predefinição. Nas definições do Blackout, ative o interruptor «Exigir palavra-passe para restaurar o ecrã» para abrir o diálogo de configuração e introduzir a nova palavra-passe duas vezes. Ao desativá-lo, abre-se um diálogo de confirmação que exige a palavra-passe atual. O interruptor mostra o estado guardado; cancelar ou ocorrer um erro não o altera. Com a proteção ativa, o botão «Alterar palavra-passe…» abre um diálogo que pede a palavra-passe atual e a nova duas vezes. Use a ligação «Esqueci-me da palavra-passe…» para recuperar o acesso com autenticação do macOS. Um pequeno cadeado no ícone da lua indica que a proteção por palavra-passe está ativa. A palavra-passe limita apenas a remoção da cobertura do Blackout; não protege a sessão do macOS. Escolher «Cancelar» no diálogo de desbloqueio mantém os ecrãs pretos. As entradas do teclado e do rato que reabririam o diálogo são ignoradas durante 2 segundos para evitar a reabertura imediata; depois o comportamento normal é retomado."
       ],
       [
         "Iniciar ao iniciar sessão",
@@ -688,7 +688,7 @@
       ],
       [
         "Пароль по желанию",
-        "По умолчанию защита паролем отключена. В настройках Blackout выберите «Задать пароль…» и дважды введите новый пароль. При включённой защите доступны «Изменить пароль…» и «Отключить пароль…». Каждая команда открывает отдельный диалог и требует текущий пароль; при изменении также нужно дважды ввести новый. Если пароль забыт, выберите «Забыли пароль…» и следуйте инструкциям по восстановлению ниже. Маленький замок на значке луны означает, что защита паролем включена. Пароль ограничивает только снятие покрытия Blackout и не защищает сеанс macOS."
+        "По умолчанию защита паролем отключена. В настройках Blackout включите переключатель «Требовать пароль для восстановления экрана», чтобы открыть диалог настройки и дважды ввести новый пароль. При выключении откроется диалог подтверждения, требующий текущий пароль. Переключатель показывает сохранённое состояние; отмена или ошибка оставляет его без изменений. При включённой защите кнопка «Изменить пароль…» открывает диалог для ввода текущего пароля и нового пароля дважды. Ссылка «Забыли пароль…» позволяет восстановить доступ после подтверждения личности в macOS. Маленький замок на значке луны означает, что защита паролем включена. Пароль ограничивает только снятие покрытия Blackout и не защищает сеанс macOS. Кнопка «Отмена» в диалоге разблокировки возвращает чёрный экран. В течение 2 секунд ввод с клавиатуры и мыши для повторного открытия диалога игнорируется, чтобы он не появился сразу; затем обычная реакция на ввод восстанавливается."
       ],
       [
         "Запуск при входе",
@@ -748,7 +748,7 @@
       ],
       [
         "Пароль за бажанням",
-        "Типово захист паролем вимкнено. У параметрах Blackout виберіть «Установити пароль…» і двічі введіть новий пароль. Коли захист увімкнено, доступні «Змінити пароль…» і «Вимкнути пароль…». Кожна команда відкриває окреме діалогове вікно й потребує поточного пароля; для зміни також слід двічі ввести новий. Якщо забули пароль, виберіть «Забули пароль…» і виконайте наведені нижче кроки відновлення. Маленький замок на значку місяця означає, що захист паролем увімкнено. Пароль обмежує лише зняття накриття Blackout і не захищає сеанс macOS."
+        "Типово захист паролем вимкнено. У параметрах Blackout увімкніть перемикач «Вимагати пароль для відновлення екрана», щоб відкрити діалог налаштування й двічі ввести новий пароль. Вимкнення відкриває діалог підтвердження, який потребує поточного пароля. Перемикач показує збережений стан; скасування або помилка не змінює його. Коли захист увімкнено, кнопка «Змінити пароль…» відкриває діалог для введення поточного пароля й нового пароля двічі. Посилання «Забули пароль…» дає змогу відновити доступ після підтвердження особи в macOS. Маленький замок на значку місяця означає, що захист паролем увімкнено. Пароль обмежує лише зняття накриття Blackout і не захищає сеанс macOS. Кнопка «Скасувати» у діалозі розблокування повертає чорний екран. Протягом 2 секунд введення з клавіатури та миші для повторного відкриття діалогу ігнорується, щоб він не з’явився одразу; потім звичайна реакція на введення відновлюється."
       ],
       [
         "Запуск під час входу",
@@ -808,7 +808,7 @@
       ],
       [
         "Hasło według uznania",
-        "Ochrona hasłem jest domyślnie wyłączona. W ustawieniach Blackout wybierz „Ustaw hasło…” i wpisz nowe hasło dwukrotnie. Gdy ochrona jest włączona, użyj „Zmień hasło…” lub „Wyłącz hasło…”. Każda opcja otwiera osobne okno dialogowe i wymaga bieżącego hasła; przy zmianie trzeba też dwukrotnie wpisać nowe. Jeśli nie pamiętasz hasła, wybierz „Nie pamiętam hasła…” i wykonaj poniższe kroki odzyskiwania. Mała kłódka przy ikonie księżyca oznacza włączoną ochronę hasłem. Hasło ogranicza tylko usuwanie zasłony Blackout; nie zabezpiecza sesji macOS."
+        "Ochrona hasłem jest domyślnie wyłączona. W ustawieniach Blackout włącz przełącznik „Wymagaj hasła, aby przywrócić ekran”, aby otworzyć okno konfiguracji i wpisać nowe hasło dwukrotnie. Wyłączenie przełącznika otwiera okno potwierdzenia wymagające bieżącego hasła. Przełącznik pokazuje zapisany stan; anulowanie lub błąd pozostawia go bez zmian. Gdy ochrona jest włączona, przycisk „Zmień hasło…” otwiera okno wymagające bieżącego hasła i dwukrotnego wpisania nowego. Użyj odnośnika „Nie pamiętam hasła…”, aby odzyskać dostęp po uwierzytelnieniu w macOS. Mała kłódka przy ikonie księżyca oznacza włączoną ochronę hasłem. Hasło ogranicza tylko usuwanie zasłony Blackout; nie zabezpiecza sesji macOS. Wybranie „Anuluj” w oknie odblokowania pozostawia ekrany czarne. Przez 2 sekundy wejście z klawiatury i myszy, które ponownie otworzyłoby okno, jest ignorowane, aby zapobiec jego natychmiastowemu powrotowi; potem wraca zwykłe działanie."
       ],
       [
         "Uruchamianie przy logowaniu",
@@ -868,7 +868,7 @@
       ],
       [
         "Een wachtwoord naar keuze",
-        "Wachtwoordbeveiliging staat standaard uit. Kies in de Blackout-instellingen ‘Wachtwoord instellen…’ en voer het nieuwe wachtwoord twee keer in. Als de beveiliging aanstaat, gebruik je ‘Wachtwoord wijzigen…’ of ‘Wachtwoord uitschakelen…’. Elke optie opent een eigen dialoogvenster en vereist het huidige wachtwoord; bij wijzigen voer je ook het nieuwe wachtwoord twee keer in. Kies bij een vergeten wachtwoord ‘Wachtwoord vergeten…’ en volg de herstelstappen hieronder. Een klein slot op het maansymbool geeft aan dat wachtwoordbeveiliging actief is. Het wachtwoord beperkt alleen het verwijderen van de Blackout-afdekking; het beveiligt je macOS-sessie niet."
+        "Wachtwoordbeveiliging staat standaard uit. Zet in de Blackout-instellingen de schakelaar ‘Vereis een wachtwoord om het scherm te herstellen’ aan om een insteldialoog te openen en het nieuwe wachtwoord twee keer in te voeren. Uitzetten opent een bevestigingsdialoog die het huidige wachtwoord vereist. De schakelaar toont de opgeslagen stand; annuleren of een fout verandert deze niet. Als de beveiliging aanstaat, opent de knop ‘Wachtwoord wijzigen…’ een dialoog voor het huidige wachtwoord en tweemaal het nieuwe. Gebruik de link ‘Wachtwoord vergeten…’ om de toegang te herstellen met macOS-authenticatie. Een klein slot op het maansymbool geeft aan dat wachtwoordbeveiliging actief is. Het wachtwoord beperkt alleen het verwijderen van de Blackout-afdekking; het beveiligt je macOS-sessie niet. Met ‘Annuleer’ in het ontgrendelingsvenster blijven de schermen zwart. Toetsenbord- en muisinvoer die het venster zou heropenen, wordt 2 seconden genegeerd om direct heropenen te voorkomen; daarna werkt het weer zoals normaal."
       ],
       [
         "Starten bij inloggen",
@@ -928,7 +928,7 @@
       ],
       [
         "Lösenord om du vill",
-        "Lösenordsskydd är avstängt som standard. Välj ”Ställ in lösenord…” i Blackouts inställningar och ange det nya lösenordet två gånger. När skyddet är på använder du ”Ändra lösenord…” eller ”Stäng av lösenord…”. Varje alternativ öppnar en egen dialogruta och kräver det nuvarande lösenordet; vid ändring anger du även det nya två gånger. Om du har glömt det väljer du ”Glömt lösenord…” och följer återställningsstegen nedan. Ett litet lås på månsymbolen visar att lösenordsskyddet är aktivt. Lösenordet begränsar bara borttagningen av Blackouts täckning; det skyddar inte din macOS-session."
+        "Lösenordsskydd är avstängt som standard. Slå på reglaget ”Kräv lösenord för att återställa skärmen” i Blackouts inställningar för att öppna en inställningsdialog och ange det nya lösenordet två gånger. När du stänger av reglaget öppnas en bekräftelsedialog som kräver det nuvarande lösenordet. Reglaget visar det sparade läget; avbrytande eller fel lämnar det oförändrat. När skyddet är på öppnar knappen ”Ändra lösenord…” en dialog för det nuvarande lösenordet och det nya två gånger. Använd länken ”Glömt lösenord…” för återställning med macOS-autentisering. Ett litet lås på månsymbolen visar att lösenordsskyddet är aktivt. Lösenordet begränsar bara borttagningen av Blackouts täckning; det skyddar inte din macOS-session. Om du väljer ”Avbryt” i upplåsningsdialogen förblir skärmarna svarta. Inmatning från tangentbord och mus som skulle öppna dialogen igen ignoreras i 2 sekunder för att förhindra omedelbar återöppning; därefter återgår det normala beteendet."
       ],
       [
         "Starta vid inloggning",
@@ -988,7 +988,7 @@
       ],
       [
         "Adgangskode efter ønske",
-        "Adgangskodebeskyttelse er slået fra som standard. Vælg ”Indstil adgangskode…” i Blackouts indstillinger, og indtast den nye adgangskode to gange. Når beskyttelsen er slået til, bruges ”Skift adgangskode…” eller ”Slå adgangskode fra…”. Hver mulighed åbner sin egen dialog og kræver den nuværende adgangskode; ved ændring skal den nye også indtastes to gange. Har du glemt den, vælg ”Glemt adgangskode…” og følg vejledningen til gendannelse nedenfor. En lille lås på måneikonet viser, at adgangskodebeskyttelsen er aktiv. Adgangskoden begrænser kun fjernelsen af Blackouts dækning; den sikrer ikke din macOS-session."
+        "Adgangskodebeskyttelse er slået fra som standard. Slå kontakten ”Kræv adgangskode for at gendanne skærmen” til i Blackouts indstillinger for at åbne en opsætningsdialog og indtaste den nye adgangskode to gange. Slår du den fra, åbnes en bekræftelsesdialog, der kræver den nuværende adgangskode. Kontakten viser den gemte tilstand; annullering eller fejl ændrer den ikke. Når beskyttelsen er slået til, åbner knappen ”Skift adgangskode…” en dialog til den nuværende adgangskode og den nye to gange. Brug linket ”Glemt adgangskode…” til gendannelse med macOS-godkendelse. En lille lås på måneikonet viser, at adgangskodebeskyttelsen er aktiv. Adgangskoden begrænser kun fjernelsen af Blackouts dækning; den sikrer ikke din macOS-session. Hvis du vælger ”Annuller” i oplåsningsdialogen, forbliver skærmene sorte. Input fra tastatur og mus, som ville åbne dialogen igen, ignoreres i 2 sekunder for at undgå øjeblikkelig genåbning; derefter genoptages den normale funktion."
       ],
       [
         "Start ved login",
@@ -1048,7 +1048,7 @@
       ],
       [
         "Passord hvis du vil",
-        "Passordbeskyttelse er av som standard. Velg «Angi passord…» i Blackout-innstillingene, og skriv det nye passordet to ganger. Når beskyttelsen er på, bruker du «Endre passord…» eller «Slå av passord…». Hvert valg åpner sin egen dialog og krever det gjeldende passordet; ved endring må også det nye skrives to ganger. Har du glemt det, velger du «Glemt passord…» og følger gjenopprettingstrinnene nedenfor. En liten lås på månesymbolet viser at passordbeskyttelsen er på. Passordet begrenser bare fjerningen av Blackout-dekningen; det sikrer ikke macOS-økten din."
+        "Passordbeskyttelse er av som standard. Slå på bryteren «Krev passord for å gjenopprette skjermen» i Blackout-innstillingene for å åpne en oppsettsdialog og skrive det nye passordet to ganger. Når du slår den av, åpnes en bekreftelsesdialog som krever det gjeldende passordet. Bryteren viser den lagrede tilstanden; avbrytelse eller feil lar den være uendret. Når beskyttelsen er på, åpner knappen «Endre passord…» en dialog for det gjeldende passordet og det nye to ganger. Bruk lenken «Glemt passord…» for gjenoppretting med macOS-autentisering. En liten lås på månesymbolet viser at passordbeskyttelsen er på. Passordet begrenser bare fjerningen av Blackout-dekningen; det sikrer ikke macOS-økten din. Hvis du velger «Avbryt» i opplåsingsdialogen, forblir skjermene svarte. Inndata fra tastatur og mus som ville åpnet dialogen igjen, ignoreres i 2 sekunder for å hindre umiddelbar gjenåpning; deretter gjenopptas vanlig oppførsel."
       ],
       [
         "Start ved pålogging",
@@ -1108,7 +1108,7 @@
       ],
       [
         "Salasana oman valinnan mukaan",
-        "Salasanasuojaus on oletuksena pois käytöstä. Valitse Blackoutin asetuksista ”Aseta salasana…” ja syötä uusi salasana kahdesti. Kun suojaus on käytössä, valitse ”Vaihda salasana…” tai ”Poista salasana käytöstä…”. Kukin avaa oman valintaikkunansa ja edellyttää nykyistä salasanaa; vaihtaessa myös uusi salasana syötetään kahdesti. Jos unohdit salasanan, valitse ”Unohditko salasanan…” ja noudata alla olevia palautusohjeita. Pieni lukko kuukuvakkeessa kertoo salasanasuojauksen olevan käytössä. Salasana rajoittaa vain Blackoutin peitteen poistamista; se ei suojaa macOS-istuntoasi."
+        "Salasanasuojaus on oletuksena pois käytöstä. Kytke Blackoutin asetuksissa ”Vaadi salasana näytön palauttamiseen” päälle, niin asetusikkuna avautuu uuden salasanan syöttämiseksi kahdesti. Kytkeminen pois päältä avaa vahvistusikkunan, joka edellyttää nykyistä salasanaa. Kytkin näyttää tallennetun tilan; peruutus tai virhe ei muuta sitä. Kun suojaus on käytössä, ”Vaihda salasana…”-painike avaa ikkunan, jossa kysytään nykyinen salasana ja uusi salasana kahdesti. ”Unohditko salasanan…”-linkistä voit palauttaa pääsyn tunnistautumalla macOS:ssä. Pieni lukko kuukuvakkeessa kertoo salasanasuojauksen olevan käytössä. Salasana rajoittaa vain Blackoutin peitteen poistamista; se ei suojaa macOS-istuntoasi. Lukituksen avausikkunan ”Kumoa” palauttaa näytöt mustiksi. Ikkunan uudelleen avaava näppäimistö- ja hiirisyöte ohitetaan 2 sekunnin ajan välittömän uudelleenavautumisen estämiseksi; tämän jälkeen normaali toiminta jatkuu."
       ],
       [
         "Käynnistä kirjautuessa",
@@ -1168,7 +1168,7 @@
       ],
       [
         "Heslo podle potřeby",
-        "Ochrana heslem je ve výchozím nastavení vypnutá. V nastavení Blackout zvolte „Nastavit heslo…“ a nové heslo zadejte dvakrát. Při zapnuté ochraně použijte „Změnit heslo…“ nebo „Vypnout heslo…“. Každá volba otevře vlastní dialog a vyžaduje aktuální heslo; při změně je třeba zadat i nové heslo dvakrát. Pokud jste ho zapomněli, zvolte „Zapomenuté heslo…“ a postupujte podle pokynů k obnovení níže. Malý zámek na ikoně měsíce značí aktivní ochranu heslem. Heslo omezuje pouze odstranění zakrytí Blackout; nezabezpečuje relaci macOS."
+        "Ochrana heslem je ve výchozím nastavení vypnutá. V nastavení Blackout zapněte přepínač „Vyžadovat heslo pro obnovení obrazovky“, čímž otevřete dialog nastavení pro dvojí zadání nového hesla. Vypnutí přepínače otevře potvrzovací dialog vyžadující aktuální heslo. Přepínač ukazuje uložený stav; zrušení nebo chyba jej nezmění. Při zapnuté ochraně tlačítko „Změnit heslo…“ otevře dialog pro aktuální heslo a dvojí zadání nového. Odkaz „Zapomenuté heslo…“ slouží k obnovení přístupu po ověření totožnosti v macOS. Malý zámek na ikoně měsíce značí aktivní ochranu heslem. Heslo omezuje pouze odstranění zakrytí Blackout; nezabezpečuje relaci macOS. Volba „Zrušit“ v dialogu odemknutí ponechá obrazovky černé. Vstup z klávesnice a myši, který by dialog znovu otevřel, se po dobu 2 sekund ignoruje, aby se neobjevil ihned; poté se obnoví běžné chování."
       ],
       [
         "Spuštění při přihlášení",
@@ -1228,7 +1228,7 @@
       ],
       [
         "Heslo podľa potreby",
-        "Ochrana heslom je predvolene vypnutá. V nastaveniach Blackout zvoľte „Nastaviť heslo…“ a nové heslo zadajte dvakrát. Pri zapnutej ochrane použite „Zmeniť heslo…“ alebo „Vypnúť heslo…“. Každá voľba otvorí vlastný dialóg a vyžaduje aktuálne heslo; pri zmene treba aj nové heslo zadať dvakrát. Ak ste ho zabudli, zvoľte „Zabudnuté heslo…“ a postupujte podľa pokynov na obnovenie nižšie. Malý zámok na ikone mesiaca označuje aktívnu ochranu heslom. Heslo obmedzuje iba odstránenie prekrytia Blackout; nezabezpečuje reláciu macOS."
+        "Ochrana heslom je predvolene vypnutá. V nastaveniach Blackout zapnite prepínač „Vyžadovať heslo na obnovenie obrazovky“, čím otvoríte dialóg nastavenia na dvojité zadanie nového hesla. Vypnutie prepínača otvorí potvrdzovací dialóg vyžadujúci aktuálne heslo. Prepínač ukazuje uložený stav; zrušenie alebo chyba ho nezmení. Pri zapnutej ochrane tlačidlo „Zmeniť heslo…“ otvorí dialóg pre aktuálne heslo a dvojité zadanie nového. Odkaz „Zabudnuté heslo…“ slúži na obnovenie prístupu po overení totožnosti v macOS. Malý zámok na ikone mesiaca označuje aktívnu ochranu heslom. Heslo obmedzuje iba odstránenie prekrytia Blackout; nezabezpečuje reláciu macOS. Voľba „Zrušiť“ v dialógu odomknutia ponechá obrazovky čierne. Vstup z klávesnice a myši, ktorý by dialóg znovu otvoril, sa na 2 sekundy ignoruje, aby sa neobjavil ihneď; potom sa obnoví bežné správanie."
       ],
       [
         "Spustiť pri prihlásení",
@@ -1288,7 +1288,7 @@
       ],
       [
         "Jelszó, ha szeretné",
-        "A jelszóvédelem alapértelmezetten ki van kapcsolva. A Blackout beállításaiban válassza a „Jelszó beállítása…” lehetőséget, és adja meg kétszer az új jelszót. Bekapcsolt védelemnél a „Jelszó módosítása…” és a „Jelszó kikapcsolása…” használható. Mindegyik külön párbeszédablakot nyit, és kéri az aktuális jelszót; módosításkor az újat is kétszer kell megadni. Ha elfelejtette, válassza az „Elfelejtett jelszó…” lehetőséget, és kövesse az alábbi helyreállítási lépéseket. A holdikonon látható kis lakat bekapcsolt jelszóvédelmet jelez. A jelszó csak a Blackout takarásának eltávolítását korlátozza; nem védi a macOS-munkamenetet."
+        "A jelszóvédelem alapértelmezetten ki van kapcsolva. A Blackout beállításaiban kapcsolja be a „Jelszó kérése a képernyő visszaállításához” kapcsolót; ekkor megnyílik az ablak az új jelszó kétszeri megadásához. Kikapcsoláskor az aktuális jelszót kérő megerősítő ablak nyílik meg. A kapcsoló a mentett állapotot mutatja; megszakítás vagy hiba esetén ez nem változik. Bekapcsolt védelemnél a „Jelszó módosítása…” gomb az aktuális jelszót és az új jelszó kétszeri megadását kérő ablakot nyitja meg. Az „Elfelejtett jelszó…” hivatkozással macOS-hitelesítés után állítható helyre a hozzáférés. A holdikonon látható kis lakat bekapcsolt jelszóvédelmet jelez. A jelszó csak a Blackout takarásának eltávolítását korlátozza; nem védi a macOS-munkamenetet. A feloldási ablakban a „Mégse” visszaállítja a fekete képernyőt. Az ablakot újranyitó billentyűzet- és egérbevitelt az app 2 másodpercig figyelmen kívül hagyja az azonnali újranyitás elkerülésére; ezután visszatér a szokásos működés."
       ],
       [
         "Indítás bejelentkezéskor",
@@ -1348,7 +1348,7 @@
       ],
       [
         "Parolă, dacă dorești",
-        "Protecția prin parolă este dezactivată implicit. În configurările Blackout, alege „Setează parola…” și introdu parola nouă de două ori. Când protecția este activă, folosește „Schimbă parola…” sau „Dezactivează parola…”. Fiecare opțiune deschide propriul dialog și necesită parola actuală; la schimbare trebuie introdusă și cea nouă de două ori. Dacă ai uitat-o, alege „Ai uitat parola…” și urmează pașii de recuperare de mai jos. Un lacăt mic pe pictograma lunii indică protecția activă prin parolă. Parola limitează doar eliminarea acoperirii Blackout; nu securizează sesiunea macOS."
+        "Protecția prin parolă este dezactivată implicit. În configurările Blackout, activează comutatorul „Solicită parolă pentru restabilirea ecranului” pentru a deschide dialogul de configurare și a introduce parola nouă de două ori. Dezactivarea lui deschide un dialog de confirmare care cere parola actuală. Comutatorul afișează starea salvată; anularea sau o eroare nu o modifică. Când protecția este activă, butonul „Schimbă parola…” deschide un dialog pentru parola actuală și introducerea celei noi de două ori. Folosește linkul „Ai uitat parola…” pentru recuperare cu autentificare macOS. Un lacăt mic pe pictograma lunii indică protecția activă prin parolă. Parola limitează doar eliminarea acoperirii Blackout; nu securizează sesiunea macOS. Alegerea opțiunii „Anulează” în dialogul de deblocare lasă ecranele negre. Timp de 2 secunde sunt ignorate intrările de la tastatură și mouse care ar redeschide dialogul, pentru a evita reapariția imediată; apoi revine comportamentul normal."
       ],
       [
         "Pornire la autentificare",
@@ -1408,7 +1408,7 @@
       ],
       [
         "Parola sizin tercihiniz",
-        "Parola koruması varsayılan olarak kapalıdır. Blackout ayarlarında “Parola Ayarla…” seçeneğini kullanıp yeni parolayı iki kez girin. Koruma açıkken “Parolayı Değiştir…” veya “Parolayı Kapat…” seçeneklerini kullanın. Her biri ayrı bir iletişim kutusu açar ve mevcut parolayı ister; değiştirirken yeni parolayı da iki kez girmeniz gerekir. Parolayı unuttuysanız “Parolamı Unuttum…” seçeneğini kullanıp aşağıdaki kurtarma adımlarını izleyin. Ay simgesindeki küçük kilit, parola korumasının açık olduğunu gösterir. Parola yalnızca Blackout kaplamasının kaldırılmasını sınırlar; macOS oturumunuzu güvence altına almaz."
+        "Parola koruması varsayılan olarak kapalıdır. Blackout ayarlarında “Ekranı geri getirmek için parola iste” anahtarını açarak kurulum iletişim kutusunda yeni parolayı iki kez girin. Anahtarı kapatmak, mevcut parolayı isteyen bir onay iletişim kutusu açar. Anahtar kaydedilmiş durumu gösterir; iptal veya hata durumunda bu durum değişmez. Koruma açıkken “Parolayı Değiştir…” düğmesi mevcut parolayı ve yeni parolayı iki kez isteyen bir iletişim kutusu açar. macOS kimlik doğrulamasıyla kurtarmak için “Parolamı Unuttum…” bağlantısını kullanın. Ay simgesindeki küçük kilit, parola korumasının açık olduğunu gösterir. Parola yalnızca Blackout kaplamasının kaldırılmasını sınırlar; macOS oturumunuzu güvence altına almaz. Kilit açma iletişim kutusunda “Vazgeç” seçildiğinde ekranlar siyah kalır. Kutunun hemen yeniden açılmasını önlemek için onu açacak klavye ve fare girdileri 2 saniye yok sayılır; ardından normal davranış sürdürülür."
       ],
       [
         "Oturum açarken başlat",
@@ -1468,7 +1468,7 @@
       ],
       [
         "كلمة مرور حسب رغبتك",
-        "الحماية بكلمة المرور معطّلة افتراضيًا. اختر «تعيين كلمة المرور…» في إعدادات Blackout وأدخل كلمة المرور الجديدة مرتين. عند تفعيل الحماية، استخدم «تغيير كلمة المرور…» أو «إيقاف كلمة المرور…». يفتح كل خيار مربع حوار منفصلًا ويتطلب كلمة المرور الحالية؛ وعند التغيير يجب إدخال الجديدة مرتين أيضًا. إذا نسيتها، اختر «نسيت كلمة المرور…» واتبع خطوات الاسترداد أدناه. تشير علامة قفل صغيرة على رمز القمر إلى تفعيل الحماية بكلمة المرور. تقيّد كلمة المرور إزالة غطاء Blackout فقط، ولا تؤمّن جلسة macOS."
+        "الحماية بكلمة المرور معطّلة افتراضيًا. فعّل المفتاح «طلب كلمة سر لاستعادة الشاشة» في إعدادات Blackout لفتح مربع الإعداد وإدخال كلمة المرور الجديدة مرتين. يؤدي إيقاف المفتاح إلى فتح مربع تأكيد يتطلب كلمة المرور الحالية. يعرض المفتاح الحالة المحفوظة؛ ولا يغيّرها الإلغاء أو حدوث خطأ. عند تفعيل الحماية، يفتح زر «تغيير كلمة المرور…» مربعًا يطلب كلمة المرور الحالية والجديدة مرتين. استخدم رابط «نسيت كلمة المرور…» للاسترداد بعد التحقق من الهوية باستخدام macOS. تشير علامة قفل صغيرة على رمز القمر إلى تفعيل الحماية بكلمة المرور. تقيّد كلمة المرور إزالة غطاء Blackout فقط، ولا تؤمّن جلسة macOS. اختيار «إلغاء» في نافذة فك القفل يُبقي الشاشات سوداء. يُتجاهل إدخال لوحة المفاتيح والفأرة الذي يعيد فتح النافذة لمدة ثانيتين لمنع ظهورها فورًا، ثم تعود الاستجابة المعتادة."
       ],
       [
         "التشغيل عند تسجيل الدخول",
@@ -1528,7 +1528,7 @@
       ],
       [
         "סיסמה לפי בחירה",
-        "הגנת הסיסמה כבויה כברירת מחדל. בהגדרות Blackout יש לבחור ״הגדרת סיסמה…״ ולהזין את הסיסמה החדשה פעמיים. כשההגנה פעילה, אפשר לבחור ״שינוי סיסמה…״ או ״כיבוי הסיסמה…״. כל אפשרות פותחת תיבת דו־שיח נפרדת ודורשת את הסיסמה הנוכחית; בשינוי יש להזין גם את הסיסמה החדשה פעמיים. אם שכחת את הסיסמה, יש לבחור ״שכחתי סיסמה…״ ולפעול לפי שלבי השחזור בהמשך. סימן מנעול קטן על סמל הירח מציין שהגנת הסיסמה פעילה. הסיסמה מגבילה רק את הסרת הכיסוי של Blackout; היא אינה מאבטחת את ההפעלה ב-macOS."
+        "הגנת הסיסמה כבויה כברירת מחדל. בהגדרות Blackout יש להפעיל את המתג ״דרישת סיסמה לשחזור המסך״ כדי לפתוח תיבת הגדרה ולהזין את הסיסמה החדשה פעמיים. כיבוי המתג פותח תיבת אישור הדורשת את הסיסמה הנוכחית. המתג מציג את המצב השמור; ביטול או שגיאה אינם משנים אותו. כשההגנה פעילה, הכפתור ״שינוי סיסמה…״ פותח תיבה להזנת הסיסמה הנוכחית והסיסמה החדשה פעמיים. הקישור ״שכחתי סיסמה…״ מאפשר שחזור לאחר אימות זהות באמצעות macOS. סימן מנעול קטן על סמל הירח מציין שהגנת הסיסמה פעילה. הסיסמה מגבילה רק את הסרת הכיסוי של Blackout; היא אינה מאבטחת את ההפעלה ב-macOS. בחירה ב״ביטול״ בתיבת שחרור הנעילה משאירה את המסכים שחורים. במשך 2 שניות מתעלמים מקלט מקלדת ועכבר שיפתח אותה מחדש, כדי למנוע פתיחה מיידית; לאחר מכן חוזרת ההתנהגות הרגילה."
       ],
       [
         "הפעלה בעת ההתחברות",
@@ -1588,7 +1588,7 @@
       ],
       [
         "पासवर्ड आपकी पसंद",
-        "पासवर्ड सुरक्षा डिफ़ॉल्ट रूप से बंद रहती है। Blackout की सेटिंग में “पासवर्ड सेट करें…” चुनें और नया पासवर्ड दो बार भरें। सुरक्षा चालू होने पर “पासवर्ड बदलें…” या “पासवर्ड बंद करें…” का उपयोग करें। हर विकल्प अपना अलग डायलॉग खोलता है और मौजूदा पासवर्ड माँगता है; बदलते समय नया पासवर्ड भी दो बार भरना होगा। यदि भूल गए हैं, तो “पासवर्ड भूल गए…” चुनें और नीचे दिए गए पुनर्प्राप्ति चरणों का पालन करें। चाँद के चिह्न पर छोटा ताला दिखना पासवर्ड सुरक्षा चालू होने का संकेत है। पासवर्ड केवल Blackout का पर्दा हटाने पर रोक लगाता है; यह आपके macOS सत्र को सुरक्षित नहीं करता।"
+        "पासवर्ड सुरक्षा डिफ़ॉल्ट रूप से बंद रहती है। Blackout की सेटिंग में “स्क्रीन वापस लाने के लिए पासवर्ड माँगें” स्विच चालू करें। खुलने वाले सेटअप डायलॉग में नया पासवर्ड दो बार भरें। स्विच बंद करने पर पुष्टि का डायलॉग खुलता है, जिसमें मौजूदा पासवर्ड चाहिए। स्विच सहेजी गई स्थिति दिखाता है; रद्द करने या त्रुटि आने पर वह नहीं बदलती। सुरक्षा चालू होने पर “पासवर्ड बदलें…” बटन से मौजूदा पासवर्ड और दो बार नया पासवर्ड भरने का डायलॉग खुलता है। macOS पहचान सत्यापन के साथ पुनर्प्राप्ति के लिए “पासवर्ड भूल गए…” लिंक इस्तेमाल करें। चाँद के चिह्न पर छोटा ताला दिखना पासवर्ड सुरक्षा चालू होने का संकेत है। पासवर्ड केवल Blackout का पर्दा हटाने पर रोक लगाता है; यह आपके macOS सत्र को सुरक्षित नहीं करता। अनलॉक डायलॉग में “रद्द करें” चुनने पर स्क्रीन काली हो जाती हैं। डायलॉग तुरंत फिर न खुले, इसलिए उसे खोलने वाले कीबोर्ड और माउस इनपुट 2 सेकंड तक अनदेखे किए जाते हैं; उसके बाद सामान्य व्यवहार फिर शुरू होता है।"
       ],
       [
         "लॉगिन पर शुरू करें",
@@ -1648,7 +1648,7 @@
       ],
       [
         "รหัสผ่านตามต้องการ",
-        "การป้องกันด้วยรหัสผ่านปิดไว้เป็นค่าเริ่มต้น ในการตั้งค่า Blackout ให้เลือก “ตั้งรหัสผ่าน…” แล้วป้อนรหัสผ่านใหม่สองครั้ง เมื่อเปิดการป้องกัน ให้ใช้ “เปลี่ยนรหัสผ่าน…” หรือ “ปิดรหัสผ่าน…” แต่ละตัวเลือกจะเปิดกล่องโต้ตอบแยกกันและต้องใช้รหัสผ่านปัจจุบัน หากเปลี่ยนรหัสผ่าน ต้องป้อนรหัสผ่านใหม่สองครั้งด้วย หากลืม ให้เลือก “ลืมรหัสผ่าน…” แล้วทำตามขั้นตอนการกู้คืนด้านล่าง รูปแม่กุญแจเล็กบนไอคอนดวงจันทร์หมายถึงเปิดการป้องกันด้วยรหัสผ่านอยู่ รหัสผ่านจำกัดเฉพาะการเอาสิ่งปกคลุมของ Blackout ออก ไม่ได้รักษาความปลอดภัยให้เซสชัน macOS"
+        "การป้องกันด้วยรหัสผ่านปิดไว้เป็นค่าเริ่มต้น ในการตั้งค่า Blackout ให้เปิดสวิตช์ “ต้องใช้รหัสผ่านเพื่อคืนค่าหน้าจอ” เพื่อเปิดกล่องตั้งค่าและป้อนรหัสผ่านใหม่สองครั้ง เมื่อปิดสวิตช์ จะมีกล่องยืนยันที่ต้องใช้รหัสผ่านปัจจุบัน สวิตช์แสดงสถานะที่บันทึกไว้ การยกเลิกหรือข้อผิดพลาดจะไม่เปลี่ยนสถานะนั้น เมื่อเปิดการป้องกัน ปุ่ม “เปลี่ยนรหัสผ่าน…” จะเปิดกล่องที่ให้ป้อนรหัสผ่านปัจจุบันและรหัสผ่านใหม่สองครั้ง ใช้ลิงก์ “ลืมรหัสผ่าน…” เพื่อกู้คืนด้วยการยืนยันตัวตนผ่าน macOS รูปแม่กุญแจเล็กบนไอคอนดวงจันทร์หมายถึงเปิดการป้องกันด้วยรหัสผ่านอยู่ รหัสผ่านจำกัดเฉพาะการเอาสิ่งปกคลุมของ Blackout ออก ไม่ได้รักษาความปลอดภัยให้เซสชัน macOS เมื่อเลือก “ยกเลิก” ในกล่องปลดล็อก หน้าจอจะกลับเป็นสีดำ แอปจะละเว้นอินพุตจากแป้นพิมพ์และเมาส์ที่เปิดกล่องขึ้นมาใหม่เป็นเวลา 2 วินาที เพื่อไม่ให้เปิดซ้ำทันที จากนั้นจะกลับมาทำงานตามปกติ"
       ],
       [
         "เริ่มเมื่อเข้าสู่ระบบ",
@@ -1708,7 +1708,7 @@
       ],
       [
         "Mật khẩu tùy ý",
-        "Bảo vệ bằng mật khẩu mặc định tắt. Trong cài đặt Blackout, chọn “Đặt mật khẩu…” và nhập mật khẩu mới hai lần. Khi bảo vệ được bật, dùng “Đổi mật khẩu…” hoặc “Tắt mật khẩu…”. Mỗi tùy chọn mở hộp thoại riêng và yêu cầu mật khẩu hiện tại; khi đổi, bạn cũng phải nhập mật khẩu mới hai lần. Nếu quên, chọn “Quên mật khẩu…” rồi làm theo các bước khôi phục bên dưới. Huy hiệu ổ khóa nhỏ trên biểu tượng mặt trăng cho biết bảo vệ bằng mật khẩu đang bật. Mật khẩu chỉ giới hạn việc gỡ lớp che của Blackout; không bảo vệ phiên làm việc macOS."
+        "Bảo vệ bằng mật khẩu mặc định tắt. Trong cài đặt Blackout, bật công tắc “Yêu cầu mật khẩu để khôi phục màn hình” để mở hộp thoại thiết lập và nhập mật khẩu mới hai lần. Tắt công tắc sẽ mở hộp thoại xác nhận yêu cầu mật khẩu hiện tại. Công tắc hiển thị trạng thái đã lưu; hủy hoặc lỗi không làm thay đổi trạng thái đó. Khi bảo vệ được bật, nút “Đổi mật khẩu…” mở hộp thoại yêu cầu mật khẩu hiện tại và mật khẩu mới hai lần. Dùng liên kết “Quên mật khẩu…” để khôi phục sau khi xác thực bằng macOS. Huy hiệu ổ khóa nhỏ trên biểu tượng mặt trăng cho biết bảo vệ bằng mật khẩu đang bật. Mật khẩu chỉ giới hạn việc gỡ lớp che của Blackout; không bảo vệ phiên làm việc macOS. Chọn “Hủy” trong hộp thoại mở khóa sẽ đưa màn hình về màu đen. Đầu vào từ bàn phím và chuột có thể mở lại hộp thoại sẽ bị bỏ qua trong 2 giây để tránh mở lại ngay lập tức; sau đó ứng dụng phản hồi như bình thường."
       ],
       [
         "Khởi chạy khi đăng nhập",
@@ -1768,7 +1768,7 @@
       ],
       [
         "Kata sandi sesuai pilihan",
-        "Perlindungan kata sandi nonaktif secara bawaan. Di pengaturan Blackout, pilih “Atur Kata Sandi…” dan masukkan kata sandi baru dua kali. Saat perlindungan aktif, gunakan “Ubah Kata Sandi…” atau “Nonaktifkan Kata Sandi…”. Setiap pilihan membuka dialog tersendiri dan memerlukan kata sandi saat ini; saat mengubahnya, kata sandi baru juga harus dimasukkan dua kali. Jika lupa, pilih “Lupa Kata Sandi…” dan ikuti langkah pemulihan di bawah. Lencana gembok kecil pada ikon bulan menandakan perlindungan kata sandi aktif. Kata sandi hanya membatasi penghapusan penutup Blackout; tidak mengamankan sesi macOS Anda."
+        "Perlindungan kata sandi nonaktif secara bawaan. Di pengaturan Blackout, aktifkan sakelar “Wajibkan kata sandi untuk memulihkan layar” untuk membuka dialog pengaturan dan memasukkan kata sandi baru dua kali. Menonaktifkan sakelar membuka dialog konfirmasi yang memerlukan kata sandi saat ini. Sakelar menampilkan status yang tersimpan; pembatalan atau kesalahan tidak mengubahnya. Saat perlindungan aktif, tombol “Ubah Kata Sandi…” membuka dialog untuk kata sandi saat ini dan kata sandi baru dua kali. Gunakan tautan “Lupa Kata Sandi…” untuk pemulihan dengan autentikasi macOS. Lencana gembok kecil pada ikon bulan menandakan perlindungan kata sandi aktif. Kata sandi hanya membatasi penghapusan penutup Blackout; tidak mengamankan sesi macOS Anda. Memilih “Batal” pada dialog pembuka kunci membuat layar tetap hitam. Input papan ketik dan tetikus yang akan membuka dialog lagi diabaikan selama 2 detik agar tidak langsung terbuka kembali; setelah itu perilaku normal dilanjutkan."
       ],
       [
         "Mulai saat masuk",
@@ -1828,7 +1828,7 @@
       ],
       [
         "Kata laluan mengikut pilihan",
-        "Perlindungan kata laluan dimatikan secara lalai. Dalam seting Blackout, pilih “Tetapkan Kata Laluan…” dan masukkan kata laluan baharu dua kali. Apabila perlindungan aktif, gunakan “Tukar Kata Laluan…” atau “Matikan Kata Laluan…”. Setiap pilihan membuka dialog tersendiri dan memerlukan kata laluan semasa; ketika menukarnya, kata laluan baharu juga perlu dimasukkan dua kali. Jika terlupa, pilih “Terlupa Kata Laluan…” dan ikuti langkah pemulihan di bawah. Lencana mangga kecil pada ikon bulan menunjukkan perlindungan kata laluan aktif. Kata laluan hanya mengehadkan pembuangan penutup Blackout; ia tidak melindungi sesi macOS anda."
+        "Perlindungan kata laluan dimatikan secara lalai. Dalam seting Blackout, hidupkan suis “Perlukan kata laluan untuk memulihkan skrin” untuk membuka dialog persediaan dan memasukkan kata laluan baharu dua kali. Mematikan suis membuka dialog pengesahan yang memerlukan kata laluan semasa. Suis menunjukkan keadaan yang disimpan; pembatalan atau ralat tidak mengubahnya. Apabila perlindungan aktif, butang “Tukar Kata Laluan…” membuka dialog untuk kata laluan semasa dan kata laluan baharu dua kali. Gunakan pautan “Terlupa Kata Laluan…” untuk pemulihan dengan pengesahan identiti macOS. Lencana mangga kecil pada ikon bulan menunjukkan perlindungan kata laluan aktif. Kata laluan hanya mengehadkan pembuangan penutup Blackout; ia tidak melindungi sesi macOS anda. Memilih “Batal” dalam dialog buka kunci membiarkan skrin kekal hitam. Input papan kekunci dan tetikus yang akan membuka dialog semula diabaikan selama 2 saat untuk mengelakkan pembukaan serta-merta; selepas itu tingkah laku biasa disambung semula."
       ],
       [
         "Lancar semasa log masuk",
@@ -1888,7 +1888,7 @@
       ],
       [
         "Κωδικός αν το θέλετε",
-        "Η προστασία με κωδικό είναι αρχικά απενεργοποιημένη. Στις ρυθμίσεις Blackout, επιλέξτε «Ορισμός κωδικού…» και εισαγάγετε τον νέο κωδικό δύο φορές. Όταν η προστασία είναι ενεργή, χρησιμοποιήστε «Αλλαγή κωδικού…» ή «Απενεργοποίηση κωδικού…». Κάθε επιλογή ανοίγει ξεχωριστό παράθυρο διαλόγου και απαιτεί τον τρέχοντα κωδικό· για την αλλαγή εισάγετε και τον νέο δύο φορές. Αν τον ξεχάσατε, επιλέξτε «Ξεχάσατε τον κωδικό…» και ακολουθήστε τα παρακάτω βήματα ανάκτησης. Ένα μικρό λουκέτο στο εικονίδιο του φεγγαριού δείχνει ενεργή προστασία με κωδικό. Ο κωδικός περιορίζει μόνο την αφαίρεση της κάλυψης του Blackout· δεν ασφαλίζει τη συνεδρία macOS."
+        "Η προστασία με κωδικό είναι αρχικά απενεργοποιημένη. Στις ρυθμίσεις Blackout, ενεργοποιήστε τον διακόπτη «Απαίτηση συνθηματικού για επαναφορά της οθόνης» για να ανοίξετε το παράθυρο ρύθμισης και να εισαγάγετε τον νέο κωδικό δύο φορές. Η απενεργοποίηση ανοίγει παράθυρο επιβεβαίωσης που απαιτεί τον τρέχοντα κωδικό. Ο διακόπτης δείχνει την αποθηκευμένη κατάσταση· η ακύρωση ή ένα σφάλμα δεν την αλλάζει. Όταν η προστασία είναι ενεργή, το κουμπί «Αλλαγή κωδικού…» ανοίγει παράθυρο για τον τρέχοντα κωδικό και τη διπλή εισαγωγή του νέου. Χρησιμοποιήστε τον σύνδεσμο «Ξεχάσατε τον κωδικό…» για ανάκτηση με επαλήθευση ταυτότητας μέσω macOS. Ένα μικρό λουκέτο στο εικονίδιο του φεγγαριού δείχνει ενεργή προστασία με κωδικό. Ο κωδικός περιορίζει μόνο την αφαίρεση της κάλυψης του Blackout· δεν ασφαλίζει τη συνεδρία macOS. Η επιλογή «Ακύρωση» στο παράθυρο ξεκλειδώματος αφήνει τις οθόνες μαύρες. Για 2 δευτερόλεπτα αγνοείται η είσοδος από πληκτρολόγιο και ποντίκι που θα το άνοιγε ξανά, ώστε να μην εμφανιστεί αμέσως· μετά επανέρχεται η κανονική συμπεριφορά."
       ],
       [
         "Εκκίνηση κατά τη σύνδεση",

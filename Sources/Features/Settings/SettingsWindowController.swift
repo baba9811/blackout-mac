@@ -27,8 +27,9 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
     private let accessibilityLabel = NSTextField(labelWithString: "")
     private let accessibilityStatus = NSTextField(wrappingLabelWithString: "")
     private let accessibilitySettings = NSButton()
+    private let passwordToggle = NSSwitch()
+    private let passwordLabel = NSTextField(wrappingLabelWithString: "")
     private let editPassword = NSButton()
-    private let turnOffPassword = NSButton()
     private let resetPassword = NSButton()
     private var passwordResetContext: LAContext?
     private var passwordSheet: PasswordSheetController?
@@ -51,13 +52,14 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         languageSelector.action = #selector(changeLanguage)
         loginToggle.target = self
         loginToggle.action = #selector(changeLoginItem)
+        passwordToggle.target = self
+        passwordToggle.action = #selector(togglePasswordProtection)
         for (button, action) in [
             (loginSettings, #selector(openLoginSettings)),
             (accessibilitySettings, #selector(openAccessibilitySettings)),
             (checkUpdates, #selector(checkForUpdates)),
             (openRelease, #selector(openReleasePage)),
             (editPassword, #selector(editPasswordSettings)),
-            (turnOffPassword, #selector(disablePassword)),
             (resetPassword, #selector(resetForgottenPassword))
         ] {
             button.target = self
@@ -66,6 +68,16 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         }
         loginToggle.cell?.wraps = true
         loginToggle.cell?.isScrollable = false
+        resetPassword.isBordered = false
+        resetPassword.contentTintColor = .linkColor
+        resetPassword.font = .systemFont(ofSize: NSFont.smallSystemFontSize)
+        let passwordRow = NSStackView(views: [passwordToggle, passwordLabel])
+        passwordRow.orientation = .horizontal
+        passwordRow.alignment = .centerY
+        passwordRow.spacing = 12
+        passwordToggle.setContentCompressionResistancePriority(.required, for: .horizontal)
+        passwordLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        passwordLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         note.textColor = .secondaryLabelColor
         note.font = .systemFont(ofSize: NSFont.smallSystemFontSize)
         for label in [loginStatus, accessibilityStatus, passwordStatus, updateStatus] {
@@ -81,7 +93,7 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
             versionLabel, checkUpdates, updateStatus, openRelease, separators[3],
             loginToggle, loginStatus, loginSettings, separators[1],
             accessibilityLabel, accessibilityStatus, accessibilitySettings, separators[2],
-            passwordStatus, editPassword, turnOffPassword, resetPassword, note
+            passwordRow, passwordStatus, editPassword, resetPassword, note
         ])
         stack.orientation = .vertical
         stack.alignment = .leading
@@ -108,6 +120,8 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
             stack.topAnchor.constraint(equalTo: document.topAnchor, constant: 24),
             stack.bottomAnchor.constraint(equalTo: document.bottomAnchor, constant: -24)
         ])
+        passwordRow.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
+        passwordLabel.trailingAnchor.constraint(equalTo: passwordRow.trailingAnchor).isActive = true
         for view in [loginToggle, loginStatus, accessibilityStatus, passwordStatus, note, updateStatus] + separators {
             view.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
         }
@@ -164,8 +178,9 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         loginSettings.title = L("Open Login Settings…")
         accessibilityLabel.stringValue = L("Input Blocking")
         accessibilitySettings.title = L("Open Input Permission Settings…")
-        editPassword.title = L(passwords.isEnabled ? "Change Password…" : "Set Password…")
-        turnOffPassword.title = L("Turn Off Password…")
+        passwordLabel.stringValue = L("Require a password to restore the screen")
+        passwordToggle.setAccessibilityLabel(passwordLabel.stringValue)
+        editPassword.title = L("Change Password…")
         resetPassword.title = L("Forgot Password…")
         note.stringValue = L("Password protection is optional. Blackout covers the screen within the app and does not replace the macOS screen lock.")
             + "\n" + L("Emergency exit: hold Escape for 3 seconds. This bypasses the app password.")
@@ -236,18 +251,25 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
 
     private func refreshPasswordActions() {
         let idle = passwordResetContext == nil && passwordSheet == nil
+        passwordToggle.state = passwords.isEnabled ? .on : .off
+        passwordToggle.isEnabled = idle
         editPassword.isEnabled = idle
-        turnOffPassword.isEnabled = idle
         resetPassword.isEnabled = idle
-        turnOffPassword.isHidden = !passwords.isEnabled
+        editPassword.isHidden = !passwords.isEnabled
         resetPassword.isHidden = !passwords.isEnabled
     }
 
     @objc private func editPasswordSettings() {
-        showPasswordSheet(passwords.isEnabled ? .change : .set)
+        guard passwords.isEnabled else { return }
+        showPasswordSheet(.change)
     }
 
-    @objc private func disablePassword() { showPasswordSheet(.turnOff) }
+    @objc private func togglePasswordProtection() {
+        let enabled = passwords.isEnabled
+        passwordToggle.state = enabled ? .on : .off
+        guard passwordResetContext == nil, passwordSheet == nil else { return }
+        showPasswordSheet(enabled ? .turnOff : .set)
+    }
 
     private func showPasswordSheet(_ mode: PasswordSheetController.Mode) {
         guard passwordResetContext == nil, passwordSheet == nil, let window, window.isVisible else { return }

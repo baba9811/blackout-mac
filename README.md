@@ -31,7 +31,8 @@ Current builds are locally ad-hoc signed, **not Apple-notarized**. macOS may req
 - **Dock:** the moon app icon appears while Settings is open. Closing Settings leaves Blackout running in the menu bar.
 - **Language:** defaults to your OS preference. Choose a language in Settings to override it immediately.
 - **Launch at login:** enable it in Settings. This starts the menu bar app after login; it does not automatically black out the screen.
-- **Password:** optional and off by default. Settings shows **Set Password…**, or **Change Password…** and **Turn Off Password…** when enabled. Each opens a separate dialog with only the required fields. Changes and normal removal require the current password; Cancel leaves it unchanged.
+- **Password:** optional and off by default. Use **Require a password to restore the screen** in Settings. Turning it on opens a new-password dialog; turning it off asks for the current password. The switch changes only after saving succeeds; Cancel leaves it unchanged. When enabled, **Change Password…** opens a separate change dialog and **Forgot Password…** offers recovery.
+- **Cancel unlocking:** Cancel returns to the black screen. Keyboard and mouse input cannot reopen the prompt for two seconds, then normal wake behavior resumes.
 - **Emergency exit:** hold **Escape for 3 seconds** to end blackout, including when a password is enabled. If the app cannot respond, the recovery watchdog quits it; reopen Blackout afterward. This intentionally bypasses the app password and does not erase it.
 - **Forgotten password:** after leaving blackout, choose **Settings… → Forgot Password…** and authenticate with macOS using Touch ID or your Mac login password. Only Blackout's saved password is reset; language and login preferences remain. Cancelling authentication changes nothing.
 
