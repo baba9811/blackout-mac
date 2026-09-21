@@ -1,6 +1,8 @@
 # BlackoutMac
 
-A macOS menu bar app that blacks out every display, blocks input, and offers an optional password to return.
+Keep background AI work running while your screens stay covered. Add a password if you want. [Compatibility →](docs/usage/README.md#ai-work)
+
+I built BlackoutMac after the password field disappeared on my macOS 27.0 Lock Screen.
 
 **[Download DMG](https://github.com/baba9811/blackout-mac/releases)** · [Website](https://baba9811.github.io/blackout-mac/) · [한국어](docs/ko/README.md)
 
@@ -22,8 +24,6 @@ Blackout is a screen overlay; its password only gates normal dismissal. To secur
 ## Preview
 
 ![Blackout's password prompt: a moon icon, password field, and Cancel and Unlock buttons on a black background.](docs/assets/unlock-preview.png)
-
-*Optional password prompt, rendered from the current app source. Password protection is off by default.*
 
 ## Documentation
 

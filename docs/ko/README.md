@@ -1,6 +1,8 @@
 # BlackoutMac
 
-모든 화면을 검게 가리고 입력을 차단하는 macOS 메뉴 막대 앱입니다. 원하면 해제 비밀번호를 설정할 수 있습니다.
+백그라운드 AI 작업은 계속하고, 화면만 검게 가립니다. 원하면 해제 비밀번호를 설정하세요. [호환 범위 →](../usage/ko.md#ai-작업)
+
+제 Mac의 macOS 27.0 잠금 화면에서 비밀번호 입력란이 사라지는 일을 겪은 뒤 만들었습니다.
 
 **[DMG 다운로드](https://github.com/baba9811/blackout-mac/releases)** · [웹사이트](https://baba9811.github.io/blackout-mac/ko/) · [English](../../README.md)
 
@@ -22,8 +24,6 @@ Blackout은 화면을 가리는 앱이며, 비밀번호는 일반적인 해제�
 ## 미리보기
 
 ![검은 배경 위 Blackout 비밀번호 해제창: 달 아이콘, 비밀번호 입력란, 취소와 해제 버튼.](../assets/unlock-preview.png)
-
-*현재 앱 소스로 렌더링한 선택형 비밀번호 해제창입니다. 비밀번호는 기본적으로 꺼져 있으며, 화면 언어는 설정에서 바꿀 수 있습니다.*
 
 ## 자세한 안내
 
