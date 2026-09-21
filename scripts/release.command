@@ -10,7 +10,6 @@ OUTPUT="$ROOT/dist"
 mkdir -p "$OUTPUT" "$STAGING/BlackoutMac"
 BLACKOUT_REQUIRE_SIGNING=1 zsh "$SCRIPT_DIR/build.command" "$STAGING/BlackoutMac/Blackout.app" --universal
 ln -s /Applications "$STAGING/BlackoutMac/Applications"
-cp "$ROOT/README.md" "$STAGING/BlackoutMac/README.md"
 cp "$ROOT/LICENSE" "$STAGING/BlackoutMac/LICENSE"
 hdiutil create -ov -volname BlackoutMac -srcfolder "$STAGING/BlackoutMac" \
   -format UDZO "$OUTPUT/BlackoutMac-$APP_VERSION-universal.dmg"
