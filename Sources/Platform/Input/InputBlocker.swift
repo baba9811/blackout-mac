@@ -1,6 +1,20 @@
 import Foundation
 import CoreGraphics
 import ApplicationServices
+import Darwin
+
+struct EmergencyExitHold {
+    private var beganAt: TimeInterval?
+    private var fired = false
+
+    mutating func update(pressed: Bool, uptime: TimeInterval) -> Bool {
+        guard pressed else { beganAt = nil; fired = false; return false }
+        guard let beganAt else { self.beganAt = uptime; return false }
+        guard !fired, uptime - beganAt >= 3 else { return false }
+        fired = true
+        return true
+    }
+}
 
 final class InputBlocker {
     enum Route { case pass, discard, wake, deliverToBlackout, switchInputSource }
@@ -8,9 +22,11 @@ final class InputBlocker {
     private let lock = NSLock()
     private var active = false
     private var prompting = false
+    private var acceptingInput = false
     private var wakePending = false
     private var tap: CFMachPort?
     private var runLoop: CFRunLoop?
+    private var emergencyTimer: DispatchSourceTimer?
     private var generation: UInt64 = 0
     private final class TapContext {
         weak var owner: InputBlocker?
@@ -23,6 +39,7 @@ final class InputBlocker {
     var onWake: (() -> Void)?
     var onFailure: (() -> Void)?
     var onInputSourceChange: (() -> Void)?
+    var onEmergencyExit: (() -> Void)?
 
     var isRunning: Bool {
         guard let currentTap = lock.withLock({ active ? tap : nil }) else { return false }
@@ -72,22 +89,57 @@ final class InputBlocker {
             stop()
             return false
         }
+        startEmergencyExitWatchdog()
         return true
     }
 
-    func setPrompting(_ value: Bool) { lock.withLock { prompting = value } }
+    func startEmergencyExitWatchdog(isEscapePressed: @escaping () -> Bool = {
+        CGEventSource.keyState(.hidSystemState, key: 53)
+    }) {
+        // Read physical key state independently of AppKit and event-tap delivery.
+        // A secure text field or an unresponsive main thread must not disable the exit gesture.
+        let queue = DispatchQueue(label: "Blackout emergency exit", qos: .userInteractive)
+        let generation = lock.withLock { self.generation }
+        let timer = DispatchSource.makeTimerSource(queue: queue)
+        var hold = EmergencyExitHold()
+        timer.schedule(deadline: .now(), repeating: .milliseconds(100))
+        timer.setEventHandler { [weak self] in
+            guard let self, self.lock.withLock({ self.generation == generation }) else { return }
+            guard hold.update(pressed: isEscapePressed(),
+                              uptime: ProcessInfo.processInfo.systemUptime) else { return }
+            self.deliver(for: generation) { $0.onEmergencyExit?() }
+            // Usually the main queue ends blackout and invalidates this generation.
+            // If it is stuck, process termination releases its windows and event tap.
+            queue.asyncAfter(deadline: .now() + 1) { [weak self] in
+                guard let self else { return }
+                self.lock.withLock {
+                    guard self.generation == generation else { return }
+                    kill(getpid(), SIGTERM)
+                }
+            }
+        }
+        lock.withLock { emergencyTimer = timer }
+        timer.resume()
+    }
+
+    func setPrompting(_ value: Bool, acceptingInput: Bool = true) {
+        lock.withLock { prompting = value; self.acceptingInput = acceptingInput }
+    }
 
     func stop() {
-        let resources = lock.withLock { () -> (CFMachPort?, CFRunLoop?) in
+        let resources = lock.withLock { () -> (CFMachPort?, CFRunLoop?, DispatchSourceTimer?) in
             active = false
             generation &+= 1
             prompting = false
+            acceptingInput = false
             wakePending = false
-            let resources = (tap, runLoop)
+            let resources = (tap, runLoop, emergencyTimer)
             tap = nil
             runLoop = nil
+            emergencyTimer = nil
             return resources
         }
+        resources.2?.cancel()
         if let tap = resources.0 { CFMachPortInvalidate(tap) }
         if let loop = resources.1 {
             CFRunLoopPerformBlock(loop, CFRunLoopMode.commonModes.rawValue) { CFRunLoopStop(loop) }
@@ -111,7 +163,8 @@ final class InputBlocker {
         }
         let route = lock.withLock { () -> Route in
             guard self.generation == generation, active else { return .discard }
-            let route = Self.route(type: type, event: event, active: active, prompting: prompting)
+            let route = Self.route(type: type, event: event, active: active,
+                                   prompting: prompting, acceptingInput: acceptingInput)
             if route == .wake {
                 guard !wakePending else { return .discard }
                 wakePending = true
@@ -137,7 +190,7 @@ final class InputBlocker {
         }
     }
 
-    static func route(type: CGEventType, event: CGEvent, active: Bool, prompting: Bool) -> Route {
+    static func route(type: CGEventType, event: CGEvent, active: Bool, prompting: Bool, acceptingInput: Bool = true) -> Route {
         guard active else { return .pass }
         let keyboard = type == .keyDown || type == .keyUp || type == .flagsChanged
         let mouse: Set<CGEventType> = [
@@ -146,7 +199,7 @@ final class InputBlocker {
             .leftMouseDragged, .rightMouseDragged, .otherMouseDragged, .scrollWheel
         ]
         guard keyboard || mouse.contains(type) else { return .discard }
-        guard prompting else {
+        guard prompting, acceptingInput else {
             return type == .keyDown || mouse.contains(type) ? .wake : .discard
         }
         if keyboard {

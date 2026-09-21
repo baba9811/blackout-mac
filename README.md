@@ -31,13 +31,15 @@ Current builds are locally ad-hoc signed, **not Apple-notarized**. macOS may req
 - **Dock:** the moon app icon appears while Settings is open. Closing Settings leaves Blackout running in the menu bar.
 - **Language:** defaults to your OS preference. Choose a language in Settings to override it immediately.
 - **Launch at login:** enable it in Settings. This starts the menu bar app after login; it does not automatically black out the screen.
-- **Password:** optional and disabled by default. Changing or removing a saved password requires the current password.
+- **Password:** optional and off by default. Settings shows **Set Password…**, or **Change Password…** and **Turn Off Password…** when enabled. Each opens a separate dialog with only the required fields. Changes and normal removal require the current password; Cancel leaves it unchanged.
+- **Emergency exit:** hold **Escape for 3 seconds** to end blackout, including when a password is enabled. If the app cannot respond, the recovery watchdog quits it; reopen Blackout afterward. This intentionally bypasses the app password and does not erase it.
+- **Forgotten password:** after leaving blackout, choose **Settings… → Forgot Password…** and authenticate with macOS using Touch ID or your Mac login password. Only Blackout's saved password is reset; language and login preferences remain. Cancelling authentication changes nothing.
 
 ## Input protection and limitations
 
 Blackout requires macOS input-control permission to install an active keyboard/mouse event filter. While the filter is running, original input is consumed; allowed password-entry events are directed only to Blackout. Input blocking and app-switching restrictions are removed when blackout ends. If the filter cannot start, Blackout refuses to cover the screen. If it stops, Blackout uncovers the screen and reports the problem.
 
-**This is an application overlay, not the macOS security lock.** Force quit, other privileged software, macOS security UI, and Secure Event Input are OS-controlled boundaries. Use **Control + Command + Q** when you need to protect access to your Mac. Do not treat a black overlay as proof that the computer is securely locked.
+**This is an application overlay, not the macOS security lock.** The optional password only gates normal dismissal through Blackout. Automation already authorized through macOS accessibility permissions may still read or control other apps beneath the cover. Force quit, other privileged software, macOS security UI, and Secure Event Input are OS-controlled boundaries. Use **macOS Lock Screen (Control + Command + Q)** when you need to secure your session. Do not treat a black overlay as proof that the computer is securely locked.
 
 Settings stay on this Mac. Passwords are stored as salted PBKDF2-HMAC-SHA256 verifiers (600,000 iterations), not plaintext. The app has no network service or analytics.
 
@@ -55,7 +57,7 @@ If Blackout still asks for permission when its switch is already on, quit Blacko
 
 ## Development and recovery
 
-See the [developer guide](docs/development.md) for source builds, tests, release packaging, password recovery, and uninstalling a local build. The [architecture guide](docs/architecture.md) explains the folder boundaries and dependency direction.
+See the [developer guide](https://github.com/baba9811/blackout-mac/blob/main/docs/development.md) for source builds, tests, release packaging, password recovery, and uninstalling a local build. The [architecture guide](docs/architecture.md) explains the folder boundaries and dependency direction.
 
 ## Website
 

@@ -60,3 +60,18 @@
 "No releases have been published yet." = "Ще не опубліковано жодного випуску.";
 "Could not check for updates. Please try again." = "Не вдалося перевірити оновлення. Спробуйте знову.";
 "Open Release Page…" = "Відкрити сторінку випуску…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "Установити пароль…";
+"Change Password…" = "Змінити пароль…";
+"Turn Off Password…" = "Вимкнути пароль…";
+"Forgot Password…" = "Забули пароль…";
+"Set Password" = "Установити пароль";
+"Change Password" = "Змінити пароль";
+"Turn Off Password" = "Вимкнути пароль";
+"Current password" = "Поточний пароль";
+"Authenticate with macOS to reset your Blackout password." = "Підтвердьте особу в macOS, щоб скинути пароль Blackout.";
+"Password reset was not completed. Your password is unchanged." = "Скидання пароля не завершено. Пароль не змінено.";
+"Password reset. Password protection is off." = "Пароль скинуто. Захист паролем вимкнено.";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "Не вдалося прочитати збережені параметри пароля. Для відновлення виберіть «Забули пароль» у параметрах.";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Аварійний вихід: утримуйте Escape 3 секунди. Це дає змогу обійти пароль програми.";

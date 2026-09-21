@@ -28,7 +28,7 @@
       ],
       [
         "Choose a password, or don’t",
-        "Password protection is off by default. Open Settings from the Blackout menu to enable it and enter the new password twice. Changing or disabling an existing password requires the current password. When enabled, use your password to dismiss the black screen. Choose “Save Password Settings” to apply your password changes. A small lock badge on the moon menu icon indicates that password protection is enabled."
+        "Password protection is off by default. In Blackout Settings, choose “Set Password…” and enter the new password twice. When protection is on, use “Change Password…” or “Turn Off Password…”. Each opens its own dialog and requires the current password; changing it also requires the new password twice. If you forgot it, choose “Forgot Password…” and follow the recovery steps below. A small lock badge on the moon menu icon indicates that password protection is enabled. The password only gates dismissing Blackout; it does not secure your macOS session."
       ],
       [
         "Ready when you log in",
@@ -44,13 +44,13 @@
       ],
       [
         "If something gets stuck",
-        "If input blocking stops, the black covers are removed. Reopen “Open Input Permission Settings…” from Blackout Settings, check permission, and restart the app. If you forget your password or the app stops responding, use macOS Force Quit or restart. This can end the cover without the app password."
+        "Hold Escape for 3 seconds to end blackout, bypassing the app password. If the app is unresponsive, it quits about 1 second later; reopen Blackout if needed. If input blocking stops, the black covers are removed. Reopen “Open Input Permission Settings…” from Blackout Settings, check permission, and restart the app. If you forgot the password, choose “Forgot Password…” in Settings and authenticate with Touch ID or your Mac login password. This removes only the Blackout password and preserves other preferences. macOS Force Quit or restart remains a fallback."
       ]
     ],
     "faqs": [
       [
         "Is this a macOS security lock?",
-        "No. BlackoutMac covers displays and intercepts ordinary keyboard and mouse input. Force Quit, macOS security screens, and other system behavior are outside its guarantee. Use the macOS Lock Screen when you need to secure your session."
+        "No. BlackoutMac covers displays and blocks ordinary keyboard and mouse input. Accessibility automation that already has permission, such as tools using AX APIs, may still read or control other apps while the screens are covered. The password only gates dismissing Blackout; it does not secure your macOS session. Force Quit, macOS security screens, and other system behavior are outside its guarantee. Use the macOS Lock Screen when you need to secure your session."
       ],
       [
         "Input permission is on. Why won’t blackout start?",
@@ -88,7 +88,7 @@
       ],
       [
         "비밀번호는 선택 사항",
-        "기본값은 비밀번호 없음입니다. Blackout 메뉴의 설정에서 비밀번호를 켜고 새 비밀번호를 두 번 입력하세요. 기존 비밀번호를 바꾸거나 끄려면 현재 비밀번호가 필요합니다. 설정한 경우 비밀번호를 입력해야 화면 가림이 해제됩니다. “비밀번호 설정 저장”을 눌러 변경 사항을 적용하세요. 메뉴 막대의 달 아이콘에 작은 자물쇠가 붙으면 비밀번호 보호가 켜진 상태입니다."
+        "기본값은 비밀번호 없음입니다. Blackout 설정에서 “비밀번호 설정…”을 선택하고 새 비밀번호를 두 번 입력하세요. 비밀번호가 켜져 있으면 “비밀번호 변경…” 또는 “비밀번호 끄기…”를 사용하세요. 각 버튼은 별도의 대화상자를 열며 현재 비밀번호가 필요합니다. 변경할 때는 새 비밀번호도 두 번 입력합니다. 비밀번호를 잊었다면 “비밀번호를 잊으셨나요…”를 선택하고 아래 복구 안내를 따르세요. 메뉴 막대의 달 아이콘에 작은 자물쇠가 붙으면 비밀번호 보호가 켜진 상태입니다. 비밀번호는 Blackout의 화면 가림 해제만 제한하며 macOS 세션을 보호하지 않습니다."
       ],
       [
         "로그인할 때 자동 실행",
@@ -104,13 +104,13 @@
       ],
       [
         "문제가 생겼을 때",
-        "입력 차단이 중단되면 화면 가림을 해제합니다. Blackout 설정의 “입력 권한 설정 열기…”를 다시 열어 권한을 확인하고 앱을 재실행하세요. 비밀번호를 잊었거나 앱이 응답하지 않으면 macOS 강제 종료 또는 재시동을 사용할 수 있습니다. 이 경우 앱 비밀번호 없이도 화면 가림이 종료될 수 있습니다."
+        "Escape 키를 3초 동안 누르면 앱 비밀번호를 건너뛰고 화면 가림을 해제합니다. 앱이 응답하지 않으면 약 1초 뒤 앱이 종료되므로, 필요하면 Blackout을 다시 여세요. 입력 차단이 중단되면 화면 가림을 해제합니다. Blackout 설정의 “입력 권한 설정 열기…”를 다시 열어 권한을 확인하고 앱을 재실행하세요. 비밀번호를 잊었다면 설정의 “비밀번호를 잊으셨나요…”에서 Touch ID 또는 Mac 로그인 비밀번호로 인증하세요. Blackout 비밀번호만 삭제되며 다른 설정은 유지됩니다. 마지막 수단으로 macOS 강제 종료나 재시동도 사용할 수 있습니다."
       ]
     ],
     "faqs": [
       [
         "macOS의 보안 잠금인가요?",
-        "아닙니다. 화면을 가리고 일반 키보드·마우스 입력을 가로채는 앱입니다. 강제 종료, macOS 보안 화면 등 시스템 동작까지 막지는 못합니다. 세션을 안전하게 잠그려면 macOS의 화면 잠금을 사용하세요."
+        "아닙니다. BlackoutMac은 화면을 가리고 일반 키보드·마우스 입력을 차단하는 앱입니다. 이미 접근성 권한을 받은 자동화 도구는 AX API 등을 통해 화면이 가려진 동안에도 다른 앱을 읽거나 제어할 수 있습니다. 비밀번호는 Blackout의 화면 가림 해제만 제한하며 macOS 세션을 보호하지 않습니다. 강제 종료, macOS 보안 화면 등 시스템 동작까지 막지는 못합니다. 세션을 안전하게 잠그려면 macOS의 화면 잠금을 사용하세요."
       ],
       [
         "입력 권한이 켜져 있는데도 화면 가리기가 안 되나요?",
@@ -148,7 +148,7 @@
       ],
       [
         "パスワードはお好みで",
-        "初期状態ではパスワードは無効です。Blackoutメニューの設定で有効にし、新しいパスワードを2回入力します。変更や無効化には現在のパスワードが必要です。有効な場合はパスワードを入力して画面を元に戻します。 「パスワード設定を保存」で変更を適用してください。メニューバーの月アイコンに小さな鍵が付くと、パスワード保護が有効です。"
+        "初期状態ではパスワードは無効です。Blackoutの設定で「パスワードを設定…」を選び、新しいパスワードを2回入力します。有効な場合は「パスワードを変更…」または「パスワードを無効にする…」を使用します。それぞれ専用のダイアログが開き、現在のパスワードが必要です。変更時は新しいパスワードも2回入力します。忘れた場合は「パスワードをお忘れですか…」を選び、下の復旧手順に従ってください。メニューバーの月アイコンに小さな鍵が付くと、パスワード保護が有効です。パスワードはBlackoutの画面の覆いを解除する操作のみを制限し、macOSのセッションを保護するものではありません。"
       ],
       [
         "ログイン時に自動起動",
@@ -164,13 +164,13 @@
       ],
       [
         "うまく動かないときは",
-        "入力の遮断が停止すると画面の覆いを解除します。Blackoutの設定から「入力権限の設定を開く…」を開き直して権限を確認し、アプリを再起動してください。パスワードを忘れた場合や応答しない場合は、macOSの強制終了や再起動を使用できます。アプリのパスワードなしで覆いが解除される場合があります。"
+        "Escapeキーを3秒間押し続けると、アプリのパスワードを入力せずに画面の覆いを解除できます。アプリが応答しない場合は約1秒後に終了するので、必要に応じてBlackoutを開き直してください。入力の遮断が停止すると画面の覆いを解除します。Blackoutの設定から「入力権限の設定を開く…」を開き直して権限を確認し、アプリを再起動してください。パスワードを忘れた場合は、設定の「パスワードをお忘れですか…」でTouch IDまたはMacのログインパスワードを使って認証してください。Blackoutのパスワードだけが削除され、ほかの設定は保持されます。最後の手段としてmacOSの強制終了や再起動も使用できます。"
       ]
     ],
     "faqs": [
       [
         "macOSのセキュリティロックですか？",
-        "いいえ。画面を覆い、通常のキーボード・マウス入力を制御するアプリです。強制終了やmacOSのセキュリティ画面などのシステム動作は保証の対象外です。セッションを保護するにはmacOSの画面ロックを使用してください。"
+        "いいえ。BlackoutMacは画面を覆い、通常のキーボード・マウス入力を遮断するアプリです。すでにアクセシビリティ権限を持つ自動化ツールは、AX APIなどを通じて、画面が覆われている間も他のアプリの情報を読み取ったり操作したりできる場合があります。パスワードはBlackoutの画面の覆いを解除する操作のみを制限し、macOSのセッションを保護するものではありません。強制終了やmacOSのセキュリティ画面などのシステム動作は保証の対象外です。セッションを保護するにはmacOSの画面ロックを使用してください。"
       ],
       [
         "入力権限がオンなのに画面を覆えないのはなぜですか？",
@@ -208,7 +208,7 @@
       ],
       [
         "密码，由你决定",
-        "默认不启用密码。在 Blackout 菜单的设置中启用，并输入两次新密码。更改或关闭现有密码需要当前密码。启用后，输入密码即可解除屏幕遮盖。 选择“保存密码设置”以应用更改。菜单栏月亮图标上的小锁标记表示密码保护已启用。"
+        "默认不启用密码。在 Blackout 设置中选择“设置密码…”，并输入两次新密码。启用后，可使用“更改密码…”或“关闭密码…”。每个按钮都会打开独立对话框，并要求输入当前密码；更改密码时还需输入两次新密码。如果忘记密码，请选择“忘记密码…”，并按照下方恢复说明操作。菜单栏月亮图标上的小锁标记表示密码保护已启用。密码只限制解除 Blackout 的屏幕遮盖，并不能保护 macOS 会话。"
       ],
       [
         "登录时自动启动",
@@ -224,13 +224,13 @@
       ],
       [
         "遇到问题时",
-        "输入阻止功能失效时，黑色遮盖会被移除。从 Blackout 设置重新打开“打开输入权限设置…”，检查权限后重新启动应用。忘记密码或应用无响应时，可使用 macOS 强制退出或重新启动；这可能无需应用密码就结束遮盖。"
+        "按住 Escape 键 3 秒即可绕过应用密码，解除屏幕遮盖。如果应用无响应，它会在约 1 秒后退出；必要时重新打开 Blackout。输入阻止功能失效时，黑色遮盖会被移除。从 Blackout 设置重新打开“打开输入权限设置…”，检查权限后重新启动应用。如果忘记密码，请在设置中选择“忘记密码…”，然后使用 Touch ID 或 Mac 登录密码进行身份验证。这只会删除 Blackout 密码，其他偏好设置会保留。还可将 macOS 强制退出或重新启动作为最后的恢复手段。"
       ]
     ],
     "faqs": [
       [
         "这是 macOS 安全锁吗？",
-        "不是。BlackoutMac 只遮盖屏幕并拦截普通键盘和鼠标输入。强制退出、macOS 安全界面等系统行为不在保证范围内。需要保护会话时，请使用 macOS 锁定屏幕。"
+        "不是。BlackoutMac 遮盖屏幕并阻止普通键盘和鼠标输入。已获得辅助功能权限的自动化工具，例如使用 AX API 的工具，在屏幕被遮盖时仍可能读取或控制其他应用。密码只限制解除 Blackout 的屏幕遮盖，并不能保护 macOS 会话。强制退出、macOS 安全界面等系统行为不在保证范围内。需要保护会话时，请使用 macOS 锁定屏幕。"
       ],
       [
         "输入权限已开启，为什么仍无法遮盖屏幕？",
@@ -268,7 +268,7 @@
       ],
       [
         "密碼，由你決定",
-        "預設不啟用密碼。在 Blackout 選單的設定中啟用，並輸入兩次新密碼。更改或關閉現有密碼需要目前密碼。啟用後，輸入密碼即可解除螢幕遮蓋。 選擇「儲存密碼設定」以套用更改。選單列月亮圖像上的小鎖標記表示密碼保護已啟用。"
+        "預設不啟用密碼。在 Blackout 設定中選擇「設定密碼…」，並輸入兩次新密碼。啟用後，可使用「更改密碼…」或「關閉密碼…」。每個按鈕都會開啟獨立對話框，並要求輸入目前密碼；更改密碼時還需輸入兩次新密碼。如果忘記密碼，請選擇「忘記密碼…」，並依照下方復原說明操作。選單列月亮圖像上的小鎖標記表示密碼保護已啟用。密碼只限制解除 Blackout 的螢幕遮蓋，並不能保護 macOS 工作階段。"
       ],
       [
         "登入時自動啟動",
@@ -284,13 +284,13 @@
       ],
       [
         "遇到問題時",
-        "輸入阻擋功能失效時，黑色遮蓋會被移除。從 Blackout 設定重新開啟「打開輸入權限設定…」，檢查權限後重新啟動 App。忘記密碼或 App 沒有回應時，可使用 macOS 強制結束或重新啟動；這可能無需 App 密碼就結束遮蓋。"
+        "按住 Escape 鍵 3 秒即可略過 App 密碼，解除螢幕遮蓋。如果 App 沒有回應，它會在約 1 秒後結束；必要時重新開啟 Blackout。輸入阻擋功能失效時，黑色遮蓋會被移除。從 Blackout 設定重新開啟「打開輸入權限設定…」，檢查權限後重新啟動 App。如果忘記密碼，請在設定中選擇「忘記密碼…」，然後使用 Touch ID 或 Mac 登入密碼進行驗證。這只會刪除 Blackout 密碼，其他偏好設定會保留。也可將 macOS 強制結束或重新啟動作為最後的復原方式。"
       ]
     ],
     "faqs": [
       [
         "這是 macOS 安全鎖嗎？",
-        "不是。BlackoutMac 只遮蓋螢幕並攔截一般鍵盤和滑鼠輸入。強制結束、macOS 安全畫面等系統行為不在保證範圍內。需要保護工作階段時，請使用 macOS 鎖定螢幕。"
+        "不是。BlackoutMac 遮蓋螢幕並阻擋一般鍵盤和滑鼠輸入。已取得輔助使用權限的自動化工具，例如使用 AX API 的工具，在螢幕被遮蓋時仍可能讀取或控制其他 App。密碼只限制解除 Blackout 的螢幕遮蓋，並不能保護 macOS 工作階段。強制結束、macOS 安全畫面等系統行為不在保證範圍內。需要保護工作階段時，請使用 macOS 鎖定螢幕。"
       ],
       [
         "輸入權限已開啟，為什麼仍無法遮蓋螢幕？",
@@ -328,7 +328,7 @@
       ],
       [
         "Contraseña opcional",
-        "Está desactivada por defecto. Actívala en Ajustes del menú Blackout e introduce la nueva contraseña dos veces. Para cambiarla o desactivarla necesitas la actual. Cuando está activa, introduce la contraseña para quitar la cubierta. Pulsa «Guardar ajustes de contraseña» para aplicar los cambios. Una pequeña insignia de candado en el icono de luna indica que la protección con contraseña está activa."
+        "La protección con contraseña está desactivada por defecto. En los ajustes de Blackout, elige «Establecer contraseña…» e introduce la nueva contraseña dos veces. Cuando está activa, usa «Cambiar contraseña…» o «Desactivar contraseña…». Cada opción abre su propio diálogo y requiere la contraseña actual; para cambiarla, también debes introducir la nueva dos veces. Si la olvidaste, elige «Olvidé la contraseña…» y sigue los pasos de recuperación de abajo. Una pequeña insignia de candado en el icono de luna indica que la protección con contraseña está activa. La contraseña solo limita la retirada de la cubierta de Blackout; no protege tu sesión de macOS."
       ],
       [
         "Inicio automático",
@@ -344,13 +344,13 @@
       ],
       [
         "Si algo falla",
-        "Si falla el bloqueo de entradas, se retiran las cubiertas. Vuelve a abrir «Abrir ajustes de permisos de entrada…» desde los ajustes de Blackout, revisa el permiso y reinicia la app. Si olvidas la contraseña o la app no responde, fuerza su salida o reinicia macOS. Esto puede quitar la cubierta sin la contraseña de la app."
+        "Mantén pulsada la tecla Escape durante 3 segundos para quitar la cubierta sin introducir la contraseña de la app. Si la app no responde, se cierra aproximadamente 1 segundo después; vuelve a abrir Blackout si es necesario. Si falla el bloqueo de entradas, se retiran las cubiertas. Vuelve a abrir «Abrir ajustes de permisos de entrada…» desde los ajustes de Blackout, revisa el permiso y reinicia la app. Si olvidaste la contraseña, elige «Olvidé la contraseña…» en Ajustes y autentícate con Touch ID o la contraseña de inicio de sesión del Mac. Esto elimina solo la contraseña de Blackout y conserva las demás preferencias. Como último recurso, puedes forzar la salida o reiniciar macOS."
       ]
     ],
     "faqs": [
       [
         "¿Es un bloqueo de seguridad de macOS?",
-        "No. Cubre las pantallas e intercepta entradas habituales. Forzar salida, las pantallas de seguridad y otras funciones del sistema quedan fuera de su garantía. Para proteger tu sesión usa Bloquear pantalla de macOS."
+        "No. BlackoutMac cubre las pantallas y bloquea las entradas habituales del teclado y el ratón. Las herramientas de automatización con permisos de accesibilidad ya concedidos, como las que usan las API AX, pueden seguir leyendo o controlando otras apps mientras las pantallas están cubiertas. La contraseña solo limita la retirada de la cubierta de Blackout; no protege tu sesión de macOS. Forzar salida, las pantallas de seguridad y otras funciones del sistema quedan fuera de su garantía. Para proteger tu sesión usa Bloquear pantalla de macOS."
       ],
       [
         "El permiso de entrada está activado. ¿Por qué no se cubren las pantallas?",
@@ -388,7 +388,7 @@
       ],
       [
         "Un mot de passe, si vous voulez",
-        "Désactivé par défaut. Activez-le dans les réglages du menu Blackout et saisissez le nouveau mot de passe deux fois. Sa modification ou sa désactivation nécessite le mot de passe actuel. Une fois activé, saisissez-le pour rétablir l’affichage. Choisissez « Enregistrer les réglages du mot de passe » pour appliquer les modifications. Un petit cadenas sur l’icône de lune indique que la protection par mot de passe est activée."
+        "La protection par mot de passe est désactivée par défaut. Dans les réglages Blackout, choisissez « Définir un mot de passe… » et saisissez le nouveau mot de passe deux fois. Une fois la protection activée, utilisez « Modifier le mot de passe… » ou « Désactiver le mot de passe… ». Chaque option ouvre sa propre boîte de dialogue et exige le mot de passe actuel ; pour le modifier, saisissez aussi le nouveau deux fois. En cas d’oubli, choisissez « Mot de passe oublié… » et suivez les étapes de récupération ci-dessous. Un petit cadenas sur l’icône de lune indique que la protection par mot de passe est activée. Le mot de passe limite uniquement la levée du masquage de Blackout ; il ne sécurise pas votre session macOS."
       ],
       [
         "Lancer à l’ouverture de session",
@@ -404,13 +404,13 @@
       ],
       [
         "En cas de problème",
-        "Si le blocage des entrées cesse, le masquage est retiré. Rouvrez « Ouvrir les réglages d’autorisation des entrées… » depuis les réglages Blackout, vérifiez l’autorisation, puis relancez l’app. En cas d’oubli du mot de passe ou d’absence de réponse, forcez à quitter ou redémarrez macOS. Cela peut retirer le masquage sans le mot de passe de l’app."
+        "Maintenez la touche Escape pendant 3 secondes pour retirer le masquage sans saisir le mot de passe de l’app. Si l’app ne répond pas, elle se ferme environ 1 seconde plus tard ; rouvrez Blackout si nécessaire. Si le blocage des entrées cesse, le masquage est retiré. Rouvrez « Ouvrir les réglages d’autorisation des entrées… » depuis les réglages Blackout, vérifiez l’autorisation, puis relancez l’app. En cas d’oubli du mot de passe, choisissez « Mot de passe oublié… » dans les réglages et authentifiez-vous avec Touch ID ou le mot de passe de connexion du Mac. Seul le mot de passe Blackout est supprimé ; les autres préférences sont conservées. En dernier recours, forcez à quitter ou redémarrez macOS."
       ]
     ],
     "faqs": [
       [
         "Est-ce un verrouillage de sécurité macOS ?",
-        "Non. L’app masque les écrans et intercepte les entrées ordinaires. Forcer à quitter, les écrans de sécurité et d’autres fonctions système restent hors de sa garantie. Utilisez le verrouillage de l’écran macOS pour protéger votre session."
+        "Non. BlackoutMac masque les écrans et bloque les entrées ordinaires du clavier et de la souris. Les outils d’automatisation disposant déjà d’une autorisation d’accessibilité, comme ceux qui utilisent les API AX, peuvent encore lire ou contrôler d’autres apps pendant le masquage. Le mot de passe limite uniquement la levée du masquage de Blackout ; il ne sécurise pas votre session macOS. Forcer à quitter, les écrans de sécurité et d’autres fonctions système restent hors de sa garantie. Utilisez le verrouillage de l’écran macOS pour protéger votre session."
       ],
       [
         "L’autorisation d’entrée est activée. Pourquoi le masquage ne démarre-t-il pas ?",
@@ -448,7 +448,7 @@
       ],
       [
         "Passwort nach Wunsch",
-        "Standardmäßig ist kein Passwort aktiv. Aktiviere es in den Einstellungen im Blackout-Menü und gib das neue Passwort zweimal ein. Ändern oder Deaktivieren erfordert das aktuelle Passwort. Mit aktiviertem Schutz hebt dein Passwort die Abdeckung auf. Wähle „Passworteinstellungen sichern“, um Änderungen zu übernehmen. Ein kleines Schloss am Mondsymbol in der Menüleiste zeigt aktiven Passwortschutz an."
+        "Der Passwortschutz ist standardmäßig ausgeschaltet. Wähle in den Blackout-Einstellungen „Passwort festlegen…“ und gib das neue Passwort zweimal ein. Bei aktivem Schutz stehen „Passwort ändern…“ und „Passwort ausschalten…“ zur Verfügung. Beide öffnen einen eigenen Dialog und erfordern das aktuelle Passwort; zum Ändern gibst du auch das neue Passwort zweimal ein. Wähle bei einem vergessenen Passwort „Passwort vergessen…“ und folge der Anleitung zur Wiederherstellung unten. Ein kleines Schloss am Mondsymbol in der Menüleiste zeigt aktiven Passwortschutz an. Das Passwort beschränkt nur das Aufheben der Blackout-Abdeckung; es sichert deine macOS-Sitzung nicht ab."
       ],
       [
         "Bei Anmeldung starten",
@@ -464,13 +464,13 @@
       ],
       [
         "Wenn etwas nicht klappt",
-        "Fällt die Eingabesperre aus, wird die Abdeckung entfernt. Öffne „Einstellungen für Eingabeberechtigungen öffnen…“ erneut in den Blackout-Einstellungen, prüfe die Berechtigung und starte die App neu. Bei vergessenem Passwort oder fehlender Reaktion kannst du die App sofort beenden oder macOS neu starten. Das kann die Abdeckung ohne App-Passwort beenden."
+        "Halte Escape 3 Sekunden lang gedrückt, um die Abdeckung ohne Eingabe des App-Passworts aufzuheben. Reagiert die App nicht, wird sie etwa 1 Sekunde später beendet; öffne Blackout bei Bedarf erneut. Fällt die Eingabesperre aus, wird die Abdeckung entfernt. Öffne „Einstellungen für Eingabeberechtigungen öffnen…“ erneut in den Blackout-Einstellungen, prüfe die Berechtigung und starte die App neu. Wähle bei einem vergessenen Passwort in den Einstellungen „Passwort vergessen…“ und bestätige deine Identität mit Touch ID oder deinem Mac-Anmeldepasswort. Nur das Blackout-Passwort wird entfernt; andere Einstellungen bleiben erhalten. Als letzte Möglichkeit kannst du die App sofort beenden oder macOS neu starten."
       ]
     ],
     "faqs": [
       [
         "Ist das eine macOS-Sicherheitssperre?",
-        "Nein. Die App deckt Bildschirme ab und fängt gewöhnliche Eingaben ab. Sofort beenden, macOS-Sicherheitsdialoge und andere Systemfunktionen sind nicht abgedeckt. Nutze zum Schutz deiner Sitzung den macOS-Sperrbildschirm."
+        "Nein. BlackoutMac deckt Bildschirme ab und blockiert gewöhnliche Tastatur- und Mauseingaben. Automatisierungstools mit bereits erteilter Bedienungshilfen-Berechtigung, etwa über AX-APIs, können möglicherweise auch bei abgedeckten Bildschirmen andere Apps auslesen oder steuern. Das Passwort beschränkt nur das Aufheben der Blackout-Abdeckung; es sichert deine macOS-Sitzung nicht ab. Sofort beenden, macOS-Sicherheitsdialoge und andere Systemfunktionen sind nicht abgedeckt. Nutze zum Schutz deiner Sitzung den macOS-Sperrbildschirm."
       ],
       [
         "Die Eingabeberechtigung ist an. Warum startet die Abdeckung nicht?",
@@ -508,7 +508,7 @@
       ],
       [
         "Password facoltativa",
-        "È disattivata per impostazione predefinita. Attivala nelle impostazioni del menu Blackout e inserisci la nuova password due volte. Per modificarla o disattivarla serve quella attuale. Quando è attiva, inseriscila per togliere la copertura. Scegli «Salva impostazioni password» per applicare le modifiche. Un piccolo lucchetto sull’icona della luna indica che la protezione con password è attiva."
+        "La protezione con password è disattivata per impostazione predefinita. Nelle impostazioni Blackout, scegli «Imposta password…» e inserisci la nuova password due volte. Quando è attiva, usa «Cambia password…» o «Disattiva password…». Ogni opzione apre una finestra di dialogo dedicata e richiede la password attuale; per cambiarla devi anche inserire quella nuova due volte. Se l’hai dimenticata, scegli «Password dimenticata…» e segui le istruzioni di recupero qui sotto. Un piccolo lucchetto sull’icona della luna indica che la protezione con password è attiva. La password limita soltanto la rimozione della copertura di Blackout; non protegge la sessione macOS."
       ],
       [
         "Avvio al login",
@@ -524,13 +524,13 @@
       ],
       [
         "Se qualcosa non funziona",
-        "Se il blocco degli input si interrompe, la copertura viene rimossa. Riapri «Apri impostazioni dei permessi di input…» dalle impostazioni Blackout, controlla il permesso e riavvia l’app. Se dimentichi la password o l’app non risponde, forza l’uscita o riavvia macOS. Ciò può rimuovere la copertura senza la password dell’app."
+        "Tieni premuto Escape per 3 secondi per rimuovere la copertura senza inserire la password dell’app. Se l’app non risponde, viene chiusa circa 1 secondo dopo; riapri Blackout se necessario. Se il blocco degli input si interrompe, la copertura viene rimossa. Riapri «Apri impostazioni dei permessi di input…» dalle impostazioni Blackout, controlla il permesso e riavvia l’app. Se hai dimenticato la password, scegli «Password dimenticata…» nelle impostazioni e autenticati con Touch ID o la password di accesso al Mac. Viene rimossa solo la password di Blackout; le altre preferenze restano invariate. Come ultima risorsa, forza l’uscita o riavvia macOS."
       ]
     ],
     "faqs": [
       [
         "È un blocco di sicurezza di macOS?",
-        "No. Copre gli schermi e intercetta gli input ordinari. Uscita forzata, schermate di sicurezza e altre funzioni di sistema non rientrano nelle sue garanzie. Per proteggere la sessione usa Blocca schermo di macOS."
+        "No. BlackoutMac copre gli schermi e blocca i normali input da tastiera e mouse. Gli strumenti di automazione con permessi di accessibilità già concessi, come quelli che usano le API AX, possono ancora leggere o controllare altre app mentre gli schermi sono coperti. La password limita soltanto la rimozione della copertura di Blackout; non protegge la sessione macOS. Uscita forzata, schermate di sicurezza e altre funzioni di sistema non rientrano nelle sue garanzie. Per proteggere la sessione usa Blocca schermo di macOS."
       ],
       [
         "Il permesso per gli input è attivo. Perché la copertura non parte?",
@@ -568,7 +568,7 @@
       ],
       [
         "Senha, se você quiser",
-        "Desativada por padrão. Ative nas configurações do menu Blackout e digite a nova senha duas vezes. Alterar ou desativar exige a senha atual. Com a proteção ativa, digite a senha para remover a cobertura. Escolha «Salvar ajustes de senha» para aplicar as mudanças. Um pequeno cadeado no ícone de lua indica que a proteção por senha está ativa."
+        "A proteção por senha vem desativada. Nas configurações do Blackout, escolha «Definir senha…» e digite a nova senha duas vezes. Quando a proteção estiver ativa, use «Alterar senha…» ou «Desativar senha…». Cada opção abre seu próprio diálogo e exige a senha atual; para alterá-la, também é preciso digitar a nova senha duas vezes. Se a esqueceu, escolha «Esqueci a senha…» e siga as instruções de recuperação abaixo. Um pequeno cadeado no ícone de lua indica que a proteção por senha está ativa. A senha limita apenas a remoção da cobertura do Blackout; ela não protege sua sessão do macOS."
       ],
       [
         "Iniciar ao entrar",
@@ -584,13 +584,13 @@
       ],
       [
         "Se algo travar",
-        "Se o bloqueio de entrada falhar, a cobertura é removida. Reabra «Abrir ajustes de permissão de entrada…» nas configurações do Blackout, confira a permissão e reinicie o app. Se esquecer a senha ou o app não responder, force o encerramento ou reinicie o macOS. Isso pode remover a cobertura sem a senha do app."
+        "Mantenha Escape pressionado por 3 segundos para remover a cobertura sem digitar a senha do app. Se o app não responder, ele será encerrado cerca de 1 segundo depois; reabra o Blackout se necessário. Se o bloqueio de entrada falhar, a cobertura é removida. Reabra «Abrir ajustes de permissão de entrada…» nas configurações do Blackout, confira a permissão e reinicie o app. Se esqueceu a senha, escolha «Esqueci a senha…» nas configurações e autentique-se com Touch ID ou a senha de login do Mac. Isso remove apenas a senha do Blackout e mantém as outras preferências. Como último recurso, force o encerramento ou reinicie o macOS."
       ]
     ],
     "faqs": [
       [
         "É um bloqueio de segurança do macOS?",
-        "Não. Cobre as telas e intercepta entradas comuns. Forçar Encerrar, telas de segurança e outras funções do sistema ficam fora da garantia. Use Bloquear Tela do macOS para proteger sua sessão."
+        "Não. O BlackoutMac cobre as telas e bloqueia entradas comuns do teclado e do mouse. Ferramentas de automação com permissão de acessibilidade já concedida, como as que usam APIs AX, ainda podem ler ou controlar outros apps enquanto as telas estão cobertas. A senha limita apenas a remoção da cobertura do Blackout; ela não protege sua sessão do macOS. Forçar Encerrar, telas de segurança e outras funções do sistema ficam fora da garantia. Use Bloquear Tela do macOS para proteger sua sessão."
       ],
       [
         "A permissão de entrada está ativa. Por que as telas não são cobertas?",
@@ -628,7 +628,7 @@
       ],
       [
         "Palavra-passe opcional",
-        "Está desativada por predefinição. Ative-a nas definições do menu Blackout e introduza a nova palavra-passe duas vezes. Alterar ou desativar exige a palavra-passe atual. Com a proteção ativa, introduza-a para retirar a cobertura. Escolha «Guardar definições de palavra-passe» para aplicar as alterações. Um pequeno cadeado no ícone da lua indica que a proteção por palavra-passe está ativa."
+        "A proteção por palavra-passe está desativada por predefinição. Nas definições do Blackout, escolha «Definir palavra-passe…» e introduza a nova palavra-passe duas vezes. Quando a proteção estiver ativa, use «Alterar palavra-passe…» ou «Desativar palavra-passe…». Cada opção abre o seu próprio diálogo e exige a palavra-passe atual; para a alterar, também é necessário introduzir a nova duas vezes. Se a esqueceu, escolha «Esqueci-me da palavra-passe…» e siga os passos de recuperação abaixo. Um pequeno cadeado no ícone da lua indica que a proteção por palavra-passe está ativa. A palavra-passe limita apenas a remoção da cobertura do Blackout; não protege a sessão do macOS."
       ],
       [
         "Iniciar ao iniciar sessão",
@@ -644,13 +644,13 @@
       ],
       [
         "Se algo deixar de responder",
-        "Se o bloqueio de entrada falhar, a cobertura é retirada. Volte a abrir «Abrir definições de permissão de entrada…» nas definições do Blackout, confirme a permissão e reinicie a aplicação. Se esquecer a palavra-passe ou a aplicação não responder, force a saída ou reinicie o macOS. Isso pode retirar a cobertura sem a palavra-passe da aplicação."
+        "Mantenha Escape premido durante 3 segundos para retirar a cobertura sem introduzir a palavra-passe da aplicação. Se a aplicação não responder, é encerrada cerca de 1 segundo depois; reabra o Blackout se necessário. Se o bloqueio de entrada falhar, a cobertura é retirada. Volte a abrir «Abrir definições de permissão de entrada…» nas definições do Blackout, confirme a permissão e reinicie a aplicação. Se esqueceu a palavra-passe, escolha «Esqueci-me da palavra-passe…» nas definições e autentique-se com Touch ID ou a palavra-passe de início de sessão do Mac. Isto remove apenas a palavra-passe do Blackout e preserva as outras preferências. Como último recurso, force a saída ou reinicie o macOS."
       ]
     ],
     "faqs": [
       [
         "É um bloqueio de segurança do macOS?",
-        "Não. Cobre os ecrãs e interceta entradas habituais. Forçar saída, ecrãs de segurança e outras funções do sistema ficam fora da garantia. Use Bloquear ecrã do macOS para proteger a sessão."
+        "Não. O BlackoutMac cobre os ecrãs e bloqueia entradas habituais do teclado e do rato. As ferramentas de automatização com permissão de acessibilidade já concedida, como as que usam APIs AX, podem continuar a ler ou controlar outras aplicações enquanto os ecrãs estão cobertos. A palavra-passe limita apenas a remoção da cobertura do Blackout; não protege a sessão do macOS. Forçar saída, ecrãs de segurança e outras funções do sistema ficam fora da garantia. Use Bloquear ecrã do macOS para proteger a sessão."
       ],
       [
         "A permissão de entrada está ativa. Porque não são cobertos os ecrãs?",
@@ -688,7 +688,7 @@
       ],
       [
         "Пароль по желанию",
-        "По умолчанию отключён. Включите его в настройках меню Blackout и введите новый пароль дважды. Для изменения или отключения нужен текущий пароль. Если защита включена, введите пароль, чтобы убрать чёрное покрытие. Нажмите «Сохранить настройки пароля», чтобы применить изменения. Маленький замок на значке луны означает, что защита паролем включена."
+        "По умолчанию защита паролем отключена. В настройках Blackout выберите «Задать пароль…» и дважды введите новый пароль. При включённой защите доступны «Изменить пароль…» и «Отключить пароль…». Каждая команда открывает отдельный диалог и требует текущий пароль; при изменении также нужно дважды ввести новый. Если пароль забыт, выберите «Забыли пароль…» и следуйте инструкциям по восстановлению ниже. Маленький замок на значке луны означает, что защита паролем включена. Пароль ограничивает только снятие покрытия Blackout и не защищает сеанс macOS."
       ],
       [
         "Запуск при входе",
@@ -704,13 +704,13 @@
       ],
       [
         "Если возникла проблема",
-        "При потере блокировки ввода покрытие снимается. Снова откройте «Открыть настройки разрешений ввода…» в настройках Blackout, проверьте разрешение и перезапустите приложение. Если пароль забыт или приложение зависло, принудительно завершите его либо перезапустите macOS. Это может снять покрытие без пароля приложения."
+        "Удерживайте Escape 3 секунды, чтобы снять покрытие без ввода пароля приложения. Если приложение не отвечает, оно будет завершено примерно через 1 секунду после этого; при необходимости снова откройте Blackout. При потере блокировки ввода покрытие снимается. Снова откройте «Открыть настройки разрешений ввода…» в настройках Blackout, проверьте разрешение и перезапустите приложение. Если пароль забыт, выберите «Забыли пароль…» в настройках и подтвердите личность с помощью Touch ID или пароля входа на Mac. Будет удалён только пароль Blackout; остальные настройки сохранятся. В крайнем случае можно принудительно завершить приложение или перезапустить macOS."
       ]
     ],
     "faqs": [
       [
         "Это защитная блокировка macOS?",
-        "Нет. Приложение закрывает экраны и перехватывает обычный ввод. Принудительное завершение, системные экраны безопасности и другие функции macOS не входят в его гарантии. Для защиты сеанса используйте блокировку экрана macOS."
+        "Нет. BlackoutMac закрывает экраны и блокирует обычный ввод с клавиатуры и мыши. Средства автоматизации, уже получившие разрешение универсального доступа, например использующие API AX, могут по-прежнему читать данные других приложений или управлять ими, пока экраны закрыты. Пароль ограничивает только снятие покрытия Blackout и не защищает сеанс macOS. Принудительное завершение, системные экраны безопасности и другие функции macOS не входят в его гарантии. Для защиты сеанса используйте блокировку экрана macOS."
       ],
       [
         "Разрешение ввода включено. Почему экраны не закрываются?",
@@ -748,7 +748,7 @@
       ],
       [
         "Пароль за бажанням",
-        "Типово вимкнений. Увімкніть у параметрах меню Blackout та введіть новий пароль двічі. Для зміни чи вимкнення потрібен поточний пароль. Коли захист увімкнено, введіть пароль, щоб прибрати накриття. Натисніть «Зберегти параметри пароля», щоб застосувати зміни. Маленький замок на значку місяця означає, що захист паролем увімкнено."
+        "Типово захист паролем вимкнено. У параметрах Blackout виберіть «Установити пароль…» і двічі введіть новий пароль. Коли захист увімкнено, доступні «Змінити пароль…» і «Вимкнути пароль…». Кожна команда відкриває окреме діалогове вікно й потребує поточного пароля; для зміни також слід двічі ввести новий. Якщо забули пароль, виберіть «Забули пароль…» і виконайте наведені нижче кроки відновлення. Маленький замок на значку місяця означає, що захист паролем увімкнено. Пароль обмежує лише зняття накриття Blackout і не захищає сеанс macOS."
       ],
       [
         "Запуск під час входу",
@@ -764,13 +764,13 @@
       ],
       [
         "Якщо виникла проблема",
-        "Якщо блокування введення припиняється, накриття прибирається. Знову відкрийте «Відкрити параметри дозволів введення…» у параметрах Blackout, перевірте дозвіл і перезапустіть програму. Якщо пароль забуто або програма не відповідає, примусово завершіть її чи перезапустіть macOS. Це може зняти накриття без пароля програми."
+        "Утримуйте Escape 3 секунди, щоб зняти накриття без введення пароля програми. Якщо програма не відповідає, її буде завершено приблизно через 1 секунду після цього; за потреби відкрийте Blackout знову. Якщо блокування введення припиняється, накриття прибирається. Знову відкрийте «Відкрити параметри дозволів введення…» у параметрах Blackout, перевірте дозвіл і перезапустіть програму. Якщо забули пароль, виберіть «Забули пароль…» у параметрах і підтвердьте особу за допомогою Touch ID або пароля входу на Mac. Буде видалено лише пароль Blackout; інші параметри збережуться. Як крайній захід можна примусово завершити програму або перезапустити macOS."
       ]
     ],
     "faqs": [
       [
         "Це захисне блокування macOS?",
-        "Ні. Програма накриває екрани й перехоплює звичайне введення. Примусове завершення, екрани безпеки та інші системні функції поза її гарантіями. Для захисту сеансу використовуйте блокування екрана macOS."
+        "Ні. BlackoutMac накриває екрани й блокує звичайне введення з клавіатури та миші. Засоби автоматизації, які вже отримали дозвіл доступності, наприклад ті, що використовують API AX, можуть і далі читати дані інших програм або керувати ними, поки екрани накриті. Пароль обмежує лише зняття накриття Blackout і не захищає сеанс macOS. Примусове завершення, екрани безпеки та інші системні функції поза її гарантіями. Для захисту сеансу використовуйте блокування екрана macOS."
       ],
       [
         "Дозвіл введення ввімкнено. Чому екрани не закриваються?",
@@ -808,7 +808,7 @@
       ],
       [
         "Hasło według uznania",
-        "Domyślnie wyłączone. Włącz je w ustawieniach menu Blackout i wpisz nowe hasło dwukrotnie. Zmiana lub wyłączenie wymaga bieżącego hasła. Gdy ochrona jest aktywna, wpisz hasło, aby odsłonić ekrany. Wybierz „Zachowaj ustawienia hasła”, aby zastosować zmiany. Mała kłódka przy ikonie księżyca oznacza włączoną ochronę hasłem."
+        "Ochrona hasłem jest domyślnie wyłączona. W ustawieniach Blackout wybierz „Ustaw hasło…” i wpisz nowe hasło dwukrotnie. Gdy ochrona jest włączona, użyj „Zmień hasło…” lub „Wyłącz hasło…”. Każda opcja otwiera osobne okno dialogowe i wymaga bieżącego hasła; przy zmianie trzeba też dwukrotnie wpisać nowe. Jeśli nie pamiętasz hasła, wybierz „Nie pamiętam hasła…” i wykonaj poniższe kroki odzyskiwania. Mała kłódka przy ikonie księżyca oznacza włączoną ochronę hasłem. Hasło ogranicza tylko usuwanie zasłony Blackout; nie zabezpiecza sesji macOS."
       ],
       [
         "Uruchamianie przy logowaniu",
@@ -824,13 +824,13 @@
       ],
       [
         "W razie problemów",
-        "Gdy blokada wejścia zawiedzie, zasłona znika. Ponownie otwórz „Otwórz ustawienia uprawnień wejścia…” w ustawieniach Blackout, sprawdź uprawnienie i uruchom aplikację ponownie. Jeśli zapomnisz hasła lub aplikacja nie odpowiada, wymuś zakończenie albo uruchom macOS ponownie. Może to usunąć zasłonę bez hasła aplikacji."
+        "Przytrzymaj Escape przez 3 sekundy, aby usunąć zasłonę bez podawania hasła aplikacji. Jeśli aplikacja nie odpowiada, zostanie zakończona około 1 sekundę później; w razie potrzeby otwórz Blackout ponownie. Gdy blokada wejścia zawiedzie, zasłona znika. Ponownie otwórz „Otwórz ustawienia uprawnień wejścia…” w ustawieniach Blackout, sprawdź uprawnienie i uruchom aplikację ponownie. Jeśli nie pamiętasz hasła, wybierz „Nie pamiętam hasła…” w ustawieniach i uwierzytelnij się przez Touch ID lub hasłem logowania do Maca. Usunięte zostanie tylko hasło Blackout; pozostałe preferencje zostaną zachowane. W ostateczności wymuś zakończenie aplikacji lub uruchom macOS ponownie."
       ]
     ],
     "faqs": [
       [
         "Czy to blokada bezpieczeństwa macOS?",
-        "Nie. Aplikacja zasłania ekrany i przechwytuje zwykłe wejście. Wymuszanie zakończenia, ekrany bezpieczeństwa i inne funkcje systemu nie są objęte gwarancją. Do ochrony sesji używaj blokady ekranu macOS."
+        "Nie. BlackoutMac zasłania ekrany i blokuje zwykłe wejście z klawiatury i myszy. Narzędzia automatyzacji, którym wcześniej przyznano uprawnienia dostępności, na przykład korzystające z API AX, mogą nadal odczytywać dane innych aplikacji lub nimi sterować, gdy ekrany są zasłonięte. Hasło ogranicza tylko usuwanie zasłony Blackout; nie zabezpiecza sesji macOS. Wymuszanie zakończenia, ekrany bezpieczeństwa i inne funkcje systemu nie są objęte gwarancją. Do ochrony sesji używaj blokady ekranu macOS."
       ],
       [
         "Uprawnienie wejścia jest włączone. Dlaczego ekrany nie są zasłaniane?",
@@ -868,7 +868,7 @@
       ],
       [
         "Een wachtwoord naar keuze",
-        "Standaard uitgeschakeld. Schakel het in via de instellingen in het Blackout-menu en voer het nieuwe wachtwoord tweemaal in. Wijzigen of uitschakelen vereist het huidige wachtwoord. Voer bij ingeschakelde bescherming je wachtwoord in om de afdekking te verwijderen. Kies ‘Bewaar wachtwoordinstellingen’ om wijzigingen toe te passen. Een klein slot op het maansymbool geeft aan dat wachtwoordbeveiliging actief is."
+        "Wachtwoordbeveiliging staat standaard uit. Kies in de Blackout-instellingen ‘Wachtwoord instellen…’ en voer het nieuwe wachtwoord twee keer in. Als de beveiliging aanstaat, gebruik je ‘Wachtwoord wijzigen…’ of ‘Wachtwoord uitschakelen…’. Elke optie opent een eigen dialoogvenster en vereist het huidige wachtwoord; bij wijzigen voer je ook het nieuwe wachtwoord twee keer in. Kies bij een vergeten wachtwoord ‘Wachtwoord vergeten…’ en volg de herstelstappen hieronder. Een klein slot op het maansymbool geeft aan dat wachtwoordbeveiliging actief is. Het wachtwoord beperkt alleen het verwijderen van de Blackout-afdekking; het beveiligt je macOS-sessie niet."
       ],
       [
         "Starten bij inloggen",
@@ -884,13 +884,13 @@
       ],
       [
         "Als iets vastloopt",
-        "Valt de invoerblokkering weg, dan verdwijnt de afdekking. Open ‘Open instellingen voor invoertoestemming…’ opnieuw in de Blackout-instellingen, controleer de toestemming en herstart de app. Bij een vergeten wachtwoord of vastgelopen app kun je geforceerd stoppen of macOS herstarten. Dit kan de afdekking zonder app-wachtwoord beëindigen."
+        "Houd Escape 3 seconden ingedrukt om de afdekking zonder het appwachtwoord te verwijderen. Als de app niet reageert, wordt deze ongeveer 1 seconde later afgesloten; open Blackout indien nodig opnieuw. Valt de invoerblokkering weg, dan verdwijnt de afdekking. Open ‘Open instellingen voor invoertoestemming…’ opnieuw in de Blackout-instellingen, controleer de toestemming en herstart de app. Kies bij een vergeten wachtwoord ‘Wachtwoord vergeten…’ in Instellingen en bevestig je identiteit met Touch ID of het inlogwachtwoord van je Mac. Alleen het Blackout-wachtwoord wordt verwijderd; andere voorkeuren blijven behouden. Als laatste mogelijkheid kun je de app geforceerd stoppen of macOS herstarten."
       ]
     ],
     "faqs": [
       [
         "Is dit een macOS-beveiligingsslot?",
-        "Nee. De app dekt schermen af en onderschept gewone invoer. Geforceerd stoppen, beveiligingsschermen en andere systeemfuncties vallen buiten de garantie. Gebruik het macOS-toegangsscherm om je sessie te beveiligen."
+        "Nee. BlackoutMac dekt schermen af en blokkeert gewone toetsenbord- en muisinvoer. Automatiseringstools die al toestemming voor toegankelijkheid hebben, zoals tools die AX-API’s gebruiken, kunnen mogelijk nog steeds andere apps uitlezen of bedienen terwijl de schermen zijn afgedekt. Het wachtwoord beperkt alleen het verwijderen van de Blackout-afdekking; het beveiligt je macOS-sessie niet. Geforceerd stoppen, beveiligingsschermen en andere systeemfuncties vallen buiten de garantie. Gebruik het macOS-toegangsscherm om je sessie te beveiligen."
       ],
       [
         "Invoertoestemming staat aan. Waarom worden de schermen niet afgedekt?",
@@ -928,7 +928,7 @@
       ],
       [
         "Lösenord om du vill",
-        "Avstängt som standard. Aktivera det i inställningarna i Blackout-menyn och skriv det nya lösenordet två gånger. Ändring eller avstängning kräver det aktuella lösenordet. Med skyddet på återställer du skärmarna med lösenordet. Välj ‘Spara lösenordsinställningar’ för att tillämpa ändringarna. Ett litet lås på månsymbolen visar att lösenordsskyddet är aktivt."
+        "Lösenordsskydd är avstängt som standard. Välj ”Ställ in lösenord…” i Blackouts inställningar och ange det nya lösenordet två gånger. När skyddet är på använder du ”Ändra lösenord…” eller ”Stäng av lösenord…”. Varje alternativ öppnar en egen dialogruta och kräver det nuvarande lösenordet; vid ändring anger du även det nya två gånger. Om du har glömt det väljer du ”Glömt lösenord…” och följer återställningsstegen nedan. Ett litet lås på månsymbolen visar att lösenordsskyddet är aktivt. Lösenordet begränsar bara borttagningen av Blackouts täckning; det skyddar inte din macOS-session."
       ],
       [
         "Starta vid inloggning",
@@ -944,13 +944,13 @@
       ],
       [
         "Om något fastnar",
-        "Om inmatningsblockeringen slutar fungera tas täckningen bort. Öppna ‘Öppna behörighetsinställningar för inmatning…’ igen i Blackouts inställningar, kontrollera behörigheten och starta om appen. Vid glömt lösenord eller låst app kan du tvångsavsluta eller starta om macOS. Täckningen kan då försvinna utan appens lösenord."
+        "Håll Escape nedtryckt i 3 sekunder för att ta bort täckningen utan appens lösenord. Om appen inte svarar avslutas den cirka 1 sekund senare; öppna Blackout igen vid behov. Om inmatningsblockeringen slutar fungera tas täckningen bort. Öppna ‘Öppna behörighetsinställningar för inmatning…’ igen i Blackouts inställningar, kontrollera behörigheten och starta om appen. Om du har glömt lösenordet väljer du ”Glömt lösenord…” i inställningarna och verifierar dig med Touch ID eller Macens inloggningslösenord. Endast Blackouts lösenord tas bort; övriga inställningar behålls. Som sista utväg kan du tvångsavsluta appen eller starta om macOS."
       ]
     ],
     "faqs": [
       [
         "Är detta ett säkerhetslås för macOS?",
-        "Nej. Appen täcker skärmar och fångar vanlig inmatning. Tvångsavslutning, säkerhetsskärmar och andra systemfunktioner omfattas inte av garantin. Använd macOS låsskärm för att skydda sessionen."
+        "Nej. BlackoutMac täcker skärmar och blockerar vanlig inmatning från tangentbord och mus. Automatiseringsverktyg som redan har behörighet för hjälpmedel, till exempel verktyg som använder AX-API:er, kan fortfarande läsa eller styra andra appar medan skärmarna är täckta. Lösenordet begränsar bara borttagningen av Blackouts täckning; det skyddar inte din macOS-session. Tvångsavslutning, säkerhetsskärmar och andra systemfunktioner omfattas inte av garantin. Använd macOS låsskärm för att skydda sessionen."
       ],
       [
         "Inmatningstillståndet är på. Varför täcks inte skärmarna?",
@@ -988,7 +988,7 @@
       ],
       [
         "Adgangskode efter ønske",
-        "Slået fra som standard. Aktivér den i indstillingerne i Blackout-menuen, og indtast den nye kode to gange. Ændring eller deaktivering kræver den nuværende kode. Når beskyttelsen er aktiv, fjernes dækningen med adgangskoden. Vælg ‘Gem adgangskodeindstillinger’ for at anvende ændringerne. En lille lås på måneikonet viser, at adgangskodebeskyttelsen er aktiv."
+        "Adgangskodebeskyttelse er slået fra som standard. Vælg ”Indstil adgangskode…” i Blackouts indstillinger, og indtast den nye adgangskode to gange. Når beskyttelsen er slået til, bruges ”Skift adgangskode…” eller ”Slå adgangskode fra…”. Hver mulighed åbner sin egen dialog og kræver den nuværende adgangskode; ved ændring skal den nye også indtastes to gange. Har du glemt den, vælg ”Glemt adgangskode…” og følg vejledningen til gendannelse nedenfor. En lille lås på måneikonet viser, at adgangskodebeskyttelsen er aktiv. Adgangskoden begrænser kun fjernelsen af Blackouts dækning; den sikrer ikke din macOS-session."
       ],
       [
         "Start ved login",
@@ -1004,13 +1004,13 @@
       ],
       [
         "Hvis noget går i stå",
-        "Hvis inputblokeringen svigter, fjernes dækningen. Åbn ‘Åbn indstillinger for inputtilladelse…’ igen i Blackouts indstillinger, kontrollér tilladelsen, og genstart appen. Hvis du glemmer koden, eller appen ikke svarer, kan du afbryde den eller genstarte macOS. Det kan fjerne dækningen uden appens adgangskode."
+        "Hold Escape nede i 3 sekunder for at fjerne dækningen uden appens adgangskode. Hvis appen ikke svarer, afsluttes den cirka 1 sekund senere; åbn Blackout igen efter behov. Hvis inputblokeringen svigter, fjernes dækningen. Åbn ‘Åbn indstillinger for inputtilladelse…’ igen i Blackouts indstillinger, kontrollér tilladelsen, og genstart appen. Har du glemt adgangskoden, vælg ”Glemt adgangskode…” i indstillingerne, og bekræft din identitet med Touch ID eller adgangskoden til din Mac. Kun Blackouts adgangskode fjernes; andre indstillinger bevares. Som sidste udvej kan du tvinge appen til at afslutte eller genstarte macOS."
       ]
     ],
     "faqs": [
       [
         "Er dette en sikkerhedslås i macOS?",
-        "Nej. Appen dækker skærme og opfanger almindeligt input. Tvungen afslutning, sikkerhedsskærme og andre systemfunktioner er ikke omfattet af garantien. Brug macOS' låseskærm til at beskytte sessionen."
+        "Nej. BlackoutMac dækker skærme og blokerer almindeligt input fra tastatur og mus. Automatiseringsværktøjer, der allerede har tilladelse til tilgængelighed, for eksempel værktøjer med AX-API’er, kan muligvis stadig læse eller styre andre apps, mens skærmene er dækket. Adgangskoden begrænser kun fjernelsen af Blackouts dækning; den sikrer ikke din macOS-session. Tvungen afslutning, sikkerhedsskærme og andre systemfunktioner er ikke omfattet af garantien. Brug macOS' låseskærm til at beskytte sessionen."
       ],
       [
         "Inputtilladelsen er slået til. Hvorfor dækkes skærmene ikke?",
@@ -1048,7 +1048,7 @@
       ],
       [
         "Passord hvis du vil",
-        "Av som standard. Aktiver det i innstillingene i Blackout-menyen, og skriv det nye passordet to ganger. Endring eller deaktivering krever gjeldende passord. Når beskyttelsen er på, bruker du passordet for å fjerne dekningen. Velg ‘Lagre passordinnstillinger’ for å bruke endringene. En liten lås på månesymbolet viser at passordbeskyttelsen er på."
+        "Passordbeskyttelse er av som standard. Velg «Angi passord…» i Blackout-innstillingene, og skriv det nye passordet to ganger. Når beskyttelsen er på, bruker du «Endre passord…» eller «Slå av passord…». Hvert valg åpner sin egen dialog og krever det gjeldende passordet; ved endring må også det nye skrives to ganger. Har du glemt det, velger du «Glemt passord…» og følger gjenopprettingstrinnene nedenfor. En liten lås på månesymbolet viser at passordbeskyttelsen er på. Passordet begrenser bare fjerningen av Blackout-dekningen; det sikrer ikke macOS-økten din."
       ],
       [
         "Start ved pålogging",
@@ -1064,13 +1064,13 @@
       ],
       [
         "Hvis noe låser seg",
-        "Hvis inndatablokkeringen svikter, fjernes dekningen. Åpne ‘Åpne innstillinger for inndatatillatelse…’ på nytt i Blackout-innstillingene, kontroller tillatelsen og start appen på nytt. Ved glemt passord eller låst app kan du tvangsavslutte eller starte macOS på nytt. Det kan fjerne dekningen uten appens passord."
+        "Hold Escape inne i 3 sekunder for å fjerne dekningen uten appens passord. Hvis appen ikke svarer, avsluttes den omtrent 1 sekund senere; åpne Blackout igjen ved behov. Hvis inndatablokkeringen svikter, fjernes dekningen. Åpne ‘Åpne innstillinger for inndatatillatelse…’ på nytt i Blackout-innstillingene, kontroller tillatelsen og start appen på nytt. Har du glemt passordet, velger du «Glemt passord…» i innstillingene og bekrefter identiteten med Touch ID eller påloggingspassordet til Macen. Bare Blackout-passordet fjernes; andre innstillinger beholdes. Som siste utvei kan du tvangsavslutte appen eller starte macOS på nytt."
       ]
     ],
     "faqs": [
       [
         "Er dette en sikkerhetslås i macOS?",
-        "Nei. Appen dekker skjermer og fanger vanlig inndata. Tvangsavslutning, sikkerhetsskjermer og andre systemfunksjoner omfattes ikke av garantien. Bruk låseskjermen i macOS for å beskytte økten."
+        "Nei. BlackoutMac dekker skjermer og blokkerer vanlig inndata fra tastatur og mus. Automatiseringsverktøy som allerede har tilgang til tilgjengelighetsfunksjoner, for eksempel verktøy som bruker AX-API-er, kan fortsatt lese eller styre andre apper mens skjermene er dekket. Passordet begrenser bare fjerningen av Blackout-dekningen; det sikrer ikke macOS-økten din. Tvangsavslutning, sikkerhetsskjermer og andre systemfunksjoner omfattes ikke av garantien. Bruk låseskjermen i macOS for å beskytte økten."
       ],
       [
         "Inndatatillatelsen er på. Hvorfor dekkes ikke skjermene?",
@@ -1108,7 +1108,7 @@
       ],
       [
         "Salasana oman valinnan mukaan",
-        "Oletuksena pois käytöstä. Ota käyttöön Blackout-valikon asetuksista ja kirjoita uusi salasana kahdesti. Vaihtaminen tai poistaminen vaatii nykyisen salasanan. Kun suojaus on käytössä, poista peitto salasanalla. Ota muutokset käyttöön valitsemalla ‘Tallenna salasana-asetukset’. Pieni lukko kuukuvakkeessa kertoo salasanasuojauksen olevan käytössä."
+        "Salasanasuojaus on oletuksena pois käytöstä. Valitse Blackoutin asetuksista ”Aseta salasana…” ja syötä uusi salasana kahdesti. Kun suojaus on käytössä, valitse ”Vaihda salasana…” tai ”Poista salasana käytöstä…”. Kukin avaa oman valintaikkunansa ja edellyttää nykyistä salasanaa; vaihtaessa myös uusi salasana syötetään kahdesti. Jos unohdit salasanan, valitse ”Unohditko salasanan…” ja noudata alla olevia palautusohjeita. Pieni lukko kuukuvakkeessa kertoo salasanasuojauksen olevan käytössä. Salasana rajoittaa vain Blackoutin peitteen poistamista; se ei suojaa macOS-istuntoasi."
       ],
       [
         "Käynnistä kirjautuessa",
@@ -1124,13 +1124,13 @@
       ],
       [
         "Jos jokin jumittuu",
-        "Jos syötteiden esto lakkaa toimimasta, peitto poistetaan. Avaa ‘Avaa syöttöoikeuksien asetukset…’ uudelleen Blackoutin asetuksista, tarkista lupa ja käynnistä sovellus uudelleen. Jos unohdat salasanan tai sovellus ei vastaa, pakota se lopettamaan tai käynnistä macOS uudelleen. Peitto voi poistua ilman sovelluksen salasanaa."
+        "Pidä Escape-näppäintä painettuna 3 sekuntia, niin peite poistuu ilman sovelluksen salasanaa. Jos sovellus ei vastaa, se suljetaan noin 1 sekunnin kuluttua; avaa Blackout tarvittaessa uudelleen. Jos syötteiden esto lakkaa toimimasta, peitto poistetaan. Avaa ‘Avaa syöttöoikeuksien asetukset…’ uudelleen Blackoutin asetuksista, tarkista lupa ja käynnistä sovellus uudelleen. Jos unohdit salasanan, valitse asetuksista ”Unohditko salasanan…” ja tunnistaudu Touch ID:llä tai Macin kirjautumissalasanalla. Vain Blackoutin salasana poistetaan; muut asetukset säilyvät. Viimeisenä keinona voit pakottaa sovelluksen lopettamaan tai käynnistää macOS:n uudelleen."
       ]
     ],
     "faqs": [
       [
         "Onko tämä macOS:n turvalukitus?",
-        "Ei. Sovellus peittää näytöt ja sieppaa tavalliset syötteet. Pakotettu lopetus, turvanäkymät ja muut järjestelmätoiminnot eivät kuulu sen takuun piiriin. Suojaa istuntosi macOS:n lukitusnäytöllä."
+        "Ei. BlackoutMac peittää näytöt ja estää tavallisen näppäimistö- ja hiirisyötteen. Automaatiotyökalut, joille on jo myönnetty käyttöapuoikeudet, kuten AX-rajapintoja käyttävät työkalut, voivat edelleen lukea tai ohjata muita sovelluksia näyttöjen ollessa peitettyinä. Salasana rajoittaa vain Blackoutin peitteen poistamista; se ei suojaa macOS-istuntoasi. Pakotettu lopetus, turvanäkymät ja muut järjestelmätoiminnot eivät kuulu sen takuun piiriin. Suojaa istuntosi macOS:n lukitusnäytöllä."
       ],
       [
         "Syötelupa on päällä. Miksi näytöt eivät peity?",
@@ -1168,7 +1168,7 @@
       ],
       [
         "Heslo podle potřeby",
-        "Ve výchozím stavu je vypnuté. Zapněte je v nastavení nabídky Blackout a nové heslo zadejte dvakrát. Změna či vypnutí vyžaduje aktuální heslo. Při zapnuté ochraně zadejte heslo pro odstranění zakrytí. Zvolte „Uložit nastavení hesla“ pro použití změn. Malý zámek na ikoně měsíce značí aktivní ochranu heslem."
+        "Ochrana heslem je ve výchozím nastavení vypnutá. V nastavení Blackout zvolte „Nastavit heslo…“ a nové heslo zadejte dvakrát. Při zapnuté ochraně použijte „Změnit heslo…“ nebo „Vypnout heslo…“. Každá volba otevře vlastní dialog a vyžaduje aktuální heslo; při změně je třeba zadat i nové heslo dvakrát. Pokud jste ho zapomněli, zvolte „Zapomenuté heslo…“ a postupujte podle pokynů k obnovení níže. Malý zámek na ikoně měsíce značí aktivní ochranu heslem. Heslo omezuje pouze odstranění zakrytí Blackout; nezabezpečuje relaci macOS."
       ],
       [
         "Spuštění při přihlášení",
@@ -1184,13 +1184,13 @@
       ],
       [
         "Když něco nefunguje",
-        "Při výpadku blokování vstupu se zakrytí odstraní. Znovu otevřete „Otevřít nastavení oprávnění vstupu…“ v nastavení Blackout, ověřte oprávnění a aplikaci znovu spusťte. Pokud zapomenete heslo nebo aplikace nereaguje, vynuťte ukončení či restartujte macOS. Zakrytí tak může skončit bez hesla aplikace."
+        "Podržte Escape po dobu 3 sekund a odstraňte zakrytí bez hesla aplikace. Pokud aplikace nereaguje, ukončí se přibližně o 1 sekundu později; v případě potřeby Blackout znovu otevřete. Při výpadku blokování vstupu se zakrytí odstraní. Znovu otevřete „Otevřít nastavení oprávnění vstupu…“ v nastavení Blackout, ověřte oprávnění a aplikaci znovu spusťte. Pokud jste zapomněli heslo, zvolte v nastavení „Zapomenuté heslo…“ a ověřte se pomocí Touch ID nebo přihlašovacího hesla k Macu. Odstraní se pouze heslo Blackout; ostatní předvolby zůstanou zachovány. Jako poslední možnost můžete vynutit ukončení aplikace nebo restartovat macOS."
       ]
     ],
     "faqs": [
       [
         "Je to bezpečnostní zámek macOS?",
-        "Ne. Aplikace zakrývá obrazovky a zachytává běžný vstup. Vynucené ukončení, bezpečnostní obrazovky a další systémové funkce nejsou zaručeně blokovány. Pro zabezpečení relace použijte zamknutí obrazovky macOS."
+        "Ne. BlackoutMac zakrývá obrazovky a blokuje běžný vstup z klávesnice a myši. Automatizační nástroje, které již mají oprávnění ke zpřístupnění, například nástroje využívající API AX, mohou i při zakrytých obrazovkách číst data jiných aplikací nebo je ovládat. Heslo omezuje pouze odstranění zakrytí Blackout; nezabezpečuje relaci macOS. Vynucené ukončení, bezpečnostní obrazovky a další systémové funkce nejsou zaručeně blokovány. Pro zabezpečení relace použijte zamknutí obrazovky macOS."
       ],
       [
         "Oprávnění vstupu je zapnuté. Proč se obrazovky nezakryjí?",
@@ -1228,7 +1228,7 @@
       ],
       [
         "Heslo podľa potreby",
-        "Predvolene vypnuté. Zapnite ho v nastaveniach menu Blackout a nové heslo zadajte dvakrát. Zmena či vypnutie vyžaduje aktuálne heslo. Pri aktívnej ochrane zadajte heslo na odstránenie prekrytia. Zvoľte „Uložiť nastavenia hesla“ na použitie zmien. Malý zámok na ikone mesiaca označuje aktívnu ochranu heslom."
+        "Ochrana heslom je predvolene vypnutá. V nastaveniach Blackout zvoľte „Nastaviť heslo…“ a nové heslo zadajte dvakrát. Pri zapnutej ochrane použite „Zmeniť heslo…“ alebo „Vypnúť heslo…“. Každá voľba otvorí vlastný dialóg a vyžaduje aktuálne heslo; pri zmene treba aj nové heslo zadať dvakrát. Ak ste ho zabudli, zvoľte „Zabudnuté heslo…“ a postupujte podľa pokynov na obnovenie nižšie. Malý zámok na ikone mesiaca označuje aktívnu ochranu heslom. Heslo obmedzuje iba odstránenie prekrytia Blackout; nezabezpečuje reláciu macOS."
       ],
       [
         "Spustiť pri prihlásení",
@@ -1244,13 +1244,13 @@
       ],
       [
         "Keď niečo nefunguje",
-        "Pri výpadku blokovania vstupu sa prekrytie odstráni. Znovu otvorte „Otvoriť nastavenia povolení vstupu…“ v nastaveniach Blackout, overte povolenie a aplikáciu reštartujte. Ak zabudnete heslo alebo aplikácia nereaguje, vynúťte ukončenie či reštartujte macOS. Prekrytie tak môže skončiť bez hesla aplikácie."
+        "Podržte Escape na 3 sekundy a odstráňte prekrytie bez hesla aplikácie. Ak aplikácia nereaguje, ukončí sa približne o 1 sekundu neskôr; v prípade potreby Blackout znovu otvorte. Pri výpadku blokovania vstupu sa prekrytie odstráni. Znovu otvorte „Otvoriť nastavenia povolení vstupu…“ v nastaveniach Blackout, overte povolenie a aplikáciu reštartujte. Ak ste zabudli heslo, zvoľte v nastaveniach „Zabudnuté heslo…“ a overte sa pomocou Touch ID alebo prihlasovacieho hesla k Macu. Odstráni sa iba heslo Blackout; ostatné nastavenia sa zachovajú. Ako poslednú možnosť môžete vynútiť ukončenie aplikácie alebo reštartovať macOS."
       ]
     ],
     "faqs": [
       [
         "Je to bezpečnostný zámok macOS?",
-        "Nie. Aplikácia prekrýva obrazovky a zachytáva bežný vstup. Vynútené ukončenie, bezpečnostné obrazovky a ďalšie systémové funkcie nie sú zaručene blokované. Na zabezpečenie relácie použite zamknutie obrazovky macOS."
+        "Nie. BlackoutMac prekrýva obrazovky a blokuje bežný vstup z klávesnice a myši. Automatizačné nástroje, ktoré už majú povolenie na prístupnosť, napríklad nástroje používajúce API AX, môžu aj pri prekrytých obrazovkách čítať údaje iných aplikácií alebo ich ovládať. Heslo obmedzuje iba odstránenie prekrytia Blackout; nezabezpečuje reláciu macOS. Vynútené ukončenie, bezpečnostné obrazovky a ďalšie systémové funkcie nie sú zaručene blokované. Na zabezpečenie relácie použite zamknutie obrazovky macOS."
       ],
       [
         "Povolenie vstupu je zapnuté. Prečo sa obrazovky neprekryjú?",
@@ -1288,7 +1288,7 @@
       ],
       [
         "Jelszó, ha szeretné",
-        "Alapértelmezetten kikapcsolva. Kapcsolja be a Blackout menü beállításaiban, és adja meg kétszer az új jelszót. Módosításhoz vagy kikapcsoláshoz az aktuális jelszó szükséges. Bekapcsolt védelemnél a jelszóval szüntetheti meg a takarást. A módosításokhoz válassza a „Jelszóbeállítások mentése” lehetőséget. A holdikonon látható kis lakat bekapcsolt jelszóvédelmet jelez."
+        "A jelszóvédelem alapértelmezetten ki van kapcsolva. A Blackout beállításaiban válassza a „Jelszó beállítása…” lehetőséget, és adja meg kétszer az új jelszót. Bekapcsolt védelemnél a „Jelszó módosítása…” és a „Jelszó kikapcsolása…” használható. Mindegyik külön párbeszédablakot nyit, és kéri az aktuális jelszót; módosításkor az újat is kétszer kell megadni. Ha elfelejtette, válassza az „Elfelejtett jelszó…” lehetőséget, és kövesse az alábbi helyreállítási lépéseket. A holdikonon látható kis lakat bekapcsolt jelszóvédelmet jelez. A jelszó csak a Blackout takarásának eltávolítását korlátozza; nem védi a macOS-munkamenetet."
       ],
       [
         "Indítás bejelentkezéskor",
@@ -1304,13 +1304,13 @@
       ],
       [
         "Ha valami elakad",
-        "Ha a bevitel blokkolása megszűnik, a takarás lekerül. Nyissa meg újra a „Beviteli engedélyek beállításainak megnyitása…” lehetőséget a Blackout beállításaiban, ellenőrizze az engedélyt, és indítsa újra az appot. Elfelejtett jelszó vagy lefagyás esetén kényszerítse a kilépést, vagy indítsa újra a macOS-t. Így az app jelszava nélkül is megszűnhet a takarás."
+        "Tartsa lenyomva az Escape billentyűt 3 másodpercig a takarás eltávolításához az app jelszavának megadása nélkül. Ha az app nem válaszol, körülbelül 1 másodperccel később bezárul; szükség esetén nyissa meg újra a Blackoutot. Ha a bevitel blokkolása megszűnik, a takarás lekerül. Nyissa meg újra a „Beviteli engedélyek beállításainak megnyitása…” lehetőséget a Blackout beállításaiban, ellenőrizze az engedélyt, és indítsa újra az appot. Elfelejtett jelszó esetén válassza a beállításokban az „Elfelejtett jelszó…” lehetőséget, majd igazolja magát Touch ID-val vagy a Mac bejelentkezési jelszavával. Csak a Blackout jelszava törlődik; a többi beállítás megmarad. Végső esetben kényszerítheti az app kilépését, vagy újraindíthatja a macOS-t."
       ]
     ],
     "faqs": [
       [
         "Ez a macOS biztonsági zárolása?",
-        "Nem. Az app eltakarja a kijelzőket és elfogja a szokásos bevitelt. A kényszerített kilépés, biztonsági képernyők és más rendszerfunkciók kívül esnek a garanciáján. A munkamenet védelmére használja a macOS képernyőzárát."
+        "Nem. A BlackoutMac eltakarja a kijelzőket, és blokkolja a szokásos billentyűzet- és egérbevitelt. Azok az automatizálási eszközök, amelyek már rendelkeznek kisegítő lehetőségekhez adott engedéllyel, például az AX API-kat használó eszközök, továbbra is olvashatják más appok adatait, illetve vezérelhetik az appokat, amíg a kijelzők el vannak takarva. A jelszó csak a Blackout takarásának eltávolítását korlátozza; nem védi a macOS-munkamenetet. A kényszerített kilépés, biztonsági képernyők és más rendszerfunkciók kívül esnek a garanciáján. A munkamenet védelmére használja a macOS képernyőzárát."
       ],
       [
         "A beviteli engedély be van kapcsolva. Miért nem indul a takarás?",
@@ -1348,7 +1348,7 @@
       ],
       [
         "Parolă, dacă dorești",
-        "Dezactivată implicit. Activeaz-o în configurările meniului Blackout și introdu noua parolă de două ori. Modificarea sau dezactivarea necesită parola actuală. Când protecția este activă, introdu parola pentru a elimina acoperirea. Alege „Salvează configurările parolei” pentru aplicarea modificărilor. Un lacăt mic pe pictograma lunii indică protecția activă prin parolă."
+        "Protecția prin parolă este dezactivată implicit. În configurările Blackout, alege „Setează parola…” și introdu parola nouă de două ori. Când protecția este activă, folosește „Schimbă parola…” sau „Dezactivează parola…”. Fiecare opțiune deschide propriul dialog și necesită parola actuală; la schimbare trebuie introdusă și cea nouă de două ori. Dacă ai uitat-o, alege „Ai uitat parola…” și urmează pașii de recuperare de mai jos. Un lacăt mic pe pictograma lunii indică protecția activă prin parolă. Parola limitează doar eliminarea acoperirii Blackout; nu securizează sesiunea macOS."
       ],
       [
         "Pornire la autentificare",
@@ -1364,13 +1364,13 @@
       ],
       [
         "Dacă ceva se blochează",
-        "Dacă blocarea intrărilor se oprește, acoperirea este eliminată. Redeschide „Deschide configurările permisiunilor de introducere…” din configurările Blackout, verifică permisiunea și repornește aplicația. Dacă uiți parola sau aplicația nu răspunde, forțează închiderea sau repornește macOS. Acoperirea poate fi eliminată fără parola aplicației."
+        "Ține apăsată tasta Escape timp de 3 secunde pentru a elimina acoperirea fără parola aplicației. Dacă aplicația nu răspunde, se închide aproximativ 1 secundă mai târziu; redeschide Blackout dacă este necesar. Dacă blocarea intrărilor se oprește, acoperirea este eliminată. Redeschide „Deschide configurările permisiunilor de introducere…” din configurările Blackout, verifică permisiunea și repornește aplicația. Dacă ai uitat parola, alege „Ai uitat parola…” în configurări și autentifică-te cu Touch ID sau parola de conectare la Mac. Se elimină doar parola Blackout; celelalte preferințe sunt păstrate. Ca ultimă soluție, forțează închiderea aplicației sau repornește macOS."
       ]
     ],
     "faqs": [
       [
         "Este o blocare de securitate macOS?",
-        "Nu. Acoperă ecranele și interceptează intrările obișnuite. Închiderea forțată, ecranele de securitate și alte funcții de sistem nu sunt garantat blocate. Folosește blocarea ecranului macOS pentru protejarea sesiunii."
+        "Nu. BlackoutMac acoperă ecranele și blochează intrările obișnuite de la tastatură și mouse. Instrumentele de automatizare care au deja permisiuni de accesibilitate, precum cele care folosesc API-urile AX, pot în continuare să citească sau să controleze alte aplicații cât timp ecranele sunt acoperite. Parola limitează doar eliminarea acoperirii Blackout; nu securizează sesiunea macOS. Închiderea forțată, ecranele de securitate și alte funcții de sistem nu sunt garantat blocate. Folosește blocarea ecranului macOS pentru protejarea sesiunii."
       ],
       [
         "Permisiunea de intrare este activă. De ce nu sunt acoperite ecranele?",
@@ -1408,7 +1408,7 @@
       ],
       [
         "Parola sizin tercihiniz",
-        "Varsayılan olarak kapalıdır. Blackout menüsündeki ayarlarda açın ve yeni parolayı iki kez girin. Değiştirme veya kapatma için mevcut parola gerekir. Koruma açıkken kaplamayı kaldırmak için parolanızı girin. Değişiklikleri uygulamak için ‘Parola Ayarlarını Kaydet’ seçeneğini kullanın. Ay simgesindeki küçük kilit, parola korumasının açık olduğunu gösterir."
+        "Parola koruması varsayılan olarak kapalıdır. Blackout ayarlarında “Parola Ayarla…” seçeneğini kullanıp yeni parolayı iki kez girin. Koruma açıkken “Parolayı Değiştir…” veya “Parolayı Kapat…” seçeneklerini kullanın. Her biri ayrı bir iletişim kutusu açar ve mevcut parolayı ister; değiştirirken yeni parolayı da iki kez girmeniz gerekir. Parolayı unuttuysanız “Parolamı Unuttum…” seçeneğini kullanıp aşağıdaki kurtarma adımlarını izleyin. Ay simgesindeki küçük kilit, parola korumasının açık olduğunu gösterir. Parola yalnızca Blackout kaplamasının kaldırılmasını sınırlar; macOS oturumunuzu güvence altına almaz."
       ],
       [
         "Oturum açarken başlat",
@@ -1424,13 +1424,13 @@
       ],
       [
         "Bir sorun olursa",
-        "Girdi engelleme durursa kaplama kaldırılır. Blackout ayarlarından ‘Giriş İzni Ayarlarını Aç…’ seçeneğini yeniden açıp izni kontrol edin ve uygulamayı yeniden başlatın. Parolayı unutursanız veya uygulama yanıt vermezse çıkmaya zorlayın ya da macOS’u yeniden başlatın. Bu, uygulama parolası olmadan kaplamayı kaldırabilir."
+        "Escape tuşunu 3 saniye basılı tutarak uygulama parolasını girmeden kaplamayı kaldırabilirsiniz. Uygulama yanıt vermiyorsa yaklaşık 1 saniye sonra kapanır; gerekirse Blackout’u yeniden açın. Girdi engelleme durursa kaplama kaldırılır. Blackout ayarlarından ‘Giriş İzni Ayarlarını Aç…’ seçeneğini yeniden açıp izni kontrol edin ve uygulamayı yeniden başlatın. Parolayı unuttuysanız ayarlarda “Parolamı Unuttum…” seçeneğini kullanıp Touch ID veya Mac oturum açma parolanızla kimliğinizi doğrulayın. Yalnızca Blackout parolası silinir; diğer tercihler korunur. Son çare olarak uygulamayı çıkmaya zorlayabilir veya macOS’u yeniden başlatabilirsiniz."
       ]
     ],
     "faqs": [
       [
         "Bu bir macOS güvenlik kilidi mi?",
-        "Hayır. Ekranları kaplar ve sıradan girdileri yakalar. Zorla kapatma, güvenlik ekranları ve diğer sistem işlevleri garantisinin dışındadır. Oturumunuzu korumak için macOS Ekranı Kilitle özelliğini kullanın."
+        "Hayır. BlackoutMac ekranları kaplar ve sıradan klavye ve fare girdilerini engeller. AX API’lerini kullanan araçlar gibi erişilebilirlik izni önceden verilmiş otomasyon araçları, ekranlar kaplıyken bile diğer uygulamaları okuyabilir veya kontrol edebilir. Parola yalnızca Blackout kaplamasının kaldırılmasını sınırlar; macOS oturumunuzu güvence altına almaz. Zorla kapatma, güvenlik ekranları ve diğer sistem işlevleri garantisinin dışındadır. Oturumunuzu korumak için macOS Ekranı Kilitle özelliğini kullanın."
       ],
       [
         "Girdi izni açık. Ekran kaplaması neden başlamıyor?",
@@ -1468,7 +1468,7 @@
       ],
       [
         "كلمة مرور حسب رغبتك",
-        "معطّلة افتراضيًا. فعّلها في إعدادات قائمة Blackout وأدخل كلمة المرور الجديدة مرتين. يتطلب تغييرها أو تعطيلها كلمة المرور الحالية. عند تفعيلها، أدخلها لإزالة الغطاء. اختر «حفظ إعدادات كلمة السر» لتطبيق التغييرات. تشير علامة قفل صغيرة على رمز القمر إلى تفعيل الحماية بكلمة المرور."
+        "الحماية بكلمة المرور معطّلة افتراضيًا. اختر «تعيين كلمة المرور…» في إعدادات Blackout وأدخل كلمة المرور الجديدة مرتين. عند تفعيل الحماية، استخدم «تغيير كلمة المرور…» أو «إيقاف كلمة المرور…». يفتح كل خيار مربع حوار منفصلًا ويتطلب كلمة المرور الحالية؛ وعند التغيير يجب إدخال الجديدة مرتين أيضًا. إذا نسيتها، اختر «نسيت كلمة المرور…» واتبع خطوات الاسترداد أدناه. تشير علامة قفل صغيرة على رمز القمر إلى تفعيل الحماية بكلمة المرور. تقيّد كلمة المرور إزالة غطاء Blackout فقط، ولا تؤمّن جلسة macOS."
       ],
       [
         "التشغيل عند تسجيل الدخول",
@@ -1484,13 +1484,13 @@
       ],
       [
         "إذا حدثت مشكلة",
-        "إذا توقف حظر الإدخال، تُزال الأغطية. أعد فتح «فتح إعدادات إذن الإدخال…» من إعدادات Blackout، وتحقق من الإذن ثم أعد تشغيل التطبيق. إذا نسيت كلمة المرور أو توقف التطبيق عن الاستجابة، افرض إنهاءه أو أعد تشغيل macOS. قد يزيل ذلك الغطاء دون كلمة مرور التطبيق."
+        "اضغط مطولًا على Escape لمدة 3 ثوانٍ لإزالة الغطاء دون إدخال كلمة مرور التطبيق. إذا كان التطبيق لا يستجيب، يُنهى بعد نحو ثانية واحدة؛ أعد فتح Blackout عند الحاجة. إذا توقف حظر الإدخال، تُزال الأغطية. أعد فتح «فتح إعدادات إذن الإدخال…» من إعدادات Blackout، وتحقق من الإذن ثم أعد تشغيل التطبيق. إذا نسيت كلمة المرور، اختر «نسيت كلمة المرور…» في الإعدادات وتحقق من هويتك باستخدام Touch ID أو كلمة مرور تسجيل الدخول إلى Mac. تُحذف كلمة مرور Blackout فقط، وتبقى التفضيلات الأخرى محفوظة. كحل أخير، يمكنك فرض إنهاء التطبيق أو إعادة تشغيل macOS."
       ]
     ],
     "faqs": [
       [
         "هل هذا قفل أمان لنظام macOS؟",
-        "لا. يغطي التطبيق الشاشات ويعترض الإدخال المعتاد. فرض الإنهاء وشاشات الأمان ووظائف النظام الأخرى خارج نطاق ضمانه. استخدم قفل شاشة macOS لحماية جلستك."
+        "لا. يغطي BlackoutMac الشاشات ويحظر الإدخال المعتاد من لوحة المفاتيح والفأرة. قد تظل أدوات الأتمتة التي مُنحت إذن تسهيلات الاستخدام مسبقًا، مثل الأدوات التي تستخدم واجهات AX، قادرة على قراءة التطبيقات الأخرى أو التحكم فيها أثناء تغطية الشاشات. تقيّد كلمة المرور إزالة غطاء Blackout فقط، ولا تؤمّن جلسة macOS. فرض الإنهاء وشاشات الأمان ووظائف النظام الأخرى خارج نطاق ضمانه. استخدم قفل شاشة macOS لحماية جلستك."
       ],
       [
         "إذن الإدخال مفعّل. لماذا لا تبدأ تغطية الشاشات؟",
@@ -1528,7 +1528,7 @@
       ],
       [
         "סיסמה לפי בחירה",
-        "כבויה כברירת מחדל. אפשר להפעיל בהגדרות שבתפריט Blackout ולהזין את הסיסמה החדשה פעמיים. שינוי או ביטול מחייבים את הסיסמה הנוכחית. כשההגנה פעילה, יש להזין את הסיסמה להסרת הכיסוי. יש לבחור ״שמירת הגדרות הסיסמה״ להחלת השינויים. סימן מנעול קטן על סמל הירח מציין שהגנת הסיסמה פעילה."
+        "הגנת הסיסמה כבויה כברירת מחדל. בהגדרות Blackout יש לבחור ״הגדרת סיסמה…״ ולהזין את הסיסמה החדשה פעמיים. כשההגנה פעילה, אפשר לבחור ״שינוי סיסמה…״ או ״כיבוי הסיסמה…״. כל אפשרות פותחת תיבת דו־שיח נפרדת ודורשת את הסיסמה הנוכחית; בשינוי יש להזין גם את הסיסמה החדשה פעמיים. אם שכחת את הסיסמה, יש לבחור ״שכחתי סיסמה…״ ולפעול לפי שלבי השחזור בהמשך. סימן מנעול קטן על סמל הירח מציין שהגנת הסיסמה פעילה. הסיסמה מגבילה רק את הסרת הכיסוי של Blackout; היא אינה מאבטחת את ההפעלה ב-macOS."
       ],
       [
         "הפעלה בעת ההתחברות",
@@ -1544,13 +1544,13 @@
       ],
       [
         "אם משהו נתקע",
-        "אם חסימת הקלט מפסיקה, הכיסוי מוסר. יש לפתוח שוב ״פתיחת הגדרות הרשאות קלט…״ מהגדרות Blackout, לבדוק את ההרשאה ולהפעיל מחדש את היישום. אם הסיסמה נשכחה או שהיישום אינו מגיב, אפשר לכפות סיום או להפעיל מחדש את macOS. כך ניתן להסיר את הכיסוי ללא סיסמת היישום."
+        "יש להחזיק את Escape לחוץ למשך 3 שניות כדי להסיר את הכיסוי בלי להזין את סיסמת היישום. אם היישום אינו מגיב, הוא ייסגר כעבור כשנייה נוספת; יש לפתוח שוב את Blackout לפי הצורך. אם חסימת הקלט מפסיקה, הכיסוי מוסר. יש לפתוח שוב ״פתיחת הגדרות הרשאות קלט…״ מהגדרות Blackout, לבדוק את ההרשאה ולהפעיל מחדש את היישום. אם שכחת את הסיסמה, יש לבחור ״שכחתי סיסמה…״ בהגדרות ולאמת את הזהות באמצעות Touch ID או סיסמת הכניסה ל-Mac. רק סיסמת Blackout נמחקת; ההעדפות האחרות נשמרות. כמוצא אחרון, אפשר לכפות סיום של היישום או להפעיל מחדש את macOS."
       ]
     ],
     "faqs": [
       [
         "האם זו נעילת אבטחה של macOS?",
-        "לא. היישום מכסה מסכים ומיירט קלט רגיל. סיום כפוי, מסכי אבטחה ופעולות מערכת אחרות אינם מובטחים כחסומים. להגנה על ההפעלה יש להשתמש בנעילת המסך של macOS."
+        "לא. BlackoutMac מכסה מסכים וחוסם קלט רגיל מהמקלדת ומהעכבר. כלי אוטומציה שכבר קיבלו הרשאת נגישות, כגון כלים המשתמשים בממשקי AX, עשויים עדיין לקרוא מידע מיישומים אחרים או לשלוט בהם כשהמסכים מכוסים. הסיסמה מגבילה רק את הסרת הכיסוי של Blackout; היא אינה מאבטחת את ההפעלה ב-macOS. סיום כפוי, מסכי אבטחה ופעולות מערכת אחרות אינם מובטחים כחסומים. להגנה על ההפעלה יש להשתמש בנעילת המסך של macOS."
       ],
       [
         "הרשאת הקלט פעילה. למה כיסוי המסכים לא מתחיל?",
@@ -1588,7 +1588,7 @@
       ],
       [
         "पासवर्ड आपकी पसंद",
-        "डिफ़ॉल्ट रूप से बंद है। Blackout मेनू की सेटिंग में चालू करें और नया पासवर्ड दो बार भरें। बदलने या बंद करने के लिए मौजूदा पासवर्ड चाहिए। सुरक्षा चालू हो तो पर्दा हटाने के लिए पासवर्ड भरें। बदलाव लागू करने के लिए “पासवर्ड सेटिंग्स सहेजें” चुनें। चाँद के चिह्न पर छोटा ताला दिखना पासवर्ड सुरक्षा चालू होने का संकेत है।"
+        "पासवर्ड सुरक्षा डिफ़ॉल्ट रूप से बंद रहती है। Blackout की सेटिंग में “पासवर्ड सेट करें…” चुनें और नया पासवर्ड दो बार भरें। सुरक्षा चालू होने पर “पासवर्ड बदलें…” या “पासवर्ड बंद करें…” का उपयोग करें। हर विकल्प अपना अलग डायलॉग खोलता है और मौजूदा पासवर्ड माँगता है; बदलते समय नया पासवर्ड भी दो बार भरना होगा। यदि भूल गए हैं, तो “पासवर्ड भूल गए…” चुनें और नीचे दिए गए पुनर्प्राप्ति चरणों का पालन करें। चाँद के चिह्न पर छोटा ताला दिखना पासवर्ड सुरक्षा चालू होने का संकेत है। पासवर्ड केवल Blackout का पर्दा हटाने पर रोक लगाता है; यह आपके macOS सत्र को सुरक्षित नहीं करता।"
       ],
       [
         "लॉगिन पर शुरू करें",
@@ -1604,13 +1604,13 @@
       ],
       [
         "समस्या आने पर",
-        "इनपुट अवरोध बंद हो जाए तो पर्दा हट जाता है। Blackout की सेटिंग से “इनपुट अनुमति की सेटिंग्स खोलें…” दोबारा खोलकर अनुमति जाँचें और ऐप फिर शुरू करें। पासवर्ड भूलने या ऐप के जवाब न देने पर जबरन बंद करें या macOS फिर शुरू करें। इससे ऐप का पासवर्ड दिए बिना पर्दा हट सकता है।"
+        "ऐप का पासवर्ड दिए बिना पर्दा हटाने के लिए Escape को 3 सेकंड तक दबाए रखें। यदि ऐप जवाब नहीं देता है, तो वह लगभग 1 सेकंड बाद बंद हो जाएगा; ज़रूरत होने पर Blackout फिर खोलें। इनपुट अवरोध बंद हो जाए तो पर्दा हट जाता है। Blackout की सेटिंग से “इनपुट अनुमति की सेटिंग्स खोलें…” दोबारा खोलकर अनुमति जाँचें और ऐप फिर शुरू करें। पासवर्ड भूलने पर सेटिंग में “पासवर्ड भूल गए…” चुनें और Touch ID या Mac के लॉगिन पासवर्ड से अपनी पहचान सत्यापित करें। इससे केवल Blackout का पासवर्ड हटता है; बाकी प्राथमिकताएँ बनी रहती हैं। अंतिम उपाय के रूप में ऐप को जबरन बंद करें या macOS फिर शुरू करें।"
       ]
     ],
     "faqs": [
       [
         "क्या यह macOS का सुरक्षा लॉक है?",
-        "नहीं। ऐप स्क्रीन ढकता और सामान्य इनपुट रोकता है। Force Quit, सुरक्षा स्क्रीन और अन्य सिस्टम कार्य इसकी गारंटी में नहीं हैं। अपने सत्र को सुरक्षित करने के लिए macOS का Lock Screen इस्तेमाल करें।"
+        "नहीं। BlackoutMac स्क्रीन ढकता है और सामान्य कीबोर्ड व माउस इनपुट रोकता है। पहले से ऐक्सेसिबिलिटी अनुमति प्राप्त ऑटोमेशन टूल, जैसे AX API का उपयोग करने वाले टूल, स्क्रीन ढकी होने पर भी अन्य ऐप्स को पढ़ या नियंत्रित कर सकते हैं। पासवर्ड केवल Blackout का पर्दा हटाने पर रोक लगाता है; यह आपके macOS सत्र को सुरक्षित नहीं करता। Force Quit, सुरक्षा स्क्रीन और अन्य सिस्टम कार्य इसकी गारंटी में नहीं हैं। अपने सत्र को सुरक्षित करने के लिए macOS का Lock Screen इस्तेमाल करें।"
       ],
       [
         "इनपुट अनुमति चालू है। फिर भी स्क्रीन क्यों नहीं ढकती?",
@@ -1648,7 +1648,7 @@
       ],
       [
         "รหัสผ่านตามต้องการ",
-        "ปิดไว้เป็นค่าเริ่มต้น เปิดได้ในหน้าตั้งค่าของเมนู Blackout และป้อนรหัสผ่านใหม่สองครั้ง การเปลี่ยนหรือปิดต้องใช้รหัสผ่านปัจจุบัน เมื่อเปิดการป้องกัน ให้ป้อนรหัสผ่านเพื่อเอาสิ่งปกคลุมออก เลือก “บันทึกการตั้งค่ารหัสผ่าน” เพื่อใช้การเปลี่ยนแปลง รูปแม่กุญแจเล็กบนไอคอนดวงจันทร์หมายถึงเปิดการป้องกันด้วยรหัสผ่านอยู่"
+        "การป้องกันด้วยรหัสผ่านปิดไว้เป็นค่าเริ่มต้น ในการตั้งค่า Blackout ให้เลือก “ตั้งรหัสผ่าน…” แล้วป้อนรหัสผ่านใหม่สองครั้ง เมื่อเปิดการป้องกัน ให้ใช้ “เปลี่ยนรหัสผ่าน…” หรือ “ปิดรหัสผ่าน…” แต่ละตัวเลือกจะเปิดกล่องโต้ตอบแยกกันและต้องใช้รหัสผ่านปัจจุบัน หากเปลี่ยนรหัสผ่าน ต้องป้อนรหัสผ่านใหม่สองครั้งด้วย หากลืม ให้เลือก “ลืมรหัสผ่าน…” แล้วทำตามขั้นตอนการกู้คืนด้านล่าง รูปแม่กุญแจเล็กบนไอคอนดวงจันทร์หมายถึงเปิดการป้องกันด้วยรหัสผ่านอยู่ รหัสผ่านจำกัดเฉพาะการเอาสิ่งปกคลุมของ Blackout ออก ไม่ได้รักษาความปลอดภัยให้เซสชัน macOS"
       ],
       [
         "เริ่มเมื่อเข้าสู่ระบบ",
@@ -1664,13 +1664,13 @@
       ],
       [
         "เมื่อเกิดปัญหา",
-        "หากการบล็อกอินพุตหยุดทำงาน สิ่งปกคลุมจะถูกเอาออก เปิด “เปิดการตั้งค่าสิทธิ์การป้อนข้อมูล…” อีกครั้งจากการตั้งค่า Blackout ตรวจสอบสิทธิ์แล้วเปิดแอปใหม่ หากลืมรหัสผ่านหรือแอปไม่ตอบสนอง ให้บังคับออกหรือรีสตาร์ท macOS ซึ่งอาจเอาสิ่งปกคลุมออกได้โดยไม่ต้องใช้รหัสผ่านของแอป"
+        "กด Escape ค้างไว้ 3 วินาทีเพื่อเอาสิ่งปกคลุมออกโดยไม่ต้องป้อนรหัสผ่านของแอป หากแอปไม่ตอบสนอง แอปจะปิดหลังจากนั้นประมาณ 1 วินาที แล้วเปิด Blackout ใหม่หากจำเป็น หากการบล็อกอินพุตหยุดทำงาน สิ่งปกคลุมจะถูกเอาออก เปิด “เปิดการตั้งค่าสิทธิ์การป้อนข้อมูล…” อีกครั้งจากการตั้งค่า Blackout ตรวจสอบสิทธิ์แล้วเปิดแอปใหม่ หากลืมรหัสผ่าน ให้เลือก “ลืมรหัสผ่าน…” ในการตั้งค่า แล้วยืนยันตัวตนด้วย Touch ID หรือรหัสผ่านเข้าสู่ระบบ Mac การทำเช่นนี้จะลบเฉพาะรหัสผ่าน Blackout โดยยังเก็บการตั้งค่าอื่นไว้ หากวิธีอื่นไม่ได้ผล สามารถบังคับออกจากแอปหรือรีสตาร์ท macOS ได้"
       ]
     ],
     "faqs": [
       [
         "นี่คือการล็อกเพื่อความปลอดภัยของ macOS หรือไม่",
-        "ไม่ใช่ แอปคลุมหน้าจอและดักรับอินพุตทั่วไป การบังคับออก หน้าจอความปลอดภัย และการทำงานอื่นของระบบอยู่นอกการรับประกัน หากต้องการปกป้องเซสชัน ให้ใช้การล็อกหน้าจอของ macOS"
+        "ไม่ใช่ BlackoutMac คลุมหน้าจอและบล็อกอินพุตทั่วไปจากแป้นพิมพ์และเมาส์ เครื่องมืออัตโนมัติที่ได้รับสิทธิ์การช่วยการเข้าถึงแล้ว เช่น เครื่องมือที่ใช้ AX API อาจยังอ่านหรือควบคุมแอปอื่นได้ขณะหน้าจอถูกคลุมอยู่ รหัสผ่านจำกัดเฉพาะการเอาสิ่งปกคลุมของ Blackout ออก ไม่ได้รักษาความปลอดภัยให้เซสชัน macOS การบังคับออก หน้าจอความปลอดภัย และการทำงานอื่นของระบบอยู่นอกการรับประกัน หากต้องการปกป้องเซสชัน ให้ใช้การล็อกหน้าจอของ macOS"
       ],
       [
         "เปิดสิทธิ์อินพุตแล้ว ทำไมยังคลุมหน้าจอไม่ได้",
@@ -1708,7 +1708,7 @@
       ],
       [
         "Mật khẩu tùy ý",
-        "Mặc định tắt. Bật trong phần cài đặt của menu Blackout và nhập mật khẩu mới hai lần. Đổi hoặc tắt cần mật khẩu hiện tại. Khi bảo vệ được bật, nhập mật khẩu để bỏ lớp che. Chọn “Lưu cài đặt mật khẩu” để áp dụng thay đổi. Huy hiệu ổ khóa nhỏ trên biểu tượng mặt trăng cho biết bảo vệ bằng mật khẩu đang bật."
+        "Bảo vệ bằng mật khẩu mặc định tắt. Trong cài đặt Blackout, chọn “Đặt mật khẩu…” và nhập mật khẩu mới hai lần. Khi bảo vệ được bật, dùng “Đổi mật khẩu…” hoặc “Tắt mật khẩu…”. Mỗi tùy chọn mở hộp thoại riêng và yêu cầu mật khẩu hiện tại; khi đổi, bạn cũng phải nhập mật khẩu mới hai lần. Nếu quên, chọn “Quên mật khẩu…” rồi làm theo các bước khôi phục bên dưới. Huy hiệu ổ khóa nhỏ trên biểu tượng mặt trăng cho biết bảo vệ bằng mật khẩu đang bật. Mật khẩu chỉ giới hạn việc gỡ lớp che của Blackout; không bảo vệ phiên làm việc macOS."
       ],
       [
         "Khởi chạy khi đăng nhập",
@@ -1724,13 +1724,13 @@
       ],
       [
         "Khi gặp sự cố",
-        "Nếu chặn đầu vào dừng hoạt động, lớp che được gỡ bỏ. Mở lại “Mở cài đặt quyền đầu vào…” từ cài đặt Blackout, kiểm tra quyền rồi khởi động lại ứng dụng. Nếu quên mật khẩu hoặc ứng dụng không phản hồi, buộc thoát hoặc khởi động lại macOS. Việc này có thể bỏ lớp che mà không cần mật khẩu ứng dụng."
+        "Giữ phím Escape trong 3 giây để gỡ lớp che mà không cần nhập mật khẩu ứng dụng. Nếu ứng dụng không phản hồi, ứng dụng sẽ đóng sau khoảng 1 giây nữa; mở lại Blackout nếu cần. Nếu chặn đầu vào dừng hoạt động, lớp che được gỡ bỏ. Mở lại “Mở cài đặt quyền đầu vào…” từ cài đặt Blackout, kiểm tra quyền rồi khởi động lại ứng dụng. Nếu quên mật khẩu, chọn “Quên mật khẩu…” trong cài đặt và xác thực bằng Touch ID hoặc mật khẩu đăng nhập Mac. Chỉ mật khẩu Blackout bị xóa; các tùy chọn khác được giữ nguyên. Nếu các cách khác không hiệu quả, bạn có thể buộc thoát ứng dụng hoặc khởi động lại macOS."
       ]
     ],
     "faqs": [
       [
         "Đây có phải khóa bảo mật macOS không?",
-        "Không. Ứng dụng che màn hình và chặn đầu vào thông thường. Buộc thoát, màn hình bảo mật và các chức năng hệ thống khác nằm ngoài phạm vi đảm bảo. Dùng Khóa màn hình của macOS để bảo vệ phiên làm việc."
+        "Không. BlackoutMac che màn hình và chặn đầu vào thông thường từ bàn phím và chuột. Các công cụ tự động hóa đã được cấp quyền trợ năng, chẳng hạn công cụ dùng API AX, vẫn có thể đọc hoặc điều khiển ứng dụng khác khi màn hình đang được che. Mật khẩu chỉ giới hạn việc gỡ lớp che của Blackout; không bảo vệ phiên làm việc macOS. Buộc thoát, màn hình bảo mật và các chức năng hệ thống khác nằm ngoài phạm vi đảm bảo. Dùng Khóa màn hình của macOS để bảo vệ phiên làm việc."
       ],
       [
         "Quyền đầu vào đã bật. Vì sao không thể che màn hình?",
@@ -1768,7 +1768,7 @@
       ],
       [
         "Kata sandi sesuai pilihan",
-        "Nonaktif secara bawaan. Aktifkan di pengaturan menu Blackout dan masukkan kata sandi baru dua kali. Mengubah atau menonaktifkan memerlukan kata sandi saat ini. Saat perlindungan aktif, masukkan kata sandi untuk menghapus penutup. Pilih “Simpan Pengaturan Kata Sandi” untuk menerapkan perubahan. Lencana gembok kecil pada ikon bulan menandakan perlindungan kata sandi aktif."
+        "Perlindungan kata sandi nonaktif secara bawaan. Di pengaturan Blackout, pilih “Atur Kata Sandi…” dan masukkan kata sandi baru dua kali. Saat perlindungan aktif, gunakan “Ubah Kata Sandi…” atau “Nonaktifkan Kata Sandi…”. Setiap pilihan membuka dialog tersendiri dan memerlukan kata sandi saat ini; saat mengubahnya, kata sandi baru juga harus dimasukkan dua kali. Jika lupa, pilih “Lupa Kata Sandi…” dan ikuti langkah pemulihan di bawah. Lencana gembok kecil pada ikon bulan menandakan perlindungan kata sandi aktif. Kata sandi hanya membatasi penghapusan penutup Blackout; tidak mengamankan sesi macOS Anda."
       ],
       [
         "Mulai saat masuk",
@@ -1784,13 +1784,13 @@
       ],
       [
         "Jika terjadi masalah",
-        "Jika pemblokiran input berhenti, penutup dihapus. Buka kembali “Buka Pengaturan Izin Input…” dari pengaturan Blackout, periksa izin, lalu mulai ulang app. Jika lupa kata sandi atau app tidak merespons, tutup paksa atau mulai ulang macOS. Ini dapat menghapus penutup tanpa kata sandi app."
+        "Tahan Escape selama 3 detik untuk menghapus penutup tanpa memasukkan kata sandi app. Jika app tidak merespons, app akan ditutup sekitar 1 detik kemudian; buka kembali Blackout jika perlu. Jika pemblokiran input berhenti, penutup dihapus. Buka kembali “Buka Pengaturan Izin Input…” dari pengaturan Blackout, periksa izin, lalu mulai ulang app. Jika lupa kata sandi, pilih “Lupa Kata Sandi…” di pengaturan dan autentikasi dengan Touch ID atau kata sandi masuk Mac. Hanya kata sandi Blackout yang dihapus; preferensi lain tetap tersimpan. Sebagai langkah terakhir, tutup paksa app atau mulai ulang macOS."
       ]
     ],
     "faqs": [
       [
         "Apakah ini kunci keamanan macOS?",
-        "Tidak. App menutupi layar dan mencegat input biasa. Tutup Paksa, layar keamanan, dan fungsi sistem lain berada di luar jaminannya. Gunakan Kunci Layar macOS untuk mengamankan sesi."
+        "Tidak. BlackoutMac menutupi layar dan memblokir input biasa dari papan ketik dan tetikus. Alat otomatisasi yang sudah diberi izin aksesibilitas, seperti alat yang menggunakan API AX, mungkin masih dapat membaca atau mengendalikan app lain saat layar tertutup. Kata sandi hanya membatasi penghapusan penutup Blackout; tidak mengamankan sesi macOS Anda. Tutup Paksa, layar keamanan, dan fungsi sistem lain berada di luar jaminannya. Gunakan Kunci Layar macOS untuk mengamankan sesi."
       ],
       [
         "Izin input aktif. Mengapa layar tidak dapat ditutupi?",
@@ -1828,7 +1828,7 @@
       ],
       [
         "Kata laluan mengikut pilihan",
-        "Dimatikan secara lalai. Aktifkan dalam seting menu Blackout dan masukkan kata laluan baharu dua kali. Mengubah atau mematikan memerlukan kata laluan semasa. Apabila perlindungan aktif, masukkan kata laluan untuk membuang penutup. Pilih “Simpan Seting Kata Laluan” untuk menggunakan perubahan. Lencana mangga kecil pada ikon bulan menunjukkan perlindungan kata laluan aktif."
+        "Perlindungan kata laluan dimatikan secara lalai. Dalam seting Blackout, pilih “Tetapkan Kata Laluan…” dan masukkan kata laluan baharu dua kali. Apabila perlindungan aktif, gunakan “Tukar Kata Laluan…” atau “Matikan Kata Laluan…”. Setiap pilihan membuka dialog tersendiri dan memerlukan kata laluan semasa; ketika menukarnya, kata laluan baharu juga perlu dimasukkan dua kali. Jika terlupa, pilih “Terlupa Kata Laluan…” dan ikuti langkah pemulihan di bawah. Lencana mangga kecil pada ikon bulan menunjukkan perlindungan kata laluan aktif. Kata laluan hanya mengehadkan pembuangan penutup Blackout; ia tidak melindungi sesi macOS anda."
       ],
       [
         "Lancar semasa log masuk",
@@ -1844,13 +1844,13 @@
       ],
       [
         "Jika berlaku masalah",
-        "Jika sekatan input terhenti, penutup dibuang. Buka semula “Buka Seting Kebenaran Input…” daripada seting Blackout, semak kebenaran, kemudian mulakan semula app. Jika terlupa kata laluan atau app tidak bertindak balas, paksa keluar atau mulakan semula macOS. Ini boleh membuang penutup tanpa kata laluan app."
+        "Tekan dan tahan Escape selama 3 saat untuk membuang penutup tanpa memasukkan kata laluan app. Jika app tidak bertindak balas, app akan ditutup kira-kira 1 saat kemudian; buka semula Blackout jika perlu. Jika sekatan input terhenti, penutup dibuang. Buka semula “Buka Seting Kebenaran Input…” daripada seting Blackout, semak kebenaran, kemudian mulakan semula app. Jika terlupa kata laluan, pilih “Terlupa Kata Laluan…” dalam seting dan sahkan identiti dengan Touch ID atau kata laluan log masuk Mac. Hanya kata laluan Blackout dipadamkan; pilihan lain dikekalkan. Sebagai langkah terakhir, paksa app keluar atau mulakan semula macOS."
       ]
     ],
     "faqs": [
       [
         "Adakah ini kunci keselamatan macOS?",
-        "Tidak. App menutup skrin dan memintas input biasa. Paksa Keluar, skrin keselamatan dan fungsi sistem lain di luar jaminannya. Gunakan Kunci Skrin macOS untuk melindungi sesi anda."
+        "Tidak. BlackoutMac menutup skrin dan menyekat input biasa daripada papan kekunci dan tetikus. Alat automasi yang sudah diberi kebenaran kebolehcapaian, seperti alat yang menggunakan API AX, mungkin masih boleh membaca atau mengawal app lain semasa skrin ditutup. Kata laluan hanya mengehadkan pembuangan penutup Blackout; ia tidak melindungi sesi macOS anda. Paksa Keluar, skrin keselamatan dan fungsi sistem lain di luar jaminannya. Gunakan Kunci Skrin macOS untuk melindungi sesi anda."
       ],
       [
         "Kebenaran input aktif. Mengapa skrin tidak dapat ditutup?",
@@ -1888,7 +1888,7 @@
       ],
       [
         "Κωδικός αν το θέλετε",
-        "Απενεργοποιημένος αρχικά. Ενεργοποιήστε τον στις ρυθμίσεις του μενού Blackout και εισαγάγετε τον νέο κωδικό δύο φορές. Αλλαγή ή απενεργοποίηση απαιτεί τον τρέχοντα κωδικό. Όταν η προστασία είναι ενεργή, εισαγάγετε τον κωδικό για αφαίρεση της κάλυψης. Επιλέξτε «Αποθήκευση ρυθμίσεων συνθηματικού» για εφαρμογή των αλλαγών. Ένα μικρό λουκέτο στο εικονίδιο του φεγγαριού δείχνει ενεργή προστασία με κωδικό."
+        "Η προστασία με κωδικό είναι αρχικά απενεργοποιημένη. Στις ρυθμίσεις Blackout, επιλέξτε «Ορισμός κωδικού…» και εισαγάγετε τον νέο κωδικό δύο φορές. Όταν η προστασία είναι ενεργή, χρησιμοποιήστε «Αλλαγή κωδικού…» ή «Απενεργοποίηση κωδικού…». Κάθε επιλογή ανοίγει ξεχωριστό παράθυρο διαλόγου και απαιτεί τον τρέχοντα κωδικό· για την αλλαγή εισάγετε και τον νέο δύο φορές. Αν τον ξεχάσατε, επιλέξτε «Ξεχάσατε τον κωδικό…» και ακολουθήστε τα παρακάτω βήματα ανάκτησης. Ένα μικρό λουκέτο στο εικονίδιο του φεγγαριού δείχνει ενεργή προστασία με κωδικό. Ο κωδικός περιορίζει μόνο την αφαίρεση της κάλυψης του Blackout· δεν ασφαλίζει τη συνεδρία macOS."
       ],
       [
         "Εκκίνηση κατά τη σύνδεση",
@@ -1904,13 +1904,13 @@
       ],
       [
         "Αν κάτι κολλήσει",
-        "Αν σταματήσει ο αποκλεισμός εισόδου, η κάλυψη αφαιρείται. Ανοίξτε ξανά το «Άνοιγμα ρυθμίσεων αδειών εισόδου…» από τις ρυθμίσεις Blackout, ελέγξτε την άδεια και επανεκκινήστε την εφαρμογή. Αν ξεχάσετε τον κωδικό ή η εφαρμογή δεν αποκρίνεται, κάντε αναγκαστικό τερματισμό ή επανεκκίνηση του macOS. Έτσι μπορεί να αφαιρεθεί η κάλυψη χωρίς τον κωδικό της εφαρμογής."
+        "Κρατήστε πατημένο το Escape για 3 δευτερόλεπτα για να αφαιρέσετε την κάλυψη χωρίς τον κωδικό της εφαρμογής. Αν η εφαρμογή δεν αποκρίνεται, τερματίζεται περίπου 1 δευτερόλεπτο αργότερα· ανοίξτε ξανά το Blackout αν χρειάζεται. Αν σταματήσει ο αποκλεισμός εισόδου, η κάλυψη αφαιρείται. Ανοίξτε ξανά το «Άνοιγμα ρυθμίσεων αδειών εισόδου…» από τις ρυθμίσεις Blackout, ελέγξτε την άδεια και επανεκκινήστε την εφαρμογή. Αν ξεχάσατε τον κωδικό, επιλέξτε «Ξεχάσατε τον κωδικό…» στις ρυθμίσεις και επαληθεύστε την ταυτότητά σας με Touch ID ή τον κωδικό σύνδεσης του Mac. Διαγράφεται μόνο ο κωδικός του Blackout· οι άλλες προτιμήσεις διατηρούνται. Ως έσχατη λύση, κάντε αναγκαστικό τερματισμό της εφαρμογής ή επανεκκίνηση του macOS."
       ]
     ],
     "faqs": [
       [
         "Είναι κλείδωμα ασφαλείας του macOS;",
-        "Όχι. Καλύπτει οθόνες και αναχαιτίζει συνήθη είσοδο. Ο αναγκαστικός τερματισμός, οι οθόνες ασφαλείας και άλλες λειτουργίες συστήματος είναι εκτός εγγύησης. Χρησιμοποιήστε το κλείδωμα οθόνης του macOS για προστασία της συνεδρίας."
+        "Όχι. Το BlackoutMac καλύπτει οθόνες και αποκλείει τη συνήθη είσοδο από πληκτρολόγιο και ποντίκι. Εργαλεία αυτοματισμού που έχουν ήδη άδεια προσβασιμότητας, όπως όσα χρησιμοποιούν API AX, ενδέχεται να εξακολουθούν να διαβάζουν ή να ελέγχουν άλλες εφαρμογές ενώ οι οθόνες είναι καλυμμένες. Ο κωδικός περιορίζει μόνο την αφαίρεση της κάλυψης του Blackout· δεν ασφαλίζει τη συνεδρία macOS. Ο αναγκαστικός τερματισμός, οι οθόνες ασφαλείας και άλλες λειτουργίες συστήματος είναι εκτός εγγύησης. Χρησιμοποιήστε το κλείδωμα οθόνης του macOS για προστασία της συνεδρίας."
       ],
       [
         "Η άδεια εισόδου είναι ενεργή. Γιατί δεν ξεκινά η κάλυψη;",

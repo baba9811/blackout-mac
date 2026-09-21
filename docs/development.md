@@ -31,6 +31,8 @@ See [distribution and repository maintenance](distribution.md) for the release c
 
 Input routing unit tests check consumption, restricted forwarding, blocked shortcuts, and safe input-source switching. Actual event delivery also needs interactive testing on a Mac with Blackout's input-control permission enabled; tests do not grant permissions.
 
+Emergency-exit tests use isolated child processes and a simulated key-state reader to verify normal dismissal, an unresponsive main thread, cancellation, and stale-session rejection. They never capture desktop input. Physical Escape detection, including while a secure password field is focused, still requires testing on a real Mac. Installation tests use temporary bundles and injected failures; they never replace the installed app.
+
 ## Website and translations
 
 ```sh
@@ -44,7 +46,9 @@ App strings are in `Resources/Localization/<language>.lproj/Localizable.strings`
 
 If the system permission switch is on but `AXIsProcessTrusted()` remains false after replacing the app, quit Blackout, remove its old entry from the input-control permission list, add the installed app again, enable it, and relaunch. Ad-hoc signatures identify a particular build; macOS can retain an entry whose code requirement no longer matches. Do not remove the permission check or weaken code-signing requirements to work around this. Consistent Developer ID signing is the distribution solution; it is not configured in this preview.
 
-If you forget the app password, run these commands from your own account:
+To recover without a terminal, hold **Escape for 3 seconds** to leave blackout, reopen the app if necessary, and choose **Settings → Forgot Password…**. Authenticate with macOS to reset only the app password. Cancelling authentication preserves it. Emergency exit itself bypasses normal password dismissal but does not change the saved password or other preferences.
+
+If the app cannot be opened, the manual recovery fallback from your own account is:
 
 ```sh
 pkill -x Blackout

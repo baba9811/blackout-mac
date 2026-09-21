@@ -60,3 +60,18 @@
 "No releases have been published yet." = "Chưa có bản phát hành nào được công bố.";
 "Could not check for updates. Please try again." = "Không thể kiểm tra bản cập nhật. Vui lòng thử lại.";
 "Open Release Page…" = "Mở trang bản phát hành…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "Đặt mật khẩu…";
+"Change Password…" = "Đổi mật khẩu…";
+"Turn Off Password…" = "Tắt mật khẩu…";
+"Forgot Password…" = "Quên mật khẩu…";
+"Set Password" = "Đặt mật khẩu";
+"Change Password" = "Đổi mật khẩu";
+"Turn Off Password" = "Tắt mật khẩu";
+"Current password" = "Mật khẩu hiện tại";
+"Authenticate with macOS to reset your Blackout password." = "Xác thực bằng macOS để đặt lại mật khẩu Blackout.";
+"Password reset was not completed. Your password is unchanged." = "Chưa hoàn tất việc đặt lại mật khẩu. Mật khẩu của bạn không thay đổi.";
+"Password reset. Password protection is off." = "Đã đặt lại mật khẩu. Bảo vệ bằng mật khẩu đã tắt.";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "Không đọc được cài đặt mật khẩu đã lưu. Dùng Quên mật khẩu trong cài đặt để khôi phục.";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Thoát khẩn cấp: giữ Escape trong 3 giây. Thao tác này bỏ qua mật khẩu ứng dụng.";

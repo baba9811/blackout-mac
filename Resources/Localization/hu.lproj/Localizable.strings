@@ -60,3 +60,18 @@
 "No releases have been published yet." = "Még nem jelent meg kiadás.";
 "Could not check for updates. Please try again." = "Nem sikerült frissítéseket keresni. Próbálja újra.";
 "Open Release Page…" = "Kiadási oldal megnyitása…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "Jelszó beállítása…";
+"Change Password…" = "Jelszó módosítása…";
+"Turn Off Password…" = "Jelszó kikapcsolása…";
+"Forgot Password…" = "Elfelejtett jelszó…";
+"Set Password" = "Jelszó beállítása";
+"Change Password" = "Jelszó módosítása";
+"Turn Off Password" = "Jelszó kikapcsolása";
+"Current password" = "Aktuális jelszó";
+"Authenticate with macOS to reset your Blackout password." = "A Blackout jelszavának visszaállításához igazolja magát a macOS rendszerben.";
+"Password reset was not completed. Your password is unchanged." = "A jelszó visszaállítása nem fejeződött be. A jelszó nem változott.";
+"Password reset. Password protection is off." = "A jelszó visszaállítva. A jelszóvédelem ki van kapcsolva.";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "A mentett jelszóbeállítások nem olvashatók. A helyreállításhoz használja a beállítások Elfelejtett jelszó lehetőségét.";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Vészkilépés: tartsa lenyomva az Escape billentyűt 3 másodpercig. Ez megkerüli az app jelszavát.";

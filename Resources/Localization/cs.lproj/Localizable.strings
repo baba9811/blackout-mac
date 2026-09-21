@@ -60,3 +60,18 @@
 "No releases have been published yet." = "Zatím nebyla zveřejněna žádná verze.";
 "Could not check for updates. Please try again." = "Aktualizace nelze vyhledat. Zkuste to znovu.";
 "Open Release Page…" = "Otevřít stránku vydání…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "Nastavit heslo…";
+"Change Password…" = "Změnit heslo…";
+"Turn Off Password…" = "Vypnout heslo…";
+"Forgot Password…" = "Zapomenuté heslo…";
+"Set Password" = "Nastavit heslo";
+"Change Password" = "Změnit heslo";
+"Turn Off Password" = "Vypnout heslo";
+"Current password" = "Aktuální heslo";
+"Authenticate with macOS to reset your Blackout password." = "Ověřte svou totožnost v macOS a resetujte heslo Blackout.";
+"Password reset was not completed. Your password is unchanged." = "Resetování hesla nebylo dokončeno. Heslo se nezměnilo.";
+"Password reset. Password protection is off." = "Heslo bylo resetováno. Ochrana heslem je vypnutá.";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "Uložená nastavení hesla nelze přečíst. Pro obnovení použijte v nastavení volbu Zapomenuté heslo.";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Nouzové ukončení: podržte Escape po dobu 3 sekund. Tím obejdete heslo aplikace.";

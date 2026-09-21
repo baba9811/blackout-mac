@@ -60,3 +60,18 @@
 "No releases have been published yet." = "Δεν έχουν δημοσιευτεί ακόμη εκδόσεις.";
 "Could not check for updates. Please try again." = "Δεν ήταν δυνατός ο έλεγχος ενημερώσεων. Δοκιμάστε ξανά.";
 "Open Release Page…" = "Άνοιγμα σελίδας έκδοσης…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "Ορισμός κωδικού…";
+"Change Password…" = "Αλλαγή κωδικού…";
+"Turn Off Password…" = "Απενεργοποίηση κωδικού…";
+"Forgot Password…" = "Ξεχάσατε τον κωδικό…";
+"Set Password" = "Ορισμός κωδικού";
+"Change Password" = "Αλλαγή κωδικού";
+"Turn Off Password" = "Απενεργοποίηση κωδικού";
+"Current password" = "Τρέχων κωδικός";
+"Authenticate with macOS to reset your Blackout password." = "Επαληθεύστε την ταυτότητά σας μέσω macOS για επαναφορά του κωδικού Blackout.";
+"Password reset was not completed. Your password is unchanged." = "Η επαναφορά του κωδικού δεν ολοκληρώθηκε. Ο κωδικός σας δεν άλλαξε.";
+"Password reset. Password protection is off." = "Έγινε επαναφορά κωδικού. Η προστασία με κωδικό είναι απενεργοποιημένη.";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "Δεν ήταν δυνατή η ανάγνωση των αποθηκευμένων ρυθμίσεων κωδικού. Χρησιμοποιήστε το Ξεχάσατε τον κωδικό στις ρυθμίσεις για ανάκτηση.";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Έξοδος έκτακτης ανάγκης: κρατήστε πατημένο το Escape για 3 δευτερόλεπτα. Έτσι παρακάμπτεται ο κωδικός της εφαρμογής.";

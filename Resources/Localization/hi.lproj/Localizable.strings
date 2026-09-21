@@ -60,3 +60,18 @@
 "No releases have been published yet." = "अभी तक कोई संस्करण जारी नहीं हुआ है।";
 "Could not check for updates. Please try again." = "अपडेट की जाँच नहीं हो सकी। कृपया फिर कोशिश करें।";
 "Open Release Page…" = "रिलीज़ पेज खोलें…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "पासवर्ड सेट करें…";
+"Change Password…" = "पासवर्ड बदलें…";
+"Turn Off Password…" = "पासवर्ड बंद करें…";
+"Forgot Password…" = "पासवर्ड भूल गए…";
+"Set Password" = "पासवर्ड सेट करें";
+"Change Password" = "पासवर्ड बदलें";
+"Turn Off Password" = "पासवर्ड बंद करें";
+"Current password" = "मौजूदा पासवर्ड";
+"Authenticate with macOS to reset your Blackout password." = "Blackout का पासवर्ड रीसेट करने के लिए macOS से अपनी पहचान सत्यापित करें।";
+"Password reset was not completed. Your password is unchanged." = "पासवर्ड रीसेट पूरा नहीं हुआ। आपका पासवर्ड नहीं बदला है।";
+"Password reset. Password protection is off." = "पासवर्ड रीसेट हो गया। पासवर्ड सुरक्षा बंद है।";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "सहेजी गई पासवर्ड सेटिंग्स पढ़ी नहीं जा सकीं। पुनर्प्राप्ति के लिए सेटिंग में पासवर्ड भूल गए का उपयोग करें।";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "आपातकालीन निकास: Escape को 3 सेकंड तक दबाए रखें। इससे ऐप का पासवर्ड देने की ज़रूरत नहीं होगी।";

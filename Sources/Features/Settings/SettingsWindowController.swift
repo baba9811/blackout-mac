@@ -1,6 +1,7 @@
 import AppKit
 import ApplicationServices
 import ServiceManagement
+import LocalAuthentication
 
 private final class SettingsDocumentView: NSView {
     override var isFlipped: Bool { true }
@@ -26,15 +27,14 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
     private let accessibilityLabel = NSTextField(labelWithString: "")
     private let accessibilityStatus = NSTextField(wrappingLabelWithString: "")
     private let accessibilitySettings = NSButton()
-    private let passwordToggle = NSButton(checkboxWithTitle: "", target: nil, action: nil)
-    private let currentPassword = NSSecureTextField()
-    private let newPassword = NSSecureTextField()
-    private let confirmation = NSSecureTextField()
-    private let save = NSButton()
+    private let editPassword = NSButton()
+    private let turnOffPassword = NSButton()
+    private let resetPassword = NSButton()
+    private var passwordResetContext: LAContext?
+    private var passwordSheet: PasswordSheetController?
     private let passwordStatus = NSTextField(wrappingLabelWithString: "")
     private let note = NSTextField(wrappingLabelWithString: "")
     private var passwordMessageKey: String?
-    private var passwordError: Error?
 
     init(passwords: PasswordSettings) {
         self.passwords = passwords
@@ -51,23 +51,21 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         languageSelector.action = #selector(changeLanguage)
         loginToggle.target = self
         loginToggle.action = #selector(changeLoginItem)
-        passwordToggle.target = self
-        passwordToggle.action = #selector(updatePasswordFields)
         for (button, action) in [
             (loginSettings, #selector(openLoginSettings)),
             (accessibilitySettings, #selector(openAccessibilitySettings)),
             (checkUpdates, #selector(checkForUpdates)),
             (openRelease, #selector(openReleasePage)),
-            (save, #selector(savePassword))
+            (editPassword, #selector(editPasswordSettings)),
+            (turnOffPassword, #selector(disablePassword)),
+            (resetPassword, #selector(resetForgottenPassword))
         ] {
             button.target = self
             button.action = action
             button.bezelStyle = .rounded
         }
-        for toggle in [loginToggle, passwordToggle] {
-            toggle.cell?.wraps = true
-            toggle.cell?.isScrollable = false
-        }
+        loginToggle.cell?.wraps = true
+        loginToggle.cell?.isScrollable = false
         note.textColor = .secondaryLabelColor
         note.font = .systemFont(ofSize: NSFont.smallSystemFontSize)
         for label in [loginStatus, accessibilityStatus, passwordStatus, updateStatus] {
@@ -83,7 +81,7 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
             versionLabel, checkUpdates, updateStatus, openRelease, separators[3],
             loginToggle, loginStatus, loginSettings, separators[1],
             accessibilityLabel, accessibilityStatus, accessibilitySettings, separators[2],
-            passwordToggle, currentPassword, newPassword, confirmation, save, passwordStatus, note
+            passwordStatus, editPassword, turnOffPassword, resetPassword, note
         ])
         stack.orientation = .vertical
         stack.alignment = .leading
@@ -110,8 +108,7 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
             stack.topAnchor.constraint(equalTo: document.topAnchor, constant: 24),
             stack.bottomAnchor.constraint(equalTo: document.bottomAnchor, constant: -24)
         ])
-        for view in [loginToggle, loginStatus, accessibilityStatus, passwordToggle,
-                     currentPassword, newPassword, confirmation, passwordStatus, note, updateStatus] + separators {
+        for view in [loginToggle, loginStatus, accessibilityStatus, passwordStatus, note, updateStatus] + separators {
             view.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
         }
         languageSelector.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
@@ -125,12 +122,9 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     func show() {
-        passwordToggle.state = passwords.isEnabled ? .on : .off
-        clearPasswordFields()
+        cancelPendingPasswordChanges()
         passwordMessageKey = nil
-        passwordError = nil
         refreshLanguage()
-        updatePasswordFields()
         NSApp.activate(ignoringOtherApps: true)
         showWindow(nil)
         window?.makeKeyAndOrderFront(nil)
@@ -146,7 +140,7 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         refreshAccessibilityStatus()
     }
     func windowWillClose(_ notification: Notification) {
-        clearPasswordFields()
+        cancelPendingPasswordChanges()
         onClose?()
     }
 
@@ -170,19 +164,14 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         loginSettings.title = L("Open Login Settings…")
         accessibilityLabel.stringValue = L("Input Blocking")
         accessibilitySettings.title = L("Open Input Permission Settings…")
-        passwordToggle.title = L("Require a password to restore the screen")
-        save.title = L("Save Password Settings")
-        for (field, key) in [
-            (currentPassword, "Current password (required to change or disable)"),
-            (newPassword, "New password"), (confirmation, "Confirm new password")
-        ] {
-            field.placeholderString = L(key)
-            field.setAccessibilityLabel(L(key))
-        }
+        editPassword.title = L(passwords.isEnabled ? "Change Password…" : "Set Password…")
+        turnOffPassword.title = L("Turn Off Password…")
+        resetPassword.title = L("Forgot Password…")
         note.stringValue = L("Password protection is optional. Blackout covers the screen within the app and does not replace the macOS screen lock.")
-        passwordStatus.stringValue = passwordError?.localizedDescription ?? L(passwordMessageKey ??
+            + "\n" + L("Emergency exit: hold Escape for 3 seconds. This bypasses the app password.")
+        passwordStatus.stringValue = L(passwordMessageKey ??
             (passwords.isEnabled ? "Password protection is on." : "Password protection is off."))
-        passwordStatus.textColor = passwordError == nil ? .secondaryLabelColor : .systemRed
+        refreshPasswordActions()
         refreshLoginStatus()
         refreshAccessibilityStatus()
         refreshUpdateStatus()
@@ -245,37 +234,76 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         if let release = availableRelease { NSWorkspace.shared.open(release.url) }
     }
 
-    private func clearPasswordFields() {
-        currentPassword.stringValue = ""
-        newPassword.stringValue = ""
-        confirmation.stringValue = ""
+    private func refreshPasswordActions() {
+        let idle = passwordResetContext == nil && passwordSheet == nil
+        editPassword.isEnabled = idle
+        turnOffPassword.isEnabled = idle
+        resetPassword.isEnabled = idle
+        turnOffPassword.isHidden = !passwords.isEnabled
+        resetPassword.isHidden = !passwords.isEnabled
     }
 
-    @objc private func updatePasswordFields() {
-        currentPassword.isEnabled = passwords.isEnabled
-        newPassword.isEnabled = passwordToggle.state == .on
-        confirmation.isEnabled = passwordToggle.state == .on
+    @objc private func editPasswordSettings() {
+        showPasswordSheet(passwords.isEnabled ? .change : .set)
     }
 
-    @objc private func savePassword() {
-        do {
-            try passwords.update(
-                enabled: passwordToggle.state == .on,
-                current: currentPassword.stringValue,
-                new: newPassword.stringValue,
-                confirmation: confirmation.stringValue
-            )
-            clearPasswordFields()
-            updatePasswordFields()
-            passwordError = nil
-            passwordMessageKey = passwords.isEnabled
-                ? "Saved. A password will be required the next time you black out the screen."
-                : "Saved. Password protection is off."
-            onPasswordSettingsChanged?()
-        } catch {
-            passwordError = error
+    @objc private func disablePassword() { showPasswordSheet(.turnOff) }
+
+    private func showPasswordSheet(_ mode: PasswordSheetController.Mode) {
+        guard passwordResetContext == nil, passwordSheet == nil, let window, window.isVisible else { return }
+        let sheet = PasswordSheetController(passwords: passwords, mode: mode)
+        passwordSheet = sheet
+        refreshPasswordActions()
+        window.beginSheet(sheet.window!) { [weak self] response in
+            guard let self, self.passwordSheet === sheet else { return }
+            self.passwordSheet = nil
+            if response == .OK {
+                self.passwordMessageKey = self.passwords.isEnabled
+                    ? "Saved. A password will be required the next time you black out the screen."
+                    : "Saved. Password protection is off."
+                self.onPasswordSettingsChanged?()
+            }
+            self.refreshLanguage()
         }
+    }
+
+    func cancelPendingPasswordChanges() {
+        let sheet = passwordSheet
+        passwordSheet = nil
+        sheet?.cancel()
+        let context = passwordResetContext
+        passwordResetContext = nil
+        context?.invalidate()
+        refreshPasswordActions()
+    }
+
+    @objc private func resetForgottenPassword() {
+        guard passwordResetContext == nil, passwordSheet == nil, passwords.isEnabled, window?.isVisible == true else { return }
+        let context = LAContext()
+        passwordMessageKey = "Password reset was not completed. Your password is unchanged."
+        guard context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil) else {
+            refreshLanguage()
+            return
+        }
+        let revision = passwords.revision
+        passwordResetContext = context
+        passwordMessageKey = "Authenticate with macOS to reset your Blackout password."
+        refreshPasswordActions()
         refreshLanguage()
+        context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: L("Authenticate with macOS to reset your Blackout password.")) { [weak self] success, _ in
+            DispatchQueue.main.async {
+                guard let self, self.passwordResetContext === context, self.window?.isVisible == true else { return }
+                self.passwordResetContext = nil
+                context.invalidate()
+                if success, self.passwords.resetAfterOwnerAuthentication(ifUnchanged: revision) {
+                    self.passwordMessageKey = "Password reset. Password protection is off."
+                    self.onPasswordSettingsChanged?()
+                } else {
+                    self.passwordMessageKey = "Password reset was not completed. Your password is unchanged."
+                }
+                self.refreshLanguage()
+            }
+        }
     }
 
     private func refreshLoginStatus() {

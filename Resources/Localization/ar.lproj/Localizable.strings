@@ -60,3 +60,18 @@
 "No releases have been published yet." = "لم تُنشر أي إصدارات بعد.";
 "Could not check for updates. Please try again." = "تعذّر التحقق من وجود تحديثات. حاول مجددًا.";
 "Open Release Page…" = "فتح صفحة الإصدار…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "تعيين كلمة المرور…";
+"Change Password…" = "تغيير كلمة المرور…";
+"Turn Off Password…" = "إيقاف كلمة المرور…";
+"Forgot Password…" = "نسيت كلمة المرور…";
+"Set Password" = "تعيين كلمة المرور";
+"Change Password" = "تغيير كلمة المرور";
+"Turn Off Password" = "إيقاف كلمة المرور";
+"Current password" = "كلمة المرور الحالية";
+"Authenticate with macOS to reset your Blackout password." = "تحقق من هويتك باستخدام macOS لإعادة تعيين كلمة مرور Blackout.";
+"Password reset was not completed. Your password is unchanged." = "لم تكتمل إعادة تعيين كلمة المرور. لم تتغير كلمة المرور.";
+"Password reset. Password protection is off." = "تمت إعادة تعيين كلمة المرور. الحماية بكلمة المرور متوقفة.";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "تعذرت قراءة إعدادات كلمة المرور المحفوظة. استخدم «نسيت كلمة المرور» في الإعدادات للاسترداد.";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "خروج طارئ: اضغط مطولًا على Escape لمدة 3 ثوانٍ. يؤدي ذلك إلى تجاوز كلمة مرور التطبيق.";

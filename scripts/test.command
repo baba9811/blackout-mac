@@ -12,6 +12,15 @@ xcrun swiftc "$ROOT/Sources/Core/Security/PasswordSettings.swift" \
 xcrun swiftc "$ROOT/Sources/Platform/Input/InputBlocker.swift" \
   "$ROOT/Tests/Input/InputBlockerTests.swift" -o "$TEST_DIR/input"
 "$TEST_DIR/input"
+xcrun swiftc "$ROOT/Sources/Platform/Input/InputBlocker.swift" \
+  "$ROOT/Tests/Input/EmergencyExitProcessTests.swift" -o "$TEST_DIR/emergency-exit"
+"$TEST_DIR/emergency-exit"
+xcrun swiftc "$ROOT/Sources/Core/Security/PasswordSettings.swift" \
+  "$ROOT/Sources/Core/Localization/AppLanguage.swift" \
+  "$ROOT/Sources/App/PasswordError+Localization.swift" \
+  "$ROOT/Sources/Features/Settings/PasswordSheetController.swift" \
+  "$ROOT/Tests/Settings/PasswordSheetTests.swift" -o "$TEST_DIR/password-sheets"
+"$TEST_DIR/password-sheets"
 xcrun swiftc "$ROOT/Sources/Core/Localization/AppLanguage.swift" \
   "$ROOT/Tests/Localization/LocalizationTests.swift" -o "$TEST_DIR/localization"
 "$TEST_DIR/localization" "$ROOT/Resources/Localization"
@@ -19,3 +28,4 @@ xcrun swiftc "$ROOT/Sources/Core/Updates/ReleaseVersion.swift" \
   "$ROOT/Sources/Platform/Updates/ReleaseChecker.swift" \
   "$ROOT/Tests/Updates/ReleaseCheckerTests.swift" -o "$TEST_DIR/updates"
 "$TEST_DIR/updates"
+python3 -B -m unittest discover -s "$ROOT/Tests/Installation" -v

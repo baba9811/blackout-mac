@@ -54,6 +54,7 @@ struct UnlockPassword: Codable {
 final class PasswordSettings {
     static let key = "unlockPassword.v1"
     private let defaults: UserDefaults
+    private(set) var revision = 0
 
     init(defaults: UserDefaults = .standard) { self.defaults = defaults }
 
@@ -74,11 +75,20 @@ final class PasswordSettings {
         if let existing, !existing.matches(current) { throw PasswordError.incorrectCurrent }
         if !enabled {
             defaults.removeObject(forKey: Self.key)
+            revision += 1
             return
         }
         guard new == confirmation else { throw PasswordError.mismatch }
-        if existing != nil, new.isEmpty { return }
         let password = try UnlockPassword.create(new)
         defaults.set(try JSONEncoder().encode(password), forKey: Self.key)
+        revision += 1
+    }
+
+    // Call only after macOS owner authentication succeeds for this settings revision.
+    func resetAfterOwnerAuthentication(ifUnchanged expectedRevision: Int) -> Bool {
+        guard revision == expectedRevision else { return false }
+        defaults.removeObject(forKey: Self.key)
+        revision += 1
+        return true
     }
 }

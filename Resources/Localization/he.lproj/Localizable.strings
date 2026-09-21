@@ -60,3 +60,18 @@
 "No releases have been published yet." = "עדיין לא פורסמו גרסאות.";
 "Could not check for updates. Please try again." = "לא ניתן לבדוק עדכונים. יש לנסות שוב.";
 "Open Release Page…" = "פתיחת דף הגרסה…";
+
+// Password dialogs and emergency recovery
+"Set Password…" = "הגדרת סיסמה…";
+"Change Password…" = "שינוי סיסמה…";
+"Turn Off Password…" = "כיבוי הסיסמה…";
+"Forgot Password…" = "שכחתי סיסמה…";
+"Set Password" = "הגדרת סיסמה";
+"Change Password" = "שינוי סיסמה";
+"Turn Off Password" = "כיבוי הסיסמה";
+"Current password" = "הסיסמה הנוכחית";
+"Authenticate with macOS to reset your Blackout password." = "יש לאמת את הזהות באמצעות macOS כדי לאפס את סיסמת Blackout.";
+"Password reset was not completed. Your password is unchanged." = "איפוס הסיסמה לא הושלם. הסיסמה לא השתנתה.";
+"Password reset. Password protection is off." = "הסיסמה אופסה. הגנת הסיסמה כבויה.";
+"The saved password settings could not be read. Use Forgot Password in Settings to recover." = "לא ניתן לקרוא את הגדרות הסיסמה השמורות. לשחזור, יש לבחור ״שכחתי סיסמה״ בהגדרות.";
+"Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "יציאת חירום: יש להחזיק את Escape לחוץ למשך 3 שניות. פעולה זו עוקפת את סיסמת היישום.";

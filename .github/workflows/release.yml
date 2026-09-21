@@ -98,6 +98,8 @@ jobs:
 
           Download the DMG, quit the existing app, and replace Blackout.app in the same folder. Password and language settings are kept separately. Check login startup and input-control permission after replacing the app.
 
+          Hold Escape for three seconds for emergency exit, which deliberately bypasses the app password without deleting it. If the app is unresponsive, it quits; reopen it afterward. Forgot Password in Settings resets only the app password after macOS owner authentication.
+
           If the permission switch is already on but Blackout still asks for access, quit Blackout, remove its old permission entry, add and enable the currently installed app, then reopen it. An ad-hoc signature change can invalidate an old approval.
 
           This preview is ad-hoc signed and is not Apple-notarized. Automated checks cover password storage, input-routing decisions, translations, and packaging. Interactive input interception, IME behavior, login/reboot, and older macOS/Intel hardware still require real-device validation. See the repository's installation and distribution guides for current limits.
