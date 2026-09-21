@@ -22,7 +22,7 @@
 "The current password is incorrect." = "Mật khẩu hiện tại không đúng.";
 "The saved password settings could not be read. See the recovery instructions in the README." = "Không thể đọc cài đặt mật khẩu đã lưu. Xem hướng dẫn khôi phục trong README.";
 "The password could not be processed. Please try again." = "Không thể xử lý mật khẩu. Vui lòng thử lại.";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "Chặn đầu vào yêu cầu cấp quyền Trợ năng cho Blackout. Bật quyền này trong Cài đặt hệ thống rồi thử lại.";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "Chặn đầu vào yêu cầu quyền điều khiển bàn phím và chuột. Mở Cài đặt hệ thống, cho phép Blackout rồi thử lại. Nếu Blackout đã được cho phép, hãy xóa khỏi danh sách, thêm lại ứng dụng hiện đang được cài đặt, rồi khởi động lại Blackout.";
 "Input blocking could not start. The screen has not been covered." = "Không thể bắt đầu chặn đầu vào. Màn hình chưa bị che.";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "Việc chặn đầu vào đã dừng. Màn hình đã được khôi phục để tránh che ứng dụng khác khi đầu vào không được bảo vệ.";
 "Open System Settings" = "Mở Cài đặt hệ thống";
@@ -30,7 +30,7 @@
 "Language" = "Ngôn ngữ";
 "System Default" = "Mặc định của hệ thống";
 "Launch at login" = "Mở khi đăng nhập";
-"Open Login Items…" = "Mở Mục đăng nhập…";
+"Open Login Settings…" = "Mở cài đặt đăng nhập…";
 "Require a password to restore the screen" = "Yêu cầu mật khẩu để khôi phục màn hình";
 "Current password (required to change or disable)" = "Mật khẩu hiện tại (để thay đổi hoặc tắt)";
 "New password" = "Mật khẩu mới";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "Đã lưu. Bạn sẽ cần mật khẩu vào lần làm đen màn hình tiếp theo.";
 "Saved. Password protection is off." = "Đã lưu. Bảo vệ bằng mật khẩu đang tắt.";
 "Blackout will run in the menu bar when you log in." = "Blackout sẽ chạy trên thanh menu khi bạn đăng nhập.";
-"Allow Blackout in macOS Login Items settings." = "Cho phép Blackout trong cài đặt Mục đăng nhập của macOS.";
+"Allow Blackout in the macOS login settings." = "Cho phép Blackout trong cài đặt đăng nhập của macOS.";
 "Launch at login is off." = "Mở khi đăng nhập đang tắt.";
 "Blackout is not registered as a login item. Enable the option to register it." = "Blackout chưa được đăng ký làm mục đăng nhập. Bật tùy chọn để đăng ký.";
-"Check the status in macOS Login Items settings." = "Kiểm tra trạng thái trong cài đặt Mục đăng nhập của macOS.";
+"Check the status in the macOS login settings." = "Kiểm tra trạng thái trong cài đặt đăng nhập của macOS.";
 "Could not change launch at login: %@" = "Không thể thay đổi mở khi đăng nhập: %@";
 "Input Blocking" = "Chặn đầu vào";
-"Open Accessibility Settings…" = "Mở cài đặt Trợ năng…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Quyền Trợ năng đã được bật. Có thể chặn đầu vào từ bàn phím và chuột khi màn hình đang đen.";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "Cần có quyền Trợ năng trước khi làm đen màn hình. Cho phép Blackout trong Cài đặt hệ thống để ngăn đầu vào từ bàn phím và chuột đến các ứng dụng khác.";
+"Open Input Permission Settings…" = "Mở cài đặt quyền đầu vào…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Quyền điều khiển đầu vào đã được bật. Có thể chặn đầu vào từ bàn phím và chuột khi màn hình đang đen.";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "Cần có quyền điều khiển đầu vào trước khi làm đen màn hình. Mở cài đặt quyền bên dưới và cho phép Blackout. Nếu Blackout đã được cho phép, hãy xóa khỏi danh sách, thêm lại ứng dụng hiện đang được cài đặt, rồi khởi động lại Blackout.";
+
+"Version %@" = "Phiên bản %@";
+"Check for Updates…" = "Kiểm tra bản cập nhật…";
+"Checking for updates…" = "Đang kiểm tra bản cập nhật…";
+"You’re up to date." = "Bạn đang dùng phiên bản mới nhất.";
+"Version %@ is available." = "Đã có phiên bản %@.";
+"No releases have been published yet." = "Chưa có bản phát hành nào được công bố.";
+"Could not check for updates. Please try again." = "Không thể kiểm tra bản cập nhật. Vui lòng thử lại.";
+"Open Release Page…" = "Mở trang bản phát hành…";

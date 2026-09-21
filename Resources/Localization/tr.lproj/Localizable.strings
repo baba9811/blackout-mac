@@ -22,7 +22,7 @@
 "The current password is incorrect." = "Geçerli parola yanlış.";
 "The saved password settings could not be read. See the recovery instructions in the README." = "Kaydedilen parola ayarları okunamadı. README dosyasındaki kurtarma yönergelerine bakın.";
 "The password could not be processed. Please try again." = "Parola işlenemedi. Lütfen tekrar deneyin.";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "Girişi engellemek için Blackout’a Erişilebilirlik izni verilmelidir. Sistem Ayarları’nda izin verip tekrar deneyin.";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "Girişi engellemek için klavye ve fare girişini denetleme izni gereklidir. Sistem Ayarları’nı açıp Blackout’a izin verin ve tekrar deneyin. Blackout’a zaten izin verilmişse listeden kaldırın, yüklü olan uygulamayı yeniden ekleyin ve Blackout’u yeniden başlatın.";
 "Input blocking could not start. The screen has not been covered." = "Giriş engelleme başlatılamadı. Ekran örtülmedi.";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "Giriş engelleme durdu. Giriş korunmadığında başka bir uygulamayı gizlememek için karartma sona erdi.";
 "Open System Settings" = "Sistem Ayarları’nı Aç";
@@ -30,7 +30,7 @@
 "Language" = "Dil";
 "System Default" = "Sistem Varsayılanı";
 "Launch at login" = "Oturum açıldığında başlat";
-"Open Login Items…" = "Giriş Öğelerini Aç…";
+"Open Login Settings…" = "Oturum Açma Ayarlarını Aç…";
 "Require a password to restore the screen" = "Ekranı geri getirmek için parola iste";
 "Current password (required to change or disable)" = "Geçerli parola (değiştirme veya kapatma için)";
 "New password" = "Yeni parola";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "Kaydedildi. Ekranı bir sonraki karartışınızda parola gerekecek.";
 "Saved. Password protection is off." = "Kaydedildi. Parola koruması kapalı.";
 "Blackout will run in the menu bar when you log in." = "Oturum açtığınızda Blackout menü çubuğunda çalışır.";
-"Allow Blackout in macOS Login Items settings." = "macOS Giriş Öğeleri ayarlarında Blackout’a izin verin.";
+"Allow Blackout in the macOS login settings." = "macOS oturum açma ayarlarında Blackout’a izin verin.";
 "Launch at login is off." = "Oturum açıldığında başlatma kapalı.";
 "Blackout is not registered as a login item. Enable the option to register it." = "Blackout giriş öğesi olarak kayıtlı değil. Kaydetmek için seçeneği açın.";
-"Check the status in macOS Login Items settings." = "macOS Giriş Öğeleri ayarlarında durumu kontrol edin.";
+"Check the status in the macOS login settings." = "macOS oturum açma ayarlarında durumu kontrol edin.";
 "Could not change launch at login: %@" = "Oturum açıldığında başlatma değiştirilemedi: %@";
 "Input Blocking" = "Giriş Engelleme";
-"Open Accessibility Settings…" = "Erişilebilirlik Ayarlarını Aç…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Erişilebilirlik izni açık. Karartma sırasında klavye ve fare girişi engellenebilir.";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "Karartmadan önce Erişilebilirlik izni gereklidir. Klavye ve fare girişinin diğer uygulamalara ulaşmasını engellemek için Sistem Ayarları’nda Blackout’a izin verin.";
+"Open Input Permission Settings…" = "Giriş İzni Ayarlarını Aç…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Girişi denetleme izni açık. Karartma sırasında klavye ve fare girişi engellenebilir.";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "Karartmadan önce girişi denetleme izni gereklidir. Aşağıdaki izin ayarlarını açıp Blackout’a izin verin. Blackout’a zaten izin verilmişse listeden kaldırın, yüklü olan uygulamayı yeniden ekleyin ve Blackout’u yeniden başlatın.";
+
+"Version %@" = "Sürüm %@";
+"Check for Updates…" = "Güncellemeleri Denetle…";
+"Checking for updates…" = "Güncellemeler denetleniyor…";
+"You’re up to date." = "En son sürümü kullanıyorsunuz.";
+"Version %@ is available." = "%@ sürümü kullanılabilir.";
+"No releases have been published yet." = "Henüz bir sürüm yayımlanmadı.";
+"Could not check for updates. Please try again." = "Güncellemeler denetlenemedi. Lütfen tekrar deneyin.";
+"Open Release Page…" = "Sürüm Sayfasını Aç…";

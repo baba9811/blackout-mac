@@ -22,7 +22,7 @@
 "The current password is incorrect." = "La password attuale è errata.";
 "The saved password settings could not be read. See the recovery instructions in the README." = "Impossibile leggere le impostazioni della password salvate. Consulta le istruzioni di ripristino nel README.";
 "The password could not be processed. Please try again." = "Impossibile elaborare la password. Riprova.";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "Il blocco dell’input richiede il permesso Accessibilità per Blackout. Abilitalo in Impostazioni di Sistema, poi riprova.";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "Il blocco dell’input richiede il permesso di controllare tastiera e mouse. Apri Impostazioni di Sistema, consenti Blackout e riprova. Se Blackout è già consentito, rimuovilo dall’elenco, aggiungi nuovamente l’app attualmente installata e riavvia Blackout.";
 "Input blocking could not start. The screen has not been covered." = "Impossibile avviare il blocco dell’input. Lo schermo non è stato coperto.";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "Il blocco dell’input si è interrotto. L’oscuramento è terminato per evitare di nascondere un’altra app mentre l’input non è protetto.";
 "Open System Settings" = "Apri Impostazioni di Sistema";
@@ -30,7 +30,7 @@
 "Language" = "Lingua";
 "System Default" = "Predefinita di sistema";
 "Launch at login" = "Apri al login";
-"Open Login Items…" = "Apri Elementi login…";
+"Open Login Settings…" = "Apri impostazioni di login…";
 "Require a password to restore the screen" = "Richiedi una password per ripristinare lo schermo";
 "Current password (required to change or disable)" = "Password attuale (per modificare o disabilitare)";
 "New password" = "Nuova password";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "Salvato. Al prossimo oscuramento dello schermo sarà richiesta una password.";
 "Saved. Password protection is off." = "Salvato. La protezione con password è disattivata.";
 "Blackout will run in the menu bar when you log in." = "Blackout verrà eseguito nella barra dei menu al login.";
-"Allow Blackout in macOS Login Items settings." = "Consenti Blackout nelle impostazioni Elementi login di macOS.";
+"Allow Blackout in the macOS login settings." = "Consenti Blackout nelle impostazioni di login di macOS.";
 "Launch at login is off." = "L’avvio al login è disattivato.";
 "Blackout is not registered as a login item. Enable the option to register it." = "Blackout non è registrato come elemento login. Abilita l’opzione per registrarlo.";
-"Check the status in macOS Login Items settings." = "Controlla lo stato nelle impostazioni Elementi login di macOS.";
+"Check the status in the macOS login settings." = "Controlla lo stato nelle impostazioni di login di macOS.";
 "Could not change launch at login: %@" = "Impossibile modificare l’avvio al login: %@";
 "Input Blocking" = "Blocco dell’input";
-"Open Accessibility Settings…" = "Apri impostazioni Accessibilità…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Il permesso Accessibilità è abilitato. Gli input di tastiera e mouse possono essere bloccati durante l’oscuramento.";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "Il permesso Accessibilità è necessario prima dell’oscuramento. Consenti Blackout in Impostazioni di Sistema per impedire che gli input di tastiera e mouse raggiungano altre app.";
+"Open Input Permission Settings…" = "Apri impostazioni dei permessi di input…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Il permesso di controllare l’input è abilitato. Gli input di tastiera e mouse possono essere bloccati durante l’oscuramento.";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "Prima dell’oscuramento è necessario il permesso di controllare l’input. Apri le impostazioni dei permessi qui sotto e consenti Blackout. Se Blackout è già consentito, rimuovilo dall’elenco, aggiungi nuovamente l’app attualmente installata e riavvia Blackout.";
+
+"Version %@" = "Versione %@";
+"Check for Updates…" = "Verifica aggiornamenti…";
+"Checking for updates…" = "Verifica aggiornamenti in corso…";
+"You’re up to date." = "Hai la versione più recente.";
+"Version %@ is available." = "È disponibile la versione %@.";
+"No releases have been published yet." = "Non è ancora stata pubblicata alcuna versione.";
+"Could not check for updates. Please try again." = "Impossibile verificare gli aggiornamenti. Riprova.";
+"Open Release Page…" = "Apri pagina della versione…";

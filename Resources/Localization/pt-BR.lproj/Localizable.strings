@@ -22,7 +22,7 @@
 "The current password is incorrect." = "A senha atual está incorreta.";
 "The saved password settings could not be read. See the recovery instructions in the README." = "Não foi possível ler os ajustes de senha salvos. Consulte as instruções de recuperação no README.";
 "The password could not be processed. Please try again." = "Não foi possível processar a senha. Tente novamente.";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "O bloqueio de entrada requer permissão de Acessibilidade para o Blackout. Ative-a nos Ajustes do Sistema e tente novamente.";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "O bloqueio de entrada requer permissão para controlar o teclado e o mouse. Abra os Ajustes do Sistema, permita o Blackout e tente novamente. Se o Blackout já estiver permitido, remova-o da lista, adicione novamente o app instalado atualmente e reinicie o Blackout.";
 "Input blocking could not start. The screen has not been covered." = "Não foi possível iniciar o bloqueio de entrada. A tela não foi coberta.";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "O bloqueio de entrada parou. O escurecimento foi encerrado para evitar ocultar outro app enquanto a entrada está desprotegida.";
 "Open System Settings" = "Abrir Ajustes do Sistema";
@@ -30,7 +30,7 @@
 "Language" = "Idioma";
 "System Default" = "Padrão do sistema";
 "Launch at login" = "Abrir ao iniciar sessão";
-"Open Login Items…" = "Abrir Itens de Início…";
+"Open Login Settings…" = "Abrir ajustes de início de sessão…";
 "Require a password to restore the screen" = "Exigir senha para restaurar a tela";
 "Current password (required to change or disable)" = "Senha atual (para alterar ou desativar)";
 "New password" = "Nova senha";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "Salvo. Uma senha será exigida na próxima vez que você escurecer a tela.";
 "Saved. Password protection is off." = "Salvo. A proteção por senha está desativada.";
 "Blackout will run in the menu bar when you log in." = "O Blackout será executado na barra de menus ao iniciar sessão.";
-"Allow Blackout in macOS Login Items settings." = "Permita o Blackout nos ajustes de Itens de Início do macOS.";
+"Allow Blackout in the macOS login settings." = "Permita o Blackout nos ajustes de início de sessão do macOS.";
 "Launch at login is off." = "A abertura ao iniciar sessão está desativada.";
 "Blackout is not registered as a login item. Enable the option to register it." = "O Blackout não está registrado como item de início. Ative a opção para registrá-lo.";
-"Check the status in macOS Login Items settings." = "Verifique o estado nos ajustes de Itens de Início do macOS.";
+"Check the status in the macOS login settings." = "Verifique o estado nos ajustes de início de sessão do macOS.";
 "Could not change launch at login: %@" = "Não foi possível alterar a abertura ao iniciar sessão: %@";
 "Input Blocking" = "Bloqueio de entrada";
-"Open Accessibility Settings…" = "Abrir ajustes de Acessibilidade…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "A permissão de Acessibilidade está ativada. As entradas do teclado e do mouse podem ser bloqueadas durante o escurecimento.";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "A permissão de Acessibilidade é necessária antes do escurecimento. Permita o Blackout nos Ajustes do Sistema para impedir que as entradas do teclado e do mouse cheguem a outros apps.";
+"Open Input Permission Settings…" = "Abrir ajustes de permissão de entrada…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "A permissão para controlar a entrada está ativada. As entradas do teclado e do mouse podem ser bloqueadas durante o escurecimento.";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "É necessária permissão para controlar a entrada antes do escurecimento. Abra os ajustes de permissão abaixo e permita o Blackout. Se o Blackout já estiver permitido, remova-o da lista, adicione novamente o app instalado atualmente e reinicie o Blackout.";
+
+"Version %@" = "Versão %@";
+"Check for Updates…" = "Buscar atualizações…";
+"Checking for updates…" = "Buscando atualizações…";
+"You’re up to date." = "Você está usando a versão mais recente.";
+"Version %@ is available." = "A versão %@ está disponível.";
+"No releases have been published yet." = "Nenhuma versão foi publicada ainda.";
+"Could not check for updates. Please try again." = "Não foi possível buscar atualizações. Tente novamente.";
+"Open Release Page…" = "Abrir página da versão…";

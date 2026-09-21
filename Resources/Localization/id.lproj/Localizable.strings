@@ -22,7 +22,7 @@
 "The current password is incorrect." = "Kata sandi saat ini salah.";
 "The saved password settings could not be read. See the recovery instructions in the README." = "Pengaturan kata sandi yang disimpan tidak dapat dibaca. Lihat petunjuk pemulihan di README.";
 "The password could not be processed. Please try again." = "Kata sandi tidak dapat diproses. Coba lagi.";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "Pemblokiran input memerlukan izin Aksesibilitas untuk Blackout. Aktifkan di Pengaturan Sistem, lalu coba lagi.";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "Pemblokiran input memerlukan izin untuk mengontrol input papan ketik dan tetikus. Buka Pengaturan Sistem, izinkan Blackout, lalu coba lagi. Jika Blackout sudah diizinkan, hapus dari daftar, tambahkan kembali app yang saat ini terinstal, lalu mulai ulang Blackout.";
 "Input blocking could not start. The screen has not been covered." = "Pemblokiran input tidak dapat dimulai. Layar belum ditutupi.";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "Pemblokiran input berhenti. Penggelapan diakhiri agar app lain tidak tersembunyi saat input tidak terlindungi.";
 "Open System Settings" = "Buka Pengaturan Sistem";
@@ -30,7 +30,7 @@
 "Language" = "Bahasa";
 "System Default" = "Default Sistem";
 "Launch at login" = "Buka saat masuk";
-"Open Login Items…" = "Buka Item Masuk…";
+"Open Login Settings…" = "Buka Pengaturan Masuk…";
 "Require a password to restore the screen" = "Wajibkan kata sandi untuk memulihkan layar";
 "Current password (required to change or disable)" = "Kata sandi saat ini (untuk mengubah atau menonaktifkan)";
 "New password" = "Kata sandi baru";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "Disimpan. Kata sandi akan diperlukan saat Anda menggelapkan layar berikutnya.";
 "Saved. Password protection is off." = "Disimpan. Perlindungan kata sandi nonaktif.";
 "Blackout will run in the menu bar when you log in." = "Blackout akan berjalan di bar menu saat Anda masuk.";
-"Allow Blackout in macOS Login Items settings." = "Izinkan Blackout di pengaturan Item Masuk macOS.";
+"Allow Blackout in the macOS login settings." = "Izinkan Blackout di pengaturan masuk macOS.";
 "Launch at login is off." = "Buka saat masuk nonaktif.";
 "Blackout is not registered as a login item. Enable the option to register it." = "Blackout belum terdaftar sebagai item masuk. Aktifkan opsi untuk mendaftarkannya.";
-"Check the status in macOS Login Items settings." = "Periksa status di pengaturan Item Masuk macOS.";
+"Check the status in the macOS login settings." = "Periksa status di pengaturan masuk macOS.";
 "Could not change launch at login: %@" = "Tidak dapat mengubah buka saat masuk: %@";
 "Input Blocking" = "Pemblokiran Input";
-"Open Accessibility Settings…" = "Buka Pengaturan Aksesibilitas…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Izin Aksesibilitas aktif. Input papan ketik dan tetikus dapat diblokir selama penggelapan.";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "Izin Aksesibilitas diperlukan sebelum penggelapan. Izinkan Blackout di Pengaturan Sistem agar input papan ketik dan tetikus tidak diteruskan ke app lain.";
+"Open Input Permission Settings…" = "Buka Pengaturan Izin Input…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Izin untuk mengontrol input aktif. Input papan ketik dan tetikus dapat diblokir selama penggelapan.";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "Izin untuk mengontrol input diperlukan sebelum penggelapan. Buka pengaturan izin di bawah dan izinkan Blackout. Jika Blackout sudah diizinkan, hapus dari daftar, tambahkan kembali app yang saat ini terinstal, lalu mulai ulang Blackout.";
+
+"Version %@" = "Versi %@";
+"Check for Updates…" = "Periksa Pembaruan…";
+"Checking for updates…" = "Memeriksa pembaruan…";
+"You’re up to date." = "Anda menggunakan versi terbaru.";
+"Version %@ is available." = "Versi %@ tersedia.";
+"No releases have been published yet." = "Belum ada versi yang dirilis.";
+"Could not check for updates. Please try again." = "Tidak dapat memeriksa pembaruan. Coba lagi.";
+"Open Release Page…" = "Buka Halaman Rilis…";

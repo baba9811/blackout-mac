@@ -22,7 +22,7 @@
 "The current password is incorrect." = "Bieżące hasło jest nieprawidłowe.";
 "The saved password settings could not be read. See the recovery instructions in the README." = "Nie można odczytać zapisanych ustawień hasła. Zobacz instrukcje odzyskiwania w README.";
 "The password could not be processed. Please try again." = "Nie można przetworzyć hasła. Spróbuj ponownie.";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "Blokowanie wejścia wymaga uprawnienia Dostępność dla Blackout. Włącz je w Ustawieniach systemowych i spróbuj ponownie.";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "Blokowanie wejścia wymaga uprawnienia do sterowania klawiaturą i myszą. Otwórz Ustawienia systemowe, zezwól na Blackout i spróbuj ponownie. Jeśli Blackout ma już uprawnienie, usuń go z listy, ponownie dodaj aktualnie zainstalowaną aplikację i uruchom ponownie Blackout.";
 "Input blocking could not start. The screen has not been covered." = "Nie można uruchomić blokowania wejścia. Ekran nie został zasłonięty.";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "Blokowanie wejścia zostało zatrzymane. Przyciemnienie zakończono, aby nie zasłaniać innej aplikacji bez ochrony wejścia.";
 "Open System Settings" = "Otwórz Ustawienia systemowe";
@@ -30,7 +30,7 @@
 "Language" = "Język";
 "System Default" = "Domyślny systemowy";
 "Launch at login" = "Uruchamiaj przy logowaniu";
-"Open Login Items…" = "Otwórz Rzeczy do otwarcia…";
+"Open Login Settings…" = "Otwórz ustawienia logowania…";
 "Require a password to restore the screen" = "Wymagaj hasła, aby przywrócić ekran";
 "Current password (required to change or disable)" = "Bieżące hasło (do zmiany lub wyłączenia)";
 "New password" = "Nowe hasło";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "Zachowano. Przy następnym przyciemnieniu ekranu będzie wymagane hasło.";
 "Saved. Password protection is off." = "Zachowano. Ochrona hasłem jest wyłączona.";
 "Blackout will run in the menu bar when you log in." = "Blackout będzie działać na pasku menu po zalogowaniu.";
-"Allow Blackout in macOS Login Items settings." = "Zezwól na Blackout w ustawieniach Rzeczy do otwarcia w macOS.";
+"Allow Blackout in the macOS login settings." = "Zezwól na Blackout w ustawieniach logowania macOS.";
 "Launch at login is off." = "Uruchamianie przy logowaniu jest wyłączone.";
 "Blackout is not registered as a login item. Enable the option to register it." = "Blackout nie jest zarejestrowany jako rzecz do otwarcia. Włącz tę opcję, aby go zarejestrować.";
-"Check the status in macOS Login Items settings." = "Sprawdź stan w ustawieniach Rzeczy do otwarcia w macOS.";
+"Check the status in the macOS login settings." = "Sprawdź stan w ustawieniach logowania macOS.";
 "Could not change launch at login: %@" = "Nie można zmienić uruchamiania przy logowaniu: %@";
 "Input Blocking" = "Blokowanie wejścia";
-"Open Accessibility Settings…" = "Otwórz ustawienia Dostępności…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Uprawnienie Dostępność jest włączone. Podczas przyciemnienia można blokować klawiaturę i mysz.";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "Przed przyciemnieniem wymagane jest uprawnienie Dostępność. Zezwól na Blackout w Ustawieniach systemowych, aby wejście z klawiatury i myszy nie trafiało do innych aplikacji.";
+"Open Input Permission Settings…" = "Otwórz ustawienia uprawnień wejścia…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Uprawnienie do sterowania wejściem jest włączone. Podczas przyciemnienia można blokować klawiaturę i mysz.";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "Przed przyciemnieniem wymagane jest uprawnienie do sterowania wejściem. Otwórz poniżej ustawienia uprawnień i zezwól na Blackout. Jeśli Blackout ma już uprawnienie, usuń go z listy, ponownie dodaj aktualnie zainstalowaną aplikację i uruchom ponownie Blackout.";
+
+"Version %@" = "Wersja %@";
+"Check for Updates…" = "Sprawdź uaktualnienia…";
+"Checking for updates…" = "Sprawdzanie uaktualnień…";
+"You’re up to date." = "Masz najnowszą wersję.";
+"Version %@ is available." = "Dostępna jest wersja %@.";
+"No releases have been published yet." = "Nie opublikowano jeszcze żadnego wydania.";
+"Could not check for updates. Please try again." = "Nie można sprawdzić uaktualnień. Spróbuj ponownie.";
+"Open Release Page…" = "Otwórz stronę wydania…";

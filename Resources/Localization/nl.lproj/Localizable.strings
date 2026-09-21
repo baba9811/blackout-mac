@@ -22,7 +22,7 @@
 "The current password is incorrect." = "Het huidige wachtwoord is onjuist.";
 "The saved password settings could not be read. See the recovery instructions in the README." = "De bewaarde wachtwoordinstellingen kunnen niet worden gelezen. Bekijk de herstelinstructies in de README.";
 "The password could not be processed. Please try again." = "Het wachtwoord kan niet worden verwerkt. Probeer het opnieuw.";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "Om invoer te blokkeren heeft Blackout toestemming voor Toegankelijkheid nodig. Schakel deze in via Systeeminstellingen en probeer het opnieuw.";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "Om invoer te blokkeren is toestemming voor het beheren van toetsenbord- en muisinvoer vereist. Open Systeeminstellingen, sta Blackout toe en probeer het opnieuw. Als Blackout al is toegestaan, verwijder het dan uit de lijst, voeg de momenteel geïnstalleerde app opnieuw toe en start Blackout opnieuw.";
 "Input blocking could not start. The screen has not been covered." = "De invoerblokkering kan niet worden gestart. Het scherm is niet bedekt.";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "De invoerblokkering is gestopt. De verduistering is beëindigd om te voorkomen dat een andere app wordt verborgen terwijl de invoer onbeschermd is.";
 "Open System Settings" = "Open Systeeminstellingen";
@@ -30,7 +30,7 @@
 "Language" = "Taal";
 "System Default" = "Systeemstandaard";
 "Launch at login" = "Open bij inloggen";
-"Open Login Items…" = "Open Inloggen…";
+"Open Login Settings…" = "Open inloginstellingen…";
 "Require a password to restore the screen" = "Vereis een wachtwoord om het scherm te herstellen";
 "Current password (required to change or disable)" = "Huidig wachtwoord (voor wijzigen of uitschakelen)";
 "New password" = "Nieuw wachtwoord";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "Bewaard. Bij de volgende verduistering van het scherm is een wachtwoord vereist.";
 "Saved. Password protection is off." = "Bewaard. Wachtwoordbeveiliging is uitgeschakeld.";
 "Blackout will run in the menu bar when you log in." = "Blackout wordt bij het inloggen in de menubalk gestart.";
-"Allow Blackout in macOS Login Items settings." = "Sta Blackout toe in de instellingen voor Inloggen van macOS.";
+"Allow Blackout in the macOS login settings." = "Sta Blackout toe in de inloginstellingen van macOS.";
 "Launch at login is off." = "Openen bij inloggen is uitgeschakeld.";
 "Blackout is not registered as a login item. Enable the option to register it." = "Blackout is niet geregistreerd als inlogonderdeel. Schakel de optie in om het te registreren.";
-"Check the status in macOS Login Items settings." = "Controleer de status in de instellingen voor Inloggen van macOS.";
+"Check the status in the macOS login settings." = "Controleer de status in de inloginstellingen van macOS.";
 "Could not change launch at login: %@" = "Openen bij inloggen kan niet worden gewijzigd: %@";
 "Input Blocking" = "Invoerblokkering";
-"Open Accessibility Settings…" = "Open instellingen voor Toegankelijkheid…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Toestemming voor Toegankelijkheid is ingeschakeld. Toetsenbord- en muisinvoer kunnen tijdens de verduistering worden geblokkeerd.";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "Voor de verduistering is toestemming voor Toegankelijkheid vereist. Sta Blackout toe in Systeeminstellingen om te voorkomen dat toetsenbord- en muisinvoer andere apps bereikt.";
+"Open Input Permission Settings…" = "Open instellingen voor invoertoestemming…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Toestemming om invoer te beheren is ingeschakeld. Toetsenbord- en muisinvoer kunnen tijdens de verduistering worden geblokkeerd.";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "Voor de verduistering is toestemming om invoer te beheren vereist. Open de toestemmingsinstellingen hieronder en sta Blackout toe. Als Blackout al is toegestaan, verwijder het dan uit de lijst, voeg de momenteel geïnstalleerde app opnieuw toe en start Blackout opnieuw.";
+
+"Version %@" = "Versie %@";
+"Check for Updates…" = "Zoek naar updates…";
+"Checking for updates…" = "Zoeken naar updates…";
+"You’re up to date." = "Je gebruikt de nieuwste versie.";
+"Version %@ is available." = "Versie %@ is beschikbaar.";
+"No releases have been published yet." = "Er zijn nog geen versies gepubliceerd.";
+"Could not check for updates. Please try again." = "Kan niet naar updates zoeken. Probeer het opnieuw.";
+"Open Release Page…" = "Open versiepagina…";

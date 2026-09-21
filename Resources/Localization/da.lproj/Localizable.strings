@@ -22,7 +22,7 @@
 "The current password is incorrect." = "Den nuværende adgangskode er forkert.";
 "The saved password settings could not be read. See the recovery instructions in the README." = "De gemte adgangskodeindstillinger kunne ikke læses. Se gendannelsesvejledningen i README.";
 "The password could not be processed. Please try again." = "Adgangskoden kunne ikke behandles. Prøv igen.";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "Blokering af input kræver tilladelse til Tilgængelighed for Blackout. Slå den til i Systemindstillinger, og prøv igen.";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "Blokering af input kræver tilladelse til at styre tastatur og mus. Åbn Systemindstillinger, tillad Blackout, og prøv igen. Hvis Blackout allerede er tilladt, skal du fjerne det fra listen, tilføje den aktuelt installerede app igen og genstarte Blackout.";
 "Input blocking could not start. The screen has not been covered." = "Blokering af input kunne ikke starte. Skærmen er ikke blevet dækket.";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "Blokering af input er stoppet. Mørklægningen er afsluttet for at undgå at skjule en anden app, mens input er ubeskyttet.";
 "Open System Settings" = "Åbn Systemindstillinger";
@@ -30,7 +30,7 @@
 "Language" = "Sprog";
 "System Default" = "Systemstandard";
 "Launch at login" = "Åbn ved login";
-"Open Login Items…" = "Åbn Loginemner…";
+"Open Login Settings…" = "Åbn loginindstillinger…";
 "Require a password to restore the screen" = "Kræv adgangskode for at gendanne skærmen";
 "Current password (required to change or disable)" = "Nuværende adgangskode (til ændring eller deaktivering)";
 "New password" = "Ny adgangskode";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "Gemt. Der kræves en adgangskode, næste gang skærmen gøres sort.";
 "Saved. Password protection is off." = "Gemt. Adgangskodebeskyttelse er slået fra.";
 "Blackout will run in the menu bar when you log in." = "Blackout kører i menulinjen, når du logger ind.";
-"Allow Blackout in macOS Login Items settings." = "Tillad Blackout i indstillingerne for Loginemner i macOS.";
+"Allow Blackout in the macOS login settings." = "Tillad Blackout i loginindstillingerne i macOS.";
 "Launch at login is off." = "Åbning ved login er slået fra.";
 "Blackout is not registered as a login item. Enable the option to register it." = "Blackout er ikke registreret som loginemne. Slå indstillingen til for at registrere det.";
-"Check the status in macOS Login Items settings." = "Kontroller status i indstillingerne for Loginemner i macOS.";
+"Check the status in the macOS login settings." = "Kontroller status i loginindstillingerne i macOS.";
 "Could not change launch at login: %@" = "Kunne ikke ændre åbning ved login: %@";
 "Input Blocking" = "Blokering af input";
-"Open Accessibility Settings…" = "Åbn indstillinger for Tilgængelighed…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Tilladelse til Tilgængelighed er slået til. Tastatur- og museinput kan blokeres under mørklægning.";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "Tilladelse til Tilgængelighed kræves før mørklægning. Tillad Blackout i Systemindstillinger for at forhindre tastatur- og museinput i at nå andre apps.";
+"Open Input Permission Settings…" = "Åbn indstillinger for inputtilladelse…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Tilladelse til at styre input er slået til. Tastatur- og museinput kan blokeres under mørklægning.";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "Tilladelse til at styre input kræves før mørklægning. Åbn tilladelsesindstillingerne nedenfor, og tillad Blackout. Hvis Blackout allerede er tilladt, skal du fjerne det fra listen, tilføje den aktuelt installerede app igen og genstarte Blackout.";
+
+"Version %@" = "Version %@";
+"Check for Updates…" = "Søg efter opdateringer…";
+"Checking for updates…" = "Søger efter opdateringer…";
+"You’re up to date." = "Du har den nyeste version.";
+"Version %@ is available." = "Version %@ er tilgængelig.";
+"No releases have been published yet." = "Der er endnu ikke udgivet nogen versioner.";
+"Could not check for updates. Please try again." = "Kunne ikke søge efter opdateringer. Prøv igen.";
+"Open Release Page…" = "Åbn versionssiden…";

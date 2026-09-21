@@ -22,7 +22,7 @@
 "The current password is incorrect." = "Поточний пароль неправильний.";
 "The saved password settings could not be read. See the recovery instructions in the README." = "Не вдалося прочитати збережені параметри пароля. Перегляньте інструкції з відновлення у README.";
 "The password could not be processed. Please try again." = "Не вдалося обробити пароль. Спробуйте знову.";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "Для блокування введення Blackout потрібен дозвіл «Доступність». Увімкніть його в Системних параметрах і спробуйте знову.";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "Для блокування введення потрібен дозвіл на керування введенням із клавіатури й миші. Відкрийте Системні параметри, дозвольте Blackout і спробуйте знову. Якщо Blackout уже дозволено, видаліть його зі списку, знову додайте встановлену зараз програму й перезапустіть Blackout.";
 "Input blocking could not start. The screen has not been covered." = "Не вдалося запустити блокування введення. Екран не було закрито.";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "Блокування введення припинилося. Затемнення завершено, щоб не приховувати іншу програму, поки введення не захищене.";
 "Open System Settings" = "Відкрити Системні параметри";
@@ -30,7 +30,7 @@
 "Language" = "Мова";
 "System Default" = "Як у системі";
 "Launch at login" = "Запускати під час входу";
-"Open Login Items…" = "Відкрити Об’єкти входу…";
+"Open Login Settings…" = "Відкрити параметри входу…";
 "Require a password to restore the screen" = "Вимагати пароль для відновлення екрана";
 "Current password (required to change or disable)" = "Поточний пароль (для зміни або вимкнення)";
 "New password" = "Новий пароль";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "Збережено. Під час наступного затемнення екрана знадобиться пароль.";
 "Saved. Password protection is off." = "Збережено. Захист паролем вимкнено.";
 "Blackout will run in the menu bar when you log in." = "Blackout запускатиметься в смузі меню під час входу в систему.";
-"Allow Blackout in macOS Login Items settings." = "Дозвольте Blackout у параметрах Об’єктів входу macOS.";
+"Allow Blackout in the macOS login settings." = "Дозвольте Blackout у параметрах входу macOS.";
 "Launch at login is off." = "Запуск під час входу вимкнено.";
 "Blackout is not registered as a login item. Enable the option to register it." = "Blackout не зареєстровано як об’єкт входу. Увімкніть цей параметр для реєстрації.";
-"Check the status in macOS Login Items settings." = "Перевірте стан у параметрах Об’єктів входу macOS.";
+"Check the status in the macOS login settings." = "Перевірте стан у параметрах входу macOS.";
 "Could not change launch at login: %@" = "Не вдалося змінити запуск під час входу: %@";
 "Input Blocking" = "Блокування введення";
-"Open Accessibility Settings…" = "Відкрити параметри Доступності…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Дозвіл «Доступність» надано. Під час затемнення можна блокувати введення з клавіатури й миші.";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "Перед затемненням потрібен дозвіл «Доступність». Дозвольте Blackout у Системних параметрах, щоб введення з клавіатури й миші не надходило до інших програм.";
+"Open Input Permission Settings…" = "Відкрити параметри дозволів введення…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Дозвіл на керування введенням надано. Під час затемнення можна блокувати введення з клавіатури й миші.";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "Перед затемненням потрібен дозвіл на керування введенням. Відкрийте параметри дозволів кнопкою нижче й дозвольте Blackout. Якщо Blackout уже дозволено, видаліть його зі списку, знову додайте встановлену зараз програму й перезапустіть Blackout.";
+
+"Version %@" = "Версія %@";
+"Check for Updates…" = "Перевірити оновлення…";
+"Checking for updates…" = "Перевірка оновлень…";
+"You’re up to date." = "У вас установлено найновішу версію.";
+"Version %@ is available." = "Доступна версія %@.";
+"No releases have been published yet." = "Ще не опубліковано жодного випуску.";
+"Could not check for updates. Please try again." = "Не вдалося перевірити оновлення. Спробуйте знову.";
+"Open Release Page…" = "Відкрити сторінку випуску…";

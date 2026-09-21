@@ -22,7 +22,7 @@
 "The current password is incorrect." = "Aktuálne heslo je nesprávne.";
 "The saved password settings could not be read. See the recovery instructions in the README." = "Uložené nastavenia hesla sa nepodarilo načítať. Pozrite si pokyny na obnovenie v súbore README.";
 "The password could not be processed. Please try again." = "Heslo sa nepodarilo spracovať. Skúste to znova.";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "Blokovanie vstupu vyžaduje pre Blackout povolenie Prístupnosť. Zapnite ho v Systémových nastaveniach a skúste to znova.";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "Blokovanie vstupu vyžaduje povolenie na ovládanie vstupu z klávesnice a myši. Otvorte Systémové nastavenia, povoľte Blackout a skúste to znova. Ak je Blackout už povolený, odstráňte ho zo zoznamu, znova pridajte aktuálne nainštalovanú aplikáciu a reštartujte Blackout.";
 "Input blocking could not start. The screen has not been covered." = "Blokovanie vstupu sa nepodarilo spustiť. Obrazovka nebola zakrytá.";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "Blokovanie vstupu sa zastavilo. Zatemnenie sa skončilo, aby iná aplikácia nezostala skrytá pri nechránenom vstupe.";
 "Open System Settings" = "Otvoriť Systémové nastavenia";
@@ -30,7 +30,7 @@
 "Language" = "Jazyk";
 "System Default" = "Predvolený jazyk systému";
 "Launch at login" = "Spúšťať pri prihlásení";
-"Open Login Items…" = "Otvoriť Prihlasovacie položky…";
+"Open Login Settings…" = "Otvoriť nastavenia prihlásenia…";
 "Require a password to restore the screen" = "Vyžadovať heslo na obnovenie obrazovky";
 "Current password (required to change or disable)" = "Aktuálne heslo (na zmenu alebo vypnutie)";
 "New password" = "Nové heslo";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "Uložené. Pri ďalšom zatemnení obrazovky sa bude vyžadovať heslo.";
 "Saved. Password protection is off." = "Uložené. Ochrana heslom je vypnutá.";
 "Blackout will run in the menu bar when you log in." = "Blackout sa po prihlásení spustí v lište.";
-"Allow Blackout in macOS Login Items settings." = "Povoľte Blackout v nastaveniach Prihlasovacích položiek macOS.";
+"Allow Blackout in the macOS login settings." = "Povoľte Blackout v nastaveniach prihlásenia macOS.";
 "Launch at login is off." = "Spúšťanie pri prihlásení je vypnuté.";
 "Blackout is not registered as a login item. Enable the option to register it." = "Blackout nie je zaregistrovaný ako prihlasovacia položka. Zapnutím tejto možnosti ho zaregistrujete.";
-"Check the status in macOS Login Items settings." = "Skontrolujte stav v nastaveniach Prihlasovacích položiek macOS.";
+"Check the status in the macOS login settings." = "Skontrolujte stav v nastaveniach prihlásenia macOS.";
 "Could not change launch at login: %@" = "Spúšťanie pri prihlásení sa nepodarilo zmeniť: %@";
 "Input Blocking" = "Blokovanie vstupu";
-"Open Accessibility Settings…" = "Otvoriť nastavenia Prístupnosti…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Povolenie Prístupnosť je zapnuté. Počas zatemnenia možno blokovať vstup z klávesnice a myši.";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "Pred zatemnením je potrebné povolenie Prístupnosť. Povoľte Blackout v Systémových nastaveniach, aby sa vstup z klávesnice a myši nedostával do iných aplikácií.";
+"Open Input Permission Settings…" = "Otvoriť nastavenia povolení vstupu…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "Povolenie na ovládanie vstupu je zapnuté. Počas zatemnenia možno blokovať vstup z klávesnice a myši.";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "Pred zatemnením je potrebné povolenie na ovládanie vstupu. Nižšie otvorte nastavenia povolení a povoľte Blackout. Ak je Blackout už povolený, odstráňte ho zo zoznamu, znova pridajte aktuálne nainštalovanú aplikáciu a reštartujte Blackout.";
+
+"Version %@" = "Verzia %@";
+"Check for Updates…" = "Vyhľadať aktualizácie…";
+"Checking for updates…" = "Vyhľadávanie aktualizácií…";
+"You’re up to date." = "Máte najnovšiu verziu.";
+"Version %@ is available." = "Je dostupná verzia %@.";
+"No releases have been published yet." = "Zatiaľ nebola zverejnená žiadna verzia.";
+"Could not check for updates. Please try again." = "Aktualizácie sa nepodarilo vyhľadať. Skúste to znova.";
+"Open Release Page…" = "Otvoriť stránku vydania…";

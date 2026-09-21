@@ -22,7 +22,7 @@
 "The current password is incorrect." = "वर्तमान पासवर्ड गलत है।";
 "The saved password settings could not be read. See the recovery instructions in the README." = "सहेजी गई पासवर्ड सेटिंग्स पढ़ी नहीं जा सकीं। README में पुनर्प्राप्ति के निर्देश देखें।";
 "The password could not be processed. Please try again." = "पासवर्ड संसाधित नहीं हो सका। कृपया फिर कोशिश करें।";
-"Input blocking requires Accessibility permission for Blackout. Enable it in System Settings, then try again." = "इनपुट रोकने के लिए Blackout को ऐक्सेसिबिलिटी की अनुमति चाहिए। इसे सिस्टम सेटिंग्स में चालू करें और फिर कोशिश करें।";
+"Input blocking requires permission to control keyboard and mouse input. Open System Settings and enable Blackout, then try again." = "इनपुट रोकने के लिए कीबोर्ड और माउस का इनपुट नियंत्रित करने की अनुमति चाहिए। सिस्टम सेटिंग्स खोलें, Blackout को अनुमति दें और फिर कोशिश करें। यदि Blackout को पहले से अनुमति है, तो उसे सूची से हटाएँ, वर्तमान में इंस्टॉल किया गया ऐप फिर से जोड़ें और Blackout दोबारा शुरू करें।";
 "Input blocking could not start. The screen has not been covered." = "इनपुट रोकना शुरू नहीं हो सका। स्क्रीन ढकी नहीं गई है।";
 "Input blocking stopped. Blackout has ended to avoid hiding another app while input is unprotected." = "इनपुट रोकना बंद हो गया। असुरक्षित इनपुट के दौरान दूसरे ऐप को छिपने से बचाने के लिए स्क्रीन का कालापन हटा दिया गया है।";
 "Open System Settings" = "सिस्टम सेटिंग्स खोलें";
@@ -30,7 +30,7 @@
 "Language" = "भाषा";
 "System Default" = "सिस्टम डिफ़ॉल्ट";
 "Launch at login" = "लॉगइन पर शुरू करें";
-"Open Login Items…" = "लॉगइन आइटम खोलें…";
+"Open Login Settings…" = "लॉगइन सेटिंग्स खोलें…";
 "Require a password to restore the screen" = "स्क्रीन वापस लाने के लिए पासवर्ड माँगें";
 "Current password (required to change or disable)" = "वर्तमान पासवर्ड (बदलने या बंद करने के लिए)";
 "New password" = "नया पासवर्ड";
@@ -42,12 +42,21 @@
 "Saved. A password will be required the next time you black out the screen." = "सहेज दिया। अगली बार स्क्रीन काली करने पर पासवर्ड की आवश्यकता होगी।";
 "Saved. Password protection is off." = "सहेज दिया। पासवर्ड सुरक्षा बंद है।";
 "Blackout will run in the menu bar when you log in." = "लॉगइन करने पर Blackout मेनू बार में चलेगा।";
-"Allow Blackout in macOS Login Items settings." = "macOS की लॉगइन आइटम सेटिंग्स में Blackout को अनुमति दें।";
+"Allow Blackout in the macOS login settings." = "macOS की लॉगइन सेटिंग्स में Blackout को अनुमति दें।";
 "Launch at login is off." = "लॉगइन पर शुरू करना बंद है।";
 "Blackout is not registered as a login item. Enable the option to register it." = "Blackout लॉगइन आइटम के रूप में पंजीकृत नहीं है। पंजीकरण के लिए विकल्प चालू करें।";
-"Check the status in macOS Login Items settings." = "macOS की लॉगइन आइटम सेटिंग्स में स्थिति जाँचें।";
+"Check the status in the macOS login settings." = "macOS की लॉगइन सेटिंग्स में स्थिति जाँचें।";
 "Could not change launch at login: %@" = "लॉगइन पर शुरू करने की सेटिंग नहीं बदली जा सकी: %@";
 "Input Blocking" = "इनपुट रोकना";
-"Open Accessibility Settings…" = "ऐक्सेसिबिलिटी सेटिंग्स खोलें…";
-"Accessibility permission is enabled. Keyboard and mouse input can be blocked during blackout." = "ऐक्सेसिबिलिटी की अनुमति चालू है। स्क्रीन काली होने के दौरान कीबोर्ड और माउस का इनपुट रोका जा सकता है।";
-"Accessibility permission is required before blackout. Enable Blackout in System Settings to block keyboard and mouse input from reaching other apps." = "स्क्रीन काली करने से पहले ऐक्सेसिबिलिटी की अनुमति चाहिए। कीबोर्ड और माउस का इनपुट दूसरे ऐप तक पहुँचने से रोकने के लिए सिस्टम सेटिंग्स में Blackout को अनुमति दें।";
+"Open Input Permission Settings…" = "इनपुट अनुमति की सेटिंग्स खोलें…";
+"Input control permission is enabled. Keyboard and mouse input can be blocked during blackout." = "इनपुट नियंत्रित करने की अनुमति चालू है। स्क्रीन काली होने के दौरान कीबोर्ड और माउस का इनपुट रोका जा सकता है।";
+"Input control permission is required before blackout. Open the permission settings below and enable Blackout." = "स्क्रीन काली करने से पहले इनपुट नियंत्रित करने की अनुमति चाहिए। नीचे दी गई अनुमति की सेटिंग्स खोलें और Blackout को अनुमति दें। यदि Blackout को पहले से अनुमति है, तो उसे सूची से हटाएँ, वर्तमान में इंस्टॉल किया गया ऐप फिर से जोड़ें और Blackout दोबारा शुरू करें।";
+
+"Version %@" = "संस्करण %@";
+"Check for Updates…" = "अपडेट की जाँच करें…";
+"Checking for updates…" = "अपडेट की जाँच हो रही है…";
+"You’re up to date." = "आपका संस्करण नवीनतम है।";
+"Version %@ is available." = "संस्करण %@ उपलब्ध है।";
+"No releases have been published yet." = "अभी तक कोई संस्करण जारी नहीं हुआ है।";
+"Could not check for updates. Please try again." = "अपडेट की जाँच नहीं हो सकी। कृपया फिर कोशिश करें।";
+"Open Release Page…" = "रिलीज़ पेज खोलें…";
