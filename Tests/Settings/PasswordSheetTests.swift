@@ -43,7 +43,8 @@ struct PasswordSheetTests {
             let cancelFrame = cancel.convert(cancel.bounds, to: content)
             let submitFrame = submit.convert(submit.bounds, to: content)
             assert(abs(cancelFrame.midY - submitFrame.midY) < 1)
-            assert(cancelFrame.maxX < submitFrame.minX)
+            // Native button frames include OS-dependent margins beyond their alignment rectangles.
+            assert(cancelFrame.midX < submitFrame.midX)
             cancel.performClick(nil)
             assert(fields.allSatisfy { $0.stringValue.isEmpty })
             assert(defaults.data(forKey: PasswordSettings.key) == credential)
