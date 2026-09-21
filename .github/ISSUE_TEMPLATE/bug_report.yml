@@ -1,0 +1,27 @@
+name: Bug report
+description: Report unexpected behavior in the app or website, in any language.
+body:
+  - type: markdown
+    attributes:
+      value: 'For vulnerabilities, use [private reporting](https://github.com/baba9811/blackout-mac/security/advisories/new). Never include your password.'
+  - type: input
+    id: version
+    attributes:
+      label: App version or commit
+      placeholder: Release tag, commit, or website
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: macOS version and Mac architecture
+      placeholder: macOS version; Apple Silicon or Intel; number of displays
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps, expected result, and actual result
+      description: Include the selected language and relevant permission status. Remove personal information from screenshots and logs.
+    validations:
+      required: true

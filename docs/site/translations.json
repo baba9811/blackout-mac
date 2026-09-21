@@ -1,0 +1,1922 @@
+{
+  "en": {
+    "name": "English",
+    "headline": "A little less screen.",
+    "description": "Turn every detected display black with one shortcut. BlackoutMac is a small macOS menu bar app with optional password protection.",
+    "labels": [
+      "Download for Mac",
+      "User guide",
+      "Language",
+      "Skip to content",
+      "Questions, answered.",
+      "Report an issue",
+      "Apple’s opening guide"
+    ],
+    "notice": "Preview release · No Developer ID signature. Not notarized by Apple. Read the installation notes before opening.",
+    "sections": [
+      [
+        "Install in a moment",
+        "Download the universal DMG from GitHub Releases. Open it, drag Blackout.app to Applications, then launch it. This build is locally ad-hoc signed, with no Developer ID signature or Apple notarization. After checking the source, if macOS blocks it, try opening once, then use System Settings → Privacy & Security → Open Anyway if available."
+      ],
+      [
+        "Allow Accessibility access",
+        "In System Settings → Privacy & Security → Accessibility, enable Blackout. Quit and reopen the app after granting access. BlackoutMac needs this permission to intercept input, and will not cover your screens unless input blocking is working."
+      ],
+      [
+        "One shortcut. Every display.",
+        "Press Control + Option + B, or use the Blackout menu bar icon, to cover all detected displays. Without a password, keyboard or mouse input restores the screens. While covered, input is consumed or directed to Blackout, including ordinary global shortcuts."
+      ],
+      [
+        "Choose a password, or don’t",
+        "Password protection is off by default. Open Settings from the Blackout menu to enable it and enter the new password twice. Changing or disabling an existing password requires the current password. When enabled, use your password to dismiss the black screen."
+      ],
+      [
+        "Ready when you log in",
+        "Enable Launch at Login in Settings to use the native macOS login item. Turn the same setting off to stop automatic launch. BlackoutMac stays in the menu bar."
+      ],
+      [
+        "Your language, automatically",
+        "The app follows your macOS language by default and supports 32 languages. Choose a language in Settings to override the system preference, or choose the system option to follow macOS again."
+      ],
+      [
+        "Your settings stay on your Mac",
+        "BlackoutMac has no backend or telemetry. Preferences and a salted password verifier are stored locally. The password itself is not stored in plain text. GitHub hosts downloads and this website."
+      ],
+      [
+        "If something gets stuck",
+        "If input blocking stops working, the app removes the black covers. If access fails, check Accessibility permission and reopen the app. If you forget your password or the app stops responding, use macOS Force Quit or restart. This can end the cover without the app password."
+      ]
+    ],
+    "faqs": [
+      [
+        "Is this a macOS security lock?",
+        "No. BlackoutMac covers displays and intercepts ordinary keyboard and mouse input. Force Quit, macOS security screens, and other system behavior are outside its guarantee. Use the macOS Lock Screen when you need to secure your session."
+      ],
+      [
+        "Do I need to set a password?",
+        "No. Password protection is optional and off by default. In that mode, keyboard or mouse input restores the screens. Enable a password in Settings only if you want an extra step before dismissing the cover."
+      ]
+    ],
+    "status": "Preview release"
+  },
+  "ko": {
+    "name": "한국어",
+    "headline": "화면도 잠시 쉬어가세요.",
+    "description": "단축키 하나로 연결된 모든 화면을 검게 가립니다. BlackoutMac은 비밀번호를 선택해서 설정할 수 있는 작은 macOS 메뉴 막대 앱입니다.",
+    "labels": [
+      "Mac용 다운로드",
+      "사용 안내",
+      "언어",
+      "본문으로 건너뛰기",
+      "자주 묻는 질문",
+      "문제 제보",
+      "Apple의 앱 실행 안내"
+    ],
+    "notice": "미리 보기 버전 · Developer ID 서명과 Apple 공증이 없는 배포본입니다. 실행 전에 설치 안내를 읽어 주세요.",
+    "sections": [
+      [
+        "간단하게 설치하기",
+        "GitHub Releases에서 유니버설 DMG를 다운로드합니다. DMG를 열고 Blackout.app을 응용 프로그램 폴더로 옮긴 뒤 실행하세요. 이 배포본은 로컬 임시 서명만 되어 있으며 Developer ID 서명과 Apple 공증은 없습니다. 출처를 확인한 후 macOS가 실행을 막으면 한 번 실행을 시도하고 시스템 설정 → 개인정보 보호 및 보안에서 확인 없이 열기가 표시되는지 확인하세요."
+      ],
+      [
+        "손쉬운 사용 권한 허용",
+        "시스템 설정 → 개인정보 보호 및 보안 → 손쉬운 사용에서 Blackout을 허용한 뒤 앱을 종료하고 다시 실행하세요. 입력을 가로채려면 이 권한이 필요합니다. 입력 차단이 정상 작동하지 않으면 화면을 가리지 않습니다."
+      ],
+      [
+        "단축키 하나로 모든 화면 가리기",
+        "Control + Option + B를 누르거나 메뉴 막대의 Blackout 아이콘을 사용하면 감지된 모든 화면이 검게 가려집니다. 비밀번호가 없으면 키보드나 마우스 입력으로 복귀합니다. 화면을 가린 동안 일반 전역 단축키를 포함한 입력은 차단되거나 Blackout으로만 전달됩니다."
+      ],
+      [
+        "비밀번호는 선택 사항",
+        "기본값은 비밀번호 없음입니다. Blackout 메뉴의 설정에서 비밀번호를 켜고 새 비밀번호를 두 번 입력하세요. 기존 비밀번호를 바꾸거나 끄려면 현재 비밀번호가 필요합니다. 설정한 경우 비밀번호를 입력해야 화면 가림이 해제됩니다."
+      ],
+      [
+        "로그인할 때 자동 실행",
+        "설정에서 로그인 시 실행을 켜면 macOS의 기본 로그인 항목 기능을 사용합니다. 자동 실행을 중지하려면 같은 설정을 끄세요. BlackoutMac은 메뉴 막대에 표시됩니다."
+      ],
+      [
+        "언어 자동 선택",
+        "기본적으로 macOS의 언어를 따르며 32개 언어를 지원합니다. 설정에서 원하는 언어를 직접 선택하거나 시스템 언어 옵션을 선택해 macOS 설정을 다시 따를 수 있습니다."
+      ],
+      [
+        "설정은 내 Mac에만 저장",
+        "BlackoutMac에는 서버나 원격 사용 정보 수집 기능이 없습니다. 환경설정과 솔트를 적용한 비밀번호 검증값은 로컬에 저장되며 비밀번호 원문은 저장하지 않습니다. 다운로드와 이 웹사이트는 GitHub에서 제공합니다."
+      ],
+      [
+        "문제가 생겼을 때",
+        "입력 차단이 중단되면 화면 가림을 해제합니다. 권한 오류가 나면 손쉬운 사용 권한을 확인하고 앱을 다시 실행하세요. 비밀번호를 잊었거나 앱이 응답하지 않으면 macOS 강제 종료 또는 재시동을 사용할 수 있습니다. 이 경우 앱 비밀번호 없이도 화면 가림이 종료될 수 있습니다."
+      ]
+    ],
+    "faqs": [
+      [
+        "macOS의 보안 잠금인가요?",
+        "아닙니다. 화면을 가리고 일반 키보드·마우스 입력을 가로채는 앱입니다. 강제 종료, macOS 보안 화면 등 시스템 동작까지 막지는 못합니다. 세션을 안전하게 잠그려면 macOS의 화면 잠금을 사용하세요."
+      ],
+      [
+        "비밀번호를 꼭 설정해야 하나요?",
+        "아니요. 비밀번호는 선택 사항이며 기본적으로 꺼져 있습니다. 이 상태에서는 키보드나 마우스 입력으로 복귀합니다. 화면 가림 해제 전에 확인 단계를 추가하고 싶을 때 설정에서 켜세요."
+      ]
+    ],
+    "status": "미리 보기 버전"
+  },
+  "ja": {
+    "name": "日本語",
+    "headline": "画面にも、ひと休みを。",
+    "description": "ショートカットひとつで、検出されたすべての画面を黒く覆います。BlackoutMacは、任意でパスワードを設定できる小さなmacOSメニューバーアプリです。",
+    "labels": [
+      "Mac版をダウンロード",
+      "使い方",
+      "言語",
+      "本文へ移動",
+      "よくある質問",
+      "問題を報告",
+      "Appleの起動手順"
+    ],
+    "notice": "プレビュー版 · Developer ID署名とAppleの公証はありません。起動前にインストール手順をご確認ください。",
+    "sections": [
+      [
+        "かんたんインストール",
+        "GitHub ReleasesからユニバーサルDMGをダウンロードします。DMGを開き、Blackout.appをアプリケーションフォルダへ移動して起動してください。この配布版はローカルのアドホック署名のみで、Developer ID署名・Appleの公証はありません。入手元を確認し、起動がブロックされる場合は一度起動を試した後、システム設定 → プライバシーとセキュリティの「このまま開く」が利用できるか確認してください。"
+      ],
+      [
+        "アクセシビリティを許可",
+        "システム設定 → プライバシーとセキュリティ → アクセシビリティでBlackoutを許可し、アプリを終了して再起動してください。入力を制御するために必要です。入力の遮断が正常に動作しない場合は画面を覆いません。"
+      ],
+      [
+        "ひとつの操作で、すべての画面",
+        "Control + Option + B、またはメニューバーのBlackoutから、検出されたすべての画面を覆います。パスワード未設定ならキーボードやマウスの入力で戻ります。表示中は通常のグローバルショートカットを含む入力を遮断するか、Blackoutのみに渡します。"
+      ],
+      [
+        "パスワードはお好みで",
+        "初期状態ではパスワードは無効です。Blackoutメニューの設定で有効にし、新しいパスワードを2回入力します。変更や無効化には現在のパスワードが必要です。有効な場合はパスワードを入力して画面を元に戻します。"
+      ],
+      [
+        "ログイン時に自動起動",
+        "設定でログイン時に起動を有効にすると、macOS標準のログイン項目を使用します。自動起動をやめるには同じ設定を無効にしてください。BlackoutMacはメニューバーに常駐します。"
+      ],
+      [
+        "言語を自動で選択",
+        "初期状態ではmacOSの言語に従い、32言語に対応します。設定で言語を指定することも、システムの言語に戻すこともできます。"
+      ],
+      [
+        "設定はMacの中だけに",
+        "BlackoutMacにはバックエンドやテレメトリーはありません。環境設定とソルト付きパスワード検証値をローカルに保存し、パスワードそのものを平文では保存しません。ダウンロードとこのサイトはGitHubが提供します。"
+      ],
+      [
+        "うまく動かないときは",
+        "入力の遮断が停止すると、画面の覆いを解除します。権限エラーの場合はアクセシビリティを確認して再起動してください。パスワードを忘れた場合や応答しない場合は、macOSの強制終了や再起動を使用できます。その場合、アプリのパスワードなしで覆いが解除されることがあります。"
+      ]
+    ],
+    "faqs": [
+      [
+        "macOSのセキュリティロックですか？",
+        "いいえ。画面を覆い、通常のキーボード・マウス入力を制御するアプリです。強制終了やmacOSのセキュリティ画面などのシステム動作は保証の対象外です。セッションを保護するにはmacOSの画面ロックを使用してください。"
+      ],
+      [
+        "パスワードは必須ですか？",
+        "いいえ。任意の設定で、初期状態では無効です。その場合はキーボードやマウスの入力で画面が戻ります。解除前に確認を加えたい場合に設定してください。"
+      ]
+    ],
+    "status": "プレビュー版"
+  },
+  "zh-Hans": {
+    "name": "简体中文",
+    "headline": "让屏幕，也歇一会儿。",
+    "description": "一个快捷键，让所有检测到的屏幕变黑。BlackoutMac 是一款轻巧的 macOS 菜单栏应用，可选择启用密码保护。",
+    "labels": [
+      "下载 Mac 版",
+      "使用指南",
+      "语言",
+      "跳到正文",
+      "常见问题",
+      "报告问题",
+      "Apple 应用打开指南"
+    ],
+    "notice": "预览版 · 此版本没有 Developer ID 签名，也未经 Apple 公证。打开前请阅读安装说明。",
+    "sections": [
+      [
+        "轻松安装",
+        "从 GitHub Releases 下载通用 DMG。打开后将 Blackout.app 拖入应用程序文件夹，再启动应用。此版本仅使用本地临时签名，没有 Developer ID 签名或 Apple 公证。确认来源后，若 macOS 阻止打开，请先尝试打开一次，再前往系统设置 → 隐私与安全性，查看是否可用“仍要打开”。"
+      ],
+      [
+        "允许辅助功能权限",
+        "在系统设置 → 隐私与安全性 → 辅助功能中启用 Blackout，然后退出并重新打开应用。拦截输入需要此权限。输入阻止功能未正常工作时，应用不会遮盖屏幕。"
+      ],
+      [
+        "一个快捷键，所有屏幕",
+        "按 Control + Option + B，或使用菜单栏的 Blackout 图标，即可遮盖所有检测到的屏幕。未设置密码时，键盘或鼠标输入可恢复屏幕。遮盖期间，包括普通全局快捷键在内的输入会被拦截或仅传给 Blackout。"
+      ],
+      [
+        "密码，由你决定",
+        "默认不启用密码。在 Blackout 菜单的设置中启用，并输入两次新密码。更改或关闭现有密码需要当前密码。启用后，输入密码即可解除屏幕遮盖。"
+      ],
+      [
+        "登录时自动启动",
+        "在设置中启用登录时启动，应用会使用 macOS 原生登录项。关闭同一选项即可停止自动启动。BlackoutMac 常驻菜单栏。"
+      ],
+      [
+        "自动使用你的语言",
+        "默认跟随 macOS 的语言，支持 32 种语言。你也可以在设置中手动选择，或切换回系统语言选项。"
+      ],
+      [
+        "设置只留在你的 Mac",
+        "BlackoutMac 没有后端或遥测功能。偏好设置和加盐密码验证值保存在本机，不保存明文密码。下载和本网站由 GitHub 托管。"
+      ],
+      [
+        "遇到问题时",
+        "如果输入阻止功能失效，应用会移除黑色遮盖。权限出错时，请检查辅助功能权限并重新打开应用。忘记密码或应用无响应时，可使用 macOS 强制退出或重新启动。这可能无需应用密码就结束遮盖。"
+      ]
+    ],
+    "faqs": [
+      [
+        "这是 macOS 安全锁吗？",
+        "不是。BlackoutMac 只遮盖屏幕并拦截普通键盘和鼠标输入。强制退出、macOS 安全界面等系统行为不在保证范围内。需要保护会话时，请使用 macOS 锁定屏幕。"
+      ],
+      [
+        "必须设置密码吗？",
+        "不需要。密码是可选项，默认关闭。此时键盘或鼠标输入即可恢复屏幕。只有希望在解除遮盖前增加确认步骤时，才需要启用密码。"
+      ]
+    ],
+    "status": "预览版"
+  },
+  "zh-Hant": {
+    "name": "繁體中文",
+    "headline": "讓螢幕，也休息一下。",
+    "description": "一個快捷鍵，讓所有偵測到的螢幕變黑。BlackoutMac 是輕巧的 macOS 選單列 App，可自行選擇啟用密碼保護。",
+    "labels": [
+      "下載 Mac 版",
+      "使用指南",
+      "語言",
+      "跳至正文",
+      "常見問題",
+      "回報問題",
+      "Apple 開啟 App 指南"
+    ],
+    "notice": "預覽版 · 此版本沒有 Developer ID 簽章，也未經 Apple 公證。開啟前請閱讀安裝說明。",
+    "sections": [
+      [
+        "輕鬆安裝",
+        "從 GitHub Releases 下載通用 DMG。開啟後將 Blackout.app 拖入應用程式檔案夾，再啟動 App。此版本僅使用本機臨時簽章，沒有 Developer ID 簽章或 Apple 公證。確認來源後，若 macOS 阻擋開啟，請先嘗試開啟一次，再前往系統設定 → 隱私權與安全性，查看是否可用「強制打開」。"
+      ],
+      [
+        "允許輔助使用權限",
+        "在系統設定 → 隱私權與安全性 → 輔助使用中啟用 Blackout，再結束並重新開啟 App。攔截輸入需要此權限。輸入阻擋功能未正常運作時，不會遮蓋螢幕。"
+      ],
+      [
+        "一個快捷鍵，所有螢幕",
+        "按 Control + Option + B，或使用選單列的 Blackout 圖像，即可遮蓋所有偵測到的螢幕。未設定密碼時，鍵盤或滑鼠輸入可還原螢幕。遮蓋期間，包括一般全域快捷鍵在內的輸入會被攔截或只傳給 Blackout。"
+      ],
+      [
+        "密碼，由你決定",
+        "預設不啟用密碼。在 Blackout 選單的設定中啟用，並輸入兩次新密碼。更改或關閉現有密碼需要目前密碼。啟用後，輸入密碼即可解除螢幕遮蓋。"
+      ],
+      [
+        "登入時自動啟動",
+        "在設定中啟用登入時啟動，App 會使用 macOS 原生登入項目。關閉同一選項即可停止自動啟動。BlackoutMac 會顯示於選單列。"
+      ],
+      [
+        "自動使用你的語言",
+        "預設跟隨 macOS 語言，支援 32 種語言。你也可以在設定中手動選擇，或切換回系統語言選項。"
+      ],
+      [
+        "設定只留在你的 Mac",
+        "BlackoutMac 沒有後端或遙測功能。偏好設定與加鹽密碼驗證值儲存於本機，不儲存明文密碼。下載及此網站由 GitHub 託管。"
+      ],
+      [
+        "遇到問題時",
+        "如果輸入阻擋功能失效，App 會移除黑色遮蓋。權限出錯時，請檢查輔助使用權限並重新開啟 App。忘記密碼或 App 沒有回應時，可使用 macOS 強制結束或重新啟動。這可能無需 App 密碼就結束遮蓋。"
+      ]
+    ],
+    "faqs": [
+      [
+        "這是 macOS 安全鎖嗎？",
+        "不是。BlackoutMac 只遮蓋螢幕並攔截一般鍵盤和滑鼠輸入。強制結束、macOS 安全畫面等系統行為不在保證範圍內。需要保護工作階段時，請使用 macOS 鎖定螢幕。"
+      ],
+      [
+        "一定要設定密碼嗎？",
+        "不用。密碼是選用功能，預設關閉。此時鍵盤或滑鼠輸入即可還原螢幕。希望在解除遮蓋前增加確認步驟時，再啟用密碼即可。"
+      ]
+    ],
+    "status": "預覽版"
+  },
+  "es": {
+    "name": "Español",
+    "headline": "Un descanso para tu pantalla.",
+    "description": "Un atajo pone en negro todas las pantallas detectadas. BlackoutMac vive en la barra de menús de macOS, con contraseña opcional.",
+    "labels": [
+      "Descargar para Mac",
+      "Guía de uso",
+      "Idioma",
+      "Ir al contenido",
+      "Preguntas frecuentes",
+      "Informar de un problema",
+      "Guía de apertura de Apple"
+    ],
+    "notice": "Versión preliminar · Sin firma Developer ID ni certificación de Apple. Lee las instrucciones antes de abrir la app.",
+    "sections": [
+      [
+        "Instalación sencilla",
+        "Descarga el DMG universal de GitHub Releases, ábrelo y arrastra Blackout.app a Aplicaciones. Inicia la app. Si macOS la bloquea, verifica su procedencia y, tras intentar abrirla, ve a Ajustes del Sistema → Privacidad y seguridad → Abrir igualmente, si está disponible."
+      ],
+      [
+        "Permite el acceso de Accesibilidad",
+        "Activa Blackout en Ajustes del Sistema → Privacidad y seguridad → Accesibilidad y reinicia la app. Este permiso permite interceptar entradas. Si el bloqueo de entradas no funciona, no se cubrirán las pantallas."
+      ],
+      [
+        "Un atajo para todas las pantallas",
+        "Pulsa Control + Option + B o usa el icono Blackout del menú. Sin contraseña, una entrada de teclado o ratón restaura las pantallas. Mientras están cubiertas, las entradas y los atajos globales habituales se bloquean o se dirigen solo a Blackout."
+      ],
+      [
+        "Contraseña opcional",
+        "Está desactivada por defecto. Actívala en Ajustes del menú Blackout e introduce la nueva contraseña dos veces. Para cambiarla o desactivarla necesitas la actual. Cuando está activa, introduce la contraseña para quitar la cubierta."
+      ],
+      [
+        "Inicio automático",
+        "Activa Iniciar al iniciar sesión en Ajustes para usar el mecanismo nativo de macOS. Desactiva la misma opción para detener el inicio automático."
+      ],
+      [
+        "32 idiomas",
+        "Por defecto sigue el idioma de macOS. Puedes elegir otro en Ajustes o volver a la opción del sistema."
+      ],
+      [
+        "Todo queda en tu Mac",
+        "No hay servidor propio ni telemetría. Las preferencias y un verificador de contraseña con sal se guardan localmente, nunca la contraseña en texto plano. GitHub aloja las descargas y esta web."
+      ],
+      [
+        "Si algo falla",
+        "Si se pierde el bloqueo de entradas, se retiran las cubiertas. Revisa Accesibilidad y reinicia la app si falta el permiso. Si olvidas la contraseña o la app no responde, puedes forzar su salida o reiniciar macOS; esto puede quitar la cubierta sin contraseña."
+      ]
+    ],
+    "faqs": [
+      [
+        "¿Es un bloqueo de seguridad de macOS?",
+        "No. Cubre las pantallas e intercepta entradas habituales. Forzar salida, las pantallas de seguridad y otras funciones del sistema quedan fuera de su garantía. Para proteger tu sesión usa Bloquear pantalla de macOS."
+      ],
+      [
+        "¿Necesito una contraseña?",
+        "No. Es opcional y está desactivada por defecto. Sin ella, el teclado o el ratón restauran las pantallas. Actívala si quieres un paso adicional antes de quitar la cubierta."
+      ]
+    ],
+    "status": "Versión preliminar"
+  },
+  "fr": {
+    "name": "Français",
+    "headline": "Une pause pour vos écrans.",
+    "description": "Un raccourci recouvre de noir tous les écrans détectés. BlackoutMac se loge dans la barre des menus de macOS, avec un mot de passe facultatif.",
+    "labels": [
+      "Télécharger pour Mac",
+      "Guide d’utilisation",
+      "Langue",
+      "Aller au contenu",
+      "Questions fréquentes",
+      "Signaler un problème",
+      "Guide d’ouverture Apple"
+    ],
+    "notice": "Version préliminaire · Sans signature Developer ID ni notarisation Apple. Lisez les instructions avant l’ouverture.",
+    "sections": [
+      [
+        "Installation rapide",
+        "Téléchargez le DMG universel depuis GitHub Releases, ouvrez-le et glissez Blackout.app dans Applications. Lancez l’app. Si macOS la bloque, vérifiez sa provenance puis, après une première tentative, utilisez Réglages Système → Confidentialité et sécurité → Ouvrir quand même, si disponible."
+      ],
+      [
+        "Autoriser l’accessibilité",
+        "Activez Blackout dans Réglages Système → Confidentialité et sécurité → Accessibilité, puis relancez l’app. Cette autorisation permet d’intercepter les entrées. L’app ne recouvre pas les écrans si leur blocage ne fonctionne pas."
+      ],
+      [
+        "Un raccourci, tous les écrans",
+        "Appuyez sur Control + Option + B ou utilisez l’icône Blackout du menu. Sans mot de passe, une entrée au clavier ou à la souris rétablit l’affichage. Pendant le masquage, les entrées et raccourcis globaux ordinaires sont bloqués ou transmis uniquement à Blackout."
+      ],
+      [
+        "Un mot de passe, si vous voulez",
+        "Désactivé par défaut. Activez-le dans les réglages du menu Blackout et saisissez le nouveau mot de passe deux fois. Sa modification ou sa désactivation nécessite le mot de passe actuel. Une fois activé, saisissez-le pour rétablir l’affichage."
+      ],
+      [
+        "Lancer à l’ouverture de session",
+        "Activez l’option correspondante dans les réglages pour utiliser le mécanisme natif de macOS. Désactivez-la pour arrêter le lancement automatique."
+      ],
+      [
+        "32 langues",
+        "L’app suit la langue de macOS par défaut. Choisissez une autre langue dans les réglages, ou revenez à l’option système."
+      ],
+      [
+        "Tout reste sur votre Mac",
+        "Aucun serveur applicatif ni télémétrie. Les préférences et un vérificateur de mot de passe salé sont stockés localement, jamais le mot de passe en clair. GitHub héberge les téléchargements et ce site."
+      ],
+      [
+        "En cas de problème",
+        "Si le blocage des entrées cesse, le masquage est retiré. Vérifiez l’autorisation d’accessibilité et relancez l’app. En cas d’oubli du mot de passe ou d’absence de réponse, forcez à quitter ou redémarrez macOS ; cela peut retirer le masquage sans mot de passe."
+      ]
+    ],
+    "faqs": [
+      [
+        "Est-ce un verrouillage de sécurité macOS ?",
+        "Non. L’app masque les écrans et intercepte les entrées ordinaires. Forcer à quitter, les écrans de sécurité et d’autres fonctions système restent hors de sa garantie. Utilisez le verrouillage de l’écran macOS pour protéger votre session."
+      ],
+      [
+        "Le mot de passe est-il obligatoire ?",
+        "Non. Il est facultatif et désactivé par défaut. Sans lui, le clavier ou la souris rétablit l’affichage. Activez-le pour ajouter une étape avant de retirer le masquage."
+      ]
+    ],
+    "status": "Version préliminaire"
+  },
+  "de": {
+    "name": "Deutsch",
+    "headline": "Eine Pause für deine Bildschirme.",
+    "description": "Ein Tastenkürzel blendet alle erkannten Bildschirme schwarz ab. BlackoutMac sitzt in der macOS-Menüleiste. Ein Passwort ist optional.",
+    "labels": [
+      "Für Mac laden",
+      "Anleitung",
+      "Sprache",
+      "Zum Inhalt",
+      "Häufige Fragen",
+      "Problem melden",
+      "Apples Anleitung zum Öffnen"
+    ],
+    "notice": "Vorabversion · Ohne Developer-ID-Signatur und Apple-Notarisierung. Bitte lies vor dem Öffnen die Installationshinweise.",
+    "sections": [
+      [
+        "Schnell installiert",
+        "Lade die universelle DMG von GitHub Releases, öffne sie und ziehe Blackout.app nach Programme. Starte die App. Falls macOS sie blockiert, prüfe die Herkunft. Nach dem ersten Öffnungsversuch kannst du unter Systemeinstellungen → Datenschutz & Sicherheit → Dennoch öffnen fortfahren, sofern verfügbar."
+      ],
+      [
+        "Bedienungshilfen erlauben",
+        "Aktiviere Blackout unter Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen und starte die App neu. Die Berechtigung wird zum Abfangen von Eingaben benötigt. Ohne funktionierende Eingabesperre werden die Bildschirme nicht abgedeckt."
+      ],
+      [
+        "Ein Kürzel für alle Bildschirme",
+        "Drücke Control + Option + B oder nutze das Symbol Blackout in der Menüleiste. Ohne Passwort stellt eine Tastatur- oder Mauseingabe die Anzeige wieder her. Während der Abdeckung werden Eingaben einschließlich üblicher globaler Kürzel abgefangen oder nur an Blackout weitergeleitet."
+      ],
+      [
+        "Passwort nach Wunsch",
+        "Standardmäßig ist kein Passwort aktiv. Aktiviere es in den Einstellungen im Blackout-Menü und gib das neue Passwort zweimal ein. Ändern oder Deaktivieren erfordert das aktuelle Passwort. Mit aktiviertem Schutz hebt dein Passwort die Abdeckung auf."
+      ],
+      [
+        "Bei Anmeldung starten",
+        "Aktiviere den Start bei Anmeldung in den Einstellungen. Die App nutzt dafür die native macOS-Funktion. Deaktiviere dieselbe Option, um den automatischen Start zu beenden."
+      ],
+      [
+        "32 Sprachen",
+        "Die App folgt standardmäßig der Sprache von macOS. Wähle in den Einstellungen eine andere Sprache oder kehre zur Systemsprache zurück."
+      ],
+      [
+        "Bleibt auf deinem Mac",
+        "Kein Backend, keine Telemetrie. Einstellungen und ein gesalzener Passwortprüfwert bleiben lokal, das Passwort wird nicht im Klartext gespeichert. Downloads und diese Website liegen bei GitHub."
+      ],
+      [
+        "Wenn etwas nicht klappt",
+        "Fällt die Eingabesperre aus, entfernt die App die Abdeckung. Prüfe die Bedienungshilfen-Berechtigung und starte die App neu. Bei vergessenem Passwort oder fehlender Reaktion kannst du die App sofort beenden oder macOS neu starten. So kann die Abdeckung ohne Passwort enden."
+      ]
+    ],
+    "faqs": [
+      [
+        "Ist das eine macOS-Sicherheitssperre?",
+        "Nein. Die App deckt Bildschirme ab und fängt gewöhnliche Eingaben ab. Sofort beenden, macOS-Sicherheitsdialoge und andere Systemfunktionen sind nicht abgedeckt. Nutze zum Schutz deiner Sitzung den macOS-Sperrbildschirm."
+      ],
+      [
+        "Brauche ich ein Passwort?",
+        "Nein. Es ist optional und standardmäßig deaktiviert. Dann stellen Tastatur- oder Mauseingaben die Anzeige wieder her. Aktiviere es für einen zusätzlichen Schritt vor dem Aufheben der Abdeckung."
+      ]
+    ],
+    "status": "Vorabversion"
+  },
+  "it": {
+    "name": "Italiano",
+    "headline": "Una pausa per i tuoi schermi.",
+    "description": "Una scorciatoia oscura tutti gli schermi rilevati. BlackoutMac è una piccola app nella barra dei menu di macOS, con password facoltativa.",
+    "labels": [
+      "Scarica per Mac",
+      "Guida all’uso",
+      "Lingua",
+      "Vai al contenuto",
+      "Domande frequenti",
+      "Segnala un problema",
+      "Guida Apple all’apertura"
+    ],
+    "notice": "Versione di anteprima · Senza firma Developer ID né autenticazione notarile Apple. Leggi le istruzioni prima di aprire l’app.",
+    "sections": [
+      [
+        "Installazione rapida",
+        "Scarica il DMG universale da GitHub Releases, aprilo e trascina Blackout.app in Applicazioni. Avvia l’app. Se macOS la blocca, verifica la provenienza e, dopo un primo tentativo, usa Impostazioni di Sistema → Privacy e sicurezza → Apri comunque, se disponibile."
+      ],
+      [
+        "Consenti l’accessibilità",
+        "Abilita Blackout in Impostazioni di Sistema → Privacy e sicurezza → Accessibilità, poi riavvia l’app. Il permesso serve a intercettare gli input. Se il blocco degli input non funziona, gli schermi non vengono coperti."
+      ],
+      [
+        "Una scorciatoia, tutti gli schermi",
+        "Premi Control + Option + B o usa l’icona Blackout nel menu. Senza password, un input da tastiera o mouse ripristina gli schermi. Durante la copertura, input e normali scorciatoie globali vengono bloccati o inviati solo a Blackout."
+      ],
+      [
+        "Password facoltativa",
+        "È disattivata per impostazione predefinita. Attivala nelle impostazioni del menu Blackout e inserisci la nuova password due volte. Per modificarla o disattivarla serve quella attuale. Quando è attiva, inseriscila per togliere la copertura."
+      ],
+      [
+        "Avvio al login",
+        "Attiva l’avvio al login nelle impostazioni per usare la funzione nativa di macOS. Disattiva la stessa opzione per interrompere l’avvio automatico."
+      ],
+      [
+        "32 lingue",
+        "L’app segue la lingua di macOS per impostazione predefinita. Puoi sceglierne un’altra nelle impostazioni o tornare alla lingua di sistema."
+      ],
+      [
+        "Tutto resta sul Mac",
+        "Nessun backend o telemetria. Preferenze e verificatore della password con salt restano in locale; la password non viene salvata in chiaro. GitHub ospita download e sito."
+      ],
+      [
+        "Se qualcosa non funziona",
+        "Se il blocco degli input si interrompe, la copertura viene rimossa. Controlla il permesso di Accessibilità e riapri l’app. Se dimentichi la password o l’app non risponde, usa Uscita forzata o riavvia macOS: questo può rimuovere la copertura senza password."
+      ]
+    ],
+    "faqs": [
+      [
+        "È un blocco di sicurezza di macOS?",
+        "No. Copre gli schermi e intercetta gli input ordinari. Uscita forzata, schermate di sicurezza e altre funzioni di sistema non rientrano nelle sue garanzie. Per proteggere la sessione usa Blocca schermo di macOS."
+      ],
+      [
+        "Devo impostare una password?",
+        "No. È facoltativa e disattivata all’inizio. Senza password, tastiera o mouse ripristinano gli schermi. Attivala se desideri un passaggio aggiuntivo prima di rimuovere la copertura."
+      ]
+    ],
+    "status": "Versione di anteprima"
+  },
+  "pt-BR": {
+    "name": "Português (Brasil)",
+    "headline": "Uma pausa para suas telas.",
+    "description": "Um atalho deixa todas as telas detectadas pretas. BlackoutMac é um pequeno app na barra de menus do macOS, com senha opcional.",
+    "labels": [
+      "Baixar para Mac",
+      "Guia de uso",
+      "Idioma",
+      "Ir para o conteúdo",
+      "Perguntas frequentes",
+      "Relatar um problema",
+      "Guia de abertura da Apple"
+    ],
+    "notice": "Versão de prévia · Sem assinatura Developer ID nem notarização da Apple. Leia as instruções antes de abrir.",
+    "sections": [
+      [
+        "Instalação rápida",
+        "Baixe o DMG universal no GitHub Releases, abra-o e arraste Blackout.app para Aplicativos. Inicie o app. Se o macOS bloquear a abertura, verifique a origem e, após tentar abri-lo, use Ajustes do Sistema → Privacidade e Segurança → Abrir Mesmo Assim, se disponível."
+      ],
+      [
+        "Permita a Acessibilidade",
+        "Ative Blackout em Ajustes do Sistema → Privacidade e Segurança → Acessibilidade e reinicie o app. Essa permissão permite interceptar entradas. Sem bloqueio de entrada funcionando, as telas não serão cobertas."
+      ],
+      [
+        "Um atalho, todas as telas",
+        "Pressione Control + Option + B ou use o ícone Blackout do menu. Sem senha, uma entrada do teclado ou mouse restaura as telas. Durante a cobertura, entradas e atalhos globais comuns são bloqueados ou enviados apenas ao Blackout."
+      ],
+      [
+        "Senha, se você quiser",
+        "Desativada por padrão. Ative nas configurações do menu Blackout e digite a nova senha duas vezes. Alterar ou desativar exige a senha atual. Com a proteção ativa, digite a senha para remover a cobertura."
+      ],
+      [
+        "Iniciar ao entrar",
+        "Ative a opção de iniciar ao entrar nas configurações para usar o recurso nativo do macOS. Desative a mesma opção para parar a inicialização automática."
+      ],
+      [
+        "32 idiomas",
+        "Por padrão, o app segue o idioma do macOS. Escolha outro nas configurações ou volte à opção do sistema."
+      ],
+      [
+        "Tudo fica no seu Mac",
+        "Sem backend ou telemetria. Preferências e um verificador de senha com salt são armazenados localmente, nunca a senha em texto simples. GitHub hospeda os downloads e este site."
+      ],
+      [
+        "Se algo travar",
+        "Se o bloqueio de entrada falhar, a cobertura será removida. Confira a permissão de Acessibilidade e reabra o app. Se esquecer a senha ou o app não responder, use Forçar Encerrar ou reinicie o macOS; isso pode remover a cobertura sem a senha."
+      ]
+    ],
+    "faqs": [
+      [
+        "É um bloqueio de segurança do macOS?",
+        "Não. Cobre as telas e intercepta entradas comuns. Forçar Encerrar, telas de segurança e outras funções do sistema ficam fora da garantia. Use Bloquear Tela do macOS para proteger sua sessão."
+      ],
+      [
+        "Preciso definir uma senha?",
+        "Não. É opcional e desativada por padrão. Sem ela, teclado ou mouse restauram as telas. Ative se quiser uma etapa extra antes de remover a cobertura."
+      ]
+    ],
+    "status": "Versão de prévia"
+  },
+  "pt-PT": {
+    "name": "Português (Portugal)",
+    "headline": "Uma pausa para os seus ecrãs.",
+    "description": "Um atalho torna negros todos os ecrãs detetados. BlackoutMac é uma pequena aplicação na barra de menus do macOS, com palavra-passe opcional.",
+    "labels": [
+      "Descarregar para Mac",
+      "Guia de utilização",
+      "Idioma",
+      "Saltar para o conteúdo",
+      "Perguntas frequentes",
+      "Comunicar um problema",
+      "Guia de abertura da Apple"
+    ],
+    "notice": "Versão de pré-visualização · Sem assinatura Developer ID nem notarização da Apple. Leia as instruções antes de abrir.",
+    "sections": [
+      [
+        "Instalação rápida",
+        "Descarregue o DMG universal do GitHub Releases, abra-o e arraste Blackout.app para Aplicações. Inicie a aplicação. Se o macOS a bloquear, confirme a origem e, após tentar abri-la, use Definições do Sistema → Privacidade e segurança → Abrir mesmo assim, se disponível."
+      ],
+      [
+        "Permitir Acessibilidade",
+        "Ative Blackout em Definições do Sistema → Privacidade e segurança → Acessibilidade e reinicie a aplicação. A permissão permite intercetar entradas. Sem bloqueio de entrada funcional, os ecrãs não são cobertos."
+      ],
+      [
+        "Um atalho, todos os ecrãs",
+        "Prima Control + Option + B ou use o ícone Blackout do menu. Sem palavra-passe, uma entrada do teclado ou rato repõe os ecrãs. Durante a cobertura, entradas e atalhos globais habituais são bloqueados ou enviados apenas ao Blackout."
+      ],
+      [
+        "Palavra-passe opcional",
+        "Está desativada por predefinição. Ative-a nas definições do menu Blackout e introduza a nova palavra-passe duas vezes. Alterar ou desativar exige a palavra-passe atual. Com a proteção ativa, introduza-a para retirar a cobertura."
+      ],
+      [
+        "Iniciar ao iniciar sessão",
+        "Ative esta opção nas definições para usar o mecanismo nativo do macOS. Desative a mesma opção para parar o início automático."
+      ],
+      [
+        "32 idiomas",
+        "Por predefinição, segue o idioma do macOS. Escolha outro nas definições ou volte à opção do sistema."
+      ],
+      [
+        "Tudo fica no seu Mac",
+        "Sem backend nem telemetria. As preferências e um verificador de palavra-passe com salt ficam guardados localmente, nunca a palavra-passe em texto simples. O GitHub aloja as descargas e este site."
+      ],
+      [
+        "Se algo deixar de responder",
+        "Se o bloqueio de entrada falhar, a cobertura é retirada. Confirme a permissão de Acessibilidade e reabra a aplicação. Se esquecer a palavra-passe ou a aplicação não responder, force a saída ou reinicie o macOS; isso pode retirar a cobertura sem a palavra-passe."
+      ]
+    ],
+    "faqs": [
+      [
+        "É um bloqueio de segurança do macOS?",
+        "Não. Cobre os ecrãs e interceta entradas habituais. Forçar saída, ecrãs de segurança e outras funções do sistema ficam fora da garantia. Use Bloquear ecrã do macOS para proteger a sessão."
+      ],
+      [
+        "Preciso de uma palavra-passe?",
+        "Não. É opcional e está desativada por predefinição. Sem ela, o teclado ou rato repõe os ecrãs. Ative-a se desejar um passo adicional antes de retirar a cobertura."
+      ]
+    ],
+    "status": "Versão de pré-visualização"
+  },
+  "ru": {
+    "name": "Русский",
+    "headline": "Пусть экраны отдохнут.",
+    "description": "Одно сочетание клавиш закрывает чёрным все обнаруженные экраны. BlackoutMac работает в строке меню macOS. Пароль — по желанию.",
+    "labels": [
+      "Скачать для Mac",
+      "Руководство",
+      "Язык",
+      "К содержимому",
+      "Частые вопросы",
+      "Сообщить о проблеме",
+      "Инструкция Apple по открытию"
+    ],
+    "notice": "Предварительная версия · Нет подписи Developer ID и нотариального заверения Apple. Перед запуском прочитайте инструкцию.",
+    "sections": [
+      [
+        "Быстрая установка",
+        "Скачайте универсальный DMG из GitHub Releases, откройте его и перенесите Blackout.app в Программы. Запустите приложение. Если macOS блокирует запуск, проверьте источник. После первой попытки откройте Системные настройки → Конфиденциальность и безопасность и используйте кнопку открытия, если она доступна."
+      ],
+      [
+        "Разрешение универсального доступа",
+        "Включите Blackout в Системные настройки → Конфиденциальность и безопасность → Универсальный доступ и перезапустите приложение. Разрешение нужно для перехвата ввода. Если блокировка ввода не работает, экраны не закрываются."
+      ],
+      [
+        "Одно сочетание для всех экранов",
+        "Нажмите Control + Option + B или значок Blackout в меню. Без пароля ввод с клавиатуры или мыши возвращает изображение. Пока экраны закрыты, ввод, включая обычные глобальные сочетания, блокируется или передаётся только Blackout."
+      ],
+      [
+        "Пароль по желанию",
+        "По умолчанию отключён. Включите его в настройках меню Blackout и введите новый пароль дважды. Для изменения или отключения нужен текущий пароль. Если защита включена, введите пароль, чтобы убрать чёрное покрытие."
+      ],
+      [
+        "Запуск при входе",
+        "Включите запуск при входе в настройках: используется штатная функция macOS. Отключите тот же параметр, чтобы убрать автозапуск."
+      ],
+      [
+        "32 языка",
+        "По умолчанию используется язык macOS. В настройках можно выбрать другой язык или снова следовать системному."
+      ],
+      [
+        "Данные остаются на Mac",
+        "Сервера приложения и телеметрии нет. Настройки и значение проверки пароля с солью хранятся локально; пароль не хранится открытым текстом. Загрузки и сайт размещены на GitHub."
+      ],
+      [
+        "Если возникла проблема",
+        "При потере блокировки ввода чёрное покрытие убирается. Проверьте разрешение универсального доступа и перезапустите приложение. Если пароль забыт или приложение зависло, используйте принудительное завершение либо перезапуск macOS. Это может убрать покрытие без пароля."
+      ]
+    ],
+    "faqs": [
+      [
+        "Это защитная блокировка macOS?",
+        "Нет. Приложение закрывает экраны и перехватывает обычный ввод. Принудительное завершение, системные экраны безопасности и другие функции macOS не входят в его гарантии. Для защиты сеанса используйте блокировку экрана macOS."
+      ],
+      [
+        "Обязательно задавать пароль?",
+        "Нет. Пароль необязателен и по умолчанию отключён. Без него клавиатура или мышь возвращает изображение. Включите его, если нужен дополнительный шаг перед снятием покрытия."
+      ]
+    ],
+    "status": "Предварительная версия"
+  },
+  "uk": {
+    "name": "Українська",
+    "headline": "Нехай екрани перепочинуть.",
+    "description": "Одне сполучення клавіш закриває чорним усі виявлені екрани. BlackoutMac працює в смузі меню macOS. Пароль — за бажанням.",
+    "labels": [
+      "Завантажити для Mac",
+      "Посібник",
+      "Мова",
+      "До вмісту",
+      "Поширені запитання",
+      "Повідомити про проблему",
+      "Інструкція Apple з відкриття"
+    ],
+    "notice": "Попередня версія · Без підпису Developer ID та нотаризації Apple. Перед запуском прочитайте інструкцію.",
+    "sections": [
+      [
+        "Швидке встановлення",
+        "Завантажте універсальний DMG із GitHub Releases, відкрийте його й перенесіть Blackout.app до Програм. Запустіть програму. Якщо macOS блокує відкриття, перевірте джерело. Після першої спроби відкрийте Системні параметри → Приватність і безпека та скористайтеся кнопкою дозволу відкриття, якщо вона доступна."
+      ],
+      [
+        "Дозвіл доступності",
+        "Увімкніть Blackout у Системні параметри → Приватність і безпека → Доступність і перезапустіть програму. Дозвіл потрібен для перехоплення введення. Якщо блокування введення не працює, екрани не закриваються."
+      ],
+      [
+        "Одне сполучення для всіх екранів",
+        "Натисніть Control + Option + B або значок Blackout у меню. Без пароля введення з клавіатури чи миші повертає зображення. Під час накриття введення, зокрема звичайні глобальні сполучення, блокується або передається лише Blackout."
+      ],
+      [
+        "Пароль за бажанням",
+        "Типово вимкнений. Увімкніть у параметрах меню Blackout та введіть новий пароль двічі. Для зміни чи вимкнення потрібен поточний пароль. Коли захист увімкнено, введіть пароль, щоб прибрати накриття."
+      ],
+      [
+        "Запуск під час входу",
+        "Увімкніть запуск під час входу в параметрах: використовується вбудована функція macOS. Вимкніть той самий параметр, щоб припинити автозапуск."
+      ],
+      [
+        "32 мови",
+        "Типово використовується мова macOS. У параметрах можна вибрати іншу або повернутися до системної."
+      ],
+      [
+        "Дані залишаються на Mac",
+        "Немає сервера програми чи телеметрії. Параметри та значення перевірки пароля із сіллю зберігаються локально; пароль не зберігається відкритим текстом. Завантаження й сайт розміщені на GitHub."
+      ],
+      [
+        "Якщо виникла проблема",
+        "Коли блокування введення припиняється, накриття прибирається. Перевірте дозвіл доступності та перезапустіть програму. Якщо забули пароль або програма не відповідає, скористайтеся примусовим завершенням чи перезапуском macOS. Це може зняти накриття без пароля."
+      ]
+    ],
+    "faqs": [
+      [
+        "Це захисне блокування macOS?",
+        "Ні. Програма накриває екрани й перехоплює звичайне введення. Примусове завершення, екрани безпеки та інші системні функції поза її гарантіями. Для захисту сеансу використовуйте блокування екрана macOS."
+      ],
+      [
+        "Чи обов’язковий пароль?",
+        "Ні. Пароль необов’язковий і типово вимкнений. Без нього клавіатура чи миша повертає зображення. Увімкніть його, якщо потрібен додатковий крок перед зняттям накриття."
+      ]
+    ],
+    "status": "Попередня версія"
+  },
+  "pl": {
+    "name": "Polski",
+    "headline": "Chwila przerwy dla ekranów.",
+    "description": "Jeden skrót zasłania na czarno wszystkie wykryte ekrany. BlackoutMac działa na pasku menu macOS. Hasło jest opcjonalne.",
+    "labels": [
+      "Pobierz na Maca",
+      "Instrukcja",
+      "Język",
+      "Przejdź do treści",
+      "Częste pytania",
+      "Zgłoś problem",
+      "Instrukcja otwierania od Apple"
+    ],
+    "notice": "Wersja testowa · Bez podpisu Developer ID i notaryzacji Apple. Przed otwarciem przeczytaj instrukcję instalacji.",
+    "sections": [
+      [
+        "Szybka instalacja",
+        "Pobierz uniwersalny DMG z GitHub Releases, otwórz go i przeciągnij Blackout.app do Aplikacji. Uruchom aplikację. Jeśli macOS ją blokuje, sprawdź źródło, a po próbie otwarcia użyj Ustawienia systemowe → Prywatność i ochrona → Otwórz mimo to, jeśli opcja jest dostępna."
+      ],
+      [
+        "Zezwól na Dostępność",
+        "Włącz Blackout w Ustawienia systemowe → Prywatność i ochrona → Dostępność i uruchom aplikację ponownie. Uprawnienie pozwala przechwytywać wejście. Bez działającej blokady wejścia ekrany nie zostaną zasłonięte."
+      ],
+      [
+        "Jeden skrót, wszystkie ekrany",
+        "Naciśnij Control + Option + B lub użyj ikony Blackout w menu. Bez hasła wejście z klawiatury lub myszy przywraca obraz. Podczas zasłonięcia wejście, w tym zwykłe skróty globalne, jest blokowane lub przekazywane wyłącznie do Blackout."
+      ],
+      [
+        "Hasło według uznania",
+        "Domyślnie wyłączone. Włącz je w ustawieniach menu Blackout i wpisz nowe hasło dwukrotnie. Zmiana lub wyłączenie wymaga bieżącego hasła. Gdy ochrona jest aktywna, wpisz hasło, aby odsłonić ekrany."
+      ],
+      [
+        "Uruchamianie przy logowaniu",
+        "Włącz tę opcję w ustawieniach, aby użyć natywnego mechanizmu macOS. Wyłącz tę samą opcję, aby zatrzymać automatyczne uruchamianie."
+      ],
+      [
+        "32 języki",
+        "Domyślnie aplikacja używa języka macOS. W ustawieniach możesz wybrać inny lub wrócić do języka systemu."
+      ],
+      [
+        "Dane zostają na Macu",
+        "Bez serwera aplikacji i telemetrii. Preferencje oraz wartość weryfikująca hasło z solą są zapisane lokalnie; hasło nie jest przechowywane jawnym tekstem. GitHub udostępnia pliki i tę stronę."
+      ],
+      [
+        "W razie problemów",
+        "Utrata blokady wejścia usuwa zasłony. Sprawdź uprawnienie Dostępność i uruchom aplikację ponownie. Jeśli zapomnisz hasła lub aplikacja nie odpowiada, wymuś jej zakończenie albo uruchom macOS ponownie. Może to usunąć zasłonę bez hasła."
+      ]
+    ],
+    "faqs": [
+      [
+        "Czy to blokada bezpieczeństwa macOS?",
+        "Nie. Aplikacja zasłania ekrany i przechwytuje zwykłe wejście. Wymuszanie zakończenia, ekrany bezpieczeństwa i inne funkcje systemu nie są objęte gwarancją. Do ochrony sesji używaj blokady ekranu macOS."
+      ],
+      [
+        "Czy muszę ustawić hasło?",
+        "Nie. Jest opcjonalne i domyślnie wyłączone. Bez niego klawiatura lub mysz przywraca obraz. Włącz je, jeśli chcesz dodać krok przed odsłonięciem ekranów."
+      ]
+    ],
+    "status": "Wersja testowa"
+  },
+  "nl": {
+    "name": "Nederlands",
+    "headline": "Even rust voor je schermen.",
+    "description": "Eén sneltoets maakt alle gedetecteerde schermen zwart. BlackoutMac staat in de macOS-menubalk. Een wachtwoord is optioneel.",
+    "labels": [
+      "Download voor Mac",
+      "Handleiding",
+      "Taal",
+      "Naar de inhoud",
+      "Veelgestelde vragen",
+      "Probleem melden",
+      "Apples uitleg over openen"
+    ],
+    "notice": "Voorlopige versie · Geen Developer ID-handtekening of Apple-notarisatie. Lees de installatie-instructies voordat je de app opent.",
+    "sections": [
+      [
+        "Snel geïnstalleerd",
+        "Download de universele DMG via GitHub Releases, open deze en sleep Blackout.app naar Apps. Start de app. Blokkeert macOS het openen? Controleer de herkomst en gebruik na een eerste poging Systeeminstellingen → Privacy en beveiliging → Open toch, indien beschikbaar."
+      ],
+      [
+        "Toegankelijkheid toestaan",
+        "Schakel Blackout in bij Systeeminstellingen → Privacy en beveiliging → Toegankelijkheid en herstart de app. Deze toestemming is nodig om invoer te onderscheppen. Zonder werkende invoerblokkering worden schermen niet afgedekt."
+      ],
+      [
+        "Eén sneltoets, alle schermen",
+        "Druk op Control + Option + B of gebruik Blackout in de menubalk. Zonder wachtwoord herstelt toetsenbord- of muisinvoer de schermen. Tijdens het afdekken wordt invoer, inclusief gewone algemene sneltoetsen, geblokkeerd of alleen naar Blackout gestuurd."
+      ],
+      [
+        "Een wachtwoord naar keuze",
+        "Standaard uitgeschakeld. Schakel het in via de instellingen in het Blackout-menu en voer het nieuwe wachtwoord tweemaal in. Wijzigen of uitschakelen vereist het huidige wachtwoord. Voer bij ingeschakelde bescherming je wachtwoord in om de afdekking te verwijderen."
+      ],
+      [
+        "Starten bij inloggen",
+        "Schakel deze optie in bij de instellingen om de ingebouwde macOS-functie te gebruiken. Schakel dezelfde optie uit om automatisch starten te stoppen."
+      ],
+      [
+        "32 talen",
+        "De app volgt standaard de taal van macOS. Kies een andere taal in de instellingen of ga terug naar de systeemtaal."
+      ],
+      [
+        "Alles blijft op je Mac",
+        "Geen backend of telemetrie. Voorkeuren en een wachtwoordverificatiewaarde met salt worden lokaal bewaard; het wachtwoord wordt niet als leesbare tekst opgeslagen. GitHub host downloads en deze website."
+      ],
+      [
+        "Als iets vastloopt",
+        "Valt de invoerblokkering weg, dan wordt de afdekking verwijderd. Controleer Toegankelijkheid en heropen de app. Bij een vergeten wachtwoord of vastgelopen app kun je geforceerd stoppen of macOS herstarten. Dit kan de afdekking zonder wachtwoord beëindigen."
+      ]
+    ],
+    "faqs": [
+      [
+        "Is dit een macOS-beveiligingsslot?",
+        "Nee. De app dekt schermen af en onderschept gewone invoer. Geforceerd stoppen, beveiligingsschermen en andere systeemfuncties vallen buiten de garantie. Gebruik het macOS-toegangsscherm om je sessie te beveiligen."
+      ],
+      [
+        "Heb ik een wachtwoord nodig?",
+        "Nee. Het is optioneel en standaard uitgeschakeld. Zonder wachtwoord herstellen toetsenbord of muis de schermen. Schakel het in voor een extra stap voordat de afdekking verdwijnt."
+      ]
+    ],
+    "status": "Voorlopige versie"
+  },
+  "sv": {
+    "name": "Svenska",
+    "headline": "En paus för dina skärmar.",
+    "description": "Ett kortkommando täcker alla upptäckta skärmar med svart. BlackoutMac finns i macOS menyrad, med valfritt lösenord.",
+    "labels": [
+      "Hämta för Mac",
+      "Användarguide",
+      "Språk",
+      "Till innehållet",
+      "Vanliga frågor",
+      "Rapportera problem",
+      "Apples guide för att öppna appar"
+    ],
+    "notice": "Förhandsversion · Saknar Developer ID-signatur och Apples notarisering. Läs installationsguiden innan du öppnar appen.",
+    "sections": [
+      [
+        "Snabb installation",
+        "Hämta den universella DMG-filen från GitHub Releases, öppna den och dra Blackout.app till Appar. Starta appen. Om macOS blockerar den, kontrollera källan. Efter ett öppningsförsök kan du använda Systeminställningar → Integritet och säkerhet → Öppna ändå, om alternativet finns."
+      ],
+      [
+        "Tillåt hjälpmedelsåtkomst",
+        "Aktivera Blackout i Systeminställningar → Integritet och säkerhet → Hjälpmedel och starta om appen. Behörigheten behövs för att fånga inmatning. Utan fungerande inmatningsblockering täcks inga skärmar."
+      ],
+      [
+        "Ett kortkommando, alla skärmar",
+        "Tryck Control + Option + B eller använd Blackout i menyraden. Utan lösenord återställs skärmarna med tangentbord eller mus. Medan de är täckta blockeras inmatning, inklusive vanliga globala kortkommandon, eller skickas endast till Blackout."
+      ],
+      [
+        "Lösenord om du vill",
+        "Avstängt som standard. Aktivera det i inställningarna i Blackout-menyn och skriv det nya lösenordet två gånger. Ändring eller avstängning kräver det aktuella lösenordet. Med skyddet på återställer du skärmarna med lösenordet."
+      ],
+      [
+        "Starta vid inloggning",
+        "Aktivera alternativet i inställningarna för att använda macOS inbyggda funktion. Stäng av samma alternativ för att stoppa automatisk start."
+      ],
+      [
+        "32 språk",
+        "Appen följer macOS språk som standard. Välj ett annat i inställningarna eller återgå till systemspråket."
+      ],
+      [
+        "Allt stannar på din Mac",
+        "Ingen backend eller telemetri. Inställningar och ett saltat lösenordsverifieringsvärde lagras lokalt, aldrig lösenordet i klartext. GitHub är värd för nedladdningarna och webbplatsen."
+      ],
+      [
+        "Om något fastnar",
+        "Om inmatningsblockeringen slutar fungera tas täckningen bort. Kontrollera hjälpmedelsbehörigheten och öppna appen igen. Vid glömt lösenord eller låst app kan du tvångsavsluta eller starta om macOS. Det kan ta bort täckningen utan lösenord."
+      ]
+    ],
+    "faqs": [
+      [
+        "Är detta ett säkerhetslås för macOS?",
+        "Nej. Appen täcker skärmar och fångar vanlig inmatning. Tvångsavslutning, säkerhetsskärmar och andra systemfunktioner omfattas inte av garantin. Använd macOS låsskärm för att skydda sessionen."
+      ],
+      [
+        "Behöver jag ett lösenord?",
+        "Nej. Det är valfritt och avstängt från början. Utan det återställer tangentbord eller mus skärmarna. Aktivera det om du vill ha ett extra steg innan täckningen tas bort."
+      ]
+    ],
+    "status": "Förhandsversion"
+  },
+  "da": {
+    "name": "Dansk",
+    "headline": "En pause til dine skærme.",
+    "description": "Én genvej dækker alle registrerede skærme med sort. BlackoutMac ligger i macOS-menulinjen med valgfri adgangskode.",
+    "labels": [
+      "Hent til Mac",
+      "Brugervejledning",
+      "Sprog",
+      "Til indholdet",
+      "Ofte stillede spørgsmål",
+      "Rapportér et problem",
+      "Apples vejledning til åbning"
+    ],
+    "notice": "Forhåndsversion · Ingen Developer ID-signatur eller notarbekræftelse fra Apple. Læs vejledningen, før du åbner appen.",
+    "sections": [
+      [
+        "Hurtig installation",
+        "Hent den universelle DMG fra GitHub Releases, åbn den, og træk Blackout.app til Programmer. Start appen. Hvis macOS blokerer den, skal du kontrollere kilden. Efter et åbningsforsøg kan du bruge Systemindstillinger → Anonymitet & sikkerhed → Åbn alligevel, hvis muligheden vises."
+      ],
+      [
+        "Tillad Tilgængelighed",
+        "Aktivér Blackout i Systemindstillinger → Anonymitet & sikkerhed → Tilgængelighed, og genstart appen. Tilladelsen bruges til at opfange input. Skærmene dækkes ikke, hvis inputblokeringen ikke virker."
+      ],
+      [
+        "Én genvej, alle skærme",
+        "Tryk Control + Option + B, eller brug Blackout i menulinjen. Uden adgangskode gendannes skærmene ved input fra tastatur eller mus. Mens de er dækket, blokeres input og almindelige globale genveje eller sendes kun til Blackout."
+      ],
+      [
+        "Adgangskode efter ønske",
+        "Slået fra som standard. Aktivér den i indstillingerne i Blackout-menuen, og indtast den nye kode to gange. Ændring eller deaktivering kræver den nuværende kode. Når beskyttelsen er aktiv, fjernes dækningen med adgangskoden."
+      ],
+      [
+        "Start ved login",
+        "Aktivér indstillingen for at bruge macOS' indbyggede loginfunktion. Deaktivér samme indstilling for at stoppe automatisk start."
+      ],
+      [
+        "32 sprog",
+        "Appen følger som standard macOS-sproget. Vælg et andet i indstillingerne, eller gå tilbage til systemsproget."
+      ],
+      [
+        "Alt bliver på din Mac",
+        "Ingen backend eller telemetri. Indstillinger og en saltet kontrolværdi til adgangskoden gemmes lokalt; koden gemmes aldrig som klartekst. GitHub hoster downloads og hjemmesiden."
+      ],
+      [
+        "Hvis noget går i stå",
+        "Hvis inputblokeringen svigter, fjernes dækningen. Kontrollér tilladelsen til Tilgængelighed, og åbn appen igen. Hvis du glemmer koden, eller appen ikke svarer, kan du afbryde den eller genstarte macOS. Det kan fjerne dækningen uden adgangskode."
+      ]
+    ],
+    "faqs": [
+      [
+        "Er dette en sikkerhedslås i macOS?",
+        "Nej. Appen dækker skærme og opfanger almindeligt input. Tvungen afslutning, sikkerhedsskærme og andre systemfunktioner er ikke omfattet af garantien. Brug macOS' låseskærm til at beskytte sessionen."
+      ],
+      [
+        "Skal jeg bruge en adgangskode?",
+        "Nej. Den er valgfri og slået fra som standard. Uden den gendanner tastatur eller mus skærmene. Aktivér den, hvis du ønsker et ekstra trin før dækningen fjernes."
+      ]
+    ],
+    "status": "Forhåndsversion"
+  },
+  "nb": {
+    "name": "Norsk bokmål",
+    "headline": "En pause for skjermene dine.",
+    "description": "Én snarvei dekker alle oppdagede skjermer med svart. BlackoutMac ligger i menylinjen i macOS, med valgfritt passord.",
+    "labels": [
+      "Last ned for Mac",
+      "Brukerveiledning",
+      "Språk",
+      "Gå til innhold",
+      "Vanlige spørsmål",
+      "Rapporter et problem",
+      "Apples veiledning for åpning"
+    ],
+    "notice": "Forhåndsversjon · Ingen Developer ID-signatur eller notarisering fra Apple. Les veiledningen før du åpner appen.",
+    "sections": [
+      [
+        "Rask installasjon",
+        "Last ned den universelle DMG-filen fra GitHub Releases, åpne den og dra Blackout.app til Apper. Start appen. Hvis macOS blokkerer den, kontroller kilden. Etter et åpningsforsøk kan du bruke Systeminnstillinger → Personvern og sikkerhet → Åpne likevel, hvis valget finnes."
+      ],
+      [
+        "Tillat Tilgjengelighet",
+        "Aktiver Blackout i Systeminnstillinger → Personvern og sikkerhet → Tilgjengelighet, og start appen på nytt. Tillatelsen trengs for å fange inndata. Uten fungerende inndatablokkering dekkes ikke skjermene."
+      ],
+      [
+        "Én snarvei, alle skjermer",
+        "Trykk Control + Option + B, eller bruk Blackout i menylinjen. Uten passord gjenopprettes skjermene med tastatur eller mus. Mens de er dekket, blokkeres inndata, inkludert vanlige globale snarveier, eller sendes bare til Blackout."
+      ],
+      [
+        "Passord hvis du vil",
+        "Av som standard. Aktiver det i innstillingene i Blackout-menyen, og skriv det nye passordet to ganger. Endring eller deaktivering krever gjeldende passord. Når beskyttelsen er på, bruker du passordet for å fjerne dekningen."
+      ],
+      [
+        "Start ved pålogging",
+        "Aktiver innstillingen for å bruke den innebygde påloggingsfunksjonen i macOS. Deaktiver samme valg for å stoppe automatisk oppstart."
+      ],
+      [
+        "32 språk",
+        "Appen følger språket i macOS som standard. Velg et annet i innstillingene, eller gå tilbake til systemspråket."
+      ],
+      [
+        "Alt blir på din Mac",
+        "Ingen backend eller telemetri. Innstillinger og en saltet kontrollverdi for passordet lagres lokalt, aldri passordet i klartekst. GitHub er vert for nedlastingene og nettstedet."
+      ],
+      [
+        "Hvis noe låser seg",
+        "Hvis inndatablokkeringen svikter, fjernes dekningen. Kontroller Tilgjengelighet og åpne appen på nytt. Hvis du glemmer passordet eller appen ikke svarer, kan du tvangsavslutte eller starte macOS på nytt. Det kan fjerne dekningen uten passord."
+      ]
+    ],
+    "faqs": [
+      [
+        "Er dette en sikkerhetslås i macOS?",
+        "Nei. Appen dekker skjermer og fanger vanlig inndata. Tvangsavslutning, sikkerhetsskjermer og andre systemfunksjoner omfattes ikke av garantien. Bruk låseskjermen i macOS for å beskytte økten."
+      ],
+      [
+        "Trenger jeg passord?",
+        "Nei. Det er valgfritt og av som standard. Uten passord gjenoppretter tastatur eller mus skjermene. Aktiver det hvis du vil ha et ekstra trinn før dekningen fjernes."
+      ]
+    ],
+    "status": "Forhåndsversjon"
+  },
+  "fi": {
+    "name": "Suomi",
+    "headline": "Pieni tauko näytöille.",
+    "description": "Yksi pikanäppäin peittää kaikki havaitut näytöt mustiksi. BlackoutMac toimii macOS:n valikkorivillä. Salasana on valinnainen.",
+    "labels": [
+      "Lataa Macille",
+      "Käyttöopas",
+      "Kieli",
+      "Siirry sisältöön",
+      "Usein kysyttyä",
+      "Ilmoita ongelmasta",
+      "Applen avausohje"
+    ],
+    "notice": "Esiversio · Ei Developer ID -allekirjoitusta eikä Applen vahvistusta. Lue asennusohje ennen avaamista.",
+    "sections": [
+      [
+        "Nopea asennus",
+        "Lataa universaali DMG GitHub Releasesista, avaa se ja vedä Blackout.app Ohjelmat-kansioon. Käynnistä sovellus. Jos macOS estää avaamisen, tarkista lähde. Avausyrityksen jälkeen voit käyttää kohtaa Järjestelmäasetukset → Tietosuoja ja suojaus → Avaa silti, jos se on saatavilla."
+      ],
+      [
+        "Salli käyttöapu",
+        "Ota Blackout käyttöön kohdassa Järjestelmäasetukset → Tietosuoja ja suojaus → Käyttöapu ja käynnistä sovellus uudelleen. Lupa tarvitaan syötteiden sieppaamiseen. Näyttöjä ei peitetä, ellei syötteiden esto toimi."
+      ],
+      [
+        "Yksi pikanäppäin, kaikki näytöt",
+        "Paina Control + Option + B tai käytä valikkorivin Blackout-kuvaketta. Ilman salasanaa näppäimistö- tai hiirisyöte palauttaa näytöt. Peiton aikana syötteet ja tavalliset yleiset pikanäppäimet estetään tai ohjataan vain Blackoutiin."
+      ],
+      [
+        "Salasana oman valinnan mukaan",
+        "Oletuksena pois käytöstä. Ota käyttöön Blackout-valikon asetuksista ja kirjoita uusi salasana kahdesti. Vaihtaminen tai poistaminen vaatii nykyisen salasanan. Kun suojaus on käytössä, poista peitto salasanalla."
+      ],
+      [
+        "Käynnistä kirjautuessa",
+        "Ota asetus käyttöön, jolloin sovellus käyttää macOS:n omaa kirjautumiskohdetta. Poista sama asetus käytöstä lopettaaksesi automaattisen käynnistyksen."
+      ],
+      [
+        "32 kieltä",
+        "Sovellus seuraa oletuksena macOS:n kieltä. Voit valita toisen kielen asetuksista tai palata järjestelmän kieleen."
+      ],
+      [
+        "Kaikki pysyy Macillasi",
+        "Ei taustapalvelinta eikä telemetriaa. Asetukset ja suolattu salasanan tarkiste tallennetaan paikallisesti, ei salasanaa selväkielisenä. GitHub ylläpitää latauksia ja tätä sivustoa."
+      ],
+      [
+        "Jos jokin jumittuu",
+        "Jos syötteiden esto lakkaa toimimasta, peitto poistetaan. Tarkista käyttöapulupa ja avaa sovellus uudelleen. Jos unohdat salasanan tai sovellus ei vastaa, pakota se lopettamaan tai käynnistä macOS uudelleen. Peitto voi tällöin poistua ilman salasanaa."
+      ]
+    ],
+    "faqs": [
+      [
+        "Onko tämä macOS:n turvalukitus?",
+        "Ei. Sovellus peittää näytöt ja sieppaa tavalliset syötteet. Pakotettu lopetus, turvanäkymät ja muut järjestelmätoiminnot eivät kuulu sen takuun piiriin. Suojaa istuntosi macOS:n lukitusnäytöllä."
+      ],
+      [
+        "Tarvitsenko salasanan?",
+        "Et. Se on valinnainen ja oletuksena pois käytöstä. Ilman sitä näppäimistö tai hiiri palauttaa näytöt. Ota salasana käyttöön, jos haluat lisävaiheen ennen peiton poistamista."
+      ]
+    ],
+    "status": "Esiversio"
+  },
+  "cs": {
+    "name": "Čeština",
+    "headline": "Chvilka klidu pro obrazovky.",
+    "description": "Jedna klávesová zkratka zakryje všechny zjištěné obrazovky černou. BlackoutMac sídlí v řádku nabídek macOS. Heslo je volitelné.",
+    "labels": [
+      "Stáhnout pro Mac",
+      "Návod",
+      "Jazyk",
+      "Přejít na obsah",
+      "Časté dotazy",
+      "Nahlásit problém",
+      "Návod Apple k otevření"
+    ],
+    "notice": "Předběžná verze · Bez podpisu Developer ID a notarizace Apple. Před otevřením si přečtěte pokyny k instalaci.",
+    "sections": [
+      [
+        "Rychlá instalace",
+        "Stáhněte univerzální DMG z GitHub Releases, otevřete jej a přetáhněte Blackout.app do Aplikací. Spusťte aplikaci. Pokud ji macOS blokuje, ověřte zdroj. Po pokusu o otevření použijte Nastavení systému → Soukromí a zabezpečení → Přesto otevřít, je-li volba dostupná."
+      ],
+      [
+        "Povolte zpřístupnění",
+        "Zapněte Blackout v Nastavení systému → Soukromí a zabezpečení → Zpřístupnění a aplikaci znovu spusťte. Oprávnění umožňuje zachytávat vstup. Bez funkčního blokování vstupu se obrazovky nezakryjí."
+      ],
+      [
+        "Jedna zkratka, všechny obrazovky",
+        "Stiskněte Control + Option + B nebo použijte ikonu Blackout v nabídce. Bez hesla obnoví obrazovky vstup z klávesnice či myši. Během zakrytí je vstup včetně běžných globálních zkratek blokován nebo předán pouze aplikaci Blackout."
+      ],
+      [
+        "Heslo podle potřeby",
+        "Ve výchozím stavu je vypnuté. Zapněte je v nastavení nabídky Blackout a nové heslo zadejte dvakrát. Změna či vypnutí vyžaduje aktuální heslo. Při zapnuté ochraně zadejte heslo pro odstranění zakrytí."
+      ],
+      [
+        "Spuštění při přihlášení",
+        "Zapněte tuto volbu v nastavení a využijte nativní funkci macOS. Vypnutím stejné volby ukončíte automatické spouštění."
+      ],
+      [
+        "32 jazyků",
+        "Aplikace standardně používá jazyk macOS. V nastavení můžete vybrat jiný nebo se vrátit k systémovému jazyku."
+      ],
+      [
+        "Vše zůstává na Macu",
+        "Žádný backend ani telemetrie. Nastavení a solený ověřovací údaj hesla se ukládají lokálně, heslo se neukládá jako prostý text. GitHub hostuje soubory ke stažení a tento web."
+      ],
+      [
+        "Když něco nefunguje",
+        "Při selhání blokování vstupu se zakrytí odstraní. Zkontrolujte oprávnění zpřístupnění a aplikaci znovu otevřete. Pokud zapomenete heslo nebo aplikace nereaguje, vynuťte ukončení či restartujte macOS. Zakrytí tak může skončit bez hesla."
+      ]
+    ],
+    "faqs": [
+      [
+        "Je to bezpečnostní zámek macOS?",
+        "Ne. Aplikace zakrývá obrazovky a zachytává běžný vstup. Vynucené ukončení, bezpečnostní obrazovky a další systémové funkce nejsou zaručeně blokovány. Pro zabezpečení relace použijte zamknutí obrazovky macOS."
+      ],
+      [
+        "Musím nastavit heslo?",
+        "Ne. Je volitelné a standardně vypnuté. Bez něj obnoví obrazovky klávesnice nebo myš. Zapněte je, pokud chcete před odstraněním zakrytí další krok."
+      ]
+    ],
+    "status": "Předběžná verze"
+  },
+  "sk": {
+    "name": "Slovenčina",
+    "headline": "Chvíľa pokoja pre obrazovky.",
+    "description": "Jedna klávesová skratka prekryje všetky zistené obrazovky čiernou. BlackoutMac je v lište menu macOS. Heslo je voliteľné.",
+    "labels": [
+      "Stiahnuť pre Mac",
+      "Návod",
+      "Jazyk",
+      "Prejsť na obsah",
+      "Časté otázky",
+      "Nahlásiť problém",
+      "Návod Apple na otvorenie"
+    ],
+    "notice": "Predbežná verzia · Bez podpisu Developer ID a notarizácie Apple. Pred otvorením si prečítajte pokyny na inštaláciu.",
+    "sections": [
+      [
+        "Rýchla inštalácia",
+        "Stiahnite univerzálny DMG z GitHub Releases, otvorte ho a presuňte Blackout.app do Aplikácií. Spustite aplikáciu. Ak ju macOS blokuje, overte zdroj. Po pokuse o otvorenie použite Systémové nastavenia → Súkromie a bezpečnosť → Napriek tomu otvoriť, ak je možnosť dostupná."
+      ],
+      [
+        "Povoľte prístupnosť",
+        "Zapnite Blackout v Systémové nastavenia → Súkromie a bezpečnosť → Prístupnosť a aplikáciu znovu spustite. Povolenie umožňuje zachytávať vstup. Bez funkčného blokovania vstupu sa obrazovky neprekryjú."
+      ],
+      [
+        "Jedna skratka, všetky obrazovky",
+        "Stlačte Control + Option + B alebo použite ikonu Blackout v menu. Bez hesla obnoví obrazovky vstup z klávesnice alebo myši. Počas prekrytia sa vstup vrátane bežných globálnych skratiek blokuje alebo posiela len aplikácii Blackout."
+      ],
+      [
+        "Heslo podľa potreby",
+        "Predvolene vypnuté. Zapnite ho v nastaveniach menu Blackout a nové heslo zadajte dvakrát. Zmena či vypnutie vyžaduje aktuálne heslo. Pri aktívnej ochrane zadajte heslo na odstránenie prekrytia."
+      ],
+      [
+        "Spustiť pri prihlásení",
+        "Zapnite túto možnosť v nastaveniach a využite natívnu funkciu macOS. Vypnutím tej istej možnosti zastavíte automatické spúšťanie."
+      ],
+      [
+        "32 jazykov",
+        "Aplikácia predvolene používa jazyk macOS. V nastaveniach môžete vybrať iný alebo sa vrátiť k systémovému jazyku."
+      ],
+      [
+        "Všetko zostáva na Macu",
+        "Žiadny backend ani telemetria. Nastavenia a solená overovacia hodnota hesla sa ukladajú lokálne, heslo sa neukladá ako čistý text. GitHub hostí súbory na stiahnutie a tento web."
+      ],
+      [
+        "Keď niečo nefunguje",
+        "Pri zlyhaní blokovania vstupu sa prekrytie odstráni. Skontrolujte povolenie prístupnosti a aplikáciu znovu otvorte. Ak zabudnete heslo alebo aplikácia nereaguje, vynúťte ukončenie či reštartujte macOS. Prekrytie tak môže skončiť bez hesla."
+      ]
+    ],
+    "faqs": [
+      [
+        "Je to bezpečnostný zámok macOS?",
+        "Nie. Aplikácia prekrýva obrazovky a zachytáva bežný vstup. Vynútené ukončenie, bezpečnostné obrazovky a ďalšie systémové funkcie nie sú zaručene blokované. Na zabezpečenie relácie použite zamknutie obrazovky macOS."
+      ],
+      [
+        "Musím nastaviť heslo?",
+        "Nie. Je voliteľné a predvolene vypnuté. Bez neho obnoví obrazovky klávesnica alebo myš. Zapnite ho, ak chcete pred odstránením prekrytia ďalší krok."
+      ]
+    ],
+    "status": "Predbežná verzia"
+  },
+  "hu": {
+    "name": "Magyar",
+    "headline": "Egy kis szünet a képernyőknek.",
+    "description": "Egy billentyűparancs feketére takarja az összes észlelt kijelzőt. A BlackoutMac a macOS menüsorában él, választható jelszóval.",
+    "labels": [
+      "Letöltés Macre",
+      "Használati útmutató",
+      "Nyelv",
+      "Ugrás a tartalomra",
+      "Gyakori kérdések",
+      "Hiba jelentése",
+      "Az Apple megnyitási útmutatója"
+    ],
+    "notice": "Előzetes verzió · Nincs Developer ID-aláírás vagy Apple-közjegyzői hitelesítés. Megnyitás előtt olvassa el a telepítési útmutatót.",
+    "sections": [
+      [
+        "Gyors telepítés",
+        "Töltse le az univerzális DMG-t a GitHub Releases oldaláról, nyissa meg, és húzza a Blackout.app fájlt az Alkalmazások mappába. Indítsa el. Ha a macOS tiltja, ellenőrizze a forrást. Az első próbálkozás után a Rendszerbeállítások → Adatvédelem és biztonság → Megnyitás mindenképp lehetőséget használhatja, ha elérhető."
+      ],
+      [
+        "Kisegítő lehetőségek engedélyezése",
+        "Engedélyezze a Blackoutot a Rendszerbeállítások → Adatvédelem és biztonság → Kisegítő lehetőségek alatt, majd indítsa újra az appot. Ez szükséges a bevitel elfogásához. Működő beviteli blokkolás nélkül nincs képernyőtakarás."
+      ],
+      [
+        "Egy parancs, minden kijelző",
+        "Nyomja meg a Control + Option + B kombinációt, vagy használja a Blackout menüikont. Jelszó nélkül a billentyűzet vagy az egér visszaállítja a képet. Takarás közben a bevitel és a szokásos globális billentyűparancsok blokkolva vannak, vagy csak a Blackouthoz jutnak el."
+      ],
+      [
+        "Jelszó, ha szeretné",
+        "Alapértelmezetten kikapcsolva. Kapcsolja be a Blackout menü beállításaiban, és adja meg kétszer az új jelszót. Módosításhoz vagy kikapcsoláshoz az aktuális jelszó szükséges. Bekapcsolt védelemnél a jelszóval szüntetheti meg a takarást."
+      ],
+      [
+        "Indítás bejelentkezéskor",
+        "Kapcsolja be a beállítást a macOS beépített funkciójához. Ugyanennek a kikapcsolásával leállíthatja az automatikus indítást."
+      ],
+      [
+        "32 nyelv",
+        "Az app alapból a macOS nyelvét követi. A beállításokban választhat másikat, vagy visszatérhet a rendszernyelvhez."
+      ],
+      [
+        "Minden a Macen marad",
+        "Nincs háttérszerver vagy telemetria. A beállítások és a sózott jelszóellenőrző érték helyben tárolódnak; a jelszó nem kerül mentésre olvasható formában. A letöltéseket és a webhelyet a GitHub szolgálja ki."
+      ],
+      [
+        "Ha valami elakad",
+        "Ha a bevitel blokkolása megszűnik, a takarás lekerül. Ellenőrizze a kisegítő engedélyt, majd indítsa újra az appot. Elfelejtett jelszó vagy lefagyás esetén kényszerítse a kilépést, vagy indítsa újra a macOS-t. Így jelszó nélkül is megszűnhet a takarás."
+      ]
+    ],
+    "faqs": [
+      [
+        "Ez a macOS biztonsági zárolása?",
+        "Nem. Az app eltakarja a kijelzőket és elfogja a szokásos bevitelt. A kényszerített kilépés, biztonsági képernyők és más rendszerfunkciók kívül esnek a garanciáján. A munkamenet védelmére használja a macOS képernyőzárát."
+      ],
+      [
+        "Kötelező a jelszó?",
+        "Nem. Választható és alapból kikapcsolt. Jelszó nélkül a billentyűzet vagy az egér visszaállítja a képet. Akkor kapcsolja be, ha a takarás megszüntetése előtt további lépést szeretne."
+      ]
+    ],
+    "status": "Előzetes verzió"
+  },
+  "ro": {
+    "name": "Română",
+    "headline": "O pauză pentru ecranele tale.",
+    "description": "O scurtătură acoperă cu negru toate ecranele detectate. BlackoutMac stă în bara de meniu macOS, cu parolă opțională.",
+    "labels": [
+      "Descarcă pentru Mac",
+      "Ghid de utilizare",
+      "Limbă",
+      "Sari la conținut",
+      "Întrebări frecvente",
+      "Raportează o problemă",
+      "Ghidul Apple pentru deschidere"
+    ],
+    "notice": "Versiune preliminară · Fără semnătură Developer ID sau notarizare Apple. Citește instrucțiunile înainte de deschidere.",
+    "sections": [
+      [
+        "Instalare rapidă",
+        "Descarcă DMG-ul universal din GitHub Releases, deschide-l și trage Blackout.app în Aplicații. Pornește aplicația. Dacă macOS o blochează, verifică sursa. După o încercare de deschidere, folosește Configurări sistem → Intimitate și securitate → Deschide oricum, dacă opțiunea este disponibilă."
+      ],
+      [
+        "Permite Accesibilitatea",
+        "Activează Blackout în Configurări sistem → Intimitate și securitate → Accesibilitate, apoi repornește aplicația. Permisiunea permite interceptarea intrărilor. Fără blocarea funcțională a intrărilor, ecranele nu sunt acoperite."
+      ],
+      [
+        "O scurtătură, toate ecranele",
+        "Apasă Control + Option + B sau folosește pictograma Blackout din meniu. Fără parolă, tastatura sau mouse-ul restabilește ecranele. În timpul acoperirii, intrările și scurtăturile globale obișnuite sunt blocate sau trimise doar către Blackout."
+      ],
+      [
+        "Parolă, dacă dorești",
+        "Dezactivată implicit. Activeaz-o în configurările meniului Blackout și introdu noua parolă de două ori. Modificarea sau dezactivarea necesită parola actuală. Când protecția este activă, introdu parola pentru a elimina acoperirea."
+      ],
+      [
+        "Pornire la autentificare",
+        "Activează opțiunea din configurări pentru mecanismul nativ macOS. Dezactivează aceeași opțiune pentru a opri pornirea automată."
+      ],
+      [
+        "32 de limbi",
+        "Aplicația urmează implicit limba macOS. Alege alta din configurări sau revino la limba sistemului."
+      ],
+      [
+        "Totul rămâne pe Mac",
+        "Fără server propriu sau telemetrie. Preferințele și un verificator de parolă cu salt sunt stocate local, niciodată parola în text simplu. GitHub găzduiește descărcările și acest site."
+      ],
+      [
+        "Dacă ceva se blochează",
+        "Dacă blocarea intrărilor se oprește, acoperirea este eliminată. Verifică permisiunea de Accesibilitate și redeschide aplicația. Dacă uiți parola sau aplicația nu răspunde, forțează închiderea sau repornește macOS. Acoperirea poate fi eliminată astfel fără parolă."
+      ]
+    ],
+    "faqs": [
+      [
+        "Este o blocare de securitate macOS?",
+        "Nu. Acoperă ecranele și interceptează intrările obișnuite. Închiderea forțată, ecranele de securitate și alte funcții de sistem nu sunt garantat blocate. Folosește blocarea ecranului macOS pentru protejarea sesiunii."
+      ],
+      [
+        "Am nevoie de parolă?",
+        "Nu. Este opțională și dezactivată implicit. Fără ea, tastatura sau mouse-ul restabilește ecranele. Activeaz-o dacă dorești un pas suplimentar înainte de eliminarea acoperirii."
+      ]
+    ],
+    "status": "Versiune preliminară"
+  },
+  "tr": {
+    "name": "Türkçe",
+    "headline": "Ekranlarınıza küçük bir mola.",
+    "description": "Tek kısayol, algılanan tüm ekranları siyahla kaplar. BlackoutMac, isteğe bağlı parolayla macOS menü çubuğunda çalışır.",
+    "labels": [
+      "Mac için indir",
+      "Kullanım kılavuzu",
+      "Dil",
+      "İçeriğe geç",
+      "Sık sorulan sorular",
+      "Sorun bildir",
+      "Apple’ın açma kılavuzu"
+    ],
+    "notice": "Önizleme sürümü · Developer ID imzası ve Apple noter onayı yoktur. Açmadan önce kurulum yönergelerini okuyun.",
+    "sections": [
+      [
+        "Hızlı kurulum",
+        "GitHub Releases üzerinden evrensel DMG dosyasını indirin, açın ve Blackout.app’i Uygulamalar’a sürükleyin. Uygulamayı başlatın. macOS engellerse kaynağı doğrulayın. Bir kez açmayı denedikten sonra Sistem Ayarları → Gizlilik ve Güvenlik → Yine de Aç seçeneğini, varsa, kullanın."
+      ],
+      [
+        "Erişilebilirlik izni verin",
+        "Sistem Ayarları → Gizlilik ve Güvenlik → Erişilebilirlik bölümünde Blackout’u etkinleştirip uygulamayı yeniden başlatın. Bu izin girdileri yakalamak için gereklidir. Girdi engelleme çalışmıyorsa ekranlar kaplanmaz."
+      ],
+      [
+        "Tek kısayol, tüm ekranlar",
+        "Control + Option + B’ye basın veya menüdeki Blackout simgesini kullanın. Parola yoksa klavye ya da fare girdisi ekranları geri getirir. Kaplama sırasında sıradan genel kısayollar dâhil girdiler engellenir veya yalnızca Blackout’a iletilir."
+      ],
+      [
+        "Parola sizin tercihiniz",
+        "Varsayılan olarak kapalıdır. Blackout menüsündeki ayarlarda açın ve yeni parolayı iki kez girin. Değiştirme veya kapatma için mevcut parola gerekir. Koruma açıkken kaplamayı kaldırmak için parolanızı girin."
+      ],
+      [
+        "Oturum açarken başlat",
+        "macOS’un yerleşik özelliğini kullanmak için ayarlardan etkinleştirin. Otomatik başlatmayı durdurmak için aynı seçeneği kapatın."
+      ],
+      [
+        "32 dil",
+        "Uygulama varsayılan olarak macOS dilini izler. Ayarlardan başka bir dil seçebilir veya sistem diline dönebilirsiniz."
+      ],
+      [
+        "Her şey Mac’inizde kalır",
+        "Arka uç veya telemetri yoktur. Tercihler ve tuz eklenmiş parola doğrulama değeri yerel olarak saklanır; parola düz metin olarak saklanmaz. İndirmeleri ve bu siteyi GitHub barındırır."
+      ],
+      [
+        "Bir sorun olursa",
+        "Girdi engelleme durursa kaplama kaldırılır. Erişilebilirlik iznini kontrol edip uygulamayı yeniden açın. Parolayı unutursanız veya uygulama yanıt vermezse Çıkmaya Zorla’yı kullanın ya da macOS’u yeniden başlatın. Bu, parolasız olarak kaplamayı kaldırabilir."
+      ]
+    ],
+    "faqs": [
+      [
+        "Bu bir macOS güvenlik kilidi mi?",
+        "Hayır. Ekranları kaplar ve sıradan girdileri yakalar. Zorla kapatma, güvenlik ekranları ve diğer sistem işlevleri garantisinin dışındadır. Oturumunuzu korumak için macOS Ekranı Kilitle özelliğini kullanın."
+      ],
+      [
+        "Parola belirlemem şart mı?",
+        "Hayır. İsteğe bağlıdır ve varsayılan olarak kapalıdır. Parola yokken klavye veya fare ekranları geri getirir. Kaplamayı kaldırmadan önce ek bir adım istiyorsanız etkinleştirin."
+      ]
+    ],
+    "status": "Önizleme sürümü"
+  },
+  "ar": {
+    "name": "العربية",
+    "headline": "استراحة صغيرة لشاشاتك.",
+    "description": "اختصار واحد يغطي كل الشاشات المكتشفة باللون الأسود. يعمل BlackoutMac في شريط قوائم macOS، مع كلمة مرور اختيارية.",
+    "labels": [
+      "تنزيل لنظام Mac",
+      "دليل الاستخدام",
+      "اللغة",
+      "انتقل إلى المحتوى",
+      "أسئلة شائعة",
+      "الإبلاغ عن مشكلة",
+      "دليل Apple لفتح التطبيقات"
+    ],
+    "notice": "إصدار تجريبي · دون توقيع Developer ID أو توثيق من Apple. اقرأ تعليمات التثبيت قبل الفتح.",
+    "sections": [
+      [
+        "تثبيت سريع",
+        "نزّل ملف DMG الشامل من GitHub Releases وافتحه، ثم اسحب Blackout.app إلى التطبيقات وشغّله. إذا منع macOS فتحه، تحقّق من المصدر. بعد محاولة الفتح، استخدم إعدادات النظام ← الخصوصية والأمن ← فتح على أي حال، إن كان متاحًا."
+      ],
+      [
+        "السماح بتسهيلات الاستخدام",
+        "فعّل Blackout في إعدادات النظام ← الخصوصية والأمن ← تسهيلات الاستخدام، ثم أعد تشغيل التطبيق. يلزم هذا الإذن لاعتراض الإدخال. لن تُغطّى الشاشات إذا لم يكن حظر الإدخال يعمل."
+      ],
+      [
+        "اختصار واحد لكل الشاشات",
+        "اضغط Control + Option + B أو استخدم رمز Blackout في القائمة. دون كلمة مرور، يعيد إدخال من لوحة المفاتيح أو الفأرة الشاشات. أثناء التغطية، يُحظر الإدخال، بما فيه الاختصارات العامة المعتادة، أو يُوجّه إلى Blackout فقط."
+      ],
+      [
+        "كلمة مرور حسب رغبتك",
+        "معطّلة افتراضيًا. فعّلها في إعدادات قائمة Blackout وأدخل كلمة المرور الجديدة مرتين. يتطلب تغييرها أو تعطيلها كلمة المرور الحالية. عند تفعيلها، أدخلها لإزالة الغطاء."
+      ],
+      [
+        "التشغيل عند تسجيل الدخول",
+        "فعّل الخيار في الإعدادات لاستخدام ميزة macOS الأصلية. عطّل الخيار نفسه لإيقاف التشغيل التلقائي."
+      ],
+      [
+        "32 لغة",
+        "يتبع التطبيق لغة macOS افتراضيًا. اختر لغة أخرى من الإعدادات أو عُد إلى خيار لغة النظام."
+      ],
+      [
+        "بياناتك تبقى على جهاز Mac",
+        "لا خادم خلفي ولا قياس عن بُعد. تُحفظ التفضيلات وقيمة التحقق من كلمة المرور مع قيمة ملح محليًا، ولا تُحفظ كلمة المرور كنص صريح. يستضيف GitHub التنزيلات وهذا الموقع."
+      ],
+      [
+        "إذا حدثت مشكلة",
+        "إذا توقف حظر الإدخال، تُزال الأغطية. تحقّق من إذن تسهيلات الاستخدام وأعد فتح التطبيق. إذا نسيت كلمة المرور أو توقف التطبيق عن الاستجابة، استخدم فرض الإنهاء أو أعد تشغيل macOS. قد يزيل ذلك الغطاء دون كلمة المرور."
+      ]
+    ],
+    "faqs": [
+      [
+        "هل هذا قفل أمان لنظام macOS؟",
+        "لا. يغطي التطبيق الشاشات ويعترض الإدخال المعتاد. فرض الإنهاء وشاشات الأمان ووظائف النظام الأخرى خارج نطاق ضمانه. استخدم قفل شاشة macOS لحماية جلستك."
+      ],
+      [
+        "هل أحتاج إلى كلمة مرور؟",
+        "لا. هي اختيارية ومعطّلة افتراضيًا. دونها تعيد لوحة المفاتيح أو الفأرة الشاشات. فعّلها إذا أردت خطوة إضافية قبل إزالة الغطاء."
+      ]
+    ],
+    "status": "إصدار تجريبي"
+  },
+  "he": {
+    "name": "עברית",
+    "headline": "הפסקה קטנה למסכים.",
+    "description": "קיצור אחד מכסה בשחור את כל המסכים שזוהו. BlackoutMac פועלת בשורת התפריטים של macOS, עם סיסמה לבחירתך.",
+    "labels": [
+      "הורדה ל-Mac",
+      "מדריך שימוש",
+      "שפה",
+      "דילוג לתוכן",
+      "שאלות נפוצות",
+      "דיווח על בעיה",
+      "מדריך הפתיחה של Apple"
+    ],
+    "notice": "גרסת תצוגה מקדימה · ללא חתימת Developer ID וללא אישור נוטריון של Apple. יש לקרוא את הוראות ההתקנה לפני הפתיחה.",
+    "sections": [
+      [
+        "התקנה מהירה",
+        "יש להוריד את קובץ ה-DMG האוניברסלי מ-GitHub Releases, לפתוח אותו ולגרור את Blackout.app ליישומים. לאחר מכן יש להפעיל את היישום. אם macOS חוסמת אותו, יש לבדוק את המקור. לאחר ניסיון פתיחה אפשר להשתמש בהגדרות המערכת ← פרטיות ואבטחה ← פתיחה בכל זאת, אם האפשרות זמינה."
+      ],
+      [
+        "מתן הרשאת נגישות",
+        "יש להפעיל את Blackout בהגדרות המערכת ← פרטיות ואבטחה ← נגישות ולהפעיל מחדש את היישום. ההרשאה נחוצה ליירוט קלט. אם חסימת הקלט אינה פועלת, המסכים לא יכוסו."
+      ],
+      [
+        "קיצור אחד, כל המסכים",
+        "יש ללחוץ על Control + Option + B או להשתמש בסמל Blackout בתפריט. ללא סיסמה, קלט מהמקלדת או מהעכבר מחזיר את התצוגה. בזמן הכיסוי, הקלט וקיצורי הדרך הכלליים הרגילים נחסמים או מועברים רק ל-Blackout."
+      ],
+      [
+        "סיסמה לפי בחירה",
+        "כבויה כברירת מחדל. אפשר להפעיל בהגדרות שבתפריט Blackout ולהזין את הסיסמה החדשה פעמיים. שינוי או ביטול מחייבים את הסיסמה הנוכחית. כשההגנה פעילה, יש להזין את הסיסמה להסרת הכיסוי."
+      ],
+      [
+        "הפעלה בעת ההתחברות",
+        "יש להפעיל את האפשרות בהגדרות כדי להשתמש במנגנון המובנה של macOS. ביטול אותה אפשרות מפסיק הפעלה אוטומטית."
+      ],
+      [
+        "32 שפות",
+        "היישום משתמש כברירת מחדל בשפת macOS. אפשר לבחור שפה אחרת בהגדרות או לחזור לשפת המערכת."
+      ],
+      [
+        "הנתונים נשארים ב-Mac",
+        "אין שרת יישום או טלמטריה. ההעדפות וערך אימות סיסמה עם מלח נשמרים מקומית, והסיסמה אינה נשמרת כטקסט גלוי. GitHub מארחת את ההורדות ואת האתר."
+      ],
+      [
+        "אם משהו נתקע",
+        "אם חסימת הקלט מפסיקה, הכיסוי מוסר. יש לבדוק את הרשאת הנגישות ולפתוח מחדש את היישום. אם הסיסמה נשכחה או שהיישום אינו מגיב, אפשר לכפות סיום או להפעיל מחדש את macOS. פעולה זו עשויה להסיר את הכיסוי ללא הסיסמה."
+      ]
+    ],
+    "faqs": [
+      [
+        "האם זו נעילת אבטחה של macOS?",
+        "לא. היישום מכסה מסכים ומיירט קלט רגיל. סיום כפוי, מסכי אבטחה ופעולות מערכת אחרות אינם מובטחים כחסומים. להגנה על ההפעלה יש להשתמש בנעילת המסך של macOS."
+      ],
+      [
+        "האם חייבים סיסמה?",
+        "לא. הסיסמה היא לבחירה וכבויה כברירת מחדל. ללא סיסמה, המקלדת או העכבר מחזירים את התצוגה. אפשר להפעיל סיסמה כדי להוסיף שלב לפני הסרת הכיסוי."
+      ]
+    ],
+    "status": "גרסת תצוגה מקדימה"
+  },
+  "hi": {
+    "name": "हिन्दी",
+    "headline": "स्क्रीन को भी थोड़ा विराम।",
+    "description": "एक शॉर्टकट से सभी पहचानी गई स्क्रीन काली हो जाती हैं। BlackoutMac, macOS मेनू बार का छोटा ऐप है, जिसमें पासवर्ड वैकल्पिक है।",
+    "labels": [
+      "Mac के लिए डाउनलोड",
+      "उपयोग गाइड",
+      "भाषा",
+      "मुख्य सामग्री पर जाएँ",
+      "अक्सर पूछे जाने वाले सवाल",
+      "समस्या बताएँ",
+      "ऐप खोलने की Apple गाइड"
+    ],
+    "notice": "पूर्वावलोकन संस्करण · Developer ID हस्ताक्षर और Apple नोटराइज़ेशन उपलब्ध नहीं हैं। खोलने से पहले स्थापना निर्देश पढ़ें।",
+    "sections": [
+      [
+        "आसान स्थापना",
+        "GitHub Releases से यूनिवर्सल DMG डाउनलोड करें। इसे खोलकर Blackout.app को Applications में खींचें और ऐप चलाएँ। macOS रोके तो स्रोत की जाँच करें। एक बार खोलने की कोशिश के बाद System Settings → Privacy & Security → Open Anyway विकल्प उपलब्ध हो तो इस्तेमाल करें।"
+      ],
+      [
+        "Accessibility की अनुमति दें",
+        "System Settings → Privacy & Security → Accessibility में Blackout चालू करें और ऐप दोबारा खोलें। इनपुट रोकने के लिए यह अनुमति ज़रूरी है। इनपुट अवरोध काम न करे तो ऐप स्क्रीन नहीं ढकेगा।"
+      ],
+      [
+        "एक शॉर्टकट, सभी स्क्रीन",
+        "Control + Option + B दबाएँ या मेनू का Blackout चिह्न इस्तेमाल करें। पासवर्ड न होने पर कीबोर्ड या माउस इनपुट से स्क्रीन लौट आती हैं। ढकी स्क्रीन पर सामान्य ग्लोबल शॉर्टकट सहित इनपुट रोका जाता है या केवल Blackout को भेजा जाता है।"
+      ],
+      [
+        "पासवर्ड आपकी पसंद",
+        "डिफ़ॉल्ट रूप से बंद है। Blackout मेनू की सेटिंग में चालू करें और नया पासवर्ड दो बार भरें। बदलने या बंद करने के लिए मौजूदा पासवर्ड चाहिए। सुरक्षा चालू हो तो पर्दा हटाने के लिए पासवर्ड भरें।"
+      ],
+      [
+        "लॉगिन पर शुरू करें",
+        "सेटिंग में विकल्प चालू करें; यह macOS की मूल सुविधा का उपयोग करता है। अपने-आप शुरू होना रोकने के लिए वही विकल्प बंद करें।"
+      ],
+      [
+        "32 भाषाएँ",
+        "ऐप सामान्यतः macOS की भाषा अपनाता है। सेटिंग में दूसरी भाषा चुनें या सिस्टम की भाषा पर वापस जाएँ।"
+      ],
+      [
+        "डेटा आपके Mac पर",
+        "कोई बैकएंड या टेलीमेट्री नहीं। पसंद और सॉल्ट वाला पासवर्ड सत्यापन मान स्थानीय रूप से सहेजे जाते हैं; पासवर्ड साधारण पाठ में नहीं सहेजा जाता। डाउनलोड और वेबसाइट GitHub पर हैं।"
+      ],
+      [
+        "समस्या आने पर",
+        "इनपुट अवरोध बंद हो जाए तो पर्दा हट जाता है। Accessibility अनुमति जाँचकर ऐप दोबारा खोलें। पासवर्ड भूलने या ऐप के जवाब न देने पर macOS का Force Quit इस्तेमाल करें या पुनः चालू करें। इससे ऐप का पासवर्ड दिए बिना पर्दा हट सकता है।"
+      ]
+    ],
+    "faqs": [
+      [
+        "क्या यह macOS का सुरक्षा लॉक है?",
+        "नहीं। ऐप स्क्रीन ढकता और सामान्य इनपुट रोकता है। Force Quit, सुरक्षा स्क्रीन और अन्य सिस्टम कार्य इसकी गारंटी में नहीं हैं। अपने सत्र को सुरक्षित करने के लिए macOS का Lock Screen इस्तेमाल करें।"
+      ],
+      [
+        "क्या पासवर्ड ज़रूरी है?",
+        "नहीं। यह वैकल्पिक है और डिफ़ॉल्ट रूप से बंद है। बिना पासवर्ड कीबोर्ड या माउस से स्क्रीन लौट आती हैं। पर्दा हटाने से पहले अतिरिक्त कदम चाहें तो इसे चालू करें।"
+      ]
+    ],
+    "status": "पूर्वावलोकन संस्करण"
+  },
+  "th": {
+    "name": "ไทย",
+    "headline": "ให้หน้าจอได้พักสักครู่",
+    "description": "ใช้ปุ่มลัดเดียวคลุมทุกหน้าจอที่ตรวจพบให้เป็นสีดำ BlackoutMac เป็นแอปเล็ก ๆ บนแถบเมนู macOS พร้อมรหัสผ่านที่เลือกเปิดได้",
+    "labels": [
+      "ดาวน์โหลดสำหรับ Mac",
+      "คู่มือการใช้งาน",
+      "ภาษา",
+      "ข้ามไปยังเนื้อหา",
+      "คำถามที่พบบ่อย",
+      "รายงานปัญหา",
+      "คู่มือเปิดแอปของ Apple"
+    ],
+    "notice": "รุ่นตัวอย่าง · ไม่มีลายเซ็น Developer ID และไม่ได้รับการรับรองจาก Apple โปรดอ่านวิธีติดตั้งก่อนเปิด",
+    "sections": [
+      [
+        "ติดตั้งง่าย",
+        "ดาวน์โหลด DMG แบบยูนิเวอร์แซลจาก GitHub Releases เปิดไฟล์แล้วลาก Blackout.app ไปยังแอปพลิเคชัน จากนั้นเปิดแอป หาก macOS บล็อก ให้ตรวจสอบแหล่งที่มา หลังลองเปิดหนึ่งครั้ง ให้ไปที่การตั้งค่าระบบ → ความเป็นส่วนตัวและความปลอดภัย → เปิดต่อไป หากมีตัวเลือกนี้"
+      ],
+      [
+        "อนุญาตการช่วยการเข้าถึง",
+        "เปิดใช้ Blackout ในการตั้งค่าระบบ → ความเป็นส่วนตัวและความปลอดภัย → การช่วยการเข้าถึง แล้วปิดและเปิดแอปใหม่ สิทธิ์นี้ใช้ดักรับอินพุต หากการบล็อกอินพุตไม่ทำงาน แอปจะไม่คลุมหน้าจอ"
+      ],
+      [
+        "ปุ่มลัดเดียว ทุกหน้าจอ",
+        "กด Control + Option + B หรือใช้ไอคอน Blackout บนแถบเมนู หากไม่มีรหัสผ่าน อินพุตจากแป้นพิมพ์หรือเมาส์จะคืนหน้าจอ ระหว่างที่คลุมอยู่ อินพุตรวมถึงปุ่มลัดทั่วไปของระบบจะถูกบล็อกหรือส่งให้ Blackout เท่านั้น"
+      ],
+      [
+        "รหัสผ่านตามต้องการ",
+        "ปิดไว้เป็นค่าเริ่มต้น เปิดได้ในหน้าตั้งค่าของเมนู Blackout และป้อนรหัสผ่านใหม่สองครั้ง การเปลี่ยนหรือปิดต้องใช้รหัสผ่านปัจจุบัน เมื่อเปิดการป้องกัน ให้ป้อนรหัสผ่านเพื่อเอาสิ่งปกคลุมออก"
+      ],
+      [
+        "เริ่มเมื่อเข้าสู่ระบบ",
+        "เปิดตัวเลือกนี้ในการตั้งค่าเพื่อใช้คุณสมบัติในตัวของ macOS ปิดตัวเลือกเดิมเมื่อต้องการหยุดการเริ่มอัตโนมัติ"
+      ],
+      [
+        "32 ภาษา",
+        "ค่าเริ่มต้นใช้ภาษาของ macOS เลือกภาษาอื่นได้ในการตั้งค่า หรือเลือกกลับไปใช้ภาษาของระบบ"
+      ],
+      [
+        "ข้อมูลอยู่บน Mac ของคุณ",
+        "ไม่มีแบ็กเอนด์หรือการส่งข้อมูลการใช้งาน การตั้งค่าและค่าตรวจสอบรหัสผ่านที่เติมซอลต์เก็บในเครื่อง ไม่เก็บรหัสผ่านเป็นข้อความธรรมดา GitHub ให้บริการดาวน์โหลดและเว็บไซต์นี้"
+      ],
+      [
+        "เมื่อเกิดปัญหา",
+        "หากการบล็อกอินพุตหยุดทำงาน แอปจะเอาสิ่งปกคลุมออก ตรวจสอบสิทธิ์การช่วยการเข้าถึงแล้วเปิดแอปใหม่ หากลืมรหัสผ่านหรือแอปไม่ตอบสนอง ให้บังคับออกหรือรีสตาร์ท macOS ซึ่งอาจเอาสิ่งปกคลุมออกได้โดยไม่ต้องใช้รหัสผ่านของแอป"
+      ]
+    ],
+    "faqs": [
+      [
+        "นี่คือการล็อกเพื่อความปลอดภัยของ macOS หรือไม่",
+        "ไม่ใช่ แอปคลุมหน้าจอและดักรับอินพุตทั่วไป การบังคับออก หน้าจอความปลอดภัย และการทำงานอื่นของระบบอยู่นอกการรับประกัน หากต้องการปกป้องเซสชัน ให้ใช้การล็อกหน้าจอของ macOS"
+      ],
+      [
+        "จำเป็นต้องตั้งรหัสผ่านหรือไม่",
+        "ไม่จำเป็น เป็นตัวเลือกที่ปิดไว้ตามค่าเริ่มต้น หากไม่มีรหัสผ่าน แป้นพิมพ์หรือเมาส์จะคืนหน้าจอ เปิดใช้เมื่อต้องการขั้นตอนเพิ่มก่อนเอาสิ่งปกคลุมออก"
+      ]
+    ],
+    "status": "รุ่นตัวอย่าง"
+  },
+  "vi": {
+    "name": "Tiếng Việt",
+    "headline": "Cho màn hình nghỉ một chút.",
+    "description": "Một phím tắt phủ đen mọi màn hình được phát hiện. BlackoutMac nằm trên thanh menu macOS, với mật khẩu tùy chọn.",
+    "labels": [
+      "Tải về cho Mac",
+      "Hướng dẫn sử dụng",
+      "Ngôn ngữ",
+      "Đến nội dung",
+      "Câu hỏi thường gặp",
+      "Báo lỗi",
+      "Hướng dẫn mở ứng dụng của Apple"
+    ],
+    "notice": "Bản xem trước · Không có chữ ký Developer ID hay công chứng của Apple. Đọc hướng dẫn cài đặt trước khi mở.",
+    "sections": [
+      [
+        "Cài đặt nhanh",
+        "Tải DMG dùng chung từ GitHub Releases, mở rồi kéo Blackout.app vào Ứng dụng. Khởi chạy ứng dụng. Nếu macOS chặn, hãy kiểm tra nguồn. Sau khi thử mở một lần, dùng Cài đặt hệ thống → Quyền riêng tư & Bảo mật → Vẫn mở, nếu có."
+      ],
+      [
+        "Cho phép Trợ năng",
+        "Bật Blackout trong Cài đặt hệ thống → Quyền riêng tư & Bảo mật → Trợ năng, rồi mở lại ứng dụng. Quyền này dùng để chặn đầu vào. Nếu chức năng chặn không hoạt động, màn hình sẽ không bị che."
+      ],
+      [
+        "Một phím tắt, mọi màn hình",
+        "Nhấn Control + Option + B hoặc dùng biểu tượng Blackout trên menu. Khi không có mật khẩu, bàn phím hoặc chuột sẽ khôi phục màn hình. Trong lúc che, đầu vào và phím tắt toàn cục thông thường bị chặn hoặc chỉ chuyển đến Blackout."
+      ],
+      [
+        "Mật khẩu tùy ý",
+        "Mặc định tắt. Bật trong phần cài đặt của menu Blackout và nhập mật khẩu mới hai lần. Đổi hoặc tắt cần mật khẩu hiện tại. Khi bảo vệ được bật, nhập mật khẩu để bỏ lớp che."
+      ],
+      [
+        "Khởi chạy khi đăng nhập",
+        "Bật tùy chọn trong cài đặt để dùng tính năng có sẵn của macOS. Tắt cùng tùy chọn để ngừng khởi chạy tự động."
+      ],
+      [
+        "32 ngôn ngữ",
+        "Ứng dụng mặc định theo ngôn ngữ macOS. Chọn ngôn ngữ khác trong cài đặt hoặc quay về ngôn ngữ hệ thống."
+      ],
+      [
+        "Dữ liệu ở lại trên Mac",
+        "Không có máy chủ ứng dụng hay đo lường từ xa. Tùy chọn và giá trị xác minh mật khẩu có salt được lưu cục bộ, không lưu mật khẩu dạng văn bản thuần. GitHub lưu trữ bản tải xuống và trang web này."
+      ],
+      [
+        "Khi gặp sự cố",
+        "Nếu chặn đầu vào ngừng hoạt động, lớp che được gỡ bỏ. Kiểm tra quyền Trợ năng rồi mở lại ứng dụng. Nếu quên mật khẩu hoặc ứng dụng không phản hồi, hãy Buộc thoát hoặc khởi động lại macOS. Việc này có thể bỏ lớp che mà không cần mật khẩu."
+      ]
+    ],
+    "faqs": [
+      [
+        "Đây có phải khóa bảo mật macOS không?",
+        "Không. Ứng dụng che màn hình và chặn đầu vào thông thường. Buộc thoát, màn hình bảo mật và các chức năng hệ thống khác nằm ngoài phạm vi đảm bảo. Dùng Khóa màn hình của macOS để bảo vệ phiên làm việc."
+      ],
+      [
+        "Có bắt buộc đặt mật khẩu không?",
+        "Không. Mật khẩu là tùy chọn và mặc định tắt. Khi không có mật khẩu, bàn phím hoặc chuột khôi phục màn hình. Bật nếu bạn muốn thêm một bước trước khi bỏ lớp che."
+      ]
+    ],
+    "status": "Bản xem trước"
+  },
+  "id": {
+    "name": "Bahasa Indonesia",
+    "headline": "Istirahat sejenak untuk layar.",
+    "description": "Satu pintasan menutupi semua layar yang terdeteksi dengan warna hitam. BlackoutMac hadir di bar menu macOS, dengan kata sandi opsional.",
+    "labels": [
+      "Unduh untuk Mac",
+      "Panduan pengguna",
+      "Bahasa",
+      "Lewati ke konten",
+      "Pertanyaan umum",
+      "Laporkan masalah",
+      "Panduan membuka app dari Apple"
+    ],
+    "notice": "Versi pratinjau · Tanpa tanda tangan Developer ID atau notarisasi Apple. Baca petunjuk pemasangan sebelum membuka.",
+    "sections": [
+      [
+        "Pemasangan mudah",
+        "Unduh DMG universal dari GitHub Releases, buka, lalu seret Blackout.app ke Aplikasi. Jalankan app. Jika macOS memblokirnya, periksa sumbernya. Setelah mencoba membuka sekali, gunakan Pengaturan Sistem → Privasi & Keamanan → Tetap Buka, jika tersedia."
+      ],
+      [
+        "Izinkan Aksesibilitas",
+        "Aktifkan Blackout di Pengaturan Sistem → Privasi & Keamanan → Aksesibilitas, lalu mulai ulang app. Izin diperlukan untuk mencegat input. Layar tidak ditutupi jika pemblokiran input tidak berfungsi."
+      ],
+      [
+        "Satu pintasan, semua layar",
+        "Tekan Control + Option + B atau gunakan ikon Blackout pada menu. Tanpa kata sandi, input papan ketik atau tetikus memulihkan layar. Saat tertutup, input termasuk pintasan global biasa diblokir atau hanya diteruskan ke Blackout."
+      ],
+      [
+        "Kata sandi sesuai pilihan",
+        "Nonaktif secara bawaan. Aktifkan di pengaturan menu Blackout dan masukkan kata sandi baru dua kali. Mengubah atau menonaktifkan memerlukan kata sandi saat ini. Saat perlindungan aktif, masukkan kata sandi untuk menghapus penutup."
+      ],
+      [
+        "Mulai saat masuk",
+        "Aktifkan opsi di pengaturan untuk memakai fitur bawaan macOS. Nonaktifkan opsi yang sama untuk menghentikan mulai otomatis."
+      ],
+      [
+        "32 bahasa",
+        "Secara bawaan, app mengikuti bahasa macOS. Pilih bahasa lain di pengaturan atau kembali ke bahasa sistem."
+      ],
+      [
+        "Data tetap di Mac Anda",
+        "Tanpa backend atau telemetri. Preferensi dan nilai verifikasi kata sandi dengan salt disimpan lokal; kata sandi tidak disimpan sebagai teks biasa. GitHub menghosting unduhan dan situs ini."
+      ],
+      [
+        "Jika terjadi masalah",
+        "Jika pemblokiran input berhenti, penutup dihapus. Periksa izin Aksesibilitas dan buka kembali app. Jika lupa kata sandi atau app tidak merespons, gunakan Tutup Paksa atau mulai ulang macOS. Ini dapat menghapus penutup tanpa kata sandi."
+      ]
+    ],
+    "faqs": [
+      [
+        "Apakah ini kunci keamanan macOS?",
+        "Tidak. App menutupi layar dan mencegat input biasa. Tutup Paksa, layar keamanan, dan fungsi sistem lain berada di luar jaminannya. Gunakan Kunci Layar macOS untuk mengamankan sesi."
+      ],
+      [
+        "Haruskah saya menetapkan kata sandi?",
+        "Tidak. Kata sandi opsional dan nonaktif secara bawaan. Tanpanya, papan ketik atau tetikus memulihkan layar. Aktifkan jika menginginkan langkah tambahan sebelum penutup dihapus."
+      ]
+    ],
+    "status": "Versi pratinjau"
+  },
+  "ms": {
+    "name": "Bahasa Melayu",
+    "headline": "Rehat sebentar untuk skrin.",
+    "description": "Satu pintasan menutup semua skrin yang dikesan dengan warna hitam. BlackoutMac berada dalam bar menu macOS, dengan kata laluan pilihan.",
+    "labels": [
+      "Muat turun untuk Mac",
+      "Panduan pengguna",
+      "Bahasa",
+      "Langkau ke kandungan",
+      "Soalan lazim",
+      "Laporkan masalah",
+      "Panduan membuka app Apple"
+    ],
+    "notice": "Versi pratonton · Tanpa tandatangan Developer ID atau penotarian Apple. Baca arahan pemasangan sebelum membuka.",
+    "sections": [
+      [
+        "Pemasangan mudah",
+        "Muat turun DMG universal daripada GitHub Releases, buka dan seret Blackout.app ke Aplikasi. Lancarkan app. Jika macOS menyekatnya, semak sumbernya. Selepas mencuba membuka sekali, gunakan Seting Sistem → Privasi & Keselamatan → Buka Juga, jika tersedia."
+      ],
+      [
+        "Benarkan Kebolehcapaian",
+        "Aktifkan Blackout dalam Seting Sistem → Privasi & Keselamatan → Kebolehcapaian, kemudian mulakan semula app. Kebenaran diperlukan untuk memintas input. Skrin tidak ditutup jika sekatan input tidak berfungsi."
+      ],
+      [
+        "Satu pintasan, semua skrin",
+        "Tekan Control + Option + B atau gunakan ikon Blackout dalam menu. Tanpa kata laluan, input papan kekunci atau tetikus memulihkan skrin. Semasa ditutup, input termasuk pintasan global biasa disekat atau dihantar hanya kepada Blackout."
+      ],
+      [
+        "Kata laluan mengikut pilihan",
+        "Dimatikan secara lalai. Aktifkan dalam seting menu Blackout dan masukkan kata laluan baharu dua kali. Mengubah atau mematikan memerlukan kata laluan semasa. Apabila perlindungan aktif, masukkan kata laluan untuk membuang penutup."
+      ],
+      [
+        "Lancar semasa log masuk",
+        "Aktifkan pilihan dalam seting untuk menggunakan ciri asli macOS. Matikan pilihan yang sama untuk menghentikan pelancaran automatik."
+      ],
+      [
+        "32 bahasa",
+        "Secara lalai, app mengikut bahasa macOS. Pilih bahasa lain dalam seting atau kembali kepada bahasa sistem."
+      ],
+      [
+        "Data kekal pada Mac anda",
+        "Tiada bahagian belakang pelayan atau telemetri. Keutamaan dan nilai pengesahan kata laluan dengan salt disimpan secara setempat; kata laluan tidak disimpan sebagai teks biasa. GitHub mengehoskan muat turun dan laman ini."
+      ],
+      [
+        "Jika berlaku masalah",
+        "Jika sekatan input terhenti, penutup dibuang. Semak kebenaran Kebolehcapaian dan buka semula app. Jika terlupa kata laluan atau app tidak bertindak balas, gunakan Paksa Keluar atau mulakan semula macOS. Ini boleh membuang penutup tanpa kata laluan."
+      ]
+    ],
+    "faqs": [
+      [
+        "Adakah ini kunci keselamatan macOS?",
+        "Tidak. App menutup skrin dan memintas input biasa. Paksa Keluar, skrin keselamatan dan fungsi sistem lain di luar jaminannya. Gunakan Kunci Skrin macOS untuk melindungi sesi anda."
+      ],
+      [
+        "Adakah kata laluan wajib?",
+        "Tidak. Ia pilihan dan dimatikan secara lalai. Tanpanya, papan kekunci atau tetikus memulihkan skrin. Aktifkan jika mahukan langkah tambahan sebelum penutup dibuang."
+      ]
+    ],
+    "status": "Versi pratonton"
+  },
+  "el": {
+    "name": "Ελληνικά",
+    "headline": "Ένα διάλειμμα για τις οθόνες.",
+    "description": "Μία συντόμευση καλύπτει με μαύρο όλες τις οθόνες που εντοπίζονται. Το BlackoutMac βρίσκεται στη γραμμή μενού του macOS, με προαιρετικό κωδικό.",
+    "labels": [
+      "Λήψη για Mac",
+      "Οδηγός χρήσης",
+      "Γλώσσα",
+      "Μετάβαση στο περιεχόμενο",
+      "Συχνές ερωτήσεις",
+      "Αναφορά προβλήματος",
+      "Οδηγός ανοίγματος της Apple"
+    ],
+    "notice": "Δοκιμαστική έκδοση · Χωρίς υπογραφή Developer ID και επικύρωση από την Apple. Διαβάστε τις οδηγίες πριν από το άνοιγμα.",
+    "sections": [
+      [
+        "Γρήγορη εγκατάσταση",
+        "Κατεβάστε το καθολικό DMG από το GitHub Releases, ανοίξτε το και σύρετε το Blackout.app στις Εφαρμογές. Εκκινήστε το. Αν το macOS το αποκλείσει, ελέγξτε την προέλευση. Μετά από μία προσπάθεια ανοίγματος, χρησιμοποιήστε Ρυθμίσεις συστήματος → Απόρρητο και ασφάλεια → Άνοιγμα οπωσδήποτε, αν διατίθεται."
+      ],
+      [
+        "Επιτρέψτε την Προσβασιμότητα",
+        "Ενεργοποιήστε το Blackout στις Ρυθμίσεις συστήματος → Απόρρητο και ασφάλεια → Προσβασιμότητα και επανεκκινήστε την εφαρμογή. Η άδεια απαιτείται για την αναχαίτιση εισόδου. Αν ο αποκλεισμός εισόδου δεν λειτουργεί, οι οθόνες δεν καλύπτονται."
+      ],
+      [
+        "Μία συντόμευση, όλες οι οθόνες",
+        "Πατήστε Control + Option + B ή χρησιμοποιήστε το Blackout στο μενού. Χωρίς κωδικό, το πληκτρολόγιο ή το ποντίκι επαναφέρει τις οθόνες. Κατά την κάλυψη, η είσοδος και οι συνήθεις καθολικές συντομεύσεις αποκλείονται ή στέλνονται μόνο στο Blackout."
+      ],
+      [
+        "Κωδικός αν το θέλετε",
+        "Απενεργοποιημένος αρχικά. Ενεργοποιήστε τον στις ρυθμίσεις του μενού Blackout και εισαγάγετε τον νέο κωδικό δύο φορές. Αλλαγή ή απενεργοποίηση απαιτεί τον τρέχοντα κωδικό. Όταν η προστασία είναι ενεργή, εισαγάγετε τον κωδικό για αφαίρεση της κάλυψης."
+      ],
+      [
+        "Εκκίνηση κατά τη σύνδεση",
+        "Ενεργοποιήστε την επιλογή στις ρυθμίσεις για την εγγενή λειτουργία του macOS. Απενεργοποιήστε την ίδια επιλογή για να σταματήσετε την αυτόματη εκκίνηση."
+      ],
+      [
+        "32 γλώσσες",
+        "Η εφαρμογή ακολουθεί αρχικά τη γλώσσα του macOS. Επιλέξτε άλλη στις ρυθμίσεις ή επιστρέψτε στη γλώσσα συστήματος."
+      ],
+      [
+        "Όλα μένουν στο Mac σας",
+        "Χωρίς διακομιστή εφαρμογής ή τηλεμετρία. Οι προτιμήσεις και η τιμή επαλήθευσης κωδικού με salt αποθηκεύονται τοπικά, ποτέ ο κωδικός ως απλό κείμενο. Το GitHub φιλοξενεί τις λήψεις και τον ιστότοπο."
+      ],
+      [
+        "Αν κάτι κολλήσει",
+        "Αν ο αποκλεισμός εισόδου σταματήσει, η κάλυψη αφαιρείται. Ελέγξτε την άδεια Προσβασιμότητας και ανοίξτε ξανά την εφαρμογή. Αν ξεχάσετε τον κωδικό ή η εφαρμογή δεν αποκρίνεται, κάντε αναγκαστικό τερματισμό ή επανεκκίνηση του macOS. Έτσι μπορεί να αφαιρεθεί η κάλυψη χωρίς κωδικό."
+      ]
+    ],
+    "faqs": [
+      [
+        "Είναι κλείδωμα ασφαλείας του macOS;",
+        "Όχι. Καλύπτει οθόνες και αναχαιτίζει συνήθη είσοδο. Ο αναγκαστικός τερματισμός, οι οθόνες ασφαλείας και άλλες λειτουργίες συστήματος είναι εκτός εγγύησης. Χρησιμοποιήστε το κλείδωμα οθόνης του macOS για προστασία της συνεδρίας."
+      ],
+      [
+        "Χρειάζομαι κωδικό;",
+        "Όχι. Είναι προαιρετικός και αρχικά απενεργοποιημένος. Χωρίς αυτόν, πληκτρολόγιο ή ποντίκι επαναφέρει τις οθόνες. Ενεργοποιήστε τον αν θέλετε ένα επιπλέον βήμα πριν αφαιρεθεί η κάλυψη."
+      ]
+    ],
+    "status": "Δοκιμαστική έκδοση"
+  }
+}

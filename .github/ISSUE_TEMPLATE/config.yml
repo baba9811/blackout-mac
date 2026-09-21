@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Installation and usage guide
+    url: https://baba9811.github.io/blackout-mac/
+    about: Read the guide in your language.
+  - name: Report a security vulnerability privately
+    url: https://github.com/baba9811/blackout-mac/security/advisories/new
+    about: Do not post vulnerabilities or passwords in public issues.

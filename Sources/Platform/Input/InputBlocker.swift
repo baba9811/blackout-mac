@@ -1,0 +1,167 @@
+import Foundation
+import CoreGraphics
+import ApplicationServices
+
+final class InputBlocker {
+    enum Route { case pass, discard, wake, deliverToBlackout, switchInputSource }
+
+    private let lock = NSLock()
+    private var active = false
+    private var prompting = false
+    private var wakePending = false
+    private var tap: CFMachPort?
+    private var runLoop: CFRunLoop?
+    private var generation: UInt64 = 0
+    private final class TapContext {
+        weak var owner: InputBlocker?
+        let generation: UInt64
+        init(owner: InputBlocker, generation: UInt64) {
+            self.owner = owner
+            self.generation = generation
+        }
+    }
+    var onWake: (() -> Void)?
+    var onFailure: (() -> Void)?
+    var onInputSourceChange: (() -> Void)?
+
+    var isRunning: Bool {
+        guard let currentTap = lock.withLock({ active ? tap : nil }) else { return false }
+        return CGEvent.tapIsEnabled(tap: currentTap)
+    }
+
+    func start() -> Bool {
+        stop()
+        guard AXIsProcessTrusted() else { return false }
+        let context = TapContext(owner: self, generation: lock.withLock { generation })
+        guard let newTap = CGEvent.tapCreate(
+            tap: .cgSessionEventTap, place: .headInsertEventTap,
+            options: .defaultTap, eventsOfInterest: CGEventMask.max,
+            callback: { _, type, event, pointer in
+                guard let pointer else { return nil }
+                let context = Unmanaged<TapContext>.fromOpaque(pointer).takeUnretainedValue()
+                return context.owner?.filter(type: type, event: event, generation: context.generation)
+            }, userInfo: Unmanaged.passUnretained(context).toOpaque()
+        ), let source = CFMachPortCreateRunLoopSource(nil, newTap, 0) else { return false }
+
+        lock.withLock { tap = newTap; active = true; prompting = false }
+        let ready = DispatchSemaphore(value: 0)
+        let thread = Thread { [self, context] in
+            let loop = CFRunLoopGetCurrent()!
+            let current = lock.withLock { () -> Bool in
+                guard generation == context.generation, active else { return false }
+                runLoop = loop
+                return true
+            }
+            guard current else { ready.signal(); return }
+            CFRunLoopAddSource(loop, source, .commonModes)
+            ready.signal()
+            withExtendedLifetime(context) { CFRunLoopRun() }
+            CFRunLoopRemoveSource(loop, source, .commonModes)
+            let failed = lock.withLock { () -> Bool in
+                guard generation == context.generation, active else { return false }
+                active = false
+                runLoop = nil
+                return true
+            }
+            if failed { deliver(for: context.generation) { $0.onFailure?() } }
+        }
+        thread.name = "Blackout input blocker"
+        thread.qualityOfService = .userInteractive
+        thread.start()
+        guard ready.wait(timeout: .now() + 1) == .success, isRunning else {
+            stop()
+            return false
+        }
+        return true
+    }
+
+    func setPrompting(_ value: Bool) { lock.withLock { prompting = value } }
+
+    func stop() {
+        let resources = lock.withLock { () -> (CFMachPort?, CFRunLoop?) in
+            active = false
+            generation &+= 1
+            prompting = false
+            wakePending = false
+            let resources = (tap, runLoop)
+            tap = nil
+            runLoop = nil
+            return resources
+        }
+        if let tap = resources.0 { CFMachPortInvalidate(tap) }
+        if let loop = resources.1 {
+            CFRunLoopPerformBlock(loop, CFRunLoopMode.commonModes.rawValue) { CFRunLoopStop(loop) }
+            CFRunLoopWakeUp(loop)
+        }
+    }
+
+    private func deliver(for generation: UInt64, action: @escaping (InputBlocker) -> Void) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self, self.lock.withLock({ self.generation == generation }) else { return }
+            action(self)
+        }
+    }
+
+    private func filter(type: CGEventType, event: CGEvent, generation: UInt64) -> Unmanaged<CGEvent>? {
+        guard lock.withLock({ self.generation == generation }) else { return nil }
+        if type == .tapDisabledByTimeout || type == .tapDisabledByUserInput {
+            // Never leave a covered desktop with a disabled input filter.
+            deliver(for: generation) { $0.onFailure?() }
+            return nil
+        }
+        let route = lock.withLock { () -> Route in
+            guard self.generation == generation, active else { return .discard }
+            let route = Self.route(type: type, event: event, active: active, prompting: prompting)
+            if route == .wake {
+                guard !wakePending else { return .discard }
+                wakePending = true
+            }
+            return route
+        }
+        switch route {
+        case .pass: return Unmanaged.passUnretained(event)
+        case .discard: return nil
+        case .deliverToBlackout:
+            // Direct process delivery bypasses global shortcuts and cannot target the app behind us.
+            event.postToPid(getpid())
+            return nil
+        case .switchInputSource:
+            deliver(for: generation) { $0.onInputSourceChange?() }
+            return nil
+        case .wake:
+            deliver(for: generation) { blocker in
+                blocker.lock.withLock { blocker.wakePending = false }
+                blocker.onWake?()
+            }
+            return nil
+        }
+    }
+
+    static func route(type: CGEventType, event: CGEvent, active: Bool, prompting: Bool) -> Route {
+        guard active else { return .pass }
+        let keyboard = type == .keyDown || type == .keyUp || type == .flagsChanged
+        let mouse: Set<CGEventType> = [
+            .leftMouseDown, .leftMouseUp, .rightMouseDown, .rightMouseUp,
+            .otherMouseDown, .otherMouseUp, .mouseMoved,
+            .leftMouseDragged, .rightMouseDragged, .otherMouseDragged, .scrollWheel
+        ]
+        guard keyboard || mouse.contains(type) else { return .discard }
+        guard prompting else {
+            return type == .keyDown || mouse.contains(type) ? .wake : .discard
+        }
+        if keyboard {
+            let flags = event.flags
+            if type == .keyDown, flags.contains(.maskControl),
+               !flags.contains(.maskCommand), !flags.contains(.maskAlternate),
+               event.getIntegerValueField(.keyboardEventKeycode) == 49 {
+                return .switchInputSource
+            }
+            if flags.contains(.maskControl) { return .discard }
+            if flags.contains(.maskCommand) {
+                let code = event.getIntegerValueField(.keyboardEventKeycode)
+                guard [0, 7, 8, 9].contains(code), !flags.contains(.maskAlternate) else { return .discard }
+            }
+        }
+        return .deliverToBlackout
+    }
+}
