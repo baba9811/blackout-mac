@@ -108,6 +108,8 @@ jobs:
 
           Download the DMG, quit the existing app, and replace Blackout.app in the same folder. Password and language settings are kept separately. Check login startup and input-control permission after replacing the app.
 
+          First launch: if Apple cannot check Blackout for malware, choose Done instead of Move to Trash. For the official download, use System Settings → Privacy & Security → Open Anyway for Blackout and authenticate. [Installation help](https://github.com/baba9811/blackout-mac/blob/main/docs/usage/README.md#installation).
+
           Hold Escape for three seconds for emergency exit, which deliberately bypasses the app password without deleting it. If the app is unresponsive, it quits; reopen it afterward. Forgot Password in Settings resets only the app password after macOS owner authentication.
 
           This release uses a persistent self-signed certificate so updates can retain the same app identity. Moving from the older ad-hoc build can require one input-permission renewal. If the permission switch is already on but Blackout still asks for access, quit Blackout, remove its old permission entry, add and enable the currently installed app, then reopen it.

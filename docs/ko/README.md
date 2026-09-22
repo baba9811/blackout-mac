@@ -8,7 +8,7 @@
 
 macOS 13 이상 · Apple Silicon 및 Intel · 32개 언어
 
-> 미리보기 배포본은 **Developer ID 서명과 Apple 공증이 없습니다**. 실행이 차단되면 [설치 도움말](../usage/ko.md#설치)을 확인하세요.
+> 미리보기 배포본은 **Developer ID 서명과 Apple 공증이 없습니다**. Apple이 악성 소프트웨어 여부를 확인할 수 없다고 하면 **완료**를 누르고, <strong>시스템 설정 → 개인정보 보호 및 보안 → 그래도 열기</strong>에서 Blackout을 허용하세요. [첫 실행 안내 →](../usage/ko.md#설치)
 
 ## 빠른 시작
 
