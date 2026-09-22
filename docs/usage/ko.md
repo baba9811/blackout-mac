@@ -6,12 +6,13 @@
 
 1. GitHub Releases에서 Universal DMG를 다운로드합니다. 배포본은 실제 환경 검증이 진행 중인 미리보기 버전입니다.
 2. DMG를 열고 **Blackout.app**을 **Applications**로 드래그합니다.
-3. 앱을 연 뒤 메뉴 막대의 <strong>Blackout 아이콘 → 설정… → 입력 차단 → 입력 권한 설정 열기…</strong>를 누르고, 열린 시스템 패널에서 Blackout을 허용합니다.
+3. 앱을 엽니다. Apple이 악성 소프트웨어 여부를 확인할 수 없다고 하면 <strong>휴지통으로 이동 대신 완료</strong>를 누르세요. 공식 GitHub에서 받은 앱이라면 <strong>시스템 설정 → 개인정보 보호 및 보안 → 그래도 열기</strong>에서 Blackout을 선택하고 인증해 실행합니다.
+4. 메뉴 막대의 <strong>Blackout 아이콘 → 설정… → 입력 차단 → 입력 권한 설정 열기…</strong>를 누르고, 열린 시스템 패널에서 Blackout을 허용합니다.
 
 앱의 버튼은 macOS 버전에 맞는 입력 제어 권한 패널을 엽니다. 보조 기능을 설정하는 일반 ‘손쉬운 사용’ 메뉴와는 별도의 권한 목록입니다. [Apple의 앱 제어 권한 안내](https://support.apple.com/ko-kr/guide/mac-help/mh43185/mac)도 참고하세요.
 
 macOS 13 이상, Apple Silicon 및 Intel Mac을 지원합니다. 터미널이나 개발 도구는 필요하지 않습니다.
-미리보기 배포본은 **Developer ID 서명과 Apple 공증이 없습니다**. 각 빌드의 서명 방식은 릴리스 설명에서 확인할 수 있습니다. 자체 서명 인증서는 빌드 간 앱 식별 정보를 유지하는 데 쓰이며, Apple의 승인을 의미하지 않습니다. macOS가 실행을 차단하면 출처를 확인하고 [Apple의 확인되지 않은 개발자 앱 열기 안내](https://support.apple.com/ko-kr/guide/mac-help/mh40616/mac)를 참고하세요. 직접 허용하려면 **시스템 설정 → 개인정보 보호 및 보안**에서 해당 앱의 **그래도 열기** 옵션을 사용합니다. Gatekeeper는 켜 둡니다.
+미리보기 배포본은 **Developer ID 서명과 Apple 공증이 없어** 첫 실행에 이 경고가 표시될 수 있습니다. 자체 서명은 업데이트 간 앱 식별 정보를 유지하며 Apple 승인을 의미하지 않습니다. <strong>그래도 열기</strong>는 실행을 시도한 뒤 약 1시간 동안 표시됩니다. 손상·악성 소프트웨어 감지 등 다른 경고는 [Apple의 경고 안내](https://support.apple.com/ko-kr/102445)를 확인하세요. Gatekeeper는 켜 둡니다.
 
 ## 기본 사용과 설정
 

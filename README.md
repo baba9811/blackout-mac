@@ -8,7 +8,7 @@ I built BlackoutMac after the password field disappeared on my macOS 27.0 Lock S
 
 macOS 13+ · Apple Silicon and Intel · 32 languages
 
-> Preview releases are **not Developer ID signed or Apple-notarized**. See [installation help](docs/usage/README.md#installation) if macOS blocks opening.
+> Previews are **not Developer ID signed or Apple-notarized**. If Apple cannot check for malware, choose **Done**, then **System Settings → Privacy & Security → Open Anyway** for Blackout. [First-launch help →](docs/usage/README.md#installation)
 
 ## Quick Start
 

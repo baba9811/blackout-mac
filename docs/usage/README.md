@@ -6,11 +6,12 @@
 
 1. Download the universal DMG from **Releases**. Releases are **previews**, with interactive validation still in progress. It targets Apple Silicon and Intel Macs running macOS 13 or later.
 2. Open the DMG and drag **Blackout.app** into **Applications**.
-3. Open Blackout. Choose **Blackout menu bar icon → Settings… → Input Blocking → Open Input Permission Settings…**, then enable Blackout in the system panel that opens.
+3. Open Blackout. If Apple says it cannot check the app for malware, choose **Done**, not **Move to Trash**. For the official GitHub download, go to **System Settings → Privacy & Security → Open Anyway** for Blackout, then authenticate to open it.
+4. Choose **Blackout menu bar icon → Settings… → Input Blocking → Open Input Permission Settings…**, then enable Blackout in the system panel that opens.
 
 The app's button opens the appropriate input-control permission panel for your macOS version. This permission list is separate from the general Accessibility settings for assistive features. See [Apple's guidance on granting app control](https://support.apple.com/guide/mac-help/allow-accessibility-apps-to-access-your-mac-mh43185/mac).
 
-Preview releases are **not Developer ID signed or Apple-notarized**. Release notes describe each build's signing method. A self-signed certificate can keep the app's identity stable between builds; it does not provide Apple approval. If macOS blocks opening, review the download's source and follow [Apple's instructions for opening an app from an unknown developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unknown-developer-mh40616/mac). If you choose to allow it, use **System Settings → Privacy & Security** and the app-specific **Open Anyway** option. Keep Gatekeeper enabled.
+Preview releases are **not Developer ID signed or Apple-notarized**, so this first-launch warning is expected. Self-signing keeps the app's identity stable across updates; it does not provide Apple approval. **Open Anyway** is available for about an hour after trying to open the app. For other warnings, including damage or detected malware, see [Apple's warning guide](https://support.apple.com/en-us/102445). Keep Gatekeeper enabled.
 
 ## Everyday use and settings
 
