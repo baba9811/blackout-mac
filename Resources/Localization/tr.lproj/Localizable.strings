@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "Parola sıfırlandı. Parola koruması kapalı.";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "Kaydedilmiş parola ayarları okunamadı. Kurtarmak için ayarlardaki Parolamı Unuttum seçeneğini kullanın.";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Acil çıkış: Escape tuşunu 3 saniye basılı tutun. Bu, uygulama parolasını atlar.";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "Hareketsizlikten sonra parola penceresini gizle";
+"%d seconds" = "%d saniye";
+"Automatically check for updates" = "Güncellemeleri otomatik denetle";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "Başlangıçta ve her gün GitHub’ı denetler. İndirilen DMG’yi açıp uygulamayı değiştirin. Ayarlar korunur.";
+"Download Update…" = "Güncellemeyi İndir…";
+"Open Downloaded Update…" = "İndirilen Güncellemeyi Aç…";
+"Downloading update…" = "Güncelleme indiriliyor…";
+"Download failed. Try again or open the release page." = "İndirme başarısız. Yeniden deneyin veya sürüm sayfasını açın.";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "Güncelleme hazır. Blackout’tan çıkın, aynı klasördeki uygulamayı değiştirin ve yeniden açın. Ayarlar korunur.";
+"Could not open the update. Open it from Downloads." = "Güncelleme açılamadı. İndirilenler klasöründen açın.";

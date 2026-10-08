@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "Parola a fost resetată. Protecția prin parolă este dezactivată.";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "Configurările salvate ale parolei nu au putut fi citite. Folosește Ai uitat parola din configurări pentru recuperare.";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Ieșire de urgență: ține apăsat Escape timp de 3 secunde. Astfel ocolești parola aplicației.";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "Ascunde fereastra parolei după inactivitate";
+"%d seconds" = "%d secunde";
+"Automatically check for updates" = "Verifică automat actualizările";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "Verifică GitHub la pornire și zilnic. Deschide DMG-ul descărcat și înlocuiește aplicația. Setările se păstrează.";
+"Download Update…" = "Descarcă actualizarea…";
+"Open Downloaded Update…" = "Deschide actualizarea descărcată…";
+"Downloading update…" = "Se descarcă actualizarea…";
+"Download failed. Try again or open the release page." = "Descărcarea a eșuat. Reîncearcă sau deschide pagina versiunii.";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "Actualizarea este gata. Închide Blackout, înlocuiește aplicația în același dosar și redeschide-o. Setările se păstrează.";
+"Could not open the update. Open it from Downloads." = "Actualizarea nu a putut fi deschisă. Deschide-o din Descărcări.";

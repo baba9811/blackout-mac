@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "Password reset. Password protection is off.";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "The saved password settings could not be read. Use Forgot Password in Settings to recover.";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Emergency exit: hold Escape for 3 seconds. This bypasses the app password.";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "Hide the password prompt after inactivity";
+"%d seconds" = "%d seconds";
+"Automatically check for updates" = "Automatically check for updates";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept.";
+"Download Update…" = "Download Update…";
+"Open Downloaded Update…" = "Open Downloaded Update…";
+"Downloading update…" = "Downloading update…";
+"Download failed. Try again or open the release page." = "Download failed. Try again or open the release page.";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept.";
+"Could not open the update. Open it from Downloads." = "Could not open the update. Open it from Downloads.";

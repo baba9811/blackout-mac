@@ -108,6 +108,10 @@ jobs:
 
           Download the DMG, quit the existing app, and replace Blackout.app in the same folder. Password and language settings are kept separately. Check login startup and input-control permission after replacing the app.
 
+          Password prompts hide after inactivity (10 seconds by default; choose 5–300 seconds in Settings), clearing entered text while the screens stay black. Mouse or keyboard input shows a fresh prompt immediately. Manual Cancel retains its two-second grace period.
+
+          Automatic update checks run at launch and daily and can be disabled in Settings. New versions open Settings after blackout ends. Download Update fetches the DMG, checks its published SHA-256 checksum, preserves macOS quarantine, and opens it without a browser. Quit Blackout and replace the app in the same folder to install; settings are kept. Version 0.1.1 and older require a one-time manual download to gain this flow. Checksums are integrity checks, not independent publisher signatures.
+
           First launch: if Apple cannot check Blackout for malware, choose Done instead of Move to Trash. For the official download, use System Settings → Privacy & Security → Open Anyway for Blackout and authenticate. [Installation help](https://github.com/baba9811/blackout-mac/blob/main/docs/usage/README.md#installation).
 
           Hold Escape for three seconds for emergency exit, which deliberately bypasses the app password without deleting it. If the app is unresponsive, it quits; reopen it afterward. Forgot Password in Settings resets only the app password after macOS owner authentication.

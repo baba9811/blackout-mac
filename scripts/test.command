@@ -29,9 +29,11 @@ xcrun swiftc "$ROOT/Sources/Core/Security/PasswordSettings.swift" \
   "$ROOT/Tests/Settings/PasswordSheetTests.swift" -o "$TEST_DIR/password-sheets"
 "$TEST_DIR/password-sheets"
 xcrun swiftc "$ROOT/Sources/Core/Security/PasswordSettings.swift" \
+  "$ROOT/Sources/Core/AppPreferences.swift" \
   "$ROOT/Sources/Core/Localization/AppLanguage.swift" \
   "$ROOT/Sources/Core/Updates/ReleaseVersion.swift" \
   "$ROOT/Sources/Platform/Updates/ReleaseChecker.swift" \
+  "$ROOT/Sources/Platform/Updates/ReleaseDownloader.swift" \
   "$ROOT/Sources/App/PasswordError+Localization.swift" \
   "$ROOT/Sources/Features/Settings/PasswordSheetController.swift" \
   "$ROOT/Sources/Features/Settings/SettingsWindowController.swift" \
@@ -44,5 +46,21 @@ xcrun swiftc "$ROOT/Sources/Core/Updates/ReleaseVersion.swift" \
   "$ROOT/Sources/Platform/Updates/ReleaseChecker.swift" \
   "$ROOT/Tests/Updates/ReleaseCheckerTests.swift" -o "$TEST_DIR/updates"
 "$TEST_DIR/updates"
+xcrun swiftc "$ROOT/Sources/Core/AppPreferences.swift" \
+  "$ROOT/Sources/Core/Security/PasswordSettings.swift" \
+  "$ROOT/Sources/Core/Localization/AppLanguage.swift" \
+  "$ROOT/Sources/Core/Updates/ReleaseVersion.swift" \
+  "$ROOT/Sources/Platform/Updates/ReleaseChecker.swift" \
+  "$ROOT/Sources/Platform/Updates/ReleaseDownloader.swift" \
+  "$ROOT/Sources/App/PasswordError+Localization.swift" \
+  "$ROOT/Sources/Features/Settings/PasswordSheetController.swift" \
+  "$ROOT/Sources/Features/Settings/SettingsWindowController.swift" \
+  "$ROOT/Tests/Settings/UpdatePreferencesTests.swift" -o "$TEST_DIR/update-preferences"
+"$TEST_DIR/update-preferences" "$ROOT/Resources/Localization"
+xcrun swiftc "$ROOT/Sources/Core/Updates/ReleaseVersion.swift" \
+  "$ROOT/Sources/Platform/Updates/ReleaseChecker.swift" \
+  "$ROOT/Sources/Platform/Updates/ReleaseDownloader.swift" \
+  "$ROOT/Tests/Updates/ReleaseDownloaderTests.swift" -o "$TEST_DIR/downloads"
+"$TEST_DIR/downloads"
 python3 -B -m unittest discover -s "$ROOT/Tests/Installation" -v
 python3 -B -m unittest discover -s "$ROOT/Tests/Signing" -v

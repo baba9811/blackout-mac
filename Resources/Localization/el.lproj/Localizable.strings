@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "Έγινε επαναφορά κωδικού. Η προστασία με κωδικό είναι απενεργοποιημένη.";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "Δεν ήταν δυνατή η ανάγνωση των αποθηκευμένων ρυθμίσεων κωδικού. Χρησιμοποιήστε το Ξεχάσατε τον κωδικό στις ρυθμίσεις για ανάκτηση.";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Έξοδος έκτακτης ανάγκης: κρατήστε πατημένο το Escape για 3 δευτερόλεπτα. Έτσι παρακάμπτεται ο κωδικός της εφαρμογής.";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "Απόκρυψη του παραθύρου κωδικού μετά από αδράνεια";
+"%d seconds" = "%d δευτερόλεπτα";
+"Automatically check for updates" = "Αυτόματος έλεγχος ενημερώσεων";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "Ελέγχει το GitHub κατά την εκκίνηση και καθημερινά. Ανοίξτε το ληφθέν DMG και αντικαταστήστε την εφαρμογή. Οι ρυθμίσεις διατηρούνται.";
+"Download Update…" = "Λήψη ενημέρωσης…";
+"Open Downloaded Update…" = "Άνοιγμα ληφθείσας ενημέρωσης…";
+"Downloading update…" = "Λήψη ενημέρωσης…";
+"Download failed. Try again or open the release page." = "Η λήψη απέτυχε. Δοκιμάστε ξανά ή ανοίξτε τη σελίδα έκδοσης.";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "Η ενημέρωση είναι έτοιμη. Κλείστε το Blackout, αντικαταστήστε την εφαρμογή στον ίδιο φάκελο και ανοίξτε την ξανά. Οι ρυθμίσεις διατηρούνται.";
+"Could not open the update. Open it from Downloads." = "Δεν ήταν δυνατό το άνοιγμα της ενημέρωσης. Ανοίξτε την από τις Λήψεις.";

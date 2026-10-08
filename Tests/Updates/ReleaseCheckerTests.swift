@@ -40,9 +40,13 @@ struct ReleaseCheckerTests {
         configuration.protocolClasses = [ReleaseProtocol.self]
         let session = URLSession(configuration: configuration)
         defer { session.invalidateAndCancel() }
-        func release(_ tag: String, draft: Bool = false, preview: Bool = false, url: String? = nil) -> String {
+        func release(_ tag: String, draft: Bool = false, preview: Bool = false, url: String? = nil,
+                     downloadable: Bool = true) -> String {
             let page = url ?? "https://github.com/baba9811/blackout-mac/releases/tag/\(tag)"
-            return "{\"tag_name\":\"\(tag)\",\"draft\":\(draft),\"prerelease\":\(preview),\"html_url\":\"\(page)\"}"
+            let filename = "BlackoutMac-\(tag.dropFirst())-universal.dmg"
+            let base = "https://github.com/baba9811/blackout-mac/releases/download/\(tag)/"
+            let assets = downloadable ? "[{\"name\":\"\(filename)\",\"size\":123,\"browser_download_url\":\"\(base + filename)\"},{\"name\":\"SHA256SUMS\",\"size\":196,\"browser_download_url\":\"\(base)SHA256SUMS\"}]" : "[]"
+            return "{\"tag_name\":\"\(tag)\",\"draft\":\(draft),\"prerelease\":\(preview),\"html_url\":\"\(page)\",\"assets\":\(assets)}"
         }
         // Preview releases are included, drafts and invalid/untrusted release URLs are excluded.
         ReleaseProtocol.replies = [(200, "[\(release("v0.1.0", preview: true)),\(release("v9.0.0", draft: true)),\(release("v5.0.0", url: "https://evil.example/releases/tag/v5.0.0")),\(release("v01.0.0"))]", false)]
@@ -56,6 +60,9 @@ struct ReleaseCheckerTests {
         ReleaseProtocol.replies = [(200, "[]", false)]
         let empty = try await ReleaseChecker.latestRelease(session: session)
         assert(empty == nil)
+        ReleaseProtocol.replies = [(200, "[\(release("v3.0.0", downloadable: false)),\(release("v1.0.0"))]", false)]
+        let complete = try await ReleaseChecker.latestRelease(session: session)
+        assert(complete?.version.string == "1.0.0", "Do not offer an update before its installer/checksums are published")
         for reply in [(403, "[]", false), (500, "[]", false), (200, "{}", false), (0, "", false)] {
             ReleaseProtocol.replies = [reply]
             do {

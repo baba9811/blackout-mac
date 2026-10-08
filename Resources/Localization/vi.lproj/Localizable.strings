@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "Đã đặt lại mật khẩu. Bảo vệ bằng mật khẩu đã tắt.";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "Không đọc được cài đặt mật khẩu đã lưu. Dùng Quên mật khẩu trong cài đặt để khôi phục.";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Thoát khẩn cấp: giữ Escape trong 3 giây. Thao tác này bỏ qua mật khẩu ứng dụng.";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "Ẩn cửa sổ mật khẩu khi không hoạt động";
+"%d seconds" = "%d giây";
+"Automatically check for updates" = "Tự động kiểm tra bản cập nhật";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "Kiểm tra GitHub khi khởi chạy và hằng ngày. Mở DMG đã tải và thay thế ứng dụng để cài đặt. Cài đặt được giữ nguyên.";
+"Download Update…" = "Tải bản cập nhật…";
+"Open Downloaded Update…" = "Mở bản cập nhật đã tải…";
+"Downloading update…" = "Đang tải bản cập nhật…";
+"Download failed. Try again or open the release page." = "Tải xuống thất bại. Thử lại hoặc mở trang phát hành.";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "Bản cập nhật đã sẵn sàng. Thoát Blackout, thay thế ứng dụng trong cùng thư mục rồi mở lại. Cài đặt được giữ nguyên.";
+"Could not open the update. Open it from Downloads." = "Không thể mở bản cập nhật. Mở từ thư mục Tải về.";
