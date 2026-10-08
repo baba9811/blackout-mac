@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "पासवर्ड रीसेट हो गया। पासवर्ड सुरक्षा बंद है।";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "सहेजी गई पासवर्ड सेटिंग्स पढ़ी नहीं जा सकीं। पुनर्प्राप्ति के लिए सेटिंग में पासवर्ड भूल गए का उपयोग करें।";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "आपातकालीन निकास: Escape को 3 सेकंड तक दबाए रखें। इससे ऐप का पासवर्ड देने की ज़रूरत नहीं होगी।";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "निष्क्रियता के बाद पासवर्ड विंडो छिपाएँ";
+"%d seconds" = "%d सेकंड";
+"Automatically check for updates" = "अपडेट अपने आप जाँचें";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "शुरू होने पर और रोज़ GitHub जाँचता है। डाउनलोड किया DMG खोलें और ऐप बदलकर इंस्टॉल करें। सेटिंग बनी रहती हैं।";
+"Download Update…" = "अपडेट डाउनलोड करें…";
+"Open Downloaded Update…" = "डाउनलोड किया अपडेट खोलें…";
+"Downloading update…" = "अपडेट डाउनलोड हो रहा है…";
+"Download failed. Try again or open the release page." = "डाउनलोड विफल हुआ। फिर कोशिश करें या रिलीज़ पेज खोलें।";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "अपडेट तैयार है। Blackout बंद करें, उसी फ़ोल्डर में ऐप बदलें और फिर खोलें। सेटिंग बनी रहती हैं।";
+"Could not open the update. Open it from Downloads." = "अपडेट नहीं खुल सका। इसे डाउनलोड फ़ोल्डर से खोलें।";

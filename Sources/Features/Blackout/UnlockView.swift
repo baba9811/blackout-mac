@@ -1,8 +1,24 @@
 import AppKit
 
-final class UnlockView: NSView {
+final class UnlockView: NSView, NSTextFieldDelegate {
     let passwordField = NSSecureTextField()
     let messageLabel = NSTextField(wrappingLabelWithString: "")
+    private var lastActivityAt = ProcessInfo.processInfo.systemUptime
+
+    func recordActivity(at uptime: TimeInterval = ProcessInfo.processInfo.systemUptime) {
+        lastActivityAt = uptime
+    }
+
+    func shouldHide(after timeout: TimeInterval, systemIdleTime: TimeInterval,
+                    mouseButtonPressed: Bool = false,
+                    at uptime: TimeInterval = ProcessInfo.processInfo.systemUptime) -> Bool {
+        !mouseButtonPressed && uptime - lastActivityAt >= timeout && systemIdleTime >= timeout
+    }
+
+    func controlTextDidChange(_ notification: Notification) {
+        // Secure text entry can bypass the session event tap.
+        recordActivity()
+    }
 
     init(target: AnyObject, unlockAction: Selector, cancelAction: Selector) {
         super.init(frame: .zero)
@@ -44,6 +60,7 @@ final class UnlockView: NSView {
         passwordField.bezelStyle = .roundedBezel
         passwordField.target = target
         passwordField.action = unlockAction
+        passwordField.delegate = self
         messageLabel.stringValue = L("Enter your password to restore the screen.")
         messageLabel.font = .systemFont(ofSize: 13)
         messageLabel.textColor = NSColor(white: 0.8, alpha: 1)

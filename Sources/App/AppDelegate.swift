@@ -13,14 +13,22 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
     private var unlockPromptAvailableAt: TimeInterval = 0
     private var cursorHidden = false
     private let passwords = PasswordSettings()
+    private let preferences = AppPreferences()
+    private var updateTimer: Timer?
+    private var updateNotificationPending = false
+    private let launchedAt = ProcessInfo.processInfo.systemUptime
     private lazy var settings: SettingsWindowController = {
-        let controller = SettingsWindowController(passwords: passwords)
+        let controller = SettingsWindowController(passwords: passwords, preferences: preferences)
         controller.onPasswordSettingsChanged = { [weak self] in self?.updateStatusIcon() }
+        controller.onUpdateAvailable = { [weak self] in
+            self?.updateNotificationPending = true
+            self?.showPendingUpdateNotification()
+        }
         controller.onClose = { NSApp.setActivationPolicy(.accessory) }
         return controller
     }()
     private var requiredPassword: UnlockPassword?
-    private var unlockView: NSView?
+    private var unlockView: UnlockView?
     private var unlockField: NSSecureTextField?
     private var unlockError: NSTextField?
     private var nextUnlockAttempt: TimeInterval = 0
@@ -43,6 +51,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
         buildStatusMenu()
         buildMainMenu()
         installGlobalHotKey()
+        settings.checkForUpdatesAutomatically()
+        updateTimer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
+            self?.settings.checkForUpdatesAutomatically()
+            self?.showPendingUpdateNotification()
+        }
         NotificationCenter.default.addObserver(
             self, selector: #selector(languageChanged), name: .appLanguageChanged, object: nil
         )
@@ -68,6 +81,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
     }
 
     func applicationWillTerminate(_ notification: Notification) {
+        updateTimer?.invalidate()
         endBlackout(terminate: false)
         if let ref = hotKeyRef { UnregisterEventHotKey(ref) }
         if let ref = hotKeyHandlerRef { RemoveEventHandler(ref) }
@@ -232,6 +246,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
         settings.show()
     }
 
+    private func showPendingUpdateNotification() {
+        guard updateNotificationPending, preferences.automaticallyChecksForUpdates,
+              !isBlack, !settings.hasPendingPasswordChanges,
+              NSApp.modalWindow == nil, settings.window?.attachedSheet == nil else { return }
+        updateNotificationPending = false
+        NSApp.setActivationPolicy(.regular)
+        settings.show(activate: NSApp.isActive || ProcessInfo.processInfo.systemUptime - launchedAt < 60)
+    }
+
     private func toggleBlackout() {
         isBlack ? requestUnlock() : beginBlackout()
     }
@@ -343,6 +366,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
             }
             self.refreshInputFocus()
             self.panels.forEach { $0.orderFrontRegardless() }
+            if self.unlockView?.shouldHide(after: TimeInterval(self.preferences.unlockPromptTimeout),
+                                          systemIdleTime: self.inputBlocker.idleTime,
+                                          mouseButtonPressed: self.inputBlocker.isMouseButtonPressed) == true {
+                self.hideUnlockPrompt()
+            }
         }
         RunLoop.main.add(inputTimer!, forMode: .common)
     }
@@ -417,6 +445,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
         NSApp.activate(ignoringOtherApps: true)
         panel.makeKeyAndOrderFront(nil)
         if let field = unlockField {
+            unlockView?.recordActivity()
             panel.makeFirstResponder(field)
             refreshInputFocus()
             return
@@ -453,6 +482,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
 
     @objc private func submitUnlock() {
         guard isBlack, let password = requiredPassword, let field = unlockField else { return }
+        unlockView?.recordActivity()
         guard ProcessInfo.processInfo.systemUptime >= nextUnlockAttempt else { return }
         if password.matches(field.stringValue) {
             endBlackout(terminate: false)
@@ -466,13 +496,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
     }
 
     @objc private func cancelUnlock() {
+        hideUnlockPrompt()
+        unlockPromptAvailableAt = ProcessInfo.processInfo.systemUptime + 2
+    }
+
+    private func hideUnlockPrompt() {
+        inputBlocker.setPrompting(false)
+        panels.first?.makeFirstResponder(nil)
         unlockField?.stringValue = ""
         unlockView?.removeFromSuperview()
         unlockView = nil
         unlockField = nil
         unlockError = nil
-        inputBlocker.setPrompting(false)
-        unlockPromptAvailableAt = ProcessInfo.processInfo.systemUptime + 2
         if !cursorHidden { NSCursor.hide(); cursorHidden = true }
     }
 
@@ -492,6 +527,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
         if cursorHidden {
             NSCursor.unhide()
             cursorHidden = false
+        }
+        if !terminate {
+            DispatchQueue.main.async { [weak self] in self?.showPendingUpdateNotification() }
         }
         if terminate { NSApp.terminate(nil) }
     }

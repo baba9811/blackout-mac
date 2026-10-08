@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "密码已重置。密码保护已关闭。";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "无法读取已保存的密码设置。请在设置中使用“忘记密码”进行恢复。";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "紧急解除：按住 Escape 键 3 秒。这将绕过应用密码。";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "无操作后隐藏密码窗口";
+"%d seconds" = "%d秒";
+"Automatically check for updates" = "自动检查更新";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "启动时及每天检查GitHub。下载后打开DMG，替换应用即可安装。设置会保留。";
+"Download Update…" = "下载更新…";
+"Open Downloaded Update…" = "打开已下载的更新…";
+"Downloading update…" = "正在下载更新…";
+"Download failed. Try again or open the release page." = "下载失败。请重试或打开发布页面。";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "更新已就绪。退出Blackout，替换同一文件夹中的应用，然后重新打开。设置会保留。";
+"Could not open the update. Open it from Downloads." = "无法打开更新。请从下载文件夹打开。";

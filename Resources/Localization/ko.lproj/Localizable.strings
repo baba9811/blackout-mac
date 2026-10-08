@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "비밀번호를 재설정했습니다. 비밀번호 보호가 꺼졌습니다.";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "저장된 비밀번호 설정을 읽을 수 없습니다. 설정의 ‘비밀번호를 잊으셨나요’를 사용해 복구하세요.";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "긴급 해제: Escape 키를 3초 동안 누르세요. 앱 비밀번호를 건너뛰고 해제합니다.";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "입력이 없으면 비밀번호 창 숨기기";
+"%d seconds" = "%d초";
+"Automatically check for updates" = "자동으로 업데이트 확인";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "실행 시와 하루 한 번 GitHub에서 확인합니다. 다운로드한 DMG를 열고 앱을 교체하면 됩니다. 설정은 유지됩니다.";
+"Download Update…" = "업데이트 다운로드…";
+"Open Downloaded Update…" = "다운로드한 업데이트 열기…";
+"Downloading update…" = "업데이트 다운로드 중…";
+"Download failed. Try again or open the release page." = "다운로드하지 못했습니다. 다시 시도하거나 릴리스 페이지를 여세요.";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "업데이트가 준비되었습니다. Blackout을 종료하고 같은 폴더의 앱을 교체한 뒤 다시 실행하세요. 설정은 유지됩니다.";
+"Could not open the update. Open it from Downloads." = "업데이트를 열지 못했습니다. 다운로드 폴더에서 여세요.";

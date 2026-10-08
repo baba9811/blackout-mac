@@ -72,6 +72,14 @@ final class InputBlocker {
     var onInputSourceChange: (() -> Void)?
     var onEmergencyExit: (() -> Void)?
 
+    var idleTime: TimeInterval {
+        // kCGAnyInputEventType is not imported into Swift.
+        CGEventSource.secondsSinceLastEventType(.combinedSessionState,
+                                               eventType: CGEventType(rawValue: UInt32.max)!)
+    }
+
+    var isMouseButtonPressed: Bool { NSEvent.pressedMouseButtons != 0 }
+
     var isRunning: Bool {
         guard let currentTap = lock.withLock({ active ? tap : nil }) else { return false }
         return CGEvent.tapIsEnabled(tap: currentTap)

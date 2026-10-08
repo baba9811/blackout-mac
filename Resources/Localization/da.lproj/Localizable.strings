@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "Adgangskoden er nulstillet. Adgangskodebeskyttelse er slået fra.";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "De gemte adgangskodeindstillinger kunne ikke læses. Brug Glemt adgangskode i indstillingerne til at gendanne adgang.";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Nødudgang: Hold Escape nede i 3 sekunder. Dette omgår appens adgangskode.";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "Skjul adgangskodevinduet ved inaktivitet";
+"%d seconds" = "%d sekunder";
+"Automatically check for updates" = "Søg automatisk efter opdateringer";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "Tjekker GitHub ved start og dagligt. Åbn den hentede DMG-fil, og erstat appen. Indstillingerne bevares.";
+"Download Update…" = "Hent opdatering…";
+"Open Downloaded Update…" = "Åbn hentet opdatering…";
+"Downloading update…" = "Henter opdatering…";
+"Download failed. Try again or open the release page." = "Download mislykkedes. Prøv igen, eller åbn udgivelsessiden.";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "Opdateringen er klar. Afslut Blackout, erstat appen i samme mappe, og åbn den igen. Indstillingerne bevares.";
+"Could not open the update. Open it from Downloads." = "Kunne ikke åbne opdateringen. Åbn den fra Overførsler.";

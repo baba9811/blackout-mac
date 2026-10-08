@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "تمت إعادة تعيين كلمة المرور. الحماية بكلمة المرور متوقفة.";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "تعذرت قراءة إعدادات كلمة المرور المحفوظة. استخدم «نسيت كلمة المرور» في الإعدادات للاسترداد.";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "خروج طارئ: اضغط مطولًا على Escape لمدة 3 ثوانٍ. يؤدي ذلك إلى تجاوز كلمة مرور التطبيق.";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "إخفاء نافذة كلمة المرور عند عدم النشاط";
+"%d seconds" = "%d ثانية";
+"Automatically check for updates" = "البحث عن التحديثات تلقائيًا";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "يتحقق من GitHub عند التشغيل ويوميًا. افتح ملف DMG المنزّل واستبدل التطبيق لتثبيته. تُحفظ الإعدادات.";
+"Download Update…" = "تنزيل التحديث…";
+"Open Downloaded Update…" = "فتح التحديث المنزّل…";
+"Downloading update…" = "جارٍ تنزيل التحديث…";
+"Download failed. Try again or open the release page." = "فشل التنزيل. حاول مجددًا أو افتح صفحة الإصدار.";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "التحديث جاهز. أغلق Blackout واستبدل التطبيق في المجلد نفسه ثم افتحه مجددًا. تُحفظ الإعدادات.";
+"Could not open the update. Open it from Downloads." = "تعذر فتح التحديث. افتحه من مجلد التنزيلات.";

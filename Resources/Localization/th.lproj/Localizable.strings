@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "รีเซ็ตรหัสผ่านแล้ว การป้องกันด้วยรหัสผ่านปิดอยู่";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "ไม่สามารถอ่านการตั้งค่ารหัสผ่านที่บันทึกไว้ ใช้ลืมรหัสผ่านในการตั้งค่าเพื่อกู้คืน";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "ออกฉุกเฉิน: กด Escape ค้างไว้ 3 วินาที ซึ่งจะข้ามรหัสผ่านของแอป";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "ซ่อนหน้าต่างรหัสผ่านเมื่อไม่มีการใช้งาน";
+"%d seconds" = "%d วินาที";
+"Automatically check for updates" = "ตรวจหาการอัปเดตอัตโนมัติ";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "ตรวจสอบ GitHub เมื่อเริ่มแอปและทุกวัน เปิด DMG ที่ดาวน์โหลดแล้วแทนที่แอปเพื่อติดตั้ง การตั้งค่าจะยังอยู่";
+"Download Update…" = "ดาวน์โหลดการอัปเดต…";
+"Open Downloaded Update…" = "เปิดการอัปเดตที่ดาวน์โหลด…";
+"Downloading update…" = "กำลังดาวน์โหลดการอัปเดต…";
+"Download failed. Try again or open the release page." = "ดาวน์โหลดไม่สำเร็จ ลองอีกครั้งหรือเปิดหน้ารุ่นเผยแพร่";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "การอัปเดตพร้อมแล้ว ออกจาก Blackout แทนที่แอปในโฟลเดอร์เดิมแล้วเปิดอีกครั้ง การตั้งค่าจะยังอยู่";
+"Could not open the update. Open it from Downloads." = "เปิดการอัปเดตไม่ได้ โปรดเปิดจากโฟลเดอร์ดาวน์โหลด";

@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "Salasana nollattu. Salasanasuojaus on pois käytöstä.";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "Tallennettuja salasana-asetuksia ei voitu lukea. Käytä asetusten Unohditko salasanan -toimintoa palautukseen.";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Hätäpoistuminen: pidä Escape painettuna 3 sekuntia. Tämä ohittaa sovelluksen salasanan.";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "Piilota salasanaikkuna toimettomuuden jälkeen";
+"%d seconds" = "%d sekuntia";
+"Automatically check for updates" = "Tarkista päivitykset automaattisesti";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "Tarkistaa GitHubin käynnistyessä ja päivittäin. Avaa ladattu DMG ja korvaa sovellus. Asetukset säilyvät.";
+"Download Update…" = "Lataa päivitys…";
+"Open Downloaded Update…" = "Avaa ladattu päivitys…";
+"Downloading update…" = "Ladataan päivitystä…";
+"Download failed. Try again or open the release page." = "Lataus epäonnistui. Yritä uudelleen tai avaa julkaisusivu.";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "Päivitys on valmis. Lopeta Blackout, korvaa sovellus samassa kansiossa ja avaa se uudelleen. Asetukset säilyvät.";
+"Could not open the update. Open it from Downloads." = "Päivitystä ei voitu avata. Avaa se Lataukset-kansiosta.";

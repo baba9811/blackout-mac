@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "Heslo bolo resetované. Ochrana heslom je vypnutá.";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "Uložené nastavenia hesla sa nepodarilo prečítať. Na obnovenie použite v nastaveniach voľbu Zabudnuté heslo.";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Núdzové ukončenie: podržte Escape na 3 sekundy. Tým obídete heslo aplikácie.";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "Skryť okno hesla pri nečinnosti";
+"%d seconds" = "%d s";
+"Automatically check for updates" = "Automaticky kontrolovať aktualizácie";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "Kontroluje GitHub pri spustení a denne. Otvorte stiahnutý DMG a nahraďte aplikáciu. Nastavenia zostanú zachované.";
+"Download Update…" = "Stiahnuť aktualizáciu…";
+"Open Downloaded Update…" = "Otvoriť stiahnutú aktualizáciu…";
+"Downloading update…" = "Sťahovanie aktualizácie…";
+"Download failed. Try again or open the release page." = "Sťahovanie zlyhalo. Skúste to znova alebo otvorte stránku vydania.";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "Aktualizácia je pripravená. Ukončite Blackout, nahraďte aplikáciu v rovnakom priečinku a znova ju otvorte. Nastavenia zostanú zachované.";
+"Could not open the update. Open it from Downloads." = "Aktualizáciu nemožno otvoriť. Otvorte ju z priečinka Stiahnuté.";

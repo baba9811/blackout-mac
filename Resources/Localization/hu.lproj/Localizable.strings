@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "A jelszó visszaállítva. A jelszóvédelem ki van kapcsolva.";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "A mentett jelszóbeállítások nem olvashatók. A helyreállításhoz használja a beállítások Elfelejtett jelszó lehetőségét.";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Vészkilépés: tartsa lenyomva az Escape billentyűt 3 másodpercig. Ez megkerüli az app jelszavát.";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "Jelszóablak elrejtése tétlenség esetén";
+"%d seconds" = "%d másodperc";
+"Automatically check for updates" = "Frissítések automatikus keresése";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "Indításkor és naponta ellenőrzi a GitHubot. Nyissa meg a letöltött DMG-t, és cserélje le az alkalmazást. A beállítások megmaradnak.";
+"Download Update…" = "Frissítés letöltése…";
+"Open Downloaded Update…" = "Letöltött frissítés megnyitása…";
+"Downloading update…" = "Frissítés letöltése…";
+"Download failed. Try again or open the release page." = "A letöltés sikertelen. Próbálja újra, vagy nyissa meg a kiadás oldalát.";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "A frissítés kész. Lépjen ki a Blackoutból, cserélje le az alkalmazást ugyanabban a mappában, majd nyissa meg újra. A beállítások megmaradnak.";
+"Could not open the update. Open it from Downloads." = "A frissítés nem nyitható meg. Nyissa meg a Letöltések mappából.";

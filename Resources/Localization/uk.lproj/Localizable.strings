@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "Пароль скинуто. Захист паролем вимкнено.";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "Не вдалося прочитати збережені параметри пароля. Для відновлення виберіть «Забули пароль» у параметрах.";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Аварійний вихід: утримуйте Escape 3 секунди. Це дає змогу обійти пароль програми.";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "Приховувати вікно пароля за відсутності дій";
+"%d seconds" = "%d с";
+"Automatically check for updates" = "Автоматично перевіряти оновлення";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "Перевіряє GitHub під час запуску та щодня. Відкрийте завантажений DMG і замініть програму. Налаштування зберігаються.";
+"Download Update…" = "Завантажити оновлення…";
+"Open Downloaded Update…" = "Відкрити завантажене оновлення…";
+"Downloading update…" = "Завантаження оновлення…";
+"Download failed. Try again or open the release page." = "Не вдалося завантажити. Спробуйте ще раз або відкрийте сторінку релізу.";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "Оновлення готове. Закрийте Blackout, замініть програму в тій самій папці й відкрийте знову. Налаштування зберігаються.";
+"Could not open the update. Open it from Downloads." = "Не вдалося відкрити оновлення. Відкрийте його з папки завантажень.";

@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "Wachtwoord opnieuw ingesteld. Wachtwoordbeveiliging staat uit.";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "De opgeslagen wachtwoordinstellingen konden niet worden gelezen. Gebruik Wachtwoord vergeten in Instellingen om te herstellen.";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Nooduitgang: houd Escape 3 seconden ingedrukt. Hiermee omzeil je het appwachtwoord.";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "Wachtwoordvenster verbergen bij inactiviteit";
+"%d seconds" = "%d seconden";
+"Automatically check for updates" = "Automatisch naar updates zoeken";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "Controleert GitHub bij het starten en dagelijks. Open de gedownloade DMG en vervang de app. Instellingen blijven bewaard.";
+"Download Update…" = "Update downloaden…";
+"Open Downloaded Update…" = "Gedownloade update openen…";
+"Downloading update…" = "Update downloaden…";
+"Download failed. Try again or open the release page." = "Download mislukt. Probeer opnieuw of open de releasepagina.";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "Update gereed. Stop Blackout, vervang de app in dezelfde map en open deze opnieuw. Instellingen blijven bewaard.";
+"Could not open the update. Open it from Downloads." = "Kan de update niet openen. Open deze vanuit Downloads.";

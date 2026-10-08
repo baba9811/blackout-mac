@@ -31,6 +31,7 @@ CLI, file, and MCP tasks can continue while your Mac stays awake. Blackout does 
 
 - **Password:** optional and off by default. Use **Require a password to restore the screen** in Settings. Turning it on opens a new-password dialog; turning it off asks for the current password. The switch changes only after saving succeeds; Cancel leaves it unchanged. When enabled, **Change Password…** opens a separate change dialog and **Forgot Password…** offers recovery.
 - **Cancel unlocking:** Cancel returns to the black screen. Keyboard and mouse input cannot reopen the prompt for two seconds, then normal wake behavior resumes.
+- **Hide an idle password prompt:** after 10 seconds without input, the prompt disappears and clears any entered password while blackout stays active. Set **Hide the password prompt after inactivity** in Settings (5–300 seconds). Moving the mouse or pressing a key shows a fresh prompt immediately; typing, clicking, scrolling, or moving the mouse keeps it visible.
 - **Switch input language:** in the unlock prompt, **Control + Space** cycles through your enabled keyboard input sources.
 - **Emergency exit:** hold **Escape for 3 seconds** to end blackout, including when a password is enabled. If the app cannot respond, the recovery watchdog quits it; reopen Blackout afterward. This intentionally bypasses the app password and does not erase it.
 - **Forgotten password:** after leaving blackout, choose **Settings… → Forgot Password…** and authenticate with macOS using Touch ID or your Mac login password. Only Blackout's saved password is reset; language and login preferences remain. Cancelling authentication changes nothing.
@@ -43,15 +44,15 @@ Blackout requires macOS input-control permission to install an active keyboard/m
 
 Settings stay on this Mac. Passwords are stored as salted PBKDF2-HMAC-SHA256 verifiers (600,000 iterations), not plaintext. The app has no network service or analytics.
 
-**Check for Updates…** in Settings contacts GitHub only when you click it. It reads public release information; passwords and preferences are not sent.
+**Automatically check for updates** is on by default and can be turned off in Settings. The app contacts GitHub at launch and daily for public release information. **Check for Updates…** also works manually. Passwords and preferences are not sent. Installer files are downloaded only after you click **Download Update…**.
 
 ## Updates
 
-1. Open Settings to see the installed version and choose **Check for Updates…**. Open the offered release and download its DMG, or visit [Releases](https://github.com/baba9811/blackout-mac/releases).
-2. Choose **Quit Blackout** from the menu bar, after restoring the screen if needed.
+1. A newer version automatically opens Settings, or choose **Check for Updates…** yourself. Automatic notices wait until blackout ends and do not take keyboard focus from another app after startup. Choose **Download Update…** to download, verify the published SHA-256 checksum, and open the DMG without visiting a browser. Failed downloads leave the installed app untouched. Downloads keep macOS quarantine and normal Gatekeeper checks. The release page remains available as a fallback.
+2. Choose **Quit Blackout** in Settings once the download is ready.
 3. Replace the existing **Blackout.app in the same folder** with the new copy, then open it. Do not keep a second copy in another folder.
 
-Your password and language preferences are stored separately from the app and remain in place. Check launch-at-login status after replacement. A signing identity change can require one renewed approval of input-control permission. This is not a step required for every update. Updates currently use this manual replacement process.
+Your password, language, prompt timeout, and update preferences are stored separately from the app and remain in place. Login registration is not changed by the downloader; check its status after replacement. A signing identity change can require one renewed approval of input-control permission. This is not a step required for every update. Installation uses Finder replacement, rather than unattended app replacement. Versions through 0.1.1 have only manual release checks: install 0.1.2 once to get automatic notices and direct downloads for future updates.
 
 If Blackout still asks for permission when its switch is already on, quit Blackout, remove its entry from the input-control permission list, then add the currently installed **Blackout.app** again and enable it. Reopen Blackout. An old permission entry can refer to the previous build even though the switch remains on.
 

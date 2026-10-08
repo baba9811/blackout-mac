@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "Kata sandi diatur ulang. Perlindungan kata sandi nonaktif.";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "Pengaturan kata sandi yang tersimpan tidak dapat dibaca. Gunakan Lupa Kata Sandi di pengaturan untuk memulihkan akses.";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Keluar darurat: tahan Escape selama 3 detik. Tindakan ini melewati kata sandi app.";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "Sembunyikan jendela kata sandi saat tidak aktif";
+"%d seconds" = "%d detik";
+"Automatically check for updates" = "Periksa pembaruan otomatis";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "Memeriksa GitHub saat dibuka dan setiap hari. Buka DMG yang diunduh dan ganti aplikasi untuk memasang. Pengaturan tetap tersimpan.";
+"Download Update…" = "Unduh Pembaruan…";
+"Open Downloaded Update…" = "Buka Pembaruan yang Diunduh…";
+"Downloading update…" = "Mengunduh pembaruan…";
+"Download failed. Try again or open the release page." = "Unduhan gagal. Coba lagi atau buka halaman rilis.";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "Pembaruan siap. Keluar dari Blackout, ganti aplikasi di folder yang sama, lalu buka kembali. Pengaturan tetap tersimpan.";
+"Could not open the update. Open it from Downloads." = "Pembaruan tidak dapat dibuka. Buka dari folder Unduhan.";

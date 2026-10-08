@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "Senha redefinida. A proteção por senha está desativada.";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "Não foi possível ler os ajustes de senha salvos. Use Esqueci a senha nas configurações para recuperar o acesso.";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "Saída de emergência: mantenha Escape pressionado por 3 segundos. Isso ignora a senha do app.";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "Ocultar a janela de senha após inatividade";
+"%d seconds" = "%d segundos";
+"Automatically check for updates" = "Buscar atualizações automaticamente";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "Consulta o GitHub ao iniciar e diariamente. Abra o DMG baixado e substitua o app para instalar. Os ajustes são mantidos.";
+"Download Update…" = "Baixar atualização…";
+"Open Downloaded Update…" = "Abrir atualização baixada…";
+"Downloading update…" = "Baixando atualização…";
+"Download failed. Try again or open the release page." = "Falha no download. Tente novamente ou abra a página de versões.";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "Atualização pronta. Encerre o Blackout, substitua o app na mesma pasta e abra-o novamente. Os ajustes são mantidos.";
+"Could not open the update. Open it from Downloads." = "Não foi possível abrir a atualização. Abra-a em Downloads.";

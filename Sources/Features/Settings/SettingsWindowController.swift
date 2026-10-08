@@ -9,18 +9,29 @@ private final class SettingsDocumentView: NSView {
 
 final class SettingsWindowController: NSWindowController, NSWindowDelegate {
     var onPasswordSettingsChanged: (() -> Void)?
+    var onUpdateAvailable: (() -> Void)?
     var onClose: (() -> Void)?
     private let passwords: PasswordSettings
+    private let preferences: AppPreferences
+    private let releaseSession: URLSession
     private let languageLabel = NSTextField(labelWithString: "")
     private let languageSelector = NSPopUpButton(frame: .zero, pullsDown: false)
-    private let currentVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "—"
+    private let currentVersion: String
     private let versionLabel = NSTextField(labelWithString: "")
     private let checkUpdates = NSButton()
+    private let automaticUpdates = NSButton(checkboxWithTitle: "", target: nil, action: nil)
+    private let updateNote = NSTextField(wrappingLabelWithString: "")
     private let openRelease = NSButton()
+    private let downloadUpdate = NSButton()
+    private let quitForUpdate = NSButton()
     private let updateStatus = NSTextField(wrappingLabelWithString: "")
     private var updateTask: Task<Void, Never>?
+    private var downloadTask: Task<Void, Never>?
+    private var downloadedInstaller: URL?
     private var availableRelease: AppRelease?
     private var updateMessageKey: String?
+    private var nextAutomaticCheck = Date.distantPast
+    private var notifiedVersion: ReleaseVersion?
     private let loginToggle = NSButton(checkboxWithTitle: "", target: nil, action: nil)
     private let loginStatus = NSTextField(wrappingLabelWithString: "")
     private let loginSettings = NSButton()
@@ -34,11 +45,20 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
     private var passwordResetContext: LAContext?
     private var passwordSheet: PasswordSheetController?
     private let passwordStatus = NSTextField(wrappingLabelWithString: "")
+    private let promptTimeoutLabel = NSTextField(wrappingLabelWithString: "")
+    private let promptTimeout = NSPopUpButton(frame: .zero, pullsDown: false)
     private let note = NSTextField(wrappingLabelWithString: "")
     private var passwordMessageKey: String?
 
-    init(passwords: PasswordSettings) {
+    var hasPendingPasswordChanges: Bool { passwordSheet != nil || passwordResetContext != nil }
+
+    init(passwords: PasswordSettings, preferences: AppPreferences = AppPreferences(),
+         currentVersion: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "—",
+         releaseSession: URLSession = .shared) {
         self.passwords = passwords
+        self.preferences = preferences
+        self.currentVersion = currentVersion
+        self.releaseSession = releaseSession
         let window = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 620, height: 700),
             styleMask: [.titled, .closable, .resizable], backing: .buffered, defer: false
@@ -54,11 +74,17 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         loginToggle.action = #selector(changeLoginItem)
         passwordToggle.target = self
         passwordToggle.action = #selector(togglePasswordProtection)
+        automaticUpdates.target = self
+        automaticUpdates.action = #selector(changeAutomaticUpdates)
+        promptTimeout.target = self
+        promptTimeout.action = #selector(changePromptTimeout)
         for (button, action) in [
             (loginSettings, #selector(openLoginSettings)),
             (accessibilitySettings, #selector(openAccessibilitySettings)),
             (checkUpdates, #selector(checkForUpdates)),
             (openRelease, #selector(openReleasePage)),
+            (downloadUpdate, #selector(downloadInstaller)),
+            (quitForUpdate, #selector(quitToInstall)),
             (editPassword, #selector(editPasswordSettings)),
             (resetPassword, #selector(resetForgottenPassword))
         ] {
@@ -66,8 +92,10 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
             button.action = action
             button.bezelStyle = .rounded
         }
-        loginToggle.cell?.wraps = true
-        loginToggle.cell?.isScrollable = false
+        for toggle in [loginToggle, automaticUpdates] {
+            toggle.cell?.wraps = true
+            toggle.cell?.isScrollable = false
+        }
         resetPassword.isBordered = false
         resetPassword.contentTintColor = .linkColor
         resetPassword.font = .systemFont(ofSize: NSFont.smallSystemFontSize)
@@ -80,7 +108,7 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         passwordLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         note.textColor = .secondaryLabelColor
         note.font = .systemFont(ofSize: NSFont.smallSystemFontSize)
-        for label in [loginStatus, accessibilityStatus, passwordStatus, updateStatus] {
+        for label in [loginStatus, accessibilityStatus, passwordStatus, updateStatus, updateNote] {
             label.textColor = .secondaryLabelColor
         }
         let separators = (0..<4).map { _ -> NSBox in
@@ -90,10 +118,10 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         }
         let stack = NSStackView(views: [
             languageLabel, languageSelector, separators[0],
-            versionLabel, checkUpdates, updateStatus, openRelease, separators[3],
+            versionLabel, automaticUpdates, updateNote, checkUpdates, updateStatus, downloadUpdate, quitForUpdate, openRelease, separators[3],
             loginToggle, loginStatus, loginSettings, separators[1],
             accessibilityLabel, accessibilityStatus, accessibilitySettings, separators[2],
-            passwordRow, passwordStatus, editPassword, resetPassword, note
+            passwordRow, passwordStatus, editPassword, resetPassword, promptTimeoutLabel, promptTimeout, note
         ])
         stack.orientation = .vertical
         stack.alignment = .leading
@@ -122,7 +150,8 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         ])
         passwordRow.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
         passwordLabel.trailingAnchor.constraint(equalTo: passwordRow.trailingAnchor).isActive = true
-        for view in [loginToggle, loginStatus, accessibilityStatus, passwordStatus, note, updateStatus] + separators {
+        for view in [loginToggle, automaticUpdates, loginStatus, accessibilityStatus, passwordStatus,
+                     promptTimeoutLabel, note, updateStatus, updateNote] + separators {
             view.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
         }
         languageSelector.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
@@ -135,13 +164,17 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
 
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
-    func show() {
+    func show(activate: Bool = true) {
         cancelPendingPasswordChanges()
         passwordMessageKey = nil
         refreshLanguage()
-        NSApp.activate(ignoringOtherApps: true)
-        showWindow(nil)
-        window?.makeKeyAndOrderFront(nil)
+        if activate {
+            NSApp.activate(ignoringOtherApps: true)
+            showWindow(nil)
+            window?.makeKeyAndOrderFront(nil)
+        } else {
+            window?.orderBack(nil)
+        }
         window?.contentView?.layoutSubtreeIfNeeded()
         if let scroll = window?.contentView?.subviews.first as? NSScrollView,
            let document = scroll.documentView {
@@ -180,6 +213,17 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
         accessibilitySettings.title = L("Open Input Permission Settings…")
         passwordLabel.stringValue = L("Require a password to restore the screen")
         passwordToggle.setAccessibilityLabel(passwordLabel.stringValue)
+        promptTimeoutLabel.stringValue = L("Hide the password prompt after inactivity")
+        promptTimeout.setAccessibilityLabel(promptTimeoutLabel.stringValue)
+        promptTimeout.removeAllItems()
+        for seconds in Set([5, 10, 15, 30, 60, 120, 300, preferences.unlockPromptTimeout]).sorted() {
+            promptTimeout.addItem(withTitle: String(format: L("%d seconds"), seconds))
+            promptTimeout.lastItem?.representedObject = seconds
+        }
+        promptTimeout.select(promptTimeout.itemArray.first {
+            $0.representedObject as? Int == preferences.unlockPromptTimeout
+        })
+        promptTimeout.isEnabled = passwords.isEnabled
         editPassword.title = L("Change Password…")
         resetPassword.title = L("Forgot Password…")
         note.stringValue = L("Password protection is optional. Blackout covers the screen within the app and does not replace the macOS screen lock.")
@@ -206,11 +250,22 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
 
     private func refreshUpdateStatus() {
         versionLabel.stringValue = String(format: L("Version %@"), currentVersion)
+        automaticUpdates.title = L("Automatically check for updates")
+        automaticUpdates.state = preferences.automaticallyChecksForUpdates ? .on : .off
+        updateNote.stringValue = L("Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept.")
         checkUpdates.title = L("Check for Updates…")
-        checkUpdates.isEnabled = updateTask == nil
+        checkUpdates.isEnabled = updateTask == nil && downloadTask == nil
+        downloadUpdate.title = L(downloadedInstaller == nil ? "Download Update…" : "Open Downloaded Update…")
+        downloadUpdate.isHidden = availableRelease == nil
+        downloadUpdate.isEnabled = downloadTask == nil
+        quitForUpdate.title = L("Quit Blackout")
+        quitForUpdate.isHidden = downloadedInstaller == nil
         openRelease.title = L("Open Release Page…")
-        openRelease.isHidden = availableRelease == nil
-        if updateTask != nil {
+        if downloadTask != nil {
+            updateStatus.stringValue = L("Downloading update…")
+        } else if let key = updateMessageKey {
+            updateStatus.stringValue = L(key)
+        } else if updateTask != nil {
             updateStatus.stringValue = L("Checking for updates…")
         } else if let release = availableRelease {
             updateStatus.stringValue = String(format: L("Version %@ is available."), release.version.string)
@@ -221,8 +276,34 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
     }
 
     @objc private func checkForUpdates() {
-        guard updateTask == nil else { return }
+        performUpdateCheck(automatically: false)
+    }
+
+    func checkForUpdatesAutomatically(now: Date = Date()) {
+        guard preferences.automaticallyChecksForUpdates, now >= nextAutomaticCheck,
+              updateTask == nil, downloadTask == nil else { return }
+        nextAutomaticCheck = now.addingTimeInterval(24 * 60 * 60)
+        performUpdateCheck(automatically: true)
+    }
+
+    @objc private func changeAutomaticUpdates() {
+        preferences.automaticallyChecksForUpdates = automaticUpdates.state == .on
+        if preferences.automaticallyChecksForUpdates {
+            nextAutomaticCheck = .distantPast
+            checkForUpdatesAutomatically()
+        }
+    }
+
+    @objc private func changePromptTimeout() {
+        if let seconds = promptTimeout.selectedItem?.representedObject as? Int {
+            preferences.unlockPromptTimeout = seconds
+        }
+    }
+
+    private func performUpdateCheck(automatically: Bool) {
+        guard updateTask == nil, downloadTask == nil else { return }
         availableRelease = nil
+        downloadedInstaller = nil
         updateMessageKey = nil
         updateTask = Task { @MainActor [weak self] in
             guard let self else { return }
@@ -230,7 +311,7 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
                 guard let current = ReleaseVersion(self.currentVersion) else {
                     throw ReleaseChecker.CheckError.invalidResponse
                 }
-                if let release = try await ReleaseChecker.latestRelease() {
+                if let release = try await ReleaseChecker.latestRelease(session: self.releaseSession) {
                     if release.version > current { self.availableRelease = release }
                     else { self.updateMessageKey = "You’re up to date." }
                 } else {
@@ -241,13 +322,53 @@ final class SettingsWindowController: NSWindowController, NSWindowDelegate {
             }
             self.updateTask = nil
             self.refreshUpdateStatus()
+            if automatically, self.preferences.automaticallyChecksForUpdates,
+               let release = self.availableRelease, self.notifiedVersion != release.version {
+                self.notifiedVersion = release.version
+                self.onUpdateAvailable?()
+            }
         }
         refreshUpdateStatus()
     }
 
     @objc private func openReleasePage() {
-        if let release = availableRelease { NSWorkspace.shared.open(release.url) }
+        NSWorkspace.shared.open(availableRelease?.url ?? URL(string: "https://github.com/baba9811/blackout-mac/releases")!)
     }
+
+    @objc private func downloadInstaller() {
+        guard downloadTask == nil, let release = availableRelease else { return }
+        if downloadedInstaller != nil { openDownloadedInstaller(); return }
+        updateMessageKey = nil
+        downloadTask = Task { @MainActor [weak self] in
+            guard let self else { return }
+            do {
+                let directory = try FileManager.default.url(for: .downloadsDirectory, in: .userDomainMask,
+                                                            appropriateFor: nil, create: true)
+                self.downloadedInstaller = try await ReleaseDownloader.download(release, to: directory,
+                                                                               session: self.releaseSession)
+            } catch {
+                self.updateMessageKey = "Download failed. Try again or open the release page."
+            }
+            self.downloadTask = nil
+            self.refreshUpdateStatus()
+            if self.window?.isVisible == true { self.openDownloadedInstaller() }
+        }
+        refreshUpdateStatus()
+    }
+
+    private func openDownloadedInstaller() {
+        guard let installer = downloadedInstaller, window?.isVisible == true,
+              !hasPendingPasswordChanges, window?.attachedSheet == nil else { return }
+        if NSWorkspace.shared.open(installer) {
+            updateMessageKey = "Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept."
+            refreshUpdateStatus()
+        } else {
+            updateMessageKey = "Could not open the update. Open it from Downloads."
+            refreshUpdateStatus()
+        }
+    }
+
+    @objc private func quitToInstall() { NSApp.terminate(nil) }
 
     private func refreshPasswordActions() {
         let idle = passwordResetContext == nil && passwordSheet == nil

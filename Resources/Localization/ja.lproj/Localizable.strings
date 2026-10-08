@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "パスワードをリセットしました。パスワード保護は無効です。";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "保存されたパスワード設定を読み取れませんでした。設定の「パスワードをお忘れですか」から復旧してください。";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "緊急解除：Escapeキーを3秒間押し続けてください。アプリのパスワードなしで解除できます。";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "操作がないときにパスワード画面を隠す";
+"%d seconds" = "%d秒";
+"Automatically check for updates" = "アップデートを自動で確認";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "起動時と毎日GitHubを確認します。ダウンロードしたDMGを開き、アプリを置き換えてください。設定は保持されます。";
+"Download Update…" = "アップデートをダウンロード…";
+"Open Downloaded Update…" = "ダウンロードしたアップデートを開く…";
+"Downloading update…" = "アップデートをダウンロード中…";
+"Download failed. Try again or open the release page." = "ダウンロードできませんでした。再試行するかリリースページを開いてください。";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "アップデートの準備ができました。Blackoutを終了し、同じフォルダのアプリを置き換えて再起動してください。設定は保持されます。";
+"Could not open the update. Open it from Downloads." = "アップデートを開けませんでした。ダウンロードフォルダから開いてください。";

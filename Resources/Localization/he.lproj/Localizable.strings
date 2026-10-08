@@ -75,3 +75,15 @@
 "Password reset. Password protection is off." = "הסיסמה אופסה. הגנת הסיסמה כבויה.";
 "The saved password settings could not be read. Use Forgot Password in Settings to recover." = "לא ניתן לקרוא את הגדרות הסיסמה השמורות. לשחזור, יש לבחור ״שכחתי סיסמה״ בהגדרות.";
 "Emergency exit: hold Escape for 3 seconds. This bypasses the app password." = "יציאת חירום: יש להחזיק את Escape לחוץ למשך 3 שניות. פעולה זו עוקפת את סיסמת היישום.";
+
+// Prompt inactivity and update downloads
+"Hide the password prompt after inactivity" = "הסתרת חלון הסיסמה לאחר חוסר פעילות";
+"%d seconds" = "%d שניות";
+"Automatically check for updates" = "בדיקת עדכונים אוטומטית";
+"Checks GitHub at launch and daily. Downloads open a DMG; replace the app to install. Settings are kept." = "בודק ב-GitHub בהפעלה ובכל יום. יש לפתוח את קובץ ה-DMG שהורד ולהחליף את היישום. ההגדרות נשמרות.";
+"Download Update…" = "הורדת עדכון…";
+"Open Downloaded Update…" = "פתיחת העדכון שהורד…";
+"Downloading update…" = "מוריד עדכון…";
+"Download failed. Try again or open the release page." = "ההורדה נכשלה. יש לנסות שוב או לפתוח את דף הגרסה.";
+"Update ready. Quit Blackout, replace the app in the same folder, and reopen it. Settings are kept." = "העדכון מוכן. יש לצאת מ-Blackout, להחליף את היישום באותה תיקייה ולפתוח אותו שוב. ההגדרות נשמרות.";
+"Could not open the update. Open it from Downloads." = "לא ניתן לפתוח את העדכון. יש לפתוח אותו מתיקיית ההורדות.";

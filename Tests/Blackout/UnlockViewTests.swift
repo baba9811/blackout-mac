@@ -57,6 +57,17 @@ struct UnlockViewTests {
         assert(messageFrame.height > 30 && view.bounds.contains(messageFrame))
         assert(view.bounds.contains(view.convert(unlock.bounds, from: unlock)))
         assert(!window.isVisible)
+        view.recordActivity(at: 100)
+        assert(!view.shouldHide(after: 10, systemIdleTime: 100, at: 109.9), "A new prompt gets its full timeout")
+        assert(view.shouldHide(after: 10, systemIdleTime: 10, at: 110))
+        assert(!view.shouldHide(after: 10, systemIdleTime: 10, mouseButtonPressed: true, at: 110),
+               "Do not remove controls during native mouse tracking")
+        assert(!view.shouldHide(after: 10, systemIdleTime: 0, at: 110), "Mouse/keyboard activity keeps the prompt visible")
+        view.recordActivity(at: 108)
+        assert(!view.shouldHide(after: 10, systemIdleTime: 10, at: 110), "Secure-field editing resets inactivity")
+        assert(view.shouldHide(after: 5, systemIdleTime: 5, at: 113), "Use the configured timeout")
+        view.controlTextDidChange(Notification(name: NSControl.textDidChangeNotification, object: view.passwordField))
+        assert(!view.shouldHide(after: 10, systemIdleTime: 100))
         print("Unlock view checks passed: opaque backing, native glass, hit testing and actions")
     }
 }
